@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01ReproductionMatrix",
+  "targetGame": "Slice Master / 小李飞刀",
+  "workspace": "game/prototype-a",
+  "testedSourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "cells": [
+    {
+      "id": "bonus-definition-odd-390",
+      "objectType": "BONUS finish option",
+      "lifecycle": "ordinary ready and reload",
+      "stateBranch": "configured bonusAvailable true",
+      "renderer": "SliceSimulation → DOM finish labels",
+      "viewport": "390x844",
+      "status": "PASS_LOGIC_AND_VISIBLE",
+      "acceptance": "odd seed has the same BONUS option as even seed when level config allows it",
+      "evidencePaths": ["game/prototype-a/tests/runtime-flow.test.ts", "evidence/b01-runtime-flow/screenshots/390x844-ordinary-terminal.png"]
+    },
+    {
+      "id": "bonus-definition-even-1100",
+      "objectType": "BONUS finish option",
+      "lifecycle": "ordinary ready and reload",
+      "stateBranch": "configured bonusAvailable true and false",
+      "renderer": "SliceSimulation → DOM finish labels",
+      "viewport": "1100x720",
+      "status": "PASS_LOGIC_NATURAL_NOT_RUN",
+      "acceptance": "even seed has the same BONUS option as odd seed; disallowed levels have no BONUS option",
+      "evidencePaths": ["game/prototype-a/tests/runtime-flow.test.ts", "evidence/b01-runtime-flow/browser-report.json"],
+      "remainingGap": "No natural 1100x720 completion reached the ordinary terminal."
+    },
+    {
+      "id": "terminal-failure-390",
+      "objectType": "terminal controls",
+      "lifecycle": "failed → terminal → retry",
+      "stateBranch": "fall or spike failure",
+      "renderer": "SliceSimulation → DOM terminal overlay",
+      "viewport": "390x844",
+      "status": "PASS",
+      "acceptance": "blank scene input leaves failed state; retry button returns ready",
+      "evidencePaths": ["evidence/b01-runtime-flow/browser-report.json", "evidence/b01-runtime-flow/screenshots/390x844-terminal.png", "evidence/b01-runtime-flow/screenshots/390x844-replay.png"]
+    },
+    {
+      "id": "terminal-win-1100",
+      "objectType": "terminal controls",
+      "lifecycle": "ordinary win → terminal → next/retry",
+      "stateBranch": "safe/multiplier finish settlement",
+      "renderer": "SliceSimulation → DOM terminal overlay + ThreeWorldRenderer",
+      "viewport": "1100x720",
+      "status": "NOT_RUN",
+      "acceptance": "retry and available next buttons are explicit and single-fire",
+      "evidencePaths": ["evidence/b01-runtime-flow/browser-report.json"],
+      "remainingGap": "Predeclared 950ms/450ms and 950ms/550ms mouse schedules both failed before ordinary settlement."
+    },
+    {
+      "id": "active-background-390",
+      "objectType": "airborne player/input",
+      "lifecycle": "active → hidden/blur → visible",
+      "stateBranch": "airborne simulation",
+      "renderer": "requestAnimationFrame → SliceSimulation → ThreeWorldRenderer",
+      "viewport": "390x844",
+      "status": "PASS_SYNTHETIC",
+      "acceptance": "elapsed and pose do not advance during background gap; held input is released; continue does not flip",
+      "evidencePaths": ["game/prototype-a/src/runtime-lifecycle.ts", "evidence/b01-runtime-flow/browser-report.json", "evidence/b01-runtime-flow/screenshots/390x844-paused-continue.png"]
+    },
+    {
+      "id": "active-bfcache-1100",
+      "objectType": "renderer lifecycle",
+      "lifecycle": "active → persisted pagehide → pageshow",
+      "stateBranch": "airborne simulation",
+      "renderer": "ThreeWorldRenderer",
+      "viewport": "1100x720",
+      "status": "PASS_SYNTHETIC",
+      "acceptance": "renderer is not disposed and only one frame loop resumes",
+      "evidencePaths": ["game/prototype-a/src/runtime-lifecycle.ts", "evidence/b01-runtime-flow/browser-report.json", "evidence/b01-runtime-flow/screenshots/1100x720-pageshow-resumed.png"]
+    },
+    {
+      "id": "storage-corrupt-390",
+      "objectType": "progress record",
+      "lifecycle": "startup → reload",
+      "stateBranch": "malformed JSON/schema",
+      "renderer": "LevelProgressStore → level selector DOM",
+      "viewport": "390x844",
+      "status": "PASS_LOGIC",
+      "acceptance": "defaults to level 1 without unlocking all levels and remains playable",
+      "evidencePaths": ["game/prototype-a/tests/runtime-flow.test.ts", "evidence/b01-runtime-flow/logs/runtime-flow.log"]
+    },
+    {
+      "id": "storage-throws-1100",
+      "objectType": "progress record",
+      "lifecycle": "startup/complete/select",
+      "stateBranch": "getItem or setItem throws",
+      "renderer": "LevelProgressStore → level selector DOM",
+      "viewport": "1100x720",
+      "status": "PASS_LOGIC",
+      "acceptance": "session memory retains unlocks and a non-blocking warning is visible",
+      "evidencePaths": ["game/prototype-a/tests/runtime-flow.test.ts", "evidence/b01-runtime-flow/logs/runtime-flow.log"]
+    }
+  ]
+}

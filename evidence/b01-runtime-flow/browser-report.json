@@ -1,0 +1,1826 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01RuntimeFlowBrowserReport",
+  "targetGame": "Slice Master / 小李飞刀",
+  "workspace": "game/prototype-a",
+  "url": "http://127.0.0.1:4175/",
+  "freshContexts": true,
+  "stateInjection": false,
+  "debugApiCalled": false,
+  "adaptiveScheduling": false,
+  "inputSchedule": {
+    "successCandidatesByViewport": {
+      "portrait390x844": [
+        {
+          "intervalMs": 1000,
+          "offsetMs": 300
+        }
+      ],
+      "desktop1100x720": [
+        {
+          "intervalMs": 950,
+          "offsetMs": 450
+        },
+        {
+          "intervalMs": 950,
+          "offsetMs": 550
+        }
+      ]
+    },
+    "failureScheduleMs": [
+      400,
+      2000,
+      3600,
+      5200,
+      6800,
+      8400,
+      10000,
+      11600,
+      13200,
+      14800,
+      16400,
+      18000
+    ]
+  },
+  "viewports": {
+    "portrait390x844": {
+      "size": "390x844",
+      "failureRetry": {
+        "outcome": "PASS",
+        "cycles": [
+          {
+            "cycle": 1,
+            "beforeBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.1083333333334,
+              "player": {
+                "x": 1245.8258000613798,
+                "y": -130.51610645945945,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "terminalCopy": "跌出路线\n分数 5\n请使用下方按钮重试",
+            "replayText": "重试本关",
+            "afterBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.1083333333334,
+              "player": {
+                "x": 1245.8258000613798,
+                "y": -130.51610645945945,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "replayed": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "ready",
+              "failReason": null,
+              "elapsed": 0,
+              "player": {
+                "x": 120,
+                "y": 420,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 0,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 0
+            }
+          },
+          {
+            "cycle": 2,
+            "beforeBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.100000000000067,
+              "player": {
+                "x": 1245.8258000613798,
+                "y": -130.51610645945945,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "terminalCopy": "跌出路线\n分数 5\n请使用下方按钮重试",
+            "replayText": "重试本关",
+            "afterBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.100000000000067,
+              "player": {
+                "x": 1245.8258000613798,
+                "y": -130.51610645945945,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "replayed": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "ready",
+              "failReason": null,
+              "elapsed": 0,
+              "player": {
+                "x": 120,
+                "y": 420,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 0,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 0
+            }
+          },
+          {
+            "cycle": 3,
+            "beforeBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.100000000000067,
+              "player": {
+                "x": 1246.7731955629772,
+                "y": -127.77942770918345,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "terminalCopy": "跌出路线\n分数 5\n请使用下方按钮重试",
+            "replayText": "重试本关",
+            "afterBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.100000000000067,
+              "player": {
+                "x": 1246.7731955629772,
+                "y": -127.77942770918345,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "replayed": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "ready",
+              "failReason": null,
+              "elapsed": 0,
+              "player": {
+                "x": 120,
+                "y": 420,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 0,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 0
+            }
+          },
+          {
+            "cycle": 4,
+            "beforeBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.100000000000067,
+              "player": {
+                "x": 1245.8258000613798,
+                "y": -130.51610645945945,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "terminalCopy": "跌出路线\n分数 5\n请使用下方按钮重试",
+            "replayText": "重试本关",
+            "afterBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.100000000000067,
+              "player": {
+                "x": 1245.8258000613798,
+                "y": -130.51610645945945,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "replayed": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "ready",
+              "failReason": null,
+              "elapsed": 0,
+              "player": {
+                "x": 120,
+                "y": 420,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 0,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 0
+            }
+          },
+          {
+            "cycle": 5,
+            "beforeBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.066666666666736,
+              "player": {
+                "x": 1238.8153057306272,
+                "y": -127.01366665738888,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "terminalCopy": "跌出路线\n分数 5\n请使用下方按钮重试",
+            "replayText": "重试本关",
+            "afterBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.066666666666736,
+              "player": {
+                "x": 1238.8153057306272,
+                "y": -127.01366665738888,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "replayed": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "ready",
+              "failReason": null,
+              "elapsed": 0,
+              "player": {
+                "x": 120,
+                "y": 420,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 0,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 0
+            }
+          },
+          {
+            "cycle": 6,
+            "beforeBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.100000000000067,
+              "player": {
+                "x": 1245.8258000613798,
+                "y": -130.51610645945945,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "terminalCopy": "跌出路线\n分数 5\n请使用下方按钮重试",
+            "replayText": "重试本关",
+            "afterBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.100000000000067,
+              "player": {
+                "x": 1245.8258000613798,
+                "y": -130.51610645945945,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "replayed": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "ready",
+              "failReason": null,
+              "elapsed": 0,
+              "player": {
+                "x": 120,
+                "y": 420,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 0,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 0
+            }
+          },
+          {
+            "cycle": 7,
+            "beforeBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.100000000000067,
+              "player": {
+                "x": 1245.8258000613798,
+                "y": -130.51610645945945,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "terminalCopy": "跌出路线\n分数 5\n请使用下方按钮重试",
+            "replayText": "重试本关",
+            "afterBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.100000000000067,
+              "player": {
+                "x": 1245.8258000613798,
+                "y": -130.51610645945945,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "replayed": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "ready",
+              "failReason": null,
+              "elapsed": 0,
+              "player": {
+                "x": 120,
+                "y": 420,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 0,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 0
+            }
+          },
+          {
+            "cycle": 8,
+            "beforeBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.100000000000067,
+              "player": {
+                "x": 1245.8258000613798,
+                "y": -130.51610645945945,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "terminalCopy": "跌出路线\n分数 5\n请使用下方按钮重试",
+            "replayText": "重试本关",
+            "afterBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.100000000000067,
+              "player": {
+                "x": 1245.8258000613798,
+                "y": -130.51610645945945,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "replayed": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "ready",
+              "failReason": null,
+              "elapsed": 0,
+              "player": {
+                "x": 120,
+                "y": 420,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 0,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 0
+            }
+          },
+          {
+            "cycle": 9,
+            "beforeBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.100000000000067,
+              "player": {
+                "x": 1245.8258000613798,
+                "y": -130.51610645945945,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "terminalCopy": "跌出路线\n分数 5\n请使用下方按钮重试",
+            "replayText": "重试本关",
+            "afterBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.100000000000067,
+              "player": {
+                "x": 1245.8258000613798,
+                "y": -130.51610645945945,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "replayed": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "ready",
+              "failReason": null,
+              "elapsed": 0,
+              "player": {
+                "x": 120,
+                "y": 420,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 0,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 0
+            }
+          },
+          {
+            "cycle": 10,
+            "beforeBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.100000000000067,
+              "player": {
+                "x": 1245.8258000613798,
+                "y": -130.51610645945945,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "terminalCopy": "跌出路线\n分数 5\n请使用下方按钮重试",
+            "replayText": "重试本关",
+            "afterBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.100000000000067,
+              "player": {
+                "x": 1245.8258000613798,
+                "y": -130.51610645945945,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "replayed": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "ready",
+              "failReason": null,
+              "elapsed": 0,
+              "player": {
+                "x": 120,
+                "y": 420,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 0,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 0
+            }
+          }
+        ]
+      },
+      "success": {
+        "attempts": [
+          {
+            "candidate": {
+              "intervalMs": 1000,
+              "offsetMs": 300
+            },
+            "index": 0,
+            "outcome": "PASS",
+            "terminal": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "won",
+              "failReason": null,
+              "elapsed": 17.44999999999965,
+              "player": {
+                "x": 2902,
+                "y": 159.8453410229903,
+                "vx": 150,
+                "vy": -300
+              },
+              "cuts": 6,
+              "finishPhase": "terminal",
+              "finishGateId": "ember-four",
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 31
+            },
+            "terminalCopy": "关卡完成\n×4\n分数 60\n请使用下方按钮重试",
+            "replayText": "重试本关",
+            "next": {
+              "levelNumber": 2,
+              "phase": "ordinary",
+              "status": "ready",
+              "failReason": null,
+              "elapsed": 0,
+              "player": {
+                "x": 120,
+                "y": 420,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 0,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": false,
+              "bonusConsumed": false,
+              "events": 0
+            },
+            "reload": {
+              "levelNumber": 2,
+              "phase": "ordinary",
+              "status": "ready",
+              "failReason": null,
+              "elapsed": 0,
+              "player": {
+                "x": 120,
+                "y": 420,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 0,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": false,
+              "bonusConsumed": false,
+              "events": 0
+            },
+            "bonusLabelVisibleAtStartup": false
+          }
+        ],
+        "pass": {
+          "candidate": {
+            "intervalMs": 1000,
+            "offsetMs": 300
+          },
+          "index": 0,
+          "outcome": "PASS",
+          "terminal": {
+            "levelNumber": 1,
+            "phase": "ordinary",
+            "status": "won",
+            "failReason": null,
+            "elapsed": 17.44999999999965,
+            "player": {
+              "x": 2902,
+              "y": 159.8453410229903,
+              "vx": 150,
+              "vy": -300
+            },
+            "cuts": 6,
+            "finishPhase": "terminal",
+            "finishGateId": "ember-four",
+            "finishSelection": null,
+            "bonusAvailable": true,
+            "bonusConsumed": false,
+            "events": 31
+          },
+          "terminalCopy": "关卡完成\n×4\n分数 60\n请使用下方按钮重试",
+          "replayText": "重试本关",
+          "next": {
+            "levelNumber": 2,
+            "phase": "ordinary",
+            "status": "ready",
+            "failReason": null,
+            "elapsed": 0,
+            "player": {
+              "x": 120,
+              "y": 420,
+              "vx": 0,
+              "vy": 0
+            },
+            "cuts": 0,
+            "finishPhase": "idle",
+            "finishGateId": null,
+            "finishSelection": null,
+            "bonusAvailable": false,
+            "bonusConsumed": false,
+            "events": 0
+          },
+          "reload": {
+            "levelNumber": 2,
+            "phase": "ordinary",
+            "status": "ready",
+            "failReason": null,
+            "elapsed": 0,
+            "player": {
+              "x": 120,
+              "y": 420,
+              "vx": 0,
+              "vy": 0
+            },
+            "cuts": 0,
+            "finishPhase": "idle",
+            "finishGateId": null,
+            "finishSelection": null,
+            "bonusAvailable": false,
+            "bonusConsumed": false,
+            "events": 0
+          },
+          "bonusLabelVisibleAtStartup": false
+        }
+      },
+      "lifecycle": {
+        "outcome": "PASS",
+        "synthetic": true,
+        "beforePause": {
+          "levelNumber": 1,
+          "phase": "ordinary",
+          "status": "airborne",
+          "failReason": null,
+          "elapsed": 0.6583333333333334,
+          "player": {
+            "x": 218.75,
+            "y": 354.1666666666667,
+            "vx": 150,
+            "vy": 95
+          },
+          "cuts": 1,
+          "finishPhase": "idle",
+          "finishGateId": null,
+          "finishSelection": null,
+          "bonusAvailable": true,
+          "bonusConsumed": false,
+          "events": 2
+        },
+        "paused": {
+          "levelNumber": 1,
+          "phase": "ordinary",
+          "status": "airborne",
+          "failReason": null,
+          "elapsed": 0.6666666666666667,
+          "player": {
+            "x": 220,
+            "y": 355,
+            "vx": 150,
+            "vy": 100
+          },
+          "cuts": 1,
+          "finishPhase": "idle",
+          "finishGateId": null,
+          "finishSelection": null,
+          "bonusAvailable": true,
+          "bonusConsumed": false,
+          "events": 2
+        },
+        "stillPaused": {
+          "levelNumber": 1,
+          "phase": "ordinary",
+          "status": "airborne",
+          "failReason": null,
+          "elapsed": 0.6666666666666667,
+          "player": {
+            "x": 220,
+            "y": 355,
+            "vx": 150,
+            "vy": 100
+          },
+          "cuts": 1,
+          "finishPhase": "idle",
+          "finishGateId": null,
+          "finishSelection": null,
+          "bonusAvailable": true,
+          "bonusConsumed": false,
+          "events": 2
+        },
+        "resumed": {
+          "levelNumber": 1,
+          "phase": "ordinary",
+          "status": "airborne",
+          "failReason": null,
+          "elapsed": 0.675,
+          "player": {
+            "x": 221.25,
+            "y": 355.875,
+            "vx": 150,
+            "vy": 105
+          },
+          "cuts": 1,
+          "finishPhase": "idle",
+          "finishGateId": null,
+          "finishSelection": null,
+          "bonusAvailable": true,
+          "bonusConsumed": false,
+          "events": 2
+        },
+        "bfcachePaused": {
+          "levelNumber": 1,
+          "phase": "ordinary",
+          "status": "airborne",
+          "failReason": null,
+          "elapsed": 0.6833333333333333,
+          "player": {
+            "x": 222.5,
+            "y": 356.7916666666667,
+            "vx": 150,
+            "vy": 110
+          },
+          "cuts": 1,
+          "finishPhase": "idle",
+          "finishGateId": null,
+          "finishSelection": null,
+          "bonusAvailable": true,
+          "bonusConsumed": false,
+          "events": 2
+        },
+        "bfcacheResumed": {
+          "levelNumber": 1,
+          "phase": "ordinary",
+          "status": "airborne",
+          "failReason": null,
+          "elapsed": 0.6833333333333333,
+          "player": {
+            "x": 222.5,
+            "y": 356.7916666666667,
+            "vx": 150,
+            "vy": 110
+          },
+          "cuts": 1,
+          "finishPhase": "idle",
+          "finishGateId": null,
+          "finishSelection": null,
+          "bonusAvailable": true,
+          "bonusConsumed": false,
+          "events": 2
+        }
+      }
+    },
+    "desktop1100x720": {
+      "size": "1100x720",
+      "failureRetry": {
+        "outcome": "PASS",
+        "cycles": [
+          {
+            "cycle": 1,
+            "beforeBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.083333333333401,
+              "player": {
+                "x": 1242.8258000613798,
+                "y": -127.26110645945944,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "terminalCopy": "跌出路线\n分数 5\n请使用下方按钮重试",
+            "replayText": "重试本关",
+            "afterBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.083333333333401,
+              "player": {
+                "x": 1242.8258000613798,
+                "y": -127.26110645945944,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "replayed": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "ready",
+              "failReason": null,
+              "elapsed": 0,
+              "player": {
+                "x": 120,
+                "y": 420,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 0,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 0
+            }
+          },
+          {
+            "cycle": 2,
+            "beforeBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.100000000000067,
+              "player": {
+                "x": 1248.2231955629773,
+                "y": -127.17776104251675,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "terminalCopy": "跌出路线\n分数 5\n请使用下方按钮重试",
+            "replayText": "重试本关",
+            "afterBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.100000000000067,
+              "player": {
+                "x": 1248.2231955629773,
+                "y": -127.17776104251675,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "replayed": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "ready",
+              "failReason": null,
+              "elapsed": 0,
+              "player": {
+                "x": 120,
+                "y": 420,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 0,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 0
+            }
+          },
+          {
+            "cycle": 3,
+            "beforeBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.100000000000067,
+              "player": {
+                "x": 1247.5661538218683,
+                "y": -128.32869323296234,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "terminalCopy": "跌出路线\n分数 5\n请使用下方按钮重试",
+            "replayText": "重试本关",
+            "afterBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.100000000000067,
+              "player": {
+                "x": 1247.5661538218683,
+                "y": -128.32869323296234,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "replayed": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "ready",
+              "failReason": null,
+              "elapsed": 0,
+              "player": {
+                "x": 120,
+                "y": 420,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 0,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 0
+            }
+          },
+          {
+            "cycle": 4,
+            "beforeBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.075000000000069,
+              "player": {
+                "x": 1238.8153057306272,
+                "y": -127.01366665738888,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "terminalCopy": "跌出路线\n分数 5\n请使用下方按钮重试",
+            "replayText": "重试本关",
+            "afterBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.075000000000069,
+              "player": {
+                "x": 1238.8153057306272,
+                "y": -127.01366665738888,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "replayed": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "ready",
+              "failReason": null,
+              "elapsed": 0,
+              "player": {
+                "x": 120,
+                "y": 420,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 0,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 0
+            }
+          },
+          {
+            "cycle": 5,
+            "beforeBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.100000000000067,
+              "player": {
+                "x": 1247.0444451848987,
+                "y": -128.34698436758092,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "terminalCopy": "跌出路线\n分数 5\n请使用下方按钮重试",
+            "replayText": "重试本关",
+            "afterBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.100000000000067,
+              "player": {
+                "x": 1247.0444451848987,
+                "y": -128.34698436758092,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "replayed": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "ready",
+              "failReason": null,
+              "elapsed": 0,
+              "player": {
+                "x": 120,
+                "y": 420,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 0,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 0
+            }
+          },
+          {
+            "cycle": 6,
+            "beforeBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.100000000000067,
+              "player": {
+                "x": 1247.462859610074,
+                "y": -130.57615169147755,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "terminalCopy": "跌出路线\n分数 5\n请使用下方按钮重试",
+            "replayText": "重试本关",
+            "afterBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.100000000000067,
+              "player": {
+                "x": 1247.462859610074,
+                "y": -130.57615169147755,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "replayed": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "ready",
+              "failReason": null,
+              "elapsed": 0,
+              "player": {
+                "x": 120,
+                "y": 420,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 0,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 0
+            }
+          },
+          {
+            "cycle": 7,
+            "beforeBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.091666666666734,
+              "player": {
+                "x": 1244.2525783929243,
+                "y": -129.9068224153101,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "terminalCopy": "跌出路线\n分数 5\n请使用下方按钮重试",
+            "replayText": "重试本关",
+            "afterBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.091666666666734,
+              "player": {
+                "x": 1244.2525783929243,
+                "y": -129.9068224153101,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "replayed": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "ready",
+              "failReason": null,
+              "elapsed": 0,
+              "player": {
+                "x": 120,
+                "y": 420,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 0,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 0
+            }
+          },
+          {
+            "cycle": 8,
+            "beforeBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.083333333333401,
+              "player": {
+                "x": 1242.967298877244,
+                "y": -129.67304373991237,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "terminalCopy": "跌出路线\n分数 5\n请使用下方按钮重试",
+            "replayText": "重试本关",
+            "afterBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.083333333333401,
+              "player": {
+                "x": 1242.967298877244,
+                "y": -129.67304373991237,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "replayed": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "ready",
+              "failReason": null,
+              "elapsed": 0,
+              "player": {
+                "x": 120,
+                "y": 420,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 0,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 0
+            }
+          },
+          {
+            "cycle": 9,
+            "beforeBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.116666666666733,
+              "player": {
+                "x": 1250.17580006138,
+                "y": -128.58610645945942,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "terminalCopy": "跌出路线\n分数 5\n请使用下方按钮重试",
+            "replayText": "重试本关",
+            "afterBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.116666666666733,
+              "player": {
+                "x": 1250.17580006138,
+                "y": -128.58610645945942,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "replayed": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "ready",
+              "failReason": null,
+              "elapsed": 0,
+              "player": {
+                "x": 120,
+                "y": 420,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 0,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 0
+            }
+          },
+          {
+            "cycle": 10,
+            "beforeBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.091666666666734,
+              "player": {
+                "x": 1242.8025783929243,
+                "y": -130.29348908197676,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "terminalCopy": "跌出路线\n分数 5\n请使用下方按钮重试",
+            "replayText": "重试本关",
+            "afterBlank": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 10.091666666666734,
+              "player": {
+                "x": 1242.8025783929243,
+                "y": -130.29348908197676,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 3,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 16
+            },
+            "replayed": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "ready",
+              "failReason": null,
+              "elapsed": 0,
+              "player": {
+                "x": 120,
+                "y": 420,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 0,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 0
+            }
+          }
+        ]
+      },
+      "success": {
+        "attempts": [
+          {
+            "candidate": {
+              "intervalMs": 950,
+              "offsetMs": 450
+            },
+            "index": 0,
+            "outcome": "FAILED",
+            "state": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 4.283333333333336,
+              "player": {
+                "x": 850.4942568191518,
+                "y": -127.03492691423929,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 2,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 10
+            },
+            "terminalCopy": "跌出路线\n分数 3\n请使用下方按钮重试",
+            "replayText": "重试本关"
+          },
+          {
+            "candidate": {
+              "intervalMs": 950,
+              "offsetMs": 550
+            },
+            "index": 1,
+            "outcome": "FAILED",
+            "state": {
+              "levelNumber": 1,
+              "phase": "ordinary",
+              "status": "failed",
+              "failReason": "fall",
+              "elapsed": 4.466666666666678,
+              "player": {
+                "x": 886.1313823227149,
+                "y": -127.86995366346422,
+                "vx": 0,
+                "vy": 0
+              },
+              "cuts": 2,
+              "finishPhase": "idle",
+              "finishGateId": null,
+              "finishSelection": null,
+              "bonusAvailable": true,
+              "bonusConsumed": false,
+              "events": 10
+            },
+            "terminalCopy": "跌出路线\n分数 3\n请使用下方按钮重试",
+            "replayText": "重试本关"
+          }
+        ],
+        "pass": null
+      },
+      "lifecycle": {
+        "outcome": "PASS",
+        "synthetic": true,
+        "beforePause": {
+          "levelNumber": 1,
+          "phase": "ordinary",
+          "status": "airborne",
+          "failReason": null,
+          "elapsed": 0.7583333333333331,
+          "player": {
+            "x": 233.75,
+            "y": 366.9166666666667,
+            "vx": 150,
+            "vy": 155
+          },
+          "cuts": 1,
+          "finishPhase": "idle",
+          "finishGateId": null,
+          "finishSelection": null,
+          "bonusAvailable": true,
+          "bonusConsumed": false,
+          "events": 2
+        },
+        "paused": {
+          "levelNumber": 1,
+          "phase": "ordinary",
+          "status": "airborne",
+          "failReason": null,
+          "elapsed": 0.7749999999999997,
+          "player": {
+            "x": 236.25,
+            "y": 369.625,
+            "vx": 150,
+            "vy": 165
+          },
+          "cuts": 1,
+          "finishPhase": "idle",
+          "finishGateId": null,
+          "finishSelection": null,
+          "bonusAvailable": true,
+          "bonusConsumed": false,
+          "events": 2
+        },
+        "stillPaused": {
+          "levelNumber": 1,
+          "phase": "ordinary",
+          "status": "airborne",
+          "failReason": null,
+          "elapsed": 0.7749999999999997,
+          "player": {
+            "x": 236.25,
+            "y": 369.625,
+            "vx": 150,
+            "vy": 165
+          },
+          "cuts": 1,
+          "finishPhase": "idle",
+          "finishGateId": null,
+          "finishSelection": null,
+          "bonusAvailable": true,
+          "bonusConsumed": false,
+          "events": 2
+        },
+        "resumed": {
+          "levelNumber": 1,
+          "phase": "ordinary",
+          "status": "airborne",
+          "failReason": null,
+          "elapsed": 0.9083333333333325,
+          "player": {
+            "x": 256.25,
+            "y": 397.2916666666667,
+            "vx": 150,
+            "vy": 245
+          },
+          "cuts": 1,
+          "finishPhase": "idle",
+          "finishGateId": null,
+          "finishSelection": null,
+          "bonusAvailable": true,
+          "bonusConsumed": false,
+          "events": 2
+        },
+        "bfcachePaused": {
+          "levelNumber": 1,
+          "phase": "ordinary",
+          "status": "airborne",
+          "failReason": null,
+          "elapsed": 0.9249999999999992,
+          "player": {
+            "x": 258.75,
+            "y": 401.5,
+            "vx": 150,
+            "vy": 255
+          },
+          "cuts": 1,
+          "finishPhase": "idle",
+          "finishGateId": null,
+          "finishSelection": null,
+          "bonusAvailable": true,
+          "bonusConsumed": false,
+          "events": 2
+        },
+        "bfcacheResumed": {
+          "levelNumber": 1,
+          "phase": "ordinary",
+          "status": "airborne",
+          "failReason": null,
+          "elapsed": 0.9249999999999992,
+          "player": {
+            "x": 258.75,
+            "y": 401.5,
+            "vx": 150,
+            "vy": 255
+          },
+          "cuts": 1,
+          "finishPhase": "idle",
+          "finishGateId": null,
+          "finishSelection": null,
+          "bonusAvailable": true,
+          "bonusConsumed": false,
+          "events": 2
+        }
+      }
+    }
+  },
+  "consoleErrors": [],
+  "limitations": [
+    "Bonus entry was not claimed from a natural level 1 completion in this run; visible BONUS label and logic tests are recorded separately."
+  ]
+}

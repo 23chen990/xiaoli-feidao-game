@@ -1,0 +1,21 @@
+✔ bonus availability follows each authored level definition regardless of seed parity (3.894542ms)
+✔ terminal flip input is ignored until an explicit retry action (1.216584ms)
+✔ terminal controls use explicit retry copy without tap-to-restart guidance (0.085333ms)
+✔ progress store keeps unlocks in session memory when storage throws and exposes a warning (0.526333ms)
+✔ progress store accepts an unavailable browser storage object (0.135667ms)
+✔ progress store retains read-failure session progress even when writes still succeed (0.140375ms)
+✔ progress store resets corrupt serialized data to level one without unlocking levels (0.797584ms)
+✔ write failure keeps the latest unlock across store recreation in the same session (0.168959ms)
+✔ runtime lifecycle pauses, releases input, resets wall time, and resumes only from Continue (0.183958ms)
+✔ runtime lifecycle keeps BFCache renderer alive and unloads only on a real page teardown (0.158708ms)
+✔ runtime lifecycle does not show Continue for an inactive terminal host (0.087416ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 258.804042
+
+exit=0

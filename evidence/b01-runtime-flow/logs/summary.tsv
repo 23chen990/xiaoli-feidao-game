@@ -1,0 +1,5 @@
+test	exit=1	pnpm test
+typecheck	exit=0	pnpm typecheck
+lint	exit=0	pnpm lint
+build	exit=0	pnpm build
+source_commit	de6f11d2231398f6c655abbddd40c548d1524126

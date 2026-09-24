@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01RuntimeFlowManifest",
+  "targetGame": "Slice Master / 小李飞刀",
+  "workspace": "game/prototype-a",
+  "base": {
+    "branch": "main",
+    "sha": "b7e4b4b2ea7cab16c2dd27a91126fc29cde3c2ee"
+  },
+  "testedSourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "build": {
+    "path": "game/prototype-a/dist/index.html",
+    "sha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "environment": {
+    "node": "v24.14.0",
+    "pnpm": "11.25.0",
+    "platform": "darwin",
+    "browser": "Playwright Chromium headless"
+  },
+  "checks": {
+    "pnpm test": {"exitCode": 1, "pass": 212, "fail": 1, "failure": "missing repository-root artifacts/asset-manifest.json in existing ASSET-MANIFEST-001"},
+    "runtime-flow": {"command": "pnpm exec tsx --test tests/runtime-flow.test.ts", "exitCode": 0, "pass": 11},
+    "pnpm typecheck": {"exitCode": 0},
+    "pnpm lint": {"exitCode": 0},
+    "pnpm build": {"exitCode": 0}
+  },
+  "viewports": [
+    {"name": "portrait390x844", "width": 390, "height": 844, "evidence": "evidence/b01-runtime-flow/browser-report.json"},
+    {"name": "desktop1100x720", "width": 1100, "height": 720, "evidence": "evidence/b01-runtime-flow/browser-report.json"}
+  ],
+  "browserReport": "evidence/b01-runtime-flow/browser-report.json",
+  "inputRecord": "evidence/b01-runtime-flow/qa-natural.mjs",
+  "triage": "evidence/b01-runtime-flow/triage.json",
+  "reproductionMatrix": "evidence/b01-runtime-flow/reproduction-matrix.json",
+  "knownGaps": [
+    "Natural BONUS entry was not verified.",
+    "1100x720 ordinary win to next/reload was not reached by the fixed predeclared schedules.",
+    "Lifecycle browser checks use synthetic events; actual OS backgrounding and BFCache navigation were not claimed."
+  ]
+}
