@@ -334,12 +334,15 @@ test('magenta spike and abyss emit distinct fatal reasons and events', () => {
   assert.equal(fallGame.getState().events.at(-1)?.type, 'fall');
 });
 
-test('terminal one tap immediately replays the same deterministic ordinary level', () => {
+test('terminal one tap is inert until an explicit retry resets the same deterministic level', () => {
   const game = new SliceSimulation(11);
   game.act('flip');
   game.debugPlacePlayer(400, game.getState().worldBottom + 30);
   game.step(0.1);
   game.act('flip');
+  const terminal = game.getState();
+  assert.equal(terminal.status, 'failed');
+  game.reset(game.getState().seed);
   const restarted = game.getState();
   assert.equal(restarted.seed, 11);
   assert.equal(restarted.levelNumber, 1);
@@ -508,20 +511,20 @@ test('late inputs aimed at the current safe/bonus lanes preserve both complete o
   assert.ok(bonus.phaseElapsed > 1);
 });
 
-test('bonus failure returns to the same deterministic ordinary level', () => {
+test('bonus failure remains terminal until an explicit retry resets the level', () => {
   const game = new SliceSimulation(44);
   game.debugEnterBonus();
   game.debugPlacePlayer(300, game.getState().worldBottom + 40);
   game.step(0.1);
   assert.equal(game.getState().phase, 'bonus');
   assert.equal(game.getState().status, 'failed');
-  game.act('flip');
+  game.reset(game.getState().seed);
   assert.equal(game.getState().phase, 'ordinary');
   assert.equal(game.getState().status, 'ready');
   assert.equal(game.getState().seed, 44);
 });
 
-test('bonus success returns to terminal summary then replays the same ordinary level', () => {
+test('bonus success remains terminal until an explicit retry resets the level', () => {
   const game = new SliceSimulation(45);
   game.debugEnterBonus();
   const state = game.getState();
@@ -530,7 +533,7 @@ test('bonus success returns to terminal summary then replays the same ordinary l
   game.step(0.1);
   assert.equal(game.getState().status, 'won');
   assert.equal(game.getState().phase, 'bonus');
-  game.act('flip');
+  game.reset(game.getState().seed);
   assert.equal(game.getState().phase, 'ordinary');
   assert.equal(game.getState().seed, 45);
 });

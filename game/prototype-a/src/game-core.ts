@@ -380,7 +380,9 @@ export function createCourse(seed: number, levelNumber = 1): SliceCourse {
     }
   }
   const spikes = definition.spikes.map((item) => ({ ...item, baseX: item.x, baseY: item.y }));
-  const bonusAvailable = definition.bonusAvailable && seed % 2 === 0;
+  // Bonus entry is authored per level. Seed variation must not silently
+  // remove the bonus gate from an otherwise identical level definition.
+  const bonusAvailable = definition.bonusAvailable;
   const finishOptions = definition.finishOptions.filter((item) => item.kind !== 'bonus' || bonusAvailable).map((item) => ({ ...item }));
   return {
     sigils,
@@ -708,8 +710,8 @@ export class SliceSimulation {
   act(action: FlipAction): boolean {
     if (action !== 'flip') return false;
     if (isTerminal(this.state.status)) {
-      this.reset(this.state.seed);
-      return true;
+      // Terminal input is inert; replay is an explicit UI action.
+      return false;
     }
     const pendingPose = this.pendingRunwayReleasePose;
     if (pendingPose) {

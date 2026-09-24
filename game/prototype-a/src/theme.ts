@@ -97,7 +97,7 @@ const copy = Object.freeze({
   gateLegend: '×4  ·  ÷3  ·  ×3  ·  ×2',
   phase: Object.freeze({ ordinary: '关卡', bonus: '附加挑战' }),
   counter: Object.freeze({ cuts: '切割', score: '分数' }),
-  level: Object.freeze({ current: '关卡', select: '选关', locked: '未解锁', replay: '重玩', next: '下一关', complete: '完成' }),
+  level: Object.freeze({ current: '关卡', select: '选关', locked: '未解锁', replay: '重试本关', next: '下一关', complete: '完成' }),
   status: Object.freeze<Record<SliceState['status'], string>>({
     ready: '准备',
     airborne: '空中翻转',
@@ -120,7 +120,7 @@ const copy = Object.freeze({
     ordinaryWin: '关卡完成',
     bonusWin: '附加挑战完成',
     score: '分数',
-    restart: '再次轻触 · 重新开始',
+    restart: '请使用下方按钮重试',
   }),
   feedback: Object.freeze<Partial<Record<FeedbackType, string>>>({
     bounce: '反弹',

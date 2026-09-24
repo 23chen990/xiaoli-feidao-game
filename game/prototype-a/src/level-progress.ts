@@ -19,6 +19,11 @@ export const LEVEL_PROGRESS_SCHEMA = z.object({
 
 export type LevelProgress = z.infer<typeof LEVEL_PROGRESS_SCHEMA>;
 
+const sessionFallbackByStorage = new WeakMap<object, LevelProgress>();
+const sessionStorageFailures = new WeakSet<object>();
+let unscopedSessionFallback: LevelProgress | null = null;
+let unscopedSessionFailure = false;
+
 export function createDefaultProgress(): LevelProgress {
   return { version: 2, highestUnlockedLevel: 1, lastSelectedLevel: 1, records: {}, settings: { soundEnabled: true, reducedMotion: false } };
 }
@@ -66,14 +71,48 @@ export function nextLevelNumber(levelNumber: number): number | null {
 
 export class LevelProgressStore {
   private progress: LevelProgress;
+  private warning: string | null = null;
+  private readonly sessionOnly: boolean;
 
-  constructor(private readonly storage: Pick<Storage, 'getItem' | 'setItem'>) {
-    this.progress = migrateLevelProgress(storage.getItem(LEVEL_PROGRESS_STORAGE_KEY));
+  constructor(private readonly storage: Pick<Storage, 'getItem' | 'setItem'> | null | undefined) {
+    let raw: string | null = null;
+    let readFailed = !storage;
+    if (!storage) this.warning = 'Progress storage unavailable; using this session only.';
+    try {
+      raw = storage?.getItem(LEVEL_PROGRESS_STORAGE_KEY) ?? null;
+    } catch {
+      readFailed = true;
+      this.warning = 'Progress storage unavailable; using this session only.';
+    }
+    this.sessionOnly = readFailed;
+    const storageFailure = this.storage ? sessionStorageFailures.has(this.storage) : unscopedSessionFailure;
+    const fallback = this.storage ? sessionFallbackByStorage.get(this.storage) : unscopedSessionFallback;
+    if (readFailed || storageFailure) {
+      this.progress = fallback ? structuredClone(fallback) : createDefaultProgress();
+      this.warning = 'Progress storage unavailable; using this session only.';
+    } else {
+      let parsed: unknown = raw;
+      if (typeof raw === 'string') {
+        try { parsed = JSON.parse(raw); } catch { parsed = null; }
+      }
+      const migrated = migrateLevelProgress(parsed);
+      const looksCorrupt = raw !== null && (parsed === null || !LEVEL_PROGRESS_SCHEMA.safeParse(parsed).success && !(parsed && typeof parsed === 'object' && (parsed as { version?: unknown }).version === 1));
+      if (looksCorrupt) {
+        this.warning = 'Progress data was reset for this session.';
+        this.progress = createDefaultProgress();
+      } else {
+        this.progress = migrated;
+      }
+    }
     this.persist();
   }
 
   get(): LevelProgress {
     return structuredClone(this.progress);
+  }
+
+  getWarning(): string | null {
+    return this.warning;
   }
 
   isUnlocked(levelNumber: number): boolean {
@@ -104,7 +143,31 @@ export class LevelProgressStore {
   }
 
   private persist(): void {
-    this.storage.setItem(LEVEL_PROGRESS_STORAGE_KEY, JSON.stringify(this.progress));
+    if (this.sessionOnly) {
+      if (this.storage) {
+        sessionStorageFailures.add(this.storage);
+        sessionFallbackByStorage.set(this.storage, structuredClone(this.progress));
+      } else {
+        unscopedSessionFailure = true;
+        unscopedSessionFallback = structuredClone(this.progress);
+      }
+    }
+    try {
+      if (!this.storage) throw new Error('storage unavailable');
+      this.storage.setItem(LEVEL_PROGRESS_STORAGE_KEY, JSON.stringify(this.progress));
+      if (!this.sessionOnly) {
+        sessionStorageFailures.delete(this.storage);
+        sessionFallbackByStorage.delete(this.storage);
+      }
+    } catch {
+      this.warning ??= 'Progress storage unavailable; using this session only.';
+      if (this.storage) {
+        sessionStorageFailures.add(this.storage);
+        sessionFallbackByStorage.set(this.storage, structuredClone(this.progress));
+      } else {
+        unscopedSessionFailure = true;
+        unscopedSessionFallback = structuredClone(this.progress);
+      }
+    }
   }
 }
-

@@ -14,6 +14,7 @@ import { LEVEL_CATALOG, getLevelDefinition } from './game-levels';
 import { levelOnePrompt } from './level-one-guidance';
 import { LevelProgressStore, nextLevelNumber, type LevelProgress } from './level-progress';
 import { clampFinishLabelPosition } from './finish-label-layout';
+import { RuntimeLifecycle } from './runtime-lifecycle';
 import './style.css';
 
 interface PrototypeTestBridge {
@@ -65,9 +66,12 @@ const terminalText = requireElement<HTMLElement>('#terminal-text');
 const terminalActions = requireElement<HTMLElement>('#terminal-actions');
 const replayButton = requireElement<HTMLButtonElement>('#replay-button');
 const nextLevelButton = requireElement<HTMLButtonElement>('#next-level-button');
+const continueButton = requireElement<HTMLButtonElement>('#continue-button');
+const progressWarning = requireElement<HTMLElement>('#progress-warning');
 const feedbackLayer = requireElement<HTMLElement>('#feedback-layer');
 const impactFlash = requireElement<HTMLElement>('#impact-flash');
 applyThemeTokens(document.documentElement, MECHANICS_DEMO_THEME);
+continueButton.textContent = '点击继续';
 document.title = MECHANICS_DEMO_THEME.copy.title;
 document.querySelector<HTMLMetaElement>('meta[name="theme-color"]')?.setAttribute('content', MECHANICS_DEMO_THEME.css.background);
 shell.setAttribute('aria-label', MECHANICS_DEMO_THEME.copy.canvasLabel);
@@ -134,7 +138,13 @@ class ToneBus {
   }
 }
 
-const progressStore = new LevelProgressStore(window.localStorage);
+let progressStorage: Pick<Storage, 'getItem' | 'setItem'> | null = null;
+try { progressStorage = window.localStorage; } catch { progressStorage = null; }
+const progressStore = new LevelProgressStore(progressStorage);
+if (progressStore.getWarning()) {
+  progressWarning.hidden = false;
+  progressWarning.textContent = progressStore.getWarning();
+}
 const initialProgress = progressStore.get();
 const levelSeed = (levelNumber: number) => 31 + (levelNumber - 1) * 1009;
 const simulation = new SliceSimulation(levelSeed(initialProgress.lastSelectedLevel), initialProgress.lastSelectedLevel);
@@ -148,6 +158,7 @@ let animationFrame = 0;
 let performanceSamples: number[] = [];
 let recordedWinKey = '';
 let hitStopUntil = 0;
+let paused = false;
 
 function refreshLevelButtons(currentLevel: number): void {
   const progress = progressStore.get();
@@ -183,6 +194,11 @@ function resetPresentation(): void {
 }
 
 function renderHud(state: SliceState): void {
+  const storageWarning = progressStore.getWarning();
+  if (storageWarning) {
+    progressWarning.hidden = false;
+    progressWarning.textContent = storageWarning;
+  }
   const copy = MECHANICS_DEMO_THEME.copy;
   const phaseLabel = state.phase === 'bonus' ? copy.phase.bonus : copy.phase.ordinary;
   hudTitle.textContent = `${copy.title} · ${String(state.levelNumber).padStart(2, '0')}/12`;
@@ -232,14 +248,15 @@ function renderHud(state: SliceState): void {
     terminalText.textContent = state.finishPhase === 'contact' ? '终点墙接触' : state.finishPhase === 'reward' ? `收益揭示 ${reward} · ${state.score}` : '奖励庆祝';
   }
   if (!terminal) return;
+  const terminalLines = (lines: string[]): string => lines.filter(Boolean).join('\n');
   if (state.status === 'failed') {
-    terminalText.textContent = `${state.failReason === 'spike' ? copy.terminal.spike : copy.terminal.fall}\n${copy.terminal.score} ${state.score}\n${copy.terminal.restart}`;
+    terminalText.textContent = terminalLines([state.failReason === 'spike' ? copy.terminal.spike : copy.terminal.fall, `${copy.terminal.score} ${state.score}`, copy.terminal.restart]);
   } else if (state.phase === 'bonus') {
-    terminalText.textContent = `${copy.terminal.bonusWin}\n${copy.terminal.score} ${state.score}\n${copy.terminal.restart}`;
+    terminalText.textContent = terminalLines([copy.terminal.bonusWin, `${copy.terminal.score} ${state.score}`, copy.terminal.restart]);
   } else {
     const gate = state.finishOptions.find((candidate) => candidate.id === state.finishGateId);
     const reward = gate?.kind === 'bonus' ? 'BONUS +' : gate?.operation ? `${gate.operation === 'multiply' ? '×' : '÷'}${gate.operand}` : 'SAFE ×1';
-    terminalText.textContent = `${copy.terminal.ordinaryWin}\n${reward}\n${copy.terminal.score} ${state.score}\n${copy.terminal.restart}`;
+    terminalText.textContent = terminalLines([copy.terminal.ordinaryWin, reward, `${copy.terminal.score} ${state.score}`, copy.terminal.restart]);
   }
 }
 
@@ -347,6 +364,10 @@ function nextLevel(): SliceState | null {
   return next === null ? null : selectLevel(next);
 }
 
+function terminalActionAvailable(): boolean {
+  return !terminalActions.hidden;
+}
+
 function enterBonusChallenge(): SliceState | null {
   const state = simulation.enterBonusChallenge();
   if (!state) return null;
@@ -365,6 +386,7 @@ function perform(action: FlipAction): boolean {
 
 function onPointerDown(event: PointerEvent): void {
   if ((event.target as Element).closest('button')) return;
+  if (lifecycle.isPaused()) return;
   event.preventDefault();
   if (simulation.getState().status === 'failed' || simulation.getState().status === 'won') return;
   tones.unlock();
@@ -378,6 +400,7 @@ function onPointerUp(event: PointerEvent): void {
 
 function onKeyDown(event: KeyboardEvent): void {
   if (event.code !== 'Space') return;
+  if (lifecycle.isPaused()) return;
   event.preventDefault();
   tones.unlock();
   if (actionInput.press('flip', event.repeat)) perform('flip');
@@ -394,9 +417,35 @@ function onResize(): void {
   syncAndRender(simulation.getState(), 0);
 }
 
+const lifecycle = new RuntimeLifecycle({
+  isActive: () => {
+    const status = simulation.getState().status;
+    return status === 'airborne' || status === 'anchored';
+  },
+  pause: () => { paused = true; },
+  resume: () => { paused = false; },
+  releaseInput: () => actionInput.reset(),
+  resetWallTime: () => { lastWallTime = performance.now(); },
+  showContinue: (visible) => { continueButton.hidden = !visible; },
+  unload: () => {
+    cancelAnimationFrame(animationFrame);
+    shell.removeEventListener('pointerdown', onPointerDown);
+    shell.removeEventListener('pointerup', onPointerUp);
+    shell.removeEventListener('pointercancel', onPointerUp);
+    window.removeEventListener('pointerup', onPointerUp);
+    window.removeEventListener('pointercancel', onPointerUp);
+    window.removeEventListener('keydown', onKeyDown);
+    window.removeEventListener('keyup', onKeyUp);
+    window.removeEventListener('resize', onResize);
+    world.dispose();
+  },
+});
+
 shell.addEventListener('pointerdown', onPointerDown, { passive: false });
 shell.addEventListener('pointerup', onPointerUp, { passive: false });
 shell.addEventListener('pointercancel', onPointerUp, { passive: false });
+window.addEventListener('pointerup', onPointerUp, { passive: false });
+window.addEventListener('pointercancel', onPointerUp, { passive: false });
 window.addEventListener('keydown', onKeyDown, { passive: false });
 window.addEventListener('keyup', onKeyUp, { passive: false });
 window.addEventListener('resize', onResize, { passive: true });
@@ -407,11 +456,19 @@ levelSelectorToggle.addEventListener('click', (event) => {
   levelSelectorToggle.setAttribute('aria-expanded', String(!levelSelect.hidden));
 });
 replayButton.addEventListener('pointerdown', (event) => event.stopPropagation());
-replayButton.addEventListener('click', (event) => { event.stopPropagation(); replayLevel(); });
+replayButton.addEventListener('click', (event) => {
+  event.stopPropagation();
+  if (terminalActionAvailable()) replayLevel();
+});
 nextLevelButton.addEventListener('pointerdown', (event) => event.stopPropagation());
-nextLevelButton.addEventListener('click', (event) => { event.stopPropagation(); nextLevel(); });
+nextLevelButton.addEventListener('click', (event) => {
+  event.stopPropagation();
+  if (terminalActionAvailable()) nextLevel();
+});
 bonusTestButton.addEventListener('pointerdown', (event) => event.stopPropagation());
 bonusTestButton.addEventListener('click', (event) => { event.stopPropagation(); enterBonusChallenge(); });
+continueButton.addEventListener('pointerdown', (event) => event.stopPropagation());
+continueButton.addEventListener('click', (event) => { event.stopPropagation(); lifecycle.continue(); });
 refreshLevelButtons(simulation.getState().levelNumber);
 
 const bridge: PrototypeTestBridge = {
@@ -457,6 +514,11 @@ window.__PROTOTYPE_TEST__ = bridge;
 window.__GAME_TEST__ = bridge;
 
 function tick(wallTime: number): void {
+  if (paused) {
+    lastWallTime = wallTime;
+    animationFrame = requestAnimationFrame(tick);
+    return;
+  }
   const wallDeltaMs = Math.max(0, wallTime - lastWallTime);
   lastWallTime = wallTime;
   performanceSamples.push(wallDeltaMs);
@@ -469,13 +531,7 @@ function tick(wallTime: number): void {
 syncAndRender(simulation.getState(), 0);
 animationFrame = requestAnimationFrame(tick);
 
-window.addEventListener('pagehide', () => {
-  cancelAnimationFrame(animationFrame);
-  shell.removeEventListener('pointerdown', onPointerDown);
-  shell.removeEventListener('pointerup', onPointerUp);
-  shell.removeEventListener('pointercancel', onPointerUp);
-  window.removeEventListener('keydown', onKeyDown);
-  window.removeEventListener('keyup', onKeyUp);
-  window.removeEventListener('resize', onResize);
-  world.dispose();
-}, { once: true });
+document.addEventListener('visibilitychange', () => lifecycle.handleVisibility(document.visibilityState === 'hidden'));
+window.addEventListener('blur', () => lifecycle.handleBlur());
+window.addEventListener('pagehide', (event) => lifecycle.handlePageHide(event.persisted));
+window.addEventListener('pageshow', () => lifecycle.handlePageShow());
