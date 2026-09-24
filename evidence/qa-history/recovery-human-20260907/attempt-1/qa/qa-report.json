@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "passed": false,
+  "checks": [
+    {
+      "name": "pacing exposes easy first cut, sub-ten-second dense release, support, restraint spikes, and original finish choice",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/green-suite.log"
+    },
+    {
+      "name": "dense cluster emits consecutive escalating cut values for synchronized feedback",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/green-suite.log"
+    },
+    {
+      "name": "a visible-state policy finishes the ordinary route through the wider safe gate in 12-25 seconds",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/green-suite.log"
+    },
+    {
+      "name": "a visible-state policy can choose the narrow rich gate and enter dense one-chance bonus",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/green-suite.log"
+    },
+    {
+      "name": "a small late timing adjustment separates safe finish from a complete bonus run",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/green-suite.log"
+    },
+    {
+      "name": "LEVEL-CATALOG-RED-007 Level 1 preserves the recorded object-layout cadence",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/green-suite.log"
+    },
+    {
+      "name": "completed build unchanged in every QA capture",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/build-binding.json"
+    },
+    {
+      "name": "desktop natural full settlement/replay",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-3/recording.json"
+    },
+    {
+      "name": "assigned opening exact-branch review complete",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/assigned-opening-review.json"
+    }
+  ],
+  "issues": [
+    {
+      "id": "RETAINED-UNIT-1",
+      "severity": "error",
+      "message": "pacing exposes easy first cut, sub-ten-second dense release, support, restraint spikes, and original finish choice",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/green-suite.log"
+    },
+    {
+      "id": "RETAINED-UNIT-2",
+      "severity": "error",
+      "message": "dense cluster emits consecutive escalating cut values for synchronized feedback",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/green-suite.log"
+    },
+    {
+      "id": "RETAINED-UNIT-3",
+      "severity": "error",
+      "message": "a visible-state policy finishes the ordinary route through the wider safe gate in 12-25 seconds",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/green-suite.log"
+    },
+    {
+      "id": "RETAINED-UNIT-4",
+      "severity": "error",
+      "message": "a visible-state policy can choose the narrow rich gate and enter dense one-chance bonus",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/green-suite.log"
+    },
+    {
+      "id": "RETAINED-UNIT-5",
+      "severity": "error",
+      "message": "a small late timing adjustment separates safe finish from a complete bonus run",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/green-suite.log"
+    },
+    {
+      "id": "RETAINED-UNIT-6",
+      "severity": "error",
+      "message": "LEVEL-CATALOG-RED-007 Level 1 preserves the recorded object-layout cadence",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/green-suite.log"
+    },
+    {
+      "id": "REMAINING-PERCEPTUAL-CONTRACT",
+      "severity": "error",
+      "message": "后段承托/堆叠仍存在已观察缺口，终点标签/裁切感知失败；本轮未修这些分支。",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/reproduction-matrix.json"
+    }
+  ],
+  "screenshots": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-1/frames/startup.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-1/frames/startup.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-3/frames/terminal.png"
+  ],
+  "consoleLog": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-3/recording.json",
+  "testedAt": "2026-09-07T06:05:23.105Z"
+}

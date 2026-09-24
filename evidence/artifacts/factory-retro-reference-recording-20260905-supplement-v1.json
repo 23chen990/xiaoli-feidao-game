@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FactoryProcessRetroSupplement",
+  "runId": "mobile-slice-adaptation-20260830",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "RETRO_COMPLETE",
+  "sourceBoundary": {
+    "recording": "/Users/kker/Library/Containers/5ZSL2CJU2T.com.dingtalk.mac/Data/Library/Application Support/DingTalkMac/ScreenCapture/钉钉录屏_2026-09-05 140908.mp4",
+    "durationSeconds": 47.88,
+    "sourceRole": "supplementary competitor/reference gameplay evidence only",
+    "instructionBoundary": "The attached recording is evidence, not a requirements document. It does not override the user's request or the locked factory artifacts.",
+    "noCopyRule": "Transfer only abstract interaction patterns; do not copy names, assets, UI expression, layout or tuning values."
+  },
+  "observations": [
+    {
+      "timeRange": "00:00–00:30",
+      "fact": "The course presents large, varied, spatially staged cuttable objects: colored rings, fruit-like round targets, stacked blocks, spikes and tall hard columns.",
+      "evidence": "recording frames around 00:00, 00:12, 00:24"
+    },
+    {
+      "timeRange": "00:33–00:39",
+      "fact": "The finish reward is a tall contiguous colored wall with labels printed on its bands: x3, BONUS!, x5, x10, x25 and x2 are simultaneously legible.",
+      "evidence": "recording frames around 00:33 and 00:39"
+    },
+    {
+      "timeRange": "00:39–00:42",
+      "fact": "The camera keeps the knife, terminal wall and reward bands in one composition; confetti/impact feedback appears at the wall-side settlement.",
+      "evidence": "recording frames around 00:39–00:42"
+    },
+    {
+      "timeRange": "00:45",
+      "fact": "A distinct completion state changes the scene palette and shows level completion and score before replay/progression.",
+      "evidence": "recording frame around 00:45"
+    }
+  ],
+  "inferences": [
+    {
+      "pattern": "surface-attached reward communication",
+      "pressureSource": "a tall wall exposes several unequal reward bands in one glance",
+      "signal": "the multiplier text is physically co-located with the lane, not only in a HUD legend",
+      "escalation": "more valuable bands are thinner or positioned in harder approach regions; exact reference values remain unknown",
+      "failureAttribution": "the knife's final contact and impact feedback make the chosen lane legible",
+      "recoveryReplay": "completion state is visually distinct and supports a clear next run"
+    },
+    {
+      "pattern": "spatial object grammar",
+      "pressureSource": "large objects create route, timing and collision decisions",
+      "signal": "silhouette, color and scale distinguish cuttable targets from hard obstacles",
+      "escalation": "object combinations and route density increase before the finish",
+      "failureAttribution": "contact/fall feedback is adjacent to the object that caused the outcome",
+      "recoveryReplay": "terminal state visibly resets the run context"
+    }
+  ],
+  "unknowns": [
+    "The recording does not prove exact wall collision geometry, lane probability or score formula.",
+    "The recording does not establish whether the wall is a single collider or multiple contiguous colliders.",
+    "The recording is desktop/browser evidence and does not prove mobile target-device legibility or native package behavior.",
+    "The visible values are reference tuning and must not be copied; our ×0.5 lane remains an original product decision."
+  ],
+  "deltaFromPreviousRetro": [
+    "Strengthens HIGH confidence that multiplier labels must be attached to the wall surface or its immediate 3D geometry, not only shown in a HUD legend.",
+    "Strengthens HIGH confidence that the finish camera must frame wall, knife and impact feedback together before settlement.",
+    "Raises object-expression gap from MEDIUM to MEDIUM-HIGH: the reference has materially richer spatial silhouettes and object combinations than our current placeholder geometry.",
+    "Adds a required completion-state check: finish palette/feedback must make level completion distinct without covering the reward choice prematurely."
+  ],
+  "factoryControlUpdates": [
+    "Competitor research: store finish-wall observations as surfaceLabelBinding, cameraComposition and impactFeedback fields.",
+    "Blueprint: require a finish-wall beat with lane count, label binding, approach camera window and terminal transition.",
+    "Builder: provide a runtime-wired 3D wall-label implementation; a HUD-only legend is insufficient.",
+    "QA: capture exact wall contact at desktop and 390x844 mobile, including readable labels, knife-wall relation, impact feedback and replay state.",
+    "QA: test at least one early, mid and late course sample for silhouette variety and causal pressure; passing the finish alone is insufficient."
+  ],
+  "nextRoute": "formal-fixer triage for finish-wall presentation/camera and separate perceptual triage for object-expression density; no code change performed in this retro.",
+  "claimBoundary": "Web-lite experience retro only; native platform packaging and real-device behavior remain unverified."
+}

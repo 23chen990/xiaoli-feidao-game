@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "IndependentFinalQaArtifactV4",
+  "targetGame": "符刃夜行",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "testedAt": "2026-08-30T21:26:40Z",
+  "passed": true,
+  "decisionScope": "web-lite mechanics candidate, browser QA, placeholder theme schema and single-source boundary",
+  "decisionRule": "Pass requires stable locked build; lint/typecheck/tests/build; desktop 5/5 and mobile 2/2 natural wins without obstacle-coordinate oracle; all three stages visited; white-column no-progress streak <=2; clean browser runtime; moving-support relative reflection; and production theme Zod parse plus one authoritative copy/color source. Future final-art providers, multi-theme proof, persistence and native platform packaging are reported but do not fail this scoped web-lite mechanics candidate.",
+  "checkpoint": {
+    "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/builder-checkpoint-choke-fix-v4.json",
+    "sha256": "6993e64a65e42f3077c20ea7182d8d52e272690a3f33476875297a832a7085cd",
+    "matchesExpected": true
+  },
+  "hashes": {
+    "distBefore": "28bb8b6a19014c140ea4119d377692d50aa25d7a4f749c33e7e97b1b6dd2355c",
+    "distAfter": "28bb8b6a19014c140ea4119d377692d50aa25d7a4f749c33e7e97b1b6dd2355c",
+    "gameCoreBefore": "db9f24ba113134dd503ba044740248a3afeb389104966a82fd6fe5bd9d521745",
+    "gameCoreAfter": "db9f24ba113134dd503ba044740248a3afeb389104966a82fd6fe5bd9d521745",
+    "themeBefore": "53449a64ff7eaad5b28dd02cc3f23ef3f2e95553e588a418251e6948def3099e",
+    "themeAfter": "53449a64ff7eaad5b28dd02cc3f23ef3f2e95553e588a418251e6948def3099e",
+    "workspaceModified": false
+  },
+  "verification": {
+    "lint": { "command": "pnpm lint", "passed": true },
+    "typecheck": { "command": "pnpm typecheck", "passed": true },
+    "tests": { "command": "pnpm test", "passed": true, "passedCount": 78, "failedCount": 0 },
+    "isolatedBuild": {
+      "command": "node <workspace node_modules/tsx/dist/cli.mjs> scripts/build.ts in an isolated rsync copy",
+      "passed": true,
+      "bytes": 674393,
+      "sha256": "28bb8b6a19014c140ea4119d377692d50aa25d7a4f749c33e7e97b1b6dd2355c",
+      "matchesLockedDist": true,
+      "workspaceDistUntouched": true
+    },
+    "naturalPlay": {
+      "desktopWins": 5,
+      "desktopAttempts": 5,
+      "mobileWins": 2,
+      "mobileAttempts": 2,
+      "formerChokePasses": 7,
+      "formerChokeAttempts": 7,
+      "maxNoProgressBounceStreak": 2,
+      "lowGlobalPolicyWon": true,
+      "allSuccessfulRunsVisitedThreeStages": true,
+      "usedObstacleCoordinateOracle": false,
+      "usedDebugOrStatePlacement": false
+    },
+    "browserRuntime": {
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "requestFailures": 0,
+      "previewClosed": true
+    },
+    "movingSupport": {
+      "passed": true,
+      "provenance": "TARGETED_DIAGNOSTIC",
+      "supportId": "lantern-ferry",
+      "contactPart": "handle",
+      "normal": [0, -1],
+      "surfaceVelocityBefore": { "vx": -155.31880587926418, "vy": 0 },
+      "incomingRelativeNormal": -760,
+      "outgoingRelativeNormal": 547.2,
+      "impulseCountDuringLockout": 1
+    },
+    "themeBoundary": {
+      "productionThemeZodParsed": true,
+      "productionManifestZodParsed": true,
+      "parsedBeforePresentationConsumption": true,
+      "htmlIsNeutralShell": true,
+      "cssConsumesThemeVariablesOnly": true,
+      "authoritativeProductThemeSource": "src/theme.ts",
+      "coreImportsTheme": false,
+      "coreDependsOnDomColorOrAssetFilename": false,
+      "placeholderStatusHonest": true,
+      "finalStyleLock": false
+    }
+  },
+  "remainingIssues": [
+    {
+      "id": "FINAL-PROVIDER-INTEGRATION-007",
+      "severity": "HIGH",
+      "blockingCurrentScope": false,
+      "status": "NOT_IMPLEMENTED",
+      "summary": "The validated manifest is still descriptive placeholder metadata and does not construct the complete knife, cuttable, terrain, hazard and feedback provider set. This blocks claiming final art/provider replacement capability, not the current web-lite mechanics acceptance."
+    },
+    {
+      "id": "NATIVE-PLATFORM-PACKAGING-008",
+      "severity": "HIGH",
+      "blockingCurrentScope": false,
+      "status": "UNVERIFIED",
+      "summary": "WeChat, Douyin and TapTap Mini Game packages and real-device behavior were not produced or verified; web-lite evidence is not platform publishability evidence."
+    },
+    {
+      "id": "THEME-SWAP-TRACE-005",
+      "severity": "MEDIUM",
+      "blockingCurrentScope": false,
+      "status": "INCONCLUSIVE",
+      "summary": "The active placeholder theme is production-Zod parsed and single-source, but there is no second production-schema-compatible theme fixture with an identical core trace test."
+    },
+    {
+      "id": "MANIFEST-ROLE-UNIQUENESS-009",
+      "severity": "MEDIUM",
+      "blockingCurrentScope": false,
+      "status": "PARTIAL",
+      "summary": "The manifest schema enforces five strict entries but does not itself prove that each required role occurs exactly once; isolated equal-length invalid-field rejection tests are also missing."
+    },
+    {
+      "id": "SAVE-PERSISTENCE-010",
+      "severity": "MEDIUM",
+      "blockingCurrentScope": false,
+      "status": "NOT_IMPLEMENTED",
+      "summary": "No versioned save schema or persistence adapter exists, so cross-theme save compatibility remains unverified."
+    }
+  ],
+  "cases": [
+    {
+      "id": "LOCKED-BUILD-001",
+      "title": "Checkpoint and candidate hashes remain stable",
+      "provenance": "READ_ONLY_VERIFICATION",
+      "verdict": "PASS",
+      "severity": "NONE",
+      "blockingCurrentScope": true,
+      "repeatableSteps": ["Hash the checkpoint, dist/index.html, src/game-core.ts and src/theme.ts before QA.", "Repeat the hashes after all checks."],
+      "expected": ["Checkpoint SHA matches the delegated value.", "Candidate hashes remain unchanged."],
+      "actual": ["Checkpoint SHA matched 6993e64a...7085cd.", "dist, game-core and theme hashes were identical before and after.", "No workspace file was modified."],
+      "mechanicalCause": "The final QA served the locked dist and wrote evidence only outside the generated workspace.",
+      "acceptanceCriteria": ["All locked hashes match before and after."],
+      "suggestedTests": ["Continue recording checkpoint, dist, core and theme hashes in every release QA artifact."],
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/builder-checkpoint-choke-fix-v4.json"]
+    },
+    {
+      "id": "STATIC-QUALITY-002",
+      "title": "Lint, typecheck and unit regressions",
+      "provenance": "READ_ONLY_VERIFICATION",
+      "verdict": "PASS",
+      "severity": "NONE",
+      "blockingCurrentScope": true,
+      "repeatableSteps": ["Run pnpm lint.", "Run pnpm typecheck.", "Run pnpm test."],
+      "expected": ["All commands exit successfully.", "All 78 tests pass."],
+      "actual": ["lint passed.", "typecheck passed.", "78 passed, 0 failed."],
+      "mechanicalCause": "The blocker fix retains generic hard-contact, moving-support, sharp-contact, stage and theme regressions.",
+      "acceptanceCriteria": ["lint/typecheck exit 0 and tests have zero failures."],
+      "suggestedTests": ["Retain NATURAL-CHOKE-007/008 and THEME-ZOD-004 in the default suite."],
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/builder-checkpoint-choke-fix-v4.json"]
+    },
+    {
+      "id": "ISOLATED-BUILD-003",
+      "title": "Independent deterministic build without touching workspace dist",
+      "provenance": "READ_ONLY_VERIFICATION",
+      "verdict": "PASS",
+      "severity": "NONE",
+      "blockingCurrentScope": true,
+      "repeatableSteps": ["Copy source/config to an isolated temporary directory excluding dist and node_modules.", "Link the installed dependency directory read-only.", "Run scripts/build.ts through tsx.", "Hash the resulting isolated dist/index.html."],
+      "expected": ["Build exits successfully.", "Output hash matches locked workspace dist."],
+      "actual": ["Built 674393-byte self-contained HTML.", "Isolated SHA exactly matched 28bb8b6a...dd2355c."],
+      "mechanicalCause": "The self-contained build is deterministic for the locked source and dependency set.",
+      "acceptanceCriteria": ["Isolated build succeeds and matches locked dist SHA."],
+      "suggestedTests": ["Preserve isolated reproducible-build verification for future release candidates."],
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html"]
+    },
+    {
+      "id": "NATURAL-INPUT-004",
+      "title": "Five desktop and two mobile natural full-course runs",
+      "provenance": "NATURAL_INPUT",
+      "verdict": "PASS",
+      "severity": "NONE",
+      "blockingCurrentScope": true,
+      "repeatableSteps": ["Serve the locked dist.", "Run five global-height desktop policies through real mouse input.", "Run two 390x844 policies through native touch input.", "Do not read obstacle coordinates or use debug/state placement."],
+      "expected": ["Desktop wins 5/5.", "Mobile wins 2/2.", "Each successful run visits teach, develop and test stages."],
+      "actual": ["Desktop won 5/5.", "Mobile won 2/2.", "All seven runs visited stage-1-read-and-cut, stage-2-recover-and-choose and stage-3-structure-and-finish."],
+      "mechanicalCause": "The repeated-contact saturation rule lets varied natural rhythms leave the former choke while preserving ordinary input and level geometry.",
+      "acceptanceCriteria": ["5/5 desktop and 2/2 mobile win without coordinate oracle or debug bridge.", "All successful runs record all three stage IDs."],
+      "suggestedTests": ["Keep this seven-policy matrix as a release regression after every mechanics change."],
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-independent-final-v4/natural-checkpoint.json", "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-independent-final-v4/natural-evidence.json"]
+    },
+    {
+      "id": "WHITE-COLUMN-005",
+      "title": "Former white-column choke and no-progress streak",
+      "provenance": "NATURAL_INPUT",
+      "verdict": "PASS",
+      "severity": "NONE",
+      "blockingCurrentScope": true,
+      "repeatableSteps": ["Replay the lowest global-height policy that previously stalled.", "Aggregate consecutive same-body bounce contacts with less than the progress threshold across all seven natural runs."],
+      "expected": ["The low policy wins.", "Maximum no-progress bounce streak is at most 2."],
+      "actual": ["Low desktop policy won with maxX 3025.05 and streak 1.", "Maximum streak across all seven runs was 2."],
+      "mechanicalCause": "The third repeated low-progress contact resolves as a tangent slide with separation, while the first two incident-normal bounces remain intact.",
+      "acceptanceCriteria": ["Low policy naturally wins and global max streak <=2."],
+      "suggestedTests": ["Retain the independent input/render cadence regression to catch changed-normal repeat contacts."],
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-independent-final-v4/natural-checkpoint.json", "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-independent-final-v4/desktop-natural-1-won.png"]
+    },
+    {
+      "id": "RUNTIME-CLEAN-006",
+      "title": "Browser console and network cleanliness",
+      "provenance": "NATURAL_INPUT",
+      "verdict": "PASS",
+      "severity": "NONE",
+      "blockingCurrentScope": true,
+      "repeatableSteps": ["Attach console, pageerror and requestfailed listeners before opening the locked build.", "Keep listeners active through all seven natural runs and targeted evidence capture."],
+      "expected": ["No console errors, pageerrors or request failures."],
+      "actual": ["consoleErrors=0, pageErrors=0, requestFailures=0."],
+      "mechanicalCause": "The self-contained locked build completed all tested paths without runtime or request failures.",
+      "acceptanceCriteria": ["All three error counters remain zero and preview closes."],
+      "suggestedTests": ["Continue failing browser QA on any pageerror or unhandled request failure."],
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-independent-final-v4/console.log"]
+    },
+    {
+      "id": "MOVING-SUPPORT-007",
+      "title": "Moving-support blunt relative-velocity reflection",
+      "provenance": "TARGETED_DIAGNOSTIC",
+      "verdict": "PASS",
+      "severity": "NONE",
+      "blockingCurrentScope": true,
+      "repeatableSteps": ["Load the moving-horizontal diagnostic without counting it as a natural pass.", "Release at the recorded support phase and apply the recorded follow-up.", "Capture handle contact, surface velocity and relative normal components."],
+      "expected": ["Blunt contact reverses the surface-relative normal component.", "Exactly one impulse occurs during lockout."],
+      "actual": ["handle contact with normal [0,-1].", "relative normal changed -760 to 547.2.", "impulseCountDuringLockout=1."],
+      "mechanicalCause": "Hard-surface response subtracts support velocity before reflecting the incident normal component.",
+      "acceptanceCriteria": ["incoming relative normal <0, outgoing >0, and lockout impulse count=1."],
+      "suggestedTests": ["Retain both horizontal and vertical moving-support unit coverage in addition to this black-box diagnostic."],
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-independent-final-v4/moving-checkpoint.json", "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-independent-final-v4/moving-support-targeted.png"]
+    },
+    {
+      "id": "THEME-BOUNDARY-008",
+      "title": "Production Zod parse and single authoritative theme source",
+      "provenance": "READ_ONLY_ARCHITECTURE",
+      "verdict": "PASS",
+      "severity": "NONE",
+      "blockingCurrentScope": true,
+      "repeatableSteps": ["Inspect theme and manifest schemas and parse order.", "Run THEME-ZOD-004 and THEME-INTEGRATION-003.", "Inspect HTML/CSS for competing product copy, colors or token defaults.", "Inspect core dependency direction."],
+      "expected": ["Theme and manifest are strict-parsed before presentation use.", "HTML is neutral and CSS only consumes variables.", "Core does not depend on theme, DOM, colors or asset filenames."],
+      "actual": ["Both exported active objects are strict-Zod parsed before main/renderer imports consume them.", "Unknown gameplay keys and third-party/external entries are rejected.", "HTML product fields are empty and CSS defines no second theme-token source.", "game-core/game-content do not import theme or presentation modules."],
+      "mechanicalCause": "src/theme.ts is now the sole active product copy/color source and exports only parsed, frozen placeholder values.",
+      "acceptanceCriteria": ["Production parse, rejection tests, neutral HTML, variable-only CSS and core dependency fence all remain true."],
+      "suggestedTests": ["Add exact manifest-role uniqueness validation and an equal-length invalid-entry matrix."],
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/theme.ts", "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/theme.test.ts", "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/index.html", "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/style.css"]
+    },
+    {
+      "id": "FUTURE-SCOPE-009",
+      "title": "Known capability gaps outside current mechanics acceptance",
+      "provenance": "READ_ONLY_ARCHITECTURE",
+      "verdict": "INCONCLUSIVE",
+      "severity": "HIGH",
+      "blockingCurrentScope": false,
+      "repeatableSteps": ["Inspect manifest-to-provider resolution, second-theme fixtures, persistence adapters and native platform outputs."],
+      "expected": ["The final report distinguishes verified placeholder web-lite mechanics from unimplemented production capabilities."],
+      "actual": ["Final provider integration is not implemented.", "No second-theme trace fixture or save schema exists.", "No WeChat, Douyin or TapTap publishable package is verified."],
+      "mechanicalCause": "This blocker-only Builder pass intentionally completed mechanics stability and theme schema boundaries, not final art providers, persistence or native packaging.",
+      "acceptanceCriteria": ["Do not claim final asset replacement, persistence or native publishability until each has its own validated artifacts and platform QA."],
+      "suggestedTests": ["Add provider-consumption integration tests, two-theme trace equality, versioned save round-trip, and per-platform packaging/device QA when those stages begin."],
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/builder-checkpoint-choke-fix-v4.json"]
+    }
+  ],
+  "platformScope": {
+    "verified": "web-lite development build and browser QA only",
+    "wechatMiniGamePublishable": false,
+    "douyinMiniGamePublishable": false,
+    "taptapMiniGamePublishable": false
+  },
+  "validatedWith": "zod@4 strict IndependentFinalQaArtifactV4 schema",
+  "previewClosed": true,
+  "workspaceModified": false
+}

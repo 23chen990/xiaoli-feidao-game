@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED",
+  "classification": "visual-theme-expression-mismatch",
+  "reproduction": {
+    "evidence": ["User screenshot: Level 04/12 HUD says 甜品 while the visible cuttable is an orange faceted disk/crystal-like object."],
+    "steps": ["Open Level 04 in a fresh browser", "Observe the first visible cuttable before cutting", "Compare silhouette/material to the locked dessert theme", "Record renderer branch and viewport screenshot"]
+  },
+  "reproductionMatrix": [
+    {"objectType":"sigil/cuttable","lifecycleState":"spawned→aimed→cut","rendererPath":"game-core sigil foodStyle → ThreePresentationModel → ThreeCutVisualManager/CutVisualEntity crystal branch","viewport":"desktop screenshot 2048x1177 (source 2868x1648)"},
+    {"objectType":"sigil/cuttable","lifecycleState":"spawned→aimed→cut","rendererPath":"game-core sigil foodStyle → ThreePresentationModel → ThreeCutVisualManager/CutVisualEntity crystal branch","viewport":"mobile 390x844 pending retest"}
+  ],
+  "rootCauseHypothesis": "foodStyle metadata and HUD badge were added, but all sigils are intentionally forced through crystal geometry/material, so dessert levels still render a fruit/jewel-like disk.",
+  "acceptanceCriteria": [
+    "Levels 04–06 render visibly dessert-shaped cuttables (cake, pastry or cheesecake silhouettes), not only recolored crystal disks.",
+    "Levels 01–03, 07–09 and 10–12 likewise show their own locked theme silhouettes without cross-theme mixing.",
+    "Normal input can cut each themed object and the split/cap feedback remains attributable.",
+    "Desktop and 390x844 natural screenshots exercise the exact sigil branch; metadata-only or sibling-object evidence is insufficient."
+  ],
+  "route": "formal-fixer",
+  "decision": "Do not claim theme-lock completion; current product gate remains BLOCKED until renderer geometry/material branch is corrected and naturally retested."
+}

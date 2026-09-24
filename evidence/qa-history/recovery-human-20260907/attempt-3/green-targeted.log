@@ -1,0 +1,29 @@
+✔ L1-STACK a: actual knife contact cuts the bearing object and releases the overlapping upper object (6.031791ms)
+✔ L1-STACK-VISUAL-EVIDENCE a: same target stays visible and separates into two halves after cut (1.575292ms)
+✔ L1-STACK b: actual knife contact cuts the bearing object and releases the overlapping upper object (2.210125ms)
+✔ L1-STACK-VISUAL-EVIDENCE b: same target stays visible and separates into two halves after cut (0.575416ms)
+✔ L1-GRAVITY active airborne play does not freeze a hovering supported collectible (2.052916ms)
+✔ L1-REWARD intact has zero earnings; a real cut names the separated target and replay clears earnings (2.659417ms)
+✔ L1-PLACEMENT every initial collectible has a touching support, including the late and bridge targets (0.289542ms)
+✔ L1-FINISH labels use viewport coordinates without a second offset (0.7895ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 390x844 (1.194875ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 1100x720 (0.284125ms)
+✔ L1-OPENING-TABLE-BRANCH opening-table-a joins its underside to the actual floor (2.906875ms)
+✔ L1-OPENING-TABLE-BRANCH opening-table-b joins its underside to the actual floor (0.47925ms)
+✔ L1-OPENING-TABLE-BRANCH level1-reward-shelf joins its underside to the actual floor (0.392042ms)
+✔ L1-OPENING-TABLE-BRANCH bridge-table joins its underside to the actual floor (0.469625ms)
+✔ L1-OPENING-TABLE-BRANCH lift-table joins its underside to the actual floor (0.355834ms)
+✔ L1-OPENING-TABLE-BRANCH tower-table joins its underside to the actual floor (0.379416ms)
+✔ L1-OPENING-TABLE-BRANCH late-table joins its underside to the actual floor (0.341375ms)
+✔ L1-OPENING-TABLE-BRANCH white-bumper joins its underside to the actual floor (0.338791ms)
+✔ L1-OPENING-TABLE-BRANCH white-branch joins its underside to the actual floor (0.350125ms)
+✔ L1-FIRST-TARGET-VISIBILITY rune-1 intact submits triangles at 390x844 (10.825ms)
+✔ L1-FIRST-TARGET-VISIBILITY rune-1 intact submits triangles at 1100x720 (2.591167ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 359.449709

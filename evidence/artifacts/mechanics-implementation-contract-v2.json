@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "MechanicsImplementationContract",
+  "contractId": "rune-blade-mechanics-v2",
+  "targetGame": "符刃夜行",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "prototypeQuestion": "单键翻转切割在加入动态、方向性和结构性碰撞后，是否仍能在十秒内理解，并让玩家通过观察和时机选择而不是机械连点完成原创灰盒路线？",
+  "evidenceArtifacts": [
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/open-source-research.json",
+      "sha256": "preexisting-validated-artifact"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/mechanics-research-v2.json",
+      "sha256": "e35fdb6582d94d80c5aa28f1b7b08da57148657ed235da43c8f65f65e7e56f37"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/technical-gap-v2.json",
+      "sha256": "f4c0afd421f7e29cad4e77d82819f36b48ee96aa25958b65a90f2187702cdd1f"
+    }
+  ],
+  "requiredMechanics": [
+    {
+      "id": "CONTACT_PARTS",
+      "requirement": "刀尖、刀刃、刀背/刀身和刀柄接触可确定性区分；只有锐利部位切割，安全支撑可锚定，非锐部位走反弹语义。",
+      "acceptanceIds": ["CONTACT-001", "CONTACT-002"]
+    },
+    {
+      "id": "DIRECTIONAL_RECOIL",
+      "requirement": "侧向非锐碰撞基于接触法线产生画面可见的真实负水平速度；一次及时补点能救回，不补点会因可归因的落空或危险失败。",
+      "acceptanceIds": ["RECOIL-001", "RECOIL-002", "RECOIL-003"]
+    },
+    {
+      "id": "MOVING_SUPPORTS",
+      "requirement": "原创路线同时包含水平和垂直往复支撑；锚定刀具随台稳定移动，离台继承表面速度，等待不同相位会改变结果。",
+      "acceptanceIds": ["MOV-001", "MOV-002", "MOV-003"]
+    },
+    {
+      "id": "SPATIAL_CUTTABLES",
+      "requirement": "矩形可切物至少分别位于平台上方、侧面和下方；锐刃可从对应方向切开，非锐接触不误切，切后无隐形阻挡。",
+      "acceptanceIds": ["CUT-001", "CUT-002", "CUT-003"]
+    },
+    {
+      "id": "STRUCTURAL_CUT",
+      "requirement": "至少一座分段厚塔可从中部切出可穿越缺口；被切段只计分一次，失去支撑的相邻段和两片碎片可见分离或坍落，碰撞体同步变化。",
+      "acceptanceIds": ["STRUCT-001", "STRUCT-002"]
+    },
+    {
+      "id": "CUTTABLE_SUPPORT",
+      "requirement": "至少一个显式 dualRole 结构在未切时可承托刀具，切掉承托段后原落脚面消失并形成真实机会成本；薄型切物不可承托。",
+      "acceptanceIds": ["DUAL-001", "DUAL-002"]
+    },
+    {
+      "id": "COURSE_GEOMETRY",
+      "requirement": "三个原创短段共同覆盖连续台面、间隙、高低差、窄落点、侧墙或悬挑、移动支撑和提前可见的危险；相同节奏连续点击五次不能稳定通过全部段落。",
+      "acceptanceIds": ["COURSE-001", "COURSE-002", "COURSE-003"]
+    },
+    {
+      "id": "FAILURE_RECOVERY",
+      "requirement": "尖刺与坠落是视觉可区分的失败；下一次真实输入立即重开，并完整重置移动相位、碎片、结构、得分和终点状态。",
+      "acceptanceIds": ["FAIL-001", "FAIL-002"]
+    },
+    {
+      "id": "MATH_FINISH",
+      "requirement": "最终段包含至少两个面积/位置难度不同的原创乘法门和一个原创除法门；最后一次点击可改变命中，运算只结算一次并清楚显示结果。",
+      "acceptanceIds": ["FINISH-001", "FINISH-002", "FINISH-003"]
+    },
+    {
+      "id": "CONDITIONAL_BONUS",
+      "requirement": "奖励段按固定种子规则只在部分普通局出现；包含密集原创奖励目标和失败风险；失败或完成后均不能原地重试同一奖励段。",
+      "acceptanceIds": ["BONUS-001", "BONUS-002"]
+    },
+    {
+      "id": "DETERMINISTIC_RUNTIME",
+      "requirement": "新增运动、切割、坍落和碰撞在 30/60/120Hz 与长帧下保持相同关键事件顺序和结局；桌面鼠标与 390x844 原生触摸均可玩。",
+      "acceptanceIds": ["FIXED-001", "PLAY-001", "PLAY-002"]
+    }
+  ],
+  "courseStructure": [
+    "第一段先让玩家自然切到平台上方目标，再体验水平移动台和侧挂/下挂目标。",
+    "第二段明确展示非锐侧撞后的后退救回，以及 dualRole 承托物的保留或切除取舍。",
+    "第三段展示分段厚塔、局部坍落、尖刺/间隙压力与原创数学终点；符合条件时转入一次性奖励段。"
+  ],
+  "verificationCommands": [
+    "pnpm test",
+    "pnpm lint",
+    "pnpm typecheck",
+    "pnpm build",
+    "pnpm qa:browser"
+  ],
+  "deliverables": [
+    "可直接试玩的 dist/index.html",
+    "新的独立 QA 目录与逐项 JSON 报告",
+    "桌面和 390x844 触屏关键机制截图",
+    "实际启动命令与本地试玩地址"
+  ],
+  "scopeExclusions": [
+    "不制作或调整声音。",
+    "不制作正式美术、正式 UI、IAA、剧情、皮肤或长期成长。",
+    "不复制第三方代码、素材、名称、UI、关卡布局或平衡数值。",
+    "不宣称 web-lite 通过等于微信、抖音或 TapTap 小游戏可发布。"
+  ],
+  "completionRule": "所有 requiredMechanics 的 acceptanceIds 均通过独立 Reviewer 的真实输入验证后，才允许打开 Demo 等待用户验收。"
+}

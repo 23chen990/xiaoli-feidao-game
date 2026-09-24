@@ -1,0 +1,50 @@
+{
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "sourceModified": false,
+  "rebuilds": 0,
+  "browserContexts": 6,
+  "cleanup": "all recorder processes returned after closing browser and preview",
+  "assignedOpeningStatus": "PARTIAL: rune-1 and opening-table-a PASS both viewports; b occlusion evidence BLOCKED",
+  "wholeSliceStatus": "BLOCKED",
+  "runnerIssue": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/qa-tools/runner-resolution.json",
+  "actualInputTiming": [
+    {
+      "name": "portrait-1",
+      "maxDispatchLatenessMs": 25.13341700000001,
+      "denseMaxGapMs": 212.4256250000003,
+      "skippedInputs": 0
+    },
+    {
+      "name": "portrait-2",
+      "maxDispatchLatenessMs": 10.43941599999971,
+      "denseMaxGapMs": 217.31791599999997,
+      "skippedInputs": 0
+    },
+    {
+      "name": "portrait-3",
+      "maxDispatchLatenessMs": 7.939457999999831,
+      "denseMaxGapMs": 190.02337500000021,
+      "skippedInputs": 0
+    },
+    {
+      "name": "desktop-1",
+      "maxDispatchLatenessMs": 30.349333000000115,
+      "denseMaxGapMs": 244.3177910000004,
+      "skippedInputs": 0
+    },
+    {
+      "name": "desktop-2",
+      "maxDispatchLatenessMs": 28.323374999999942,
+      "denseMaxGapMs": 250.00912500000004,
+      "skippedInputs": 0
+    },
+    {
+      "name": "desktop-3",
+      "maxDispatchLatenessMs": 22.121292000000267,
+      "denseMaxGapMs": 235.28862500000014,
+      "skippedInputs": 0
+    }
+  ],
+  "interpretation": "本轮仅取证，无新增因果已证实回归；浮空与标签问题是既有未分配分支。每张使用的证据均实际view_image检查。手机策略覆盖不足不等同于产品不可通关。"
+}

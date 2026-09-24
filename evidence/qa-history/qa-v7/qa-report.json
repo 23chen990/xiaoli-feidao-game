@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "IndependentMechanicsQaReport",
+  "targetGame": "符刃夜行",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "buildSha256": "b55684eeca9ee0fe4768906c8fc54918a6ba9de1b4883116af79dab94ec4adc2",
+  "passed": true,
+  "naturalPlay": {
+    "desktopAttempts": 3,
+    "mobileAttempts": 1,
+    "understoodWithin10Seconds": true,
+    "naturalFirstCut": true,
+    "failureReadable": true,
+    "retryImpulse": true,
+    "evidence": [
+      "Before any test-bridge access, three isolated 1180x720 mouse-only attempts and one 390x844 native-touch attempt were completed against the current hash.",
+      "Every attempt visibly cut the first target within the first 0.7-second capture; the HUD changed to 切开1/印分1 and the target separated.",
+      "The cyan sharp tip, blunt-side feedback, white anchor surfaces, moving arrows and magenta hazards were readable; specialized real-input failures subsequently confirmed the visible failure/retry language.",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/natural-desktop-1-01.png",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/natural-desktop-2-01.png",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/natural-desktop-3-01.png",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/natural-mobile-1-01.png"
+    ]
+  },
+  "checks": [
+    {
+      "id": "CONTACT_PARTS",
+      "passed": true,
+      "evidence": [
+        "Current-build events distinguished tip cuts, edge/tip support anchoring and handle/body bounces under real mouse input.",
+        "The recoil start emitted handle contact with normalX=-1; spatial cuts and tower emitted tip cuts; dual-bridge-face emitted an anchor event."
+      ],
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/recoil-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/cut-side-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/dual-anchored-hold.png"
+      ]
+    },
+    {
+      "id": "DIRECTIONAL_RECOIL",
+      "passed": true,
+      "evidence": [
+        "At the identical recoil start, handle contact produced normalX=-1 and a real negative vx=-201.6.",
+        "Branch A received no input and reached a visible spike failure by the common 2.8-second checkpoint.",
+        "Branch B received exactly one real mouse click at 300ms; the input changed vx to +8.4 and at the same 2.8-second checkpoint remained airborne with failReason=null after cutting rune-7 and bouncing from under-slat, establishing a usable recovery window rather than the same immediate failure."
+      ],
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/recoil-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/recoil-no-recovery.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/recoil-one-click-300.png"
+      ]
+    },
+    {
+      "id": "MOVING_SUPPORTS",
+      "passed": true,
+      "evidence": [
+        "Horizontal and vertical supports carried the anchored player with invariant offsets while their world positions changed.",
+        "Real launches inherited surface velocity: horizontal phase 0ms support vx=160.518 yielded player vx=297.573, whereas phase 900ms support vx=-143.571 yielded player vx=-1.746; vertical launch inherited vertical support motion."
+      ],
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/moving-horizontal-carried.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/moving-horizontal-phase-0.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/moving-horizontal-phase-900.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/moving-vertical-launch.png"
+      ]
+    },
+    {
+      "id": "SPATIAL_CUTTABLES",
+      "passed": true,
+      "evidence": [
+        "Real clicks cut hanging-above, side-tag and under-slat from their respective placements with tip contact.",
+        "Each target changed solid=true to solid=false and generated two visible fragments; non-sharp recoil contacts remained bounces rather than miscues."
+      ],
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/cut-above-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/cut-side-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/cut-below-after.png"
+      ]
+    },
+    {
+      "id": "STRUCTURAL_CUT",
+      "passed": true,
+      "evidence": [
+        "A real tip cut changed tower-middle to cut=true/solid=false and counted it once.",
+        "Two middle fragments separated at vx=-84/+84, while tower-top lost supportedBy and visibly fell with positive velocity."
+      ],
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/tower-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/tower-after.png"
+      ]
+    },
+    {
+      "id": "CUTTABLE_SUPPORT",
+      "passed": true,
+      "evidence": [
+        "Starting from the unanchored dual-role scenario, one real launch naturally produced anchorId=dual-bridge-face with the intact dualRole block solid and the face active.",
+        "A separate real follow-up branch cut dual-bridge, changed it to cut=true/solid=false, deactivated dual-bridge-face and cleared anchorId; the blade visibly fell or continued airborne, proving the support could no longer carry it.",
+        "The result was repeated across follow-up offsets 0,60,120,180,240 and 320ms; no direct state placement was used."
+      ],
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/dual-anchored-hold.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/dual-end-120.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/dual-end-0.png"
+      ]
+    },
+    {
+      "id": "COURSE_GEOMETRY",
+      "passed": true,
+      "evidence": [
+        "Natural frames visibly contained continuous surfaces, gaps, high/low and narrow supports, a side wall/overhang, horizontal and vertical moving supports, and advance-visible hazards.",
+        "Three repeated-click schedules reached different contacts and none stably cleared all course segments, so a fixed repeated cadence remained insufficient."
+      ],
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/natural-desktop-1-06.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/natural-desktop-2-06.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/natural-desktop-3-06.png"
+      ]
+    },
+    {
+      "id": "FAILURE_RECOVERY",
+      "passed": true,
+      "evidence": [
+        "Spike and fall scenarios displayed distinct failReason values and visually different failures.",
+        "One real mouse click restarted each to ordinary ready with score=0, cuts=0, fragments=0, no cut blocks and no finish selection; native touch independently restarted spike failure."
+      ],
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/failure-spike.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/failure-fall.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/failure-spike-restart.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/mobile-spike-restart.png"
+      ]
+    },
+    {
+      "id": "MATH_FINISH",
+      "passed": true,
+      "evidence": [
+        "The visible finish retained distinct ×4, ×3, ×2 and ÷3 gates with different sizes and positions.",
+        "Real input hit ember-four once for 12×4=48 and mist-half once for 12÷3=4, with each result visibly displayed; a second real click changed the ×4 landing into a miss/fall."
+      ],
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/finish-multiply-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/finish-divide-after.png"
+      ]
+    },
+    {
+      "id": "CONDITIONAL_BONUS",
+      "passed": true,
+      "evidence": [
+        "Deterministic seeds 31..36 alternated bonus availability false/true, so only part of ordinary runs qualified.",
+        "The real-input bonus run cut dense bonus targets, reached a visible fall failure, and one following real click returned to ordinary ready instead of retrying the bonus."
+      ],
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/bonus-active.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/bonus-ended.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/bonus-after-one-chance.png"
+      ]
+    },
+    {
+      "id": "DETERMINISTIC_RUNTIME",
+      "passed": true,
+      "evidence": [
+        "Equivalent 30/60/120Hz and one 0.5s long-frame tower runs preserved event order [launch, cut:tower-middle], airborne outcome, middle cut state, two fragments and a falling top.",
+        "A measured 1.549s renderer stall advanced worldTime by 1.800s rather than discarding elapsed time and preserved moving-support anchoring.",
+        "390x844 native touch completed natural first cut and one-touch restart; canvas/document were exactly 390x844 with scrollX/Y=0 and no overflow. Console errors=0 and page errors=0."
+      ],
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/runtime-30hz.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/runtime-120hz.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/runtime-long-frame.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/runtime-stall-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/natural-mobile-1-01.png"
+      ]
+    }
+  ],
+  "issues": [],
+  "screenshots": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/natural-desktop-1-01.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/natural-mobile-1-01.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/recoil-no-recovery.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/recoil-one-click-300.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/dual-anchored-hold.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/dual-end-120.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/moving-horizontal-phase-0.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/moving-horizontal-phase-900.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/cut-above-after.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/cut-side-after.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/cut-below-after.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/tower-after.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/failure-spike.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/failure-fall.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/finish-multiply-after.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/finish-divide-after.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/bonus-ended.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/runtime-long-frame.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/runtime-stall-after.png"
+  ],
+  "consoleLog": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/console.log",
+  "previewClosed": true,
+  "validatedWith": "Zod strict schema parse using the task-supplied IndependentMechanicsQaReport contract",
+  "testedAt": "2026-08-30T15:58:00Z"
+}

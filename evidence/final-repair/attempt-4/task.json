@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fixer-task-packet",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 4,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "model": "gpt-6-luna",
+  "triagePath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-4/triage.json",
+  "triageSha256": "968a62adebdf4bcd95b5305e1352e9756548a7bcddf36ef474d6b46b7a48787e",
+  "issueId": "L1-RUNWAY-RECOVERY-RELEASE-VELOCITY",
+  "ownedFiles": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "expectedSourceFileLimit": 2,
+  "expectedHypothesis": "Preserve the one-shot pendingRunwayReleaseIntent needed by fixed replay, but snapshot the post-recovery outgoing vertical velocity and consume it once instead of overwriting it with LAUNCH_VY; keep launch feedback, forward support velocity, cooldown reset, and buffer clearing.",
+  "testFirst": {
+    "redRequired": true,
+    "redCommand": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+    "greenCommand": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+    "regressionCommand": "pnpm test"
+  },
+  "acceptanceCriteria": [
+    "A RED test proves the exact upward/separating natural-pose contact anchors under the restored attempt-3 baseline.",
+    "A GREEN lifecycle test proves the next normal flip consumes the pending intent and emits one launch event without creating a persistent anchor.",
+    "The consumed tap preserves the post-recovery vertical velocity snapshot within an explicit bounded tolerance and does not force LAUNCH_VY.",
+    "The pending velocity and intent expire together, and a later airborne tap is an ordinary air flip.",
+    "Non-runway support anchors and their release taps remain unchanged.",
+    "The approaching/downward top-normal branch, non-top sharp anchor, later x>=350 suppression, and blunt body/handle bounce remain intact.",
+    "The seed-31 fixed timestamp replay reaches at least 11.9 seconds and x>2000 without failure.",
+    "Only game-core.ts and level1-recovery.test.ts change; no renderer, level, debug, platform, or shared factory files.",
+    "pnpm test, pnpm lint, pnpm typecheck pass and exactly one pnpm build succeeds with a recorded dist SHA-256.",
+    "Independent fresh natural QA must retest both viewports, exact runway branch, stack/settlement, visible terminal and replay; no Fixer runtime claim."
+  ],
+  "evidenceInputs": [
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-3/fix-result.json",
+      "sha256": "1eaf2ba780265331802d85d6bd5cd19b2a83807eb2b85d29eca85be9c22fcc47",
+      "role": "prior-fix-receipt"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-2/green-targeted.log",
+      "sha256": "59f7c447c882e0b31af6c01d191ce68a64beb7a041cabf7de820e4e7060d834f",
+      "role": "prior-experiment-rejection"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-summary.json",
+      "sha256": "d0640af40c41c1e49c38a58687c8b6f2635332d3fe02e3e7429e05a74b6307cd",
+      "role": "natural-reproduction"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/recording.json",
+      "sha256": "5e4d6457955e0596707116e3c9d325880506f41c24aa5bfd37928ae5cb242717",
+      "role": "natural-reproduction"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/recording.json",
+      "sha256": "18734f878ef1f4c048f4071326e31b2dad5ee022fa14a8baf6004bd5c20f7ddd",
+      "role": "natural-reproduction"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "sha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+      "role": "current-source"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts",
+      "sha256": "864c5df7e65b97a91c51fe1ea955dc21438c8532458e3d5a0fcd7265564e99b2",
+      "role": "current-source"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html",
+      "sha256": "599b4c3cb8c6b345b7e18b3a4e06cae33663c0432b918d3115ee78df3bf64118",
+      "role": "current-build"
+    }
+  ],
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory modules, platform adapters, release configuration, and renderer implementation.",
+    "Full conversation, unrelated QA output, and unbound competitor media.",
+    "Natural/perceptual completion claims; Fixer must leave browser QA independent.",
+    "Any source file outside the two owned paths unless a new triage record promotes scope."
+  ],
+  "requiredOutputs": {
+    "fixResultPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-4/fix-result.json",
+    "redLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-4/red-targeted.log",
+    "greenLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-4/green-targeted.log",
+    "testsLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-4/tests.log",
+    "lintLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-4/lint.log",
+    "typecheckLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-4/typecheck.log",
+    "buildLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-4/build.log"
+  },
+  "noRuntimeQaClaim": true,
+  "createdAt": "2026-09-23T07:00:30.000Z"
+}

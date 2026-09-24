@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-task",
+  "route": "formal-fixer",
+  "cycleId": "human-review-20260907-l1-followup",
+  "attempt": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "authorizationPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/authorization.json",
+  "outputDirectory": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1",
+  "issues": [
+    {
+      "id": "L1-STACK-NATURAL-CHAIN",
+      "severity": "error",
+      "message": "same visible stack-a/b and support：工程测试已证明对象可碰撞、存在真实 supportedBy 关系并释放上层对象；上一周期多次自然录制没有同时捕获完整可见链，无法区分纯取证缺口和呈现/交互缺陷",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/qa/reproduction-matrix.json",
+      "classification": "unresolved-product-or-evidence",
+      "acceptance": [
+        "两个视口各有自然输入录制，连续显示同一 ID 对象由承托到切开、上层掉落并落地",
+        "录制中不使用 debug、状态注入或内部状态决定点击",
+        "若实现已正确，仅补证据并保持源码不变；若画面显示同一对象未掉落/落地，只修改因果实现"
+      ]
+    },
+    {
+      "id": "L1-FINISH-PHONE-ROUTE",
+      "severity": "error",
+      "message": "finish outcome lanes, settlement and replay：上一周期第4次桌面录制曾自然通关并重玩；最后一次手机录制在前段跌出路线，无法证明手机终点不可达，也没有完成最终手机门禁",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/qa/portrait-1/recording.json",
+      "classification": "unresolved-product-or-evidence",
+      "acceptance": [
+        "390x844 fresh natural-input trace reaches a visible finish choice, settlement and replay",
+        "结果栏在选择前可辨，接触结果先于结算，重玩后回到首关 ready",
+        "若只是输入覆盖不足，保留构建并补取证；不得因脚本失败擅自改动核心节奏"
+      ]
+    }
+  ],
+  "triagePath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/triage.json",
+  "contractPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/../qa-recovery-20260907/active-slice-contract.json",
+  "contractSha256": "0513fec6b10a2ad2cd778f6fb537a58fd5bbca2510da4d850e3059beccb9f9b2",
+  "expectedBuildSha256": "10cba7632922f9fdeaa2eb33f7a05aa09bd3dbb7ca45a2db24acac282c9fd9a6",
+  "instructions": [
+    "这是新授权周期第1/5次，继续使用原 stored Fixer 任务；旧周期 attempt-1 至 attempt-5 只读保留。",
+    "先读取 triage.json、active-slice-contract 和 failure-pressure-contract；不要把上一周期的“证据缺口”直接当成实现缺陷。",
+    "先写 preflight.json，再为每个真实缺陷写 RED 测试；若仅是取证缺口，明确记录并不要发明玩法或改动源码。",
+    "只修改 Level1 因果相关文件；不可改共享工厂、其他游戏、发布配置或未涉及关卡。",
+    "必须执行 test-first、完整 tests、lint、typecheck；最多一次 pnpm build。",
+    "完成后输出严格 FixResultSchema 的 fix-result.json，状态只写 READY_FOR_INDEPENDENT_QA 或 BLOCKED；独立 QA 使用正常输入和玩家可见证据，不接受状态注入作为通过。"
+  ],
+  "outputSchema": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/schemas.ts#FixResultSchema"
+}

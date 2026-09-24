@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "reproduction": {
+    "evidence": ["用户截图 codex-clipboard-5ae64dda-e74a-4da4-9888-f3c919d41cec.png：Level 03 画面中下方尖刺带位于玩家可见落点路径之外，视觉上像无意义非装饰硬物", "previous perceptual-qa-orphan-object-v2.json claimed PASS while only recording x-window bypass for l3-low-risk"],
+    "steps": ["fresh browser 进入 Level 03", "仅使用自然鼠标/原生触屏，不注入状态", "观察尖刺/硬表面是否实际改变路线或触发可归因风险", "记录对象是否被触碰、是否需要绕行、是否存在恢复用途"]
+  },
+  "classification": "core_experience-orphan-interactive-object-repeat",
+  "scope": ["Level 03 low-risk hazard path semantics", "对象视觉位置与实际碰撞/路线一致性", "自然输入桌面与 390x844", "报告顶层状态必须由子检查派生"],
+  "reproductionMatrix": [
+    {"objectType":"hazard spike strip","lifecycleState":"常驻/接触失败/低位绕行","rendererPath":"game-core spike collision → three-world-renderer syncSpikes","viewport":"桌面 1180x720"},
+    {"objectType":"hazard spike strip","lifecycleState":"常驻/接触失败/低位绕行","rendererPath":"game-core spike collision → three-world-renderer syncSpikes","viewport":"移动 390x844"}
+  ],
+  "acceptance": [
+    "l3-low-risk 在自然桌面与移动轨迹中要么产生一次可见、可归因的绕行决策或接触风险，要么被显式标记为装饰并移除 gameplay collider",
+    "不能用仅经过相同 x 区间作为对象已参与玩法的证据",
+    "截图必须同时显示对象、玩家路径/落点和对应结果，且对象不是被终点/重玩遮罩遮住",
+    "感知报告顶层 PASS 仅可由所有子检查 PASS 派生，任何 BLOCKED 必须保留"
+  ],
+  "route": "formal-fixer",
+  "reason": "同一核心关卡对象的无意义/不可达问题再次被用户自然观察到，且前一轮证据把 x-window 穿越误当作玩法交互；必须重新走 QA→Fixer→QA retest。"
+}

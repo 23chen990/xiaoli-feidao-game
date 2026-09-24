@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "ScheduledNaturalInputPlan",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "cycle": "human-review-20260907-l1-followup",
+  "attempt": 4,
+  "seed": 31,
+  "level": 1,
+  "generation": {
+    "method": "offline deterministic SliceSimulation policy replay; actual browser run uses this fixed list and never reads state to schedule input",
+    "policy": "tap when ready/anchored or projectedY > 450 and vy > -125, minimum world-time separation 140ms",
+    "command": "pnpm exec tsx -e '<offline SliceSimulation seed31 policy replay>'",
+    "expectedBranch": [
+      "opening rune-1 cut",
+      "hanging-above cut",
+      "level1-ladder-stack-a lower step contact/cut",
+      "level1-ladder-stack-b upper falling-stack contact/cut",
+      "finish wall contact and settlement"
+    ]
+  },
+  "tapOffsetsMs": [
+    0,
+    933,
+    1900,
+    2450,
+    2916,
+    3900,
+    4883,
+    5866,
+    6866,
+    7850,
+    8200,
+    9350,
+    10383,
+    11383,
+    12366,
+    13366,
+    15283,
+    17666,
+    18716,
+    19733,
+    20333
+  ],
+  "input": {
+    "portrait": "Playwright touchscreen.tap at viewport center x 0.5, y 0.72",
+    "desktop": "Playwright mouse.click at viewport center x 0.5, y 0.72",
+    "replay": "Playwright real pointer/touch click on visible #replay-button after terminal screenshot",
+    "forbidden": ["__GAME_TEST__ mutation", "debug scenario/state injection", "state-adaptive input scheduling", "internal event dispatch"]
+  },
+  "coverage": ["390x844", "1100x720"],
+  "createdAt": "2026-09-23T00:00:00.000Z"
+}

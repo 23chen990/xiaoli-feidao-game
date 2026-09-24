@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "ReviewCoverageAudit",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "INCOMPLETE_LEGACY_REVIEW_STREAMS",
+  "scope": "对本 run 中已有的 gameplay-triage、factory-retro、formal-fixer、perceptual-qa artifact 做覆盖核对；不把未闭环 artifact 当成已解决。",
+  "currentRegister": {
+    "artifact": "artifacts/reference-doc-review-v1.json",
+    "findingCount": 41,
+    "meaning": "当前源码、截图和可访问 QA 的证据边界内已整理出的差距，不代表所有历史 review stream 都完成。"
+  },
+  "unresolvedStreams": [
+    {
+      "id": "REVIEW-STREAM-001",
+      "topic": "all-level spacing and occlusion",
+      "artifacts": ["artifacts/gameplay-triage-asset-spacing-all-levels-v1.json"],
+      "storedStatus": "OPEN",
+      "coverage": "PARTIAL_ONLY",
+      "currentFindings": ["UI-HIERARCHY-003", "CAMERA-BOUNDS-028", "SMALL-VIEWPORT-041"],
+      "missingClosure": "尚未完成 01-12 × desktop/390x844 portrait/landscape × spawned/approach/contact/cut/settled/terminal 的投影间距和遮挡报告。"
+    },
+    {
+      "id": "REVIEW-STREAM-002",
+      "topic": "core-loop fidelity and route-changing cuts",
+      "artifacts": ["artifacts/gameplay-triage-core-loop-fidelity-v1.json"],
+      "storedStatus": "OPEN",
+      "coverage": "PARTIAL_ONLY",
+      "currentFindings": ["PREDICTION_TO_PROOF", "HAZARD-TELEGRAPH-027", "FINISH-DIFFICULTY-005"],
+      "missingClosure": "尚未有桌面和 390x844 自然输入证据证明至少三个机制段改变点击策略、至少两个切割事件改变后续路线、终点选择由前段路线准备出来。"
+    },
+    {
+      "id": "REVIEW-STREAM-003",
+      "topic": "moving object decision impact",
+      "artifacts": ["artifacts/gameplay-triage-moving-platform-no-purpose-v1.json"],
+      "storedStatus": "BLOCKED",
+      "coverage": "NOT_CLOSED",
+      "currentFindings": ["SEMANTIC-VISUAL-026", "LEVEL-PACING-010"],
+      "missingClosure": "没有 exact objectId 的自然触碰、避让、切割或恢复证据，不能证明移动 slab 是机制还是装饰动画。"
+    },
+    {
+      "id": "REVIEW-STREAM-004",
+      "topic": "cut-cap shape and cross-skin lifecycle",
+      "artifacts": ["artifacts/gameplay-triage-cut-piece-square-cap-v2.json", "artifacts/gameplay-triage-cut-visual-lifecycle-v1.json"],
+      "storedStatus": "OPEN",
+      "coverage": "PARTIAL_ONLY",
+      "currentFindings": ["VISUAL-IDENTITY-009", "DEPTH-CUES-037"],
+      "missingClosure": "尚未完成 dessert/log/crate/crystal 在桌面和移动端的自然 cut silhouette/cap/lifecycle perceptual gate。"
+    },
+    {
+      "id": "REVIEW-STREAM-005",
+      "topic": "food-theme cross-level expression",
+      "artifacts": ["artifacts/gameplay-triage-food-theme-cross-level-audit-v1.json", "artifacts/gameplay-triage-food-theme-visual-mismatch-v2.json"],
+      "storedStatus": "REPAIRED_PENDING_QA_OR_OPEN",
+      "coverage": "NOT_CLOSED",
+      "currentFindings": ["VISUAL-IDENTITY-009", "SEMANTIC-VISUAL-026"],
+      "missingClosure": "结构测试和渲染分支存在，但每个 food family 的桌面/390x844 自然切割与可读性复测仍未闭环。"
+    },
+    {
+      "id": "REVIEW-STREAM-006",
+      "topic": "ground white support flicker/intersection",
+      "artifacts": ["artifacts/gameplay-triage-ground-white-support-flicker-v1.json"],
+      "storedStatus": "FIXED_PENDING_PERCEPTUAL_REVIEW",
+      "coverage": "NOT_CLOSED",
+      "currentFindings": ["DEPTH-CUES-037"],
+      "missingClosure": "结构 placement 检查通过，但自然桌面/移动端画面仍缺少针对该 exact support 的无闪烁、无穿地感知证据。"
+    },
+    {
+      "id": "REVIEW-STREAM-007",
+      "topic": "Bonus flight/backdrop/low-arc playability",
+      "artifacts": ["artifacts/gameplay-triage-bonus-flight-v1.json", "artifacts/gameplay-triage-bonus-backdrop-hard-object-v1.json", "artifacts/gameplay-triage-bonus-low-arc-v1.json", "artifacts/formal-fixer-bonus-flight-attempt1.json"],
+      "storedStatus": "UNSTATUSSED_OR_INCOMPLETE",
+      "coverage": "NOT_CLOSED",
+      "currentFindings": ["FAILURE-RECOVERY-007", "SEMANTIC-VISUAL-026"],
+      "missingClosure": "Bonus 的飞行节奏、低弧线可达性、背景高塔的碰撞语义和自然失败/恢复没有完整的 exact branch QA 结论。"
+    },
+    {
+      "id": "REVIEW-STREAM-008",
+      "topic": "level progression and Bonus entry",
+      "artifacts": ["artifacts/gameplay-triage-level-progression-bonus-v1.json", "artifacts/formal-fixer-level-progression-bonus-attempt1.json"],
+      "storedStatus": "UNSTATUSSED_OR_INCOMPLETE",
+      "coverage": "NOT_CLOSED",
+      "currentFindings": ["LEVEL-PACING-010", "REPLAY-COPY-025"],
+      "missingClosure": "正式玩家流程中的解锁、重玩、下一关、Bonus 进入/返回和持久化还没有一个独立自然流程的闭环报告。"
+    },
+    {
+      "id": "REVIEW-STREAM-009",
+      "topic": "full experience chain",
+      "artifacts": ["artifacts/gameplay-triage-experience-chain-v1.json", "artifacts/gameplay-retro-missed-topology-v2.json"],
+      "storedStatus": "OPEN_OR_OPEN_REVIEW",
+      "coverage": "PARTIAL_ONLY",
+      "currentFindings": ["REWARD-LIFECYCLE-001", "CAMERA-BEATS-006", "FINISH-SETTLEMENT-030", "UI-HIERARCHY-003"],
+      "missingClosure": "当前已拆出问题，但 startup → core loop → cut/settle/reward → failure/recovery → finish → replay 的整条自然链仍没有独立通过证据。"
+    },
+    {
+      "id": "REVIEW-STREAM-010",
+      "topic": "recording-based factory retro re-verification",
+      "artifacts": ["artifacts/factory-retro-reference-recordings-deep-v2.json", "artifacts/factory-retro-reference-recording-20260905-supplement-v1.json", "artifacts/factory-retro-cut-feel-supplement-v1.json"],
+      "storedStatus": "RETRO_COMPLETE_BUT_SOURCE_UNAVAILABLE",
+      "coverage": "NOT_REVERIFIABLE_ON_CURRENT_HOST",
+      "currentFindings": ["CAMERA-BEATS-006", "AUDIO-TOUCH-008", "GAME-FEEL-035", "FINISH-WALL-SEMANTICS-004"],
+      "missingClosure": "这些 retro artifact 已经记录过观察，但原始录屏当前不可访问；本轮不把其中的逐帧/音频说法当作新事实。"
+    },
+    {
+      "id": "REVIEW-STREAM-011",
+      "topic": "multiplier wall and realtime earnings retest",
+      "artifacts": ["artifacts/gameplay-triage-multiplier-wall-v1.json", "artifacts/gameplay-triage-realtime-earnings-v1.json", "artifacts/qa-retest-multiplier-wall-v1.json"],
+      "storedStatus": "OPEN_OR_PASS_WITH_INFRASTRUCTURE_GAP",
+      "coverage": "NOT_CLOSED",
+      "currentFindings": ["FINISH-WALL-SEMANTICS-004", "FINISH-SETTLEMENT-030", "REWARD-LIFECYCLE-001"],
+      "missingClosure": "倍率墙/收益问题虽然已进入当前清单，但独立 QA retest 仍有基础设施和自然视觉证据缺口，不能视为已修复。"
+    }
+  ],
+  "conclusion": {
+    "priorAnswerCorrection": "此前把当前 41 项清单完成误说成所有历史复盘完成；这是过度表述。",
+    "currentTruth": "当前 41 项是主差距 register；另有 11 条历史 review stream 尚未闭环或无法在当前主机复核。",
+    "doNotClaim": ["所有复盘完成", "所有 triage 已修复", "录屏观察已重新验证", "Bonus/全关卡/真机平台已通过"],
+    "nextRoute": "先补完这些 review stream 的 exact matrix 和自然 QA，再决定进入哪一条正式 FIX→QA retest；不把未状态化 artifact 当成通过。"
+  }
+}

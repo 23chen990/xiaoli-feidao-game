@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FixExperimentRejection",
+  "cycleId": "human-review-20260907-l1-followup",
+  "attempt": 5,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "issueId": "L1-RUNWAY-EARLY-SHARP-ANCHOR",
+  "route": "formal-fixer",
+  "hypothesesTested": [
+    {
+      "threshold": 250,
+      "focusedTest": "pass",
+      "existingForwardReplay": "fail",
+      "evidencePath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/green-targeted.log"
+    },
+    {
+      "threshold": 290,
+      "focusedTest": "pass",
+      "existingForwardReplay": "fail",
+      "evidence": "The unchanged fixed-input replay reaches terminal fall at elapsed=5.3917s and x=967.468, before the Level1 stack; threshold 290 does not preserve the existing normal forward route."
+    }
+  ],
+  "decision": "REJECT_AND_REVERT",
+  "filesReverted": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "nextDistinctHypothesis": "Preserve the runway sharp contact and evaluate a narrow contact-normal-aware controlled recovery response for the exact early natural tip/edge branch, retaining anchors for other contacts.",
+  "naturalQaStatus": "BLOCKED",
+  "reason": "The x-threshold-only candidate cannot pass both the natural reproduction guard and the established normal forward replay. No natural or perceptual QA pass is claimed."
+}

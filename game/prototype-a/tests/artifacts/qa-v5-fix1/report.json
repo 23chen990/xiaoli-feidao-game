@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "BrowserQaReport",
+  "passed": true,
+  "url": "http://127.0.0.1:52720/",
+  "smokeExitCode": 0,
+  "previewClosed": true,
+  "evidence": [
+    "desktop-complete-gameplay.png",
+    "desktop-moving-support.png",
+    "desktop-recoil.png",
+    "desktop-recoil-no-input-failed.png",
+    "desktop-recoil-recovered.png",
+    "desktop-below-cut.png",
+    "desktop-tower-collapse.png",
+    "desktop-dual-precut-supported.png",
+    "desktop-dual-cut-support-gone.png",
+    "mobile-native-touch-opening.png",
+    "console.log"
+  ],
+  "error": null
+}

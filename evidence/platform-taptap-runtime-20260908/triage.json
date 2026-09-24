@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "platform-package-triage",
+  "route": "formal-fixer",
+  "targetGame": "mobile-slice-adaptation-20260830（TapTap 名称：疯狂切割）",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "request": "修复用户提供的 TapTap Android 包体准入失败，覆盖 OPPO PKB110 Activity 启动失败和 vivo V2001A 黑白屏两个准确设备分支；不执行后台上传或正式提审。",
+  "reproductionEvidence": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/reproduction-matrix-taptap-qa-20260908.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-02f2a83a-55b6-437d-ad3e-711aede72585-0af73c5a25fe.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-f55ee4fb-4dff-4d6e-a490-58125d59d4f8-daf0a441bd56.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/log-d1c510373264.log",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/js_log-e19948c17c7d.log"
+  ],
+  "classification": "platform-adapter-build-and-release-configuration",
+  "scope": {
+    "included": [
+      "仅修改目标工作区 platforms/taptap-minigame 中与 TapTap/Cocos 运行时兼容性、启动配置和首帧渲染直接相关的文件",
+      "用测试先行覆盖 OPPO Activity 分支、vivo Cocos 场景创建分支和首帧非黑白屏分支",
+      "用 Cocos Creator 3.8.8 与已审核的 TapTap 官方插件 1.2.2 重新生成一次官方 game.zip，并保留包体身份校验"
+    ],
+    "excluded": [
+      "其他 run、共享工厂代码、web-lite 源码或构建产物、微信/抖音平台目录",
+      "TapTap 后台上传、备案提交、版本提审以及账号操作",
+      "广告、内购、云存档、排行榜和与两个设备失败无关的新玩法",
+      "用测试接口、fixture 或通过设备的 sibling 分支替代真实 Android 自然输入和玩家可见复测"
+    ]
+  },
+  "acceptanceCriteria": [
+    "修复后 Cocos 场景构建路径不再触发 localSetLayout 或 null.length 未捕获异常，vivo 分支的第一帧和遍历截图具有非零亮度变化与可见游戏几何。",
+    "OPPO PKB110 分支能解析 TapTap InstantGameActivity；不得通过改名或伪造日志绕过测试。",
+    "默认竖屏旅程仍保留启动、触摸起跳/翻转、切割、反弹、失败/结算和重玩，且规则测试、lint、typecheck 全部通过。",
+    "新包保留游戏名疯狂切割、AppID 928932、portrait 和官方转换器根文件；ZIP 小于 20MB，哈希写入 Fixer 和 QA 结果。",
+    "每次尝试最多一次 Cocos 构建；修复结果不能替代独立 QA，若没有精确 SHA 绑定的真机复测则保留 BLOCKED。"
+  ],
+  "blockers": [
+    {
+      "id": "TAP-DEVICE-QA-EXACT-SHA-20260908",
+      "status": "OPEN",
+      "detail": "用户提供的后台版本显示为 0.0.1/开发版本 195535，而当前本地冻结包为 1.0.0；原始日志未带 ZIP SHA-256，修复后必须重新上传/扫码验证精确包体。"
+    },
+    {
+      "id": "TAP-DEVICE-RERUN-20260908",
+      "status": "OPEN",
+      "detail": "当前工作区没有 OPPO PKB110 或 vivo V2001A 真机连接，无法在本地完成用户可见自然输入复测。"
+    }
+  ]
+}

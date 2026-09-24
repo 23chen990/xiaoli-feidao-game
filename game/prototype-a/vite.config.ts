@@ -1,0 +1,6 @@
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+  base: './',
+  build: { target: 'es2022', cssCodeSplit: false, chunkSizeWarningLimit: 4_000 },
+});

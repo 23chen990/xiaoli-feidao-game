@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "role": "QAAgent",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "outputDirectory": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis",
+  "sourceTriage": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/task.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/source-diagnosis.json"
+  ],
+  "sourceMatrices": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/reproduction-matrix.json"
+  ],
+  "instructions": [
+    "Perform bounded evidence-only analysis while Fixer attempt2 writes game. Own only outputDirectory. Do not modify old sealed QA evidence, current game source/dist, or cycle ledger. Do not run the game. Read only already captured attempt1 video/frames/recording.json and immutable reviewed source docs/contract.",
+    "Examine the first rune-1 cut chronology using existing Playwright WebM video, which Chromium can decode in a localhost video-only page even though the source competitor mp4 codec was unavailable. Extract real video frames around first contact at40–80ms increments, bind extracted frames to original recording hash and attempt1 build hash. No image generation or invented frames.",
+    "Answer only: Does intact target become cut/separated before the local reward? Does HUD total change during blade-still-inside/intact, or with post-cut reward? Is local reward visible at target location? Separate direct pixels, read-only historical state observation, and unknowns. The original user correction in gameplay-retro-missed-topology-v2.json corrections[0] says cut completes, separated item then plays local reward, total updates with that post-cut reward; do not invent a new requirement that animation phases cannot overlap or impose exact timing values.",
+    "Create QaReportSchema-validated diagnostic-report.json with actual frame evidence; only emit new error issue if a concrete contradiction is observed. If unchanged video lacks enough frames, preserve BLOCKED and explain sampling limitation without claiming product bug. No new runtime policies or gameplay runs in this analysis. Include ResultSchema result.json and evidence/provenance hashes; finish after one first-cut sequence perviewport at most."
+  ],
+  "acceptance": [
+    "Read-only analysis of sealed attempt1 media; no new game run during Fixer edits.",
+    "Existing recording provenance and real extracted frame hashes recorded.",
+    "User-corrected sequence separated from stricter invented temporal requirements."
+  ],
+  "outputSchemas": [
+    "src/schemas/index.ts#QaReportSchema",
+    "src/schemas/natural-flow.ts#NaturalFlowEvidenceSchema",
+    "src/schemas/product-experience.ts#PerceptualQaReportSchema",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/recovery-schemas.ts#MatrixSchema",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/recovery-schemas.ts#ResultSchema"
+  ]
+}

@@ -1,0 +1,48 @@
+✔ L1-STACK a: actual knife contact cuts the bearing object and releases the overlapping upper object (7.203166ms)
+✔ L1-STACK-VISUAL-EVIDENCE a: same target stays visible and separates into two halves after cut (2.178792ms)
+✔ L1-STACK b: actual knife contact cuts the bearing object and releases the overlapping upper object (2.072625ms)
+✔ L1-STACK-VISUAL-EVIDENCE b: same target stays visible and separates into two halves after cut (0.536083ms)
+✔ L1-GRAVITY active airborne play does not freeze a hovering supported collectible (3.844917ms)
+✔ L1-REWARD intact has zero earnings; a real cut names the separated target and replay clears earnings (2.911625ms)
+✔ L1-PLACEMENT every initial collectible has a touching support, including the late and bridge targets (0.251208ms)
+✔ L1-RUNWAY visible support stays collidable through the normal forward replay (55.888167ms)
+✔ L1-RUNWAY later sharp contact stays airborne while body contact still bounces (0.960458ms)
+✖ L1-RUNWAY early approaching top-face tip contact recovers without removing side anchors (1.414792ms)
+✔ L1-RUNWAY opening keeps the authored white landing anchor before runway bounce feedback (4.6925ms)
+✔ L1-FINISH labels use viewport coordinates without a second offset (0.811959ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 390x844 (0.998042ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 1100x720 (0.184458ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 13
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 523.272708
+
+✖ failing tests:
+
+test at tests/level1-recovery.test.ts:162:1
+✖ L1-RUNWAY early approaching top-face tip contact recovers without removing side anchors (1.414792ms)
+  AssertionError [ERR_ASSERTION]: approaching top-face contact should use hard-surface recovery
+  + actual - expected
+  
+  + 'anchored'
+  - 'airborne'
+  
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:181:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'anchored',
+    expected: 'airborne',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+RED verification: the test runner reported 13 passing tests and 1 failing regression assertion (actual status anchored, expected airborne). The `tee` pipeline did not preserve the runner exit code; the captured failure is the expected RED result.

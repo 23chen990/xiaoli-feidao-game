@@ -1,0 +1,3 @@
+NOT RUN: pnpm test
+Reason: The focused targeted suite rejected the candidate because the seed-31 fixed timestamp replay failed at 6.458333333333444 seconds. The complete suite is not useful for validating a rejected candidate.
+Focused regression and replay evidence: green-targeted.log (exit code 1).

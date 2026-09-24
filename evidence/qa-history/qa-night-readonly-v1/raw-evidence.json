@@ -1,0 +1,4910 @@
+{
+  "desktopRuns": [
+    {
+      "label": "desktop-natural-1",
+      "platform": "desktop",
+      "seed": 31,
+      "inputPolicy": "global-height=530; vertical-trend only; no obstacle coordinate oracle",
+      "inputCount": 28,
+      "maxX": 2999.1387199999936,
+      "status": "ready",
+      "failReason": null,
+      "elapsed": 0,
+      "finishGateId": null,
+      "maxNoProgressBounceStreak": 2,
+      "cuts": 0,
+      "whiteColumnEvents": [
+        {
+          "id": 11,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1240.062,
+          "y": 445.437,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 6.992
+        },
+        {
+          "id": 13,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "body",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1243.65,
+          "y": 433.938,
+          "playerVx": -108,
+          "playerVy": -190,
+          "worldTime": 7.367
+        },
+        {
+          "id": 14,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1238.463,
+          "y": 374.046,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 7.617
+        },
+        {
+          "id": 16,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": 1,
+          "normalY": 0,
+          "x": 1279.127,
+          "y": 384.374,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 8.025
+        }
+      ],
+      "bounceEvents": [
+        {
+          "id": 7,
+          "type": "bounce",
+          "targetId": "side-tag",
+          "contactPart": "handle",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 921.9,
+          "y": 407.792,
+          "playerVx": 190,
+          "playerVy": -21.6,
+          "worldTime": 5.392
+        },
+        {
+          "id": 13,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "body",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1243.65,
+          "y": 433.938,
+          "playerVx": -108,
+          "playerVy": -190,
+          "worldTime": 7.367
+        },
+        {
+          "id": 32,
+          "type": "bounce",
+          "targetId": "lift-plank",
+          "contactPart": "handle",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 1923,
+          "y": 441.681,
+          "playerVx": 150,
+          "playerVy": -474.602,
+          "worldTime": 16.2
+        },
+        {
+          "id": 33,
+          "type": "bounce",
+          "targetId": "tower-top",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 2158,
+          "y": 454.319,
+          "playerVx": 102,
+          "playerVy": -285,
+          "worldTime": 17.825
+        },
+        {
+          "id": 35,
+          "type": "bounce",
+          "targetId": "tower-middle",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 2171.7,
+          "y": 409.86,
+          "playerVx": -73.44,
+          "playerVy": -180,
+          "worldTime": 18
+        },
+        {
+          "id": 39,
+          "type": "bounce",
+          "targetId": "tower-middle",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 2192.42,
+          "y": 417.069,
+          "playerVx": -98.323,
+          "playerVy": 125,
+          "worldTime": 19.575
+        }
+      ],
+      "anchorEvents": [
+        {
+          "id": 11,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1240.062,
+          "y": 445.437,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 6.992
+        },
+        {
+          "id": 14,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1238.463,
+          "y": 374.046,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 7.617
+        },
+        {
+          "id": 16,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": 1,
+          "normalY": 0,
+          "x": 1279.127,
+          "y": 384.374,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 8.025
+        },
+        {
+          "id": 20,
+          "type": "anchor",
+          "targetId": "dual-bridge-face",
+          "contactPart": "tip",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 1656.35,
+          "y": 493.103,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 10.517
+        },
+        {
+          "id": 27,
+          "type": "anchor",
+          "targetId": "lift-plank",
+          "contactPart": "tip",
+          "normalX": 0,
+          "normalY": 1,
+          "x": 1776.272,
+          "y": 444.047,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 14.9
+        },
+        {
+          "id": 29,
+          "type": "anchor",
+          "targetId": "lift-plank",
+          "contactPart": "tip",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 1797.957,
+          "y": 474.861,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 15.192
+        }
+      ],
+      "cutEvents": [
+        {
+          "id": 2,
+          "type": "cut",
+          "targetId": "rune-1",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 203,
+          "y": 308,
+          "playerVx": 150,
+          "playerVy": -45,
+          "worldTime": 1.1
+        },
+        {
+          "id": 8,
+          "type": "cut",
+          "targetId": "side-tag",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 930,
+          "y": 505,
+          "playerVx": 190,
+          "playerVy": 148.4,
+          "worldTime": 5.675
+        },
+        {
+          "id": 19,
+          "type": "cut",
+          "targetId": "rune-8",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 1487,
+          "y": 355,
+          "playerVx": 162,
+          "playerVy": 10,
+          "worldTime": 9.967
+        },
+        {
+          "id": 21,
+          "type": "cut",
+          "targetId": "dual-bridge",
+          "contactPart": "edge",
+          "normalX": null,
+          "normalY": null,
+          "x": 1580,
+          "y": 520,
+          "playerVx": 0,
+          "playerVy": 50,
+          "worldTime": 10.558
+        },
+        {
+          "id": 31,
+          "type": "cut",
+          "targetId": "rune-9",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 1840,
+          "y": 333,
+          "playerVx": 150,
+          "playerVy": -160,
+          "worldTime": 15.45
+        },
+        {
+          "id": 37,
+          "type": "cut",
+          "targetId": "tower-top",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 2250,
+          "y": 390,
+          "playerVx": 136.56,
+          "playerVy": -30,
+          "worldTime": 19.317
+        },
+        {
+          "id": 38,
+          "type": "cut",
+          "targetId": "rune-10",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 2211,
+          "y": 356,
+          "playerVx": 136.56,
+          "playerVy": 45,
+          "worldTime": 19.442
+        },
+        {
+          "id": 40,
+          "type": "cut",
+          "targetId": "tower-middle",
+          "contactPart": "edge",
+          "normalX": null,
+          "normalY": null,
+          "x": 2250,
+          "y": 480,
+          "playerVx": -98.323,
+          "playerVy": 215,
+          "worldTime": 19.725
+        },
+        {
+          "id": 45,
+          "type": "cut",
+          "targetId": "rune-11",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 2634,
+          "y": 345,
+          "playerVx": 147.677,
+          "playerVy": -30,
+          "worldTime": 23.292
+        }
+      ],
+      "courseSummary": {
+        "segments": [
+          {
+            "id": "segment-observe",
+            "label": "看相下刃",
+            "startX": 120,
+            "endX": 1120
+          },
+          {
+            "id": "segment-recover",
+            "label": "借势救刃",
+            "startX": 1120,
+            "endX": 1980
+          },
+          {
+            "id": "segment-structure",
+            "label": "断柱择门",
+            "startX": 1980,
+            "endX": 3000
+          }
+        ],
+        "bands": [
+          {
+            "id": "segment-observe",
+            "sigils": 7,
+            "blocks": [
+              {
+                "id": "hanging-above",
+                "placement": "above",
+                "dualRole": false
+              },
+              {
+                "id": "side-tag",
+                "placement": "side",
+                "dualRole": false
+              },
+              {
+                "id": "under-slat",
+                "placement": "below",
+                "dualRole": false
+              }
+            ],
+            "supports": [
+              {
+                "id": "white-bumper",
+                "movingAxis": null
+              },
+              {
+                "id": "white-landing",
+                "movingAxis": null
+              },
+              {
+                "id": "white-branch",
+                "movingAxis": null
+              },
+              {
+                "id": "lantern-ferry",
+                "movingAxis": "x"
+              }
+            ],
+            "spikes": []
+          },
+          {
+            "id": "segment-recover",
+            "sigils": 2,
+            "blocks": [
+              {
+                "id": "dual-bridge",
+                "placement": "side",
+                "dualRole": true
+              }
+            ],
+            "supports": [
+              {
+                "id": "white-column",
+                "movingAxis": null
+              },
+              {
+                "id": "dual-bridge-face",
+                "movingAxis": null
+              },
+              {
+                "id": "lift-plank",
+                "movingAxis": "y"
+              }
+            ],
+            "spikes": [
+              "spike-high"
+            ]
+          },
+          {
+            "id": "segment-structure",
+            "sigils": 2,
+            "blocks": [
+              {
+                "id": "tower-base",
+                "placement": "tower",
+                "dualRole": false
+              },
+              {
+                "id": "tower-middle",
+                "placement": "tower",
+                "dualRole": false
+              },
+              {
+                "id": "tower-top",
+                "placement": "tower",
+                "dualRole": false
+              }
+            ],
+            "supports": [
+              {
+                "id": "tower-approach",
+                "movingAxis": null
+              }
+            ],
+            "spikes": [
+              "spike-low"
+            ]
+          }
+        ],
+        "finishKinds": [
+          "multiply",
+          "divide",
+          "safe",
+          "multiply"
+        ]
+      },
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-choke-after.png"
+      ]
+    },
+    {
+      "label": "desktop-natural-2",
+      "platform": "desktop",
+      "seed": 31,
+      "inputPolicy": "global-height=540; vertical-trend only; no obstacle coordinate oracle",
+      "inputCount": 38,
+      "maxX": 2175.1833333332866,
+      "status": "airborne",
+      "failReason": null,
+      "elapsed": 33.917,
+      "finishGateId": null,
+      "maxNoProgressBounceStreak": 2,
+      "cuts": 5,
+      "whiteColumnEvents": [
+        {
+          "id": 11,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1239.122,
+          "y": 443.868,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 6.875
+        },
+        {
+          "id": 13,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "body",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1235.233,
+          "y": 426.753,
+          "playerVx": -108,
+          "playerVy": -175,
+          "worldTime": 7.267
+        },
+        {
+          "id": 14,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1238.367,
+          "y": 373.459,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 7.483
+        },
+        {
+          "id": 16,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": 1,
+          "normalY": 0,
+          "x": 1261.873,
+          "y": 385.205,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 7.875
+        },
+        {
+          "id": 18,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1264.683,
+          "y": 291.337,
+          "playerVx": -108,
+          "playerVy": -160,
+          "worldTime": 8.267
+        },
+        {
+          "id": 20,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1239.46,
+          "y": 352.456,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 9.967
+        },
+        {
+          "id": 22,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "body",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1239.133,
+          "y": 338.378,
+          "playerVx": -108,
+          "playerVy": -185,
+          "worldTime": 10.317
+        },
+        {
+          "id": 23,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 1240.136,
+          "y": 306.622,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 10.667
+        }
+      ],
+      "bounceEvents": [
+        {
+          "id": 7,
+          "type": "bounce",
+          "targetId": "side-tag",
+          "contactPart": "handle",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 918.233,
+          "y": 413.042,
+          "playerVx": 190,
+          "playerVy": 1.4,
+          "worldTime": 5.333
+        },
+        {
+          "id": 13,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "body",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1235.233,
+          "y": 426.753,
+          "playerVx": -108,
+          "playerVy": -175,
+          "worldTime": 7.267
+        },
+        {
+          "id": 18,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1264.683,
+          "y": 291.337,
+          "playerVx": -108,
+          "playerVy": -160,
+          "worldTime": 8.267
+        },
+        {
+          "id": 22,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "body",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1239.133,
+          "y": 338.378,
+          "playerVx": -108,
+          "playerVy": -185,
+          "worldTime": 10.317
+        },
+        {
+          "id": 41,
+          "type": "bounce",
+          "targetId": "tower-top",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 2172.883,
+          "y": 389.542,
+          "playerVx": -116.64,
+          "playerVy": -35,
+          "worldTime": 21.2
+        },
+        {
+          "id": 43,
+          "type": "bounce",
+          "targetId": "tower-middle",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 2155.669,
+          "y": 422.751,
+          "playerVx": -67.219,
+          "playerVy": 120,
+          "worldTime": 22.525
+        },
+        {
+          "id": 45,
+          "type": "bounce",
+          "targetId": "tower-top",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 2163.328,
+          "y": 438.251,
+          "playerVx": -102.802,
+          "playerVy": -150,
+          "worldTime": 23.092
+        },
+        {
+          "id": 47,
+          "type": "bounce",
+          "targetId": "tower-middle",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 2156.192,
+          "y": 424.542,
+          "playerVx": -77.182,
+          "playerVy": 110,
+          "worldTime": 24.5
+        },
+        {
+          "id": 49,
+          "type": "bounce",
+          "targetId": "tower-top",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 2160.599,
+          "y": 432.126,
+          "playerVx": -95.629,
+          "playerVy": -150,
+          "worldTime": 25.058
+        },
+        {
+          "id": 51,
+          "type": "bounce",
+          "targetId": "tower-middle",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 2157.421,
+          "y": 426.167,
+          "playerVx": -82.347,
+          "playerVy": 105,
+          "worldTime": 26.492
+        },
+        {
+          "id": 53,
+          "type": "bounce",
+          "targetId": "tower-top",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 2153.077,
+          "y": 446.042,
+          "playerVx": -91.91,
+          "playerVy": -150,
+          "worldTime": 27.083
+        },
+        {
+          "id": 55,
+          "type": "bounce",
+          "targetId": "tower-middle",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 2160.823,
+          "y": 438.167,
+          "playerVx": -85.025,
+          "playerVy": 120,
+          "worldTime": 28.525
+        },
+        {
+          "id": 57,
+          "type": "bounce",
+          "targetId": "tower-top",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 2160.518,
+          "y": 446.042,
+          "playerVx": -89.982,
+          "playerVy": -140,
+          "worldTime": 29.083
+        },
+        {
+          "id": 59,
+          "type": "bounce",
+          "targetId": "tower-middle",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 2169.043,
+          "y": 424.209,
+          "playerVx": -86.413,
+          "playerVy": 90,
+          "worldTime": 30.425
+        },
+        {
+          "id": 61,
+          "type": "bounce",
+          "targetId": "tower-top",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 2156.766,
+          "y": 449.876,
+          "playerVx": -88.983,
+          "playerVy": -170,
+          "worldTime": 31
+        },
+        {
+          "id": 63,
+          "type": "bounce",
+          "targetId": "tower-middle",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 2159.982,
+          "y": 426.792,
+          "playerVx": -87.132,
+          "playerVy": 110,
+          "worldTime": 32.45
+        },
+        {
+          "id": 65,
+          "type": "bounce",
+          "targetId": "tower-top",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 2154.905,
+          "y": 439.042,
+          "playerVx": -88.465,
+          "playerVy": -145,
+          "worldTime": 33.017
+        },
+        {
+          "id": 67,
+          "type": "bounce",
+          "targetId": "tower-middle",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 2167.804,
+          "y": 422.042,
+          "playerVx": -87.505,
+          "playerVy": 120,
+          "worldTime": 34.425
+        },
+        {
+          "id": 69,
+          "type": "bounce",
+          "targetId": "tower-top",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 2161.343,
+          "y": 434.751,
+          "playerVx": -88.196,
+          "playerVy": -155,
+          "worldTime": 34.95
+        }
+      ],
+      "anchorEvents": [
+        {
+          "id": 11,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1239.122,
+          "y": 443.868,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 6.875
+        },
+        {
+          "id": 14,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1238.367,
+          "y": 373.459,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 7.483
+        },
+        {
+          "id": 16,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": 1,
+          "normalY": 0,
+          "x": 1261.873,
+          "y": 385.205,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 7.875
+        },
+        {
+          "id": 20,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1239.46,
+          "y": 352.456,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 9.967
+        },
+        {
+          "id": 23,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 1240.136,
+          "y": 306.622,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 10.667
+        },
+        {
+          "id": 28,
+          "type": "anchor",
+          "targetId": "dual-bridge-face",
+          "contactPart": "tip",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 1620.13,
+          "y": 490.739,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 13.267
+        },
+        {
+          "id": 35,
+          "type": "anchor",
+          "targetId": "lift-plank",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1761.173,
+          "y": 450.781,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 18.192
+        },
+        {
+          "id": 38,
+          "type": "anchor",
+          "targetId": "lift-plank",
+          "contactPart": "tip",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 1867.046,
+          "y": 469.041,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 19.217
+        }
+      ],
+      "cutEvents": [
+        {
+          "id": 2,
+          "type": "cut",
+          "targetId": "rune-1",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 203,
+          "y": 308,
+          "playerVx": 150,
+          "playerVy": -45,
+          "worldTime": 1.05
+        },
+        {
+          "id": 8,
+          "type": "cut",
+          "targetId": "side-tag",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 930,
+          "y": 505,
+          "playerVx": 190,
+          "playerVy": 131.4,
+          "worldTime": 5.55
+        },
+        {
+          "id": 26,
+          "type": "cut",
+          "targetId": "rune-8",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 1487,
+          "y": 355,
+          "playerVx": 162,
+          "playerVy": -130,
+          "worldTime": 12.408
+        },
+        {
+          "id": 29,
+          "type": "cut",
+          "targetId": "dual-bridge",
+          "contactPart": "edge",
+          "normalX": null,
+          "normalY": null,
+          "x": 1580,
+          "y": 520,
+          "playerVx": 0,
+          "playerVy": 50,
+          "worldTime": 13.442
+        },
+        {
+          "id": 37,
+          "type": "cut",
+          "targetId": "rune-9",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 1840,
+          "y": 333,
+          "playerVx": 150,
+          "playerVy": -15,
+          "worldTime": 18.683
+        }
+      ],
+      "courseSummary": {
+        "segments": [
+          {
+            "id": "segment-observe",
+            "label": "看相下刃",
+            "startX": 120,
+            "endX": 1120
+          },
+          {
+            "id": "segment-recover",
+            "label": "借势救刃",
+            "startX": 1120,
+            "endX": 1980
+          },
+          {
+            "id": "segment-structure",
+            "label": "断柱择门",
+            "startX": 1980,
+            "endX": 3000
+          }
+        ],
+        "bands": [
+          {
+            "id": "segment-observe",
+            "sigils": 7,
+            "blocks": [
+              {
+                "id": "hanging-above",
+                "placement": "above",
+                "dualRole": false
+              },
+              {
+                "id": "side-tag",
+                "placement": "side",
+                "dualRole": false
+              },
+              {
+                "id": "under-slat",
+                "placement": "below",
+                "dualRole": false
+              }
+            ],
+            "supports": [
+              {
+                "id": "white-bumper",
+                "movingAxis": null
+              },
+              {
+                "id": "white-landing",
+                "movingAxis": null
+              },
+              {
+                "id": "white-branch",
+                "movingAxis": null
+              },
+              {
+                "id": "lantern-ferry",
+                "movingAxis": "x"
+              }
+            ],
+            "spikes": []
+          },
+          {
+            "id": "segment-recover",
+            "sigils": 2,
+            "blocks": [
+              {
+                "id": "dual-bridge",
+                "placement": "side",
+                "dualRole": true
+              }
+            ],
+            "supports": [
+              {
+                "id": "white-column",
+                "movingAxis": null
+              },
+              {
+                "id": "dual-bridge-face",
+                "movingAxis": null
+              },
+              {
+                "id": "lift-plank",
+                "movingAxis": "y"
+              }
+            ],
+            "spikes": [
+              "spike-high"
+            ]
+          },
+          {
+            "id": "segment-structure",
+            "sigils": 2,
+            "blocks": [
+              {
+                "id": "tower-base",
+                "placement": "tower",
+                "dualRole": false
+              },
+              {
+                "id": "tower-middle",
+                "placement": "tower",
+                "dualRole": false
+              },
+              {
+                "id": "tower-top",
+                "placement": "tower",
+                "dualRole": false
+              }
+            ],
+            "supports": [
+              {
+                "id": "tower-approach",
+                "movingAxis": null
+              }
+            ],
+            "spikes": [
+              "spike-low"
+            ]
+          }
+        ],
+        "finishKinds": [
+          "multiply",
+          "divide",
+          "safe",
+          "multiply"
+        ]
+      },
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-choke-after.png"
+      ]
+    },
+    {
+      "label": "desktop-natural-3",
+      "platform": "desktop",
+      "seed": 31,
+      "inputPolicy": "global-height=550; vertical-trend only; no obstacle coordinate oracle",
+      "inputCount": 18,
+      "maxX": 3000.6499999999974,
+      "status": "won",
+      "failReason": null,
+      "elapsed": 16.642,
+      "finishGateId": "calm-moon",
+      "maxNoProgressBounceStreak": 1,
+      "cuts": 3,
+      "whiteColumnEvents": [
+        {
+          "id": 11,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1242.275,
+          "y": 457.047,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 6.983
+        },
+        {
+          "id": 13,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "edge",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1242.153,
+          "y": 438.272,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 7.375
+        }
+      ],
+      "bounceEvents": [
+        {
+          "id": 7,
+          "type": "bounce",
+          "targetId": "side-tag",
+          "contactPart": "handle",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 919.967,
+          "y": 406.167,
+          "playerVx": 190,
+          "playerVy": -3,
+          "worldTime": 5.35
+        },
+        {
+          "id": 16,
+          "type": "bounce",
+          "targetId": "dual-bridge-face",
+          "contactPart": "handle",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 1590.533,
+          "y": 460.067,
+          "playerVx": 162,
+          "playerVy": -166.4,
+          "worldTime": 9.592
+        }
+      ],
+      "anchorEvents": [
+        {
+          "id": 11,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1242.275,
+          "y": 457.047,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 6.983
+        },
+        {
+          "id": 13,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "edge",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1242.153,
+          "y": 438.272,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 7.375
+        },
+        {
+          "id": 19,
+          "type": "anchor",
+          "targetId": "tower-approach",
+          "contactPart": "tip",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 2053.331,
+          "y": 543.8,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 12.375
+        }
+      ],
+      "cutEvents": [
+        {
+          "id": 2,
+          "type": "cut",
+          "targetId": "rune-1",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 203,
+          "y": 308,
+          "playerVx": 150,
+          "playerVy": -45,
+          "worldTime": 1.033
+        },
+        {
+          "id": 8,
+          "type": "cut",
+          "targetId": "side-tag",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 930,
+          "y": 505,
+          "playerVx": 190,
+          "playerVy": 177,
+          "worldTime": 5.65
+        },
+        {
+          "id": 21,
+          "type": "cut",
+          "targetId": "tower-middle",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 2250,
+          "y": 480,
+          "playerVx": 150,
+          "playerVy": 0,
+          "worldTime": 12.883
+        }
+      ],
+      "courseSummary": {
+        "segments": [
+          {
+            "id": "segment-observe",
+            "label": "看相下刃",
+            "startX": 120,
+            "endX": 1120
+          },
+          {
+            "id": "segment-recover",
+            "label": "借势救刃",
+            "startX": 1120,
+            "endX": 1980
+          },
+          {
+            "id": "segment-structure",
+            "label": "断柱择门",
+            "startX": 1980,
+            "endX": 3000
+          }
+        ],
+        "bands": [
+          {
+            "id": "segment-observe",
+            "sigils": 7,
+            "blocks": [
+              {
+                "id": "hanging-above",
+                "placement": "above",
+                "dualRole": false
+              },
+              {
+                "id": "side-tag",
+                "placement": "side",
+                "dualRole": false
+              },
+              {
+                "id": "under-slat",
+                "placement": "below",
+                "dualRole": false
+              }
+            ],
+            "supports": [
+              {
+                "id": "white-bumper",
+                "movingAxis": null
+              },
+              {
+                "id": "white-landing",
+                "movingAxis": null
+              },
+              {
+                "id": "white-branch",
+                "movingAxis": null
+              },
+              {
+                "id": "lantern-ferry",
+                "movingAxis": "x"
+              }
+            ],
+            "spikes": []
+          },
+          {
+            "id": "segment-recover",
+            "sigils": 2,
+            "blocks": [
+              {
+                "id": "dual-bridge",
+                "placement": "side",
+                "dualRole": true
+              }
+            ],
+            "supports": [
+              {
+                "id": "white-column",
+                "movingAxis": null
+              },
+              {
+                "id": "dual-bridge-face",
+                "movingAxis": null
+              },
+              {
+                "id": "lift-plank",
+                "movingAxis": "y"
+              }
+            ],
+            "spikes": [
+              "spike-high"
+            ]
+          },
+          {
+            "id": "segment-structure",
+            "sigils": 2,
+            "blocks": [
+              {
+                "id": "tower-base",
+                "placement": "tower",
+                "dualRole": false
+              },
+              {
+                "id": "tower-middle",
+                "placement": "tower",
+                "dualRole": false
+              },
+              {
+                "id": "tower-top",
+                "placement": "tower",
+                "dualRole": false
+              }
+            ],
+            "supports": [
+              {
+                "id": "tower-approach",
+                "movingAxis": null
+              }
+            ],
+            "spikes": [
+              "spike-low"
+            ]
+          }
+        ],
+        "finishKinds": [
+          "multiply",
+          "divide",
+          "safe",
+          "multiply"
+        ]
+      },
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-3-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-3-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-3-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-3-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-3-terminal.png"
+      ]
+    },
+    {
+      "label": "desktop-natural-4",
+      "platform": "desktop",
+      "seed": 31,
+      "inputPolicy": "global-height=560; vertical-trend only; no obstacle coordinate oracle",
+      "inputCount": 23,
+      "maxX": 2259.2512720940176,
+      "status": "failed",
+      "failReason": "fall",
+      "elapsed": 20.733,
+      "finishGateId": null,
+      "maxNoProgressBounceStreak": 2,
+      "cuts": 5,
+      "whiteColumnEvents": [
+        {
+          "id": 13,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1207.591,
+          "y": 468,
+          "playerVx": -136.8,
+          "playerVy": -180,
+          "worldTime": 8.242
+        },
+        {
+          "id": 16,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1239.415,
+          "y": 418.976,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 10.508
+        },
+        {
+          "id": 18,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "body",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1225.951,
+          "y": 386.792,
+          "playerVx": -108,
+          "playerVy": -190,
+          "worldTime": 10.85
+        },
+        {
+          "id": 19,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1238.007,
+          "y": 342.613,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 11.05
+        },
+        {
+          "id": 21,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1248.665,
+          "y": 351.924,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 11.392
+        }
+      ],
+      "bounceEvents": [
+        {
+          "id": 13,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1207.591,
+          "y": 468,
+          "playerVx": -136.8,
+          "playerVy": -180,
+          "worldTime": 8.242
+        },
+        {
+          "id": 18,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "body",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1225.951,
+          "y": 386.792,
+          "playerVx": -108,
+          "playerVy": -190,
+          "worldTime": 10.85
+        },
+        {
+          "id": 36,
+          "type": "bounce",
+          "targetId": "tower-approach",
+          "contactPart": "handle",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 2081.051,
+          "y": 505.55,
+          "playerVx": 162,
+          "playerVy": -894.134,
+          "worldTime": 20.983
+        }
+      ],
+      "anchorEvents": [
+        {
+          "id": 6,
+          "type": "anchor",
+          "targetId": "lantern-ferry",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 666.791,
+          "y": 534.908,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 3.975
+        },
+        {
+          "id": 16,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1239.415,
+          "y": 418.976,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 10.508
+        },
+        {
+          "id": 19,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1238.007,
+          "y": 342.613,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 11.05
+        },
+        {
+          "id": 21,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1248.665,
+          "y": 351.924,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 11.392
+        },
+        {
+          "id": 25,
+          "type": "anchor",
+          "targetId": "dual-bridge-face",
+          "contactPart": "tip",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 1641.904,
+          "y": 492.487,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 13.975
+        },
+        {
+          "id": 31,
+          "type": "anchor",
+          "targetId": "lift-plank",
+          "contactPart": "tip",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 1768.582,
+          "y": 495.232,
+          "playerVx": 150,
+          "playerVy": -290,
+          "worldTime": 18.625
+        },
+        {
+          "id": 33,
+          "type": "anchor",
+          "targetId": "lift-plank",
+          "contactPart": "tip",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 1865.367,
+          "y": 458.929,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 19.283
+        }
+      ],
+      "cutEvents": [
+        {
+          "id": 2,
+          "type": "cut",
+          "targetId": "rune-1",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 203,
+          "y": 308,
+          "playerVx": 150,
+          "playerVy": -50,
+          "worldTime": 1.067
+        },
+        {
+          "id": 10,
+          "type": "cut",
+          "targetId": "side-tag",
+          "contactPart": "edge",
+          "normalX": null,
+          "normalY": null,
+          "x": 930,
+          "y": 505,
+          "playerVx": 190,
+          "playerVy": 115,
+          "worldTime": 6.742
+        },
+        {
+          "id": 24,
+          "type": "cut",
+          "targetId": "rune-8",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 1487,
+          "y": 355,
+          "playerVx": 162,
+          "playerVy": 70,
+          "worldTime": 13.525
+        },
+        {
+          "id": 26,
+          "type": "cut",
+          "targetId": "dual-bridge",
+          "contactPart": "edge",
+          "normalX": null,
+          "normalY": null,
+          "x": 1580,
+          "y": 520,
+          "playerVx": 0,
+          "playerVy": 45,
+          "worldTime": 14.017
+        },
+        {
+          "id": 35,
+          "type": "cut",
+          "targetId": "rune-9",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 1840,
+          "y": 333,
+          "playerVx": 150,
+          "playerVy": -309.536,
+          "worldTime": 19.542
+        }
+      ],
+      "courseSummary": {
+        "segments": [
+          {
+            "id": "segment-observe",
+            "label": "看相下刃",
+            "startX": 120,
+            "endX": 1120
+          },
+          {
+            "id": "segment-recover",
+            "label": "借势救刃",
+            "startX": 1120,
+            "endX": 1980
+          },
+          {
+            "id": "segment-structure",
+            "label": "断柱择门",
+            "startX": 1980,
+            "endX": 3000
+          }
+        ],
+        "bands": [
+          {
+            "id": "segment-observe",
+            "sigils": 7,
+            "blocks": [
+              {
+                "id": "hanging-above",
+                "placement": "above",
+                "dualRole": false
+              },
+              {
+                "id": "side-tag",
+                "placement": "side",
+                "dualRole": false
+              },
+              {
+                "id": "under-slat",
+                "placement": "below",
+                "dualRole": false
+              }
+            ],
+            "supports": [
+              {
+                "id": "white-bumper",
+                "movingAxis": null
+              },
+              {
+                "id": "white-landing",
+                "movingAxis": null
+              },
+              {
+                "id": "white-branch",
+                "movingAxis": null
+              },
+              {
+                "id": "lantern-ferry",
+                "movingAxis": "x"
+              }
+            ],
+            "spikes": []
+          },
+          {
+            "id": "segment-recover",
+            "sigils": 2,
+            "blocks": [
+              {
+                "id": "dual-bridge",
+                "placement": "side",
+                "dualRole": true
+              }
+            ],
+            "supports": [
+              {
+                "id": "white-column",
+                "movingAxis": null
+              },
+              {
+                "id": "dual-bridge-face",
+                "movingAxis": null
+              },
+              {
+                "id": "lift-plank",
+                "movingAxis": "y"
+              }
+            ],
+            "spikes": [
+              "spike-high"
+            ]
+          },
+          {
+            "id": "segment-structure",
+            "sigils": 2,
+            "blocks": [
+              {
+                "id": "tower-base",
+                "placement": "tower",
+                "dualRole": false
+              },
+              {
+                "id": "tower-middle",
+                "placement": "tower",
+                "dualRole": false
+              },
+              {
+                "id": "tower-top",
+                "placement": "tower",
+                "dualRole": false
+              }
+            ],
+            "supports": [
+              {
+                "id": "tower-approach",
+                "movingAxis": null
+              }
+            ],
+            "spikes": [
+              "spike-low"
+            ]
+          }
+        ],
+        "finishKinds": [
+          "multiply",
+          "divide",
+          "safe",
+          "multiply"
+        ]
+      },
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-terminal.png"
+      ]
+    },
+    {
+      "label": "desktop-natural-5",
+      "platform": "desktop",
+      "seed": 31,
+      "inputPolicy": "global-height=570; vertical-trend only; no obstacle coordinate oracle",
+      "inputCount": 36,
+      "maxX": 1221.5750727654895,
+      "status": "airborne",
+      "failReason": null,
+      "elapsed": 34.967,
+      "finishGateId": null,
+      "maxNoProgressBounceStreak": 26,
+      "cuts": 2,
+      "whiteColumnEvents": [
+        {
+          "id": 16,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1213.99,
+          "y": 460.875,
+          "playerVx": -90.684,
+          "playerVy": -145,
+          "worldTime": 10.292
+        },
+        {
+          "id": 18,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1212.567,
+          "y": 444.75,
+          "playerVx": -85.907,
+          "playerVy": 65,
+          "worldTime": 11.633
+        },
+        {
+          "id": 20,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1195.875,
+          "y": 478,
+          "playerVx": -89.347,
+          "playerVy": -180,
+          "worldTime": 12.25
+        },
+        {
+          "id": 22,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1208.099,
+          "y": 461.5,
+          "playerVx": -86.87,
+          "playerVy": 150,
+          "worldTime": 13.775
+        },
+        {
+          "id": 24,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1211.018,
+          "y": 463.792,
+          "playerVx": -88.653,
+          "playerVy": -140,
+          "worldTime": 14.283
+        },
+        {
+          "id": 26,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1217.586,
+          "y": 449.417,
+          "playerVx": -87.37,
+          "playerVy": 95,
+          "worldTime": 15.658
+        },
+        {
+          "id": 28,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1201.577,
+          "y": 478.75,
+          "playerVx": -88.294,
+          "playerVy": -185,
+          "worldTime": 16.2
+        },
+        {
+          "id": 30,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1207.079,
+          "y": 455.75,
+          "playerVx": -87.628,
+          "playerVy": 100,
+          "worldTime": 17.658
+        },
+        {
+          "id": 32,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1206.673,
+          "y": 459.042,
+          "playerVx": -88.108,
+          "playerVy": -145,
+          "worldTime": 18.225
+        },
+        {
+          "id": 34,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1213.807,
+          "y": 453.542,
+          "playerVx": -87.763,
+          "playerVy": 105,
+          "worldTime": 19.65
+        },
+        {
+          "id": 36,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1201.075,
+          "y": 478.458,
+          "playerVx": -88.011,
+          "playerVy": -165,
+          "worldTime": 20.208
+        },
+        {
+          "id": 38,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1209.926,
+          "y": 453.708,
+          "playerVx": -87.832,
+          "playerVy": 110,
+          "worldTime": 21.633
+        },
+        {
+          "id": 40,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1201.672,
+          "y": 474.583,
+          "playerVx": -87.961,
+          "playerVy": -145,
+          "worldTime": 22.225
+        },
+        {
+          "id": 42,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1211.328,
+          "y": 458.875,
+          "playerVx": -87.868,
+          "playerVy": 110,
+          "worldTime": 23.633
+        },
+        {
+          "id": 44,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1205.25,
+          "y": 472.125,
+          "playerVx": -87.935,
+          "playerVy": -155,
+          "worldTime": 24.183
+        },
+        {
+          "id": 46,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1212.624,
+          "y": 451.625,
+          "playerVx": -87.887,
+          "playerVy": 105,
+          "worldTime": 25.592
+        },
+        {
+          "id": 48,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1200.107,
+          "y": 477.667,
+          "playerVx": -87.921,
+          "playerVy": -175,
+          "worldTime": 26.142
+        },
+        {
+          "id": 50,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1210.836,
+          "y": 455.25,
+          "playerVx": -87.897,
+          "playerVy": 105,
+          "worldTime": 27.575
+        },
+        {
+          "id": 52,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1203.278,
+          "y": 475.25,
+          "playerVx": -87.914,
+          "playerVy": -165,
+          "worldTime": 28.142
+        },
+        {
+          "id": 54,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1212.715,
+          "y": 456.292,
+          "playerVx": -87.902,
+          "playerVy": 110,
+          "worldTime": 29.575
+        },
+        {
+          "id": 56,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1201.654,
+          "y": 480.792,
+          "playerVx": -87.911,
+          "playerVy": -170,
+          "worldTime": 30.125
+        },
+        {
+          "id": 58,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1212.114,
+          "y": 455.167,
+          "playerVx": -87.904,
+          "playerVy": 110,
+          "worldTime": 31.55
+        },
+        {
+          "id": 60,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1206.749,
+          "y": 465.958,
+          "playerVx": -87.909,
+          "playerVy": -155,
+          "worldTime": 32.092
+        },
+        {
+          "id": 62,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1211.677,
+          "y": 449.625,
+          "playerVx": -87.906,
+          "playerVy": 85,
+          "worldTime": 33.483
+        },
+        {
+          "id": 64,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1200.898,
+          "y": 469.833,
+          "playerVx": -87.908,
+          "playerVy": -170,
+          "worldTime": 34.058
+        },
+        {
+          "id": 66,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1209.449,
+          "y": 458.583,
+          "playerVx": -87.906,
+          "playerVy": 125,
+          "worldTime": 35.55
+        }
+      ],
+      "bounceEvents": [
+        {
+          "id": 16,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1213.99,
+          "y": 460.875,
+          "playerVx": -90.684,
+          "playerVy": -145,
+          "worldTime": 10.292
+        },
+        {
+          "id": 18,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1212.567,
+          "y": 444.75,
+          "playerVx": -85.907,
+          "playerVy": 65,
+          "worldTime": 11.633
+        },
+        {
+          "id": 20,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1195.875,
+          "y": 478,
+          "playerVx": -89.347,
+          "playerVy": -180,
+          "worldTime": 12.25
+        },
+        {
+          "id": 22,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1208.099,
+          "y": 461.5,
+          "playerVx": -86.87,
+          "playerVy": 150,
+          "worldTime": 13.775
+        },
+        {
+          "id": 24,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1211.018,
+          "y": 463.792,
+          "playerVx": -88.653,
+          "playerVy": -140,
+          "worldTime": 14.283
+        },
+        {
+          "id": 26,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1217.586,
+          "y": 449.417,
+          "playerVx": -87.37,
+          "playerVy": 95,
+          "worldTime": 15.658
+        },
+        {
+          "id": 28,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1201.577,
+          "y": 478.75,
+          "playerVx": -88.294,
+          "playerVy": -185,
+          "worldTime": 16.2
+        },
+        {
+          "id": 30,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1207.079,
+          "y": 455.75,
+          "playerVx": -87.628,
+          "playerVy": 100,
+          "worldTime": 17.658
+        },
+        {
+          "id": 32,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1206.673,
+          "y": 459.042,
+          "playerVx": -88.108,
+          "playerVy": -145,
+          "worldTime": 18.225
+        },
+        {
+          "id": 34,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1213.807,
+          "y": 453.542,
+          "playerVx": -87.763,
+          "playerVy": 105,
+          "worldTime": 19.65
+        },
+        {
+          "id": 36,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1201.075,
+          "y": 478.458,
+          "playerVx": -88.011,
+          "playerVy": -165,
+          "worldTime": 20.208
+        },
+        {
+          "id": 38,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1209.926,
+          "y": 453.708,
+          "playerVx": -87.832,
+          "playerVy": 110,
+          "worldTime": 21.633
+        },
+        {
+          "id": 40,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1201.672,
+          "y": 474.583,
+          "playerVx": -87.961,
+          "playerVy": -145,
+          "worldTime": 22.225
+        },
+        {
+          "id": 42,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1211.328,
+          "y": 458.875,
+          "playerVx": -87.868,
+          "playerVy": 110,
+          "worldTime": 23.633
+        },
+        {
+          "id": 44,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1205.25,
+          "y": 472.125,
+          "playerVx": -87.935,
+          "playerVy": -155,
+          "worldTime": 24.183
+        },
+        {
+          "id": 46,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1212.624,
+          "y": 451.625,
+          "playerVx": -87.887,
+          "playerVy": 105,
+          "worldTime": 25.592
+        },
+        {
+          "id": 48,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1200.107,
+          "y": 477.667,
+          "playerVx": -87.921,
+          "playerVy": -175,
+          "worldTime": 26.142
+        },
+        {
+          "id": 50,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1210.836,
+          "y": 455.25,
+          "playerVx": -87.897,
+          "playerVy": 105,
+          "worldTime": 27.575
+        },
+        {
+          "id": 52,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1203.278,
+          "y": 475.25,
+          "playerVx": -87.914,
+          "playerVy": -165,
+          "worldTime": 28.142
+        },
+        {
+          "id": 54,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1212.715,
+          "y": 456.292,
+          "playerVx": -87.902,
+          "playerVy": 110,
+          "worldTime": 29.575
+        },
+        {
+          "id": 56,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1201.654,
+          "y": 480.792,
+          "playerVx": -87.911,
+          "playerVy": -170,
+          "worldTime": 30.125
+        },
+        {
+          "id": 58,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1212.114,
+          "y": 455.167,
+          "playerVx": -87.904,
+          "playerVy": 110,
+          "worldTime": 31.55
+        },
+        {
+          "id": 60,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1206.749,
+          "y": 465.958,
+          "playerVx": -87.909,
+          "playerVy": -155,
+          "worldTime": 32.092
+        },
+        {
+          "id": 62,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1211.677,
+          "y": 449.625,
+          "playerVx": -87.906,
+          "playerVy": 85,
+          "worldTime": 33.483
+        },
+        {
+          "id": 64,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1200.898,
+          "y": 469.833,
+          "playerVx": -87.908,
+          "playerVy": -170,
+          "worldTime": 34.058
+        },
+        {
+          "id": 66,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1209.449,
+          "y": 458.583,
+          "playerVx": -87.906,
+          "playerVy": 125,
+          "worldTime": 35.55
+        }
+      ],
+      "anchorEvents": [
+        {
+          "id": 6,
+          "type": "anchor",
+          "targetId": "lantern-ferry",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 668.998,
+          "y": 544.771,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 3.992
+        },
+        {
+          "id": 9,
+          "type": "anchor",
+          "targetId": "lantern-ferry",
+          "contactPart": "tip",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 848.927,
+          "y": 535.166,
+          "playerVx": 77.95,
+          "playerVy": -290,
+          "worldTime": 6.117
+        }
+      ],
+      "cutEvents": [
+        {
+          "id": 2,
+          "type": "cut",
+          "targetId": "rune-1",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 203,
+          "y": 308,
+          "playerVx": 150,
+          "playerVy": -50,
+          "worldTime": 1.067
+        },
+        {
+          "id": 11,
+          "type": "cut",
+          "targetId": "side-tag",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 930,
+          "y": 505,
+          "playerVx": 77.95,
+          "playerVy": 160,
+          "worldTime": 6.867
+        }
+      ],
+      "courseSummary": {
+        "segments": [
+          {
+            "id": "segment-observe",
+            "label": "看相下刃",
+            "startX": 120,
+            "endX": 1120
+          },
+          {
+            "id": "segment-recover",
+            "label": "借势救刃",
+            "startX": 1120,
+            "endX": 1980
+          },
+          {
+            "id": "segment-structure",
+            "label": "断柱择门",
+            "startX": 1980,
+            "endX": 3000
+          }
+        ],
+        "bands": [
+          {
+            "id": "segment-observe",
+            "sigils": 7,
+            "blocks": [
+              {
+                "id": "hanging-above",
+                "placement": "above",
+                "dualRole": false
+              },
+              {
+                "id": "side-tag",
+                "placement": "side",
+                "dualRole": false
+              },
+              {
+                "id": "under-slat",
+                "placement": "below",
+                "dualRole": false
+              }
+            ],
+            "supports": [
+              {
+                "id": "white-bumper",
+                "movingAxis": null
+              },
+              {
+                "id": "white-landing",
+                "movingAxis": null
+              },
+              {
+                "id": "white-branch",
+                "movingAxis": null
+              },
+              {
+                "id": "lantern-ferry",
+                "movingAxis": "x"
+              }
+            ],
+            "spikes": []
+          },
+          {
+            "id": "segment-recover",
+            "sigils": 2,
+            "blocks": [
+              {
+                "id": "dual-bridge",
+                "placement": "side",
+                "dualRole": true
+              }
+            ],
+            "supports": [
+              {
+                "id": "white-column",
+                "movingAxis": null
+              },
+              {
+                "id": "dual-bridge-face",
+                "movingAxis": null
+              },
+              {
+                "id": "lift-plank",
+                "movingAxis": "y"
+              }
+            ],
+            "spikes": [
+              "spike-high"
+            ]
+          },
+          {
+            "id": "segment-structure",
+            "sigils": 2,
+            "blocks": [
+              {
+                "id": "tower-base",
+                "placement": "tower",
+                "dualRole": false
+              },
+              {
+                "id": "tower-middle",
+                "placement": "tower",
+                "dualRole": false
+              },
+              {
+                "id": "tower-top",
+                "placement": "tower",
+                "dualRole": false
+              }
+            ],
+            "supports": [
+              {
+                "id": "tower-approach",
+                "movingAxis": null
+              }
+            ],
+            "spikes": [
+              "spike-low"
+            ]
+          }
+        ],
+        "finishKinds": [
+          "multiply",
+          "divide",
+          "safe",
+          "multiply"
+        ]
+      },
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png"
+      ]
+    }
+  ],
+  "mobileRuns": [
+    {
+      "label": "mobile-natural-1",
+      "platform": "mobile-native-touch",
+      "seed": 31,
+      "inputPolicy": "global-height=535; vertical-trend only; no obstacle coordinate oracle",
+      "inputCount": 27,
+      "maxX": 3030.4833333332936,
+      "status": "won",
+      "failReason": null,
+      "elapsed": 24.642,
+      "finishGateId": "calm-moon",
+      "maxNoProgressBounceStreak": 2,
+      "cuts": 10,
+      "whiteColumnEvents": [
+        {
+          "id": 13,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1239.444,
+          "y": 445.555,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 6.842
+        },
+        {
+          "id": 15,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "body",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1234.15,
+          "y": 427.01,
+          "playerVx": -108,
+          "playerVy": -185,
+          "worldTime": 7.142
+        },
+        {
+          "id": 16,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1238.633,
+          "y": 375.199,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 7.367
+        },
+        {
+          "id": 18,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": 1,
+          "normalY": 0,
+          "x": 1259.179,
+          "y": 386.656,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 7.642
+        },
+        {
+          "id": 20,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1263.6,
+          "y": 291.593,
+          "playerVx": -108,
+          "playerVy": -165,
+          "worldTime": 7.95
+        },
+        {
+          "id": 22,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1239.947,
+          "y": 353.96,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 9.658
+        },
+        {
+          "id": 24,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "body",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1238.05,
+          "y": 338.635,
+          "playerVx": -108,
+          "playerVy": -180,
+          "worldTime": 9.917
+        },
+        {
+          "id": 25,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 1239.942,
+          "y": 306.602,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 10.25
+        }
+      ],
+      "bounceEvents": [
+        {
+          "id": 8,
+          "type": "bounce",
+          "targetId": "side-tag",
+          "contactPart": "handle",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 917.15,
+          "y": 407.542,
+          "playerVx": 190,
+          "playerVy": -5.8,
+          "worldTime": 5.292
+        },
+        {
+          "id": 15,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "body",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1234.15,
+          "y": 427.01,
+          "playerVx": -108,
+          "playerVy": -185,
+          "worldTime": 7.142
+        },
+        {
+          "id": 20,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1263.6,
+          "y": 291.593,
+          "playerVx": -108,
+          "playerVy": -165,
+          "worldTime": 7.95
+        },
+        {
+          "id": 24,
+          "type": "bounce",
+          "targetId": "white-column",
+          "contactPart": "body",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1238.05,
+          "y": 338.635,
+          "playerVx": -108,
+          "playerVy": -180,
+          "worldTime": 9.917
+        },
+        {
+          "id": 42,
+          "type": "bounce",
+          "targetId": "lift-plank",
+          "contactPart": "handle",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 1937.45,
+          "y": 440.179,
+          "playerVx": 150,
+          "playerVy": -516.254,
+          "worldTime": 19.275
+        },
+        {
+          "id": 43,
+          "type": "bounce",
+          "targetId": "tower-top",
+          "contactPart": "handle",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 2176.2,
+          "y": 369.516,
+          "playerVx": 150,
+          "playerVy": -302.297,
+          "worldTime": 20.875
+        }
+      ],
+      "anchorEvents": [
+        {
+          "id": 13,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1239.444,
+          "y": 445.555,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 6.842
+        },
+        {
+          "id": 16,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1238.633,
+          "y": 375.199,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 7.367
+        },
+        {
+          "id": 18,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": 1,
+          "normalY": 0,
+          "x": 1259.179,
+          "y": 386.656,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 7.642
+        },
+        {
+          "id": 22,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1239.947,
+          "y": 353.96,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 9.658
+        },
+        {
+          "id": 25,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 1239.942,
+          "y": 306.602,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 10.25
+        },
+        {
+          "id": 30,
+          "type": "anchor",
+          "targetId": "dual-bridge-face",
+          "contactPart": "tip",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 1610.073,
+          "y": 490.369,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 12.767
+        },
+        {
+          "id": 37,
+          "type": "anchor",
+          "targetId": "lift-plank",
+          "contactPart": "tip",
+          "normalX": 0,
+          "normalY": 1,
+          "x": 1779.911,
+          "y": 428.342,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 17.908
+        },
+        {
+          "id": 39,
+          "type": "anchor",
+          "targetId": "lift-plank",
+          "contactPart": "tip",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 1772.574,
+          "y": 435.46,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 18.125
+        }
+      ],
+      "cutEvents": [
+        {
+          "id": 2,
+          "type": "cut",
+          "targetId": "rune-1",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 203,
+          "y": 308,
+          "playerVx": 150,
+          "playerVy": -50,
+          "worldTime": 1.008
+        },
+        {
+          "id": 5,
+          "type": "cut",
+          "targetId": "rune-2",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 556,
+          "y": 333,
+          "playerVx": 174,
+          "playerVy": 30,
+          "worldTime": 3.3
+        },
+        {
+          "id": 9,
+          "type": "cut",
+          "targetId": "side-tag",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 930,
+          "y": 505,
+          "playerVx": 190,
+          "playerVy": 159.2,
+          "worldTime": 5.567
+        },
+        {
+          "id": 11,
+          "type": "cut",
+          "targetId": "rune-6",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 1063,
+          "y": 353,
+          "playerVx": 190,
+          "playerVy": -155,
+          "worldTime": 6.033
+        },
+        {
+          "id": 28,
+          "type": "cut",
+          "targetId": "rune-8",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 1487,
+          "y": 355,
+          "playerVx": 162,
+          "playerVy": -125,
+          "worldTime": 11.942
+        },
+        {
+          "id": 31,
+          "type": "cut",
+          "targetId": "dual-bridge",
+          "contactPart": "edge",
+          "normalX": null,
+          "normalY": null,
+          "x": 1580,
+          "y": 520,
+          "playerVx": 0,
+          "playerVy": 70,
+          "worldTime": 12.925
+        },
+        {
+          "id": 41,
+          "type": "cut",
+          "targetId": "rune-9",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 1840,
+          "y": 333,
+          "playerVx": 150,
+          "playerVy": -205,
+          "worldTime": 18.308
+        },
+        {
+          "id": 44,
+          "type": "cut",
+          "targetId": "rune-10",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 2211,
+          "y": 356,
+          "playerVx": 150,
+          "playerVy": -272.297,
+          "worldTime": 20.925
+        },
+        {
+          "id": 45,
+          "type": "cut",
+          "targetId": "tower-top",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 2250,
+          "y": 390,
+          "playerVx": 150,
+          "playerVy": -257.297,
+          "worldTime": 20.95
+        },
+        {
+          "id": 48,
+          "type": "cut",
+          "targetId": "rune-11",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 2634,
+          "y": 345,
+          "playerVx": 174,
+          "playerVy": -45,
+          "worldTime": 23.6
+        }
+      ],
+      "courseSummary": {
+        "segments": [
+          {
+            "id": "segment-observe",
+            "label": "看相下刃",
+            "startX": 120,
+            "endX": 1120
+          },
+          {
+            "id": "segment-recover",
+            "label": "借势救刃",
+            "startX": 1120,
+            "endX": 1980
+          },
+          {
+            "id": "segment-structure",
+            "label": "断柱择门",
+            "startX": 1980,
+            "endX": 3000
+          }
+        ],
+        "bands": [
+          {
+            "id": "segment-observe",
+            "sigils": 7,
+            "blocks": [
+              {
+                "id": "hanging-above",
+                "placement": "above",
+                "dualRole": false
+              },
+              {
+                "id": "side-tag",
+                "placement": "side",
+                "dualRole": false
+              },
+              {
+                "id": "under-slat",
+                "placement": "below",
+                "dualRole": false
+              }
+            ],
+            "supports": [
+              {
+                "id": "white-bumper",
+                "movingAxis": null
+              },
+              {
+                "id": "white-landing",
+                "movingAxis": null
+              },
+              {
+                "id": "white-branch",
+                "movingAxis": null
+              },
+              {
+                "id": "lantern-ferry",
+                "movingAxis": "x"
+              }
+            ],
+            "spikes": []
+          },
+          {
+            "id": "segment-recover",
+            "sigils": 2,
+            "blocks": [
+              {
+                "id": "dual-bridge",
+                "placement": "side",
+                "dualRole": true
+              }
+            ],
+            "supports": [
+              {
+                "id": "white-column",
+                "movingAxis": null
+              },
+              {
+                "id": "dual-bridge-face",
+                "movingAxis": null
+              },
+              {
+                "id": "lift-plank",
+                "movingAxis": "y"
+              }
+            ],
+            "spikes": [
+              "spike-high"
+            ]
+          },
+          {
+            "id": "segment-structure",
+            "sigils": 2,
+            "blocks": [
+              {
+                "id": "tower-base",
+                "placement": "tower",
+                "dualRole": false
+              },
+              {
+                "id": "tower-middle",
+                "placement": "tower",
+                "dualRole": false
+              },
+              {
+                "id": "tower-top",
+                "placement": "tower",
+                "dualRole": false
+              }
+            ],
+            "supports": [
+              {
+                "id": "tower-approach",
+                "movingAxis": null
+              }
+            ],
+            "spikes": [
+              "spike-low"
+            ]
+          }
+        ],
+        "finishKinds": [
+          "multiply",
+          "divide",
+          "safe",
+          "multiply"
+        ]
+      },
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-terminal.png"
+      ],
+      "layout": {
+        "innerWidth": 390,
+        "innerHeight": 844,
+        "scrollWidth": 390,
+        "scrollHeight": 844,
+        "touchAction": "none",
+        "canvasCount": 1
+      }
+    },
+    {
+      "label": "mobile-natural-2",
+      "platform": "mobile-native-touch",
+      "seed": 31,
+      "inputPolicy": "global-height=555; vertical-trend only; no obstacle coordinate oracle",
+      "inputCount": 25,
+      "maxX": 3001.3193333332747,
+      "status": "won",
+      "failReason": null,
+      "elapsed": 24.817,
+      "finishGateId": "calm-moon",
+      "maxNoProgressBounceStreak": 1,
+      "cuts": 6,
+      "whiteColumnEvents": [
+        {
+          "id": 11,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1242.394,
+          "y": 455.129,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 6.933
+        },
+        {
+          "id": 13,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "edge",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1242.336,
+          "y": 436.432,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 7.258
+        }
+      ],
+      "bounceEvents": [
+        {
+          "id": 7,
+          "type": "bounce",
+          "targetId": "side-tag",
+          "contactPart": "handle",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 923.333,
+          "y": 406.917,
+          "playerVx": 190,
+          "playerVy": -9.4,
+          "worldTime": 5.317
+        },
+        {
+          "id": 16,
+          "type": "bounce",
+          "targetId": "dual-bridge",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1463.833,
+          "y": 466.142,
+          "playerVx": -116.64,
+          "playerVy": -220,
+          "worldTime": 8.633
+        },
+        {
+          "id": 19,
+          "type": "bounce",
+          "targetId": "dual-bridge-face",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1461.559,
+          "y": 467.683,
+          "playerVx": -75.859,
+          "playerVy": -200,
+          "worldTime": 10.667
+        },
+        {
+          "id": 21,
+          "type": "bounce",
+          "targetId": "dual-bridge-face",
+          "contactPart": "handle",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 1501.524,
+          "y": 452.35,
+          "playerVx": 134.141,
+          "playerVy": -117.4,
+          "worldTime": 12.292
+        },
+        {
+          "id": 32,
+          "type": "bounce",
+          "targetId": "lift-plank",
+          "contactPart": "handle",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 1888.919,
+          "y": 455.169,
+          "playerVx": 150,
+          "playerVy": -409.721,
+          "worldTime": 19.175
+        },
+        {
+          "id": 36,
+          "type": "bounce",
+          "targetId": "tower-base",
+          "contactPart": "handle",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 2269.569,
+          "y": 498.244,
+          "playerVx": 174,
+          "playerVy": -542.4,
+          "worldTime": 21.95
+        }
+      ],
+      "anchorEvents": [
+        {
+          "id": 11,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1242.394,
+          "y": 455.129,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 6.933
+        },
+        {
+          "id": 13,
+          "type": "anchor",
+          "targetId": "white-column",
+          "contactPart": "edge",
+          "normalX": -1,
+          "normalY": 0,
+          "x": 1242.336,
+          "y": 436.432,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 7.258
+        },
+        {
+          "id": 22,
+          "type": "anchor",
+          "targetId": "dual-bridge-face",
+          "contactPart": "tip",
+          "normalX": 0,
+          "normalY": -1,
+          "x": 1581.029,
+          "y": 490.064,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 12.725
+        },
+        {
+          "id": 30,
+          "type": "anchor",
+          "targetId": "lift-plank",
+          "contactPart": "edge",
+          "normalX": 0,
+          "normalY": 1,
+          "x": 1763.848,
+          "y": 481.009,
+          "playerVx": 0,
+          "playerVy": 0,
+          "worldTime": 18.208
+        }
+      ],
+      "cutEvents": [
+        {
+          "id": 2,
+          "type": "cut",
+          "targetId": "rune-1",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 203,
+          "y": 308,
+          "playerVx": 150,
+          "playerVy": -50,
+          "worldTime": 0.992
+        },
+        {
+          "id": 8,
+          "type": "cut",
+          "targetId": "side-tag",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 930,
+          "y": 505,
+          "playerVx": 190,
+          "playerVy": 155.6,
+          "worldTime": 5.592
+        },
+        {
+          "id": 23,
+          "type": "cut",
+          "targetId": "dual-bridge",
+          "contactPart": "edge",
+          "normalX": null,
+          "normalY": null,
+          "x": 1580,
+          "y": 520,
+          "playerVx": 0,
+          "playerVy": 105,
+          "worldTime": 12.875
+        },
+        {
+          "id": 34,
+          "type": "cut",
+          "targetId": "tower-top",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 2250,
+          "y": 390,
+          "playerVx": 162,
+          "playerVy": -75,
+          "worldTime": 21.017
+        },
+        {
+          "id": 35,
+          "type": "cut",
+          "targetId": "tower-middle",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 2250,
+          "y": 480,
+          "playerVx": 162,
+          "playerVy": 20,
+          "worldTime": 21.175
+        },
+        {
+          "id": 38,
+          "type": "cut",
+          "targetId": "rune-11",
+          "contactPart": "tip",
+          "normalX": null,
+          "normalY": null,
+          "x": 2634,
+          "y": 345,
+          "playerVx": 174,
+          "playerVy": 527.6,
+          "worldTime": 23.733
+        }
+      ],
+      "courseSummary": {
+        "segments": [
+          {
+            "id": "segment-observe",
+            "label": "看相下刃",
+            "startX": 120,
+            "endX": 1120
+          },
+          {
+            "id": "segment-recover",
+            "label": "借势救刃",
+            "startX": 1120,
+            "endX": 1980
+          },
+          {
+            "id": "segment-structure",
+            "label": "断柱择门",
+            "startX": 1980,
+            "endX": 3000
+          }
+        ],
+        "bands": [
+          {
+            "id": "segment-observe",
+            "sigils": 7,
+            "blocks": [
+              {
+                "id": "hanging-above",
+                "placement": "above",
+                "dualRole": false
+              },
+              {
+                "id": "side-tag",
+                "placement": "side",
+                "dualRole": false
+              },
+              {
+                "id": "under-slat",
+                "placement": "below",
+                "dualRole": false
+              }
+            ],
+            "supports": [
+              {
+                "id": "white-bumper",
+                "movingAxis": null
+              },
+              {
+                "id": "white-landing",
+                "movingAxis": null
+              },
+              {
+                "id": "white-branch",
+                "movingAxis": null
+              },
+              {
+                "id": "lantern-ferry",
+                "movingAxis": "x"
+              }
+            ],
+            "spikes": []
+          },
+          {
+            "id": "segment-recover",
+            "sigils": 2,
+            "blocks": [
+              {
+                "id": "dual-bridge",
+                "placement": "side",
+                "dualRole": true
+              }
+            ],
+            "supports": [
+              {
+                "id": "white-column",
+                "movingAxis": null
+              },
+              {
+                "id": "dual-bridge-face",
+                "movingAxis": null
+              },
+              {
+                "id": "lift-plank",
+                "movingAxis": "y"
+              }
+            ],
+            "spikes": [
+              "spike-high"
+            ]
+          },
+          {
+            "id": "segment-structure",
+            "sigils": 2,
+            "blocks": [
+              {
+                "id": "tower-base",
+                "placement": "tower",
+                "dualRole": false
+              },
+              {
+                "id": "tower-middle",
+                "placement": "tower",
+                "dualRole": false
+              },
+              {
+                "id": "tower-top",
+                "placement": "tower",
+                "dualRole": false
+              }
+            ],
+            "supports": [
+              {
+                "id": "tower-approach",
+                "movingAxis": null
+              }
+            ],
+            "spikes": [
+              "spike-low"
+            ]
+          }
+        ],
+        "finishKinds": [
+          "multiply",
+          "divide",
+          "safe",
+          "multiply"
+        ]
+      },
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-2-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-2-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-2-terminal.png"
+      ],
+      "layout": {
+        "innerWidth": 390,
+        "innerHeight": 844,
+        "scrollWidth": 390,
+        "scrollHeight": 844,
+        "touchAction": "none",
+        "canvasCount": 1
+      }
+    }
+  ],
+  "generic": {
+    "initial": {
+      "x": 1193,
+      "y": 400,
+      "vx": 280,
+      "vy": 0
+    },
+    "bounce": {
+      "id": 1,
+      "targetId": "white-column",
+      "contactPart": "handle",
+      "normalX": -1,
+      "normalY": 0
+    },
+    "bounceState": {
+      "x": 1138.533,
+      "y": 432.5,
+      "vx": -201.6,
+      "vy": 195
+    },
+    "separatedState": {
+      "x": 799.173,
+      "y": 659.742,
+      "vx": -201.6,
+      "vy": 474
+    },
+    "sameTargetBounceCount": 1,
+    "trajectory": [
+      {
+        "t": 0,
+        "x": 1193,
+        "y": 400,
+        "vx": 280,
+        "vy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 22.805,
+        "x": 1143.573,
+        "y": 427.75,
+        "vx": -201.6,
+        "vy": 180,
+        "status": "airborne"
+      },
+      {
+        "t": 222.265,
+        "x": 1104.933,
+        "y": 473.75,
+        "vx": -201.6,
+        "vy": 295,
+        "status": "airborne"
+      },
+      {
+        "t": 248.623,
+        "x": 1098.213,
+        "y": 484,
+        "vx": -201.6,
+        "vy": 315,
+        "status": "airborne"
+      },
+      {
+        "t": 291.434,
+        "x": 1093.173,
+        "y": 492.125,
+        "vx": -201.6,
+        "vy": 330,
+        "status": "airborne"
+      },
+      {
+        "t": 322.694,
+        "x": 1084.773,
+        "y": 506.5,
+        "vx": -201.6,
+        "vy": 355,
+        "status": "airborne"
+      },
+      {
+        "t": 347.093,
+        "x": 1078.053,
+        "y": 518.75,
+        "vx": -201.6,
+        "vy": 375,
+        "status": "airborne"
+      },
+      {
+        "t": 378.211,
+        "x": 1073.013,
+        "y": 528.375,
+        "vx": -201.6,
+        "vy": 390,
+        "status": "airborne"
+      },
+      {
+        "t": 410.19,
+        "x": 1069.653,
+        "y": 535,
+        "vx": -201.6,
+        "vy": 400,
+        "status": "airborne"
+      },
+      {
+        "t": 439.028,
+        "x": 1061.253,
+        "y": 547.292,
+        "vx": -201.6,
+        "vy": -306,
+        "status": "airborne"
+      },
+      {
+        "t": 477.009,
+        "x": 1056.213,
+        "y": 539.892,
+        "vx": -201.6,
+        "vy": -291,
+        "status": "airborne"
+      },
+      {
+        "t": 503.997,
+        "x": 1047.813,
+        "y": 528.392,
+        "vx": -201.6,
+        "vy": -266,
+        "status": "airborne"
+      },
+      {
+        "t": 551.95,
+        "x": 1042.773,
+        "y": 521.992,
+        "vx": -201.6,
+        "vy": -251,
+        "status": "airborne"
+      },
+      {
+        "t": 584.526,
+        "x": 1032.693,
+        "y": 510.317,
+        "vx": -201.6,
+        "vy": -221,
+        "status": "airborne"
+      },
+      {
+        "t": 610.1,
+        "x": 1024.293,
+        "y": 501.733,
+        "vx": -201.6,
+        "vy": -196,
+        "status": "airborne"
+      },
+      {
+        "t": 641.765,
+        "x": 1020.933,
+        "y": 498.592,
+        "vx": -201.6,
+        "vy": -186,
+        "status": "airborne"
+      },
+      {
+        "t": 684.572,
+        "x": 1014.213,
+        "y": 492.808,
+        "vx": -201.6,
+        "vy": -166,
+        "status": "airborne"
+      },
+      {
+        "t": 710.898,
+        "x": 1005.813,
+        "y": 486.517,
+        "vx": -201.6,
+        "vy": -141,
+        "status": "airborne"
+      },
+      {
+        "t": 754.573,
+        "x": 1000.773,
+        "y": 483.242,
+        "vx": -201.6,
+        "vy": -126,
+        "status": "airborne"
+      },
+      {
+        "t": 781.876,
+        "x": 990.693,
+        "y": 477.817,
+        "vx": -201.6,
+        "vy": -96,
+        "status": "airborne"
+      },
+      {
+        "t": 816.627,
+        "x": 987.333,
+        "y": 476.342,
+        "vx": -201.6,
+        "vy": -86,
+        "status": "airborne"
+      },
+      {
+        "t": 861.026,
+        "x": 978.933,
+        "y": 473.383,
+        "vx": -201.6,
+        "vy": -61,
+        "status": "airborne"
+      },
+      {
+        "t": 894.297,
+        "x": 970.533,
+        "y": 471.467,
+        "vx": -201.6,
+        "vy": -36,
+        "status": "airborne"
+      },
+      {
+        "t": 1228.452,
+        "x": 963.813,
+        "y": 470.683,
+        "vx": -201.6,
+        "vy": -16,
+        "status": "airborne"
+      },
+      {
+        "t": 1262.048,
+        "x": 896.613,
+        "y": 499.517,
+        "vx": -201.6,
+        "vy": 184,
+        "status": "airborne"
+      },
+      {
+        "t": 1312.201,
+        "x": 888.213,
+        "y": 507.808,
+        "vx": -201.6,
+        "vy": 209,
+        "status": "airborne"
+      },
+      {
+        "t": 1351.478,
+        "x": 878.133,
+        "y": 519.133,
+        "vx": -201.6,
+        "vy": 239,
+        "status": "airborne"
+      },
+      {
+        "t": 1389.635,
+        "x": 871.413,
+        "y": 527.517,
+        "vx": -201.6,
+        "vy": 259,
+        "status": "airborne"
+      },
+      {
+        "t": 1432.054,
+        "x": 863.013,
+        "y": 538.933,
+        "vx": -201.6,
+        "vy": 284,
+        "status": "airborne"
+      },
+      {
+        "t": 1464.18,
+        "x": 856.293,
+        "y": 548.817,
+        "vx": -201.6,
+        "vy": 304,
+        "status": "airborne"
+      },
+      {
+        "t": 1509.773,
+        "x": 847.893,
+        "y": 562.108,
+        "vx": -201.6,
+        "vy": 329,
+        "status": "airborne"
+      },
+      {
+        "t": 1544.854,
+        "x": 839.493,
+        "y": 576.442,
+        "vx": -201.6,
+        "vy": 354,
+        "status": "airborne"
+      },
+      {
+        "t": 1573.782,
+        "x": 831.093,
+        "y": 591.817,
+        "vx": -201.6,
+        "vy": 379,
+        "status": "airborne"
+      },
+      {
+        "t": 1610.682,
+        "x": 826.053,
+        "y": 601.542,
+        "vx": -201.6,
+        "vy": 394,
+        "status": "airborne"
+      },
+      {
+        "t": 1638.558,
+        "x": 819.333,
+        "y": 615.092,
+        "vx": -201.6,
+        "vy": 414,
+        "status": "airborne"
+      },
+      {
+        "t": 1673.519,
+        "x": 812.613,
+        "y": 629.308,
+        "vx": -201.6,
+        "vy": 434,
+        "status": "airborne"
+      },
+      {
+        "t": 1707.321,
+        "x": 807.573,
+        "y": 640.408,
+        "vx": -201.6,
+        "vy": 449,
+        "status": "airborne"
+      }
+    ],
+    "noInput": {
+      "status": "failed",
+      "failReason": "fall",
+      "elapsed": 2.125,
+      "seed": 31,
+      "bounce": {
+        "id": 1,
+        "type": "bounce",
+        "x": 1197.333333333333,
+        "y": 400.4166666666667,
+        "value": 1,
+        "targetId": "white-column",
+        "contactPart": "handle",
+        "normalX": -1,
+        "normalY": 0
+      }
+    },
+    "restart": {
+      "beforeSeed": 31,
+      "afterSeed": 32,
+      "status": "ready",
+      "failReason": null,
+      "cuts": 0,
+      "events": 0
+    },
+    "recovery": {
+      "bounce": {
+        "id": 1,
+        "type": "bounce",
+        "x": 1197.333333333333,
+        "y": 400.4166666666667,
+        "value": 1,
+        "targetId": "white-column",
+        "contactPart": "handle",
+        "normalX": -1,
+        "normalY": 0
+      },
+      "beforeTap": {
+        "vx": -201.6,
+        "vy": 85,
+        "status": "airborne"
+      },
+      "afterTap": {
+        "vx": 8.4,
+        "vy": -395,
+        "status": "airborne"
+      },
+      "later": {
+        "x": 1179.063,
+        "y": 296,
+        "vx": 8.4,
+        "vy": 195,
+        "status": "airborne",
+        "failReason": null
+      }
+    },
+    "evidence": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-before.png",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-bounce.png",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-separated.png",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-no-input-terminal.png",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-one-touch-restart.png",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-recovery.png"
+    ]
+  },
+  "movingHorizontal": {
+    "scenario": "moving-horizontal",
+    "targetId": "lantern-ferry",
+    "initialSupport": {
+      "x": 760,
+      "y": 555,
+      "vx": 0,
+      "vy": 0
+    },
+    "bounce": null,
+    "samples": [
+      {
+        "t": 80.654,
+        "playerX": 817.24,
+        "playerY": 481.375,
+        "playerVx": 313.683,
+        "playerVy": -255,
+        "supportX": 805.416,
+        "supportY": 555,
+        "supportVx": 147.573,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 149.805,
+        "playerX": 843.38,
+        "playerY": 462.417,
+        "playerVx": 313.683,
+        "playerVy": -205,
+        "supportX": 816.785,
+        "supportY": 555,
+        "supportVx": 124.439,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 209.056,
+        "playerX": 864.293,
+        "playerY": 450.25,
+        "playerVx": 313.683,
+        "playerVy": -165,
+        "supportX": 824.366,
+        "supportY": 555,
+        "supportVx": 102.526,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 240.055,
+        "playerX": 885.205,
+        "playerY": 440.75,
+        "playerVx": 313.683,
+        "playerVy": -125,
+        "supportX": 830.4,
+        "supportY": 555,
+        "supportVx": 78.15,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 297.477,
+        "playerX": 893.047,
+        "playerY": 437.875,
+        "playerVx": 313.683,
+        "playerVy": -110,
+        "supportX": 832.234,
+        "supportY": 555,
+        "supportVx": 68.492,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 327.552,
+        "playerX": 908.731,
+        "playerY": 433.25,
+        "playerVx": 313.683,
+        "playerVy": -80,
+        "supportX": 835.162,
+        "supportY": 555,
+        "supportVx": 48.514,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 389.655,
+        "playerX": 921.801,
+        "playerY": 430.542,
+        "playerVx": 313.683,
+        "playerVy": -55,
+        "supportX": 836.828,
+        "supportY": 555,
+        "supportVx": 31.353,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 422.035,
+        "playerX": 937.485,
+        "playerY": 428.667,
+        "playerVx": 313.683,
+        "playerVy": -25,
+        "supportX": 837.872,
+        "supportY": 555,
+        "supportVx": 10.385,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 463.936,
+        "playerX": 947.941,
+        "playerY": 428.25,
+        "playerVx": 313.683,
+        "playerVy": -5,
+        "supportX": 837.984,
+        "supportY": 555,
+        "supportVx": -3.689,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 511.245,
+        "playerX": 963.625,
+        "playerY": 428.875,
+        "playerVx": 313.683,
+        "playerVy": 25,
+        "supportX": 837.273,
+        "supportY": 555,
+        "supportVx": -24.733,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 547.273,
+        "playerX": 979.31,
+        "playerY": 431,
+        "playerVx": 313.683,
+        "playerVy": 55,
+        "supportX": 835.516,
+        "supportY": 555,
+        "supportVx": -45.441,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 580.039,
+        "playerX": 989.766,
+        "playerY": 433.25,
+        "playerVx": 313.683,
+        "playerVy": 75,
+        "supportX": 833.776,
+        "supportY": 555,
+        "supportVx": -58.923,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 633.46,
+        "playerX": 1000.222,
+        "playerY": 436.167,
+        "playerVx": 313.683,
+        "playerVy": 95,
+        "supportX": 831.592,
+        "supportY": 555,
+        "supportVx": -72.05,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 673.834,
+        "playerX": 1015.906,
+        "playerY": 441.792,
+        "playerVx": 313.683,
+        "playerVy": 125,
+        "supportX": 827.514,
+        "supportY": 555,
+        "supportVx": -90.904,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 718.559,
+        "playerX": 1028.976,
+        "playerY": 447.625,
+        "playerVx": 313.683,
+        "playerVy": 150,
+        "supportX": 823.415,
+        "supportY": 555,
+        "supportVx": -105.687,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 758.839,
+        "playerX": 1042.046,
+        "playerY": 454.5,
+        "playerVx": 313.683,
+        "playerVy": 175,
+        "supportX": 818.72,
+        "supportY": 555,
+        "supportVx": -119.477,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 791.125,
+        "playerX": 1055.116,
+        "playerY": 462.417,
+        "playerVx": 313.683,
+        "playerVy": 200,
+        "supportX": 813.474,
+        "supportY": 555,
+        "supportVx": -132.145,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 828.827,
+        "playerX": 1065.572,
+        "playerY": 469.5,
+        "playerVx": 313.683,
+        "playerVy": 220,
+        "supportX": 808.913,
+        "supportY": 555,
+        "supportVx": -141.391,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 874.44,
+        "playerX": 1076.029,
+        "playerY": 477.25,
+        "playerVx": 313.683,
+        "playerVy": 240,
+        "supportX": 804.057,
+        "supportY": 555,
+        "supportVx": -149.786,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 905.2,
+        "playerX": 1091.713,
+        "playerY": 490.125,
+        "playerVx": 313.683,
+        "playerVy": 270,
+        "supportX": 796.287,
+        "supportY": 555,
+        "supportVx": -160.676,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 944.227,
+        "playerX": 1099.555,
+        "playerY": 497.125,
+        "playerVx": 313.683,
+        "playerVy": 285,
+        "supportX": 792.211,
+        "supportY": 555,
+        "supportVx": -165.314,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 981.16,
+        "playerX": 1115.239,
+        "playerY": 512.25,
+        "playerVx": 313.683,
+        "playerVy": 315,
+        "supportX": 783.746,
+        "supportY": 555,
+        "supportVx": -172.898,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 1017.197,
+        "playerX": 1125.695,
+        "playerY": 523.167,
+        "playerVx": 313.683,
+        "playerVy": 335,
+        "supportX": 777.917,
+        "supportY": 555,
+        "supportVx": -176.661,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 1057.551,
+        "playerX": 1136.151,
+        "playerY": 534.75,
+        "playerVx": 313.683,
+        "playerVy": 355,
+        "supportX": 771.98,
+        "supportY": 555,
+        "supportVx": -179.36,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 1085.374,
+        "playerX": 1149.221,
+        "playerY": 550.167,
+        "playerVx": 313.683,
+        "playerVy": 380,
+        "supportX": 764.463,
+        "supportY": 555,
+        "supportVx": -181.217,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 1141.734,
+        "playerX": 1157.063,
+        "playerY": 559.917,
+        "playerVx": 313.683,
+        "playerVy": 395,
+        "supportX": 759.927,
+        "supportY": 555,
+        "supportVx": -181.514,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 1166.914,
+        "playerX": 1175.362,
+        "playerY": 584.125,
+        "playerVx": 313.683,
+        "playerVy": 430,
+        "supportX": 749.372,
+        "supportY": 555,
+        "supportVx": -179.821,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 1218.859,
+        "playerX": 1185.818,
+        "playerY": 598.875,
+        "playerVx": 313.683,
+        "playerVy": 450,
+        "supportX": 743.416,
+        "supportY": 555,
+        "supportVx": -177.364,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 1254.155,
+        "playerX": 1196.274,
+        "playerY": 614.292,
+        "playerVx": 313.683,
+        "playerVy": 470,
+        "supportX": 737.56,
+        "supportY": 555,
+        "supportVx": -173.84,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 1292.439,
+        "playerX": 1209.344,
+        "playerY": 634.5,
+        "playerVx": 313.683,
+        "playerVy": 495,
+        "supportX": 730.433,
+        "supportY": 555,
+        "supportVx": -167.968,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 1350.825,
+        "playerX": 1225.028,
+        "playerY": 660.125,
+        "playerVx": 313.683,
+        "playerVy": 525,
+        "supportX": 722.253,
+        "supportY": 555,
+        "supportVx": -158.844,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 1379.649,
+        "playerX": 1240.712,
+        "playerY": 687.25,
+        "playerVx": 313.683,
+        "playerVy": 555,
+        "supportX": 714.584,
+        "supportY": 555,
+        "supportVx": -147.573,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 1428.19,
+        "playerX": 1248.554,
+        "playerY": 701.375,
+        "playerVx": 313.683,
+        "playerVy": 570,
+        "supportX": 710.974,
+        "supportY": 555,
+        "supportVx": -141.178,
+        "supportVy": 0,
+        "status": "airborne"
+      },
+      {
+        "t": 1477.459,
+        "playerX": 1259.01,
+        "playerY": 720.792,
+        "playerVx": 0,
+        "playerVy": 0,
+        "supportX": 706.42,
+        "supportY": 555,
+        "supportVx": -131.912,
+        "supportVy": 0,
+        "status": "failed"
+      }
+    ],
+    "screenshot": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-moving-horizontal.png"
+  },
+  "movingVertical": {
+    "scenario": "moving-vertical",
+    "targetId": "lift-plank",
+    "initialSupport": {
+      "x": 1840,
+      "y": 430,
+      "vx": 0,
+      "vy": 0
+    },
+    "bounce": null,
+    "samples": [
+      {
+        "t": 84.169,
+        "playerX": 1848.75,
+        "playerY": 445.652,
+        "playerVx": 150,
+        "playerVy": -265,
+        "supportX": 1840,
+        "supportY": 516.498,
+        "supportVx": 0,
+        "supportVy": 32.81,
+        "status": "airborne"
+      },
+      {
+        "t": 120.854,
+        "playerX": 1862.5,
+        "playerY": 424.11,
+        "playerVx": 150,
+        "playerVy": -210,
+        "supportX": 1840,
+        "supportY": 518,
+        "supportVx": 0,
+        "supportVy": -0.141,
+        "status": "airborne"
+      },
+      {
+        "t": 160.669,
+        "playerX": 1866.25,
+        "playerY": 419.11,
+        "playerVx": 150,
+        "playerVy": -195,
+        "supportX": 1840,
+        "supportY": 517.884,
+        "supportVx": 0,
+        "supportVy": -9.175,
+        "status": "airborne"
+      },
+      {
+        "t": 198.349,
+        "playerX": 1873.75,
+        "playerY": 410.235,
+        "playerVx": 150,
+        "playerVy": -165,
+        "supportX": 1840,
+        "supportY": 516.975,
+        "supportVx": 0,
+        "supportVy": -27.148,
+        "status": "airborne"
+      },
+      {
+        "t": 246.832,
+        "playerX": 1878.75,
+        "playerY": 405.152,
+        "playerVx": 150,
+        "playerVy": -145,
+        "supportX": 1840,
+        "supportY": 515.872,
+        "supportVx": 0,
+        "supportVy": -38.987,
+        "status": "airborne"
+      },
+      {
+        "t": 279.488,
+        "playerX": 1885,
+        "playerY": 399.735,
+        "playerVx": 150,
+        "playerVy": -120,
+        "supportX": 1840,
+        "supportY": 513.943,
+        "supportVx": 0,
+        "supportVy": -53.529,
+        "status": "airborne"
+      },
+      {
+        "t": 326.368,
+        "playerX": 1891.25,
+        "playerY": 395.36,
+        "playerVx": 150,
+        "playerVy": -95,
+        "supportX": 1840,
+        "supportY": 511.417,
+        "supportVx": 0,
+        "supportVy": -67.69,
+        "status": "airborne"
+      },
+      {
+        "t": 377.34,
+        "playerX": 1897.5,
+        "playerY": 392.027,
+        "playerVx": 150,
+        "playerVy": -70,
+        "supportX": 1840,
+        "supportY": 508.309,
+        "supportVx": 0,
+        "supportVy": -81.368,
+        "status": "airborne"
+      },
+      {
+        "t": 417.135,
+        "playerX": 1905,
+        "playerY": 389.402,
+        "playerVx": 150,
+        "playerVy": -40,
+        "supportX": 1840,
+        "supportY": 503.846,
+        "supportVx": 0,
+        "supportVy": -97.008,
+        "status": "airborne"
+      },
+      {
+        "t": 465.968,
+        "playerX": 1912.5,
+        "playerY": 388.277,
+        "playerVx": 150,
+        "playerVy": -10,
+        "supportX": 1840,
+        "supportY": 498.625,
+        "supportVx": 0,
+        "supportVy": -111.653,
+        "status": "airborne"
+      },
+      {
+        "t": 490.113,
+        "playerX": 1918.75,
+        "playerY": 388.485,
+        "playerVx": 150,
+        "playerVy": 15,
+        "supportX": 1840,
+        "supportY": 493.734,
+        "supportVx": 0,
+        "supportVy": -122.987,
+        "status": "airborne"
+      },
+      {
+        "t": 538.524,
+        "playerX": 1921.25,
+        "playerY": 388.86,
+        "playerVx": 150,
+        "playerVy": 25,
+        "supportX": 1840,
+        "supportY": 491.648,
+        "supportVx": 0,
+        "supportVy": -127.28,
+        "status": "airborne"
+      },
+      {
+        "t": 590.381,
+        "playerX": 1928.75,
+        "playerY": 390.985,
+        "playerVx": 150,
+        "playerVy": 55,
+        "supportX": 1840,
+        "supportY": 484.979,
+        "supportVx": 0,
+        "supportVy": -139.268,
+        "status": "airborne"
+      },
+      {
+        "t": 620.923,
+        "playerX": 1936.25,
+        "playerY": 394.61,
+        "playerVx": 150,
+        "playerVy": 85,
+        "supportX": 1840,
+        "supportY": 477.745,
+        "supportVx": 0,
+        "supportVy": -149.827,
+        "status": "airborne"
+      },
+      {
+        "t": 663.787,
+        "playerX": 1942.5,
+        "playerY": 398.777,
+        "playerVx": 150,
+        "playerVy": 110,
+        "supportX": 1840,
+        "supportY": 471.34,
+        "supportVx": 0,
+        "supportVy": -157.456,
+        "status": "airborne"
+      },
+      {
+        "t": 709.834,
+        "playerX": 1948.75,
+        "playerY": 403.985,
+        "playerVx": 150,
+        "playerVy": 135,
+        "supportX": 1840,
+        "supportY": 464.639,
+        "supportVx": 0,
+        "supportVy": -163.962,
+        "status": "airborne"
+      },
+      {
+        "t": 748.245,
+        "playerX": 1955,
+        "playerY": 410.235,
+        "playerVx": 150,
+        "playerVy": 160,
+        "supportX": 1840,
+        "supportY": 457.692,
+        "supportVx": 0,
+        "supportVy": -169.3,
+        "status": "airborne"
+      },
+      {
+        "t": 807.735,
+        "playerX": 1962.5,
+        "playerY": 419.11,
+        "playerVx": 150,
+        "playerVy": 190,
+        "supportX": 1840,
+        "supportY": 449.1,
+        "supportVx": 0,
+        "supportVy": -174.11,
+        "status": "airborne"
+      },
+      {
+        "t": 833.776,
+        "playerX": 1971.25,
+        "playerY": 431.36,
+        "playerVx": 150,
+        "playerVy": 225,
+        "supportX": 1840,
+        "supportY": 438.834,
+        "supportVx": 0,
+        "supportVy": -177.46,
+        "status": "airborne"
+      },
+      {
+        "t": 862.592,
+        "playerX": 1973.75,
+        "playerY": 435.235,
+        "playerVx": 150,
+        "playerVy": 235,
+        "supportX": 1840,
+        "supportY": 435.872,
+        "supportVx": 0,
+        "supportVy": -177.964,
+        "status": "airborne"
+      },
+      {
+        "t": 924.812,
+        "playerX": 1978.75,
+        "playerY": 443.485,
+        "playerVx": 150,
+        "playerVy": 255,
+        "supportX": 1840,
+        "supportY": 429.93,
+        "supportVx": 0,
+        "supportVy": -178.361,
+        "status": "airborne"
+      },
+      {
+        "t": 962.853,
+        "playerX": 1988.75,
+        "playerY": 461.985,
+        "playerVx": 150,
+        "playerVy": 295,
+        "supportX": 1840,
+        "supportY": 418.077,
+        "supportVx": 0,
+        "supportVy": -176.717,
+        "status": "airborne"
+      },
+      {
+        "t": 1010.276,
+        "playerX": 1993.75,
+        "playerY": 472.235,
+        "playerVx": 150,
+        "playerVy": 315,
+        "supportX": 1840,
+        "supportY": 412.218,
+        "supportVx": 0,
+        "supportVy": -174.682,
+        "status": "airborne"
+      },
+      {
+        "t": 1043.126,
+        "playerX": 2000,
+        "playerY": 485.985,
+        "playerVx": 150,
+        "playerVy": 340,
+        "supportX": 1840,
+        "supportY": 405.011,
+        "supportVx": 0,
+        "supportVy": -171.019,
+        "status": "airborne"
+      },
+      {
+        "t": 1076.319,
+        "playerX": 2003.75,
+        "playerY": 494.735,
+        "playerVx": 150,
+        "playerVy": 355,
+        "supportX": 1840,
+        "supportY": 400.77,
+        "supportVx": 0,
+        "supportVy": -168.234,
+        "status": "airborne"
+      },
+      {
+        "t": 1136.23,
+        "playerX": 2008.75,
+        "playerY": 506.985,
+        "playerVx": 0,
+        "playerVy": 0,
+        "supportX": 1840,
+        "supportY": 393.872,
+        "supportVx": 0,
+        "supportVy": -162.637,
+        "status": "anchored"
+      }
+    ],
+    "screenshot": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-moving-vertical.png"
+  },
+  "errors": []
+}

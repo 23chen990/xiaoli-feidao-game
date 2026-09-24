@@ -1,0 +1,129 @@
+✖ one touch deterministically launches and then flips the blade (1.589041ms)
+✖ sharp contact cuts once and blunt contact visibly reflects (0.686458ms)
+✖ hazard and fall failures are attributable and touch replays from ready (0.36375ms)
+✖ finish produces a settlement and touch starts a clean replay (0.298416ms)
+✖ declares a Cocos Creator 3.8.8 project for 疯狂切割 (3.569834ms)
+✖ locks the TapTap intermediate build to portrait and the reviewed AppID (1.486208ms)
+✖ rejects missing and placeholder AppIDs while accepting the reviewed AppID (0.756375ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 0
+ℹ fail 7
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 192.369208
+
+✖ failing tests:
+
+test at tests/game-rules.test.ts:22:1
+✖ one touch deterministically launches and then flips the blade (1.589041ms)
+  AssertionError [ERR_ASSERTION]: game-rules module must exist
+      at loadRules (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tests/game-rules.test.ts:18:10)
+      at async TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tests/game-rules.test.ts:23:17)
+      at async Test.run (node:internal/test_runner/test:1125:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/game-rules.test.ts:37:1
+✖ sharp contact cuts once and blunt contact visibly reflects (0.686458ms)
+  AssertionError [ERR_ASSERTION]: game-rules module must exist
+      at loadRules (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tests/game-rules.test.ts:18:10)
+      at async TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tests/game-rules.test.ts:38:17)
+      at async Test.run (node:internal/test_runner/test:1125:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/game-rules.test.ts:53:1
+✖ hazard and fall failures are attributable and touch replays from ready (0.36375ms)
+  AssertionError [ERR_ASSERTION]: game-rules module must exist
+      at loadRules (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tests/game-rules.test.ts:18:10)
+      at async TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tests/game-rules.test.ts:54:17)
+      at async Test.run (node:internal/test_runner/test:1125:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/game-rules.test.ts:66:1
+✖ finish produces a settlement and touch starts a clean replay (0.298416ms)
+  AssertionError [ERR_ASSERTION]: game-rules module must exist
+      at loadRules (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tests/game-rules.test.ts:18:10)
+      at async TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tests/game-rules.test.ts:67:17)
+      at async Test.run (node:internal/test_runner/test:1125:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/platform-contract.test.ts:17:1
+✖ declares a Cocos Creator 3.8.8 project for 疯狂切割 (3.569834ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'crazy-cut-taptap-minigame'
+  
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tests/platform-contract.test.ts:19:10)
+      at async Test.run (node:internal/test_runner/test:1125:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'crazy-cut-taptap-minigame',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/platform-contract.test.ts:24:1
+✖ locks the TapTap intermediate build to portrait and the reviewed AppID (1.486208ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'wechatgame'
+  
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tests/platform-contract.test.ts:26:10)
+      at async Test.run (node:internal/test_runner/test:1125:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'wechatgame',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/platform-contract.test.ts:32:1
+✖ rejects missing and placeholder AppIDs while accepting the reviewed AppID (0.756375ms)
+  AssertionError [ERR_ASSERTION]: tap-config module must exist
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tests/platform-contract.test.ts:37:10)
+      at async Test.run (node:internal/test_runner/test:1125:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

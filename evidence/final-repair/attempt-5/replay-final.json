@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "replay-diagnostic",
+  "candidateClamp": [-500, -121],
+  "command": "pnpm exec tsx -e seed-31 fixed timestamp replay instrumentation",
+  "exitCode": 1,
+  "elapsed": 11.308333333333332,
+  "status": "anchored",
+  "x": 1802.375088932486,
+  "y": 450.13086605186174,
+  "failReason": null,
+  "anchorId": "lift-plank",
+  "acceptance": {
+    "minimumElapsed": 11.9,
+    "minimumXExclusive": 2000,
+    "passed": false
+  }
+}

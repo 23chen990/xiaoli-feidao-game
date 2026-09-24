@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "passed": false,
+  "checks": [
+    {
+      "name": "unchanged current source/dist identity",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/source-snapshot.json"
+    },
+    {
+      "name": "fresh default level1 input changes state and cuts",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-trace.json"
+    },
+    {
+      "name": "desktop natural won then replay ready",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-trace.json"
+    },
+    {
+      "name": "portrait natural spike failure then replay",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-2-trace.json"
+    },
+    {
+      "name": "no page exceptions/console errors",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/console.json"
+    },
+    {
+      "name": "exact overlapping intact stack deterministic collision coverage",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/reproduction-matrix.json"
+    },
+    {
+      "name": "complete mobile winning settlement observed (recorder corrected; natural run failed before finish)",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-4-trace.json"
+    }
+  ],
+  "issues": [
+    {
+      "id": "QA-EXACT-BRANCH-COVERAGE",
+      "severity": "error",
+      "message": "精确分支存在未覆盖项；工程状态变化不构成感知通过。",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/reproduction-matrix.json"
+    },
+    {
+      "id": "QA-TEXTURE-WARNINGS",
+      "severity": "warning",
+      "message": "各上下文捕获 Texture marked for update but no image data found 警告，未接受其为缺失 intact 外观的根因。",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/console.json"
+    }
+  ],
+  "screenshots": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-end.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-replay.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-startup.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-tap-01.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-tap-04.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-tap-07.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-tap-10.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-tap-13.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-tap-16.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-terminal.png"
+  ],
+  "consoleLog": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/console.json",
+  "testedAt": "2026-09-07T05:42:16.088Z"
+}

@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "experience-reproduction-matrix",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "axes": {
+    "objectTypes": [
+      "TapTap Android aggregate performance gate",
+      "PHJ110H1 performance sampler",
+      "PHJ110H1 Cocos Graphics steady loop",
+      "PHJ110H1 first-frame/cold-start branch",
+      "Huawei P30 performance branch",
+      "Xiaomi 14 performance branch",
+      "OnePlus8_EEA performance branch",
+      "ordinary touch/terminal/replay loop"
+    ],
+    "lifecycleStateBranches": [
+      "cold start",
+      "visible first frame",
+      "10-minute steady run",
+      "ordinary touch core loop",
+      "terminal settlement and replay",
+      "backend aggregate report"
+    ],
+    "rendererPaths": [
+      "Cocos Graphics retained static course layer",
+      "Cocos Graphics dynamic blade/feedback layer",
+      "GameBootstrap airborne update loop",
+      "TapTap performance sampler",
+      "TapTap converted minigame container"
+    ],
+    "viewports": [
+      {"label": "logical package viewport; physical resolution not shown by screenshot", "width": 390, "height": 844}
+    ]
+  },
+  "cells": [
+    {
+      "id": "perf-aggregate-20260909",
+      "objectType": "TapTap Android aggregate performance gate",
+      "lifecycleStateBranch": "backend aggregate report",
+      "rendererPath": "TapTap performance sampler",
+      "viewport": {"label": "logical package viewport; physical resolution not shown by screenshot", "width": 390, "height": 844},
+      "status": "REPRODUCED",
+      "expected": "All four required Android performance tabs meet the TapTap FPS standard.",
+      "observed": "The detail page marks PHJ110H1, Huawei P30, Xiaomi 14 and OnePlus8_EEA with warning icons; exact aggregate pass rate, build number and package SHA are not visible in this crop.",
+      "evidence": [
+        {"path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-867828b5-6bde-4ce1-b0e3-ff47ad522c5b-389309c2ae03.png", "sha256": "389309c2ae0333d652c96b1218359e89eeaea0f41128ab1c8ec24f524e91e49a", "kind": "reference", "provenance": "verified-reference"}
+      ]
+    },
+    {
+      "id": "perf-phj110-cold-start-20260909",
+      "objectType": "PHJ110H1 first-frame/cold-start branch",
+      "lifecycleStateBranch": "cold start",
+      "rendererPath": "TapTap converted minigame container",
+      "viewport": {"label": "logical package viewport; physical resolution not shown by screenshot", "width": 390, "height": 844},
+      "status": "REPRODUCED",
+      "expected": "Cold start reaches a visible first frame and reports a meaningful FPS sample.",
+      "observed": "Screenshot reports initialization completed 0.00s, cold start 2.05s and FPS 0.020356234; no raw frame count or visible first-frame capture is included.",
+      "evidence": [
+        {"path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-867828b5-6bde-4ce1-b0e3-ff47ad522c5b-389309c2ae03.png", "sha256": "389309c2ae0333d652c96b1218359e89eeaea0f41128ab1c8ec24f524e91e49a", "kind": "reference", "provenance": "verified-reference"}
+      ]
+    },
+    {
+      "id": "perf-phj110-steady-memory-20260909",
+      "objectType": "PHJ110H1 Cocos Graphics steady loop",
+      "lifecycleStateBranch": "10-minute steady run",
+      "rendererPath": "GameBootstrap airborne update loop",
+      "viewport": {"label": "logical package viewport; physical resolution not shown by screenshot", "width": 390, "height": 844},
+      "status": "REPRODUCED",
+      "expected": "Ten-minute memory remains bounded and the rendered frame stream is stable.",
+      "observed": "Average memory is 239.28MB and 10-minute peak is 259.50MB with a broadly stable curve; reported FPS is 0.020356234 while stutter is 0.0%, so source-rendering and sampler behavior conflict.",
+      "evidence": [
+        {"path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-867828b5-6bde-4ce1-b0e3-ff47ad522c5b-389309c2ae03.png", "sha256": "389309c2ae0333d652c96b1218359e89eeaea0f41128ab1c8ec24f524e91e49a", "kind": "reference", "provenance": "verified-reference"}
+      ]
+    },
+    {
+      "id": "perf-phj110-sampler-root-cause-20260909",
+      "objectType": "PHJ110H1 performance sampler",
+      "lifecycleStateBranch": "10-minute steady run",
+      "rendererPath": "TapTap performance sampler",
+      "viewport": {"label": "logical package viewport; physical resolution not shown by screenshot", "width": 390, "height": 844},
+      "status": "BLOCKED",
+      "expected": "A reported FPS value maps to rendered-frame count and elapsed time on the exact uploaded package.",
+      "observed": "No rendered-frame count, elapsed time, CPU/GPU trace, package SHA or TapTap threshold is present; 0.020356234 cannot be accepted as a confirmed physical FPS root cause.",
+      "evidence": [
+        {"path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-867828b5-6bde-4ce1-b0e3-ff47ad522c5b-389309c2ae03.png", "sha256": "389309c2ae0333d652c96b1218359e89eeaea0f41128ab1c8ec24f524e91e49a", "kind": "reference", "provenance": "verified-reference"}
+      ]
+    },
+    {
+      "id": "perf-huawei-p30-20260909",
+      "objectType": "Huawei P30 performance branch",
+      "lifecycleStateBranch": "10-minute steady run",
+      "rendererPath": "TapTap performance sampler",
+      "viewport": {"label": "logical package viewport; physical resolution not shown by screenshot", "width": 390, "height": 844},
+      "status": "BLOCKED",
+      "expected": "Huawei P30 exact-SHA FPS meets the backend standard.",
+      "observed": "Huawei P30 tab carries a red warning, but no numeric trace, raw log or package SHA is visible.",
+      "evidence": [
+        {"path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-867828b5-6bde-4ce1-b0e3-ff47ad522c5b-389309c2ae03.png", "sha256": "389309c2ae0333d652c96b1218359e89eeaea0f41128ab1c8ec24f524e91e49a", "kind": "reference", "provenance": "verified-reference"}
+      ]
+    },
+    {
+      "id": "perf-xiaomi14-20260909",
+      "objectType": "Xiaomi 14 performance branch",
+      "lifecycleStateBranch": "10-minute steady run",
+      "rendererPath": "TapTap performance sampler",
+      "viewport": {"label": "logical package viewport; physical resolution not shown by screenshot", "width": 390, "height": 844},
+      "status": "BLOCKED",
+      "expected": "Xiaomi 14 exact-SHA FPS meets the backend standard.",
+      "observed": "Xiaomi 14 tab carries a red warning, but no numeric trace, raw log or package SHA is visible.",
+      "evidence": [
+        {"path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-867828b5-6bde-4ce1-b0e3-ff47ad522c5b-389309c2ae03.png", "sha256": "389309c2ae0333d652c96b1218359e89eeaea0f41128ab1c8ec24f524e91e49a", "kind": "reference", "provenance": "verified-reference"}
+      ]
+    },
+    {
+      "id": "perf-oneplus8-eea-20260909",
+      "objectType": "OnePlus8_EEA performance branch",
+      "lifecycleStateBranch": "10-minute steady run",
+      "rendererPath": "TapTap performance sampler",
+      "viewport": {"label": "logical package viewport; physical resolution not shown by screenshot", "width": 390, "height": 844},
+      "status": "BLOCKED",
+      "expected": "OnePlus8_EEA exact-SHA FPS meets the backend standard.",
+      "observed": "OnePlus8_EEA tab carries a red warning, but no numeric trace, raw log or package SHA is visible.",
+      "evidence": [
+        {"path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-867828b5-6bde-4ce1-b0e3-ff47ad522c5b-389309c2ae03.png", "sha256": "389309c2ae0333d652c96b1218359e89eeaea0f41128ab1c8ec24f524e91e49a", "kind": "reference", "provenance": "verified-reference"}
+      ]
+    },
+    {
+      "id": "perf-touch-terminal-replay-20260909",
+      "objectType": "ordinary touch/terminal/replay loop",
+      "lifecycleStateBranch": "ordinary touch core loop",
+      "rendererPath": "Cocos Graphics dynamic blade/feedback layer",
+      "viewport": {"label": "logical package viewport; physical resolution not shown by screenshot", "width": 390, "height": 844},
+      "status": "BLOCKED",
+      "expected": "Normal touch input remains responsive through cut, reflect, failure/settlement and replay while performance is measured.",
+      "observed": "Screenshot has no input trace, player-visible frame evidence or exact package identity, so the natural core loop is not localized to this performance branch.",
+      "evidence": [
+        {"path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-867828b5-6bde-4ce1-b0e3-ff47ad522c5b-389309c2ae03.png", "sha256": "389309c2ae0333d652c96b1218359e89eeaea0f41128ab1c8ec24f524e91e49a", "kind": "reference", "provenance": "verified-reference"}
+      ]
+    }
+  ],
+  "confirmedFindings": [
+    "PHJ110H1 reports FPS 0.020356234 with cold start 2.05s, average memory 239.28MB, 10-minute peak 259.50MB and 0.0% stutter.",
+    "Huawei P30, Xiaomi 14 and OnePlus8_EEA detail tabs also display warning icons.",
+    "The screenshot does not bind the metrics to a build number, ZIP SHA, raw frame trace or backend threshold, so it confirms a report but not a package-owned cause."
+  ],
+  "remainingGaps": [
+    "Exact package SHA, TapTap build number and upload timestamp are absent from the detail screenshot.",
+    "No per-device numeric FPS, rendered-frame count, elapsed time, CPU/GPU split or raw log is present for the four Android branches.",
+    "The contradictory FPS/stutter combination remains unresolved between physical rendering and TapTap sampling.",
+    "No exact-SHA natural touch, terminal/replay or player-visible first-frame evidence accompanies the performance detail."
+  ],
+  "createdAt": "2026-09-09T05:44:20Z"
+}

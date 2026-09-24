@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-task",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "taptap-runtime-compat-20260908",
+  "attempt": 3,
+  "targetGame": "mobile-slice-adaptation-20260830（TapTap 名称：疯狂切割）",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "platformWorkspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame",
+  "outputDirectory": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-runtime-20260908/attempt-3",
+  "triagePath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-runtime-20260908/triage.json",
+  "researchPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/open-source-research-taptap-cocos-v1.json",
+  "officialPlugin": {
+    "version": "1.2.2",
+    "sourceUrl": "https://app-res.tapimg.com/file/2026-04-14/67e7d94f5e586596dab061816d1c509d.zip",
+    "sha256": "6b8a9a3cc62b6c54cefab397097babb771d9d99f90442cddff06310a4c9ed73f"
+  },
+  "tapTapGame": {
+    "name": "疯狂切割",
+    "appId": "928932",
+    "identityEvidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-ac1cdf15-9886-4559-b83c-a0cf1566078c-954468d979ce.png"
+  },
+  "instructions": [
+    "你是本轮 formal-fixer attempt 3；保留 attempt 1/2 代码和证据，不要回滚或扩大范围。只拥有目标平台目录及本 attempt-3 evidence 目录。",
+    "先测试后构建：新增或运行只读 ZIP/settings contract test，先读取当前 attempt-2 ZIP，断言它的 390x844/policy4 仍 exactFitScreen=true 并因此 RED；把 RED 保存到 red-tests.log。不要先重建再补测试。",
+    "修复唯一直接原因：在最终 Cocos 构建配置/项目设置中显式表达 exactFitScreen=false，同时保留 390x844、fitWidth=true、fitHeight=false、portrait；优先使用 Cocos Creator 3.8.8 CLI 支持的 cocos-build-config.json 字段，不改官方插件源码，不改玩法。若无法从配置生成 false，修正配置后停止并报告 BLOCKED，不得猜测或重复构建。",
+    "配置修正后只执行一次 Cocos Creator 3.8.8 + 官方 TapTap plugin 1.2.2 构建。构建后必须读取同一个 game.zip 的 src/settings.json，运行 GREEN ZIP contract、全部规则/兼容性测试、lint/typecheck、ZIP integrity/root metadata/size/hash；不允许第二次 Cocos build。",
+    "不要修改 web-lite、其他平台或共享工厂代码。无精确 SHA 的 OPPO/vivo 物理设备复测必须保留 exact-SHA natural/perceptual QA 缺口，不得声称后台或真机通过。"
+  ],
+  "acceptanceChecks": [
+    "RED 在 attempt-3 重建前证明 attempt-2 ZIP 已是 390x844/policy4 但 exactFitScreen=true。",
+    "本 attempt 最多一次 Cocos build，且新 ZIP src/settings.json 的 exactFitScreen=false、designResolution.width=390、height=844、policy=4；不得用手工改 ZIP 伪造构建证据。",
+    "新 ZIP 根包含 game.js、game.json、project.config.json，AppID 928932、项目名疯狂切割、portrait、版本 1.0.0、大小小于 20MB；记录 SHA-256。",
+    "attempt 1/2 的 Graphics runtime、触摸核心旅程和全部规则/兼容性测试不回归；lint/typecheck 通过。",
+    "FixerResult 使用 cycleId=taptap-runtime-compat-20260908、attempt=3，明确 route、changed files、一次构建、证据缺口；不能宣称 TapTap 后台/OPPO/vivo 真机通过。"
+  ],
+  "contextIntentionallyOmitted": [
+    "attempt 1/2 之前的旧包装失败细节（仅保留必要的 attempt-2 ZIP evidence）",
+    "其他工厂 run、web-lite、微信/抖音平台和共享工厂代码",
+    "广告、内购、云存档、排行榜以及第三方游戏表达/资产/数值",
+    "未绑定精确 SHA 的后台截图作为本 attempt 的通过证据"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED",
+  "classification": "core-experience-orphan-hazard/no-player-impact",
+  "route": "formal-fixer",
+  "routeReason": "The reported object is a core-loop hazard and its player impact is not established; a formal QA → FixerAgent → QA retest is required.",
+  "evidence": {
+    "attachedScreenshot": "/var/folders/f2/s76hhpss3llc2_zw9g63x7380000gn/T/codex-clipboard-1a85f80e-d3fe-482a-a667-146f83b3082c.png",
+    "screenshotIsInstruction": false,
+    "observation": "A pink spike strip is visibly rendered near the lower-left while the player is on a raised yellow platform. The image alone does not establish the level number or a collision; it is treated as reproduction evidence only.",
+    "identifiedBranch": "level-04 / l4-gap-risk (the visible moving-supports scene matches the reported Level 04 context; the level identity was verified in the fresh-browser run via the visible level picker)."
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "spike hazard / l4-gap-risk",
+      "lifecycleState": "spawned → player approaches → spike x-window → bypass/contact → terminal/replay",
+      "rendererPresentationPath": "game-core SliceSimulation.spikes → main ThreeWorldRenderer.syncSpikes → spike group mesh",
+      "deviceViewport": "desktop 1180x720",
+      "naturalInput": "fresh browser, visible level picker, mouse only",
+      "result": "bypassed without contact; won"
+    },
+    {
+      "objectType": "spike hazard / l4-gap-risk",
+      "lifecycleState": "spawned → player approaches → spike x-window → bypass/contact → terminal/replay",
+      "rendererPresentationPath": "game-core SliceSimulation.spikes → main ThreeWorldRenderer.syncSpikes → spike group mesh",
+      "deviceViewport": "mobile 390x844",
+      "naturalInput": "fresh browser, visible level picker, native touch only",
+      "result": "bypassed without contact; won"
+    }
+  ],
+  "verification": {
+    "qaArtifact": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-spike-impact-v1/report.json",
+    "desktop": {
+      "status": "won",
+      "maxX": 3478.1500000000096,
+      "spikeMinVerticalDistanceInWindow": 154.9661856646839,
+      "spikeContacted": false,
+      "failReason": null,
+      "passedWindowWithoutContact": true,
+      "screenshot": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-spike-impact-v1/desktop-level-04-attempt-1-won.png"
+    },
+    "mobile": {
+      "status": "won",
+      "maxX": 3450.485832063162,
+      "spikeMinVerticalDistanceInWindow": 116.13624819008157,
+      "spikeContacted": false,
+      "failReason": null,
+      "passedWindowWithoutContact": true,
+      "screenshot": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-spike-impact-v1/mobile-level-04-attempt-1-won.png"
+    },
+    "structural": {
+      "spikeX": 1300,
+      "spikeY": 680,
+      "completionPathYAtSpikeX": 435,
+      "verticalDistanceFromCompletionPath": 245,
+      "reachableWindow": [1160, 1440]
+    },
+    "consoleErrors": 0,
+    "requestFailures": 0
+  },
+  "acceptanceCriteria": [
+    "The exact spike branch must either create a natural contact/failure risk, force a visible timing/avoidance choice, or be explicitly decorative with its gameplay collider removed.",
+    "Desktop and mobile fresh-browser runs must include player-visible evidence at the spike x-window; passing the x-window alone is insufficient.",
+    "No fixture, debug scenario, state injection, or sibling-object result may close this issue."
+  ],
+  "decision": "Do not claim completion. Preserve BLOCKED and send the minimal issue plus this artifact to formal FixerAgent/QA retest.",
+  "claimBoundary": "web-lite browser evidence only; WeChat, Douyin, and TapTap packaging are not verified by this artifact."
+}

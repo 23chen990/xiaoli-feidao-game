@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "MechanicsTraceMatrix",
+  "targetWorkspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "expressionPolicy": "generic-mechanic-only",
+  "sourceEvidence": [
+    "artifacts/mechanics-research-v2.json",
+    "artifacts/mechanics-implementation-contract-v2.json",
+    "artifacts/open-source-research.json"
+  ],
+  "lockedMechanics": [
+    {
+      "id": "INPUT_TO_MOTION",
+      "relationship": "one discrete input launches or queues an airborne rotation for the next legal fixed step",
+      "implementation": ["src/game-content.ts", "src/game-core.ts"],
+      "regressions": ["INPUT-EDGE-001", "INPUT-BUFFER-002"]
+    },
+    {
+      "id": "CONTACT_TAXONOMY",
+      "relationship": "tip and edge are sharp while body and handle are blunt contact parts",
+      "implementation": ["src/game-core.ts"],
+      "regressions": ["CONTACT-001", "CONTACT-002"]
+    },
+    {
+      "id": "CUT_OR_REFLECT",
+      "relationship": "sharp contact cuts once while blunt contact reflects from the incident surface normal",
+      "implementation": ["src/game-core.ts", "src/three-cut-visuals.ts"],
+      "regressions": ["CUT-001", "HARD-REFLECT-002"]
+    },
+    {
+      "id": "FAILURE_AND_RESTART",
+      "relationship": "hazard and fall are attributable failures and the next discrete input starts a fresh run",
+      "implementation": ["src/game-core.ts", "src/main.ts"],
+      "regressions": ["FAIL-001", "FAIL-002"]
+    },
+    {
+      "id": "STAGED_DIFFICULTY",
+      "relationship": "three contiguous original stages teach, develop and test the shared mechanic set",
+      "implementation": ["src/game-content.ts", "src/game-core.ts"],
+      "regressions": ["COURSE-STAGE-001", "COURSE-STAGE-002"]
+    },
+    {
+      "id": "FEEDBACK_TIMING",
+      "relationship": "motion resolves before contact semantics and presentation consumes the resulting event afterward",
+      "implementation": ["src/game-content.ts", "src/main.ts", "src/three-world-renderer.ts"],
+      "regressions": ["FEEDBACK-TIMING-001"]
+    }
+  ],
+  "presentationBoundary": {
+    "themeEntrypoint": "src/theme.ts",
+    "themeId": "mechanics-demo-placeholder-v1",
+    "status": "placeholder",
+    "styleLock": false,
+    "regressions": ["THEME-BOUNDARY-001", "THEME-ASSET-002", "THEME-INTEGRATION-003"]
+  }
+}

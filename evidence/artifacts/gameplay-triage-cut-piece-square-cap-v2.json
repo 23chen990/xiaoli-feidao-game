@@ -1,0 +1,17 @@
+{
+  "schemaVersion":1,
+  "artifactType":"GameplayTriageRecord",
+  "targetGame":"mobile-slice-adaptation-20260830",
+  "workspace":"/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status":"OPEN",
+  "classification":"cut-visual-cap-shape-mismatch",
+  "evidence":["User screenshots codex-clipboard-46757a6d-2bec-4989-b945-4da172571b1b.png"],
+  "reproductionMatrix":[
+    {"objectType":"dessert cuttable","lifecycleState":"intact→cut→falling→landed","rendererPath":"CutVisualEntity dessert body + icing + cap","deviceViewport":"desktop"},
+    {"objectType":"log/savory cuttable","lifecycleState":"intact→cut→falling→landed","rendererPath":"CutVisualEntity log body + cap","deviceViewport":"desktop"},
+    {"objectType":"all cuttable skins","lifecycleState":"cut→falling","rendererPath":"generic cap plane fallback","deviceViewport":"desktop/mobile"}
+  ],
+  "rootCauseHypothesis":"A generic rectangular cap plane is rendered on top of shaped half geometry; dessert halves also retain a non-matching cap/icing visual layer, making the dropped result read as a square or coin.",
+  "acceptanceCriteria":["No generic rectangular cap visibly changes the silhouette of dessert halves.","Each skin's cut face follows its own intact/half geometry family.","The same check passes for dessert, log, crate and crystal at desktop and mobile viewports."],
+  "route":"formal-fixer"
+}

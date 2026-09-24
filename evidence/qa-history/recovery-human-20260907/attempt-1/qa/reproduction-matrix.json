@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "cells": [
+    {
+      "id": "L1-INPUT-390",
+      "objectType": "blade + first cuttable",
+      "stateBranch": "startup → first input → airborne → contact",
+      "renderer": "default index.html → src/main.ts → Three.js + HUD",
+      "viewport": "390x844",
+      "acceptance": "点击引起可见的起跳/翻转；碰到可切物时发生切割；刀、首个目标与承托面同时可辨；引导不遮住目标",
+      "status": "PASS",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-1/recording.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-1/frames/startup.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-1/frames/dense-0019.jpg",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-1/frames/dense-0024.jpg"
+      ],
+      "notes": "默认首个完整rune-1现在明确可见，球底与opening-table-a顶面贴合；普通输入后刀接近同一球体，出现切面、分开的两半和局部+1。不是用切开后的半球代替完整态验收。"
+    },
+    {
+      "id": "L1-GROUND-390",
+      "objectType": "visible tabletop base",
+      "stateBranch": "startup/intact → approach",
+      "renderer": "default index.html → src/main.ts → Three.js + HUD",
+      "viewport": "390x844",
+      "acceptance": "可见台面具有厚度、底部接到地面；物品底部贴合可见承托；同一物体的可见顶面与其承托/接触逻辑一致；不能用看不见的支撑解释悬空",
+      "status": "BLOCKED",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-1/recording.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-1/frames/startup.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-3/frames/frame-0000.png"
+      ],
+      "notes": "opening-table-a独立厚柱底部接地在两视口均可见。opening-table-b区域与main runway重叠，截图中连续落地外观可见，但b自身底部没有独立暴露；其精确接地像素归属仍BLOCKED，不能只用a或runway的通过关闭b。"
+    },
+    {
+      "id": "L1-STACK-390",
+      "objectType": "overlapping cuttable stack and its support",
+      "stateBranch": "intact overlap → blade contact → cut/separate → unsupported falling",
+      "renderer": "default index.html → src/main.ts → Three.js + HUD",
+      "viewport": "390x844",
+      "acceptance": "接触真正改变堆叠；切开、散落与失去支撑后的下落在原物体分支发生；水平重叠与垂直承托可解释；不允许以不参与交互的同形装饰代替需求物体",
+      "status": "FAIL",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-1/recording.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-1/frames/frame-0010.png"
+      ],
+      "notes": "接近阶段可见绿色双排砖块与白台之间存在明显空隙，没有可辨承托；本轮未取得同一水平重叠堆叠接触→分开→失去承托→落地的完整证据。图像确认的承托关系失败与缺少动态链证据分别保留。"
+    },
+    {
+      "id": "L1-REWARD-390",
+      "objectType": "cut object + local reward + cumulative HUD",
+      "stateBranch": "contact → cut completed → separated → reward → total sync",
+      "renderer": "default index.html → src/main.ts → Three.js + HUD",
+      "viewport": "390x844",
+      "acceptance": "完成切割并分离后，在该物体附近播放奖励反馈，再同步累计值；奖励附着于切割发生位置；总计显示不替代局部反馈",
+      "status": "BLOCKED",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-1/recording.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-1/frames/dense-0019.jpg",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-1/frames/dense-0020.jpg",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-1/frames/dense-0024.jpg"
+      ],
+      "notes": "首切密集帧显示完整态→切面与局部+1→明显分离，奖励附着位置可见；首张切开帧的累计值已变化。首切附近仍有约200ms采集/停帧间隔，因此不能断言已经满足完成→分离→局部奖励→累计同步的严格先后。"
+    },
+    {
+      "id": "L1-PRESSURE-390",
+      "objectType": "spike hazard + blade + failure/recovery affordance",
+      "stateBranch": "warning → approach → collision/avoidance → failure or recovery",
+      "renderer": "default index.html → src/main.ts → Three.js + HUD",
+      "viewport": "390x844",
+      "acceptance": "危险在接近前可辨；避开与接触后果不同；失败原因和重试入口可见；危险信号与真正危险物体绑定；装饰和危险不使用无法区分的表现",
+      "status": "BLOCKED",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-1/recording.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-2/frames/terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-2/frames/replay.png"
+      ],
+      "notes": "可见失败面板与重玩路径已验证。固定节奏下本轮主要是跌出路线失败，未取得同一尖刺ID预警→接触→可归因失败全链；不以内部failReason替代危险分支像素。"
+    },
+    {
+      "id": "L1-FINISH-390",
+      "objectType": "finish outcome lanes + settlement + replay",
+      "stateBranch": "approach → choose/contact → world result → settlement → replay",
+      "renderer": "default index.html → src/main.ts → Three.js + HUD",
+      "viewport": "390x844",
+      "acceptance": "终点结果区在选择前可见；接触结果先呈现，再结算；重玩恢复可操作首关；结果区处于场景中并与刀的接触一致；覆盖层不提前遮住选择",
+      "status": "BLOCKED",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-1/recording.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-3/frames/terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-3/frames/replay.png"
+      ],
+      "notes": "三种已声明手机固定节奏都自然失败，未到完整赢结算；这是有限策略的覆盖缺口，不证明游戏不能完成。第一轮还受已修正的跌出路线文案漏判影响。"
+    },
+    {
+      "id": "L1-INPUT-1100",
+      "objectType": "blade + first cuttable",
+      "stateBranch": "startup → first input → airborne → contact",
+      "renderer": "default index.html → src/main.ts → Three.js + HUD",
+      "viewport": "1100x720",
+      "acceptance": "点击引起可见的起跳/翻转；碰到可切物时发生切割；刀、首个目标与承托面同时可辨；引导不遮住目标",
+      "status": "PASS",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-1/recording.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-1/frames/startup.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-1/frames/dense-0008.jpg",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-1/frames/dense-0020.jpg"
+      ],
+      "notes": "默认首个完整rune-1现在明确可见，球底与opening-table-a顶面贴合；普通输入后刀接近同一球体，出现切面、分开的两半和局部+1。不是用切开后的半球代替完整态验收。"
+    },
+    {
+      "id": "L1-GROUND-1100",
+      "objectType": "visible tabletop base",
+      "stateBranch": "startup/intact → approach",
+      "renderer": "default index.html → src/main.ts → Three.js + HUD",
+      "viewport": "1100x720",
+      "acceptance": "可见台面具有厚度、底部接到地面；物品底部贴合可见承托；同一物体的可见顶面与其承托/接触逻辑一致；不能用看不见的支撑解释悬空",
+      "status": "FAIL",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-1/recording.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-1/frames/startup.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-3/frames/frame-0000.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-3/frames/frame-0008.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-3/frames/frame-0011.png"
+      ],
+      "notes": "opening-table-a独立厚柱底部接地在两视口均可见。opening-table-b区域与main runway重叠，截图中连续落地外观可见，但b自身底部没有独立暴露；其精确接地像素归属仍BLOCKED，不能只用a或runway的通过关闭b。 完整桌面旅程中level1-reward-shelf仍是悬空薄板，late-table柱底仍未接到白色地面，因此整个GROUND合同未通过。"
+    },
+    {
+      "id": "L1-STACK-1100",
+      "objectType": "overlapping cuttable stack and its support",
+      "stateBranch": "intact overlap → blade contact → cut/separate → unsupported falling",
+      "renderer": "default index.html → src/main.ts → Three.js + HUD",
+      "viewport": "1100x720",
+      "acceptance": "接触真正改变堆叠；切开、散落与失去支撑后的下落在原物体分支发生；水平重叠与垂直承托可解释；不允许以不参与交互的同形装饰代替需求物体",
+      "status": "FAIL",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-1/recording.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-3/frames/frame-0008.png"
+      ],
+      "notes": "接近阶段可见绿色双排砖块与白台之间存在明显空隙，没有可辨承托；本轮未取得同一水平重叠堆叠接触→分开→失去承托→落地的完整证据。图像确认的承托关系失败与缺少动态链证据分别保留。"
+    },
+    {
+      "id": "L1-REWARD-1100",
+      "objectType": "cut object + local reward + cumulative HUD",
+      "stateBranch": "contact → cut completed → separated → reward → total sync",
+      "renderer": "default index.html → src/main.ts → Three.js + HUD",
+      "viewport": "1100x720",
+      "acceptance": "完成切割并分离后，在该物体附近播放奖励反馈，再同步累计值；奖励附着于切割发生位置；总计显示不替代局部反馈",
+      "status": "BLOCKED",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-1/recording.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-1/frames/dense-0008.jpg",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-1/frames/dense-0009.jpg",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-1/frames/dense-0020.jpg"
+      ],
+      "notes": "首切密集帧显示完整态→切面与局部+1→明显分离，奖励附着位置可见；首张切开帧的累计值已变化。首切附近仍有约200ms采集/停帧间隔，因此不能断言已经满足完成→分离→局部奖励→累计同步的严格先后。"
+    },
+    {
+      "id": "L1-PRESSURE-1100",
+      "objectType": "spike hazard + blade + failure/recovery affordance",
+      "stateBranch": "warning → approach → collision/avoidance → failure or recovery",
+      "renderer": "default index.html → src/main.ts → Three.js + HUD",
+      "viewport": "1100x720",
+      "acceptance": "危险在接近前可辨；避开与接触后果不同；失败原因和重试入口可见；危险信号与真正危险物体绑定；装饰和危险不使用无法区分的表现",
+      "status": "BLOCKED",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-1/recording.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-2/frames/terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-2/frames/replay.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-3/frames/frame-0005.png"
+      ],
+      "notes": "可见失败面板与重玩路径已验证。固定节奏下本轮主要是跌出路线失败，未取得同一尖刺ID预警→接触→可归因失败全链；不以内部failReason替代危险分支像素。"
+    },
+    {
+      "id": "L1-FINISH-1100",
+      "objectType": "finish outcome lanes + settlement + replay",
+      "stateBranch": "approach → choose/contact → world result → settlement → replay",
+      "renderer": "default index.html → src/main.ts → Three.js + HUD",
+      "viewport": "1100x720",
+      "acceptance": "终点结果区在选择前可见；接触结果先呈现，再结算；重玩恢复可操作首关；结果区处于场景中并与刀的接触一致；覆盖层不提前遮住选择",
+      "status": "FAIL",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-1/recording.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-3/frames/frame-0011.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-3/frames/terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-3/frames/replay.png"
+      ],
+      "notes": "桌面950ms绝对节奏自然完成×4、分数60，完整完成面板后点击重玩并回到首关。终点墙上方结果带依旧裁切、倍率未贴近对应区域，右上微小图例不能替代；完整自然闭环通过不关闭终点感知失败。"
+    }
+  ]
+}

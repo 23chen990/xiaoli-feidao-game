@@ -1,0 +1,40 @@
+列表遍历测试报告
+==================================================
+
+访问页面总数: 1
+测试持续时间: 73.78 秒
+测试开始时间: 2026-09-08 05:07:09
+测试结束时间: 2026-09-08 05:08:23
+退出原因: all_actions_ineffective
+启动进程PID: 16372
+结束进程PID: 16372
+新发现有效操作: 0
+新发现无效操作: 1
+
+检测服务不可用次数: 0
+
+遍历页面列表:
+
+页面ID: 7c330ffdafaa5482e88dbfc224afe7565b62d8fa1919d1bc07c617a2d3619a30
+总操作数: 1
+已探索操作数: 1
+有效操作数: 0
+无效操作数: 1
+重新分析次数: 1
+连续无进展轮数: 1
+OCR文本: ['版留于开测试', 'vConsole']
+元素数量: 4
+元素详情: [{'id': 'ocr:0', 'source': 'ocr', 'type': 'text', 'text': '版留于开测试', 'coordinates': [0.37963, 0.044613, 0.252778, 0.026936], 'confidence': 0.7162, 'clickable_hint': 0.38, 'role_reason': '普通 OCR 文本，暂保留用于首次探索'}, {'id': 'ocr:1', 'source': 'ocr', 'type': 'overlay', 'text': 'vConsole', 'coordinates': [0.72037, 0.946549, 0.193519, 0.026936], 'confidence': 0.9749, 'clickable_hint': 0.02, 'role_reason': '命中调试或引擎悬浮文本'}, {'id': 'yolo:0', 'source': 'yolo', 'type': 'overlay', 'text': 'targeting.', 'coordinates': [0.858505, 0.052382, 0.105483, 0.038084], 'confidence': 0.4616, 'clickable_hint': 0.05, 'role_reason': '疑似引擎悬浮控件'}, {'id': 'yolo:1', 'source': 'yolo', 'type': 'icon', 'text': 'moreoptionsorsettings.', 'coordinates': [0.744852, 0.052088, 0.110704, 0.037758], 'confidence': 0.4543, 'clickable_hint': 0.62, 'role_reason': 'YOLO 图标检测'}]
+检测服务状态: True ()
+
+操作模式分析:
+
+有效操作描述排名:
+
+无效操作描述排名:
+版留于开测试: 1次
+
+有效操作位置区域排名:
+
+无效操作位置区域排名:
+top_center: 1次

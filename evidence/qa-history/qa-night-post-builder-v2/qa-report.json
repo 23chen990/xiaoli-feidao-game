@@ -1,0 +1,1084 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PostBuilderRetestQaArtifact",
+  "targetGame": "符刃夜行",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "lockedBuildSha256": "bc41d40f25ac9c6f612b5d3d484d0971dcb6c6212a7a1ae9cec126eb42fa2f34",
+  "buildSha256Before": "bc41d40f25ac9c6f612b5d3d484d0971dcb6c6212a7a1ae9cec126eb42fa2f34",
+  "buildSha256After": "bc41d40f25ac9c6f612b5d3d484d0971dcb6c6212a7a1ae9cec126eb42fa2f34",
+  "testedAt": "2026-08-30T20:31:28.406Z",
+  "passed": false,
+  "naturalPlay": {
+    "desktopAttempts": 5,
+    "desktopWins": 4,
+    "desktopFormerChokePasses": 4,
+    "mobileAttempts": 2,
+    "mobileWins": 2,
+    "mobileFormerChokePasses": 2,
+    "maxNoProgressBounceStreak": 29,
+    "exactV1Replay": {
+      "label": "desktop-natural-5",
+      "maxX": 3001.581,
+      "status": "won",
+      "maxNoProgressBounceStreak": 1
+    },
+    "desktopRuns": [
+      {
+        "label": "desktop-natural-1",
+        "platform": "desktop-real-mouse",
+        "seed": 31,
+        "inputPolicy": "global-height=530; vertical-threshold=-128; wait-bias=0; no obstacle-coordinate oracle",
+        "inputCount": 37,
+        "maxX": 1226.499999999997,
+        "status": "airborne",
+        "failReason": null,
+        "elapsed": 35.8,
+        "finishGateId": null,
+        "cuts": 4,
+        "maxNoProgressBounceStreak": 29,
+        "stageIdsVisited": [
+          "stage-1-read-and-cut",
+          "stage-2-recover-and-choose"
+        ],
+        "seedChanged": false,
+        "whiteColumnBounceCount": 30,
+        "whiteColumnAnchorCount": 1,
+        "screenshots": [
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-1-stage-1-read-and-cut.png",
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-1-stage-2-recover-and-choose.png",
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-1-timeout-or-reset.png"
+        ]
+      },
+      {
+        "label": "desktop-natural-2",
+        "platform": "desktop-real-mouse",
+        "seed": 31,
+        "inputPolicy": "global-height=540; vertical-threshold=-124; wait-bias=1; no obstacle-coordinate oracle",
+        "inputCount": 24,
+        "maxX": 3001.133333333305,
+        "status": "won",
+        "failReason": null,
+        "elapsed": 21.067,
+        "finishGateId": "calm-moon",
+        "cuts": 5,
+        "maxNoProgressBounceStreak": 1,
+        "stageIdsVisited": [
+          "stage-1-read-and-cut",
+          "stage-2-recover-and-choose",
+          "stage-3-structure-and-finish"
+        ],
+        "seedChanged": false,
+        "whiteColumnBounceCount": 0,
+        "whiteColumnAnchorCount": 3,
+        "screenshots": [
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-2-stage-1-read-and-cut.png",
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-2-stage-2-recover-and-choose.png",
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-2-stage-3-structure-and-finish.png",
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-2-won.png"
+        ]
+      },
+      {
+        "label": "desktop-natural-3",
+        "platform": "desktop-real-mouse",
+        "seed": 31,
+        "inputPolicy": "global-height=550; vertical-threshold=-120; wait-bias=2; no obstacle-coordinate oracle",
+        "inputCount": 24,
+        "maxX": 3000.3999999999724,
+        "status": "won",
+        "failReason": null,
+        "elapsed": 21.1,
+        "finishGateId": "calm-moon",
+        "cuts": 4,
+        "maxNoProgressBounceStreak": 1,
+        "stageIdsVisited": [
+          "stage-1-read-and-cut",
+          "stage-2-recover-and-choose",
+          "stage-3-structure-and-finish"
+        ],
+        "seedChanged": false,
+        "whiteColumnBounceCount": 0,
+        "whiteColumnAnchorCount": 2,
+        "screenshots": [
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-3-stage-1-read-and-cut.png",
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-3-stage-2-recover-and-choose.png",
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-3-stage-3-structure-and-finish.png",
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-3-won.png"
+        ]
+      },
+      {
+        "label": "desktop-natural-4",
+        "platform": "desktop-real-mouse",
+        "seed": 31,
+        "inputPolicy": "global-height=560; vertical-threshold=-116; wait-bias=3; no obstacle-coordinate oracle",
+        "inputCount": 23,
+        "maxX": 3000.0333333332956,
+        "status": "won",
+        "failReason": null,
+        "elapsed": 21.558,
+        "finishGateId": "calm-moon",
+        "cuts": 5,
+        "maxNoProgressBounceStreak": 1,
+        "stageIdsVisited": [
+          "stage-1-read-and-cut",
+          "stage-2-recover-and-choose",
+          "stage-3-structure-and-finish"
+        ],
+        "seedChanged": false,
+        "whiteColumnBounceCount": 1,
+        "whiteColumnAnchorCount": 3,
+        "screenshots": [
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-4-stage-1-read-and-cut.png",
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-4-stage-2-recover-and-choose.png",
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-4-stage-3-structure-and-finish.png",
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-4-won.png"
+        ]
+      },
+      {
+        "label": "desktop-natural-5",
+        "platform": "desktop-real-mouse",
+        "seed": 31,
+        "inputPolicy": "global-height=570; vertical-threshold=-112; wait-bias=4; no obstacle-coordinate oracle",
+        "inputCount": 27,
+        "maxX": 3001.5807397395597,
+        "status": "won",
+        "failReason": null,
+        "elapsed": 24.05,
+        "finishGateId": "calm-moon",
+        "cuts": 6,
+        "maxNoProgressBounceStreak": 1,
+        "stageIdsVisited": [
+          "stage-1-read-and-cut",
+          "stage-2-recover-and-choose",
+          "stage-3-structure-and-finish"
+        ],
+        "seedChanged": false,
+        "whiteColumnBounceCount": 1,
+        "whiteColumnAnchorCount": 4,
+        "screenshots": [
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-5-stage-1-read-and-cut.png",
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-5-stage-2-recover-and-choose.png",
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-5-stage-3-structure-and-finish.png",
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-5-won.png"
+        ]
+      }
+    ],
+    "mobileRuns": [
+      {
+        "label": "mobile-natural-1",
+        "platform": "390x844-native-touch",
+        "seed": 31,
+        "inputPolicy": "global-height=535; vertical-threshold=-124; wait-bias=1; no obstacle-coordinate oracle",
+        "inputCount": 30,
+        "maxX": 3000.6326666666814,
+        "status": "won",
+        "failReason": null,
+        "elapsed": 25.033,
+        "finishGateId": "calm-moon",
+        "cuts": 9,
+        "maxNoProgressBounceStreak": 1,
+        "stageIdsVisited": [
+          "stage-1-read-and-cut",
+          "stage-2-recover-and-choose",
+          "stage-3-structure-and-finish"
+        ],
+        "seedChanged": false,
+        "whiteColumnBounceCount": 1,
+        "whiteColumnAnchorCount": 3,
+        "screenshots": [
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-1-stage-1-read-and-cut.png",
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-1-stage-2-recover-and-choose.png",
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-1-stage-3-structure-and-finish.png",
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-1-won.png"
+        ],
+        "layout": {
+          "innerWidth": 390,
+          "innerHeight": 844,
+          "scrollWidth": 390,
+          "scrollHeight": 844,
+          "touchAction": "none",
+          "canvasCount": 1
+        }
+      },
+      {
+        "label": "mobile-natural-2",
+        "platform": "390x844-native-touch",
+        "seed": 31,
+        "inputPolicy": "global-height=555; vertical-threshold=-116; wait-bias=3; no obstacle-coordinate oracle",
+        "inputCount": 32,
+        "maxX": 3000.1534400000114,
+        "status": "won",
+        "failReason": null,
+        "elapsed": 28.758,
+        "finishGateId": "calm-moon",
+        "cuts": 5,
+        "maxNoProgressBounceStreak": 2,
+        "stageIdsVisited": [
+          "stage-1-read-and-cut",
+          "stage-2-recover-and-choose",
+          "stage-3-structure-and-finish"
+        ],
+        "seedChanged": false,
+        "whiteColumnBounceCount": 0,
+        "whiteColumnAnchorCount": 2,
+        "screenshots": [
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-2-stage-1-read-and-cut.png",
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-2-stage-2-recover-and-choose.png",
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-2-stage-3-structure-and-finish.png",
+          "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-2-won.png"
+        ],
+        "layout": {
+          "innerWidth": 390,
+          "innerHeight": 844,
+          "scrollWidth": 390,
+          "scrollHeight": 844,
+          "touchAction": "none",
+          "canvasCount": 1
+        }
+      }
+    ]
+  },
+  "movingSupportDiagnostic": {
+    "found": {
+      "scenario": "moving-horizontal",
+      "supportId": "lantern-ferry",
+      "holdSteps": 180,
+      "followupStep": 15,
+      "contactPart": "handle",
+      "normalX": 0,
+      "normalY": -1,
+      "supportVelocityBefore": {
+        "vx": -155.31880587926418,
+        "vy": 0
+      },
+      "playerVelocityBefore": {
+        "vx": 23.061076066916,
+        "vy": 760
+      },
+      "incomingRelativeVelocity": {
+        "vx": 178.37988194618018,
+        "vy": 760,
+        "normal": -760
+      },
+      "supportVelocityAfter": {
+        "vx": -153.46810711093372,
+        "vy": 0
+      },
+      "playerVelocityAfter": {
+        "vx": 23.061076066916,
+        "vy": -547.2
+      },
+      "outgoingRelativeVelocity": {
+        "vx": 176.52918317784972,
+        "vy": -547.2,
+        "normal": 547.2
+      },
+      "impulseCountDuringLockout": 1,
+      "reflected": true
+    },
+    "attempts": [
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 0,
+        "followupStep": null,
+        "releaseSupportVelocity": {
+          "vx": 0,
+          "vy": 0
+        },
+        "found": false
+      },
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 0,
+        "followupStep": 15,
+        "releaseSupportVelocity": {
+          "vx": 0,
+          "vy": 0
+        },
+        "found": false
+      },
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 0,
+        "followupStep": 30,
+        "releaseSupportVelocity": {
+          "vx": 0,
+          "vy": 0
+        },
+        "found": false
+      },
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 0,
+        "followupStep": 45,
+        "releaseSupportVelocity": {
+          "vx": 0,
+          "vy": 0
+        },
+        "found": false
+      },
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 0,
+        "followupStep": 60,
+        "releaseSupportVelocity": {
+          "vx": 0,
+          "vy": 0
+        },
+        "found": false
+      },
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 0,
+        "followupStep": 90,
+        "releaseSupportVelocity": {
+          "vx": 0,
+          "vy": 0
+        },
+        "found": false
+      },
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 45,
+        "followupStep": null,
+        "releaseSupportVelocity": {
+          "vx": 61.92216442145926,
+          "vy": 0
+        },
+        "found": false
+      },
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 45,
+        "followupStep": 15,
+        "releaseSupportVelocity": {
+          "vx": 61.92216442145926,
+          "vy": 0
+        },
+        "found": false
+      },
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 45,
+        "followupStep": 30,
+        "releaseSupportVelocity": {
+          "vx": 61.92216442145926,
+          "vy": 0
+        },
+        "found": false
+      },
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 45,
+        "followupStep": 45,
+        "releaseSupportVelocity": {
+          "vx": 61.92216442145926,
+          "vy": 0
+        },
+        "found": false
+      },
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 45,
+        "followupStep": 60,
+        "releaseSupportVelocity": {
+          "vx": 61.92216442145926,
+          "vy": 0
+        },
+        "found": false
+      },
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 45,
+        "followupStep": 90,
+        "releaseSupportVelocity": {
+          "vx": 61.92216442145926,
+          "vy": 0
+        },
+        "found": false
+      },
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 90,
+        "followupStep": null,
+        "releaseSupportVelocity": {
+          "vx": -90.90392601263761,
+          "vy": 0
+        },
+        "found": false
+      },
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 90,
+        "followupStep": 15,
+        "releaseSupportVelocity": {
+          "vx": -90.90392601263761,
+          "vy": 0
+        },
+        "found": false
+      },
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 90,
+        "followupStep": 30,
+        "releaseSupportVelocity": {
+          "vx": -90.90392601263761,
+          "vy": 0
+        },
+        "found": false
+      },
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 90,
+        "followupStep": 45,
+        "releaseSupportVelocity": {
+          "vx": -90.90392601263761,
+          "vy": 0
+        },
+        "found": false
+      },
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 90,
+        "followupStep": 60,
+        "releaseSupportVelocity": {
+          "vx": -90.90392601263761,
+          "vy": 0
+        },
+        "found": false
+      },
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 90,
+        "followupStep": 90,
+        "releaseSupportVelocity": {
+          "vx": -90.90392601263761,
+          "vy": 0
+        },
+        "found": false
+      },
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 135,
+        "followupStep": null,
+        "releaseSupportVelocity": {
+          "vx": -178.78599904703006,
+          "vy": 0
+        },
+        "found": false
+      },
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 135,
+        "followupStep": 15,
+        "releaseSupportVelocity": {
+          "vx": -178.78599904703006,
+          "vy": 0
+        },
+        "found": false
+      },
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 135,
+        "followupStep": 30,
+        "releaseSupportVelocity": {
+          "vx": -178.78599904703006,
+          "vy": 0
+        },
+        "found": false
+      },
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 135,
+        "followupStep": 45,
+        "releaseSupportVelocity": {
+          "vx": -178.78599904703006,
+          "vy": 0
+        },
+        "found": false
+      },
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 135,
+        "followupStep": 60,
+        "releaseSupportVelocity": {
+          "vx": -178.78599904703006,
+          "vy": 0
+        },
+        "found": false
+      },
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 135,
+        "followupStep": 90,
+        "releaseSupportVelocity": {
+          "vx": -178.78599904703006,
+          "vy": 0
+        },
+        "found": false
+      },
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 180,
+        "followupStep": null,
+        "releaseSupportVelocity": {
+          "vx": -138.938923933084,
+          "vy": 0
+        },
+        "found": false
+      },
+      {
+        "scenario": "moving-horizontal",
+        "holdSteps": 180,
+        "followupStep": 15,
+        "releaseSupportVelocity": {
+          "vx": -138.938923933084,
+          "vy": 0
+        },
+        "found": true
+      }
+    ],
+    "screenshot": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/targeted-moving-support-reflection.png"
+  },
+  "themeAudit": {
+    "themeZodValidated": true,
+    "assetManifestZodValidated": true,
+    "courseBlueprintZodValidated": true,
+    "themeId": "mechanics-demo-placeholder-v1",
+    "assetRoles": [
+      "knife",
+      "cuttable",
+      "terrain",
+      "hazard",
+      "feedback"
+    ],
+    "alternateThemeZodValidated": true,
+    "coreTraceDefaultSha256": "9ec153a3c547c4c8f1c0ac219a419eebfe9fe57c82ea6d0d9799173f4061cbe1",
+    "coreTraceAlternateSha256": "9ec153a3c547c4c8f1c0ac219a419eebfe9fe57c82ea6d0d9799173f4061cbe1",
+    "identicalCoreTraceAcrossThemeBoundary": true,
+    "coreImportsTheme": false,
+    "coreDomReferences": 0,
+    "coreAssetFilenameReferences": 0,
+    "presentationImportsTheme": true,
+    "cssLiteralColorsOutsideFallbackRoot": 0,
+    "productionThemeUsesZodParse": false,
+    "rendererResolvesAssetManifestRoles": false,
+    "cssDuplicatesThemeDefaults": true,
+    "htmlDuplicatesThemeCopy": true,
+    "themedCoreIds": [
+      "white-bumper",
+      "white-landing",
+      "white-branch",
+      "lantern-ferry",
+      "white-column",
+      "ember-four",
+      "mist-half",
+      "calm-moon",
+      "jade-two"
+    ],
+    "blueprint": [
+      {
+        "id": "stage-1-read-and-cut",
+        "role": "teach",
+        "difficulty": 1,
+        "intensity": 0.28,
+        "mechanicIds": [
+          "INPUT_TO_MOTION",
+          "CONTACT_TAXONOMY",
+          "CUT_OR_REFLECT"
+        ],
+        "labelToken": "stage.teach"
+      },
+      {
+        "id": "stage-2-recover-and-choose",
+        "role": "develop",
+        "difficulty": 2,
+        "intensity": 0.57,
+        "mechanicIds": [
+          "CUT_OR_REFLECT",
+          "FAILURE_AND_RESTART",
+          "FEEDBACK_TIMING"
+        ],
+        "labelToken": "stage.develop"
+      },
+      {
+        "id": "stage-3-structure-and-finish",
+        "role": "test",
+        "difficulty": 3,
+        "intensity": 0.84,
+        "mechanicIds": [
+          "CONTACT_TAXONOMY",
+          "FAILURE_AND_RESTART",
+          "STAGED_DIFFICULTY"
+        ],
+        "labelToken": "stage.test"
+      }
+    ],
+    "runtimeThemeFacts": {
+      "contract": {
+        "id": "mechanics-demo-placeholder-v1",
+        "status": "placeholder",
+        "styleLock": false,
+        "assetCount": 5
+      },
+      "dataset": {
+        "id": "mechanics-demo-placeholder-v1",
+        "status": "placeholder"
+      },
+      "canvasCount": 1
+    }
+  },
+  "cases": [
+    {
+      "id": "NATURAL-CHOKE-001",
+      "title": "原卡口自然通过回归",
+      "previousStatus": "BLOCKER",
+      "closure": "OPEN",
+      "provenance": "NATURAL_INPUT",
+      "repeatableSteps": [
+        "从全新普通页面执行五组桌面全局高度/升降策略。",
+        "执行两组 390x844 原生触摸策略。",
+        "不调用 resetGame、loadScenario、step、debug pose 或障碍坐标点击答案。"
+      ],
+      "expected": [
+        "desktop former-choke=5/5",
+        "mobile former-choke=2/2",
+        "maxNoProgressBounceStreak<3"
+      ],
+      "actual": [
+        "desktop former-choke=4/5; mobile former-choke=2/2",
+        "desktop-natural-1: height=530, verticalThreshold=-128, waitBias=0, maxX=1226.5, timeout airborne",
+        "desktop-natural-1: white-column bounce count=30, maxNoProgressBounceStreak=29",
+        "desktop-natural-5 exact v1 replay: won, maxX=3001.581, maxNoProgressBounceStreak=1",
+        "desktop full wins=4/5; mobile full wins=2/2"
+      ],
+      "severity": "BLOCKER",
+      "mechanicalCause": "旧 desktop-natural-5 的具体失败已关闭，但卡口容错问题迁移到 desktop-natural-1：更低的全局高度阈值在普通 white-column 产生 30 次重新接触、29 次连续无进展反弹。单个时机点修复没有满足 5/5 容错合同。",
+      "acceptanceCriteria": [
+        "5/5 desktop pass x=1650",
+        "2/2 mobile pass x=1650",
+        "all bounce streaks<3"
+      ],
+      "suggestedTests": [
+        "同时保留 desktop-natural-1 与 desktop-natural-5；修复必须使两者都在三次接触内离开 white-column，不能只移动可通过的时机窗口。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/raw-evidence.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-1-stage-1-read-and-cut.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-1-stage-2-recover-and-choose.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-1-timeout-or-reset.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-2-stage-1-read-and-cut.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-2-stage-2-recover-and-choose.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-2-stage-3-structure-and-finish.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-2-won.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-3-stage-1-read-and-cut.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-3-stage-2-recover-and-choose.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-3-stage-3-structure-and-finish.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-3-won.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-4-stage-1-read-and-cut.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-4-stage-2-recover-and-choose.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-4-stage-3-structure-and-finish.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-4-won.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-5-stage-1-read-and-cut.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-5-stage-2-recover-and-choose.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-5-stage-3-structure-and-finish.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-5-won.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-1-stage-1-read-and-cut.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-1-stage-2-recover-and-choose.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-1-stage-3-structure-and-finish.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-1-won.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-2-stage-1-read-and-cut.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-2-stage-2-recover-and-choose.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-2-stage-3-structure-and-finish.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-2-won.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/targeted-moving-support-reflection.png"
+      ]
+    },
+    {
+      "id": "STUCK-REBOUND-009",
+      "title": "v1 desktop-natural-5 精确重放",
+      "previousStatus": "HIGH",
+      "closure": "CLOSED",
+      "provenance": "NATURAL_INPUT",
+      "repeatableSteps": [
+        "全新 1180x720 页面。",
+        "使用 global-height=570、vertical-threshold=-112、wait-bias=4。",
+        "仅真实鼠标点击，不读取障碍坐标。"
+      ],
+      "expected": [
+        "maxX>1650",
+        "maxNoProgressBounceStreak<3",
+        "不再在 white-column 形成重复回接循环。"
+      ],
+      "actual": [
+        "maxX=3001.581",
+        "status=won/none",
+        "maxNoProgressBounceStreak=1",
+        "whiteColumnBounceCount=1"
+      ],
+      "severity": "NONE",
+      "mechanicalCause": "输入缓冲/当前接触时序使 v1 的失败策略自然离开白柱并越过卡口。",
+      "acceptanceCriteria": [
+        "same v1 policy passes former choke",
+        "bounce streak<3"
+      ],
+      "suggestedTests": [
+        "保留 exact desktop-natural-5 配置与当前 hash 结果。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/raw-evidence.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-5-stage-1-read-and-cut.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-5-stage-2-recover-and-choose.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-5-stage-3-structure-and-finish.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-5-won.png"
+      ]
+    },
+    {
+      "id": "PROGRESSIVE-TEACHING-011",
+      "title": "三阶段教学递进",
+      "previousStatus": "HIGH",
+      "closure": "PARTIAL",
+      "provenance": "READ_ONLY_ARCHITECTURE",
+      "repeatableSteps": [
+        "Zod 解析 ORIGINAL_COURSE_BLUEPRINT。",
+        "检查 role、difficulty、intensity 与 mechanicIds。",
+        "对照运行时自然试玩的 stageIdsVisited。"
+      ],
+      "expected": [
+        "明确 teach→develop→test。",
+        "难度与强度单调上升。",
+        "实际几何提供 introduce→practice→combine，而非只增加标签。"
+      ],
+      "actual": [
+        "blueprint=[{\"id\":\"stage-1-read-and-cut\",\"role\":\"teach\",\"difficulty\":1,\"intensity\":0.28,\"mechanicIds\":[\"INPUT_TO_MOTION\",\"CONTACT_TAXONOMY\",\"CUT_OR_REFLECT\"],\"labelToken\":\"stage.teach\"},{\"id\":\"stage-2-recover-and-choose\",\"role\":\"develop\",\"difficulty\":2,\"intensity\":0.57,\"mechanicIds\":[\"CUT_OR_REFLECT\",\"FAILURE_AND_RESTART\",\"FEEDBACK_TIMING\"],\"labelToken\":\"stage.develop\"},{\"id\":\"stage-3-structure-and-finish\",\"role\":\"test\",\"difficulty\":3,\"intensity\":0.84,\"mechanicIds\":[\"CONTACT_TAXONOMY\",\"FAILURE_AND_RESTART\",\"STAGED_DIFFICULTY\"],\"labelToken\":\"stage.test\"}]",
+        "desktop full-stage win observable=true",
+        "mobile full-stage win observable=true",
+        "原有开场几何仍同时包含多种切割块、多个支撑和移动支撑，未新增 isolated practice beat 元数据。"
+      ],
+      "severity": "MEDIUM",
+      "mechanicalCause": "Builder 已新增可验证的 teach/develop/test、难度和强度元数据，关闭了“完全无教学结构”；但实际开场机制密度和 introduce→practice→combine 安全练习仍未被机器证据闭合。",
+      "acceptanceCriteria": [
+        "validated staged metadata",
+        "one isolated safe introduction per new mechanic",
+        "practice before combination"
+      ],
+      "suggestedTests": [
+        "为 blueprint 增加 introduces/practices/combines 字段并验证实际对象分布。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/theme-audit.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/raw-evidence.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-content.ts"
+      ]
+    },
+    {
+      "id": "LEVEL-THEME-COUPLING-013",
+      "title": "核心关卡与最终主题表达解耦",
+      "previousStatus": "MEDIUM",
+      "closure": "CLOSED",
+      "provenance": "READ_ONLY_ARCHITECTURE",
+      "repeatableSteps": [
+        "检查 game-content 蓝图 labelToken。",
+        "检查 game-core 的 support/finish ID。",
+        "确认 HUD 最终文案通过 theme copy 解析。"
+      ],
+      "expected": [
+        "课程仅保存中性 labelToken/语义 ID。",
+        "核心状态不保存颜色、题材文案或资产名。"
+      ],
+      "actual": [
+        "blueprint labelTokens=stage.teach, stage.develop, stage.test",
+        "remaining themed core IDs=white-bumper, white-landing, white-branch, lantern-ferry, white-column, ember-four, mist-half, calm-moon, jade-two",
+        "最终显示文案已从 theme.copy.stage 解析。"
+      ],
+      "severity": "NONE",
+      "mechanicalCause": "课程阶段只保存 labelToken，main 通过 theme copy 解析最终文案；几何和状态规则不读取可见文案、颜色或资产文件名。现存对象 ID 不参与主题表现决策。",
+      "acceptanceCriteria": [
+        "display copy outside game core",
+        "geometry independent of copy/colors/assets",
+        "no asset filenames in state"
+      ],
+      "suggestedTests": [
+        "未来加入存档前再评估对象 ID 的跨主题迁移兼容性。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/theme-audit.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-content.ts"
+      ]
+    },
+    {
+      "id": "CENTRAL-THEME-PIPELINE-015",
+      "title": "ThemeTokens 与 AssetManifest 集中入口",
+      "previousStatus": "HIGH",
+      "closure": "PARTIAL",
+      "provenance": "READ_ONLY_ARCHITECTURE",
+      "repeatableSteps": [
+        "用严格 Zod schema 解析 MECHANICS_DEMO_THEME 与五项 AssetManifest。",
+        "解析第二套 QA theme。",
+        "检查 core 依赖图和相同输入 trace hash。",
+        "检查 main/renderer/cut visuals 与 CSS 主题入口。"
+      ],
+      "expected": [
+        "theme/manifest Zod 通过。",
+        "两套主题核心 trace 相同。",
+        "核心不导入 theme/DOM/资产文件名。",
+        "表现层集中消费 theme。"
+      ],
+      "actual": [
+        "QA themeZodValidated=true",
+        "QA assetManifestZodValidated=true",
+        "identicalCoreTrace=true",
+        "coreImportsTheme=false, coreDomRefs=0, coreAssetRefs=0",
+        "presentationImportsTheme=true",
+        "productionThemeUsesZodParse=false",
+        "rendererResolvesAssetManifestRoles=false",
+        "cssDuplicatesThemeDefaults=true",
+        "htmlDuplicatesThemeCopy=true"
+      ],
+      "severity": "HIGH",
+      "mechanicalCause": "theme.ts 已集中颜色/文案并列出资产清单，QA 侧严格 schema 与跨主题核心 trace 通过；但生产代码没有 Zod parse，CSS/index 仍重复默认主题，renderer 也未按 manifest role/provider 解析资产，因此只关闭了一部分旧问题。",
+      "acceptanceCriteria": [
+        "production strict theme parse",
+        "production strict manifest parse",
+        "renderer resolves manifest roles/providers",
+        "no duplicated CSS/index defaults",
+        "identical core trace"
+      ],
+      "suggestedTests": [
+        "把 QA 的严格 schema 提升为生产构建前验证；renderer 只按 manifest role/provider 获取表现资源。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/theme-audit.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/theme.ts",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/theme.test.ts"
+      ]
+    },
+    {
+      "id": "CORE-SKIN-INDEPENDENCE-018",
+      "title": "核心机制与主题依赖隔离",
+      "previousStatus": "NEW",
+      "closure": "CLOSED",
+      "provenance": "READ_ONLY_ARCHITECTURE",
+      "repeatableSteps": [
+        "检查 game-core/game-content import graph。",
+        "扫描 DOM 与资产文件名引用。",
+        "比较两套主题边界下的同 seed/input trace hash。"
+      ],
+      "expected": [
+        "核心不导入 theme/renderer/DOM。",
+        "核心 trace 不随主题改变。"
+      ],
+      "actual": [
+        "coreImportsTheme=false",
+        "coreDomReferences=0",
+        "coreAssetFilenameReferences=0",
+        "identicalCoreTrace=true"
+      ],
+      "severity": "NONE",
+      "mechanicalCause": "碰撞、运动和课程状态仅依赖数值与接触语义；主题替换不进入核心依赖图。",
+      "acceptanceCriteria": [
+        "no theme or DOM import",
+        "identical trace"
+      ],
+      "suggestedTests": [
+        "保留跨主题 trace hash 回归。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/theme-audit.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-content.ts"
+      ]
+    },
+    {
+      "id": "SAVE-SKIN-INDEPENDENCE-014",
+      "title": "存档跨主题独立性",
+      "previousStatus": "MEDIUM",
+      "closure": "INCONCLUSIVE",
+      "provenance": "READ_ONLY_ARCHITECTURE",
+      "repeatableSteps": [
+        "搜索 versioned save schema、save/load 和 persistence adapter。"
+      ],
+      "expected": [
+        "存档只含主题中性语义与数值。",
+        "主题 A 存档可在主题 B 加载并保持核心状态。"
+      ],
+      "actual": [
+        "当前原型没有 versioned persistence schema 或 save/load 路径，无法执行跨主题往返。"
+      ],
+      "severity": "MEDIUM",
+      "mechanicalCause": "缺少存档实现，不能以核心解耦替代跨主题存档验证。",
+      "acceptanceCriteria": [
+        "versioned save schema",
+        "cross-theme round trip"
+      ],
+      "suggestedTests": [
+        "加入存档时禁止文案、颜色和资产文件名进入 schema。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/theme-audit.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src"
+      ]
+    },
+    {
+      "id": "FULL-COURSE-TOLERANCE-016",
+      "title": "完整整关自然输入容错",
+      "previousStatus": "HIGH",
+      "closure": "CLOSED",
+      "provenance": "NATURAL_INPUT",
+      "repeatableSteps": [
+        "五次桌面和两次移动从普通起点完整试玩。",
+        "只允许真实鼠标/原生触摸。",
+        "记录三阶段访问和明确 won。"
+      ],
+      "expected": [
+        "desktop won>=3/5",
+        "mobile won>=1/2",
+        "至少一个桌面和移动胜局遍历全部三阶段。"
+      ],
+      "actual": [
+        "desktop won=4/5",
+        "mobile won=2/2",
+        "desktop full-stage win=true",
+        "mobile full-stage win=true",
+        "desktop outcomes=airborne/none, won/none, won/none, won/none, won/none"
+      ],
+      "severity": "NONE",
+      "mechanicalCause": "小幅输入时机变化下仍保留足够桌面/移动完整通关，并有三阶段路径证据。",
+      "acceptanceCriteria": [
+        "desktop>=3 wins",
+        "mobile>=1 win",
+        "one full-stage win per platform"
+      ],
+      "suggestedTests": [
+        "继续使用同一组全局高度策略，避免通过障碍坐标特调。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/raw-evidence.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-1-stage-1-read-and-cut.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-1-stage-2-recover-and-choose.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-1-timeout-or-reset.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-2-stage-1-read-and-cut.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-2-stage-2-recover-and-choose.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-2-stage-3-structure-and-finish.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-2-won.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-3-stage-1-read-and-cut.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-3-stage-2-recover-and-choose.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-3-stage-3-structure-and-finish.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-3-won.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-4-stage-1-read-and-cut.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-4-stage-2-recover-and-choose.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-4-stage-3-structure-and-finish.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-4-won.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-5-stage-1-read-and-cut.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-5-stage-2-recover-and-choose.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-5-stage-3-structure-and-finish.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-5-won.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-1-stage-1-read-and-cut.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-1-stage-2-recover-and-choose.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-1-stage-3-structure-and-finish.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-1-won.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-2-stage-1-read-and-cut.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-2-stage-2-recover-and-choose.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-2-stage-3-structure-and-finish.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-2-won.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/targeted-moving-support-reflection.png"
+      ]
+    },
+    {
+      "id": "MOVING-SUPPORT-REFLECTION-017",
+      "title": "移动支撑相对速度钝端反射",
+      "previousStatus": "NEW",
+      "closure": "CLOSED",
+      "provenance": "TARGETED_DIAGNOSTIC",
+      "repeatableSteps": [
+        "loadScenario moving-horizontal/vertical，仅用于专项初态。",
+        "扫描支撑运动相位和一次后续翻转时机。",
+        "逐 fixed step 记录碰撞前后玩家/支撑速度和事件法线。"
+      ],
+      "expected": [
+        "body/handle 命中移动支撑。",
+        "incoming relative normal<0。",
+        "outgoing relative normal>0。",
+        "恢复锁内只产生一次 bounce。"
+      ],
+      "actual": [
+        "scenario=moving-horizontal, support=lantern-ferry, part=handle",
+        "supportBefore={\"vx\":-155.31880587926418,\"vy\":0}",
+        "incomingRelative={\"vx\":178.37988194618018,\"vy\":760,\"normal\":-760}",
+        "normal=(0,-1)",
+        "supportAfter={\"vx\":-153.46810711093372,\"vy\":0}",
+        "outgoingRelative={\"vx\":176.52918317784972,\"vy\":-547.2,\"normal\":547.2}",
+        "impulseCountDuringLockout=1"
+      ],
+      "severity": "NONE",
+      "mechanicalCause": "移动支撑碰撞按表面相对速度的法线分量反射，且恢复锁期间仅注入一次冲量。",
+      "acceptanceCriteria": [
+        "blunt contact",
+        "relative normal reverses sign",
+        "one impulse"
+      ],
+      "suggestedTests": [
+        "若仍不可复现，增加仅构造入射初态的 moving-blunt 场景；碰撞必须由 step/真实时钟发生。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/raw-evidence.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/targeted-moving-support-reflection.png"
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "caseId": "NATURAL-CHOKE-001",
+      "severity": "BLOCKER",
+      "summary": "旧 desktop-natural-5 的具体失败已关闭，但卡口容错问题迁移到 desktop-natural-1：更低的全局高度阈值在普通 white-column 产生 30 次重新接触、29 次连续无进展反弹。单个时机点修复没有满足 5/5 容错合同。"
+    },
+    {
+      "caseId": "PROGRESSIVE-TEACHING-011",
+      "severity": "MEDIUM",
+      "summary": "Builder 已新增可验证的 teach/develop/test、难度和强度元数据，关闭了“完全无教学结构”；但实际开场机制密度和 introduce→practice→combine 安全练习仍未被机器证据闭合。"
+    },
+    {
+      "caseId": "CENTRAL-THEME-PIPELINE-015",
+      "severity": "HIGH",
+      "summary": "theme.ts 已集中颜色/文案并列出资产清单，QA 侧严格 schema 与跨主题核心 trace 通过；但生产代码没有 Zod parse，CSS/index 仍重复默认主题，renderer 也未按 manifest role/provider 解析资产，因此只关闭了一部分旧问题。"
+    },
+    {
+      "caseId": "SAVE-SKIN-INDEPENDENCE-014",
+      "severity": "MEDIUM",
+      "summary": "缺少存档实现，不能以核心解耦替代跨主题存档验证。"
+    }
+  ],
+  "screenshots": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-1-stage-1-read-and-cut.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-1-stage-2-recover-and-choose.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-1-timeout-or-reset.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-2-stage-1-read-and-cut.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-2-stage-2-recover-and-choose.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-2-stage-3-structure-and-finish.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-2-won.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-3-stage-1-read-and-cut.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-3-stage-2-recover-and-choose.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-3-stage-3-structure-and-finish.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-3-won.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-4-stage-1-read-and-cut.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-4-stage-2-recover-and-choose.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-4-stage-3-structure-and-finish.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-4-won.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-5-stage-1-read-and-cut.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-5-stage-2-recover-and-choose.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-5-stage-3-structure-and-finish.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-5-won.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-1-stage-1-read-and-cut.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-1-stage-2-recover-and-choose.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-1-stage-3-structure-and-finish.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-1-won.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-2-stage-1-read-and-cut.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-2-stage-2-recover-and-choose.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-2-stage-3-structure-and-finish.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-2-won.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/targeted-moving-support-reflection.png"
+  ],
+  "consoleLog": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/console.log",
+  "previewClosed": true,
+  "validatedWith": "zod@4 strict PostBuilderRetestQaArtifact plus strict case/theme/manifest/blueprint schemas; final black-box closure normalization"
+}

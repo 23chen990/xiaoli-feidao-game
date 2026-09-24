@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "passed": true,
+  "checks": [
+    {
+      "name": "READY remains stationary without input",
+      "passed": true,
+      "evidence": "After 1250 ms wall-clock idle, status remained ready, position remained exactly x=210/y=522, failReason remained null, and desktop-ready.png shows the resting blade on the start platform."
+    },
+    {
+      "name": "desktop mouse and Space launch/flip",
+      "passed": true,
+      "evidence": "Real mouse input entered airborne with vx=320/vy=-384.17 and rotated 0.620 rad within 120 ms. Real Space entered airborne; repeated keydown did not emit a second alternating flip."
+    },
+    {
+      "name": "first target cut and receiving-platform landing",
+      "passed": true,
+      "evidence": "The first real mouse jump cut rune-1 and settled landed on step-1 at simulation elapsed 0.842; desktop-first-landing.png shows split feedback, the highlighted receiving platform, and the visible stable-next-jump instruction."
+    },
+    {
+      "name": "complete course using visible landing states and real mouse edges",
+      "passed": true,
+      "evidence": "Without reading hidden simulation elapsed, the reviewer reacted only to ready/landed/airborne state changes and used real mouse clicks. Five launches completed all 5 cuts and won at the ×4 zone with finalScore 20; desktop-result.png records the result."
+    },
+    {
+      "name": "plus or minus 100 ms reaction tolerance",
+      "passed": true,
+      "evidence": "Independent real-input runs using 300/400/500 ms final air-adjustment delays all won, each with 5 cuts, ×4, and score 20."
+    },
+    {
+      "name": "early and late air flips change trajectory",
+      "passed": true,
+      "evidence": "Real air flips at 180 ms versus 650 ms produced distinct samples: x=510.42/y=413.83/vx=395/cuts=1 versus x=618.14/y=439.74/vx=320/cuts=2."
+    },
+    {
+      "name": "hazard contact and missed-finish failure",
+      "passed": true,
+      "evidence": "From a visible step-2 landing, one real launch plus an early real air flip hit ban-2 and failed with reason hazard. From visible step-4, two real air flips overshot all finish zones to x=2031.07 and failed with reason fall; failure.png and fall.log preserve evidence."
+    },
+    {
+      "name": "terminal one-input restart",
+      "passed": true,
+      "evidence": "After a native-touch hazard failure on seed 41, one real native touch restarted immediately to ready on seed 42 with elapsed 0."
+    },
+    {
+      "name": "finish multipliers and score calculation",
+      "passed": true,
+      "evidence": "The finish visibly presents original wide-to-narrow ×2/×4/×8 zones. Actual ×4 landing reported multiplier=4 and finalScore=cuts(5)×4=20, matching desktop-result.png."
+    },
+    {
+      "name": "mobile native touch, landing, failure, restart, and containment",
+      "passed": true,
+      "evidence": "At 390x844, native touch launched, cut rune-1, landed on step-1, later produced a real hazard failure, and restarted. touch-action was none, scroll stayed 0/0, and scrollWidth/clientWidth were both 390; mobile-first-landing.png records the landing."
+    },
+    {
+      "name": "original expression and clean runtime",
+      "passed": true,
+      "evidence": "No Slice Master/Poki/CrazyGames/Friv brand reference was found in authored source; visible title, geometry, UI, level layout, and values are original. The self-contained build made no failed requests and recorded zero console or page errors on desktop and mobile."
+    }
+  ],
+  "issues": [],
+  "screenshots": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v2/desktop-ready.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v2/desktop-first-landing.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v2/desktop-result.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v2/mobile-first-landing.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v2/failure.png"
+  ],
+  "consoleLog": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v2/console.log",
+  "testedAt": "2026-08-30T11:47:21Z"
+}

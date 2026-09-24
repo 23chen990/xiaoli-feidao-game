@@ -1,0 +1,10 @@
+command: /Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/MacOS/CocosCreator --project <platformWorkspace> --build configPath=./cocos-build-config.json;logDest=<attempt-2>/cocos-build-engine.log
+attemptCount: 1
+creatorVersion: 3.8.8
+officialPluginVersion: 1.2.2
+buildTask: wechatgame finished in 9880ms
+tapTapConversion: 20 JavaScript files converted, 0 skipped, 0 failed
+zipCreation: game.zip created, converter success, onAfterBuild passed
+launcherExitCode: 36
+launcherExitContext: Electron rendezvous child emitted after builder completion; artifact integrity and metadata were independently verified
+note: Babel reported only the standard >500KB code-generator deoptimization note; conversion recorded 0 failures

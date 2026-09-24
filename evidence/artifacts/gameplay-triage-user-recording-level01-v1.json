@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "gameplay-triage",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "reportedAt": "2026-09-06T14:00:00+08:00",
+  "route": "formal-fixer",
+  "classification": "core_loop_level01_tutorial_topology_and_settlement_fidelity",
+  "requestInterpretation": {
+    "userRequest": "For Level 1, reproduce everything except the 3D models.",
+    "documentInstructions": false,
+    "constraint": "Do not copy third-party UI artwork, audio, names, exact text, or other expressive content. Reproduce the observed mechanics, camera beats, ordering, timing relationships, route pressure, and settlement flow with original presentation."
+  },
+  "evidence": {
+    "path": "reference-evidence/incoming/_2026-09-06-135548-3781e4dcd3d2.mp4",
+    "sha256": "3781e4dcd3d21094f186cf442b3ee30cddfbb2fbe68d87c5c7470a2c742bf75a",
+    "identityStatus": "PENDING",
+    "durationSeconds": 36.49,
+    "viewport": "1100x720",
+    "usableAs": ["level-beat-order", "camera-and-framing", "input-prompts", "pressure-escalation", "finish-settlement"]
+  },
+  "observations": [
+    {"time":"0-4s","beat":"startup tutorial","visible":"wide bright outdoor scene; elevated white route; several collectible food-like targets; large tap-to-jump/flip prompt"},
+    {"time":"4-9s","beat":"first input lesson","visible":"single-tap motion and repeated tapping prompt; collectibles are arranged along the route and visibly disappear when contacted"},
+    {"time":"10-17s","beat":"route escalation","visible":"two tall colored rung/stack obstacles create a narrow upper/lower decision; camera tracks forward while the blade remains prominent"},
+    {"time":"18-24s","beat":"hazard lesson","visible":"explicit spike warning; magenta spike pad appears on the route; collectibles continue beyond the warning"},
+    {"time":"24-31s","beat":"finish approach","visible":"large checker-pattern terminal wall with stacked multiplier lanes; final targets remain visible before contact"},
+    {"time":"31-36s","beat":"settlement","visible":"screen dims; completion banner; score, bonus, result and best score; primary claim and rewarded claim actions; settings icon remains visible"}
+  ],
+  "inferences": [
+    "Level 1 is a tutorialized sequence of input lesson → repeated-input cadence → route choice → hazard warning → multiplier finish → settlement.",
+    "The camera and HUD must stage the next lesson before the player reaches it; simply adding equivalent objects without the beat timing would not satisfy the evidence.",
+    "Settlement is part of the level experience and must lead to a clear replay/continue action in the target game, using original wording and UI styling."
+  ],
+  "scope": {
+    "include": ["Level 1 only", "default startup path", "tutorial prompts", "camera framing", "collectible sequence", "rung/stack obstacle beat", "spike warning and hazard", "multiplier finish wall", "settlement and replay"],
+    "exclude": ["exact third-party models/textures", "third-party name/logo/store chrome", "copied audio", "other levels", "platform packaging"]
+  },
+  "acceptance": [
+    "Natural desktop play follows the six observed beats in order and reaches settlement.",
+    "390x844 portrait preserves the same ordering, readable prompts, hazard signal and finish choice.",
+    "Finish settlement exposes score/result/best/replay or continue controls without hiding the terminal wall before selection.",
+    "All presented art, labels, colors and audio remain original to the target game."
+  ],
+  "contextOmitted": ["other prototype workspaces", "unrelated historical QA reports", "unavailable recordings", "shared factory changes"]
+}

@@ -1,0 +1,5 @@
+import { z } from 'zod';
+const Text = z.string().trim().min(1);
+export const TaskSchema = z.object({ schemaVersion: z.literal(1), role: z.literal('QAAgent'), targetGame: Text, workspace: Text, outputDirectory: Text, sourceTriage: z.array(Text).min(1), sourceMatrices: z.array(Text).min(1), instructions: z.array(Text).min(1), acceptance: z.array(Text).min(1), outputSchemas: z.array(Text).min(1) }).strict();
+export const ResultSchema = z.object({ schemaVersion: z.literal(1), role: z.literal('QAAgent'), targetGame: Text, workspace: Text, status: z.enum(['PASS','BLOCKED']), reportPaths: z.array(Text).min(1), blockers: z.array(Text), sourceModified: z.literal(false), summary: Text }).strict();
+export const MatrixSchema = z.object({ schemaVersion: z.literal(1), targetGame: Text, workspace: Text, cells: z.array(z.object({ id: Text, objectType: Text, stateBranch: Text, renderer: Text, viewport: Text, acceptance: Text, status: z.enum(['PENDING','PASS','BLOCKED','FAIL']), evidence: z.array(Text), notes: Text }).strict()).min(1) }).strict();

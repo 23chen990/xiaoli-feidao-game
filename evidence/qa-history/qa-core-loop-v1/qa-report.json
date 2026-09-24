@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "CoreLoopNaturalQa",
+  "passed": false,
+  "results": [
+    {
+      "level": 1,
+      "viewport": "1180x720",
+      "status": "failed",
+      "failReason": "spike",
+      "cuts": 4,
+      "score": 8,
+      "totalEarnings": 8,
+      "routeChanges": 0,
+      "routeBias": 0,
+      "seenTargets": [
+        "rune-1",
+        "rune-4",
+        "rune-5",
+        "white-column",
+        "dual-bridge-face",
+        "rune-8"
+      ],
+      "finishGateId": null,
+      "finishPhases": [
+        "idle"
+      ],
+      "taps": 11
+    },
+    {
+      "level": 2,
+      "viewport": "1180x720",
+      "status": "won",
+      "failReason": null,
+      "cuts": 3,
+      "score": 4.5,
+      "totalEarnings": 9,
+      "routeChanges": 1,
+      "routeBias": 3,
+      "seenTargets": [
+        "l2-low",
+        "l2-side",
+        "l2-cut-bridge-face",
+        "l2-cut-bridge",
+        "l2-wall",
+        "l2-finish-half"
+      ],
+      "finishGateId": "l2-finish-half",
+      "finishPhases": [
+        "idle",
+        "contact",
+        "reward",
+        "celebration",
+        "terminal"
+      ],
+      "taps": 27
+    },
+    {
+      "level": 3,
+      "viewport": "1180x720",
+      "status": "won",
+      "failReason": null,
+      "cuts": 3,
+      "score": 6,
+      "totalEarnings": 6,
+      "routeChanges": 1,
+      "routeBias": 1,
+      "seenTargets": [
+        "l3-ramp",
+        "l3-entry",
+        "l3-rebound",
+        "l3-recovery-pad",
+        "l3-cut-ramp",
+        "l3-exit",
+        "l3-finish-safe"
+      ],
+      "finishGateId": "l3-finish-safe",
+      "finishPhases": [
+        "idle",
+        "contact",
+        "reward",
+        "celebration",
+        "terminal"
+      ],
+      "taps": 22
+    },
+    {
+      "level": 1,
+      "viewport": "390x844",
+      "status": "won",
+      "failReason": null,
+      "cuts": 5,
+      "score": 21,
+      "totalEarnings": 21,
+      "routeChanges": 1,
+      "routeBias": 2,
+      "seenTargets": [
+        "rune-1",
+        "side-tag",
+        "lantern-ferry",
+        "white-column",
+        "dual-bridge",
+        "dual-bridge-face",
+        "white-recovery-shelf",
+        "lift-plank",
+        "tower-approach",
+        "tower-top",
+        "tower-middle",
+        "tower-base",
+        "calm-moon"
+      ],
+      "finishGateId": "calm-moon",
+      "finishPhases": [
+        "idle",
+        "contact",
+        "reward",
+        "celebration",
+        "terminal"
+      ],
+      "taps": 26
+    },
+    {
+      "level": 2,
+      "viewport": "390x844",
+      "status": "won",
+      "failReason": null,
+      "cuts": 3,
+      "score": 9,
+      "totalEarnings": 9,
+      "routeChanges": 1,
+      "routeBias": 3,
+      "seenTargets": [
+        "l2-low",
+        "l2-side",
+        "l2-cut-bridge-face",
+        "l2-cut-bridge",
+        "l2-wall",
+        "l2-finish-safe"
+      ],
+      "finishGateId": "l2-finish-safe",
+      "finishPhases": [
+        "idle",
+        "reward",
+        "celebration",
+        "terminal"
+      ],
+      "taps": 31
+    },
+    {
+      "level": 3,
+      "viewport": "390x844",
+      "status": "won",
+      "failReason": null,
+      "cuts": 3,
+      "score": 6,
+      "totalEarnings": 6,
+      "routeChanges": 1,
+      "routeBias": 1,
+      "seenTargets": [
+        "l3-ramp",
+        "l3-entry",
+        "l3-rebound",
+        "l3-recovery-pad",
+        "l3-cut-ramp",
+        "l3-exit",
+        "l3-finish-safe"
+      ],
+      "finishGateId": "l3-finish-safe",
+      "finishPhases": [
+        "idle",
+        "contact",
+        "reward",
+        "celebration",
+        "terminal"
+      ],
+      "taps": 28
+    }
+  ],
+  "errors": [],
+  "claimBoundary": "Natural input after UI level selection; web-lite only; no debug placement or state injection during play."
+}

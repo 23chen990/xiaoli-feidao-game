@@ -1,0 +1,206 @@
+✖ performance sampling contract separates device FPS from deterministic render work (0.584042ms)
+✖ airborne update redraws only dynamic blade and feedback graphics (1.134667ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 277.819125
+
+✖ failing tests:
+
+test at tests/performance-contract.test.ts:10:1
+✖ performance sampling contract separates device FPS from deterministic render work (0.584042ms)
+  Error: ENOENT: no such file or directory, open '/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/performance-contract.json'
+      at readFileSync (node:fs:440:20)
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tests/performance-contract.test.ts:11:31)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.start (node:internal/test_runner/test:1015:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: '/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/performance-contract.json'
+  }
+
+test at tests/performance-contract.test.ts:18:1
+✖ airborne update redraws only dynamic blade and feedback graphics (1.134667ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /private staticGraphics\?: Graphics/. Input:
+  
+  "import { _decorator, Camera, Canvas, Color, Component, Graphics, input, Input, KeyCode, Layers, Node, ResolutionPolicy, screen, UITransform, view, type EventKeyboard } from 'cc';\n" +
+    "import { createGameState, resolveContact, resolveFinish, tap } from './core/game-rules';\n" +
+    "import { TAP_GAME } from './core/tap-config';\n" +
+    '\n' +
+    'const { ccclass } = _decorator;\n' +
+    'const DESIGN_WIDTH = 390;\n' +
+    'const DESIGN_HEIGHT = 844;\n' +
+    'const exactFitScreen = false;\n' +
+    'const FIRST_FRAME_PALETTE = {\n' +
+    '  background: new Color(7, 17, 38, 255), lane: new Color(31, 56, 86, 255),\n' +
+    '  mint: new Color(99, 242, 213, 255), coral: new Color(244, 91, 118, 255),\n' +
+    '  gold: new Color(247, 185, 76, 255), blade: new Color(229, 244, 251, 255),\n' +
+    '};\n' +
+    '\n' +
+    "@ccclass('GameBootstrap')\n" +
+    'export class GameBootstrap extends Component {\n' +
+    '  private state = createGameState();\n' +
+    '  private graphics?: Graphics;\n' +
+    '  private distance = 0;\n' +
+    '  private bladeY = -250;\n' +
+    '  private bladeVy = 0;\n' +
+    '  private bladeAngle = 0;\n' +
+    '  private cutTriggered = false;\n' +
+    '  private reflectTriggered = false;\n' +
+    '  private hazardTriggered = false;\n' +
+    '  private safeOffsetY = 0;\n' +
+    '\n' +
+    '  start(): void {\n' +
+    '    void exactFitScreen;\n' +
+    '    view.setDesignResolutionSize(DESIGN_WIDTH, DESIGN_HEIGHT, ResolutionPolicy.FIXED_WIDTH);\n' +
+    '    const safeArea = screen.safeArea;\n' +
+    '    this.safeOffsetY = Math.max(0, (screen.windowSize.height - safeArea.height) / 2);\n' +
+    '    this.buildPlatformSafeCanvas();\n' +
+    '    this.redrawCourse();\n' +
+    '    input.on(Input.EventType.TOUCH_END, this.onTap, this);\n' +
+    '    input.on(Input.EventType.MOUSE_UP, this.onTap, this);\n' +
+    '    input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);\n' +
+    '    console.log(`[${TAP_GAME.name}] TapTap ${TAP_GAME.appId} portrait Graphics runtime ready`);\n' +
+    '  }\n' +
+    '\n' +
+    '  update(deltaTime: number): void {\n' +
+    "    if (this.state.status !== 'airborne') return;\n" +
+    '    const dt = Math.min(0.05, Math.max(0, deltaTime));\n' +
+    '    this.distance += Math.max(80, Math.abs(this.state.motion.vx)) * dt;\n' +
+    '    this.bladeVy += 164 * dt;\n' +
+    '    this.bladeY -= this.bladeVy * dt;\n' +
+    '    this.bladeAngle += this.state.motion.angularVelocity * dt;\n' +
+    '    if (!this.cutTriggered && this.distance >= 85) {\n' +
+    '      this.cutTriggered = true;\n' +
+    "      this.state = resolveContact(this.state, 'sharp', 'moon-fruit-1');\n" +
+    '    }\n' +
+    '    if (!this.reflectTriggered && this.distance >= 180 && this.bladeY < -170) {\n' +
+    '      this.reflectTriggered = true;\n' +
+    "      this.state = resolveContact(this.state, 'blunt', 'stone-1');\n" +
+    '      this.bladeVy = -92;\n' +
+    '    }\n' +
+    '    if (!this.hazardTriggered && this.distance >= 300 && this.bladeY < -320) {\n' +
+    '      this.hazardTriggered = true;\n' +
+    "      this.state = resolveContact(this.state, 'hazard', 'spikes');\n" +
+    '    } else if (this.bladeY < -390) {\n' +
+    "      this.state = resolveContact(this.state, 'fall');\n" +
+    '    } else if (this.distance >= 520) {\n' +
+    '      this.state = resolveFinish(this.state);\n' +
+    '    }\n' +
+    '    this.redrawCourse();\n' +
+    '  }\n' +
+    '\n' +
+    '  onDestroy(): void {\n' +
+    '    input.off(Input.EventType.TOUCH_END, this.onTap, this);\n' +
+    '    input.off(Input.EventType.MOUSE_UP, this.onTap, this);\n' +
+    '    input.off(Input.EventType.KEY_DOWN, this.onKeyDown, this);\n' +
+    '  }\n' +
+    '\n' +
+    '  private buildPlatformSafeCanvas(): void {\n' +
+    '    this.node.layer = Layers.Enum.UI_2D;\n' +
+    '    const transform = this.node.getComponent(UITransform) ?? this.node.addComponent(UITransform);\n' +
+    '    transform.setContentSize(DESIGN_WIDTH, DESIGN_HEIGHT);\n' +
+    "    const cameraNode = new Node('Portrait UI Camera');\n" +
+    '    cameraNode.layer = Layers.Enum.UI_2D;\n' +
+    '    cameraNode.setPosition(0, 0, 1000);\n' +
+    '    const camera = cameraNode.addComponent(Camera);\n' +
+    '    camera.projection = Camera.ProjectionType.ORTHO;\n' +
+    '    camera.orthoHeight = DESIGN_HEIGHT / 2;\n' +
+    '    camera.visibility = Layers.Enum.UI_2D;\n' +
+    '    camera.clearColor = FIRST_FRAME_PALETTE.background;\n' +
+    '    this.node.scene?.addChild(cameraNode);\n' +
+    '    const canvas = this.node.getComponent(Canvas) ?? this.node.addComponent(Canvas);\n' +
+    '    canvas.cameraComponent = camera;\n' +
+    '    this.graphics = this.node.getComponent(Graphics) ?? this.node.addComponent(Graphics);\n' +
+    '  }\n' +
+    '\n' +
+    '  private drawFirstFrameBackground(graphics: Graphics): void {\n' +
+    '    graphics.fillColor = FIRST_FRAME_PALETTE.background;\n' +
+    '    graphics.rect(-DESIGN_WIDTH / 2, -DESIGN_HEIGHT / 2, DESIGN_WIDTH, DESIGN_HEIGHT);\n' +
+    '    graphics.fill();\n' +
+    '    graphics.fillColor = FIRST_FRAME_PALETTE.lane;\n' +
+    '    graphics.roundRect(-168, -355, 336, 650, 26);\n' +
+    '    graphics.fill();\n' +
+    '    graphics.strokeColor = new Color(52, 88, 126, 255);\n' +
+    '    graphics.lineWidth = 4;\n' +
+    '    graphics.moveTo(0, -335); graphics.lineTo(0, 272); graphics.stroke();\n' +
+    '  }\n' +
+    '\n' +
+    '  private redrawCourse(): void {\n' +
+    '    const graphics = this.graphics;\n' +
+    '    if (!graphics) return;\n' +
+    '    graphics.clear();\n' +
+    '    this.drawFirstFrameBackground(graphics);\n' +
+    '    this.fillRect(graphics, -170, -365, 340, 28, new Color(127, 202, 104, 255));\n' +
+    '    this.fillRect(graphics, 94, -185, 45, 142, new Color(82, 109, 128, 255));\n' +
+    '    graphics.fillColor = new Color(232, 162, 72, 255); graphics.circle(-45, 28, 30); graphics.fill();\n' +
+    '    for (let x = -150; x <= 150; x += 38) {\n' +
+    '      graphics.fillColor = FIRST_FRAME_PALETTE.coral;\n' +
+    '      graphics.moveTo(x - 17, -335); graphics.lineTo(x, -297); graphics.lineTo(x + 17, -335); graphics.close(); graphics.fill();\n' +
+    '    }\n' +
+    '    this.fillRect(graphics, -126, 250, 30, 116, FIRST_FRAME_PALETTE.mint);\n' +
+    '    this.fillRect(graphics, 96, 250, 30, 116, FIRST_FRAME_PALETTE.gold);\n' +
+    '    this.fillRect(graphics, -126, 340, 252, 24, new Color(79, 141, 232, 255));\n' +
+    "    const feedback = this.state.status === 'failed' ? FIRST_FRAME_PALETTE.coral\n" +
+    "      : this.state.status === 'won' ? FIRST_FRAME_PALETTE.mint\n" +
+    "        : this.state.lastFeedback === 'cut' ? new Color(150, 255, 233, 255) : new Color(255, 226, 146, 255);\n" +
+    '    this.fillRect(graphics, -145, 300 - this.safeOffsetY, 290, 12, feedback);\n' +
+    '    this.drawBlade(graphics);\n' +
+    '  }\n' +
+    '\n' +
+    '  private drawBlade(graphics: Graphics): void {\n' +
+    '    const cx = -45; const cy = this.bladeY; const cos = Math.cos(this.bladeAngle); const sin = Math.sin(this.bladeAngle);\n' +
+    '    const point = (x: number, y: number): [number, number] => [cx + x * cos - y * sin, cy + x * sin + y * cos];\n' +
+    '    const points = [point(-62, -8), point(68, -8), point(82, 0), point(68, 8), point(-62, 8)];\n' +
+    '    graphics.fillColor = FIRST_FRAME_PALETTE.blade;\n' +
+    '    graphics.moveTo(points[0][0], points[0][1]);\n' +
+    '    for (let i = 1; i < points.length; i += 1) graphics.lineTo(points[i][0], points[i][1]);\n' +
+    '    graphics.close(); graphics.fill();\n' +
+    '    this.fillRect(graphics, cx - 92, cy - 16, 34, 32, new Color(229, 95, 56, 255));\n' +
+    '  }\n' +
+    '\n' +
+    '  private fillRect(graphics: Graphics, x: number, y: number, width: number, height: number, color: Color): void {\n' +
+    '    graphics.fillColor = color;\n' +
+    '    graphics.roundRect(x, y, width, height, Math.min(10, width / 4, height / 4));\n' +
+    '    graphics.fill();\n' +
+    '  }\n' +
+    '\n' +
+    '  private applyTap(): void {\n' +
+    "    const terminal = this.state.status === 'failed' || this.state.status === 'won';\n" +
+    '    this.state = tap(this.state);\n' +
+    '    if (terminal) {\n' +
+    '      this.distance = 0; this.bladeY = -250; this.bladeAngle = 0;\n' +
+    '      this.cutTriggered = false; this.reflectTriggered = false; this.hazardTriggered = false;\n' +
+    '    } else {\n' +
+    '      this.bladeVy = -102;\n' +
+    '    }\n' +
+    '    this.redrawCourse();\n' +
+    '  }\n' +
+    '\n' +
+    '  private onTap(): void { this.applyTap(); }\n' +
+    '  private onKeyDown(event: EventKeyboard): void {\n' +
+    '    if (event.keyCode === KeyCode.SPACE || event.keyCode === KeyCode.ENTER) this.applyTap();\n' +
+    '  }\n' +
+    '}\n'
+  
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tests/performance-contract.test.ts:19:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: "import { _decorator, Camera, Canvas, Color, Component, Graphics, input, Input, KeyCode, Layers, Node, ResolutionPolicy, screen, UITransform, view, type EventKeyboard } from 'cc';\nimport { createGameState, resolveContact, resolveFinish, tap } from './core/game-rules';\nimport { TAP_GAME } from './core/tap-config';\n\nconst { ccclass } = _decorator;\nconst DESIGN_WIDTH = 390;\nconst DESIGN_HEIGHT = 844;\nconst exactFitScreen = false;\nconst FIRST_FRAME_PALETTE = {\n  background: new Color(7, 17, 38, 255), lane: new Color(31, 56, 86, 255),\n  mint: new Color(99, 242, 213, 255), coral: new Color(244, 91, 118, 255),\n  gold: new Color(247, 185, 76, 255), blade: new Color(229, 244, 251, 255),\n};\n\n@ccclass('GameBootstrap')\nexport class GameBootstrap extends Component {\n  private state = createGameState();\n  private graphics?: Graphics;\n  private distance = 0;\n  private bladeY = -250;\n  private bladeVy = 0;\n  private bladeAngle = 0;\n  private cutTriggered = false;\n  private reflectTriggered = false;\n  private hazardTriggered = false;\n  private safeOffsetY = 0;\n\n  start(): void {\n    void exactFitScreen;\n    view.setDesignResolutionSize(DESIGN_WIDTH, DESIGN_HEIGHT, ResolutionPolicy.FIXED_WIDTH);\n    const safeArea = screen.safeArea;\n    this.safeOffsetY = Math.max(0, (screen.windowSize.height - safeArea.height) / 2);\n    this.buildPlatformSafeCanvas();\n    this.redrawCourse();\n    input.on(Input.EventType.TOUCH_END, this.onTap, this);\n    input.on(Input.EventType.MOUSE_UP, this.onTap, this);\n    input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);\n    console.log(`[${TAP_GAME.name}] TapTap ${TAP_GAME.appId} portrait Graphics runtime ready`);\n  }\n\n  update(deltaTime: number): void {\n    if (this.state.status !== 'airborne') return;\n    const dt = Math.min(0.05, Math.max(0, deltaTime));\n    this.distance += Math.max(80, Math.abs(this.state.motion.vx)) * dt;\n    this.bladeVy += 164 * dt;\n    this.bladeY -= this.bladeVy * dt;\n    this.bladeAngle += this.state.motion.angularVelocity * dt;\n    if (!this.cutTriggered && this.distance >= 85) {\n      this.cutTriggered = true;\n      this.state = resolveContact(this.state, 'sharp', 'moon-fruit-1');\n    }\n    if (!this.reflectTriggered && this.distance >= 180 && this.bladeY < -170) {\n      this.reflectTriggered = true;\n      this.state = resolveContact(this.state, 'blunt', 'stone-1');\n      this.bladeVy = -92;\n    }\n    if (!this.hazardTriggered && this.distance >= 300 && this.bladeY < -320) {\n      this.hazardTriggered = true;\n      this.state = resolveContact(this.state, 'hazard', 'spikes');\n    } else if (this.bladeY < -390) {\n      this.state = resolveContact(this.state, 'fall');\n    } else if (this.distance >= 520) {\n      this.state = resolveFinish(this.state);\n    }\n    this.redrawCourse();\n  }\n\n  onDestroy(): void {\n    input.off(Input.EventType.TOUCH_END, this.onTap, this);\n    input.off(Input.EventType.MOUSE_UP, this.onTap, this);\n    input.off(Input.EventType.KEY_DOWN, this.onKeyDown, this);\n  }\n\n  private buildPlatformSafeCanvas(): void {\n    this.node.layer = Layers.Enum.UI_2D;\n    const transform = this.node.getComponent(UITransform) ?? this.node.addComponent(UITransform);\n    transform.setContentSize(DESIGN_WIDTH, DESIGN_HEIGHT);\n    const cameraNode = new Node('Portrait UI Camera');\n    cameraNode.layer = Layers.Enum.UI_2D;\n    cameraNode.setPosition(0, 0, 1000);\n    const camera = cameraNode.addComponent(Camera);\n    camera.projection = Camera.ProjectionType.ORTHO;\n    camera.orthoHeight = DESIGN_HEIGHT / 2;\n    camera.visibility = Layers.Enum.UI_2D;\n    camera.clearColor = FIRST_FRAME_PALETTE.background;\n    this.node.scene?.addChild(cameraNode);\n    const canvas = this.node.getComponent(Canvas) ?? this.node.addComponent(Canvas);\n    canvas.cameraComponent = camera;\n    this.graphics = this.node.getComponent(Graphics) ?? this.node.addComponent(Graphics);\n  }\n\n  private drawFirstFrameBackground(graphics: Graphics): void {\n    graphics.fillColor = FIRST_FRAME_PALETTE.background;\n    graphics.rect(-DESIGN_WIDTH / 2, -DESIGN_HEIGHT / 2, DESIGN_WIDTH, DESIGN_HEIGHT);\n    graphics.fill();\n    graphics.fillColor = FIRST_FRAME_PALETTE.lane;\n    graphics.roundRect(-168, -355, 336, 650, 26);\n    graphics.fill();\n    graphics.strokeColor = new Color(52, 88, 126, 255);\n    graphics.lineWidth = 4;\n    graphics.moveTo(0, -335); graphics.lineTo(0, 272); graphics.stroke();\n  }\n\n  private redrawCourse(): void {\n    const graphics = this.graphics;\n    if (!graphics) return;\n    graphics.clear();\n    this.drawFirstFrameBackground(graphics);\n    this.fillRect(graphics, -170, -365, 340, 28, new Color(127, 202, 104, 255));\n    this.fillRect(graphics, 94, -185, 45, 142, new Color(82, 109, 128, 255));\n    graphics.fillColor = new Color(232, 162, 72, 255); graphics.circle(-45, 28, 30); graphics.fill();\n    for (let x = -150; x <= 150; x += 38) {\n      graphics.fillColor = FIRST_FRAME_PALETTE.coral;\n      graphics.moveTo(x - 17, -335); graphics.lineTo(x, -297); graphics.lineTo(x + 17, -335); graphics.close(); graphics.fill();\n    }\n    this.fillRect(graphics, -126, 250, 30, 116, FIRST_FRAME_PALETTE.mint);\n    this.fillRect(graphics, 96, 250, 30, 116, FIRST_FRAME_PALETTE.gold);\n    this.fillRect(graphics, -126, 340, 252, 24, new Color(79, 141, 232, 255));\n    const feedback = this.state.status === 'failed' ? FIRST_FRAME_PALETTE.coral\n      : this.state.status === 'won' ? FIRST_FRAME_PALETTE.mint\n        : this.state.lastFeedback === 'cut' ? new Color(150, 255, 233, 255) : new Color(255, 226, 146, 255);\n    this.fillRect(graphics, -145, 300 - this.safeOffsetY, 290, 12, feedback);\n    this.drawBlade(graphics);\n  }\n\n  private drawBlade(graphics: Graphics): void {\n    const cx = -45; const cy = this.bladeY; const cos = Math.cos(this.bladeAngle); const sin = Math.sin(this.bladeAngle);\n    const point = (x: number, y: number): [number, number] => [cx + x * cos - y * sin, cy + x * sin + y * cos];\n    const points = [point(-62, -8), point(68, -8), point(82, 0), point(68, 8), point(-62, 8)];\n    graphics.fillColor = FIRST_FRAME_PALETTE.blade;\n    graphics.moveTo(points[0][0], points[0][1]);\n    for (let i = 1; i < points.length; i += 1) graphics.lineTo(points[i][0], points[i][1]);\n    graphics.close(); graphics.fill();\n    this.fillRect(graphics, cx - 92, cy - 16, 34, 32, new Color(229, 95, 56, 255));\n  }\n\n  private fillRect(graphics: Graphics, x: number, y: number, width: number, height: number, color: Color): void {\n    graphics.fillColor = color;\n    graphics.roundRect(x, y, width, height, Math.min(10, width / 4, height / 4));\n    graphics.fill();\n  }\n\n  private applyTap(): void {\n    const terminal = this.state.status === 'failed' || this.state.status === 'won';\n    this.state = tap(this.state);\n    if (terminal) {\n      this.distance = 0; this.bladeY = -250; this.bladeAngle = 0;\n      this.cutTriggered = false; this.reflectTriggered = false; this.hazardTriggered = false;\n    } else {\n      this.bladeVy = -102;\n    }\n    this.redrawCourse();\n  }\n\n  private onTap(): void { this.applyTap(); }\n  private onKeyDown(event: EventKeyboard): void {\n    if (event.keyCode === KeyCode.SPACE || event.keyCode === KeyCode.ENTER) this.applyTap();\n  }\n}\n",
+    expected: /private staticGraphics\?: Graphics/,
+    operator: 'match',
+    diff: 'simple'
+  }

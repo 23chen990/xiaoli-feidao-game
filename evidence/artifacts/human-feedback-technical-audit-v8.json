@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "HumanFeedbackTechnicalAudit",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "rootCauses": [
+    {
+      "id": "VISUAL-DEDICATED-RECOIL",
+      "type": "VISUAL",
+      "evidence": "src/game-core.ts 将该物体建模为 recoil-wall 并设置 recoil:true；src/main.ts:391-396 又用粉色描边和左向箭头单独绘制。截图里它与粉色尖刺使用相近危险色，既像专用弹射器又像致命物，错误暗示“只有这个装置会反弹”，没有建立“所有普通硬物的非锐接触都反射”的通用规则。"
+    },
+    {
+      "id": "GEOMETRY-WALL-SPIKE-CHOKE",
+      "type": "GEOMETRY",
+      "evidence": "recoil-wall 位于 x=1260、宽34、高280，覆盖 x=1243..1277、y=225..505；紧随其后的 spike-high 位于 x=1420、宽110、高210，玩家半径17扩张后的致命中心区约为 x=1348..1492、y=58..302。墙与致命区之间仅约71像素中心安全距离/88像素几何间距，在普通水平速度150下不到0.6秒。墙上方路线会直接进入高位尖刺，墙中段被封死，实际上只剩 y>505 的隐藏低路线，容错极低。"
+    },
+    {
+      "id": "GEOMETRY-RECOVERY-ARC",
+      "type": "GEOMETRY",
+      "evidence": "一次点击把 vy 设到最多 -300，并对后退 vx 一次增加210；在墙后不足一个完整飞行周期就遇到高位尖刺。玩家若在墙中段发生反射后立即按提示救回，会沿上升弧进入尖刺扩张区。截图中的刀正位于墙后、高位尖刺左缘，和这一失败路径一致。"
+    },
+    {
+      "id": "PHYSICS-SPECIAL-CASE-SHARP",
+      "type": "PHYSICS",
+      "evidence": "src/game-core.ts:802-805 在 debug recoil lesson 激活且该专用墙已产生一次 bounce 后，会把本应锚定的 tip/edge 接触强制改成 bounce；其他普通支撑的锐端仍锚定。这让同一刀尖接触规则因物体身份变化，违背“锐刃切割、锐端锚定、非锐部位反射”的稳定语义。"
+    },
+    {
+      "id": "PHYSICS-NONINCIDENT-IMPULSE",
+      "type": "PHYSICS",
+      "evidence": "bounce() 在相对法线入射速度 into<0 时使用反射公式，但 into>=0 时仍人为注入至少120横向或250纵向速度。已在分离或因重叠被检测的接触也可能凭空获得反弹能量，容易造成墙前反复碰撞、方向突变和不像抛掷物的手感。"
+    },
+    {
+      "id": "QA-COORDINATE-ORACLE",
+      "type": "QA",
+      "evidence": "tests/game-core.test.ts 的通关策略硬编码 x=1020..1470 时把目标高度改为520，直接知道卡口的唯一低路线。实测移除这段坐标知识后，全局高度目标250、300、340、420、460、500、520均在 x约1348的高位尖刺失败，目标385在45秒后仍卡在 x约1199；只有带该坐标特判的策略可在约19.09秒通关。现有测试证明的是脚本知道答案，不是整关自然可达。"
+    },
+    {
+      "id": "QA-DEBUG-ONLY",
+      "type": "QA",
+      "evidence": "tests/browser-smoke.ts:62-78 通过 loadScenario('recoil-wall')直接摆放刀和速度来验证反射；整关部分在119-120行只 loadScenario('course') 后截图，没有从起点真实操作到卡口或终点。qa-v5 acceptance 因此把隔离场景误当作 PLAY-001 整关证据，未覆盖用户实际失败路径。"
+    }
+  ],
+  "minimalChanges": [
+    {
+      "file": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "change": "删除 SafeSupport.recoil、recoilLessonActive、recoil-wall 专用身份及其“发生过一次反弹后锐端也反弹”的分支。该竖直物若保留，改成普通硬质支撑并使用普通 id；tip/edge 对所有普通硬支撑始终锚定，tip/edge 对可切块始终切割，body/handle 对两类实体统一走硬表面反射。",
+      "risk": "MEDIUM"
+    },
+    {
+      "file": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "change": "收敛为一个通用 hard-surface 响应：只在相对法线速度小于零时，以支撑表面速度为参考按接触法线反射法线分量，并保留/轻微衰减切向分量；已在分离时只做去穿透，不注入120/250的最低速度。静态支撑、移动支撑和未切开的实体块共用该函数。",
+      "risk": "HIGH"
+    },
+    {
+      "file": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "change": "重排 x=1240..1500 卡口但不增加新系统：把普通硬柱与高位尖刺拉开至少一个可观察和再输入的反应周期，并调整柱体/尖刺高度形成清楚可见、刀身带余量的上下通路；不再要求玩家必须预先知道 y=520。后退救回仍可作为偶发结果，但不作为唯一通关钥匙。",
+      "risk": "HIGH"
+    },
+    {
+      "file": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/main.ts",
+      "change": "删除 recoil 专用粉色描边、左向箭头和 mechanics catalog 中的 recoil-wall；普通硬柱与其他白色硬支撑同样绘制。保留通用“弹！”反馈，但只在实际非锐入射反射时显示。",
+      "risk": "LOW"
+    },
+    {
+      "file": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/mechanics-v2.test.ts",
+      "change": "先删除依赖 recoil-wall 身份的绿灯测试，改写为普通静态支撑、移动支撑和实体块的通用入射反射测试；加入同一普通支撑锐端始终锚定、可切块锐刃始终切割以及分离接触不得凭空加速的测试。",
+      "risk": "MEDIUM"
+    },
+    {
+      "file": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/game-core.test.ts",
+      "change": "删除 x=1020..1470、目标y=520的卡口答案特判；增加多组只依赖全局高度/下降状态、不了解障碍坐标的整关策略，从真实 reset 起点验证卡口容错和至少一个完整终点。",
+      "risk": "MEDIUM"
+    },
+    {
+      "file": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/browser-smoke.ts",
+      "change": "隔离场景仅保留作碰撞诊断，不能再作为整关通过证据；新增桌面鼠标与移动端原生触屏从 resetGame 开始的自然整关测试，全程禁止 loadScenario、debugSetBladePose、debugSetVelocity 和直接跳段，真实穿过原卡口并至少一次抵达终点。",
+      "risk": "MEDIUM"
+    }
+  ],
+  "redTests": [
+    {
+      "id": "HARD-IDENTITY-001",
+      "level": "unit",
+      "assertion": "createCourse 返回的普通支撑不得包含 recoil 字段、recoil-wall id 或任何专用反弹身份；当前实现应先失败。"
+    },
+    {
+      "id": "HARD-REFLECT-002",
+      "level": "unit",
+      "assertion": "对普通静态横面、普通竖直硬柱、移动支撑和未切开的实体块分别制造 body/handle 入射；反射后的相对法线速度必须与入射方向相反，大小由同一恢复系数决定，切向速度不被专用规则重写。"
+    },
+    {
+      "id": "HARD-SEPARATING-003",
+      "level": "unit",
+      "assertion": "当相对法线速度大于等于零时，接触只能去穿透且不得把速度强制改成至少120或250；当前 bounce fallback 应使本测试先失败。"
+    },
+    {
+      "id": "SHARP-STABLE-004",
+      "level": "unit",
+      "assertion": "同一普通硬柱在发生过非锐反弹后，下一次 tip/edge 接触仍必须锚定；可切实体的 tip/edge 接触仍切割，body/handle 仍只反射。"
+    },
+    {
+      "id": "CHOKE-REACTION-005",
+      "level": "unit",
+      "assertion": "普通硬柱出射边界到下一致命区域之间必须提供至少一个项目定义的可观察/再输入反应周期，且刀身带安全余量后至少存在两条可见通过区间；当前墙与高位尖刺的约88像素间距及单一低路线应先失败。"
+    },
+    {
+      "id": "COURSE-NO-ORACLE-006",
+      "level": "unit",
+      "assertion": "从 reset 起点运行一组不读取障碍x坐标、只使用全局高度和升降状态的宽松输入策略；多数策略必须穿过 x=1600，至少一个在30秒内抵达任一终点。测试代码不得包含1020、1470、520或任何卡口专用分支；当前关卡应先失败。"
+    },
+    {
+      "id": "PLAY-DESKTOP-NATURAL-007",
+      "level": "browser",
+      "assertion": "真实 Chromium 鼠标从 resetGame 开始，禁止 loadScenario/debug/直接step，使用不含关卡坐标答案的输入节奏完整穿过截图卡口并抵达终点；必须保存卡口前、通过后和终点截图。"
+    },
+    {
+      "id": "PLAY-DESKTOP-TOLERANCE-008",
+      "level": "browser",
+      "assertion": "至少三组带轻微时序扰动的真实鼠标整关尝试中，两组能够越过 x=1600，且不会在同一普通硬面连续产生三次以上无进展接触；不得以 debug recoil 场景替代。"
+    },
+    {
+      "id": "PLAY-MOBILE-NATURAL-009",
+      "level": "browser",
+      "assertion": "390x844 原生触屏从普通起点开始，在不调用 loadScenario 或任何 debug API 的情况下越过 x=1600并至少完成一次整关；页面无滚动且控制台零错误。"
+    },
+    {
+      "id": "VISUAL-GENERIC-HARD-010",
+      "level": "browser",
+      "assertion": "整关截图和运行时课程数据中不存在粉色专用反弹墙、左向弹射箭头或 recoil-wall 标签；普通硬柱与其他硬支撑视觉语义一致，粉色仅保留给致命尖刺。"
+    }
+  ],
+  "preserve": [
+    "目标仍是符刃夜行的同一 prototype-a workspace，不修改 prototype-b、prototype-c、旧妖怪夜市 fixture 或共享 factory。",
+    "保留单次点击翻刃、输入去重、固定120Hz模拟、低帧追赶和一触重开。",
+    "保留 tip/edge 切割 sigil 与可切实体的语义。",
+    "保留 tip/edge 接触普通不可切硬支撑时锚定的语义。",
+    "保留 body/handle 接触普通硬表面时反射的语义，但反射必须来自入射速度、表面速度和接触法线。",
+    "保留移动支撑、锚定携带及重新起跳继承表面速度。",
+    "保留尖刺与坠落的不同失败原因、数学终点、偶发一次性奖励局和原创灰盒表达。",
+    "声音工作继续冻结，不新增、替换或调音。",
+    "保留 qa-v4、qa-v5 和 qa-v5-fix1 历史证据不覆盖；修复后写入新的 QA 目录。",
+    "隔离 debug scenario 可用于定位单一碰撞，但不得再被引用为整关可达性或人类体验通过证据。"
+  ]
+}

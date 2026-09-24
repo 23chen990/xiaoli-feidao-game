@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "passed": false,
+  "checks": [
+    {
+      "name": "exact opening support branch inspected after reproduction matrix",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/reproduction-matrix.json L1-GROUND; /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-world-renderer.ts:324"
+    },
+    {
+      "name": "opening-table-a and opening-table-b grounded renderer membership",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-levels.ts:179 defines opening-table-a and opening-table-b; /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-world-renderer.ts:324 isGroundedTabletop excludes both. Their thin support meshes still render at :283. /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-startup.png shows suspended opening white slabs."
+    },
+    {
+      "name": "interactive stack does not silently bypass collision",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-levels.ts:178 sets level1-ladder-stack-a/b collidable:false while pathRole is branch; /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts:932 skips these blocks in collision. /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/active-slice-contract.json L1-STACK requires actual interaction."
+    }
+  ],
+  "issues": [
+    {
+      "id": "L1-OPENING-TABLE-BRANCH",
+      "severity": "error",
+      "message": "开场 opening-table-a/b 没进入落地基座渲染分支；此前只修了其他台面，无法关闭开场悬浮投诉。",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/reproduction-matrix.json L1-GROUND-390/L1-GROUND-1100; /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-startup.png; /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-world-renderer.ts:324"
+    },
+    {
+      "id": "L1-STACK-DECORATIVE-SUBSTITUTION",
+      "severity": "error",
+      "message": "两组命名为 branch 的梯形堆叠仍 collidable:false，碰撞路径跳过。只能证明装饰存在，不能满足刀接触后散开/失去支撑下落的要求；自然输入精确分支证据仍待 QA。",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-levels.ts:178; /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts:932; /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/active-slice-contract.json L1-STACK"
+    }
+  ],
+  "screenshots": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-startup.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-1-startup.png"
+  ],
+  "consoleLog": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-console.json",
+  "testedAt": "2026-09-07T05:38:43.294Z"
+}

@@ -1,0 +1,66 @@
+✔ L1-STACK a: actual knife contact cuts the bearing object and releases the overlapping upper object (6.720125ms)
+✔ L1-STACK-VISUAL-EVIDENCE a: same target stays visible and separates into two halves after cut (1.398292ms)
+✔ L1-STACK b: actual knife contact cuts the bearing object and releases the overlapping upper object (2.410375ms)
+✔ L1-STACK-VISUAL-EVIDENCE b: same target stays visible and separates into two halves after cut (2.290125ms)
+✔ L1-GRAVITY active airborne play does not freeze a hovering supported collectible (2.288541ms)
+✔ L1-REWARD intact has zero earnings; a real cut names the separated target and replay clears earnings (3.13975ms)
+✔ L1-PLACEMENT every initial collectible has a touching support, including the late and bridge targets (0.545ms)
+✖ L1-RUNWAY visible support stays collidable through the normal forward replay (38.669875ms)
+✔ L1-RUNWAY later sharp contact stays airborne while body contact still bounces (1.456875ms)
+✔ L1-RUNWAY early approaching top-face tip contact recovers without removing side anchors (0.64725ms)
+✖ L1-RUNWAY early separating top-face tip contact consumes release intent using tap-time velocity once (2.169791ms)
+✔ L1-RUNWAY recovery release snapshot does not change ordinary non-runway support launches (0.172916ms)
+✔ L1-RUNWAY expired recovery intent does not reinterpret a later airborne tap as release (4.026708ms)
+✔ L1-RUNWAY opening keeps the authored white landing anchor before runway bounce feedback (3.548167ms)
+✔ L1-FINISH labels use viewport coordinates without a second offset (1.579834ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 390x844 (1.110458ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 1100x720 (0.242667ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 15
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 439.357833
+
+✖ failing tests:
+
+test at tests/level1-recovery.test.ts:104:1
+✖ L1-RUNWAY visible support stays collidable through the normal forward replay (38.669875ms)
+  AssertionError [ERR_ASSERTION]: replay ended before the runway branch was exercised: 8.53333333333349s
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:129:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/level1-recovery.test.ts:191:1
+✖ L1-RUNWAY early separating top-face tip contact consumes release intent using tap-time velocity once (2.169791ms)
+  AssertionError [ERR_ASSERTION]: release must clamp the current tap-time vertical velocity into its authored recovery corridor
+  
+  -180 !== -130
+  
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:232:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: -180,
+    expected: -130,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

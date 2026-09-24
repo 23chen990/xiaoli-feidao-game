@@ -1,0 +1,77 @@
+{
+  "schema": "factory.competitor-experience-gap-triage.v1",
+  "status": "OPEN",
+  "route": "formal-fixer-candidate",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "reportedBy": "user",
+  "summary": "工程运行稳定性已有改善，但与竞品在切割反馈、收益生命周期、终点墙语义、镜头节奏和整体爽感上仍存在系统性差距。",
+  "evidence": [
+    "artifacts/review-coverage-audit-v2.json",
+    "artifacts/formal-fixer-release-performance-attempt2.json",
+    "artifacts/core-comparison-contract-v1.json",
+    "artifacts/reference-doc-review-v1.json",
+    "artifacts/qa-retest-multiplier-wall-v1.json",
+    "reference-evidence/manifest.json"
+  ],
+  "reproductionMatrix": [
+    {
+      "object": "cuttable food/object",
+      "lifecycle": "drag -> contact -> sever -> post-cut settlement",
+      "presentationPath": "game-core recordCut + main HUD/banner + three presentation",
+      "viewport": "390x844 portrait and desktop",
+      "gap": "收益当前偏全局即时记分，缺少竞品式的切割完成后从物体位置飞出、结算并回收的奖励事件链。"
+    },
+    {
+      "object": "finish multiplier wall / reward brick",
+      "lifecycle": "finish contact -> reveal -> reward -> terminal",
+      "presentationPath": "finish wall meshes + fixed multiplier labels + terminal overlay",
+      "viewport": "390x844 portrait",
+      "gap": "倍率标签脱离世界砖块，终点墙与安全墙存在重叠/遮挡，终端层覆盖奖励语义。"
+    },
+    {
+      "object": "camera framing",
+      "lifecycle": "approach -> cut commit -> reward reveal -> finish/failure",
+      "presentationPath": "three camera rig",
+      "viewport": "390x844 portrait and desktop",
+      "gap": "已有启动和路径稳定性修复，但仍缺少服务于信息读取的多段镜头节奏与关键事件构图。"
+    },
+    {
+      "object": "knife/object contact",
+      "lifecycle": "anticipation -> contact -> resistance -> slice -> fragments",
+      "presentationPath": "cut collision, particles, tween, audio hooks",
+      "viewport": "390x844 portrait",
+      "gap": "切割反馈仍偏单层视觉反馈，阻力、命中、断裂、碎片落地和收益反馈没有形成连续的触感链。"
+    },
+    {
+      "object": "hazard and route choice",
+      "lifecycle": "approach -> decision -> success/failure -> retry",
+      "presentationPath": "level progression, hazards, route-changing supports",
+      "viewport": "all sampled levels and mobile portrait",
+      "gap": "工程样本可跑通不等于全关卡压力、可归因失败和路线选择达到竞品强度。"
+    }
+  ],
+  "priorityFindings": [
+    "REWARD-LIFECYCLE-001",
+    "FINISH-SETTLEMENT-030",
+    "FINISH-WALL-SEMANTICS-004",
+    "FINISH-REVEAL-TIMING-039",
+    "FINISH-LANE-IDENTITY-040",
+    "CAMERA-BEATS-006",
+    "GAME-FEEL-035",
+    "AUDIO-TOUCH-008",
+    "FAILURE-RECOVERY-007"
+  ],
+  "acceptanceCriteria": [
+    "奖励只在切割完成后的明确事件中生成，并从被切物体/收益砖块的世界位置出发，完成可见飞行、结算与回收；不以常驻左上 HUD 代替。",
+    "终点墙是不可穿透的世界几何；每个倍率绑定对应砖块，墙体、倍率、收益动画和终端层在移动竖屏上互不遮挡。",
+    "镜头至少为接近、切割承诺、奖励揭示、终点/失败四类事件提供可读构图；不强制所有关卡使用镜头转换。",
+    "切割反馈具备可验证的预备、接触阻力、断裂、碎片落地、收益和音画反馈链。",
+    "自然输入在移动视口完成启动、核心切割、结算、失败/恢复、重玩；同时保留独立工程 QA 与感知 QA 证据。",
+    "不复制竞品名称、资产、UI 表达或数值，只迁移经证据支持的行为模式。"
+  ],
+  "blockingEvidenceGaps": [
+    "用户提供的目标录屏在当前环境仍不可访问，竞品逐帧复核不能标记为已验证。",
+    "现有 QA 主要是 web-lite/headless Chromium，不能代替 WeChat、Douyin、TapTap 真机适配证据。"
+  ]
+}

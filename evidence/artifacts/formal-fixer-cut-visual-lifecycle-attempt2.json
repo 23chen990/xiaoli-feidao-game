@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixerAttempt",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "issueIds": ["gameplay-triage-cut-visual-lifecycle-v1", "gameplay-triage-spike-no-player-impact-v1"],
+  "attempt": 2,
+  "contextOmitted": ["unrelated factory changes", "platform packaging outputs", "historical screenshots not covering the exact lifecycle branch"],
+  "matrix": {
+    "objectTypes": ["l4-entry cut sigil", "l4-gap-risk spike", "l10-falling-risk spike", "l12-floor-risk spike"],
+    "stateBranches": ["cut -> falling -> landed", "ordinary airborne -> spike failure", "late miss -> recovery support -> finish"],
+    "rendererPath": "SliceSimulation -> ThreePresentationModel -> ThreeCutVisualManager / ThreeWorldRenderer",
+    "viewports": ["1180x720", "390x844"]
+  },
+  "filesChanged": ["src/three-cut-visuals.ts", "src/game-levels.ts", "tests/level4-spike-policy.test.ts", "tests/level10-spike-policy.test.ts", "tests/level12-pressure-policy.test.ts"],
+  "changes": [
+    "CutVisualEntity stores the latest synced presentation before facts are read, eliminating stale falling state.",
+    "Level 04 now has a broad early and final recovery shelf while keeping a 200x80 moving low-route spike; the exact natural safe/risk choices are distinguishable.",
+    "Level 10 falling-risk is moved to the low route, Level 12 floor-risk keeps an upper escape, and Level 12 gains a final recovery shelf.",
+    "Level 06 retains a very narrow moving low-gap hazard so later-level motion semantics remain represented without blocking natural play."
+  ],
+  "tests": {
+    "unit": {"command": "pnpm test", "passed": true, "testsPassed": 143},
+    "lint": {"command": "pnpm lint", "passed": true},
+    "typecheck": {"command": "pnpm typecheck", "passed": true},
+    "build": {"command": "pnpm build", "passed": true, "distBytes": 2725416},
+    "browser": {"command": "pnpm qa:browser", "passed": true},
+    "browser3d": {"command": "pnpm qa:3d", "passed": true, "artifact": "workspace/prototype-a/dist-3d"},
+    "levelPack": {"command": "pnpm qa:levels", "passed": true, "artifact": "qa-level-pack-v1/runner-report.json"},
+    "spikeImpact": {"command": "pnpm exec tsx scripts/qa-spike-impact.ts", "passed": true, "verdict": "PASS_SAFE_AVOID_AND_RISK_CONTACT", "runs": 10}
+  },
+  "status": "PASS",
+  "remainingEvidenceGaps": ["platform adapter/package QA remains outside web-lite scope"],
+  "claimBoundary": "web-lite evidence only; no WeChat, Douyin, or TapTap publishability claim"
+}

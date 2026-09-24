@@ -1,0 +1,271 @@
+{
+  "schemaVersion": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "buildHash": "c8f24a360b3dc8963beccc87bc1db10e62f2dda4276afdf0ffb6074240d4636c",
+  "sourceCorrection": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/gameplay-retro-missed-topology-v2.json#corrections[0]",
+  "sourceCorrectionSha256": "5b09ebcb5d6c90155273b54403034cf387cc43059cd783ccc9f4e6e4642cdc20",
+  "interpretation": "按用户纠正核验切后物体的局部奖励和累计更新，不添加动画必须完全不重叠或强制延迟要求。",
+  "sequences": [
+    {
+      "device": "portrait",
+      "manifestPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/portrait/frames.json",
+      "buildHash": "c8f24a360b3dc8963beccc87bc1db10e62f2dda4276afdf0ffb6074240d4636c",
+      "videoSha256": "a5d41c0da3923d25e6c84128fd2275d56446e33f293cb7bd9105022065318c67",
+      "lastIntactFrame": {
+        "requestedSeconds": 2.66,
+        "actual": {
+          "mediaTime": 2.64,
+          "presentedFrames": 9,
+          "width": 390,
+          "height": 844
+        },
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/portrait/t-2.660.png",
+        "sha256": "cd39692a0c8831a5d48d69a3e5858dd51eb5b41259b5b44fd6385ea9c37f96fd"
+      },
+      "firstObservedCutRewardFrame": {
+        "requestedSeconds": 2.68,
+        "actual": {
+          "mediaTime": 2.68,
+          "presentedFrames": 2,
+          "width": 390,
+          "height": 844
+        },
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/portrait/t-2.680.png",
+        "sha256": "a6f73ccebd3a8610f50ecd6edd3cf5fbf7a1931e5ad33186f53bb7551ed13529"
+      },
+      "laterFrame": {
+        "requestedSeconds": 2.72,
+        "actual": {
+          "mediaTime": 2.72,
+          "presentedFrames": 10,
+          "width": 390,
+          "height": 844
+        },
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/portrait/t-2.720.png",
+        "sha256": "e25f7600438fe1637e37b321a5fd38f75a36167c88ab00bb10a3a0033d5a3554"
+      },
+      "directPixels": {
+        "intactPhase": "刀已接触或在屏幕投影上与球体重叠，物体仍完整时，切割/分数/收益均为0，没有局部+1。",
+        "cutRewardPhase": "实际2.68s首张变化帧可见完整球体已变为两侧切片，中央出现亮色切面/分缝，局部+1位于原球体，HUD收益变1；后续2.72s两半明显向外分离。",
+        "bladeInterpretation": "奖励帧中刀仍可能在两片之间或与其投影重叠，这不代表原物体仍处于intact。未观察到完整态持续涨收益。",
+        "localRewardVisible": true,
+        "hudChangesOnlyOnObservedPostCutFrames": true,
+        "concreteContradictionObserved": false
+      },
+      "historicalReadOnlyStates": [
+        {
+          "atMs": 341.3978750000001,
+          "cuts": 0,
+          "totalEarnings": 0,
+          "rune1": {
+            "id": "rune-1",
+            "kind": "cuttable",
+            "x": 203,
+            "y": 312,
+            "radius": 48,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0,
+            "vx": 0,
+            "vy": 0,
+            "angle": 0,
+            "angularVelocity": 0,
+            "foodStyle": "apple",
+            "supportSurfaceId": "opening-table-a"
+          },
+          "events": [
+            {
+              "id": 1,
+              "type": "launch",
+              "x": 120,
+              "y": 420,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "atMs": 695.6292079999998,
+          "cuts": 1,
+          "totalEarnings": 1,
+          "rune1": {
+            "id": "rune-1",
+            "kind": "cuttable",
+            "x": 200,
+            "y": 309.5,
+            "radius": 48,
+            "value": 1,
+            "cut": true,
+            "splitAge": 0.19999999999999998,
+            "vx": -15,
+            "vy": 45,
+            "angle": 0.5599999999999997,
+            "angularVelocity": 2.8,
+            "foodStyle": "apple",
+            "supportSurfaceId": "opening-table-a"
+          },
+          "events": [
+            {
+              "id": 1,
+              "type": "launch",
+              "x": 120,
+              "y": 420,
+              "value": 1
+            },
+            {
+              "id": 2,
+              "type": "cut",
+              "x": 203,
+              "y": 312,
+              "value": 1,
+              "targetId": "rune-1",
+              "contactPart": "edge"
+            }
+          ]
+        }
+      ],
+      "unknowns": [
+        "视频25fps，帧间约40ms；最后完整态与首张切开/奖励帧之间不能解析同一帧内部执行先后。",
+        "没有证明一个独立的“已经分开但奖励尚未开始”的必需空档；用户并未要求这种空档，也未给出最小分离距离或延迟。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/portrait/t-2.660.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/portrait/t-2.680.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/portrait/t-2.720.png"
+      ]
+    },
+    {
+      "device": "desktop",
+      "manifestPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/frames.json",
+      "buildHash": "c8f24a360b3dc8963beccc87bc1db10e62f2dda4276afdf0ffb6074240d4636c",
+      "videoSha256": "d8a5cfb4e3131ade1d92393dabbaf36392bfbde3456617ad3dd8d81f0fd0df68",
+      "lastIntactFrame": {
+        "requestedSeconds": 2.54,
+        "actual": {
+          "mediaTime": 2.52,
+          "presentedFrames": 7,
+          "width": 1100,
+          "height": 720
+        },
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.540.png",
+        "sha256": "1f8b02a4007572391297418861ba726921ddc708cbc74e0ee1f7b57757fcfb54"
+      },
+      "firstObservedCutRewardFrame": {
+        "requestedSeconds": 2.56,
+        "actual": {
+          "mediaTime": 2.56,
+          "presentedFrames": 2,
+          "width": 1100,
+          "height": 720
+        },
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.560.png",
+        "sha256": "5ad69477250add41bc01d2bb88ecc3aac6f75848df12b8bf20102afca792669d"
+      },
+      "laterFrame": {
+        "requestedSeconds": 2.66,
+        "actual": {
+          "mediaTime": 2.64,
+          "presentedFrames": 9,
+          "width": 1100,
+          "height": 720
+        },
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.660.png",
+        "sha256": "e6faccf89ef8e6ddb4801fb66fa4cab053f999f746c8610bb3714f2a23784cbf"
+      },
+      "directPixels": {
+        "intactPhase": "刀已接触或在屏幕投影上与球体重叠，物体仍完整时，切割/分数/收益均为0，没有局部+1。",
+        "cutRewardPhase": "实际2.56s首张变化帧中完整球体已分成两个有切面的半球，间隙可辨；局部+1位于原球体附近，HUD收益变1；后续继续分离。",
+        "bladeInterpretation": "奖励帧中刀仍可能在两片之间或与其投影重叠，这不代表原物体仍处于intact。未观察到完整态持续涨收益。",
+        "localRewardVisible": true,
+        "hudChangesOnlyOnObservedPostCutFrames": true,
+        "concreteContradictionObserved": false
+      },
+      "historicalReadOnlyStates": [
+        {
+          "atMs": 346.841958,
+          "cuts": 0,
+          "totalEarnings": 0,
+          "rune1": {
+            "id": "rune-1",
+            "kind": "cuttable",
+            "x": 203,
+            "y": 312,
+            "radius": 48,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0,
+            "vx": 0,
+            "vy": 0,
+            "angle": 0,
+            "angularVelocity": 0,
+            "foodStyle": "apple",
+            "supportSurfaceId": "opening-table-a"
+          },
+          "events": [
+            {
+              "id": 1,
+              "type": "launch",
+              "x": 120,
+              "y": 420,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "atMs": 687.430875,
+          "cuts": 1,
+          "totalEarnings": 1,
+          "rune1": {
+            "id": "rune-1",
+            "kind": "cuttable",
+            "x": 200,
+            "y": 309.5,
+            "radius": 48,
+            "value": 1,
+            "cut": true,
+            "splitAge": 0.19999999999999998,
+            "vx": -15,
+            "vy": 45,
+            "angle": 0.5599999999999997,
+            "angularVelocity": 2.8,
+            "foodStyle": "apple",
+            "supportSurfaceId": "opening-table-a"
+          },
+          "events": [
+            {
+              "id": 1,
+              "type": "launch",
+              "x": 120,
+              "y": 420,
+              "value": 1
+            },
+            {
+              "id": 2,
+              "type": "cut",
+              "x": 203,
+              "y": 312,
+              "value": 1,
+              "targetId": "rune-1",
+              "contactPart": "edge"
+            }
+          ]
+        }
+      ],
+      "unknowns": [
+        "视频25fps，帧间约40ms；最后完整态与首张切开/奖励帧之间不能解析同一帧内部执行先后。",
+        "没有证明一个独立的“已经分开但奖励尚未开始”的必需空档；用户并未要求这种空档，也未给出最小分离距离或延迟。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.540.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.560.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.660.png"
+      ]
+    }
+  ],
+  "answers": {
+    "cutBeforeReward": "首次有奖励的已解码帧已经呈现切面/两片；没有奖励出现在完整态的反例。同帧内是否先完成分离再触发局部奖励不能由25fps视频独立解析。",
+    "hudDuringIntact": "未观察到。完整态且刀投影重叠时HUD仍0；切开与局部+1首次出现时HUD变1。",
+    "localAtTarget": "两个视口均是；+1从首个目标附近出现，然后继续上浮。",
+    "repairImplication": "本分析没有发现可据以新增奖励修复的具体矛盾。保留采样未知，不要求为了把动画分成互不重叠阶段而修改产品。"
+  }
+}

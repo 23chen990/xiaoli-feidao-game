@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "human-review-20260907-l1-recovery",
+  "attempt": 3,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "storedThreadId": "01a07540-7ee1-7c01-899b-0ea12bde1f19",
+  "status": "READY_FOR_INDEPENDENT_QA",
+  "why": "Formal route remains required because Level1 object topology, physics lifecycle and Three.js support rendering span multiple modules. This bounded attempt addressed only the three task issues; source tests and diagnostic browser checks are not product acceptance.",
+  "contextIntentionallyOmitted": [
+    "Other levels and games",
+    "Shared factory and platform packaging",
+    "Unverified media and full conversation",
+    "Natural QA claims from fixed-cadence or state-injected traces"
+  ],
+  "rootCauses": [
+    {
+      "issueId": "L1-STACK-DECORATIVE-SUBSTITUTION",
+      "objectType": "level1-rainbow-step-a/b and level1-ladder-stack-a/b",
+      "stateBranch": "intact→bearing contact→cut/separate→unsupported fall",
+      "renderer": "game-levels→game-core→ThreePresentationModel→ThreeWorldRenderer",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-3/red.log",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-3/green-targeted.log",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-3/full-test.log",
+        "Prior decorative branch was replaced in attempt 2 with collidable, overlapping, parent-linked visible blocks; attempt 3 preserves and strengthens same-object presentation checks. Both lower bodies cut into fragments and release the same upper IDs."
+      ]
+    },
+    {
+      "issueId": "L1-STACK-VISUAL-EVIDENCE-GAP",
+      "objectType": "same stack-a/b visible object IDs",
+      "stateBranch": "pre-cut intact→post-cut separated/falling",
+      "renderer": "ThreePresentationModel and cuttable visual entity",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-3/red.log",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-3/green-targeted.log",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-3/runtime.log",
+        "New targeted checks assert intact upper visibility, released falling flag, cut lower two-half separation and target identity. Independent QA still must capture normal-input pixels for this exact branch."
+      ]
+    },
+    {
+      "issueId": "L1-GROUND-HIGH-SLAB",
+      "objectType": "white-bumper and white-branch high slabs",
+      "stateBranch": "startup/intact→approach",
+      "renderer": "ThreeWorldRenderer.syncSupports support-base branch",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-3/red.log",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-3/green-targeted.log",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-3/full-test.log",
+        "Both high slab IDs now enter the same floor-reaching base path as other authored tables, with base bottom at GROUND_VISUAL_TOP_Y."
+      ]
+    }
+  ],
+  "filesChanged": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-world-renderer.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/opening-renderer-regression.test.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "tests": [
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts tests/opening-renderer-regression.test.ts",
+      "exitCode": 1,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-3/red.log",
+      "phase": "RED"
+    },
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts tests/opening-renderer-regression.test.ts",
+      "exitCode": 0,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-3/green-targeted.log",
+      "phase": "GREEN"
+    },
+    {
+      "command": "pnpm test",
+      "exitCode": 0,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-3/full-test.log",
+      "phase": "GREEN"
+    },
+    {
+      "command": "pnpm lint",
+      "exitCode": 0,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-3/lint.log",
+      "phase": "LINT"
+    },
+    {
+      "command": "pnpm typecheck",
+      "exitCode": 0,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-3/typecheck.log",
+      "phase": "TYPECHECK"
+    },
+    {
+      "command": "Playwright preview smoke on built dist, normal Space only; no page errors, early fixed cadence failed before stacks; diagnostic only",
+      "exitCode": 0,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-3/runtime.log",
+      "phase": "GREEN"
+    }
+  ],
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0,
+    "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-3/build.log",
+    "count": 1,
+    "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html",
+    "sha256": "e3b8d5721901bae1182e0e407c3f214341195d16d1044335a3183cd713341da1"
+  },
+  "remainingEvidenceGaps": [
+    "Independent QA must use unchanged build hash e3b8d5721901bae1182e0e407c3f214341195d16d1044335a3183cd713341da1 and capture 390x844 plus 1100x720.",
+    "Natural same-ID stack-a/b contact→cut→release→fall/landing remains unobserved; targeted tests are engineering evidence only.",
+    "High-slab floor bases now pass structural checks, but perceptual QA must verify no remaining floating appearance or occlusion at both viewports.",
+    "Opening-table-b ownership and any unrelated legacy supports remain QA evidence questions, not changed in this attempt.",
+    "Runtime smoke ended in early fall under fixed Space cadence; this does not prove impossibility and is not natural-player acceptance.",
+    "No mini-game platform publishability claim."
+  ],
+  "completedAt": "2026-09-07T06:34:00Z"
+}

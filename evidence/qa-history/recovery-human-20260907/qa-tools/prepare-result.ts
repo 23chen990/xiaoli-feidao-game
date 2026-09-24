@@ -1,0 +1,11 @@
+import {readFileSync,writeFileSync,readdirSync} from 'node:fs';
+import {resolve} from 'node:path';
+import {createHash} from 'node:crypto';
+import {TaskSchema,ResultSchema} from '../../qa-recovery-20260907/recovery-schemas.ts';
+const base=resolve('runs/mobile-slice-adaptation-20260830/recovery-human-20260907');
+const task=TaskSchema.parse(JSON.parse(readFileSync(`${base}/qa-prepare-task.json`,'utf8')));
+const out=task.outputDirectory;
+const files=readdirSync(out).filter(n=>!['result.json','prepared-sha256.json'].includes(n)).map(n=>`${out}/${n}`);
+writeFileSync(`${out}/prepared-sha256.json`,JSON.stringify({targetGame:task.targetGame,workspace:task.workspace,files:files.map(path=>({path,sha256:createHash('sha256').update(readFileSync(path)).digest('hex')}))},null,2)+'\n');
+const result=ResultSchema.parse({schemaVersion:1,role:'QAAgent',targetGame:task.targetGame,workspace:task.workspace,status:'BLOCKED',reportPaths:[...files,`${out}/prepared-sha256.json`],blockers:['WAITING_FOR_COMPLETED_FIX_BUILD'],sourceModified:false,summary:'已准备独立Playwright录制器与Zod分轨报告工具：绝对时钟点击、首切逐帧、真正终态再重玩、前后构建哈希和不可覆盖输出。纯策略回归已先失败后通过。未启动游戏QA，等待根任务派发完成构建哈希与精确范围。'});
+writeFileSync(`${out}/result.json`,JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));

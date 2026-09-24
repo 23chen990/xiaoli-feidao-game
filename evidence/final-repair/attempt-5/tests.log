@@ -1,0 +1,1 @@
+NOT RUN: The tap-time release candidate failed the required deterministic seed-31 replay and was reverted. The focused candidate runs and exact replay diagnostics are recorded in red-targeted.log, red-clamp-*.log, green-targeted.log, and fix-result.json. No post-revert full-suite pass is claimed.

@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixerSummary",
+  "route": "formal-fixer",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "attempt": 2,
+  "filesChanged": ["src/three-cut-visuals.ts", "tests/food-theme.test.ts", "src/game-levels.ts", "tests/level4-spike-policy.test.ts"],
+  "fix": "Dessert split halves now use matching authored cake-slice half meshes; Level 04 low-route spike was narrowed to preserve a readable natural crossing.",
+  "tests": {"all":"134 passed", "typecheck":"pass", "lint":"pass", "build":"pass"},
+  "qa": {"status":"BLOCKED", "reason":"level-pack runner repeatedly hit an existing Playwright networkidle timeout; independent natural journey report was not regenerated."},
+  "remainingEvidenceGaps": ["Need fresh QA natural/perceptual reports after runner infrastructure is repaired or rerun cleanly."]
+}

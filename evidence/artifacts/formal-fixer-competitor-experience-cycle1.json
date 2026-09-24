@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixAttempt",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer-new-user-authorized-cycle",
+  "previousAutomaticBudget": {"used": 2, "max": 2, "preserved": true},
+  "attempt": 1,
+  "sourceTriage": "artifacts/competitor-experience-gap-triage-v1.json",
+  "exactMatrix": "artifacts/competitor-experience-gap-matrix-v1.json",
+  "contextOmitted": ["unavailable competitor recording", "mismatched historical perceptual reports", "native platform packaging"],
+  "filesChanged": [
+    "src/main.ts",
+    "src/style.css",
+    "tests/perceptual-level-pressure.test.ts"
+  ],
+  "changes": [
+    "Added a player-visible reward-fly animation from the cut object's projected world position to the earnings banner target.",
+    "Moved terminal settlement overlay to a bottom-left safe-area position so the finish wall remains visible on desktop and portrait mobile.",
+    "Added test-first perceptual assertions for reward-flight hooks and terminal/finish separation."
+  ],
+  "tests": {
+    "red": "New terminal-layout and reward-flight assertions failed before implementation.",
+    "green": "pnpm test passed 162/162",
+    "lint": "PASS",
+    "typecheck": "PASS",
+    "build": "PASS",
+    "qaBrowser": {
+      "status": "BLOCKED_FLAKY",
+      "attempts": [
+        {"ordinal": 1, "failure": "desktop natural route never exposed cut-open support/bridge"},
+        {"ordinal": 2, "failure": "mobile natural route never exposed cut-open support/bridge"}
+      ],
+      "evidence": "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/console.log"
+    },
+    "qaLevels": {"status": "PASS", "evidence": "qa-level-pack-v1/qa-report.json"}
+  },
+  "status": "BLOCKED",
+  "remainingEvidenceGaps": [
+    "Natural browser route-opening branch is still timing-sensitive and lacks a repeatable pass after this change.",
+    "A fresh natural screenshot verifies overlay separation, but reward-flight perceptual timing needs a dedicated capture.",
+    "Finish labels remain a fixed viewport column rather than fully world-brick-local; this is not closed by the overlay change.",
+    "Camera beat, contact resistance/audio layering and all platform adapters remain unimplemented/unverified.",
+    "Competitor recording is still unavailable and cannot be used as verified evidence."
+  ],
+  "nextStep": "Preserve BLOCKED; do not claim experience parity. A follow-up cycle must first stabilize the natural route-opening branch, then capture exact reward-flight and mobile finish-wall perceptual evidence."
+}

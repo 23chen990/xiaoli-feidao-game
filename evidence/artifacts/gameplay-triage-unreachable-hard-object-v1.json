@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "reproduction": {
+    "evidence": ["用户截图：Level 03 右下方坚硬物位于主路线与玩家可达落点之外", "用户反馈：玩家根本不会触碰到该硬物"],
+    "steps": ["fresh browser 选择 Level 03", "仅用正常鼠标/触屏沿默认可达路径前进", "记录玩家 swept path、可达落点和硬物 hitbox 是否有真实交集", "若无交集，确认该物体是否只占视觉空间而不改变路线/奖励/失败概率"]
+  },
+  "classification": "level-design-unreachable-pressure-object",
+  "scope": ["硬物与 completionPath 的可达性", "硬物是否改变玩家决策/失败风险", "renderer 位置与 simulation hitbox 对齐", "早中后期关卡抽样"],
+  "reproductionMatrix": [
+    {"objectType":"hard block","lifecycleState":"未切/移动/碰撞后反弹","rendererPath":"game-core block collision → three-world-renderer","viewport":"桌面 1180x720"},
+    {"objectType":"hard block","lifecycleState":"未切/移动/碰撞后反弹","rendererPath":"game-core block collision → three-world-renderer","viewport":"移动 390x844"},
+    {"objectType":"safe support","lifecycleState":"可落脚/起跳恢复","rendererPath":"game-core support path → three-world-renderer","viewport":"桌面与移动"}
+  ],
+  "acceptance": [
+    "每个非装饰性硬物必须与至少一条玩家可达路径在某个状态窗口发生真实交集，或明确标记为引导/远景装饰并移除碰撞语义",
+    "硬物必须改变至少一个可观察决策：等待、绕行、改变起跳高度、风险收益或失败概率",
+    "Level 03 的目标硬物在正常输入下可被触碰或被重放为一个有意的路线选择；不能只存在于画面角落",
+    "桌面与 390x844 真实输入复测并记录命中/未命中、路径、失败归因和截图"
+  ],
+  "route": "formal-fixer",
+  "reason": "这是关卡核心压力对象的可达性与意义缺失，影响核心循环，不能由截图主观判断关闭；必须走 QA→Fixer→QA retest。"
+}

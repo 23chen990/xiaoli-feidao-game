@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "cycle": 2,
+  "attempt": 1,
+  "route": "formal-fixer",
+  "targetGame": "小李飞刀",
+  "workspace": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "filesChanged": ["src/game-levels.ts", "src/game-core.ts", "tests/level-pressure.test.ts"],
+  "fix": "Expanded Level 4 safe landing window and added safe fallback after the finish line for late recovery misses.",
+  "tests": {"targeted": "pass", "full": "109 pass", "lint": "pass", "typecheck": "pass"},
+  "build": "pass",
+  "qaReports": ["runs/mobile-slice-adaptation-20260830/qa-level-pack-v1/runner-report.json"],
+  "qa": {"passed": true, "desktopLevels": [1,4,7,10,12], "mobileLevels": [1,6,12], "consoleErrors": 0, "pageErrors": 0},
+  "remainingEvidenceGaps": ["Independent perceptual QA should inspect finish-zone readability on device orientations", "web-lite evidence does not prove WeChat/Douyin/TapTap packaging"]
+}

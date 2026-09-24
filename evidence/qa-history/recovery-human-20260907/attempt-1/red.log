@@ -1,0 +1,84 @@
+✖ L1-OPENING-TABLE-BRANCH opening-table-a joins its underside to the actual floor (2.532417ms)
+✖ L1-OPENING-TABLE-BRANCH opening-table-b joins its underside to the actual floor (0.405666ms)
+✖ L1-FIRST-TARGET-VISIBILITY rune-1 intact submits triangles at 390x844 (8.105208ms)
+✖ L1-FIRST-TARGET-VISIBILITY rune-1 intact submits triangles at 1100x720 (3.288375ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 0
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 404.003208
+
+✖ failing tests:
+
+test at tests/opening-renderer-regression.test.ts:35:3
+✖ L1-OPENING-TABLE-BRANCH opening-table-a joins its underside to the actual floor (2.532417ms)
+  AssertionError [ERR_ASSERTION]: opening-table-a never entered the runtime grounded-base branch
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/opening-renderer-regression.test.ts:42:14)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.start (node:internal/test_runner/test:1015:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/opening-renderer-regression.test.ts:35:3
+✖ L1-OPENING-TABLE-BRANCH opening-table-b joins its underside to the actual floor (0.405666ms)
+  AssertionError [ERR_ASSERTION]: opening-table-b never entered the runtime grounded-base branch
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/opening-renderer-regression.test.ts:42:14)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/opening-renderer-regression.test.ts:56:3
+✖ L1-FIRST-TARGET-VISIBILITY rune-1 intact submits triangles at 390x844 (8.105208ms)
+  AssertionError [ERR_ASSERTION]: intact sphere has no drawable material groups: zero triangles submitted
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/opening-renderer-regression.test.ts:72:14)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/opening-renderer-regression.test.ts:56:3
+✖ L1-FIRST-TARGET-VISIBILITY rune-1 intact submits triangles at 1100x720 (3.288375ms)
+  AssertionError [ERR_ASSERTION]: intact sphere has no drawable material groups: zero triangles submitted
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/opening-renderer-regression.test.ts:72:14)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

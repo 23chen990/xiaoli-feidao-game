@@ -1,0 +1,301 @@
+{
+  "found": {
+    "scenario": "moving-horizontal",
+    "supportId": "lantern-ferry",
+    "holdSteps": 180,
+    "followupStep": 15,
+    "contactPart": "handle",
+    "normalX": 0,
+    "normalY": -1,
+    "supportVelocityBefore": {
+      "vx": -155.31880587926418,
+      "vy": 0
+    },
+    "playerVelocityBefore": {
+      "vx": 23.061076066916,
+      "vy": 760
+    },
+    "incomingRelativeVelocity": {
+      "vx": 178.37988194618018,
+      "vy": 760,
+      "normal": -760
+    },
+    "supportVelocityAfter": {
+      "vx": -153.46810711093372,
+      "vy": 0
+    },
+    "playerVelocityAfter": {
+      "vx": 23.061076066916,
+      "vy": -547.2
+    },
+    "outgoingRelativeVelocity": {
+      "vx": 176.52918317784972,
+      "vy": -547.2,
+      "normal": 547.2
+    },
+    "impulseCountDuringLockout": 1,
+    "reflected": true
+  },
+  "attempts": [
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 0,
+      "followupStep": null,
+      "releaseSupportVelocity": {
+        "vx": 0,
+        "vy": 0
+      },
+      "found": false
+    },
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 0,
+      "followupStep": 15,
+      "releaseSupportVelocity": {
+        "vx": 0,
+        "vy": 0
+      },
+      "found": false
+    },
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 0,
+      "followupStep": 30,
+      "releaseSupportVelocity": {
+        "vx": 0,
+        "vy": 0
+      },
+      "found": false
+    },
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 0,
+      "followupStep": 45,
+      "releaseSupportVelocity": {
+        "vx": 0,
+        "vy": 0
+      },
+      "found": false
+    },
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 0,
+      "followupStep": 60,
+      "releaseSupportVelocity": {
+        "vx": 0,
+        "vy": 0
+      },
+      "found": false
+    },
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 0,
+      "followupStep": 90,
+      "releaseSupportVelocity": {
+        "vx": 0,
+        "vy": 0
+      },
+      "found": false
+    },
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 45,
+      "followupStep": null,
+      "releaseSupportVelocity": {
+        "vx": 61.92216442145926,
+        "vy": 0
+      },
+      "found": false
+    },
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 45,
+      "followupStep": 15,
+      "releaseSupportVelocity": {
+        "vx": 61.92216442145926,
+        "vy": 0
+      },
+      "found": false
+    },
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 45,
+      "followupStep": 30,
+      "releaseSupportVelocity": {
+        "vx": 61.92216442145926,
+        "vy": 0
+      },
+      "found": false
+    },
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 45,
+      "followupStep": 45,
+      "releaseSupportVelocity": {
+        "vx": 61.92216442145926,
+        "vy": 0
+      },
+      "found": false
+    },
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 45,
+      "followupStep": 60,
+      "releaseSupportVelocity": {
+        "vx": 61.92216442145926,
+        "vy": 0
+      },
+      "found": false
+    },
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 45,
+      "followupStep": 90,
+      "releaseSupportVelocity": {
+        "vx": 61.92216442145926,
+        "vy": 0
+      },
+      "found": false
+    },
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 90,
+      "followupStep": null,
+      "releaseSupportVelocity": {
+        "vx": -90.90392601263761,
+        "vy": 0
+      },
+      "found": false
+    },
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 90,
+      "followupStep": 15,
+      "releaseSupportVelocity": {
+        "vx": -90.90392601263761,
+        "vy": 0
+      },
+      "found": false
+    },
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 90,
+      "followupStep": 30,
+      "releaseSupportVelocity": {
+        "vx": -90.90392601263761,
+        "vy": 0
+      },
+      "found": false
+    },
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 90,
+      "followupStep": 45,
+      "releaseSupportVelocity": {
+        "vx": -90.90392601263761,
+        "vy": 0
+      },
+      "found": false
+    },
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 90,
+      "followupStep": 60,
+      "releaseSupportVelocity": {
+        "vx": -90.90392601263761,
+        "vy": 0
+      },
+      "found": false
+    },
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 90,
+      "followupStep": 90,
+      "releaseSupportVelocity": {
+        "vx": -90.90392601263761,
+        "vy": 0
+      },
+      "found": false
+    },
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 135,
+      "followupStep": null,
+      "releaseSupportVelocity": {
+        "vx": -178.78599904703006,
+        "vy": 0
+      },
+      "found": false
+    },
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 135,
+      "followupStep": 15,
+      "releaseSupportVelocity": {
+        "vx": -178.78599904703006,
+        "vy": 0
+      },
+      "found": false
+    },
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 135,
+      "followupStep": 30,
+      "releaseSupportVelocity": {
+        "vx": -178.78599904703006,
+        "vy": 0
+      },
+      "found": false
+    },
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 135,
+      "followupStep": 45,
+      "releaseSupportVelocity": {
+        "vx": -178.78599904703006,
+        "vy": 0
+      },
+      "found": false
+    },
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 135,
+      "followupStep": 60,
+      "releaseSupportVelocity": {
+        "vx": -178.78599904703006,
+        "vy": 0
+      },
+      "found": false
+    },
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 135,
+      "followupStep": 90,
+      "releaseSupportVelocity": {
+        "vx": -178.78599904703006,
+        "vy": 0
+      },
+      "found": false
+    },
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 180,
+      "followupStep": null,
+      "releaseSupportVelocity": {
+        "vx": -138.938923933084,
+        "vy": 0
+      },
+      "found": false
+    },
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 180,
+      "followupStep": 15,
+      "releaseSupportVelocity": {
+        "vx": -138.938923933084,
+        "vy": 0
+      },
+      "found": true
+    }
+  ]
+}

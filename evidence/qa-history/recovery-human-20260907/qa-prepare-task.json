@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "role": "QAAgent",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "outputDirectory": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/qa-tools",
+  "sourceTriage": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/gameplay-triage-user-recording-level01-v1.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/gameplay-triage-user-feedback-grounded-tabletops-v1.json"
+  ],
+  "sourceMatrices": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/reproduction-matrix-user-recording-level01-v1.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/reproduction-matrix-user-feedback-grounded-tabletops-v1.json"
+  ],
+  "instructions": [
+    "You are independent QAAgent. Other agents are working: original stored Fixer thread owns game source/dist and root owns cycle ledger. Own only recovery-human-20260907/qa-tools for this preparation. Never modify generated workspace or old QA evidence.",
+    "User authorized new human-reviewed cycle max5, currently Fixer attempt1 handles opening target visibility and opening-table-a/b grounding. PREPARE reusable non-building Playwright QA runner and report generation now; DO NOT run game QA while Fixer is modifying/rebuilding. Root will dispatch the exact completed attempt and output directory after its hash is fixed.",
+    "Reuse lessons and schemas from your previous QA. Fix prior recorder premature-terminal condition. Decouple normal tap scheduling from screenshot cost: declared open-loop schedules with actual timestamp logs, plus independent read-only observations/video frames. No hidden-state-driven tap decisions, injected storage/debug setters/fixtures or internal dispatch on natural track. Ordinary Playwright touch/mouse only. Keep default startup, no URL overrides. Record complete video plus dense first-cut frames (~50–100ms or extract video frames) for exact first target intact→contact→split→reward→HUD, later exact object/state branches and terminal/replay.",
+    "Design runner CLI accepts outputDirectory and expectedBuildSha256 to isolate every attempt. Verify hash before and after. Preserve source snapshot, evidence manifest, browser errors and actual input times. Record true terminal/won/failed state only as read-only observation; visible completed/failed panel determines replay; at finish approach allow settlement time and do not treat transient local reward as terminal.",
+    "Prepare primary390x844 and1100x720 policies with up to3 declared cadence runs per viewport, including reference start and normal initial cut. Future root may narrow exact cases. Perceptual review must inspect real screenshots/recording; do not assume pass from state. Normal-input evidence gaps remain BLOCKED, and coverage gaps caused by runner must not become product bugs. Engineering fixtures only in separate labelled contexts if future task explicitly asks.",
+    "Output schemas reuse QaReportSchema,NaturalFlowEvidenceSchema,PerceptualQaReportSchema and prior MatrixSchema/ResultSchema. Preparation result only {schemaVersion:1,role:QAAgent,targetGame,workspace,status:BLOCKED,reportPaths:[actual prepared files],blockers:[WAITING_FOR_COMPLETED_FIX_BUILD],sourceModified:false,summary:prepared...} validated with ResultSchema. No free-chat. Stop after preparation; wait for root follow-up to execute.",
+    "Use existing local Playwright dependency. Source reference frames are already extracted with manifest at prior qa-recovery-20260907/reference-frames/manifest.json. Do not redecode or reread unrelated history."
+  ],
+  "acceptance": [
+    "Reusable recorder supports immutable per-attempt outputs and source/build hash validation.",
+    "No game QA starts before Fixer completes and root dispatches expected hash.",
+    "Corrected terminal detection and non-blocking tap schedule, dense cut evidence and source isolation documented."
+  ],
+  "outputSchemas": [
+    "src/schemas/index.ts#QaReportSchema",
+    "src/schemas/natural-flow.ts#NaturalFlowEvidenceSchema",
+    "src/schemas/product-experience.ts#PerceptualQaReportSchema",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/recovery-schemas.ts#MatrixSchema",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/recovery-schemas.ts#ResultSchema"
+  ]
+}

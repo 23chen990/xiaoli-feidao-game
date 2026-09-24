@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "inputPolicy": "fixed preplanned normal touch/mouse schedule; no debug, fixture, state injection, or state-driven scheduling",
+  "viewport": {
+    "width": 1100,
+    "height": 720
+  },
+  "tapScheduleMs": [
+    0,
+    1034,
+    2056,
+    3056,
+    4101,
+    5042,
+    6515,
+    6835,
+    6866,
+    7140,
+    8802,
+    9683,
+    10722,
+    11887,
+    13515,
+    14371,
+    16709,
+    16792,
+    18773,
+    18876,
+    20319,
+    20359,
+    20411
+  ],
+  "activeMs": 23000,
+  "captureWindowsMs": [
+    [
+      6800,
+      7400
+    ],
+    [
+      8600,
+      9400
+    ],
+    [
+      12800,
+      16500
+    ]
+  ],
+  "terminalPolicy": "visible terminal copy first; read-only state cross-check after run"
+}

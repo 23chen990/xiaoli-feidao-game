@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "researchId": "mobile-slice-taptap-cocos-platform-v1",
+  "targetGame": "mobile-slice-adaptation-20260830（TapTap 名称：疯狂切割）",
+  "targetWorkspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame",
+  "researchedAt": "2026-09-08T12:00:00+08:00",
+  "candidates": [
+    {
+      "name": "Cocos Engine 3.8.8",
+      "repositoryUrl": "https://github.com/cocos/cocos-engine",
+      "immutableRevision": "411f98df047c25902f93440d4b22925c2fb65461",
+      "version": "3.8.8",
+      "directLicenseEvidence": "https://github.com/cocos/cocos-engine/blob/3.8.8/LICENSE.md",
+      "licenseSpdx": "MIT",
+      "targetPlatformFit": {
+        "webLite": {
+          "verdict": "CONDITIONAL",
+          "evidence": "Cocos Creator can produce browser builds, but this task does not replace the locked Three.js web-lite evidence path."
+        },
+        "wechatMiniGame": {
+          "verdict": "APPROVED",
+          "evidence": "Cocos Creator 3.8.8 provides the intermediate WeChat Mini Game build required by TapTap's official converter workflow."
+        },
+        "douyinMiniGame": {
+          "verdict": "CONDITIONAL",
+          "evidence": "Cocos supports Douyin-oriented export workflows, but no Douyin package or device evidence is in this task."
+        },
+        "tapTapMiniGame": {
+          "verdict": "APPROVED",
+          "evidence": "TapTap's official Cocos/Laya/Egret guide requires Cocos Creator 3.8.x or above and documents conversion from a Cocos WeChat Mini Game build to build/TapBuild/game.zip with plugin 1.2.2: https://developer.taptap.cn/minigameapidoc/dev/engine/Cocos-Laya-Egret/"
+        }
+      },
+      "maintenanceRisk": "MEDIUM",
+      "securityRisk": "LOW",
+      "attributionDuties": [
+        "Retain the Cocos Engine MIT copyright and permission notice in distributions containing the engine or substantial portions of it."
+      ],
+      "decision": "REUSE",
+      "approvedScope": [
+        "Isolated Cocos Creator 3.8.8 implementation and build under this target game's platforms/taptap-minigame directory.",
+        "Programmatic original geometry and UI implementing the already specified core journey; no third-party game expression or assets."
+      ],
+      "rationale": "The existing Three.js r185 build is browser-only and cannot run in TapTap's BOM/DOM-free ordinary Mini Game runtime. Cocos Engine 3.8.8 is license-verified and matches TapTap's documented official conversion path."
+    }
+  ],
+  "conclusion": {
+    "approvedCandidateNames": [
+      "Cocos Engine 3.8.8"
+    ],
+    "rejectedCandidateNames": [],
+    "noSuitablePlatformAdapter": false,
+    "architectureDecision": "Keep the existing web-lite workspace unchanged and add an isolated Cocos Creator 3.8.8 TapTap platform project. Use only the official TapTap Cocos conversion tool 1.2.2 downloaded from the platform documentation (archive SHA-256 6b8a9a3cc62b6c54cefab397097babb771d9d99f90442cddff06310a4c9ed73f) as the documented packaging tool. The tool is not claimed as open-source reuse; its output remains conditional until a real TapTap Mini Game ID is configured and backend scan testing passes."
+  }
+}

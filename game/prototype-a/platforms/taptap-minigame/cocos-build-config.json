@@ -1,0 +1,38 @@
+{
+  "version": "1.0.0",
+  "name": "疯狂切割",
+  "platform": "wechatgame",
+  "buildPath": "project://build",
+  "outputName": "wechatgame",
+  "startScene": "c9468ad9-5977-4390-b6fc-b02806174123",
+  "scenes": [
+    {
+      "url": "db://assets/scenes/main.scene",
+      "uuid": "c9468ad9-5977-4390-b6fc-b02806174123"
+    }
+  ],
+  "debug": false,
+  "sourceMaps": false,
+  "md5Cache": false,
+  "designResolution": {
+    "width": 390,
+    "height": 844,
+    "fitWidth": true,
+    "fitHeight": false,
+    "policy": 4
+  },
+  "replaceSplashScreen": false,
+  "packages": {
+    "wechatgame": {
+      "appid": "928932",
+      "orientation": "portrait"
+    },
+    "taptap-minigame-tools": {
+      "enableTapConvert": true,
+      "tapAppid": "928932",
+      "gameVersion": "1.0.0",
+      "usePythonScript": false,
+      "deleteWechatBuild": false
+    }
+  }
+}

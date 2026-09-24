@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "ReproductionMatrix",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "sourceEvidence": "reference-evidence/incoming/codex-clipboard-2a844dc2-6625-47db-8ae1-5b7331c47e01-68c0b9ae9846.png",
+  "cells": [
+    {"objectType":"grounded tabletop base","lifecycle":"startup/intact","renderer":"Three.js presentation","viewport":"desktop 1100x720","acceptance":"base bottom meets runway/ground and has visible contact shadow","status":"PENDING"},
+    {"objectType":"stacked intact items","lifecycle":"startup/intact","renderer":"simulation + Three.js presentation","viewport":"desktop 1100x720","acceptance":"each item touches its support or item below; no unsupported gap","status":"PENDING"},
+    {"objectType":"overlapping stack","lifecycle":"startup/intact → cut","renderer":"simulation + Three.js presentation","viewport":"desktop 1100x720","acceptance":"horizontal overlap is readable and pieces separate after cut","status":"PENDING"},
+    {"objectType":"grounded tabletop base and stack","lifecycle":"startup/intact → replay","renderer":"Three.js presentation","viewport":"mobile 390x844 portrait","acceptance":"base remains grounded and stack remains readable without floating","status":"PENDING"}
+  ],
+  "gate": "A screenshot-only match is insufficient; the grounded-base and stacked-item branches require natural player-visible evidence."
+}

@@ -1,0 +1,7 @@
+Command: pnpm test
+Exit code: NOT RUN
+Result: The rejected production candidate failed the required seed-31 fixed timestamp replay in the focused suite at 6.8 seconds (acceptance requires at least 11.9 seconds and x > 2000). Per attempt-4 instructions, the candidate was immediately reverted; the full suite was not run.
+
+Command: seed-31 fixed timestamp replay (included in `pnpm exec tsx --test tests/level1-recovery.test.ts`)
+Exit code: 1
+Result: Failed. Replay ended at 6.8 seconds, below the required 11.9 seconds. See green-targeted.log.

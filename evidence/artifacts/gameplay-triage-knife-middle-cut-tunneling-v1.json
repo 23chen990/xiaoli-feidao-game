@@ -1,0 +1,40 @@
+{
+  "artifactType": "gameplay-triage",
+  "schemaVersion": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "reproduction": {
+    "evidence": "User reports knife middle contact still cuts and knife/object interpenetration remains visible.",
+    "matrix": {
+      "knifeParts": ["tip", "edge", "middle/body", "handle"],
+      "objectTypes": ["sigil", "crate/block", "log", "dessert"],
+      "motionBranches": ["low-speed overlap", "high-speed sweep", "moving support", "falling piece"],
+      "rendererPaths": ["simulation contact", "Three.js knife pose", "cut-half presentation"],
+      "viewports": ["mobile portrait", "mobile landscape", "desktop"]
+    }
+  },
+  "classification": "core collision/contact taxonomy and penetration defect",
+  "scope": "cut eligibility and collision separation across all cuttable skins",
+  "acceptance": [
+    "Only tip or authored sharp edge can emit a cut event.",
+    "Knife middle/body and handle never cut on overlap or sweep.",
+    "High-speed contacts do not tunnel through targets.",
+    "After collision resolution, knife and target do not remain visibly interpenetrating.",
+    "Exact natural-input branch has runtime-visible evidence and all existing levels still pass."
+  ],
+  "resolution": {
+    "cutEligibility": "Sigils now use a shared sharp-contact sweep that considers only tip/edge points and records the actual contact part; body-only overlap is rejected.",
+    "penetration": "High-speed sharp contacts are rewound to the swept contact time and offset by a small normal clearance before the cut/bounce response, preventing visible tunneling while preserving static teaching contacts."
+  },
+  "evidence": {
+    "tests": "152 passed, 0 failed",
+    "typecheck": "passed",
+    "lint": "passed",
+    "build": "passed",
+    "naturalQA": "passed",
+    "perceptualQA": "passed",
+    "runnerReport": "runs/mobile-slice-adaptation-20260830/qa-level-pack-v1/runner-report.json",
+    "qaReport": "runs/mobile-slice-adaptation-20260830/qa-level-pack-v1/qa-report.json"
+  },
+  "status": "PASS"
+}

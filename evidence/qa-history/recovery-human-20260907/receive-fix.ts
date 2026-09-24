@@ -1,0 +1,13 @@
+import {finalChecksPass} from './final-checks.ts';
+import {readFileSync,writeFileSync,existsSync} from 'node:fs';import {resolve} from 'node:path';import {createHash} from 'node:crypto';import {z} from 'zod';import {FixResultSchema,AuthorizationSchema,AttemptTaskSchema} from './schemas.ts';
+const base=resolve('runs/mobile-slice-adaptation-20260830/recovery-human-20260907'),n=Number(process.argv[2]);if(!Number.isInteger(n)||n<1||n>5)throw new Error('invalid attempt');
+const read=(p:string)=>JSON.parse(readFileSync(p,'utf8')),sha=(p:string)=>createHash('sha256').update(readFileSync(p)).digest('hex');
+const auth=AuthorizationSchema.parse(read(`${base}/authorization.json`)),task=AttemptTaskSchema.parse(read(`${base}/attempt-${n}/task.json`)),result=FixResultSchema.parse(read(`${base}/attempt-${n}/fix-result.json`));
+if(result.attempt!==n||result.cycleId!==auth.cycleId||result.workspace!==auth.workspace||result.storedThreadId!==auth.storedThreadId)throw new Error('identity mismatch');
+if(!result.build||result.build.exitCode!==0||sha(result.build.path)!==result.build.sha256)throw new Error('build not ready or mismatched');
+for(const t of result.tests)if(!existsSync(t.logPath))throw new Error('missing log');
+for(const p of result.filesChanged){const file=resolve(auth.workspace,p);const attemptDir=resolve(base,`attempt-${n}`);if(!file.startsWith(auth.workspace+'/')&&!file.startsWith(attemptDir+'/'))throw new Error('outside workspace or attempt evidence');}
+const ReceiptSchema=z.object({schemaVersion:z.literal(1),cycleId:z.string(),attempt:z.number().int().min(1).max(5),resultPath:z.string(),resultSha256:z.string().length(64),taskSha256:z.string().length(64),buildSha256:z.string().length(64),testsAllGreen:z.boolean(),productPassed:z.literal(false),status:z.literal('AWAITING_INDEPENDENT_QA'),receivedAt:z.string()}).strict();
+const receipt=ReceiptSchema.parse({schemaVersion:1,cycleId:auth.cycleId,attempt:n,resultPath:`${base}/attempt-${n}/fix-result.json`,resultSha256:sha(`${base}/attempt-${n}/fix-result.json`),taskSha256:sha(`${base}/attempt-${n}/task.json`),buildSha256:result.build.sha256,testsAllGreen:finalChecksPass(result.tests),productPassed:false,status:'AWAITING_INDEPENDENT_QA',receivedAt:new Date().toISOString()});
+writeFileSync(`${base}/attempt-${n}/fix-receipt.json`,JSON.stringify(receipt,null,2)+'\n',{flag:'wx'});
+const state=read(`${base}/cycle-state.json`);if(state.currentAttempt!==n||state.attemptsStarted!==n)throw new Error('ledger mismatch');state.status='QA';state.attempts[n-1].status='QA';state.attempts[n-1].fixReceiptPath=`${base}/attempt-${n}/fix-receipt.json`;writeFileSync(`${base}/cycle-state.json`,JSON.stringify(state,null,2)+'\n');console.log(JSON.stringify(receipt));

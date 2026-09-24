@@ -1,0 +1,70 @@
+desktop {
+  target: {
+    id: 'rune-1',
+    kind: 'cuttable',
+    x: 203,
+    y: 312,
+    radius: 48,
+    value: 1,
+    cut: false,
+    splitAge: 0,
+    vx: 0,
+    vy: 0,
+    angle: 0,
+    angularVelocity: 0,
+    foodStyle: 'apple',
+    supportSurfaceId: 'opening-table-a'
+  },
+  visual: {
+    id: 'rune-1',
+    phase: 'intact',
+    skinKind: 'crystal',
+    lifecycle: 'intact',
+    visibleHalves: 0,
+    capMaterialIds: [ '', '' ],
+    capMeshNames: [ 'capMaterial:rune-1:halfA', 'capMaterial:rune-1:halfB' ],
+    caps: [ [Object], [Object] ],
+    targetProjection: {
+      x: 294.57559572167196,
+      y: 192.54225842332292,
+      width: 130.6375381142259,
+      height: 131.88793399427894,
+      area: 17229.515003984125
+    }
+  }
+}
+portrait {
+  target: {
+    id: 'rune-1',
+    kind: 'cuttable',
+    x: 203,
+    y: 312,
+    radius: 48,
+    value: 1,
+    cut: false,
+    splitAge: 0,
+    vx: 0,
+    vy: 0,
+    angle: 0,
+    angularVelocity: 0,
+    foodStyle: 'apple',
+    supportSurfaceId: 'opening-table-a'
+  },
+  visual: {
+    id: 'rune-1',
+    phase: 'intact',
+    skinKind: 'crystal',
+    lifecycle: 'intact',
+    visibleHalves: 0,
+    capMaterialIds: [ '', '' ],
+    capMeshNames: [ 'capMaterial:rune-1:halfA', 'capMaterial:rune-1:halfB' ],
+    caps: [ [Object], [Object] ],
+    targetProjection: {
+      x: 135.12544341954762,
+      y: 332.6844293581175,
+      width: 72.03324820728889,
+      height: 77.49940543482637,
+      area: 5582.533907604162
+    }
+  }
+}

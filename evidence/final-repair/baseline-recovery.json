@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "baseline-recovery",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "model": "gpt-6-luna",
+  "recovery": {
+    "beforeSha256": "fdce8678b4d5f8a15c519cdd2062ea0da34460be5a57c9856d9a97061cc3c539",
+    "afterSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+    "baselineSha256Verified": true,
+    "change": "Removed the single extra blank line immediately after SliceSimulation.getState(); no behavior changed.",
+    "changedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts"
+    ]
+  },
+  "evidence": {
+    "sessionRolloutPath": "/Users/kker/.codex/sessions/2026/09/23/rollout-2026-09-23T21-39-31-01a0ce7e-30ee-7ba1-8dbb-ebf19e9828ad.jsonl",
+    "extractedRanges": [
+      {
+        "sessionTime": "13:40:02",
+        "command": "sed -n '1,320p' src/game-core.ts"
+      },
+      {
+        "sessionTime": "13:40:47",
+        "commands": [
+          "sed -n '600,900p' src/game-core.ts",
+          "sed -n '1180,1345p' src/game-core.ts"
+        ]
+      },
+      {
+        "sessionTime": "13:40:56",
+        "command": "sed -n '900,1190p' src/game-core.ts"
+      },
+      {
+        "sessionTime": "13:41:52",
+        "command": "sed -n '1360,1450p' src/game-core.ts"
+      }
+    ],
+    "hashVerification": "shasum -a 256 confirmed src/game-core.ts at b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7 and tests/level1-recovery.test.ts unchanged at 7627f8b8052adb8bd33b6b21f7c0cf935b1d23cba5b4570513ce47bd56984510."
+  },
+  "tests": "not run",
+  "createdAt": "2026-09-23T14:00:11.000Z"
+}

@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "human-review-20260907-l1-recovery",
+  "attempt": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "authorizationPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/authorization.json",
+  "outputDirectory": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1",
+  "issues": [
+    {
+      "id": "L1-OPENING-TABLE-BRANCH",
+      "severity": "error",
+      "message": "开场 opening-table-a/b 没进入落地基座渲染分支；此前只修了其他台面，无法关闭开场悬浮投诉。",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/reproduction-matrix.json L1-GROUND-390/L1-GROUND-1100; /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-startup.png; /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-world-renderer.ts:324"
+    },
+    {
+      "id": "L1-FIRST-TARGET-VISIBILITY",
+      "severity": "error",
+      "message": "首个 sigil/rune-1 的 intact 状态存在但开场不可辨；切割碎片可见不能关闭这个分支。先在同一个对象和默认渲染路径定位原因。",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/perceptual-qa-report.json L1-INPUT-390/1100; /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-startup.png; /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-startup.png"
+    }
+  ],
+  "matrixPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/reproduction-matrix.json",
+  "contractPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/active-slice-contract.json",
+  "expectedBuildSha256": "6bb349f3a8fc89c0edb59fb0d88c8e02fa6c9e6472db03a57d952bf4dc5899f1",
+  "instructions": [
+    "This is a newly explicitly human-authorized cycle after the reviewed recovery package. Preserve all older cycles/attempts; old executionAllowed:false in the review package describes the pre-authorization snapshot. New authorization.json governs this cycle. Root owns cycle-state.json. Attempt1 is reserved and counts even if interrupted or failed. Execute exactly one repair attempt and stop after producing result; do not start attempt2.",
+    "You are FixerAgent in the stored original thread01a07540-7ee1-7c01-899b-0ea12bde1f19. Other agents share the repository: preserve their changes. Own only causally connected files in the exact workspace plus outputDirectory. No shared factory edits, other games, other levels, unrelated cleanup, template replacements or commits. Do not use stale full thread history as current requirements; only this minimal artifact and bound evidence govern.",
+    "Read .agents/skills/codex-game-repair/SKILL.md and test-driven-development skill before production edits. Inspect exact opening-table-a/b support and rune-1 sigil intact branch; the matrix already exists. Identify owning branch and write preflight.json with issue IDs, minimal causally related allowed files and RED tests before editing. A visible cut-half is not evidence for an intact sigil.",
+    "Fix only two listed issues: opening support has visible grounded thickness with correct item support relation, and first whole target renders visibly before cutting on390x844 and1100x720. Keep original art direction; do not copy thirdparty assets/UI. Diagnose rather than guessing from console texture warnings. Inspect reference only if needed using prior/reference-frames/manifest.json; never PENDING screenshots.",
+    "Use test-first regression demonstrating the actual owning runtime renderer branch. Reuse architecture. Run lint,typecheck,tests with logs under outputDirectory. After source fixes and tests, run pnpm build exactly once and hash dist/index.html. Existing pnpm qa:* commands rebuild and must not be used. Root will run independent Playwright QA on your unchanged dist. You may inspect source/runtime via non-building preview if necessary, but cannot self-declare formal acceptance.",
+    "Return FixResultSchema validated JSON at outputDirectory/fix-result.json and final response only that structured artifact. Include route rationale, omitted context, root causes, changed files, RED/GREEN/lint/typecheck commands exit codes/logs, single build/hash, remaining natural/perceptual gaps. Do not claim fixed solely from tests or your own note. The result is READY_FOR_INDEPENDENT_QA or BLOCKED only."
+  ],
+  "outputSchema": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/schemas.ts#FixResultSchema"
+}

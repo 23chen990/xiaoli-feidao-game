@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "role": "FixerAgent",
+  "taskPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/task.json",
+  "schemaPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/schemas.ts#AttemptTaskSchema",
+  "validation": "pnpm exec tsx runs/mobile-slice-adaptation-20260830/recovery-human-20260907/start.ts completed; AuthorizationSchema and AttemptTaskSchema parsed",
+  "instruction": "Resume stored thread as FixerAgent. Read and validate task artifact, execute exactly attempt1, return FixResultSchema artifact. No other attempts."
+}

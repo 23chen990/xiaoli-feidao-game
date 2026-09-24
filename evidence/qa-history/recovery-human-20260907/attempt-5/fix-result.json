@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "human-review-20260907-l1-recovery",
+  "attempt": 5,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "storedThreadId": "01a07540-7ee1-7c01-899b-0ea12bde1f19",
+  "status": "BLOCKED",
+  "why": "This stayed on the formal-fixer route because the cycle already had validated QA evidence and the remaining open items had to be resolved against the live Level1 contract. In attempt-5 I verified the current source still contains the grounded opening and finish-label fixes from attempt-4, but the mobile natural-input recording for the exact finish-phone branch still ends in a fall before terminal and the stack-a/b lifecycle still lacks a continuous natural-visible support→cut→fall→land trace. With no further automatic attempts allowed, I stopped instead of inventing new mechanics or widening scope.",
+  "contextIntentionallyOmitted": [
+    "Unrelated factory edits, sibling runs, and all non-Level1 worktree noise",
+    "The full chat history from prior attempts beyond the minimal QA evidence cited here",
+    "Any withheld or quarantined media that was not already part of the approved evidence set"
+  ],
+  "rootCauses": [
+    {
+      "issueId": "L1-STACK-NATURAL-EVIDENCE-GAP",
+      "objectType": "stack-a/b natural lifecycle evidence",
+      "stateBranch": "support→cut→fall→land normal-input recording",
+      "renderer": "independent QA recorder over the unchanged Three.js runtime",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/reproduction-matrix.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-1/recording.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:9-52"
+      ]
+    },
+    {
+      "issueId": "L1-FINISH-PHONE-EVIDENCE-GAP",
+      "objectType": "portrait finish settlement route",
+      "stateBranch": "ready→airborne→failed before terminal",
+      "renderer": "independent QA recorder over the unchanged Three.js runtime",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-1/recording.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-1/frames/terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/desktop-1/frames/terminal.png"
+      ]
+    }
+  ],
+  "filesChanged": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/preflight.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/tests.log",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/lint.log",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/typecheck.log",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/build.log",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/fix-result.json"
+  ],
+  "tests": [
+    {
+      "command": "pnpm test",
+      "exitCode": 0,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/tests.log",
+      "phase": "GREEN"
+    },
+    {
+      "command": "pnpm lint",
+      "exitCode": 0,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/lint.log",
+      "phase": "LINT"
+    },
+    {
+      "command": "pnpm typecheck",
+      "exitCode": 0,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/typecheck.log",
+      "phase": "TYPECHECK"
+    }
+  ],
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0,
+    "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/build.log",
+    "count": 1,
+    "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html",
+    "sha256": "10cba7632922f9fdeaa2eb33f7a05aa09bd3dbb7ca45a2db24acac282c9fd9a6"
+  },
+  "remainingEvidenceGaps": [
+    "A normal-input mobile QA run still needs a continuous stack-a/b support→cut→fall→land recording for the exact branch named in the contract.",
+    "The phone path still needs a separate independent retest that reaches finish settlement and replay on the same unchanged build.",
+    "The deterministic tests confirm the opening and finish layout fixes, but they do not replace the missing natural-player evidence."
+  ],
+  "completedAt": "2026-09-07T08:47:16Z"
+}

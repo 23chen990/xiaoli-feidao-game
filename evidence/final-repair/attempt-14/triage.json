@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-triage",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 14,
+  "issueId": "L1-RUNWAY-RECOVERY-POSE-REARM-GATE",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "classification": "natural-level1-runway-recovery-blocker",
+  "status": "VALIDATED_REPRODUCTION",
+  "priorAttempt": {
+    "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-13/fix-result.json",
+    "sha256": "1a4b1fac2ceae0d19cd1e65917e9f9e1e13b1449fb4b5a64375889cec052a329",
+    "status": "BLOCKED",
+    "candidateRejected": true
+  },
+  "reproduction": {
+    "baselineContacts": [
+      {
+        "ordinal": "first",
+        "frame": 216,
+        "playerX": 305.2,
+        "playerY": 514.1666666666666,
+        "playerAngle": 4.986276450461116
+      },
+      {
+        "ordinal": "second",
+        "frame": 302,
+        "playerX": 332.7,
+        "playerY": 469.7083333333333,
+        "playerAngle": 6.656567983114545
+      }
+    ],
+    "candidateOverwrite": {
+      "firstCaptureFrame": 216,
+      "overwriteFrames": [217, 232],
+      "expectedSecondCaptureFrame": 302,
+      "observedSecondCapture": false,
+      "replayEndSeconds": 6.500000000000113,
+      "evidence": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-13/fix-result.json",
+          "sha256": "1a4b1fac2ceae0d19cd1e65917e9f9e1e13b1449fb4b5a64375889cec052a329"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-13/green-targeted.log",
+          "sha256": "22b7ddfcba17de5f6d818148edd7fa7f8a685dad9f0a3fed0fcd33f9e7bdbeb0"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-13/red-targeted.log",
+          "sha256": "dfad3c0ef7971715b041a644319da3d68309b1c08150ff05931aa0fddb254fc8"
+        }
+      ]
+    },
+    "lifecycleRequirement": {
+      "pendingState": "pendingRunwayReleasePose",
+      "setterRule": "capture only when pending pose is null; do not overwrite a live pose during the same contact manifold",
+      "rearmRule": "after one-shot tap consumption clears the pose, the next qualifying separating contact may capture a new pose"
+    }
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "level1 runway sharp tip",
+      "lifecycleStateBranch": "first separating contact → pending pose",
+      "rendererPresentationPath": "ThreePresentationModel airborne player",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-13/green-targeted.log"],
+      "observation": "Candidate captured frame216 but continued to overwrite the pose through frame232.",
+      "inference": "A live pending pose needs a setter guard across the contact manifold.",
+      "unknowns": ["Natural player-visible evidence remains outstanding."]
+    },
+    {
+      "objectType": "pending runway release pose",
+      "lifecycleStateBranch": "tap consumption → re-arm",
+      "rendererPresentationPath": "airborne motion and launch feedback",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/green-targeted.log"],
+      "observation": "The validated trace requires exactly two one-shot releases at the two baseline taps.",
+      "inference": "The setter must become eligible again only after the first pose is consumed.",
+      "unknowns": ["The next qualifying second contact must still be proven with the guard enabled."]
+    },
+    {
+      "objectType": "runway side/body and approaching contacts",
+      "lifecycleStateBranch": "non-qualifying hard-surface paths",
+      "rendererPresentationPath": "bounce and anchor feedback",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-13/task.json"],
+      "observation": "The packet preserves side/body, approaching, and x>=350 branches.",
+      "inference": "The re-arm gate must not broaden the setter or alter those branches.",
+      "unknowns": ["Natural side/body presentation remains unverified."]
+    },
+    {
+      "objectType": "default browser journey",
+      "lifecycleStateBranch": "startup → runway → terminal → replay",
+      "rendererPresentationPath": "web-lite Three.js presentation",
+      "viewport": "1100x720",
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-summary.json"],
+      "observation": "Prior independent natural QA remains blocked on this recovery branch.",
+      "inference": "A deterministic guard fix still needs fresh natural and perceptual QA.",
+      "unknowns": ["No Attempt 14 natural trace exists yet."]
+    }
+  ],
+  "rootCauseHypothesis": {
+    "evidence": "Attempt 13 receipt explicitly reports that the candidate recaptured/overwrote the first pose on frames 217–232, never reached frame302, and failed at 6.5 seconds.",
+    "changeHypothesis": "Guard the runway pose setter on pendingRunwayReleasePose === null. A live pose remains stable through repeated contact samples; consuming it clears the state, allowing the next qualifying contact to capture the second baseline pose.",
+    "stateName": "pendingRunwayReleasePose",
+    "guard": "pending pose must be null before setter; a consumed pose clears the guard and permits the next qualifying contact",
+    "preservedBranches": [
+      "Pre-correction capture ordering from Attempt 13 remains unchanged.",
+      "Approaching top contacts continue hard-surface recovery.",
+      "Side/body and x>=350 runway contacts retain existing anchor/bounce behavior.",
+      "Non-runway support launch and opening white landing behavior remain unchanged.",
+      "Expiry, reset, level load, terminal, inactive support, and non-runway clear paths remain explicit."
+    ],
+    "rejectedAlternatives": [
+      "Do not overwrite a live pose with later frames of the same contact manifold.",
+      "Do not add a broad time delay that could suppress the second contact.",
+      "Do not widen the x threshold or use contact-point x.",
+      "Do not change pose lifetime or tap schedule.",
+      "Do not modify renderer, platform, level, persistence, or release configuration."
+    ]
+  },
+  "scope": {
+    "includedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+    ],
+    "excludedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-presentation.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/style.css",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist"
+    ],
+    "route": "formal-fixer",
+    "expectedSourceFileLimit": 2
+  },
+  "acceptanceCriteria": [
+    "Run and save RED focused evidence before edits.",
+    "Add or retain a trace proving the first pose is set once and not overwritten on frames217–232.",
+    "Capture frame216 and preserve its exact x, y, and angle through the first tap.",
+    "Consume the first pose once and clear it before the second qualifying contact.",
+    "Capture the second pose exactly at frame302 with its baseline pose.",
+    "Release exactly two poses at the scheduled taps with launch event positions matching the restored pose.",
+    "Keep both pending intervals airborne with measurable motion and rotation.",
+    "Keep the pre-correction contact ordering and five-pixel diagnostic trace.",
+    "Preserve the x<350/player-center, top-normal, relative-velocity setter qualification.",
+    "Preserve expiry at 2.35 seconds and all reset/load/terminal/inactive/non-runway clear paths.",
+    "Preserve approaching, side/body, x>=350, non-runway, and opening branches.",
+    "Pass focused tests and pnpm test.",
+    "Pass pnpm lint and pnpm typecheck.",
+    "Run exactly one pnpm build and record the output hash.",
+    "Do not claim natural or perceptual completion from Fixer evidence."
+  ],
+  "evidenceClassification": {
+    "observed": [
+      "Attempt 13 repeated the setter on frames217–232.",
+      "Attempt 13 never reached the expected second capture at frame302 and failed at 6.5 seconds.",
+      "Attempt 13 was fully rolled back to source b6955d and test 7627f8."
+    ],
+    "inferred": [
+      "A pending-null setter guard should stop same-manifold overwrites without blocking the post-consumption second capture.",
+      "The guard is narrower than another geometry or timing retune."
+    ],
+    "unknown": [
+      "The next candidate must prove ordinary contacts still behave and pass all static/build gates.",
+      "Natural and perceptual QA remain outstanding."
+    ]
+  },
+  "createdAt": "2026-09-23T11:23:00.000Z"
+}

@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "classification": "bonus-core-loop-feel",
+  "scope": "bonus cuttable target motion",
+  "reproduction": { "steps": ["Enter Bonus", "Wait without cutting"], "reported": "Targets feel too static", "expected": "Cuttable targets continuously fly upward with varied movement." },
+  "matrix": [
+    { "objectType": "bonus sigil", "lifecycle": "uncut airborne", "rendererPath": "game-core state -> Three presentation", "viewport": "desktop and mobile" },
+    { "objectType": "bonus sigil", "lifecycle": "cut debris", "rendererPath": "existing updateDebris path", "viewport": "desktop and mobile" }
+  ],
+  "acceptance": ["Uncut bonus targets move upward continuously", "Horizontal drift varies deterministically per target", "Targets recycle into the playfield after leaving the top", "Cut targets keep existing debris physics", "Normal bonus entry and one-shot restart semantics remain intact"],
+  "route": "formal-fixer",
+  "attempt": 1
+}

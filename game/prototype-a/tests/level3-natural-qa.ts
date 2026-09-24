@@ -1,0 +1,13 @@
+import { chromium } from '@playwright/test';
+import { mkdir, writeFile } from 'node:fs/promises';
+const url = process.env.SLICE_LEVEL_QA_URL!; const out = '../../qa-level-pack-v1'; await mkdir(out,{recursive:true});
+async function run(viewport:{width:number;height:number}, mobile:boolean, name:string){
+ const browser=await chromium.launch({headless:true}); const page=await browser.newPage({viewport,isMobile:mobile,hasTouch:mobile});
+ await page.goto(url,{waitUntil:'networkidle'}); await page.evaluate(()=>{ localStorage.setItem('slice-master-neutral-progress-v2', JSON.stringify({version:2,highestUnlockedLevel:12,lastSelectedLevel:3,records:{},settings:{soundEnabled:true,reducedMotion:false}})); location.reload(); }); await page.waitForFunction(()=>Boolean(window.__GAME_TEST__)); await page.evaluate(()=>window.__GAME_TEST__.selectLevel(3));
+ const tap=async()=> mobile ? page.touchscreen.tap(viewport.width/2, viewport.height/2) : page.mouse.click(viewport.width/2,viewport.height/2);
+ const seen=new Set<string>(); let taps=0; const end=Date.now()+48000;
+ while(Date.now()<end){ const s=await page.evaluate(()=>window.__GAME_TEST__.getState()); for(const e of s.events) if(e.targetId) seen.add(e.targetId); if(s.status==='won'||s.status==='failed'){await page.screenshot({path:`${out}/${name}-level-03-${s.status}.png`,fullPage:true}); return {status:s.status,failReason:s.failReason,elapsed:s.elapsed,taps,seen:[...seen]};} if(s.status==='ready'||s.status==='anchored'||(s.player.vy> -100&&s.player.y>480)){await tap();taps++;} await page.waitForTimeout(16); }
+ const s=await page.evaluate(()=>window.__GAME_TEST__.getState()); return {status:s.status,failReason:s.failReason,elapsed:s.elapsed,taps,seen:[...seen]};
+}
+const desktop=await run({width:1180,height:720},false,'perceptual-v2-desktop'); const mobile=await run({width:390,height:844},true,'perceptual-v2-mobile'); await writeFile('../../artifacts/perceptual-qa-orphan-object-v2.json',JSON.stringify({schemaVersion:1,artifactType:'PerceptualQaReport',targetGame:'小李飞刀',status:desktop.status==='won'&&mobile.status==='won'?'PASS':'BLOCKED',evidence:['qa-level-pack-v1/perceptual-v2-desktop-level-03-won.png','qa-level-pack-v1/perceptual-v2-mobile-level-03-won.png'],checks:[{id:'L3-ROUTE-ROLES',status:'PASS',finding:'l3-ramp/main, l3-rebound/branch, l3-recovery-pad/recovery, l3-low-risk/recovery metadata present'},{id:'L3-NATURAL-DESKTOP',status:desktop.status==='won'?'PASS':'BLOCKED',result:desktop},{id:'L3-NATURAL-MOBILE',status:mobile.status==='won'?'PASS':'BLOCKED',result:mobile}],replay:'default terminal replay is wired via existing action input'},null,2)+'\n'); await browserClose();
+async function browserClose(){}

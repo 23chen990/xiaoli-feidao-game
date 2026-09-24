@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN" data-theme-source="src/theme.ts">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="" />
+    <title></title>
+  </head>
+  <body>
+    <main id="game-shell" data-action="flip" aria-label="">
+      <section id="hud" aria-live="polite">
+        <strong id="hud-title"></strong>
+        <span id="counter-text"></span>
+        <small id="state-text"></small>
+      </section>
+      <aside id="direction-text"></aside>
+      <aside id="gate-legend"></aside>
+      <aside id="earnings-banner" aria-live="polite"></aside>
+      <aside id="finish-wall-labels" aria-label="终点倍率墙"></aside>
+      <section id="level-select" aria-label="" hidden>
+        <div id="level-grid"></div>
+      </section>
+      <button id="level-selector-toggle" type="button" aria-expanded="false"></button>
+      <button id="bonus-test-button" type="button"></button>
+      <p id="instruction-text"></p>
+      <div id="terminal-text" hidden></div>
+      <div id="terminal-actions" hidden>
+        <button id="replay-button" type="button"></button>
+        <button id="next-level-button" type="button"></button>
+      </div>
+      <div id="feedback-layer" aria-hidden="true"></div>
+      <div id="impact-flash" aria-hidden="true"></div>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

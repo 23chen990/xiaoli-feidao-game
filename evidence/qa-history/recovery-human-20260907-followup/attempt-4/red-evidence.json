@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fix-red-evidence",
+  "cycleId": "human-review-20260907-l1-followup",
+  "attempt": 4,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "issueId": "L1-RUNWAY-COLLISION-MISMATCH",
+  "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+  "exitCode": 1,
+  "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-4/red-test-baseline.log",
+  "logSha256": "c28cff6476c7422ca3fc46a862b520cf21634f0e7ad6702ebfb6bf2ad0e84d86",
+  "newTests": [
+    {
+      "name": "L1-RUNWAY visible support stays collidable through the normal forward replay",
+      "failure": "current Level1 authored runway has collidable=false"
+    },
+    {
+      "name": "L1-RUNWAY later sharp contact stays airborne while body contact still bounces",
+      "failure": "current non-collidable runway emits no controlled body bounce"
+    },
+    {
+      "name": "L1-RUNWAY opening keeps the authored white landing anchor before runway bounce feedback",
+      "failure": null
+    }
+  ],
+  "sourceHashesBeforeFix": {
+    "src/game-levels.ts": "c6e7ef7fa8cc37709b037d18bf600e832807926a3158d7e3522a3b3fa14dd3e0",
+    "src/game-core.ts": "b21df1def6f5d7aadacf594a9a9f414c8457a584ce03d0cead7ad24275882474"
+  },
+  "testHashAfterRedAddition": "5c2add82c354c8c0b35757f856baed94259969adfb89290052a5596e9992dc9c",
+  "sourceModifiedBeforeRed": false,
+  "sourceHashesAtRed": {
+    "src/game-levels.ts": "c6e7ef7fa8cc37709b037d18bf600e832807926a3158d7e3522a3b3fa14dd3e0",
+    "src/game-core.ts": "b21df1def6f5d7aadacf594a9a9f414c8457a584ce03d0cead7ad24275882474"
+  },
+  "createdAt": "2026-09-23T04:38:00.000Z"
+}

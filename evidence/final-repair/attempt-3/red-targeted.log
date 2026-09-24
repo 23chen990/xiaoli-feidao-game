@@ -1,0 +1,72 @@
+✔ L1-STACK a: actual knife contact cuts the bearing object and releases the overlapping upper object (7.30025ms)
+✔ L1-STACK-VISUAL-EVIDENCE a: same target stays visible and separates into two halves after cut (1.646917ms)
+✔ L1-STACK b: actual knife contact cuts the bearing object and releases the overlapping upper object (2.320875ms)
+✔ L1-STACK-VISUAL-EVIDENCE b: same target stays visible and separates into two halves after cut (0.602875ms)
+✔ L1-GRAVITY active airborne play does not freeze a hovering supported collectible (2.991041ms)
+✔ L1-REWARD intact has zero earnings; a real cut names the separated target and replay clears earnings (3.017209ms)
+✔ L1-PLACEMENT every initial collectible has a touching support, including the late and bridge targets (0.188083ms)
+✔ L1-RUNWAY visible support stays collidable through the normal forward replay (51.079584ms)
+✔ L1-RUNWAY later sharp contact stays airborne while body contact still bounces (0.956ms)
+✔ L1-RUNWAY early approaching top-face tip contact recovers without removing side anchors (0.590875ms)
+✖ L1-RUNWAY early separating top-face tip contact does not anchor or immediately recontact (2.408042ms)
+✖ L1-RUNWAY expired recovery intent does not reinterpret a later airborne tap as release (0.394458ms)
+✔ L1-RUNWAY opening keeps the authored white landing anchor before runway bounce feedback (2.993125ms)
+✔ L1-FINISH labels use viewport coordinates without a second offset (0.893417ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 390x844 (3.162542ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 1100x720 (0.379667ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 14
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 396.011375
+
+✖ failing tests:
+
+test at tests/level1-recovery.test.ts:191:1
+✖ L1-RUNWAY early separating top-face tip contact does not anchor or immediately recontact (2.408042ms)
+  AssertionError [ERR_ASSERTION]: an upward top-face contact must not become an authored anchor
+  + actual - expected
+  
+  + 'anchored'
+  - 'airborne'
+  
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:207:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'anchored',
+    expected: 'airborne',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/level1-recovery.test.ts:227:1
+✖ L1-RUNWAY expired recovery intent does not reinterpret a later airborne tap as release (0.394458ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'anchored'
+  - 'airborne'
+  
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:241:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'anchored',
+    expected: 'airborne',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

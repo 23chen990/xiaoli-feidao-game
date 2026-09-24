@@ -1,0 +1,1438 @@
+{
+  "schemaVersion": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "viewport": {
+    "label": "desktop-1100x720",
+    "width": 1100,
+    "height": 720,
+    "input": "mouse"
+  },
+  "outputDirectory": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720",
+  "expectedBuildSha256": "599b4c3cb8c6b345b7e18b3a4e06cae33663c0432b918d3115ee78df3bf64118",
+  "url": "http://127.0.0.1:52279/index.html",
+  "startedFromFreshContext": true,
+  "storageInjected": false,
+  "stateInjection": false,
+  "debugApiCalled": false,
+  "adaptiveScheduling": false,
+  "internalEventsDispatched": false,
+  "observedAt": "2026-09-23T06:03:43.305Z",
+  "inputSchedule": {
+    "cadenceMs": 550,
+    "plannedOffsetsMs": [
+      0,
+      550,
+      1100,
+      1650,
+      2200,
+      2750,
+      3300,
+      3850,
+      4400,
+      4950,
+      5500,
+      6050,
+      6600,
+      7150,
+      7700,
+      8250,
+      8800,
+      9350,
+      9900,
+      10450,
+      11000,
+      11550,
+      12100,
+      12650,
+      13200,
+      13750,
+      14300,
+      14850,
+      15400,
+      15950,
+      16500,
+      17050,
+      17600,
+      18150,
+      18700,
+      19250,
+      19800,
+      20350,
+      20900,
+      21450,
+      22000,
+      22550,
+      23100,
+      23650,
+      24200,
+      24750,
+      25300,
+      25850,
+      26400,
+      26950,
+      27500,
+      28050,
+      28600,
+      29150,
+      29700,
+      30250,
+      30800,
+      31350,
+      31900,
+      32450,
+      33000,
+      33550,
+      34100,
+      34650,
+      35200,
+      35750,
+      36300,
+      36850,
+      37400,
+      37950,
+      38500,
+      39050,
+      39600,
+      40150,
+      40700,
+      41250,
+      41800,
+      42350,
+      42900,
+      43450,
+      44000,
+      44550
+    ]
+  },
+  "inputs": [
+    {
+      "kind": "mouse",
+      "plannedMs": 0,
+      "dispatchedMs": 284.52254199999993,
+      "completedMs": 491.06991700000003,
+      "x": 550,
+      "y": 518.4
+    },
+    {
+      "kind": "mouse",
+      "plannedMs": 550,
+      "dispatchedMs": 549.7607500000001,
+      "completedMs": 604.6727920000001,
+      "x": 550,
+      "y": 518.4
+    },
+    {
+      "kind": "mouse",
+      "plannedMs": 1100,
+      "dispatchedMs": 1099.9409589999998,
+      "completedMs": 1131.694667,
+      "x": 550,
+      "y": 518.4
+    },
+    {
+      "kind": "mouse",
+      "plannedMs": 1650,
+      "dispatchedMs": 1650.0513749999998,
+      "completedMs": 1670.5110419999999,
+      "x": 550,
+      "y": 518.4
+    },
+    {
+      "kind": "mouse",
+      "plannedMs": 2200,
+      "dispatchedMs": 2200.741792,
+      "completedMs": 2217.12875,
+      "x": 550,
+      "y": 518.4
+    },
+    {
+      "kind": "mouse",
+      "plannedMs": 2750,
+      "dispatchedMs": 2751.1571669999994,
+      "completedMs": 2774.427917,
+      "x": 550,
+      "y": 518.4
+    }
+  ],
+  "observations": [
+    {
+      "atMs": 284.5077920000001,
+      "label": "startup",
+      "status": "ready",
+      "player": {
+        "x": 120,
+        "y": 420,
+        "vx": 0,
+        "vy": 0,
+        "angle": -0.35,
+        "angularVelocity": 0
+      },
+      "cuts": 0,
+      "anchorId": null
+    },
+    {
+      "atMs": 647.6827919999998,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 168.75,
+        "y": 355,
+        "vx": 150,
+        "vy": -105,
+        "angle": 2.5135936636876637,
+        "angularVelocity": 8.122714940022368
+      },
+      "cuts": 0,
+      "anchorId": null,
+      "totalEarnings": 0,
+      "events": [
+        {
+          "id": 1,
+          "type": "launch",
+          "x": 120,
+          "y": 420,
+          "value": 1
+        }
+      ],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 874.8577090000001,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 176.25,
+        "y": 350.625,
+        "vx": 150,
+        "vy": -75,
+        "angle": 2.915681580231494,
+        "angularVelocity": 7.929325183900265
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [
+        {
+          "id": 2,
+          "type": "cut",
+          "x": 203,
+          "y": 312,
+          "value": 1,
+          "targetId": "rune-1",
+          "contactPart": "edge"
+        }
+      ],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 927.922084,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 213.75,
+        "y": 351.25,
+        "vx": 150,
+        "vy": 75,
+        "angle": 4.787002245601093,
+        "angularVelocity": 7.029287574680975
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 979.8908749999998,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 221.25,
+        "y": 355.875,
+        "vx": 150,
+        "vy": 105,
+        "angle": 5.134963686641535,
+        "angularVelocity": 6.861930697107733
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 1028.297167,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 228.75,
+        "y": 362,
+        "vx": 150,
+        "vy": 135,
+        "angle": 5.474640683537428,
+        "angularVelocity": 6.698558337762478
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 1098.1889170000002,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 240,
+        "y": 374,
+        "vx": 150,
+        "vy": 180,
+        "angle": 5.969053022102465,
+        "angularVelocity": 6.460763871316661
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 1207.6723749999999,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 250.59999999999997,
+        "y": 361.5,
+        "vx": 162,
+        "vy": -300,
+        "angle": 5.556749142732585,
+        "angularVelocity": -10.250010624000003
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [
+        {
+          "id": 3,
+          "type": "flip",
+          "x": 242.5,
+          "y": 377.125,
+          "value": 1
+        }
+      ],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 1263.9107499999998,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 268.15000000000015,
+        "y": 332.7916666666667,
+        "vx": 162,
+        "vy": -235,
+        "angle": 4.472646332727172,
+        "angularVelocity": -9.72859635261297
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 1330.3660419999999,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 277.6000000000003,
+        "y": 320.25,
+        "vx": 162,
+        "vy": -200,
+        "angle": 3.911923170688532,
+        "angularVelocity": -9.458908776595388
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 1379.2811669999999,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 284.3500000000004,
+        "y": 312.5416666666667,
+        "vx": 162,
+        "vy": -175,
+        "angle": 3.520948635321824,
+        "angularVelocity": -9.270864155174198
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 1436.3320419999998,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 293.8000000000006,
+        "y": 303.5,
+        "vx": 162,
+        "vy": -140,
+        "angle": 2.986607598289925,
+        "angularVelocity": -9.01386542781661
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 1499.5110000000002,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 304.60000000000076,
+        "y": 295.6666666666667,
+        "vx": 162,
+        "vy": -100,
+        "angle": 2.3940458343948046,
+        "angularVelocity": -8.728864634975153
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 1554.8805839999998,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 312.7000000000009,
+        "y": 291.5416666666667,
+        "vx": 162,
+        "vy": -70,
+        "angle": 1.9619524985106551,
+        "angularVelocity": -8.521043356566972
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 1618.075959,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 334.8500000000011,
+        "y": 288.1666666666667,
+        "vx": 162,
+        "vy": -25,
+        "angle": 1.333024785933387,
+        "angularVelocity": -8.218551856699952
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 1713.0409590000002,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 352.3000000000012,
+        "y": 275.1666666666667,
+        "vx": 174,
+        "vy": -500,
+        "angle": 1.187642079599705,
+        "angularVelocity": 10.374252337012052
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [
+        {
+          "id": 4,
+          "type": "flip",
+          "x": 347.95000000000124,
+          "y": 287.7916666666667,
+          "value": 1
+        }
+      ],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 1778.237292,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 368.2500000000011,
+        "y": 232.08333333333334,
+        "vx": 174,
+        "vy": -445,
+        "angle": 2.1197848804809074,
+        "angularVelocity": 9.925925338073904
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 1824.633,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 374.05000000000103,
+        "y": 217.66666666666669,
+        "vx": 174,
+        "vy": -425,
+        "angle": 2.4486651968004645,
+        "angularVelocity": 9.767745791886359
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 1874.216834,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 382.75000000000097,
+        "y": 197.29166666666669,
+        "vx": 174,
+        "vy": -395,
+        "angle": 2.932184880033191,
+        "angularVelocity": 9.535190298987285
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 1940.2602089999998,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 395.80000000000086,
+        "y": 169.54166666666669,
+        "vx": 174,
+        "vy": -350,
+        "angle": 3.635965529043658,
+        "angularVelocity": 9.196697241932805
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 1994.1494169999999,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 403.0500000000008,
+        "y": 155.58333333333334,
+        "vx": 174,
+        "vy": -325,
+        "angle": 4.016101812836764,
+        "angularVelocity": 9.01386542781661
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 2055.185292,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 414.6500000000007,
+        "y": 135.41666666666669,
+        "vx": 174,
+        "vy": -285,
+        "angle": 4.608663576731884,
+        "angularVelocity": 8.728864634975153
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 2124.13875,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 426.2500000000006,
+        "y": 117.91666666666669,
+        "vx": 174,
+        "vy": -245,
+        "angle": 5.182489696760337,
+        "angularVelocity": 8.452875009714436
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 2197.416,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 437.85000000000053,
+        "y": 103.08333333333336,
+        "vx": 174,
+        "vy": -205,
+        "angle": 5.738172557332467,
+        "angularVelocity": 8.185611636542262
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 2264.001042,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 446.7500000000005,
+        "y": 85.04166666666669,
+        "vx": 186,
+        "vy": -695,
+        "angle": 5.834740950447797,
+        "angularVelocity": -10.416
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [
+        {
+          "id": 5,
+          "type": "flip",
+          "x": 443.6500000000005,
+          "y": 96.66666666666669,
+          "value": 1
+        }
+      ],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 2329.9134589999994,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 462.2500000000006,
+        "y": 29.416666666666686,
+        "vx": 186,
+        "vy": -645,
+        "angle": 4.982230166100248,
+        "angularVelocity": -10.005973123058371
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 2401.3822499999997,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 476.2000000000007,
+        "y": -17.083333333333314,
+        "vx": 186,
+        "vy": -600,
+        "angle": 4.243701616829948,
+        "angularVelocity": -9.650767581792065
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 2456.120959,
+      "label": "early-route",
+      "status": "airborne",
+      "player": {
+        "x": 485.5000000000008,
+        "y": -46.208333333333314,
+        "vx": 186,
+        "vy": -570,
+        "angle": 3.765972549804381,
+        "angularVelocity": -9.42099716601176
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 2511.602084,
+      "label": "journey",
+      "status": "airborne",
+      "player": {
+        "x": 494.80000000000086,
+        "y": -73.83333333333331,
+        "vx": 186,
+        "vy": -540,
+        "angle": 3.2996175010038415,
+        "angularVelocity": -9.196697241932805
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [],
+      "terminalCopy": "",
+      "terminalVisible": false,
+      "terminalCss": {
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 0,
+        "height": 0
+      },
+      "canvasVisible": true
+    },
+    {
+      "atMs": 2806.084667,
+      "label": "journey",
+      "status": "failed",
+      "player": {
+        "x": 514.950000000001,
+        "y": -128.54166666666666,
+        "vx": 0,
+        "vy": 0,
+        "angle": 2.326919453315615,
+        "angularVelocity": -8.728864634975153
+      },
+      "cuts": 1,
+      "anchorId": null,
+      "totalEarnings": 1,
+      "events": [
+        {
+          "id": 6,
+          "type": "fall",
+          "x": 514.950000000001,
+          "y": -128.54166666666666,
+          "value": 0
+        }
+      ],
+      "terminalCopy": "跌出路线\n分数 1\n再次轻触 · 重新开始",
+      "terminalVisible": true,
+      "terminalCss": {
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "1",
+        "width": 281.15625,
+        "height": 152.75
+      },
+      "canvasVisible": true
+    }
+  ],
+  "branchProjections": [
+    {
+      "atMs": 1207.6723749999999,
+      "worldTime": 2.64166666666666,
+      "projectionOnly": true,
+      "supportId": null,
+      "part": null,
+      "normal": null,
+      "lifecycleState": "airborne",
+      "player": {
+        "x": 250.59999999999997,
+        "y": 361.5,
+        "vx": 162,
+        "vy": -300,
+        "angle": 5.556749142732585,
+        "angularVelocity": -10.250010624000003
+      },
+      "anchorId": null,
+      "cuts": 1,
+      "events": [
+        {
+          "id": 3,
+          "type": "flip",
+          "x": 242.5,
+          "y": 377.125,
+          "value": 1
+        }
+      ]
+    },
+    {
+      "atMs": 1263.9107499999998,
+      "worldTime": 2.749999999999993,
+      "projectionOnly": true,
+      "supportId": null,
+      "part": null,
+      "normal": null,
+      "lifecycleState": "airborne",
+      "player": {
+        "x": 268.15000000000015,
+        "y": 332.7916666666667,
+        "vx": 162,
+        "vy": -235,
+        "angle": 4.472646332727172,
+        "angularVelocity": -9.72859635261297
+      },
+      "anchorId": null,
+      "cuts": 1,
+      "events": []
+    },
+    {
+      "atMs": 1330.3660419999999,
+      "worldTime": 2.808333333333326,
+      "projectionOnly": true,
+      "supportId": null,
+      "part": null,
+      "normal": null,
+      "lifecycleState": "airborne",
+      "player": {
+        "x": 277.6000000000003,
+        "y": 320.25,
+        "vx": 162,
+        "vy": -200,
+        "angle": 3.911923170688532,
+        "angularVelocity": -9.458908776595388
+      },
+      "anchorId": null,
+      "cuts": 1,
+      "events": []
+    },
+    {
+      "atMs": 1379.2811669999999,
+      "worldTime": 2.8499999999999925,
+      "projectionOnly": true,
+      "supportId": null,
+      "part": null,
+      "normal": null,
+      "lifecycleState": "airborne",
+      "player": {
+        "x": 284.3500000000004,
+        "y": 312.5416666666667,
+        "vx": 162,
+        "vy": -175,
+        "angle": 3.520948635321824,
+        "angularVelocity": -9.270864155174198
+      },
+      "anchorId": null,
+      "cuts": 1,
+      "events": []
+    },
+    {
+      "atMs": 1436.3320419999998,
+      "worldTime": 2.9083333333333257,
+      "projectionOnly": true,
+      "supportId": null,
+      "part": null,
+      "normal": null,
+      "lifecycleState": "airborne",
+      "player": {
+        "x": 293.8000000000006,
+        "y": 303.5,
+        "vx": 162,
+        "vy": -140,
+        "angle": 2.986607598289925,
+        "angularVelocity": -9.01386542781661
+      },
+      "anchorId": null,
+      "cuts": 1,
+      "events": []
+    },
+    {
+      "atMs": 1499.5110000000002,
+      "worldTime": 2.974999999999992,
+      "projectionOnly": true,
+      "supportId": null,
+      "part": null,
+      "normal": null,
+      "lifecycleState": "airborne",
+      "player": {
+        "x": 304.60000000000076,
+        "y": 295.6666666666667,
+        "vx": 162,
+        "vy": -100,
+        "angle": 2.3940458343948046,
+        "angularVelocity": -8.728864634975153
+      },
+      "anchorId": null,
+      "cuts": 1,
+      "events": []
+    },
+    {
+      "atMs": 1554.8805839999998,
+      "worldTime": 3.024999999999992,
+      "projectionOnly": true,
+      "supportId": null,
+      "part": null,
+      "normal": null,
+      "lifecycleState": "airborne",
+      "player": {
+        "x": 312.7000000000009,
+        "y": 291.5416666666667,
+        "vx": 162,
+        "vy": -70,
+        "angle": 1.9619524985106551,
+        "angularVelocity": -8.521043356566972
+      },
+      "anchorId": null,
+      "cuts": 1,
+      "events": []
+    },
+    {
+      "atMs": 1618.075959,
+      "worldTime": 3.0999999999999917,
+      "projectionOnly": true,
+      "supportId": null,
+      "part": null,
+      "normal": null,
+      "lifecycleState": "airborne",
+      "player": {
+        "x": 334.8500000000011,
+        "y": 288.1666666666667,
+        "vx": 162,
+        "vy": -25,
+        "angle": 1.333024785933387,
+        "angularVelocity": -8.218551856699952
+      },
+      "anchorId": null,
+      "cuts": 1,
+      "events": []
+    },
+    {
+      "atMs": 1713.0409590000002,
+      "worldTime": 3.1749999999999914,
+      "projectionOnly": true,
+      "supportId": null,
+      "part": null,
+      "normal": null,
+      "lifecycleState": "airborne",
+      "player": {
+        "x": 352.3000000000012,
+        "y": 275.1666666666667,
+        "vx": 174,
+        "vy": -500,
+        "angle": 1.187642079599705,
+        "angularVelocity": 10.374252337012052
+      },
+      "anchorId": null,
+      "cuts": 1,
+      "events": [
+        {
+          "id": 4,
+          "type": "flip",
+          "x": 347.95000000000124,
+          "y": 287.7916666666667,
+          "value": 1
+        }
+      ]
+    },
+    {
+      "atMs": 1778.237292,
+      "worldTime": 3.2666666666666577,
+      "projectionOnly": true,
+      "supportId": null,
+      "part": null,
+      "normal": null,
+      "lifecycleState": "airborne",
+      "player": {
+        "x": 368.2500000000011,
+        "y": 232.08333333333334,
+        "vx": 174,
+        "vy": -445,
+        "angle": 2.1197848804809074,
+        "angularVelocity": 9.925925338073904
+      },
+      "anchorId": null,
+      "cuts": 1,
+      "events": []
+    },
+    {
+      "atMs": 1824.633,
+      "worldTime": 3.299999999999991,
+      "projectionOnly": true,
+      "supportId": null,
+      "part": null,
+      "normal": null,
+      "lifecycleState": "airborne",
+      "player": {
+        "x": 374.05000000000103,
+        "y": 217.66666666666669,
+        "vx": 174,
+        "vy": -425,
+        "angle": 2.4486651968004645,
+        "angularVelocity": 9.767745791886359
+      },
+      "anchorId": null,
+      "cuts": 1,
+      "events": []
+    },
+    {
+      "atMs": 1874.216834,
+      "worldTime": 3.3499999999999908,
+      "projectionOnly": true,
+      "supportId": null,
+      "part": null,
+      "normal": null,
+      "lifecycleState": "airborne",
+      "player": {
+        "x": 382.75000000000097,
+        "y": 197.29166666666669,
+        "vx": 174,
+        "vy": -395,
+        "angle": 2.932184880033191,
+        "angularVelocity": 9.535190298987285
+      },
+      "anchorId": null,
+      "cuts": 1,
+      "events": []
+    },
+    {
+      "atMs": 1940.2602089999998,
+      "worldTime": 3.4249999999999905,
+      "projectionOnly": true,
+      "supportId": null,
+      "part": null,
+      "normal": null,
+      "lifecycleState": "airborne",
+      "player": {
+        "x": 395.80000000000086,
+        "y": 169.54166666666669,
+        "vx": 174,
+        "vy": -350,
+        "angle": 3.635965529043658,
+        "angularVelocity": 9.196697241932805
+      },
+      "anchorId": null,
+      "cuts": 1,
+      "events": []
+    }
+  ],
+  "screenshots": [
+    {
+      "label": "startup",
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/frames/startup.png",
+      "atMs": 243.91875000000005
+    },
+    {
+      "label": "journey-02s",
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/frames/journey-02s.png",
+      "atMs": 2723.939042
+    },
+    {
+      "label": "terminal",
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/frames/terminal.png",
+      "atMs": 3471.1689589999996
+    },
+    {
+      "label": "replay",
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/frames/replay.png",
+      "atMs": 4179.360584
+    },
+    {
+      "label": "end",
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/frames/end.png",
+      "atMs": 4370.264375
+    }
+  ],
+  "terminal": {
+    "atMs": 2806.084667,
+    "outcome": "failed",
+    "exactCopy": "跌出路线\n分数 1\n再次轻触 · 重新开始",
+    "status": "failed",
+    "visible": true,
+    "visiblePixels": true,
+    "css": {
+      "display": "block",
+      "visibility": "visible",
+      "opacity": "1",
+      "width": 281.15625,
+      "height": 152.75
+    }
+  },
+  "replay": {
+    "clickedVisibleControl": true,
+    "controlText": "重玩",
+    "input": "mouse",
+    "x": 550,
+    "y": 471,
+    "status": "ready",
+    "player": {
+      "x": 120,
+      "y": 420,
+      "vx": 0,
+      "vy": 0,
+      "angle": -0.35,
+      "angularVelocity": 0
+    },
+    "screenshot": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/frames/replay.png"
+  },
+  "errors": [
+    {
+      "kind": "warning",
+      "text": "THREE.WebGLRenderer: Texture marked for update but no image data found."
+    },
+    {
+      "kind": "warning",
+      "text": "THREE.WebGLRenderer: Texture marked for update but no image data found."
+    },
+    {
+      "kind": "warning",
+      "text": "THREE.WebGLRenderer: Texture marked for update but no image data found."
+    },
+    {
+      "kind": "warning",
+      "text": "THREE.WebGLRenderer: Texture marked for update but no image data found."
+    },
+    {
+      "kind": "warning",
+      "text": "THREE.WebGLRenderer: Texture marked for update but no image data found."
+    },
+    {
+      "kind": "warning",
+      "text": "THREE.WebGLRenderer: Texture marked for update but no image data found."
+    },
+    {
+      "kind": "warning",
+      "text": "THREE.WebGLRenderer: Texture marked for update but no image data found."
+    },
+    {
+      "kind": "warning",
+      "text": "THREE.WebGLRenderer: Texture marked for update but no image data found."
+    },
+    {
+      "kind": "warning",
+      "text": "THREE.WebGLRenderer: Texture marked for update but no image data found."
+    },
+    {
+      "kind": "warning",
+      "text": "THREE.WebGLRenderer: Texture marked for update but no image data found."
+    },
+    {
+      "kind": "warning",
+      "text": "THREE.WebGLRenderer: Texture marked for update but no image data found."
+    },
+    {
+      "kind": "warning",
+      "text": "THREE.WebGLRenderer: Texture marked for update but no image data found."
+    },
+    {
+      "kind": "warning",
+      "text": "THREE.WebGLRenderer: Texture marked for update but no image data found."
+    },
+    {
+      "kind": "warning",
+      "text": "THREE.WebGLRenderer: Texture marked for update but no image data found."
+    },
+    {
+      "kind": "warning",
+      "text": "THREE.WebGLRenderer: Texture marked for update but no image data found."
+    },
+    {
+      "kind": "warning",
+      "text": "THREE.WebGLRenderer: Texture marked for update but no image data found."
+    },
+    {
+      "kind": "warning",
+      "text": "THREE.WebGLRenderer: Texture marked for update but no image data found."
+    },
+    {
+      "kind": "warning",
+      "text": "THREE.WebGLRenderer: Texture marked for update but no image data found."
+    },
+    {
+      "kind": "warning",
+      "text": "[.WebGL-0x104004c0000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "kind": "warning",
+      "text": "[.WebGL-0x104004c0000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "kind": "warning",
+      "text": "[.WebGL-0x104004c0000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "kind": "warning",
+      "text": "[.WebGL-0x104004c0000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+    }
+  ],
+  "runnerError": null,
+  "unchanged": true,
+  "limitations": []
+}

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "CompetitorFailurePressureContract",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "sourceBoundary": {
+    "reference": "Slice Master / Poki page and local mechanics-research-v2",
+    "expressionRule": "仅提取可迁移的行为模式，不复制竞品素材、名称、UI、布局或数值"
+  },
+  "pressures": [
+    {
+      "id": "MOVING_HARD_OBJECTS",
+      "observation": "竞品坚硬物可移动；后期通过增加坚硬物及其出现频率/组合提高压力。用户截图作为形态证据。",
+      "inference": "坚硬物不仅是静态碰撞墙，而是会改变玩家起跳时机、旋转相位和可恢复空间的动态压力源。",
+      "unknowns": ["运动轴、速度、周期、是否携带刀具、精确出现规律尚未逐帧测量"],
+      "pressure": "移动硬物逼近或横向切入路线",
+      "signal": "提前进入镜头、运动轨迹/方向可见、接触面材质与危险色区分",
+      "escalation": "静态单体 → 单个移动 → 两个错相移动 → 移动硬物与尖刺/窄落点组合",
+      "failureAttribution": "刀背/刀柄撞硬物导致反弹或失去路线，必须和尖刺死亡、坠落区分",
+      "recoveryReplay": "保留短暂反弹救回窗口；失败后一次真实输入快速重开并重置移动相位",
+      "currentGap": "当前 level pack 主要是静态 block/support/spike；没有以移动硬物数量和组合承担后期难度。"
+    },
+    {
+      "id": "CUTTABLE_VARIETY",
+      "observation": "竞品切割对象不只独立水果，还包含分段塔、碎片、侧伸/下挂目标和不同高度目标。",
+      "inference": "新鲜感来自空间关系和切割语义的组合，而不是单纯增加数量。",
+      "unknowns": ["各对象的精确材质反馈、碰撞容错和经济数值未实测"],
+      "pressure": "目标位置迫使玩家改变刀具姿态和路径",
+      "signal": "对象形状、厚薄、悬挂关系、可切面朝向清晰可读",
+      "escalation": "单一目标 → 高低交替 → 侧/下挂 → 可切结构与硬物混排",
+      "failureAttribution": "错切结构或用钝部位接触硬物，结果可由对象状态和反馈解释",
+      "recoveryReplay": "错过一个目标不立即结束，但会损失倍率/路线；失败后复盘上一次组合",
+      "currentGap": "当前数据虽有多种 block placement，但 renderer 和规则语义高度统一，玩家感知不到对象类别差异。"
+    },
+    {
+      "id": "TERMINAL_MULTIPLIER_BONUS",
+      "observation": "竞品终点不同位置对应不同金币倍率，部分条件可进入 bonus 段，而非触线即胜。",
+      "inference": "终点是最后一次风险决策和一轮奖励结算，不应只是状态切换点。",
+      "unknowns": ["竞品具体倍率、奖励概率和经济参数不作为复现目标"],
+      "pressure": "终点前最后一次点击决定收益区或是否进入奖励段",
+      "signal": "不同高度/宽度/颜色的终点区，提前展示正负收益和 bonus 入口",
+      "escalation": "宽安全区 → 窄高倍区 → 负向区与高倍区并存 → 终点前移动/遮挡",
+      "failureAttribution": "命中区域、运算结果、bonus 进入/失败原因在画面中明确展示",
+      "recoveryReplay": "普通终点可重玩；bonus 失败不在原地重试，回到普通流程并保留结算反馈",
+      "currentGap": "当前实现已有 finishOptions 和 bonusAvailable 字段，但关卡压力与奖励选择尚未成为每关的核心高潮。"
+    }
+  ],
+  "decision": "研究不是完全没有做；行为证据已在 mechanics-research-v2 中记录，但 level-pack 实施只落地了对象数据的表面差异，遗漏了移动硬物递进、可切对象语义丰富度和终点风险/bonus 作为关卡主压力。下一轮应以本契约重做关卡与 QA。"
+}

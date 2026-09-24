@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "BuilderCheckpoint",
+  "targetWorkspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "blocker-closed",
+  "scope": {
+    "runId": "mobile-slice-adaptation-20260830",
+    "builderWriteBoundaryRespected": true,
+    "gameplayChange": "generic repeated-hard-contact manifold saturation",
+    "levelCoordinatesSpecialCased": false,
+    "inputScriptSpecialCased": false,
+    "finalUiExpanded": false,
+    "saveSystemExpanded": false
+  },
+  "changedFiles": [
+    "workspace/prototype-a/src/game-core.ts",
+    "workspace/prototype-a/tests/game-core.test.ts",
+    "workspace/prototype-a/src/theme.ts",
+    "workspace/prototype-a/tests/theme.test.ts",
+    "workspace/prototype-a/src/style.css",
+    "workspace/prototype-a/index.html",
+    "workspace/prototype-a/package.json",
+    "workspace/prototype-a/pnpm-lock.yaml",
+    "qa-night-builder-fix-v3/run-natural-contract.cjs",
+    "qa-night-builder-fix-v3/natural-contract-report.json",
+    "qa-night-builder-fix-v3/console.log",
+    "qa-night-builder-fix-v3/desktop-natural-1-won.png",
+    "qa-night-builder-fix-v3/desktop-natural-2-won.png",
+    "qa-night-builder-fix-v3/desktop-natural-3-won.png",
+    "qa-night-builder-fix-v3/desktop-natural-4-won.png",
+    "qa-night-builder-fix-v3/desktop-natural-5-won.png",
+    "qa-night-builder-fix-v3/mobile-natural-1-won.png",
+    "qa-night-builder-fix-v3/mobile-natural-2-won.png"
+  ],
+  "testFirstEvidence": {
+    "red": [
+      {
+        "id": "NATURAL-CHOKE-007",
+        "failure": "low global policy stopped at x=1228.5",
+        "baseline": "white-column produced 30 bounce events, one anchor and a 29-event no-progress streak"
+      },
+      {
+        "id": "NATURAL-CHOKE-008",
+        "failure": "low global policy repeated 3 lift-plank rebounds",
+        "baseline": "independent 24 ms input and 16 ms render clocks exposed a changed-normal repeat contact"
+      },
+      {
+        "id": "THEME-ZOD-004",
+        "failure": "production schema exports were absent and invalid extra gameplay or third-party asset fields were not rejected",
+        "baseline": "theme values were duplicated between TypeScript, HTML and CSS"
+      }
+    ],
+    "green": [
+      "NATURAL-CHOKE-007",
+      "NATURAL-CHOKE-008",
+      "HARD-REFLECT-002",
+      "HARD-SEPARATING-003",
+      "SHARP-STABLE-004",
+      "MOV-001",
+      "MOV-002 MOV-003",
+      "THEME-ZOD-004",
+      "THEME-INTEGRATION-003"
+    ],
+    "fullSuitePassed": 78
+  },
+  "physicsResolution": {
+    "rule": "When hard contacts repeat on the same rigid body with less than 28 world units of horizontal progress, the third contact resolves as a tangent slide with a small separating velocity.",
+    "preserved": [
+      "the first two incident-normal bounces",
+      "sharp-edge cutting semantics",
+      "moving-support relative velocity",
+      "level geometry and obstacle coordinates",
+      "natural-input policies"
+    ],
+    "rejectedExperimentsNotRetained": [
+      "global restitution reduction",
+      "unconditional minimum forward recovery velocity",
+      "unconditional vertical-wall glide",
+      "second-contact anti-stuck activation"
+    ]
+  },
+  "themeBoundary": {
+    "productionZodParse": true,
+    "singleSource": "workspace/prototype-a/src/theme.ts",
+    "themeId": "mechanics-demo-placeholder-v1",
+    "themeStatus": "placeholder",
+    "finalStyleLock": false,
+    "gameplayRulesAllowedInTheme": false
+  },
+  "verification": {
+    "lint": "passed",
+    "typecheck": "passed",
+    "tests": {
+      "passed": true,
+      "count": 78
+    },
+    "build": {
+      "passed": true,
+      "output": "workspace/prototype-a/dist/index.html",
+      "bytes": 674393,
+      "sha256": "28bb8b6a19014c140ea4119d377692d50aa25d7a4f749c33e7e97b1b6dd2355c"
+    },
+    "naturalInputQa": {
+      "passed": true,
+      "blockerClosed": true,
+      "desktopWins": 5,
+      "desktopChokePasses": 5,
+      "mobileWins": 2,
+      "mobileChokePasses": 2,
+      "maxNoProgressBounceStreak": 2,
+      "fullStageDesktopWin": true,
+      "fullStageMobileWin": true,
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "requestFailures": 0,
+      "report": "qa-night-builder-fix-v3/natural-contract-report.json",
+      "reportSha256": "4bf4ef17ff48c7596e4afda7dcb40cf66ea5bfe03b4a2816af730bf4b5a928a8"
+    }
+  },
+  "remainingIssues": [
+    {
+      "area": "final UI and art direction",
+      "status": "pending-user-decision",
+      "note": "The active mechanics-demo theme is intentionally not a final style lock."
+    },
+    {
+      "area": "asset provider integration",
+      "status": "not-expanded",
+      "note": "The validated manifest boundary exists, but final approved visual assets are not wired as a complete provider set."
+    },
+    {
+      "area": "save and progression persistence",
+      "status": "not-expanded",
+      "note": "This blocker-only pass did not add save data or long-term progression."
+    },
+    {
+      "area": "platform packaging",
+      "status": "unverified",
+      "note": "Only the isolated web-lite development build and browser QA are verified."
+    }
+  ],
+  "platformScope": {
+    "verified": "web-lite development build and browser QA only",
+    "wechatMiniGamePublishable": false,
+    "douyinMiniGamePublishable": false,
+    "taptapMiniGamePublishable": false
+  },
+  "nextCommand": "cd '/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a' && pnpm lint && pnpm typecheck && pnpm test && pnpm build && cd ../.. && node qa-night-builder-fix-v3/run-natural-contract.cjs",
+  "validatedWith": "zod@4 strict BuilderCheckpointChokeFixV4"
+}

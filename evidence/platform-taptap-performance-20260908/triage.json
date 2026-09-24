@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "experience-complaint-triage",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "report": "TapTap 包体准入的功能运行测试已显示 Android 5 台、iOS 1 台均通过，但性能测试未通过：4 台 Android 设备的 FPS 未达到标准。PHJ110 明细显示平均内存 242.29MB、10 分钟峰值 257.98MB、冷启动 2.03s、FPS 0.02150376。截图版本为开发版本 0.0.1（开发版本 195724），未提供上传 ZIP SHA-256。",
+  "classification": ["core-experience", "factory-routing"],
+  "scope": {
+    "route": "formal-fixer",
+    "rationale": "问题影响 TapTap Android 多设备性能和发布准入，当前只有后台截图、没有同 SHA 的设备 trace，根因可能位于 Cocos Graphics 渲染、主循环、TapTap 转换器或性能采集链路，必须保留 QA→Fixer→QA 复测。",
+    "generatedWorkspaceModified": false,
+    "contextIntentionallyOmitted": [
+      "其他游戏、其他 run、web-lite 和微信/抖音平台",
+      "广告、内购、云存档、排行榜以及与 FPS 门槛无关的玩法扩展",
+      "未绑定当前开发版本 SHA 的旧包、旧设备日志和 sibling 设备通过结论",
+      "仅凭截图推断的具体性能根因或 TapTap 阈值数值"
+    ]
+  },
+  "reproduction": {
+    "status": "PARTIALLY_REPRODUCED",
+    "steps": [
+      "在 TapTap 后台打开 疯狂切割 的开发版本 0.0.1（开发版本 195724）性能测试报告。",
+      "查看 Android 性能测试总览和 PHJ110H1 明细。",
+      "对照 FPS、运行内存、冷启动和 10 分钟运行峰值；截图未提供 ZIP SHA 或完整设备 trace。"
+    ],
+    "observed": [
+      "功能运行测试 Android 通过率 100%（5 台），iOS 通过率 100%（1 台），但整体测试未通过。",
+      "性能测试总览显示 4 台设备 FPS 未达标，启动耗时、内存峰值/均值和卡顿率显示达标。",
+      "PHJ110H1 的 FPS 为 0.02150376，平均内存 242.29MB，10 分钟峰值 257.98MB，冷启动 2.03s。"
+    ],
+    "evidence": [
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-9092aa3c-19d5-40f6-bb78-b1aebb0f68fa-dd3ada4efe62.png",
+        "sha256": "dd3ada4efe6209d9db40f1eb3273d4be26a44f02bafc8342f4eb98a4c5de66d9",
+        "kind": "reference",
+        "provenance": "verified-reference"
+      },
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-20633ea7-42dc-44a3-88c8-93db2079c4a4-f834ac624716.png",
+        "sha256": "f834ac624716c8d6b345f4f33d28c36eafedf838d99e352f289b52131491aaaf",
+        "kind": "reference",
+        "provenance": "verified-reference"
+      }
+    ]
+  },
+  "acceptanceCriteria": [
+    "同一个可追溯 ZIP SHA 在 TapTap 性能测试中，四台 Android 设备的 FPS 均达到后台标准，且不能只依赖单台或 sibling 设备。",
+    "PHJ110 分支需有启动、稳定运行、普通触摸核心循环和 10 分钟运行的 FPS/内存/卡顿原始日志；若 FPS 读数为采集异常，必须用独立帧计数和设备可见证据证明并修正采集链路。",
+    "性能优化不得破坏 Graphics 首帧、触摸起跳/翻转、切割、反弹、失败/结算和重玩；规则、lint、typecheck 和一次构建全通过。",
+    "独立 QA 必须以精确 ZIP SHA 复测 PHJ110、Huawei P30、Xiaomi 14、OnePlus8_EEA 四个 Android 性能分支，并区分工程 PASS、自然旅程 PASS 和后台性能门槛 PASS。",
+    "未取得精确 SHA 的后台新报告、设备日志或截图前，不得宣称性能准入已通过。"
+  ],
+  "status": "READY_FOR_REPAIR",
+  "createdAt": "2026-09-08T06:44:25Z"
+}

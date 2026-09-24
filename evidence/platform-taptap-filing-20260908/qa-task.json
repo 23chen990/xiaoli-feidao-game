@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "platform-qa-task",
+  "role": "QAAgent",
+  "targetGame": "mobile-slice-adaptation-20260830（TapTap 名称：疯狂切割）",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame",
+  "zipPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/build/TapBuild/game.zip",
+  "expectedSha256": "b98066570390b384c3471d3cf7fff17d22e176fc23fdf542162cfe53d0b24e96",
+  "fixerResultPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-filing-20260908/attempt-2/fix-result.json",
+  "checks": [
+    "Re-hash the frozen ZIP, run archive integrity checking, and verify root game.js/game.json/project.config.json.",
+    "Verify projectname 疯狂切割, AppID 928932, portrait orientation, productVersion 1.0.0, size below 20MB, and absence of an HTML-wrapper entry path.",
+    "Inspect generated settings/bundle for a wired initial scene and the submitted game's touch, cut/reflect, failure, settlement and replay implementation; distinguish structural evidence from runtime proof.",
+    "Run the platform project's tests, lint and typecheck read-only; do not rebuild or alter the frozen ZIP.",
+    "Report engineering, natural-journey and perceptual verdicts separately. Without TapTap backend/phone execution, natural and perceptual verdicts must remain BLOCKED even if engineering checks pass.",
+    "Set filingPackageVerdict READY_FOR_BACKEND_SCAN only if static engineering checks pass and the exact ZIP is suitable for the user's next backend upload/scan step."
+  ],
+  "prohibitedActions": [
+    "Do not modify any generated game source, build output, package ZIP, factory code, or other run.",
+    "Do not run Cocos build or invoke the TapTap converter.",
+    "Do not use web-lite or a sibling game as proof that the TapTap package runs.",
+    "Do not claim device, natural-journey or perceptual PASS without actual TapTap execution."
+  ],
+  "outputPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-filing-20260908/independent-qa/qa-report.json"
+}

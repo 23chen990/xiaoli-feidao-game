@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "human-review-20260907-l1-recovery",
+  "attempt": 3,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "authorizationPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/authorization.json",
+  "outputDirectory": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-3",
+  "issues": [
+    {
+      "id": "L1-STACK-DECORATIVE-SUBSTITUTION",
+      "severity": "error",
+      "message": "两组命名为 branch 的梯形堆叠仍 collidable:false，碰撞路径跳过。只能证明装饰存在，不能满足刀接触后散开/失去支撑下落的要求；自然输入精确分支证据仍待 QA。",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-levels.ts:178; /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts:932; /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/active-slice-contract.json L1-STACK"
+    },
+    {
+      "id": "L1-STACK-VISUAL-EVIDENCE-GAP",
+      "severity": "error",
+      "message": "指定 stack-a/b 的自然画面没有清楚证明同一对象完成承托、切开、散开、下落并落地；保留为证据缺口，不能由状态日志关闭。",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/reproduction-matrix.json"
+    },
+    {
+      "id": "L1-GROUND-HIGH-SLAB",
+      "severity": "error",
+      "message": "开场后段可见高处白色台面/横板仍缺少清晰可见承托关系；该分支在截图中可见，需进入下一次最小修复。",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/frame-0000.png"
+    }
+  ],
+  "matrixPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/reproduction-matrix.json",
+  "contractPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/active-slice-contract.json",
+  "expectedBuildSha256": "b234fd16adb1bf70e7bc021fd33a4703de03e59657bd21fb82419bda712747a6",
+  "instructions": [
+    "This is attempt3/5 in the already explicitly user-authorized cycle. Resume stored original Fixer thread. Root owns cycle-state; attempt is reserved before dispatch. Execute one repair iteration then stop for independentQA. No new authorization question, cycle reset, separate task or automatic next attempt.",
+    "You are not alone in this repository. Own only causally connected game workspace files and this outputDirectory; preserve other work and all prior attempts. No shared factory, other games/levels, unrelated cleanup or commits. Source QA hash must match before edits. Read codex-game-repair and test-driven-development skills.",
+    "Use only this minimal issue packet, current reviewed contract, latest exact matrix, /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/failure-pressure-contract.json and /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/engineering-triage.json. Existing approved infrastructure research is /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/open-source-research.json. Do not import full chat/old guesses; PENDING media remains excluded. A technical-design revision requires validating relevant open-source research first.",
+    "Priority is actual Level1 relationships: restore interactive ladder/stack branches rather than collidable:false visual substitutes; support relationships and cut/separate/gravity must operate on the same visible objects. Fix established terminal band clipping and world-label correspondence. Keep existing Level1 gameplay scope and original content; do not copy competitor assets or numeric values.",
+    "The six existing unit failures are in unchanged game-core/catalog sources, not caused by renderer fixes. Determine root cause against the ACTIVE contract. Old hardcoded coordinate windows, fixture routes and density expectations are not automatically current requirements; if obsolete, replace them with stricter current-contract behavioral assertions and document the supersession. Do not skip/mark-todo/weaken tests, rewrite desired outcomes to match broken code, remove safe/bonus behavior, or distort game just to fit a bot cadence.",
+    "Any latest QA-only evidence gap is a diagnosis task, not automatic permission to invent mechanics. If source/runtime confirms a requirement violation (e.g. reward chronology), reproduce with a focused test and minimally fix; if only capture is missing, preserve gap for QA. Natural phone win unobserved does not by itself prove impossible completion. Preserve already passing opening branches and regression tests.",
+    "Before writing, create preflight.json with exact issue/object/state/renderer, smallest causal file set and RED checks. Test-first, lint/typecheck/full tests. After modifications and tests, pnpm build once only; do not run qa:* scripts which rebuild. Record every command exit code/log path and one build hash. Root then runs independent normal-input/perceptual retest of unchanged dist.",
+    "Return FixResultSchema-validated fix-result.json. Status only READY_FOR_INDEPENDENT_QA or BLOCKED, never productPASS. Include why formal route, omitted context, all changed files, actual root causes, tests and remaining gaps. No second build after one build in this attempt; further changes require next bounded attempt."
+  ],
+  "outputSchema": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/schemas.ts#FixResultSchema"
+}

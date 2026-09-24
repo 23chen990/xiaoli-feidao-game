@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "BuilderLevelPackCheckpoint",
+  "status": "BLOCKED_CONCURRENT_WRITE",
+  "runId": "mobile-slice-adaptation-20260830",
+  "targetWorkspace": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "createdAt": "2026-08-31T11:27:00+08:00",
+  "objective": "Expand the accepted deterministic web-lite mechanics demo into twelve original authored levels with neutral versioned progression while preserving the locked one-touch cut, reflection, moving-support, fragment, recovery and input-feel contracts.",
+  "lockedDecisions": [
+    "Only prototype-a and same-run evidence were modified.",
+    "Level 1 preserves the accepted three-stage demonstration fixtures and teaching value.",
+    "Physics timing and contact constants remain unchanged.",
+    "The theme remains replaceable placeholder status with styleLock false.",
+    "Progress saves only neutral level records and settings.",
+    "No third-party game expression, level layout, assets, names, UI or balancing values were reused.",
+    "The output is a web-lite browser candidate only."
+  ],
+  "lockedEvidence": [
+    { "path": "artifacts/builder-checkpoint-choke-fix-v4.json", "sha256": "6993e64a65e42f3077c20ea7182d8d52e272690a3f33476875297a832a7085cd" },
+    { "path": "qa-night-independent-final-v4/qa-report.json", "sha256": "c67502e261e2d13830f53e554434467589ce84f7809faaddaf33f168c2d1c880" },
+    { "path": "artifacts/mechanics-trace-matrix-v3.json", "sha256": "78500a7d1702c3771767893a68ca2d2d6a0b068782eb9e0e4ffd9e85ac3be9ee" },
+    { "path": "workspace/prototype-a/src/game-content.ts", "sha256": "211a831824d47994721156f9584c8a63efb802376421f76ad8b5a24e961749f7" },
+    { "path": "workspace/prototype-a/src/game-core.ts", "sha256": "db9f24ba113134dd503ba044740248a3afeb389104966a82fd6fe5bd9d521745" },
+    { "path": "workspace/prototype-a/src/theme.ts", "sha256": "53449a64ff7eaad5b28dd02cc3f23ef3f2e95553e588a418251e6948def3099e" }
+  ],
+  "openSourceGate": {
+    "artifact": "artifacts/open-source-research.json",
+    "zodValidated": true,
+    "approvedScope": "Existing pinned web-lite infrastructure only; no new production dependency was added.",
+    "platformAdapterApproved": false
+  },
+  "changedFiles": [
+    "workspace/prototype-a/index.html",
+    "workspace/prototype-a/package.json",
+    "workspace/prototype-a/src/game-core.ts",
+    "workspace/prototype-a/src/game-levels.ts",
+    "workspace/prototype-a/src/level-progress.ts",
+    "workspace/prototype-a/src/main.ts",
+    "workspace/prototype-a/src/style.css",
+    "workspace/prototype-a/src/theme.ts",
+    "workspace/prototype-a/tests/game-core.test.ts",
+    "workspace/prototype-a/tests/level-catalog.test.ts",
+    "workspace/prototype-a/tests/level-progress.test.ts",
+    "workspace/prototype-a/tests/level-ui.test.ts",
+    "workspace/prototype-a/tests/level-pack-browser.ts",
+    "workspace/prototype-a/tests/mechanics-v2.test.ts",
+    "workspace/prototype-a/scripts/qa-level-pack.ts",
+    "workspace/prototype-a/scripts/validate-level-pack-checkpoint.ts",
+    "qa-level-pack-v1/qa-report.json",
+    "qa-level-pack-v1/runner-report.json"
+  ],
+  "levels": [
+    { "number": 1, "id": "level-01", "family": "fundamentals", "uniqueMechanic": "three-beat foundation: observe, cut, recover and choose" },
+    { "number": 2, "id": "level-02", "family": "fundamentals", "uniqueMechanic": "high sigil rotation into a narrow side-cut window" },
+    { "number": 3, "id": "level-03", "family": "fundamentals", "uniqueMechanic": "blunt rebound redirects into a safe recovery lane" },
+    { "number": 4, "id": "level-04", "family": "moving-supports", "uniqueMechanic": "horizontal support velocity inheritance into a landing" },
+    { "number": 5, "id": "level-05", "family": "moving-supports", "uniqueMechanic": "short moving landing versus long static recovery" },
+    { "number": 6, "id": "level-06", "family": "moving-supports", "uniqueMechanic": "vertical lift release height with lower recovery route" },
+    { "number": 7, "id": "level-07", "family": "cut-chains", "uniqueMechanic": "seven-target rising and falling combo wave" },
+    { "number": 8, "id": "level-08", "family": "cut-chains", "uniqueMechanic": "alternating above, below and side target faces" },
+    { "number": 9, "id": "level-09", "family": "cut-chains", "uniqueMechanic": "moving rest, side cut and hard-column chicane" },
+    { "number": 10, "id": "level-10", "family": "synthesis", "uniqueMechanic": "load-bearing tower cut releases dependent structure" },
+    { "number": 11, "id": "level-11", "family": "synthesis", "uniqueMechanic": "high scoring risk route versus lower safe route" },
+    { "number": 12, "id": "level-12", "family": "synthesis", "uniqueMechanic": "dual-role bridge, moving supports, structure and finish choice" }
+  ],
+  "redGreenEvidence": [
+    { "behavior": "LevelCatalog, unlock order, next, replay, migration and twelve-level structure", "red": "pnpm exec tsx --test tests/level-catalog.test.ts tests/level-progress.test.ts -> exit 1, 0 pass / 2 fail because game-levels and level-progress did not exist", "green": "same targeted command -> exit 0, 9 pass / 0 fail; later expanded all-level regression passes" },
+    { "behavior": "Numbered placeholder selector with replay and next controls", "red": "pnpm exec tsx --test tests/level-ui.test.ts -> exit 1, 0 pass / 1 fail because level-selector-toggle was absent", "green": "targeted level tests -> exit 0, 10 pass / 0 fail" },
+    { "behavior": "Deterministic same-level terminal replay", "red": "full suite after implementation -> 83 pass / 5 fail because legacy tests still expected seed + 1", "green": "legacy expectations updated to the new locked contract -> 88 pass / 0 fail before concurrent unrelated RED files appeared" }
+  ],
+  "verification": {
+    "lint": { "status": "PASS", "command": "pnpm lint", "evidence": "exit 0 at final gate before typecheck" },
+    "typecheck": { "status": "BLOCKED", "command": "pnpm typecheck", "evidence": "current exit 2 only because concurrently modified tests/browser-smoke.ts references baseColorTextureIds and texturedMaterialCount that its active A-style task has not yet added to ThreeRendererFacts" },
+    "tests": { "status": "BLOCKED", "command": "pnpm test", "evidence": "current result is 92/93; the only failure is concurrently added A-STYLE-WORLD-005 demanding a bright formal A-style world, while the level-pack revision itself previously passed 88/88 and its current targeted suite passes 11/11" },
+    "build": { "status": "PASS", "command": "pnpm build", "evidence": "current self-contained dist/index.html built successfully at 699014 bytes after concurrent A-style modules were added" },
+    "browserQa": { "status": "PASS", "command": "pnpm qa:levels and pnpm qa:browser", "evidence": "desktop natural input passed levels 1, 4, 7, 10 and 12; accepted mechanics regression also passed" },
+    "mobileQa": { "status": "PASS", "command": "pnpm qa:levels", "evidence": "390x844 native touch passed levels 1, 6 and 12; layout stayed 390x844 with twelve selector buttons" },
+    "performance": { "status": "PASS", "command": "pnpm qa:browser", "evidence": "600 frames: median 16.6ms, p95 17.6ms, 23 draw calls, 488 triangles, stable 13 geometries and 1 texture" },
+    "runtimeErrors": { "status": "PASS", "command": "pnpm qa:levels", "evidence": "console errors 0, pageerror 0, request failures 0" }
+  },
+  "automaticFixes": { "fixerRoundsUsed": 0, "builderCorrections": 2 },
+  "residualIssues": [
+    "Final UI and art direction remain intentionally unapproved; theme status is placeholder and styleLock is false.",
+    "A separate concurrent window is actively adding formal A-style assets and presentation tests to this workspace after the level-pack QA passed; its current independent gate is 92/93 tests with two type errors, and this builder did not modify or satisfy them.",
+    "Headless browser performance is development evidence, not representative mobile hardware certification."
+  ],
+  "nextCommand": "cd /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a && pnpm lint && pnpm typecheck && pnpm test && pnpm build && pnpm qa:levels && pnpm qa:browser",
+  "platformPublishingGaps": {
+    "wechat": "No validated WeChat Mini Game adapter, isolated package config, platform tests or real-device evidence.",
+    "douyin": "No validated Douyin Mini Game adapter, isolated package config, platform tests or real-device evidence.",
+    "taptap": "No validated TapTap Mini Game adapter, isolated package config, platform tests or real-device evidence.",
+    "claimBoundary": "This is only a web-lite browser candidate and must not be described as directly publishable on any target mini-game platform."
+  }
+}

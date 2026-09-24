@@ -1,0 +1,27 @@
+✔ CONTACT-001 classifies tip, edge, body and handle as four deterministic knife parts (4.423541ms)
+✔ CONTACT-002 only tip or edge contact cuts a rectangular target and it scores once (10.039708ms)
+✔ MOV-001 moving support positions are seeded, bounded and frame-split deterministic (6.57175ms)
+✔ MOV-002 MOV-003 an anchored knife rides a moving support and inherits its velocity at launch (1.6685ms)
+✔ HARD-IDENTITY-001 course has no dedicated rebound identity (0.431834ms)
+✔ HARD-REFLECT-002 ordinary static, vertical, moving and block surfaces share incident reflection (3.973042ms)
+✔ HARD-SEPARATING-003 separating overlap only depenetrates without minimum-speed injection (0.826334ms)
+✔ SHARP-STABLE-004 sharp semantics stay stable after a generic hard-surface bounce (11.523792ms)
+✔ CUT-001 CUT-002 course exposes above, side and below rectangular cuts with no invisible post-cut collider (8.093667ms)
+✔ CUT-003 a high-speed sharp sweep cuts the same block at 30 and 120 Hz (10.995541ms)
+✔ STRUCT-001 STRUCT-002 cutting the middle tower segment opens a gap, drops dependants and separates two fragments (2.846417ms)
+✔ DUAL-001 DUAL-002 a dual-role block supports before cutting and its landing face disappears after cutting (0.210208ms)
+✔ DUAL-001-PRECUT-SUPPORT-NOT-REPRODUCIBLE real input has stable support and cut branches (13.654917ms)
+✔ FINISH-001 FINISH-002 math operations are integer-safe and deterministic (0.122791ms)
+✔ FINISH-003 course has two original multipliers and one divisor, and a gate settles only once (0.256625ms)
+✔ BONUS-001 BONUS-002 bonus availability is seeded and one-chance terminal restart preserves the level seed (0.859667ms)
+✔ COURSE-001 COURSE-002 COURSE-003 route data covers three spatial cuts, both moving axes, hard terrain, collapse, spike and gaps (0.506792ms)
+✔ FAIL-001 FAIL-002 fall and spike are distinct and restart restores motion phase, structure, fragments and score (3.730625ms)
+✔ FIXED-001 moving supports, collision events, fragments and collapse converge across frame cadences and a long frame (11.347375ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 513.710292

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "OPEN",
+  "classification": "visual-theme-expression-mismatch",
+  "reproduction": {
+    "evidence": ["User screenshot shows Level 04 HUD labeled 甜品 while the visible target reads as an orange faceted disk/crystal."],
+    "steps": ["Open the default 3D game", "Select Level 04", "Observe the first spawned cuttable before input", "Cut it with normal tap/click and inspect both lifecycle states"]
+  },
+  "reproductionMatrix": [
+    {"objectType":"sigil/cuttable","lifecycleState":"spawned/intact","rendererPath":"game-core foodStyle → ThreePresentationModel → CutVisualEntity intact geometry","deviceViewport":"desktop 1180x720"},
+    {"objectType":"sigil/cuttable","lifecycleState":"cut/split","rendererPath":"game-core foodStyle → ThreePresentationModel → CutVisualEntity half geometry","deviceViewport":"desktop 1180x720"},
+    {"objectType":"sigil/cuttable","lifecycleState":"spawned/intact","rendererPath":"game-core foodStyle → ThreePresentationModel → CutVisualEntity intact geometry","deviceViewport":"mobile 390x844"},
+    {"objectType":"sigil/cuttable","lifecycleState":"cut/split","rendererPath":"game-core foodStyle → ThreePresentationModel → CutVisualEntity half geometry","deviceViewport":"mobile 390x844"}
+  ],
+  "rootCauseHypothesis":"Dessert styles select the dessert skin, but the intact and half entities still use circular sigil geometry, so the material tint does not communicate cake/pastry/cheesecake form.",
+  "acceptanceCriteria":["Dessert intact targets use a cake/pastry silhouette distinct from crystal disks.","Dessert split halves retain the same dessert silhouette and visible cut cap.","Fruit, savory, and mystic styles remain on their existing renderer branches.","Normal input reaches cut feedback on desktop and 390x844 mobile."],
+  "route":"formal-fixer"
+}

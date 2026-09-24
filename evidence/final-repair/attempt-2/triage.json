@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-triage",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 2,
+  "issueId": "L1-RUNWAY-TOP-CONTACT-DIRECTION",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "classification": "natural-level1-runway-recovery-blocker",
+  "status": "VALIDATED_REPRODUCTION",
+  "priorQa": {
+    "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-summary.json",
+    "sha256": "d0640af40c41c1e49c38a58687c8b6f2635332d3fe02e3e7429e05a74b6307cd",
+    "status": "BLOCKED"
+  },
+  "reproduction": {
+    "viewport": "390x844",
+    "schedule": "static-spaced",
+    "supportId": "level1-runway-main",
+    "contactPart": "tip",
+    "normalY": -1,
+    "observedPlayerX": [305.2000000000005, 332.7000000000005],
+    "observedContactX": [315.47808960723034, 368.0817538698364],
+    "statusAtContact": "anchored",
+    "evidencePath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/recording.json",
+    "evidenceSha256": "5e4d6457955e0596707116e3c9d325880506f41c24aa5bfd37928ae5cb242717",
+    "naturalInputOnly": true
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "Level1 runway support, sharp blade tip",
+      "lifecycleStateBranch": "white-landing anchor -> normal relaunch -> early runway top-face overlap while moving upward -> anchored instead of continuing",
+      "rendererPresentationPath": "SliceSimulation sharp support contact -> ThreeWorldRenderer visible blade/runway -> portrait Playwright recording",
+      "viewport": "390x844",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/recording.json"],
+      "observation": "At 2190ms blade x≈298.95 has vy≈-200; by 2241ms a tip/normalY=-1 runway anchor occurs at player x≈305.20, contact x≈315.48. A second such anchor appears near player x≈332.70.",
+      "inference": "The first attempt's relativeNormalVelocity<0 guard is false for the observed upward-motion top-face contact, leaving the old anchor path active.",
+      "unknowns": ["Whether treating all early runway top-normal sharp contacts as recovery preserves fixed replay and natural route."]
+    },
+    {
+      "objectType": "Level1 runway support, sharp blade tip",
+      "lifecycleStateBranch": "white-landing anchor -> normal relaunch -> early runway top-face overlap -> anchored -> further normal taps -> partial stack -> fail",
+      "rendererPresentationPath": "SliceSimulation support sharp-hit -> ThreeWorldRenderer visible blade/runway -> desktop Playwright recording",
+      "viewport": "1100x720",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/recording.json"],
+      "observation": "Desktop repeats tip/normalY=-1 runway anchors at player x≈305.20/332.70, later cuts stack A and its step, then falls before settlement.",
+      "inference": "The defect is not portrait-only; passing a later sibling stack event cannot close the early exact contact branch.",
+      "unknowns": ["Whether the stack A split/fall is visually resolved and whether B and finish become reachable after a new contact response."]
+    },
+    {
+      "objectType": "white-landing teaching support",
+      "lifecycleStateBranch": "fresh start -> rune-1 cut -> authored opening anchor -> relaunch",
+      "rendererPresentationPath": "SliceSimulation white-landing support -> ThreeWorldRenderer visible anchor -> natural input",
+      "viewport": "1100x720",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/recording.json"],
+      "observation": "White-landing remains a separate first teaching anchor before the runway events.",
+      "inference": "Any new guard must be support-id specific and leave opening teaching intact.",
+      "unknowns": ["Whether an adjusted runway response affects later timing indirectly."]
+    },
+    {
+      "objectType": "Level1 runway support, sharp blade tip/edge and blunt body/handle",
+      "lifecycleStateBranch": "fixed-step early contact -> recovery; later sharp suppression; blunt bounce; normal forward replay",
+      "rendererPresentationPath": "SliceSimulation fixed-step tests; runtime must be independently rechecked",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/fix-result.json", "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-summary.json"],
+      "observation": "Attempt 1 passed 196 tests and fixed replay, but natural QA reproduced an untested contact direction and failed the exact branch.",
+      "inference": "A new test must reproduce upward/separating top-normal sharp contact, not reuse the downward-only test.",
+      "unknowns": ["Whether the existing hard-surface response alone can clear a separating contact without recontact."]
+    }
+  ],
+  "rootCauseHypothesis": {
+    "evidence": "In portrait static-spaced natural QA, blade moves upward at vy≈-200 immediately before the tip/normalY=-1 runway anchor. The attempt-1 guard requires relativeNormalVelocity<0 and therefore misses the observed direction; the early anchored path remains active.",
+    "changeHypothesis": "For level1-runway-main only, route any early sharp top-face contact with normalY<=-0.9 through the existing respondToHardSurface path, including separating/upward contacts, instead of anchoring. Do not alter other support IDs, non-top sharp anchors, later x>=350 suppression, blunt bounce, debug fixture bypass, or core physics coefficients. The existing hard-surface response applies separation even when relative normal velocity is nonnegative; verify no persistent recontact and fixed replay stability.",
+    "relativeNormalVelocitySign": "positive-or-zero",
+    "proposedGuard": "level1-runway-main && sharpHit.contact.normalY <= -0.9",
+    "preservedResponse": "respondToHardSurface",
+    "rejectedAlternatives": [
+      "Attempt-1 approaching-only normal guard: passes unit tests but exact natural contact approaches from the opposite velocity direction and still anchors.",
+      "Threshold-only sharp suppression at x>=250 or x>=290: breaks the established normal forward replay before the stack.",
+      "Global sharp-anchor suppression: alters authored support behavior outside the runway and is out of scope."
+    ]
+  },
+  "scope": {
+    "includedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+    ],
+    "excludedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-levels.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/main.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/style.css",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/src/core",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/src/qa"
+    ],
+    "route": "formal-fixer",
+    "expectedSourceFileLimit": 2
+  },
+  "acceptanceCriteria": [
+    "A new focused test reproduces an early runway sharp top-normal contact while the blade is moving upward or separating and first fails as anchored under attempt-1 code.",
+    "The narrow implementation keeps that test airborne with anchorId null and moves the blade clear without repeated immediate anchoring.",
+    "Early top-normal approaching contact remains recovered and early non-top sharp contact remains authored anchor.",
+    "Later x>=350 sharp suppression, body/handle bounce, and opening white-landing teaching anchor remain unchanged.",
+    "The seed-31 fixed timestamp replay still reaches x>2000 for at least 11.9 seconds without failure.",
+    "Only src/game-core.ts and tests/level1-recovery.test.ts change; no renderer, level data, debug fixture, platform, or shared factory edits.",
+    "pnpm test, pnpm lint, pnpm typecheck pass; exactly one pnpm build produces a recorded dist SHA-256.",
+    "Independent fresh 390x844 and 1100x720 normal-input QA must retest the exact runway branch and the stack/terminal/replay journey.",
+    "Any natural/perceptual BLOCKED result keeps the issue open; Fixer must not claim runtime QA success."
+  ],
+  "evidenceClassification": {
+    "observed": [
+      "Attempt-1 natural QA still records tip/normalY=-1 anchors at player x≈305.20 and 332.70 in both viewports, despite passing deterministic tests.",
+      "Portrait pre-contact state at x≈298.95 has vy≈-200 immediately before the first runway anchor.",
+      "Both viewports show visible failure terminal and replay; neither completes successful settlement."
+    ],
+    "inferred": [
+      "The attempt-1 relativeNormalVelocity<0 guard excludes this upward top-normal contact, allowing the anchor path.",
+      "Running the existing response for all runway top-normal sharp contacts may separate without a new physics coefficient."
+    ],
+    "unknown": [
+      "Whether a separating contact recontacts on the next fixed step or changes the fixed replay before x>2000.",
+      "Whether fresh natural input can complete both viewports' stack and settlement after the correction."
+    ]
+  },
+  "createdAt": "2026-09-23T06:21:00.000Z"
+}

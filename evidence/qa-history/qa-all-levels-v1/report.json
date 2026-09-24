@@ -1,0 +1,1046 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "AllLevelsNaturalQa",
+  "targetGame": "小李飞刀",
+  "workspace": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "passed": false,
+  "viewports": [
+    "1180x720",
+    "390x844"
+  ],
+  "naturalInput": "mouse/touch only",
+  "results": [
+    {
+      "level": 1,
+      "theme": "fruit",
+      "styles": [
+        "apple",
+        "banana",
+        "coconut"
+      ],
+      "status": "ready",
+      "failReason": null,
+      "elapsed": 0,
+      "maxX": 1264.8997140528752,
+      "taps": 34,
+      "screenshots": [],
+      "hardObjects": [
+        {
+          "id": "hanging-above",
+          "minDy": 109.96666666666607,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "side-tag",
+          "minDy": 0.041666666666685614,
+          "contacted": true,
+          "cut": true,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "under-slat",
+          "minDy": 97.86666666666724,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "dual-bridge",
+          "minDy": null,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": false
+        },
+        {
+          "id": "tower-base",
+          "minDy": null,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": false
+        },
+        {
+          "id": "tower-middle",
+          "minDy": null,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": false
+        },
+        {
+          "id": "tower-top",
+          "minDy": null,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": false
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "theme": "fruit",
+      "styles": [
+        "apple",
+        "banana",
+        "coconut"
+      ],
+      "status": "won",
+      "failReason": null,
+      "elapsed": 17.158333333333,
+      "maxX": 3150.9499999999903,
+      "taps": 20,
+      "screenshots": [
+        "../../qa-all-levels-v1/desktop-level-02-pressure.png",
+        "../../qa-all-levels-v1/desktop-level-02-won.png"
+      ],
+      "hardObjects": [
+        {
+          "id": "l2-side",
+          "minDy": 1.7916666666667425,
+          "contacted": true,
+          "cut": true,
+          "decisionWindowObserved": true
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "theme": "fruit",
+      "styles": [
+        "apple",
+        "banana",
+        "coconut"
+      ],
+      "status": "won",
+      "failReason": null,
+      "elapsed": 21.799999999999404,
+      "maxX": 3300.374880000103,
+      "taps": 22,
+      "screenshots": [
+        "../../qa-all-levels-v1/desktop-level-03-pressure.png",
+        "../../qa-all-levels-v1/desktop-level-03-won.png"
+      ],
+      "hardObjects": []
+    },
+    {
+      "level": 4,
+      "theme": "dessert",
+      "styles": [
+        "cake",
+        "pastry",
+        "cheesecake"
+      ],
+      "status": "won",
+      "failReason": null,
+      "elapsed": 22.54166666666603,
+      "maxX": 3450.1933333332777,
+      "taps": 25,
+      "screenshots": [
+        "../../qa-all-levels-v1/desktop-level-04-pressure.png",
+        "../../qa-all-levels-v1/desktop-level-04-won.png"
+      ],
+      "hardObjects": [
+        {
+          "id": "l4-over",
+          "minDy": 179.875,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-04-hard-mover-a",
+          "minDy": 73.61851486490173,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "theme": "dessert",
+      "styles": [
+        "cake",
+        "pastry",
+        "cheesecake"
+      ],
+      "status": "won",
+      "failReason": null,
+      "elapsed": 21.608333333332748,
+      "maxX": 3517.2071634689187,
+      "taps": 20,
+      "screenshots": [
+        "../../qa-all-levels-v1/desktop-level-05-pressure.png",
+        "../../qa-all-levels-v1/desktop-level-05-won.png"
+      ],
+      "hardObjects": [
+        {
+          "id": "l5-under",
+          "minDy": 53.33499999999992,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-05-hard-mover-a",
+          "minDy": 29.24833333333339,
+          "contacted": true,
+          "cut": true,
+          "decisionWindowObserved": true
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "theme": "dessert",
+      "styles": [
+        "cake",
+        "pastry",
+        "cheesecake"
+      ],
+      "status": "won",
+      "failReason": null,
+      "elapsed": 21.974999999999394,
+      "maxX": 3612.1433333334644,
+      "taps": 21,
+      "screenshots": [
+        "../../qa-all-levels-v1/desktop-level-06-pressure.png",
+        "../../qa-all-levels-v1/desktop-level-06-won.png"
+      ],
+      "hardObjects": [
+        {
+          "id": "l6-side",
+          "minDy": 9.643726991609299,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-06-hard-mover-a",
+          "minDy": 146.30843970412548,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "theme": "savory",
+      "styles": [
+        "dumpling",
+        "roast",
+        "skewer"
+      ],
+      "status": "won",
+      "failReason": null,
+      "elapsed": 23.76666666666596,
+      "maxX": 3669.1366666666827,
+      "taps": 24,
+      "screenshots": [
+        "../../qa-all-levels-v1/desktop-level-07-pressure.png",
+        "../../qa-all-levels-v1/desktop-level-07-won.png"
+      ],
+      "hardObjects": [
+        {
+          "id": "l7-chain-end",
+          "minDy": 94.62499999999994,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-07-hard-mover-a",
+          "minDy": 14.624999999999943,
+          "contacted": true,
+          "cut": true,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-07-hard-mover-b",
+          "minDy": 63.791666666666515,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "theme": "savory",
+      "styles": [
+        "dumpling",
+        "roast",
+        "skewer"
+      ],
+      "status": "airborne",
+      "failReason": null,
+      "elapsed": 0.175,
+      "maxX": 3746.350000000045,
+      "taps": 31,
+      "screenshots": [
+        "../../qa-all-levels-v1/desktop-level-08-pressure.png"
+      ],
+      "hardObjects": [
+        {
+          "id": "l8-above-1",
+          "minDy": 188.625,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "l8-below-1",
+          "minDy": 106.25000000000017,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "l8-side-1",
+          "minDy": 17.208333333333144,
+          "contacted": true,
+          "cut": true,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-08-hard-mover-a",
+          "minDy": 55.89396137532049,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-08-hard-mover-b",
+          "minDy": 67.20833333333314,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "theme": "savory",
+      "styles": [
+        "dumpling",
+        "roast",
+        "skewer"
+      ],
+      "status": "won",
+      "failReason": null,
+      "elapsed": 26.50833333333247,
+      "maxX": 3929.1730666666585,
+      "taps": 31,
+      "screenshots": [
+        "../../qa-all-levels-v1/desktop-level-09-pressure.png",
+        "../../qa-all-levels-v1/desktop-level-09-won.png"
+      ],
+      "hardObjects": [
+        {
+          "id": "l9-side-cut",
+          "minDy": 11.458333333333258,
+          "contacted": true,
+          "cut": true,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "l9-under-cut",
+          "minDy": 59.88624274396602,
+          "contacted": true,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-09-hard-mover-a",
+          "minDy": 1.873333333332937,
+          "contacted": true,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-09-hard-mover-b",
+          "minDy": 17.9438627030313,
+          "contacted": true,
+          "cut": false,
+          "decisionWindowObserved": true
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "theme": "mystic",
+      "styles": [
+        "moon-fruit",
+        "jade-bun",
+        "spirit-orb"
+      ],
+      "status": "won",
+      "failReason": null,
+      "elapsed": 25.833333333332508,
+      "maxX": 4000.070000000088,
+      "taps": 25,
+      "screenshots": [
+        "../../qa-all-levels-v1/desktop-level-10-pressure.png",
+        "../../qa-all-levels-v1/desktop-level-10-won.png"
+      ],
+      "hardObjects": [
+        {
+          "id": "l10-base",
+          "minDy": 8.125000000000057,
+          "contacted": true,
+          "cut": true,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "l10-middle",
+          "minDy": 5.5,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "l10-top",
+          "minDy": 1.2500000000000568,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-10-hard-mover-a",
+          "minDy": 55.76335144845808,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-10-hard-mover-b",
+          "minDy": 0.9633333333337077,
+          "contacted": true,
+          "cut": true,
+          "decisionWindowObserved": true
+        }
+      ]
+    },
+    {
+      "level": 11,
+      "theme": "mystic",
+      "styles": [
+        "moon-fruit",
+        "jade-bun",
+        "spirit-orb"
+      ],
+      "status": "won",
+      "failReason": null,
+      "elapsed": 21.724999999999408,
+      "maxX": 4151.150000000142,
+      "taps": 22,
+      "screenshots": [
+        "../../qa-all-levels-v1/desktop-level-11-pressure.png",
+        "../../qa-all-levels-v1/desktop-level-11-won.png"
+      ],
+      "hardObjects": [
+        {
+          "id": "l11-high-cut",
+          "minDy": 156.08333333333331,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "l11-low-cut",
+          "minDy": 36.45833333333326,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-11-hard-mover-a",
+          "minDy": 24.250000000000057,
+          "contacted": true,
+          "cut": true,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-11-hard-mover-b",
+          "minDy": 57.16666666666674,
+          "contacted": true,
+          "cut": true,
+          "decisionWindowObserved": true
+        }
+      ]
+    },
+    {
+      "level": 12,
+      "theme": "mystic",
+      "styles": [
+        "moon-fruit",
+        "jade-bun",
+        "spirit-orb"
+      ],
+      "status": "ready",
+      "failReason": null,
+      "elapsed": 0,
+      "maxX": 3287.6753333332654,
+      "taps": 34,
+      "screenshots": [
+        "../../qa-all-levels-v1/desktop-level-12-pressure.png"
+      ],
+      "hardObjects": [
+        {
+          "id": "l12-dual-bridge",
+          "minDy": 0.16666666666651508,
+          "contacted": true,
+          "cut": true,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "l12-base",
+          "minDy": 68.41075614254203,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "l12-top",
+          "minDy": 1.172577190791344,
+          "contacted": true,
+          "cut": true,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-12-hard-mover-a",
+          "minDy": 23.679998372192358,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-12-hard-mover-b",
+          "minDy": 60.547577190791344,
+          "contacted": true,
+          "cut": false,
+          "decisionWindowObserved": true
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "theme": "fruit",
+      "styles": [
+        "apple",
+        "banana",
+        "coconut"
+      ],
+      "status": "failed",
+      "failReason": "fall",
+      "elapsed": 7.958333333333519,
+      "maxX": 1050.282394057083,
+      "taps": 7,
+      "screenshots": [
+        "../../qa-all-levels-v1/mobile-level-01-failed.png"
+      ],
+      "hardObjects": [
+        {
+          "id": "hanging-above",
+          "minDy": 1.331666666667104,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "side-tag",
+          "minDy": 82.95500000000061,
+          "contacted": true,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "under-slat",
+          "minDy": 187.9550000000006,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "dual-bridge",
+          "minDy": null,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": false
+        },
+        {
+          "id": "tower-base",
+          "minDy": null,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": false
+        },
+        {
+          "id": "tower-middle",
+          "minDy": null,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": false
+        },
+        {
+          "id": "tower-top",
+          "minDy": null,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": false
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "theme": "fruit",
+      "styles": [
+        "apple",
+        "banana",
+        "coconut"
+      ],
+      "status": "won",
+      "failReason": null,
+      "elapsed": 20.466666666666146,
+      "maxX": 3151.1251999999786,
+      "taps": 24,
+      "screenshots": [
+        "../../qa-all-levels-v1/mobile-level-02-pressure.png",
+        "../../qa-all-levels-v1/mobile-level-02-won.png"
+      ],
+      "hardObjects": [
+        {
+          "id": "l2-side",
+          "minDy": 46.58333333333326,
+          "contacted": true,
+          "cut": false,
+          "decisionWindowObserved": true
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "theme": "fruit",
+      "styles": [
+        "apple",
+        "banana",
+        "coconut"
+      ],
+      "status": "won",
+      "failReason": null,
+      "elapsed": 18.72499999999958,
+      "maxX": 3301.016666666774,
+      "taps": 19,
+      "screenshots": [
+        "../../qa-all-levels-v1/mobile-level-03-pressure.png",
+        "../../qa-all-levels-v1/mobile-level-03-won.png"
+      ],
+      "hardObjects": []
+    },
+    {
+      "level": 4,
+      "theme": "dessert",
+      "styles": [
+        "cake",
+        "pastry",
+        "cheesecake"
+      ],
+      "status": "won",
+      "failReason": null,
+      "elapsed": 25.908333333332504,
+      "maxX": 3450.544720218511,
+      "taps": 29,
+      "screenshots": [
+        "../../qa-all-levels-v1/mobile-level-04-pressure.png",
+        "../../qa-all-levels-v1/mobile-level-04-won.png"
+      ],
+      "hardObjects": [
+        {
+          "id": "l4-over",
+          "minDy": 217.6566666666671,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-04-hard-mover-a",
+          "minDy": 113.57808261841836,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "theme": "dessert",
+      "styles": [
+        "cake",
+        "pastry",
+        "cheesecake"
+      ],
+      "status": "airborne",
+      "failReason": null,
+      "elapsed": 0.09999999999999999,
+      "maxX": 2942.998015010825,
+      "taps": 29,
+      "screenshots": [
+        "../../qa-all-levels-v1/mobile-level-05-pressure.png"
+      ],
+      "hardObjects": [
+        {
+          "id": "l5-under",
+          "minDy": 32.91866666666522,
+          "contacted": true,
+          "cut": true,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-05-hard-mover-a",
+          "minDy": 60.8483333333333,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "theme": "dessert",
+      "styles": [
+        "cake",
+        "pastry",
+        "cheesecake"
+      ],
+      "status": "won",
+      "failReason": null,
+      "elapsed": 19.333333333332877,
+      "maxX": 3600.566666666687,
+      "taps": 19,
+      "screenshots": [
+        "../../qa-all-levels-v1/mobile-level-06-pressure.png",
+        "../../qa-all-levels-v1/mobile-level-06-won.png"
+      ],
+      "hardObjects": [
+        {
+          "id": "l6-side",
+          "minDy": 39.49999999999994,
+          "contacted": true,
+          "cut": true,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-06-hard-mover-a",
+          "minDy": 131.1875161413642,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "theme": "savory",
+      "styles": [
+        "dumpling",
+        "roast",
+        "skewer"
+      ],
+      "status": "won",
+      "failReason": null,
+      "elapsed": 19.116666666666223,
+      "maxX": 3650.8666666667777,
+      "taps": 18,
+      "screenshots": [
+        "../../qa-all-levels-v1/mobile-level-07-pressure.png",
+        "../../qa-all-levels-v1/mobile-level-07-won.png"
+      ],
+      "hardObjects": [
+        {
+          "id": "l7-chain-end",
+          "minDy": 102.84166666666675,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-07-hard-mover-a",
+          "minDy": 53.49999999999994,
+          "contacted": true,
+          "cut": true,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-07-hard-mover-b",
+          "minDy": 2.4183333333326686,
+          "contacted": true,
+          "cut": true,
+          "decisionWindowObserved": true
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "theme": "savory",
+      "styles": [
+        "dumpling",
+        "roast",
+        "skewer"
+      ],
+      "status": "won",
+      "failReason": null,
+      "elapsed": 25.191666666665878,
+      "maxX": 3751.465333333269,
+      "taps": 29,
+      "screenshots": [
+        "../../qa-all-levels-v1/mobile-level-08-pressure.png",
+        "../../qa-all-levels-v1/mobile-level-08-won.png"
+      ],
+      "hardObjects": [
+        {
+          "id": "l8-above-1",
+          "minDy": 216.79166666666663,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "l8-below-1",
+          "minDy": 84.04166666666674,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "l8-side-1",
+          "minDy": 39.08166666666648,
+          "contacted": true,
+          "cut": true,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-08-hard-mover-a",
+          "minDy": 68.43993079707337,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-08-hard-mover-b",
+          "minDy": 89.08166666666648,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "theme": "savory",
+      "styles": [
+        "dumpling",
+        "roast",
+        "skewer"
+      ],
+      "status": "won",
+      "failReason": null,
+      "elapsed": 23.341666666665983,
+      "maxX": 3900.627986882816,
+      "taps": 26,
+      "screenshots": [
+        "../../qa-all-levels-v1/mobile-level-09-pressure.png",
+        "../../qa-all-levels-v1/mobile-level-09-won.png"
+      ],
+      "hardObjects": [
+        {
+          "id": "l9-side-cut",
+          "minDy": 28.2083333333332,
+          "contacted": true,
+          "cut": true,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "l9-under-cut",
+          "minDy": 13.510505563613378,
+          "contacted": true,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-09-hard-mover-a",
+          "minDy": 56.02833333333325,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-09-hard-mover-b",
+          "minDy": 2.2286103918156073,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "theme": "mystic",
+      "styles": [
+        "moon-fruit",
+        "jade-bun",
+        "spirit-orb"
+      ],
+      "status": "won",
+      "failReason": null,
+      "elapsed": 20.949999999999452,
+      "maxX": 4000.1000000001427,
+      "taps": 18,
+      "screenshots": [
+        "../../qa-all-levels-v1/mobile-level-10-pressure.png",
+        "../../qa-all-levels-v1/mobile-level-10-won.png"
+      ],
+      "hardObjects": [
+        {
+          "id": "l10-base",
+          "minDy": 7.675000000000182,
+          "contacted": true,
+          "cut": true,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "l10-middle",
+          "minDy": 5.658333333333189,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "l10-top",
+          "minDy": 50.65833333333313,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-10-hard-mover-a",
+          "minDy": 70.32155387418237,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-10-hard-mover-b",
+          "minDy": 69.43999999999943,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        }
+      ]
+    },
+    {
+      "level": 11,
+      "theme": "mystic",
+      "styles": [
+        "moon-fruit",
+        "jade-bun",
+        "spirit-orb"
+      ],
+      "status": "won",
+      "failReason": null,
+      "elapsed": 27.1499999999991,
+      "maxX": 4151.186666666742,
+      "taps": 25,
+      "screenshots": [
+        "../../qa-all-levels-v1/mobile-level-11-pressure.png",
+        "../../qa-all-levels-v1/mobile-level-11-won.png"
+      ],
+      "hardObjects": [
+        {
+          "id": "l11-high-cut",
+          "minDy": 0.33333333333314386,
+          "contacted": true,
+          "cut": true,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "l11-low-cut",
+          "minDy": 1.9583333333331439,
+          "contacted": true,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-11-hard-mover-a",
+          "minDy": 7.343333333334158,
+          "contacted": true,
+          "cut": true,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-11-hard-mover-b",
+          "minDy": 96.19833333333236,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        }
+      ]
+    },
+    {
+      "level": 12,
+      "theme": "mystic",
+      "styles": [
+        "moon-fruit",
+        "jade-bun",
+        "spirit-orb"
+      ],
+      "status": "airborne",
+      "failReason": null,
+      "elapsed": 0.15,
+      "maxX": 3613.278567839561,
+      "taps": 31,
+      "screenshots": [
+        "../../qa-all-levels-v1/mobile-level-12-pressure.png"
+      ],
+      "hardObjects": [
+        {
+          "id": "l12-dual-bridge",
+          "minDy": 0.0033333333333303017,
+          "contacted": true,
+          "cut": true,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "l12-base",
+          "minDy": 32.163333333333526,
+          "contacted": true,
+          "cut": true,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "l12-top",
+          "minDy": 2.7949999999998454,
+          "contacted": true,
+          "cut": true,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-12-hard-mover-a",
+          "minDy": 70.81789522343814,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        },
+        {
+          "id": "level-12-hard-mover-b",
+          "minDy": 89.66999999999985,
+          "contacted": false,
+          "cut": false,
+          "decisionWindowObserved": true
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "claimBoundary": "web-lite browser evidence only; platform adapters remain unverified"
+}

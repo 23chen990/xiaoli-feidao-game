@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "experience-complaint-triage",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "report": "新的 TapTap 性能明细截图显示 PHJ110H1：平均内存 239.28MB、运行 10 分钟内存峰值 259.50MB、初始化完成耗时 0.00s、冷启动耗时 2.05s、FPS 0.020356234（红色告警）、卡顿率 0.0%；Huawei P30、Xiaomi 14、OnePlus8_EEA 标签也带红色告警。截图未显示游戏版本、开发版本号、上传 ZIP SHA 或 TapTap FPS 阈值，无法确认它是否对应上一轮新包 38036b56…4cae 或更早的包。",
+  "classification": ["core-experience", "qa-false-positive", "factory-routing"],
+  "scope": {
+    "route": "formal-fixer",
+    "rationale": "问题再次跨四台 Android 设备影响 TapTap 性能准入，且 FPS 读数极低与 0.0% 卡顿率、稳定内存曲线并存；上一轮已拆分静态/动态 Graphics 但没有同 SHA 原始帧 trace，必须继续正式 QA→Fixer→QA，并先区分真实渲染瓶颈与 TapTap 采样链路。",
+    "generatedWorkspaceModified": false,
+    "contextIntentionallyOmitted": [
+      "其他游戏、其他 run、web-lite、微信/抖音平台",
+      "启动兼容性 cycle 的宿主崩溃结论及与本次性能截图无关的设备分支",
+      "上一轮未绑定当前截图的包体 SHA、设备数值和自然旅程结论",
+      "未提供的 TapTap FPS 阈值、原始帧计数、CPU/GPU trace 或后台上传操作"
+    ]
+  },
+  "reproduction": {
+    "status": "REPRODUCED",
+    "steps": [
+      "在 TapTap 后台打开 疯狂切割 的性能测试详情页，并选择 PHJ110H1 标签。",
+      "读取 FPS、卡顿率、冷启动、平均内存与 10 分钟峰值内存，并查看 Huawei P30、Xiaomi 14、OnePlus8_EEA 标签的告警状态。",
+      "将当前截图与上一轮性能报告和本地候选包 SHA 分开记录；在没有版本号/SHA 的情况下，不把截图指标绑定到任一 ZIP。"
+    ],
+    "observed": [
+      "PHJ110H1 FPS 为 0.020356234，冷启动 2.05s，卡顿率 0.0%。",
+      "PHJ110H1 平均内存 239.28MB，10 分钟峰值 259.50MB，曲线整体约 230–260MB 且无明显失控增长。",
+      "Huawei P30、Xiaomi 14、OnePlus8_EEA 标签均有红色告警，但截图没有逐机数值。",
+      "极低 FPS 与 0.0% 卡顿率和稳定内存曲线并存，当前只能确认后台报告现象，不能确认根因是 Graphics、容器还是采样器。"
+    ],
+    "evidence": [
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-867828b5-6bde-4ce1-b0e3-ff47ad522c5b-389309c2ae03.png",
+        "sha256": "389309c2ae0333d652c96b1218359e89eeaea0f41128ab1c8ec24f524e91e49a",
+        "kind": "reference",
+        "provenance": "verified-reference"
+      }
+    ]
+  },
+  "acceptanceCriteria": [
+    "将 TapTap 性能截图绑定到明确的上传 ZIP SHA、设备型号、原始帧计数/elapsed time、内存与卡顿 trace；没有这些绑定不得宣称性能通过。",
+    "PHJ110、Huawei P30、Xiaomi 14、OnePlus8_EEA 均需以同一精确 SHA 复测；逐机 FPS 数值或采样异常的独立帧证据必须可审计。",
+    "若基准确认仍有可避免的包体渲染工作，只修改与该瓶颈直接相关的文件；若静态/动态 Graphics 已满足契约且后台读数仍矛盾，不得臆改玩法或制造 FPS 阈值。",
+    "优化不能破坏固定宽度安全区首帧、触摸起跳/翻转、切割、反弹、失败/结算与重玩；测试、lint、typecheck 和最多一次构建必须通过。",
+    "独立 QA 必须区分工程、自然旅程、感知和后台性能结论；任何缺少精确 SHA 或玩家可见设备 trace 的分支保持 BLOCKED。"
+  ],
+  "status": "READY_FOR_REPAIR",
+  "createdAt": "2026-09-09T05:44:20Z"
+}

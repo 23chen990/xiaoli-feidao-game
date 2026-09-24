@@ -1,0 +1,17 @@
+2026-08-30T16:59:01Z independent human QA closure, repair attempt 2/2
+buildSha256=d1b6c178d9838775c1bcdde7a6afce68dd55f0148fc36357d4d165f7e835c823
+desktopFullCourse=15 attempts, 10 wins, winRate=0.6666667
+desktopWinningPolicies=global targetY 300, 320, 430 with descending/no-progress correction; no obstacle coordinate branches
+desktopWinningMaxX=3000.067..3137.967; finish gates ember-four,mist-half,calm-moon
+desktopWinningElapsed=16.759..18.445 seconds; maxNoProgressBounceStreak=1
+mobileFullCourse=2 native CDP touch attempts, 1 win; winning maxX=3001.197 elapsed=19.4 finishGate=mist-half
+mobileLayout=390x844 scrollWidth=390 scrollHeight=844 scrollX=0 scrollY=0
+courseCatalog=no recoil-wall; supports include white-column; source/dist search found no recoil-wall,recoilLesson,or recoil field
+staticWhiteColumn=handle normal(-1,0), pre vx=190, post vx=-136.8 = reflected with restitution 0.72
+movingSupport=lift-plank handle normal(0,1), surface vy=70.467, reflected player vy=143.501
+uncutBlock=hanging-above handle normal(0,-1), block solid=true cut=false, pre vy=350, post vy=-235.6
+sharpColumn=white-column tip normal(-1,0), anchorId=white-column, player velocity zero
+separatingContact=after the one white-column bounce, outward vx remained -201.6 and no second bounce/minimum impulse event was emitted
+regression=first cut,moving carry,side/below cuts,tower collapse,dualRole,spike/fall reset,math gates,conditional bonus,fixed-step all passed
+consoleErrors=0 pageErrors=0
+preview4189Closed=true

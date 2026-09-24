@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "role": "QAAgent",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED",
+  "reportPaths": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/diagnostic-report.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/chronology.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/portrait/frames.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/frames.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/evidence-sha256.json"
+  ],
+  "blockers": [
+    "既有25fps视频无法分辨首张切开/局部奖励帧内部的先后；这是采样限制，没有新增产品错误。"
+  ],
+  "sourceModified": false,
+  "summary": "两个视口均未见完整态涨收益：刀接触完整球时HUD为0，首次奖励帧已有切面/两片，局部+1位于目标，HUD同步为1。分离与奖励在同帧内的先后未知；不添加动画必须互不重叠的要求，不据此建议奖励修复。仅解码归档视频，未运行游戏或改动旧证据。"
+}

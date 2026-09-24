@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "human-review-20260907-l1-recovery",
+  "attempt": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "issues": ["L1-OPENING-TABLE-BRANCH", "L1-FIRST-TARGET-VISIBILITY"],
+  "allowedFiles": ["src/three-world-renderer.ts", "src/three-cut-visuals.ts", "tests/opening-renderer-regression.test.ts"],
+  "owningBranches": [
+    "ThreeWorldRenderer.syncSupports -> isGroundedTabletop excludes opening-table-a/b; grounded bases must end at actual GROUND_VISUAL_TOP_Y, not the unrelated background terrain band.",
+    "ThreePresentationModel.sync -> ProgrammaticOriginalProvider -> CutVisualEntity constructor: crystal intact uses ungrouped SphereGeometry with material array. WebGLRenderer only submits groups for material arrays; sphere has no groups, so intact submits no triangles. Cut halves use separate meshes and cannot detect this."
+  ],
+  "redTests": [
+    "Execute actual syncSupports branch with Three scene resources and assert opening-table-a/b bases touch both tabletop underside and actual floor; ensure repeat sync removes inactive base.",
+    "Build actual rune-1 intact entity through default provider, assert drawable indexed triangles and viewport intersection at 390x844 and 1100x720; assert its bottom meets opening-table-a top after initial settling."
+  ],
+  "baselineBuildSha256": "6bb349f3a8fc89c0edb59fb0d88c8e02fa6c9e6472db03a57d952bf4dc5899f1",
+  "validation": "AttemptTaskSchema and AuthorizationSchema parsed successfully before edits.",
+  "contextIntentionallyOmitted": ["old conversation repair requests", "other games and levels", "pending reference screenshots", "stack/reward/finish issues outside this attempt"],
+  "buildPolicy": "Exactly one pnpm build after source and test work; independent QA belongs to coordinating task."
+}

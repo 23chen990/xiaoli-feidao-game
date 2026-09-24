@@ -1,0 +1,45 @@
+{
+  "artifactType": "formal-fixer-retest",
+  "schemaVersion": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "issues": [
+    {
+      "id": "THEME-DESSERT-001",
+      "branch": "dessert intact -> cut -> falling -> landed",
+      "resolution": "Dessert halves now reuse the authored half-slice body silhouette for icing and hide the generic rectangular cap fallback, preventing square cut pieces and mismatched cut faces."
+    },
+    {
+      "id": "LEVEL6-NATURAL-ROUTE-001",
+      "branch": "Level 6 natural touch/mouse route",
+      "resolution": "Removed the blind generated floor spike from Level 6; moving lift/checkpoint supports remain the deliberate timing pressure."
+    },
+    {
+      "id": "FINISH-LANE-READABILITY-001",
+      "branch": "ordinary finish selection and bonus entry",
+      "resolution": "Finish selection chooses the nearest intersected lane; Level 1 safe/bonus gates were separated from the multiplier lane so visible route intent is preserved."
+    }
+  ],
+  "acceptance": {
+    "unitAndIntegrationTests": { "passed": 151, "failed": 0 },
+    "typecheck": "passed",
+    "lint": "passed",
+    "build": "passed",
+    "naturalPlay": "passed",
+    "perceptualGate": "passed",
+    "replayAndPersistence": "passed",
+    "consoleErrors": 0
+  },
+  "evidence": [
+    "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-cut-visuals.ts",
+    "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-levels.ts",
+    "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+    "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/three-presentation.test.ts",
+    "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/game-core.test.ts",
+    "runs/mobile-slice-adaptation-20260830/qa-level-pack-v1/runner-report.json",
+    "runs/mobile-slice-adaptation-20260830/qa-level-pack-v1/qa-report.json"
+  ],
+  "status": "PASS",
+  "platformBoundary": "Web-lite natural-input gate is green; WeChat, Douyin and TapTap package builds remain separately unverified."
+}

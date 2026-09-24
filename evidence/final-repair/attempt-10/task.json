@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fixer-task-packet",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 10,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "model": "gpt-6-luna",
+  "triagePath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-10/triage.json",
+  "triageSha256": "c9ed04ee0e6e60f359348cb4a68b14554e1a2461e6da802ff7726a02ba920545",
+  "issueId": "L1-RUNWAY-RECOVERY-SECOND-SETTER-GATE",
+  "ownedFiles": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "expectedSourceFileLimit": 2,
+  "expectedHypothesis": "Instrument the setter gate and, only if confirmed, align its early-runway threshold with the existing player-center x>=350 suppression boundary rather than sharp contact-point x: contact points are x≈315.48 then x≈368.08 while player centers are x≈303.95 then x≈331.45. Do not change TTL or release velocity in this attempt; if the repaired setter reveals a later expiry, revert and record it as the next distinct hypothesis.",
+  "testFirst": {
+    "redRequired": true,
+    "redCommand": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+    "greenCommand": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+    "regressionCommand": "pnpm test"
+  },
+  "acceptanceCriteria": [
+    "A RED test on restored baseline reproduces both ordinary runway anchors at fixed frames 216 and 302.",
+    "A focused trace records pre-contact player x, sharp contact-point x, normalY, relative normal velocity, candidate setter branch, pose set/skip reason, and pending age for both contacts.",
+    "The trace demonstrates a concrete setter-gate difference before production behavior is changed; an unsupported gate guess fails the attempt.",
+    "If the trace confirms a contact-point/player-center gate mismatch, the candidate accepts both early separating top-tip contacts at player x≈303.95/331.45 and contact x≈315.48/368.08 without an anchor event.",
+    "The authored x>=350 later runway sharp-contact suppression boundary remains intact.",
+    "The first and second pose fields match baseline x/y/angle within a documented epsilon before any release velocity is applied.",
+    "The visible player remains airborne and moving before each normal tap; no hidden anchor or freeze is used.",
+    "No TTL, global velocity clamp, support selector, renderer, or viewport-specific change is made in this attempt; if the setter candidate exposes expiry, stop and report it.",
+    "Non-runway support anchors, opening white landing, side sharp contact, approaching top contact, and blunt bounce remain unchanged.",
+    "If the setter-only candidate passes the fixed replay, it reaches at least 11.9 seconds and x>2000; otherwise revert immediately and preserve the failure evidence.",
+    "Only game-core.ts and level1-recovery.test.ts change; no renderer, level, platform, shared factory, or release files.",
+    "Full pnpm test, lint, typecheck, and exactly one build run only after the focused setter and route gates pass; otherwise record NOT_RUN.",
+    "Independent fresh natural QA remains mandatory for any passing candidate; no Fixer runtime or perceptual claim."
+  ],
+  "evidenceInputs": [
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-9/fix-result.json",
+      "sha256": "663e46f77a7ee79bf4f298d10c4069d0b4561a725d29f51879620b54eb3fdca4",
+      "role": "prior-fix-receipt"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-9/red-targeted.log",
+      "sha256": "b69eaadce4c23d05cdf768158e7920fc7d3dba641879e72c70972b116b40e8da",
+      "role": "prior-experiment-rejection"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-8/fix-result.json",
+      "sha256": "45841660e1fdb10f8fa71ec20a0fa99f8d62eba28b0a07a41f0058aec3d1aa19",
+      "role": "prior-fix-receipt"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-8/green-targeted.log",
+      "sha256": "155fcfad4d7b3613086eb8f954bb53c3a66fddfd8ba805bb2a883342d479c46e",
+      "role": "prior-experiment-rejection"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-7/trace-analysis.json",
+      "sha256": "19696c78f7b235cd7a3eb93f62844e5768a826d54e991b5c4ca25bb4f02e8ee1",
+      "role": "prior-experiment-rejection"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/replay-final.json",
+      "sha256": "565cd8f55bca0a4c63b17198583d36840c74ba91059d97b297d495c14c54c834",
+      "role": "prior-experiment-rejection"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-summary.json",
+      "sha256": "d0640af40c41c1e49c38a58687c8b6f2635332d3fe02e3e7429e05a74b6307cd",
+      "role": "natural-reproduction"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/recording.json",
+      "sha256": "5e4d6457955e0596707116e3c9d325880506f41c24aa5bfd37928ae5cb242717",
+      "role": "natural-reproduction"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/recording.json",
+      "sha256": "18734f878ef1f4c048f4071326e31b2dad5ee022fa14a8baf6004bd5c20f7ddd",
+      "role": "natural-reproduction"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "sha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+      "role": "current-source"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts",
+      "sha256": "be57c4dbd2d3f0e0790b9637d992082a104887ecac80b2f61a3d7ee49fc1dfcd",
+      "role": "current-source"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html",
+      "sha256": "599b4c3cb8c6b345b7e18b3a4e06cae33663c0432b918d3115ee78df3bf64118",
+      "role": "current-build"
+    }
+  ],
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory code, platform adapters, renderer, release configuration, and unrelated QA records.",
+    "Full conversation, unbound media, and source bytes for the rejected attempt 8 candidate.",
+    "Natural/perceptual completion claims; independent browser QA remains required."
+  ],
+  "requiredOutputs": {
+    "fixResultPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-10/fix-result.json",
+    "redLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-10/red-targeted.log",
+    "greenLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-10/green-targeted.log",
+    "testsLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-10/tests.log",
+    "lintLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-10/lint.log",
+    "typecheckLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-10/typecheck.log",
+    "buildLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-10/build.log"
+  },
+  "noRuntimeQaClaim": true,
+  "createdAt": "2026-09-23T09:44:00.000Z"
+}

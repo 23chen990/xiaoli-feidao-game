@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fix-result",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 11,
+  "issueId": "L1-RUNWAY-RECOVERY-VIRTUAL-POSE-RECONSTRUCTION",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "routeReason": "The validated issue affects the core recovery state path and remains under formal QA/Fixer retest obligations. This task was limited to Attempt 11 rollback; no gameplay implementation or build was authorized.",
+  "status": "BLOCKED",
+  "candidateRejected": true,
+  "rejectionReason": "Attempt 11 acceptance failed on lint: src/game-core.ts:698 reports pendingSupport should be const. Focused and full tests and typecheck passed, but lint did not. The source already matches its packet baseline; the owned test file does not match either the reported candidate hash or packet baseline hash, and no exact baseline copy was found. The test file was left unchanged rather than reconstructed by guesswork.",
+  "rollback": {
+    "requested": true,
+    "performed": false,
+    "sourceChanged": false,
+    "testChanged": false,
+    "files": [
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+        "expectedBaselineSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+        "actualSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+        "matchesBaseline": true
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts",
+        "reportedCandidateSha256": "9b5ae96de1e5bd0f37f0552e8ea28b80325c6efb4fba24cec53e4e084ba9bcf3",
+        "expectedBaselineSha256": "be57c4dbd2d3f0e0790b9637d992082a104887ecac80b2f61a3d7ee49fc1dfcd",
+        "actualSha256": "7627f8b8052adb8bd33b6b21f7c0cf935b1d23cba5b4570513ce47bd56984510",
+        "matchesReportedCandidate": false,
+        "matchesBaseline": false,
+        "exactBaselineSourceFound": false
+      }
+    ],
+    "searchScopeForBaselineCopy": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830",
+      "/Users/kker/Documents"
+    ]
+  },
+  "evidence": {
+    "focusedReplay": {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "status": "PASS",
+      "exitCode": 0,
+      "summary": "20 passed, 0 failed",
+      "log": "green-targeted.log",
+      "sha256": "d0d64f4227589d2edd4aff8ca1939209b75e933d1df89ed0ee51725c61f48ab6"
+    },
+    "fullTests": {
+      "command": "pnpm test",
+      "status": "PASS",
+      "exitCode": 0,
+      "summary": "202 passed, 0 failed",
+      "log": "tests.log",
+      "sha256": "e6edb16db94c460ddd50905f93b5318b25224ec98b2261d5143d3211e829124f"
+    },
+    "lint": {
+      "command": "pnpm lint",
+      "status": "FAIL",
+      "exitCode": 1,
+      "summary": "src/game-core.ts:698:9 pendingSupport is never reassigned; prefer const",
+      "log": "lint.log",
+      "sha256": "d4c0c44b4d2745a607f400c29603fd5a3cd2cf8108d73cdaffaf756cdc287219"
+    },
+    "typecheck": {
+      "command": "pnpm typecheck",
+      "status": "PASS",
+      "exitCode": 0,
+      "log": "typecheck.log",
+      "sha256": "8366207267355d3e3d5bf3bf6e8c94c5f93f6078c34f08973fa2b38cdda6cc92"
+    },
+    "build": {
+      "command": "pnpm build",
+      "status": "NOT_RUN",
+      "reason": "Explicit rollback-only task prohibited a new gameplay fix or build.",
+      "buildCount": 0,
+      "log": null,
+      "distSha256": null
+    },
+    "naturalQa": {
+      "status": "NOT_RUN",
+      "claim": false,
+      "reason": "No natural or perceptual QA was performed in this rollback task."
+    }
+  },
+  "changedFiles": [],
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory code, schemas, cycle-state, platform adapters, renderers, release configuration, and unrelated QA evidence.",
+    "Full conversation and unbound media.",
+    "Natural or perceptual completion claims."
+  ],
+  "remainingEvidenceGaps": [
+    "The exact packet-baseline bytes for tests/level1-recovery.test.ts are unavailable; its actual digest differs from both supplied hashes.",
+    "Rollback cannot be verified complete until the exact baseline test file is recovered and its SHA-256 equals be57c4dbd2d3f0e0790b9637d992082a104887ecac80b2f61a3d7ee49fc1dfcd.",
+    "Independent natural-input and perceptual QA remain outstanding."
+  ],
+  "runtimeQaClaim": false,
+  "naturalQaClaim": false,
+  "perceptualQaClaim": false,
+  "buildCount": 0,
+  "createdAt": "2026-09-23T10:40:52Z"
+}

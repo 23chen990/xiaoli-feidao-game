@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "cells": [
+    {
+      "id": "L1-RUNWAY-EARLY-SHARP-390",
+      "objectType": "level1-runway-main sharp tip",
+      "stateBranch": "fresh start → first cut → airborne → early runway contact → recovery",
+      "renderer": "SliceSimulation → ThreeWorldRenderer",
+      "viewport": "390x844",
+      "acceptance": "No anchored dead-end at the reproduced x≈305/333 contact; same object continues airborne.",
+      "status": "PASS",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/portrait-390x844/static-spaced/recording.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/portrait-390x844/static-spaced/frames/journey-03s.png"
+      ],
+      "notes": "Observed bounce on level1-runway-main at player x=478.9500000000005; lifecycle=airborne, anchor=null."
+    },
+    {
+      "id": "L1-RUNWAY-EARLY-SHARP-1100",
+      "objectType": "level1-runway-main sharp tip",
+      "stateBranch": "fresh start → first cut → airborne → early runway contact → recovery",
+      "renderer": "SliceSimulation → ThreeWorldRenderer",
+      "viewport": "1100x720",
+      "acceptance": "No anchored dead-end at the reproduced early contact; same object continues airborne.",
+      "status": "PASS",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/desktop-1100x720/static-spaced/recording.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/desktop-1100x720/desktop-white-opening/frames/journey-03s.png"
+      ],
+      "notes": "Observed bounce on level1-runway-main at player x=481.4500000000005; lifecycle=airborne, anchor=null."
+    },
+    {
+      "id": "L1-WHITE-LANDING-OPENING-1100",
+      "objectType": "white-landing teaching support",
+      "stateBranch": "fresh start → opening teaching anchor → later route → settlement",
+      "renderer": "SliceSimulation → ThreeWorldRenderer",
+      "viewport": "1100x720",
+      "acceptance": "White landing support is naturally visible and distinguishable from runway recovery.",
+      "status": "PASS",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/desktop-1100x720/desktop-white-opening/recording.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/desktop-1100x720/desktop-white-opening/frames/journey-03s.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/desktop-1100x720/desktop-white-opening/frames/terminal.png"
+      ],
+      "notes": "Observed white-landing anchor at player x=273.9500000000005; trial later reached won terminal and replay-ready state."
+    },
+    {
+      "id": "L1-TERMINAL-REPLAY-BOTH",
+      "objectType": "visible terminal and replay",
+      "stateBranch": "natural input → terminal → replay → ready",
+      "renderer": "DOM terminal layer + ThreeWorldRenderer",
+      "viewport": "390x844 + 1100x720",
+      "acceptance": "Visible terminal copy matches read-only status; visible replay returns to ready.",
+      "status": "PASS",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/portrait-390x844/static-spaced/frames/terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/portrait-390x844/static-spaced/frames/replay.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/desktop-1100x720/static-spaced/frames/terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/desktop-1100x720/static-spaced/frames/replay.png"
+      ],
+      "notes": "Portrait=failed/ready; desktop=failed/ready."
+    },
+    {
+      "id": "L1-LATER-ROUTE-BOTH",
+      "objectType": "Level 1 route progression",
+      "stateBranch": "natural input → recovery → later course → terminal",
+      "renderer": "normal input → SliceSimulation → ThreeWorldRenderer",
+      "viewport": "390x844 + 1100x720",
+      "acceptance": "Both natural traces cross x>1000 or show an attributable visible terminal.",
+      "status": "PASS",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/portrait-390x844/static-spaced/recording.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/desktop-1100x720/static-spaced/recording.json"
+      ],
+      "notes": "maxX portrait=1239.0, desktop=1254.3."
+    }
+  ]
+}

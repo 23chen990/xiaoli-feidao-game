@@ -1,0 +1,31 @@
+init **** success
+Arguments:
+  /Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/MacOS/CocosCreator: true
+  project: /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame
+  build: configPath=./cocos-build-config.json;logDest=/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-filing-20260908/attempt-1/cocos-build-engine.log
+  dev: false
+  home: /Users/kker/.CocosCreator
+ 
+This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). The promise rejected with the reason:
+Error: TypeError: Reflect.get called on non-object
+    at Reflect.get (<anonymous>)
+    at Scanner.analysisDependsByConfigPath (/Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/Resources/app.asar/node_modules/@editor/extension-sdk/sdk/manager/resource/lib/Scanner.js:135:33)
+    at async Promise.all (index 0)
+    at async Scanner.getDepends (/Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/Resources/app.asar/node_modules/@editor/extension-sdk/sdk/manager/resource/lib/Scanner.js:165:32)
+    at async /Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/Resources/app.asar/dashboard/script/util.js:1:3193
+    at console.error (/Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/Resources/app.asar/node_modules/@editor/sentry/dist/main/main.ccc:41:45)
+    at /Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/Resources/app.asar/node_modules/@sentry/node/build/cjs/integrations/onunhandledrejection.js:76:15
+    at Module.consoleSandbox (/Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/Resources/app.asar/node_modules/@sentry/core/build/cjs/utils-hoist/logger.js:51:12)
+    at handleRejection (/Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/Resources/app.asar/node_modules/@sentry/node/build/cjs/integrations/onunhandledrejection.js:74:10)
+    at process.sendUnhandledPromise (/Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/Resources/app.asar/node_modules/@sentry/node/build/cjs/integrations/onunhandledrejection.js:57:5)
+    at process.emit (node:events:531:35)
+    at emitUnhandledRejection (node:internal/process/promises:250:13)
+    at warnWithErrorCodeUnhandledRejectionsMode (node:internal/process/promises:404:19)
+    at processPromiseRejections (node:internal/process/promises:470:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:96:32)
+TypeError: Reflect.get called on non-object
+    at Reflect.get (<anonymous>)
+    at Scanner.analysisDependsByConfigPath (/Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/Resources/app.asar/node_modules/@editor/extension-sdk/sdk/manager/resource/lib/Scanner.js:135:33)
+    at async Promise.all (index 0)
+    at async Scanner.getDepends (/Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/Resources/app.asar/node_modules/@editor/extension-sdk/sdk/manager/resource/lib/Scanner.js:165:32)
+    at async /Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/Resources/app.asar/dashboard/script/util.js:1:3193

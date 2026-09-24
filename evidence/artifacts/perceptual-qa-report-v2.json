@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PerceptualQaReport",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED",
+  "evidenceSource": "qa-all-levels-v1/report.json",
+  "checks": {
+    "foodThemeVisible": "PASS",
+    "multiStyleRuntimeState": "PASS",
+    "hardObjectRouteCorridors": "PASS",
+    "desktopAll12Terminal": "BLOCKED",
+    "mobileAll12Terminal": "BLOCKED",
+    "defaultJourneyReplay": "PASS in qa-level-pack-v1, sampled levels 1/4/7/10/12 desktop and 1/6/12 mobile",
+    "platformPackaging": "BLOCKED"
+  },
+  "blockedIssues": [
+    {"id":"NATURAL-ALL-LEVELS-001","message":"Independent full sweep recorded non-terminal/failed natural traces for Level 1, 5, 8 and 12 under at least one viewport; exact screenshots and object windows retained in qa-all-levels-v1."},
+    {"id":"PLATFORM-ADAPTER-001","message":"Web-lite evidence does not prove WeChat, Douyin or TapTap package publishability."}
+  ],
+  "claimBoundary": "Do not declare release PASS while any natural or platform check remains BLOCKED."
+}

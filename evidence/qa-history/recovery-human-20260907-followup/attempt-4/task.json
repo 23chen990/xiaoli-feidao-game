@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-task",
+  "route": "formal-fixer",
+  "cycleId": "human-review-20260907-l1-followup",
+  "attempt": 4,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "authorizationPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/authorization.json",
+  "outputDirectory": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-4",
+  "issues": [
+    {
+      "id": "L1-RUNWAY-COLLISION-MISMATCH",
+      "severity": "error",
+      "message": "Level1 visible runway must prevent the reproduced natural route from falling while preserving the authored opening teaching branch and existing support fixtures.",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260907/recovery-human-20260907-followup/attempt-3/experiment-rejection.json",
+      "classification": "confirmed-product-defect",
+      "acceptance": [
+        "level1-runway-main is collidable in the authored course",
+        "runway sharp tip/edge contacts at player.x>=350 do not anchor; body/handle contacts still produce controlled bounce/recovery",
+        "opening teaching event order remains visible and does not publish a duplicate early runway bounce",
+        "the seed31 normal tap replay reaches at least 12 seconds and x>2000 without failure",
+        "the existing complete test suite, lint and typecheck pass"
+      ]
+    }
+  ],
+  "triagePath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/triage.json",
+  "contractPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/../qa-recovery-20260907/active-slice-contract.json",
+  "contractSha256": "0513fec6b10a2ad2cd778f6fb537a58fd5bbca2510da4d850e3059beccb9f9b2",
+  "expectedBuildSha256": "10cba7632922f9fdeaa2eb33f7a05aa09bd3dbb7ca45a2db24acac282c9fd9a6",
+  "instructions": [
+    "这是第4/5次修复；保留 attempt-1 至 attempt-3 历史证据。",
+    "先在当前源码写针对 sharp runway contact、body bounce、opening event 和 replay 的 RED 测试，再修改最小因果文件。",
+    "允许修改范围仅为 Level1 数据、Level1 support collision branch 和其回归测试；不得改其他关卡、共享工厂、发布配置或无关渲染。",
+    "使用命名常量表达 runway id、sharp suppression threshold 和 early event suppression window，禁止散落 magic numbers。",
+    "运行完整 pnpm test、pnpm lint、pnpm typecheck，最多一次 pnpm build；完成后写严格 FixResultSchema。",
+    "不要把自然 QA 或状态注入测试伪装成通过；独立 QA 仍由后续阶段执行。"
+  ],
+  "outputSchema": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/schemas.ts#FixResultSchema"
+}

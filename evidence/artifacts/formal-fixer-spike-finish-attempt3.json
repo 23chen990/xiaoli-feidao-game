@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixerAttemptSummary",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "attempt": 3,
+  "status": "PASS",
+  "issues": [
+    {
+      "id": "spike-pack-orphan-no-impact",
+      "resolution": "Natural-input calibration keeps Level 04 safe/risk lanes distinct, preserves moving hazard semantics in Levels 06/10/12, and adds recovery shelves for late misses.",
+      "filesChanged": ["src/game-levels.ts", "tests/level4-spike-policy.test.ts", "tests/level10-spike-policy.test.ts", "tests/level12-pressure-policy.test.ts"]
+    },
+    {
+      "id": "finish-gate-transparent-overlap",
+      "resolution": "Finish recovery shelves catch late misses before gate settlement; existing safe/bonus gate separation and replay semantics remain intact.",
+      "filesChanged": ["src/game-levels.ts"]
+    }
+  ],
+  "contextIntentionallyOmitted": ["completed theme/assets work", "unrelated factory/shared code", "platform packaging claims"],
+  "tests": {
+    "full": {"command": "pnpm test", "passed": true, "tests": 143},
+    "lint": {"command": "pnpm lint", "passed": true},
+    "typecheck": {"command": "pnpm typecheck", "passed": true},
+    "build": {"command": "pnpm build", "passed": true, "distBytes": 2725416},
+    "browser": {"command": "pnpm qa:browser", "passed": true},
+    "levelPack": {"command": "pnpm qa:levels", "passed": true},
+    "spikeImpact": {"command": "pnpm exec tsx scripts/qa-spike-impact.ts", "passed": true, "verdict": "PASS_SAFE_AVOID_AND_RISK_CONTACT", "runs": 10},
+    "threeD": {"command": "pnpm qa:3d", "passed": true}
+  },
+  "remainingEvidenceGaps": ["platform packaging claims remain outside web-lite QA"],
+  "claimBoundary": "web-lite evidence only; no WeChat, Douyin, or TapTap publishability claim"
+}

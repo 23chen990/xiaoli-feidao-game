@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "human-review-20260907-l1-recovery",
+  "attempt": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "storedThreadId": "01a07540-7ee1-7c01-899b-0ea12bde1f19",
+  "status": "READY_FOR_INDEPENDENT_QA",
+  "why": "Executed the two validated opening-renderer issues in the explicitly authorized cycle. The issues already have independent QA failures and require formal-fixer retesting. Four targeted RED tests failed for the owning branches and now pass. This is a handoff, not a formal acceptance; full suite remains 168/174 with six failures in unchanged simulation/catalog dependencies.",
+  "contextIntentionallyOmitted": [
+    "Earlier chat layout requests and historical pass claims",
+    "Other games, levels and shared factory code",
+    "PENDING screenshots and third-party assets",
+    "Stack, reward, pressure and finish repairs outside this attempt"
+  ],
+  "rootCauses": [
+    {
+      "issueId": "L1-OPENING-TABLE-BRANCH",
+      "objectType": "opening-table-a/b visible support base",
+      "stateBranch": "startup/intact",
+      "renderer": "src/main.ts -> ThreeWorldRenderer.syncSupports",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/preflight.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/red.log",
+        "isGroundedTabletop omitted both opening IDs. Added only those IDs with bases ending at actual floor y=700 and aligned to the existing support depth. Other base branches unchanged.",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/desktop-source-startup.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/portrait-source-startup.png"
+      ]
+    },
+    {
+      "issueId": "L1-FIRST-TARGET-VISIBILITY",
+      "objectType": "rune-1 sigil sphere",
+      "stateBranch": "intact before first cut",
+      "renderer": "ThreePresentationModel -> ProgrammaticOriginalProvider -> CutVisualEntity -> WebGLRenderer",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/red.log",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-cut-visuals.ts",
+        "SphereGeometry has zero geometry.groups, but intact crystal used a material array. WebGLRenderer iterates groups for array materials and submitted zero triangles. A scalar outer material restores intact rendering without modifying cut halves, geometry, textures, gameplay or layout.",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/green-targeted.log",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/source-preview.log"
+      ]
+    }
+  ],
+  "filesChanged": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-world-renderer.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-cut-visuals.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/opening-renderer-regression.test.ts"
+  ],
+  "tests": [
+    {
+      "command": "pnpm exec tsx --test tests/opening-renderer-regression.test.ts",
+      "exitCode": 1,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/red.log",
+      "phase": "RED"
+    },
+    {
+      "command": "pnpm exec tsx --test tests/opening-renderer-regression.test.ts",
+      "exitCode": 0,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/green-targeted.log",
+      "phase": "GREEN"
+    },
+    {
+      "command": "pnpm lint",
+      "exitCode": 0,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/lint.log",
+      "phase": "LINT"
+    },
+    {
+      "command": "pnpm typecheck",
+      "exitCode": 0,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/typecheck.log",
+      "phase": "TYPECHECK"
+    },
+    {
+      "command": "pnpm test",
+      "exitCode": 1,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/green-suite.log",
+      "phase": "GREEN"
+    }
+  ],
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0,
+    "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/build.log",
+    "count": 1,
+    "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html",
+    "sha256": "c8f24a360b3dc8963beccc87bc1db10e62f2dda4276afdf0ffb6074240d4636c"
+  },
+  "remainingEvidenceGaps": [
+    "Independent QA must inspect unchanged built dist at 390x844 and 1100x720 for the exact intact rune-1 and opening-table-a/b branches. Source preview screenshots are implementation evidence only.",
+    "Full suite has six unresolved failures: pacing, dense-cluster cut values, ordinary safe policy, bonus-entry policy, late finish timing, LEVEL-CATALOG-RED-007. They import unchanged simulation/catalog modules, not the modified renderer modules. No out-of-scope gameplay repair or test weakening was performed.",
+    "Natural startup -> input -> core loop -> terminal/settlement -> replay and independent perceptual acceptance remain pending. Other unassigned matrix cells remain open; no complete-level parity claimed."
+  ],
+  "completedAt": "2026-09-07T05:53:02Z"
+}

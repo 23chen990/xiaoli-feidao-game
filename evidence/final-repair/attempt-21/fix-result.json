@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fix-result",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 21,
+  "issueId": "L1-RUNWAY-RECOVERY-ATTEMPT19-PREREQUISITE-RECONSTRUCTION",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "role": "FixerAgent",
+  "model": "gpt-6-luna",
+  "route": "formal-fixer",
+  "routeReason": "The validated issue affects Level 1 recovery lifecycle, state transitions and the natural replay, so it remains on the formal QA/Fixer/QA route. Focused and repository checks passed; independent QA is the next required gate.",
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory modules, renderer/presentation source, platform adapters, level data, persistence, and release configuration.",
+    "Unrelated repository history and candidate source bytes outside the retained Attempt19 rollout ordinals and listed evidence.",
+    "Diagnostic-only test edits from the retained rollout; the independent candidate trace and accepted assertions remain authoritative.",
+    "Natural/perceptual completion claims and fixture-only evidence as a substitute for independent browser QA."
+  ],
+  "changedFiles": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "candidateSummary": {
+    "prerequisiteReconstruction": "Reconstructed the retained Attempt19 candidate2 source sequence from session rollout ordinal197, followed by the narrow pending-contact suppression at ordinal217 and its supportId-only replacement at ordinal287. Kept the separating runway capture branch before the approaching-contact branch's top-level break. Restored only the accepted 8px/0.4rad envelope assertions in the recovery test; no diagnostic-only edits were carried forward.",
+    "newHypotheses": [
+      "Initialize a captured pending pose age at FIXED_STEP, then increment once per fixed update while preserving the exact 2.35-second TTL.",
+      "Expose a read-only runtime support selector using the independent trace's active, collidable, ahead, reachable vertical-corridor and earliest-entry rules."
+    ],
+    "observed": {
+      "pendingPoseAgeAtCapture": "FIXED_STEP (1/120 second)",
+      "pendingPoseTtlSeconds": 2.35,
+      "releaseSelectorFixtures": {
+        "early": "white-branch",
+        "late": "lift-plank"
+      },
+      "focusedGreen": {
+        "tests": 20,
+        "passed": 20,
+        "failed": 0,
+        "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/green-targeted.log",
+        "sha256": "f40915104a1bfbb0e1e236cd10c7930a2973fee239a78fc4b37044c54c343473"
+      },
+      "buildOutput": {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html",
+        "bytes": 2744020,
+        "sha256": "c8af615408163862a487ee12fa8061d2662d44011c1d0bbe50e582503061dab2"
+      }
+    }
+  },
+  "checks": {
+    "artifactValidation": {
+      "status": "passed",
+      "evidence": "REPAIR_CYCLE_ARTIFACTS_OK"
+    },
+    "focusedRed": {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "status": "expected failures observed before production edits",
+      "tests": 20,
+      "passed": 15,
+      "failed": 5,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/red-targeted.log",
+      "sha256": "560d75f7729fa38f56ae81c65c46ce6c6f198ea511aebd4fa352e60284f4bca7"
+    },
+    "focusedGreen": {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "status": "passed",
+      "tests": 20,
+      "passed": 20,
+      "failed": 0,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/green-targeted.log",
+      "sha256": "f40915104a1bfbb0e1e236cd10c7930a2973fee239a78fc4b37044c54c343473"
+    },
+    "fullTests": {
+      "command": "pnpm test",
+      "status": "passed",
+      "tests": 202,
+      "passed": 202,
+      "failed": 0,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/tests.log",
+      "sha256": "ff382b332eebef74bdc66000344eda473e8f4eb51d5cff66e4a581969443ae72"
+    },
+    "lint": {
+      "command": "pnpm lint",
+      "status": "passed",
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/lint.log",
+      "sha256": "6dbeb5a5df94f7c16c62b6704af9d643eb25d75b8701ec1385fcaa0af97fadb4"
+    },
+    "typecheck": {
+      "command": "pnpm typecheck",
+      "status": "passed",
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/typecheck.log",
+      "sha256": "8366207267355d3e3d5bf3bf6e8c94c5f93f6078c34f08973fa2b38cdda6cc92"
+    },
+    "build": {
+      "command": "pnpm build",
+      "status": "passed; one build run",
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/build.log",
+      "logSha256": "f7a5a9b83e8f4c0e57ffa7dc324c2f8691509ff278ffaf262f7dcc0db057a909",
+      "outputPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html",
+      "outputSha256": "c8af615408163862a487ee12fa8061d2662d44011c1d0bbe50e582503061dab2"
+    },
+    "naturalOrPerceptualQa": "not run; independent QA required and no completion claim made"
+  },
+  "rollback": {
+    "performed": false,
+    "reason": "Focused GREEN and all required deterministic checks passed; candidate remains applied."
+  },
+  "status": "QA_PENDING",
+  "qaStatus": "PENDING",
+  "remainingEvidenceGaps": [
+    "Independent fresh-browser natural-input and perceptual QA remains required for the exact capture/release branch and replay journey.",
+    "The runtime selector is covered by deterministic early and late fixtures; no natural/perceptual behavior claim is made."
+  ],
+  "createdAt": "2026-09-23T14:22:09.000Z"
+}

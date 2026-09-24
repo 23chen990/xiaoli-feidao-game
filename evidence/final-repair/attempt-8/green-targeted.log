@@ -1,0 +1,63 @@
+✔ L1-STACK a: actual knife contact cuts the bearing object and releases the overlapping upper object (8.372416ms)
+✔ L1-STACK-VISUAL-EVIDENCE a: same target stays visible and separates into two halves after cut (1.895625ms)
+✔ L1-STACK b: actual knife contact cuts the bearing object and releases the overlapping upper object (4.081583ms)
+✔ L1-STACK-VISUAL-EVIDENCE b: same target stays visible and separates into two halves after cut (1.552625ms)
+✔ L1-GRAVITY active airborne play does not freeze a hovering supported collectible (2.280542ms)
+✔ L1-REWARD intact has zero earnings; a real cut names the separated target and replay clears earnings (6.819584ms)
+✔ L1-PLACEMENT every initial collectible has a touching support, including the late and bridge targets (0.858917ms)
+✖ L1-RUNWAY visible support stays collidable through the normal forward replay (54.455375ms)
+✔ L1-RUNWAY later sharp contact stays airborne while body contact still bounces (1.916416ms)
+✔ L1-RUNWAY early approaching top-face tip contact recovers without removing side anchors (0.830791ms)
+✖ L1-RUNWAY normal seed-31 replay stores an airborne virtual pose and consumes both baseline releases once (18.86225ms)
+✔ L1-RUNWAY recovery release snapshot does not change ordinary non-runway support launches (0.216458ms)
+✔ L1-RUNWAY virtual pose clears on reset, load, expiry, terminal, non-runway contact, and inactive support (69.7905ms)
+✔ L1-RUNWAY opening keeps the authored white landing anchor before runway bounce feedback (3.99175ms)
+✔ L1-FINISH labels use viewport coordinates without a second offset (1.222584ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 390x844 (2.279ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 1100x720 (0.270167ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 15
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 605.32075
+
+✖ failing tests:
+
+test at tests/level1-recovery.test.ts:137:1
+✖ L1-RUNWAY visible support stays collidable through the normal forward replay (54.455375ms)
+  AssertionError [ERR_ASSERTION]: replay ended before the runway branch was exercised: 10.858333333333357s
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:162:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/level1-recovery.test.ts:224:1
+✖ L1-RUNWAY normal seed-31 replay stores an airborne virtual pose and consumes both baseline releases once (18.86225ms)
+  AssertionError [ERR_ASSERTION]: baseline runway release tap 2 must consume the exact pending pose
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:245:16)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

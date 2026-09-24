@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "EvidenceProvenanceCorrection",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "CORRECTED",
+  "mistake": "A DingTalk recording from the shared ScreenCapture directory was treated as the target game's reference recording without verifying its game identity.",
+  "excludedEvidence": {
+    "path": "/Users/kker/Library/Containers/5ZSL2CJU2T.com.dingtalk.mac/Data/Library/Application Support/DingTalkMac/ScreenCapture/钉钉录屏_2026-09-05 141425.mp4",
+    "identity": "Monkey Mart-like top-down shop gameplay",
+    "relevance": "not evidence for mobile-slice-adaptation-20260830"
+  },
+  "verifiedTargetIdentity": {
+    "package": "rune-blade-night-run-prototype",
+    "workspaceFiles": [
+      "src/game-core.ts",
+      "src/game-levels.ts",
+      "src/main.ts",
+      "src/three-world-renderer.ts"
+    ],
+    "qaEvidence": "workspace/prototype-a/tests/artifacts/qa-3d-main-v1"
+  },
+  "impact": [
+    "No target game source or QA artifact was changed because of the unrelated recording.",
+    "The prior recording-based critique is invalid and must not be used as a requirement or acceptance decision.",
+    "The user's supplied 140550, 140908 and 141313 recordings are currently unavailable at their listed paths and must be reattached or restored before frame-level comparison."
+  ],
+  "nextAction": "Use only target-game recordings or target-workspace natural QA captures for the next UI/feel review."
+}

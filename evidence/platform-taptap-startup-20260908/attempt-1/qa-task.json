@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "platform-qa-task",
+  "role": "QAAgent",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "zipPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/build/TapBuild/game.zip",
+  "expectedSha256": "38036b56d671eaf6419fa88059e22fe103262607872bc7eb8339ea6b32b74cae",
+  "fixerResultPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-startup-20260908/attempt-1/fix-result.json",
+  "checks": [
+    "Recompute SHA-256 and verify the ZIP is exactly 38036b56d671eaf6419fa88059e22fe103262607872bc7eb8339ea6b32b74cae before reading any result.",
+    "Read-only audit ZIP integrity, TapTap AppID 928932, game name 疯狂切割, portrait orientation, 390x844/policy4 settings, retained static/dynamic Graphics markers and official plugin metadata.",
+    "Read-only verify startup-contract.json separates host Activity/container ownership from the Cocos package first-frame contract and keeps OPPO PDBM00, ZTE A2022P and OPPO PKB110 as distinct branches.",
+    "Run existing tests, lint and typecheck from the platform workspace without modifying source, tests or build output; inspect the single-build logs and exact SHA.",
+    "Assess natural startup and player-visible first frame on exact-SHA OPPO PDBM00 and ZTE A2022P branches. Treat the supplied ZTE com.taptap FATAL EXCEPTION and OPPO PKB110 model-mismatch evidence as evidence gaps, not as a package pass.",
+    "Report independent engineering, natural-journey, perceptual and filing-package verdicts; preserve external TapTap host and missing PDBM00 raw-trace blockers when exact device/backend evidence is unavailable."
+  ],
+  "prohibitedActions": [
+    "Do not modify the generated game workspace, tests, build outputs or source files.",
+    "Do not rebuild, repackage, upload to TapTap, or substitute another ZIP/SHA.",
+    "Do not treat the ZTE host crash as a Cocos package crash without a stack trace, and do not claim PDBM00 from the PKB110 run.",
+    "Do not claim natural or perceptual startup pass without exact-SHA, player-visible traces for both failed device branches."
+  ],
+  "outputPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-startup-20260908/attempt-1/qa-report.json"
+}

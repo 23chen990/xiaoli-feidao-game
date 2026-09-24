@@ -1,0 +1,136 @@
+[SYSTEM] [INFO] [2026-09-08 05:05:49,636] [test_mini_game.py-line:109] ********************* TapTap mini game automation test start *********************
+[SYSTEM] [INFO] [2026-09-08 05:05:49,636] [test_mini_game.py-line:111] 172.26.200.56:10000 启动测试
+[SYSTEM] [ERROR] [2026-09-08 05:05:50,874] [test_mini_game.py-line:374] ============
+[SYSTEM] [ERROR] [2026-09-08 05:05:50,875] [test_mini_game.py-line:383] ping 172.26.200.56 -c 4
+[SYSTEM] [ERROR] [2026-09-08 05:05:53,888] [test_mini_game.py-line:385] b'PING 172.26.200.56 (172.26.200.56) 56(84) bytes of data.\n64 bytes from 172.26.200.56: icmp_seq=1 ttl=61 time=3.20 ms\n64 bytes from 172.26.200.56: icmp_seq=2 ttl=61 time=3.49 ms\n64 bytes from 172.26.200.56: icmp_seq=3 ttl=61 time=2.61 ms\n64 bytes from 172.26.200.56: icmp_seq=4 ttl=61 time=3.99 ms\n\n--- 172.26.200.56 ping statistics ---\n4 packets transmitted, 4 received, 0% packet loss, time 3004ms\nrtt min/avg/max/mdev = 2.608/3.322/3.989/0.499 ms\n'
+[SYSTEM] [ERROR] [2026-09-08 05:05:53,888] [test_mini_game.py-line:386] b''
+[SYSTEM] [ERROR] [2026-09-08 05:05:53,889] [test_mini_game.py-line:387] ------------
+[SYSTEM] [INFO] [2026-09-08 05:05:55,070] [test_mini_game.py-line:414] Success to connect the device!
+[SYSTEM] [INFO] [2026-09-08 05:05:57,189] [device_info_reporter.py-line:17] 应用 com.taptap 已安装，versionName=2.96.10-rel#100199, versionCode=296101001
+[SYSTEM] [INFO] [2026-09-08 05:05:57,577] [device_info_reporter.py-line:58] 设备信息记录成功: device_id=b88ce7e0 package=com.taptap actual=296101001 expected=296101000
+[SYSTEM] [INFO] [2026-09-08 05:06:32,789] [test_mini_game.py-line:177] 网络连接正常
+[SYSTEM] [INFO] [2026-09-08 05:06:53,417] [test_mini_game.py-line:165] 已登录
+[SYSTEM] [INFO] [2026-09-08 05:06:53,417] [test_mini_game.py-line:166] login_success
+[SYSTEM] [INFO] [2026-09-08 05:06:55,987] [test_mini_game.py-line:481] 疯狂切割 测试开始
+[SYSTEM] [INFO] [2026-09-08 05:06:56,293] [base.py-line:52] 未找到Activity com.taptap.instantgame.container.InstantGameActivity，将在1秒后重试 (1/3)
+[SYSTEM] [INFO] [2026-09-08 05:06:57,494] [base.py-line:52] 未找到Activity com.taptap.instantgame.container.InstantGameActivity，将在1秒后重试 (2/3)
+[SYSTEM] [INFO] [2026-09-08 05:07:00,836] [base.py-line:34] 已找到Activity: com.taptap.instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:07:00,836] [test_mini_game.py-line:495] minigame_activity_started_success
+[SYSTEM] [INFO] [2026-09-08 05:07:00,921] [test_mini_game.py-line:508] minigame_loading_success
+[SYSTEM] [INFO] [2026-09-08 05:07:01,034] [base.py-line:34] 已找到Activity: com.taptap.instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:07:01,268] [utils.py-line:147] minigame_process_pid:16372
+[SYSTEM] [INFO] [2026-09-08 05:07:01,268] [utils.py-line:149] 小游戏 pid:16372
+[SYSTEM] [INFO] [2026-09-08 05:07:02,881] [utils.py-line:239] 启动 OCR 第 1 次识别文本: ['版香于部开发测', 'vConsole']
+[SYSTEM] [INFO] [2026-09-08 05:07:02,881] [utils.py-line:253] 疯狂切割 OCR 启动正常计数: 1/2
+[SYSTEM] [INFO] [2026-09-08 05:07:07,991] [base.py-line:34] 已找到Activity: com.taptap.instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:07:08,190] [utils.py-line:151] minigame_process_pid:16372
+[SYSTEM] [INFO] [2026-09-08 05:07:09,769] [utils.py-line:239] 启动 OCR 第 2 次识别文本: ['测试', 'vConsole']
+[SYSTEM] [INFO] [2026-09-08 05:07:09,769] [utils.py-line:253] 疯狂切割 OCR 启动正常计数: 2/2
+[SYSTEM] [INFO] [2026-09-08 05:07:09,769] [utils.py-line:260] 疯狂切割 OCR 启动判定通过
+[SYSTEM] [INFO] [2026-09-08 05:07:13,002] [base.py-line:34] 已找到Activity: com.taptap.instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:07:18,460] [base.py-line:34] 已找到Activity: .instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:07:33,550] [base.py-line:34] 已找到Activity: .instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:07:34,009] [base.py-line:34] 已找到Activity: .instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:07:37,424] [base.py-line:34] 已找到Activity: .instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:07:38,787] [base.py-line:34] 已找到Activity: .instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:07:41,437] [base.py-line:34] 已找到Activity: com.taptap.instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:07:59,944] [base.py-line:34] 已找到Activity: com.taptap.instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:08:18,376] [base.py-line:34] 已找到Activity: com.taptap.instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:08:23,684] [test_mini_game.py-line:224] traversal_test_success
+[SYSTEM] [INFO] [2026-09-08 05:08:36,793] [base.py-line:34] 已找到Activity: com.taptap.instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:08:55,260] [base.py-line:34] 已找到Activity: com.taptap.instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:09:13,680] [base.py-line:34] 已找到Activity: com.taptap.instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:09:32,092] [base.py-line:34] 已找到Activity: com.taptap.instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:09:50,540] [base.py-line:34] 已找到Activity: com.taptap.instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:10:08,972] [base.py-line:34] 已找到Activity: com.taptap.instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:10:27,387] [base.py-line:34] 已找到Activity: com.taptap.instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:10:45,871] [base.py-line:34] 已找到Activity: com.taptap.instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:11:04,290] [base.py-line:34] 已找到Activity: com.taptap.instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:11:22,709] [base.py-line:34] 已找到Activity: com.taptap.instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:11:41,108] [base.py-line:34] 已找到Activity: com.taptap.instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:11:59,484] [base.py-line:34] 已找到Activity: com.taptap.instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:12:17,864] [base.py-line:34] 已找到Activity: com.taptap.instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:12:36,230] [base.py-line:34] 已找到Activity: com.taptap.instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:12:54,660] [base.py-line:34] 已找到Activity: com.taptap.instantgame.container.InstantGameActivity
+[SYSTEM] [INFO] [2026-09-08 05:13:10,125] [utils.py-line:151] minigame_process_pid:16372
+[SYSTEM] [INFO] [2026-09-08 05:13:10,125] [utils.py-line:862] 尝试拉取文件: /sdcard/Android/data/com.taptap/cache/console/tapmccf1xlqxtz255u/auto_test.json -> /app/b88ce7e0/autotest.json
+[SYSTEM] [INFO] [2026-09-08 05:13:10,168] [utils.py-line:890] 设备上文件检查结果: exists
+[SYSTEM] [INFO] [2026-09-08 05:13:10,168] [utils.py-line:903] 执行adb命令: adb -s 172.26.200.56:10000 pull /sdcard/Android/data/com.taptap/cache/console/tapmccf1xlqxtz255u/auto_test.json /app/b88ce7e0/autotest.json
+[SYSTEM] [INFO] [2026-09-08 05:13:10,198] [utils.py-line:909] 使用adb命令成功拉取文件
+[SYSTEM] [INFO] [2026-09-08 05:13:10,198] [utils.py-line:921] 成功拉取文件: /app/b88ce7e0/autotest.json
+[SYSTEM] [INFO] [2026-09-08 05:13:10,486] [utils.py-line:954] 已创建更新后的auto_test.json文件: /app/b88ce7e0/autotest.json
+[SYSTEM] [INFO] [2026-09-08 05:13:10,486] [utils.py-line:862] 尝试拉取文件: /sdcard/Android/data/com.taptap/cache/console/tapmccf1xlqxtz255u/console.log -> /app/b88ce7e0/js_log.log
+[SYSTEM] [INFO] [2026-09-08 05:13:10,533] [utils.py-line:890] 设备上文件检查结果: exists
+[SYSTEM] [INFO] [2026-09-08 05:13:10,533] [utils.py-line:903] 执行adb命令: adb -s 172.26.200.56:10000 pull /sdcard/Android/data/com.taptap/cache/console/tapmccf1xlqxtz255u/console.log /app/b88ce7e0/js_log.log
+[SYSTEM] [INFO] [2026-09-08 05:13:10,560] [utils.py-line:909] 使用adb命令成功拉取文件
+[SYSTEM] [INFO] [2026-09-08 05:13:10,561] [utils.py-line:921] 成功拉取文件: /app/b88ce7e0/js_log.log
+[SYSTEM] [INFO] [2026-09-08 05:13:10,561] [test_mini_game.py-line:605] 成功拉取日志文件到 /app/b88ce7e0/js_log.log
+[SYSTEM] [INFO] [2026-09-08 05:13:10,561] [test_mini_game.py-line:245] 发现 20 张JPG图片文件
+[SYSTEM] [INFO] [2026-09-08 05:13:10,561] [test_mini_game.py-line:287] 已删除图片: startup_ocr.jpg
+[SYSTEM] [INFO] [2026-09-08 05:13:10,562] [test_mini_game.py-line:287] 已删除图片: 7-疯狂切割.jpg
+[SYSTEM] [INFO] [2026-09-08 05:13:10,562] [test_mini_game.py-line:287] 已删除图片: 11-疯狂切割.jpg
+[SYSTEM] [INFO] [2026-09-08 05:13:10,562] [test_mini_game.py-line:287] 已删除图片: 9-疯狂切割.jpg
+[SYSTEM] [INFO] [2026-09-08 05:13:10,562] [test_mini_game.py-line:287] 已删除图片: 17-疯狂切割.jpg
+[SYSTEM] [INFO] [2026-09-08 05:13:10,562] [test_mini_game.py-line:287] 已删除图片: 3-疯狂切割.jpg
+[SYSTEM] [INFO] [2026-09-08 05:13:10,562] [test_mini_game.py-line:287] 已删除图片: 5-疯狂切割.jpg
+[SYSTEM] [INFO] [2026-09-08 05:13:10,562] [test_mini_game.py-line:287] 已删除图片: 13-疯狂切割.jpg
+[SYSTEM] [INFO] [2026-09-08 05:13:10,562] [test_mini_game.py-line:287] 已删除图片: 1-疯狂切割.jpg
+[SYSTEM] [INFO] [2026-09-08 05:13:10,562] [test_mini_game.py-line:287] 已删除图片: 15-疯狂切割.jpg
+[SYSTEM] [INFO] [2026-09-08 05:13:10,562] [test_mini_game.py-line:295] 图片管理完成，处理前共有 20 张图片，现在保留 10 张
+[SYSTEM] [INFO] [2026-09-08 05:13:10,563] [utils.py-line:536] 图片地址为/app/b88ce7e0/6-疯狂切割.jpg
+[SYSTEM] [INFO] [2026-09-08 05:13:10,580] [utils.py-line:539] 使用ROI=(0.1, 0.1, 0.9, 0.9)，裁剪后尺寸=864x1900
+[SYSTEM] [INFO] [2026-09-08 05:13:10,739] [utils.py-line:564] grayscale_metrics: luma_std=0.00, colorfulness=8.33, sat_median=0.839, sat_mean=0.839, lab_chroma_std=0.00, color_area_ratio=0.000
+[SYSTEM] [INFO] [2026-09-08 05:13:10,740] [utils.py-line:628] 计算图像的标准差=0.0
+[SYSTEM] [INFO] [2026-09-08 05:13:10,740] [utils.py-line:676] final_gray_by=rule_only => rule_gray=True
+[SYSTEM] [INFO] [2026-09-08 05:13:10,740] [utils.py-line:536] 图片地址为/app/b88ce7e0/18-疯狂切割.jpg
+[SYSTEM] [INFO] [2026-09-08 05:13:10,754] [utils.py-line:539] 使用ROI=(0.1, 0.1, 0.9, 0.9)，裁剪后尺寸=864x1900
+[SYSTEM] [INFO] [2026-09-08 05:13:10,806] [utils.py-line:564] grayscale_metrics: luma_std=0.00, colorfulness=8.33, sat_median=0.839, sat_mean=0.839, lab_chroma_std=0.00, color_area_ratio=0.000
+[SYSTEM] [INFO] [2026-09-08 05:13:10,806] [utils.py-line:628] 计算图像的标准差=0.0
+[SYSTEM] [INFO] [2026-09-08 05:13:10,806] [utils.py-line:676] final_gray_by=rule_only => rule_gray=True
+[SYSTEM] [INFO] [2026-09-08 05:13:10,806] [utils.py-line:536] 图片地址为/app/b88ce7e0/4-疯狂切割.jpg
+[SYSTEM] [INFO] [2026-09-08 05:13:10,821] [utils.py-line:539] 使用ROI=(0.1, 0.1, 0.9, 0.9)，裁剪后尺寸=864x1900
+[SYSTEM] [INFO] [2026-09-08 05:13:10,878] [utils.py-line:564] grayscale_metrics: luma_std=0.00, colorfulness=8.33, sat_median=0.839, sat_mean=0.839, lab_chroma_std=0.00, color_area_ratio=0.000
+[SYSTEM] [INFO] [2026-09-08 05:13:10,878] [utils.py-line:628] 计算图像的标准差=0.0
+[SYSTEM] [INFO] [2026-09-08 05:13:10,878] [utils.py-line:676] final_gray_by=rule_only => rule_gray=True
+[SYSTEM] [INFO] [2026-09-08 05:13:10,878] [utils.py-line:536] 图片地址为/app/b88ce7e0/14-疯狂切割.jpg
+[SYSTEM] [INFO] [2026-09-08 05:13:10,892] [utils.py-line:539] 使用ROI=(0.1, 0.1, 0.9, 0.9)，裁剪后尺寸=864x1900
+[SYSTEM] [INFO] [2026-09-08 05:13:10,947] [utils.py-line:564] grayscale_metrics: luma_std=0.00, colorfulness=8.33, sat_median=0.839, sat_mean=0.839, lab_chroma_std=0.00, color_area_ratio=0.000
+[SYSTEM] [INFO] [2026-09-08 05:13:10,947] [utils.py-line:628] 计算图像的标准差=0.0
+[SYSTEM] [INFO] [2026-09-08 05:13:10,947] [utils.py-line:676] final_gray_by=rule_only => rule_gray=True
+[SYSTEM] [INFO] [2026-09-08 05:13:10,947] [utils.py-line:536] 图片地址为/app/b88ce7e0/0-疯狂切割.jpg
+[SYSTEM] [INFO] [2026-09-08 05:13:10,961] [utils.py-line:539] 使用ROI=(0.1, 0.1, 0.9, 0.9)，裁剪后尺寸=864x1900
+[SYSTEM] [INFO] [2026-09-08 05:13:11,016] [utils.py-line:564] grayscale_metrics: luma_std=0.00, colorfulness=8.33, sat_median=0.839, sat_mean=0.839, lab_chroma_std=0.00, color_area_ratio=0.000
+[SYSTEM] [INFO] [2026-09-08 05:13:11,016] [utils.py-line:628] 计算图像的标准差=0.0
+[SYSTEM] [INFO] [2026-09-08 05:13:11,016] [utils.py-line:676] final_gray_by=rule_only => rule_gray=True
+[SYSTEM] [INFO] [2026-09-08 05:13:11,016] [utils.py-line:536] 图片地址为/app/b88ce7e0/8-疯狂切割.jpg
+[SYSTEM] [INFO] [2026-09-08 05:13:11,031] [utils.py-line:539] 使用ROI=(0.1, 0.1, 0.9, 0.9)，裁剪后尺寸=864x1900
+[SYSTEM] [INFO] [2026-09-08 05:13:11,085] [utils.py-line:564] grayscale_metrics: luma_std=0.00, colorfulness=8.33, sat_median=0.839, sat_mean=0.839, lab_chroma_std=0.00, color_area_ratio=0.000
+[SYSTEM] [INFO] [2026-09-08 05:13:11,085] [utils.py-line:628] 计算图像的标准差=0.0
+[SYSTEM] [INFO] [2026-09-08 05:13:11,085] [utils.py-line:676] final_gray_by=rule_only => rule_gray=True
+[SYSTEM] [INFO] [2026-09-08 05:13:11,085] [utils.py-line:536] 图片地址为/app/b88ce7e0/12-疯狂切割.jpg
+[SYSTEM] [INFO] [2026-09-08 05:13:11,099] [utils.py-line:539] 使用ROI=(0.1, 0.1, 0.9, 0.9)，裁剪后尺寸=864x1900
+[SYSTEM] [INFO] [2026-09-08 05:13:11,155] [utils.py-line:564] grayscale_metrics: luma_std=0.00, colorfulness=8.33, sat_median=0.839, sat_mean=0.839, lab_chroma_std=0.00, color_area_ratio=0.000
+[SYSTEM] [INFO] [2026-09-08 05:13:11,155] [utils.py-line:628] 计算图像的标准差=0.0
+[SYSTEM] [INFO] [2026-09-08 05:13:11,155] [utils.py-line:676] final_gray_by=rule_only => rule_gray=True
+[SYSTEM] [INFO] [2026-09-08 05:13:11,155] [utils.py-line:536] 图片地址为/app/b88ce7e0/10-疯狂切割.jpg
+[SYSTEM] [INFO] [2026-09-08 05:13:11,170] [utils.py-line:539] 使用ROI=(0.1, 0.1, 0.9, 0.9)，裁剪后尺寸=864x1900
+[SYSTEM] [INFO] [2026-09-08 05:13:11,225] [utils.py-line:564] grayscale_metrics: luma_std=0.00, colorfulness=8.33, sat_median=0.839, sat_mean=0.839, lab_chroma_std=0.00, color_area_ratio=0.000
+[SYSTEM] [INFO] [2026-09-08 05:13:11,225] [utils.py-line:628] 计算图像的标准差=0.0
+[SYSTEM] [INFO] [2026-09-08 05:13:11,225] [utils.py-line:676] final_gray_by=rule_only => rule_gray=True
+[SYSTEM] [INFO] [2026-09-08 05:13:11,225] [utils.py-line:536] 图片地址为/app/b88ce7e0/2-疯狂切割.jpg
+[SYSTEM] [INFO] [2026-09-08 05:13:11,239] [utils.py-line:539] 使用ROI=(0.1, 0.1, 0.9, 0.9)，裁剪后尺寸=864x1900
+[SYSTEM] [INFO] [2026-09-08 05:13:11,294] [utils.py-line:564] grayscale_metrics: luma_std=0.00, colorfulness=8.33, sat_median=0.839, sat_mean=0.839, lab_chroma_std=0.00, color_area_ratio=0.000
+[SYSTEM] [INFO] [2026-09-08 05:13:11,294] [utils.py-line:628] 计算图像的标准差=0.0
+[SYSTEM] [INFO] [2026-09-08 05:13:11,294] [utils.py-line:676] final_gray_by=rule_only => rule_gray=True
+[SYSTEM] [INFO] [2026-09-08 05:13:11,295] [utils.py-line:536] 图片地址为/app/b88ce7e0/16-疯狂切割.jpg
+[SYSTEM] [INFO] [2026-09-08 05:13:11,308] [utils.py-line:539] 使用ROI=(0.1, 0.1, 0.9, 0.9)，裁剪后尺寸=864x1900
+[SYSTEM] [INFO] [2026-09-08 05:13:11,363] [utils.py-line:564] grayscale_metrics: luma_std=0.00, colorfulness=8.33, sat_median=0.839, sat_mean=0.839, lab_chroma_std=0.00, color_area_ratio=0.000
+[SYSTEM] [INFO] [2026-09-08 05:13:11,363] [utils.py-line:628] 计算图像的标准差=0.0
+[SYSTEM] [INFO] [2026-09-08 05:13:11,363] [utils.py-line:676] final_gray_by=rule_only => rule_gray=True
+[SYSTEM] [INFO] [2026-09-08 05:13:11,363] [test_mini_game.py-line:351] 黑白屏检测结果: 总计 10 张图片, 10 张黑白屏, 0 张正常
+[SYSTEM] [ERROR] [2026-09-08 05:13:11,363] [test_mini_game.py-line:629] 检测到最后3张截图连续为黑白屏: ['10-疯狂切割.jpg', '2-疯狂切割.jpg', '16-疯狂切割.jpg']
+[SYSTEM] [ERROR] [2026-09-08 05:13:12,850] [main.py-line:68] blackandwhite_screen
+[SYSTEM] [INFO] [2026-09-08 05:13:12,979] [main.py-line:106] auto_test.json文件已存在，无需创建
+[SYSTEM] [INFO] [2026-09-08 05:13:12,979] [main.py-line:132] 正在截取最后一张设备屏幕: /app/b88ce7e0/test_over.jpg
+[SYSTEM] [INFO] [2026-09-08 05:13:13,158] [main.py-line:134] 成功保存最后一张设备屏幕截图
+[SYSTEM] [INFO] [2026-09-08 05:13:13,467] [main.py-line:144] script end

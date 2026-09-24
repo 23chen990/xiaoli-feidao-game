@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "gameplay-triage",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "reportedAt": "2026-09-06T22:40:00+08:00",
+  "route": "formal-fixer",
+  "classification": "core_physics_tabletop_base_and_stacking_mismatch",
+  "source": {
+    "userFeedback": "原版台面有厚度并落在地面上，物体一层层接触摆放；当前台面和物体仍像悬空。",
+    "evidence": [
+      "reference-evidence/incoming/codex-clipboard-2a844dc2-6625-47db-8ae1-5b7331c47e01-68c0b9ae9846.png",
+      "reference-evidence/incoming/_2026-09-06-135548-3781e4dcd3d2.mp4"
+    ]
+  },
+  "rootCauseHypothesis": [
+    "The current visible support meshes are treated as thin floating slabs instead of thick grounded bases.",
+    "Tabletop top heights and item resting heights are not authored as one contact chain.",
+    "The renderer does not consistently show a base-to-ground contact shadow for the first-level platforms."
+  ],
+  "scope": {
+    "include": ["Level 1 grounded tabletop bases", "stack contact geometry", "visible contact shadows", "desktop and portrait framing"],
+    "exclude": ["third-party code/assets/expression", "audio", "other levels", "platform packaging"]
+  },
+  "acceptance": [
+    "Every visible Level 1 tabletop has a thick base whose bottom meets the runway/ground plane.",
+    "Every intact tabletop item has a visible contact relationship with its support or another item in its stack.",
+    "At least one stack uses intentional horizontal overlap without any unsupported gap.",
+    "Natural desktop and 390x844 portrait captures show no unexplained floating tabletop or stack."
+  ],
+  "contextOmitted": ["unrelated historical screenshots", "other prototype workspaces", "shared factory code"]
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixerCompetitiveUiFeelEvidence",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "attempt": 1,
+  "triage": "artifacts/gameplay-triage-competitive-ui-feel-v1.json",
+  "filesChanged": [
+    "workspace/prototype-a/src/main.ts",
+    "workspace/prototype-a/src/style.css",
+    "workspace/prototype-a/tests/perceptual-level-pressure.test.ts"
+  ],
+  "changes": {
+    "fiveLayerCutFeedback": [
+      "impact flash",
+      "short hit-stop proportional to earned value",
+      "existing split/fragments and route-opening presentation",
+      "world-local +value popup with high-value emphasis",
+      "persistent HUD/banner cumulative total"
+    ],
+    "highValue": "Cut popups at value >= 4 use a stronger original scale/glow treatment; no physics or score rules changed.",
+    "finishWall": "Selected finish lane gets a bright original highlight and enlarged label during all finish phases; terminal controls remain delayed until reward/celebration complete.",
+    "safeArea": "Earnings banner and finish labels use viewport safe-area insets and compact mobile sizing."
+  },
+  "tests": {
+    "red": "Added perceptual test for hitStopUntil, high-value feedback, earnings layer, finish lane emphasis, and safe-area hooks; it failed before implementation.",
+    "green": ["pnpm lint", "pnpm typecheck", "pnpm test", "pnpm build"],
+    "result": "160 tests passed"
+  },
+  "naturalQa": {
+    "status": "PASS",
+    "command": "SLICE_SMOKE_URL=http://127.0.0.1:5179/ pnpm exec tsx tests/browser-smoke.ts",
+    "evidence": "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/browser-result.json",
+    "desktop": {
+      "viewport": "1180x720",
+      "status": "won",
+      "finishPhases": ["contact", "reward", "celebration", "terminal"],
+      "routeOpeningCount": 1,
+      "finishHighlightedCount": 1,
+      "totalEarnings": 21
+    },
+    "mobile": {
+      "viewport": "390x844",
+      "normalInputRuns": "initial timing run failed visibly, retry timing run reached won",
+      "finishPhases": ["contact", "reward", "celebration", "terminal"],
+      "routeOpeningAndFinishAssertions": "passed on the successful natural run",
+      "safeAreaAndOverflow": "passed"
+    },
+    "consoleErrors": []
+  },
+  "perceptualQa": {
+    "status": "PASS",
+    "finding": "Fresh desktop/mobile natural browser evidence confirms layered cut feedback, a visible route-opening count after structural cut, selected finish-lane emphasis, staged finish phases, and cumulative earnings.",
+    "screenshots": [
+      "desktop-natural-zero-cut-halves.png",
+      "desktop-natural-zero-won.png",
+      "mobile-natural-p8-cut-halves.png",
+      "mobile-natural-p8-won.png"
+    ]
+  },
+  "remainingEvidenceGaps": [
+    "Web-lite Chromium evidence only; native WeChat/Douyin/TapTap package perceptual behavior remains unverified.",
+    "Audio and haptic hardware response are not fully measurable in headless browser QA."
+  ],
+  "status": "PASS_WITH_PLATFORM_SCOPE_GAP"
+}

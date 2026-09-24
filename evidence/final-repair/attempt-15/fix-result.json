@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fix-result",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 15,
+  "issueId": "L1-RUNWAY-RECOVERY-POSE-FOLLOW-AND-CLEAR-TRACE",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "model": "gpt-6-luna",
+  "routeReason": "The validated issue is in the Level 1 recovery state path and has formal QA/retest obligations. The bounded-follow candidate changed the expected second capture frame and ended the replay early, so it was rejected and both owned files were restored immediately to their packet baselines.",
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory modules, renderer/presentation code, platform adapters, level data, persistence, and release configuration.",
+    "Full conversation, unbound media, and unrelated repository history.",
+    "Natural or perceptual completion claims."
+  ],
+  "changedFiles": [],
+  "attemptedFiles": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "checks": {
+    "artifactValidation": "passed before source edits: REPAIR_CYCLE_ARTIFACTS_OK",
+    "focusedRed": {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "status": "failed as expected before source edits",
+      "tests": 21,
+      "passed": 15,
+      "failed": 6,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-15/red-targeted.log",
+      "sha256": "c8313345b9c02bcd08233be25805a5d4b2465ad07ddb6716641bcab38d9d827e"
+    },
+    "focusedGreen": {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "status": "failed",
+      "tests": 21,
+      "passed": 16,
+      "failed": 5,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-15/green-targeted.log",
+      "sha256": "afd94256abccec50f3d1aebf8b580d7976dffae91e9e08849b2aab7a7febbaf3",
+      "observed": {
+        "capturedFrames": [216, 296],
+        "expectedCapturedFrames": [216, 302],
+        "secondTapFrame": 553,
+        "secondPoseAgeAtTapSeconds": 2.1416666666666617,
+        "secondTapPositionCorrectionPixels": 6.057801122984933,
+        "secondTapAngleCorrectionRadians": 0.1852210557429217,
+        "replayElapsedSeconds": 7.141666666666811,
+        "replayTerminalStatus": "failed",
+        "firstPoseClearReasonAtPriorFrame528": "UNKNOWN_UNINSTRUMENTED"
+      }
+    },
+    "fullTests": "not run: focused GREEN failure required immediate rollback",
+    "lint": "not run: focused GREEN failure required immediate rollback",
+    "typecheck": "not run: focused GREEN failure required immediate rollback",
+    "build": "not run: focused GREEN failure required immediate rollback"
+  },
+  "rollback": {
+    "performed": true,
+    "files": [
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+        "expectedBaselineSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+        "actualSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+        "matchesBaseline": true,
+        "candidateSha256": null,
+        "candidateSha256Note": "Not captured before the immediate protocol rollback."
+      },
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts",
+        "expectedBaselineSha256": "7627f8b8052adb8bd33b6b21f7c0cf935b1d23cba5b4570513ce47bd56984510",
+        "actualSha256": "7627f8b8052adb8bd33b6b21f7c0cf935b1d23cba5b4570513ce47bd56984510",
+        "matchesBaseline": true,
+        "candidateSha256": null,
+        "candidateSha256Note": "Not captured before the immediate protocol rollback."
+      }
+    ]
+  },
+  "buildSha256": "599b4c3cb8c6b345b7e18b3a4e06cae33663c0432b918d3115ee78df3bf64118",
+  "buildUnchanged": true,
+  "status": "BLOCKED",
+  "qaStatus": null,
+  "remainingEvidenceGaps": [
+    "The bounded-follow candidate was rejected: it captured pose2 at frame 296 instead of 302 and the default deterministic replay failed at 7.14 seconds.",
+    "The frame528 clear reason remains unknown; no TTL, collision, or terminal cause was inferred.",
+    "No accepted implementation or fresh targeted lifecycle trace was produced. The candidate implementation was rolled back to both packet baseline hashes.",
+    "Full tests, lint, typecheck, and build were not run because focused GREEN failed.",
+    "Independent natural-input and perceptual QA remain outstanding; no completion claim is made."
+  ]
+}

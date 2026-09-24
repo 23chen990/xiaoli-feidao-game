@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "passed": false,
+  "checks": [
+    {
+      "name": "FIRST_FUN",
+      "passed": true,
+      "evidence": "Seed 31, one real desktop click: launch at 0.13 s wall time, visible first cut at 0.97 s, then sharp anchor on white-landing at 2.61 s. opening-cut.png and anchor.png preserve the visible transitions. A separate native-touch run cut once and anchored in 1.48 s."
+    },
+    {
+      "name": "CONTACTS",
+      "passed": false,
+      "evidence": "Real input visibly produced sharp anchoring and a later blunt bounce/recovery; anchor.png and bounce.png show distinct feedback, and a follow-up real click relaunched. However, independent play did not reproduce both outcomes as two simple opening timing branches; the bounce occurred later near the pillar/hazard section."
+    },
+    {
+      "name": "DECISION",
+      "passed": true,
+      "evidence": "Visible-state real-input timing changed outcomes: the wait-until-descending policy reached the safe gate, while a fixed 1.1 s cadence reached a magenta spike. Early rapid inputs also sent the blade above the playfield and failed by fall, so repeated inputs do not collapse to one trajectory."
+    },
+    {
+      "name": "FAILURES",
+      "passed": true,
+      "evidence": "Real input produced distinct fall and spike reasons with visibly different presentations: desktop-natural-04.png shows the abyss result and spike.png shows the magenta break result. One real terminal native touch reset spike failure to ready with failReason cleared."
+    },
+    {
+      "name": "SAFE_FINISH",
+      "passed": true,
+      "evidence": "A visible-position policy using only real mouse clicks reached finishSelection=safe at 17.36 s wall time without debug placement. safe-finish.png shows the safe-gate result."
+    },
+    {
+      "name": "BONUS",
+      "passed": false,
+      "evidence": "The narrow bonus entry is visible, but two intentional real-input finish timing changes still selected the safe gate at y=396 and y=357. The independent reviewer did not enter, play, or verify one-chance behavior in reasonable time; no bonus screenshot is claimed."
+    },
+    {
+      "name": "MOBILE",
+      "passed": true,
+      "evidence": "At 390x844, one native touch produced cut then white-landing anchor in 1.48 s; a separate native-touch 1.1 s cadence reached spike failure, and one native touch restarted to ready. scrollWidth/innerWidth=390 and scrollHeight/innerHeight=844, so no overflow was present. mobile-anchor.png and mobile.png preserve evidence."
+    },
+    {
+      "name": "RUNTIME",
+      "passed": false,
+      "evidence": "No page exception or game console error occurred. However, after a real launch, a 1.394 s low-frame/main-thread pause advanced simulation by only 0.10 s (elapsed 0.05 to 0.15; x 127.5 to 142.5), silently discarding about 1.29 s of real time. Six concurrent throttled pages independently showed the same class of elapsed-time loss."
+    }
+  ],
+  "issues": [
+    {
+      "id": "QA-CONTACT-001",
+      "severity": "error",
+      "message": "Anchor and blunt bounce are not both independently reachable as simple opening timing branches.",
+      "evidence": "The reviewer reached the first sharp anchor immediately, but blunt bounce appeared only later near the pillar/hazard section."
+    },
+    {
+      "id": "QA-BONUS-001",
+      "severity": "error",
+      "message": "The narrow bonus route was not independently reachable with a small finish timing change.",
+      "evidence": "Two real-input variants landed in the safe gate; bonus entry and one-chance bonus play were not verified."
+    },
+    {
+      "id": "QA-RUNTIME-001",
+      "severity": "error",
+      "message": "Low-frame real time is silently discarded during active play.",
+      "evidence": "A 1.394 s real main-thread pause advanced active simulation by only 0.10 s. See console.log."
+    }
+  ],
+  "screenshots": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v3/opening-cut.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v3/anchor.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v3/bounce.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v3/desktop-natural-04.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v3/spike.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v3/safe-finish.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v3/mobile-anchor.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v3/mobile.png"
+  ],
+  "consoleLog": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v3/console.log",
+  "testedAt": "2026-08-30T13:43:31Z"
+}

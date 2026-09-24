@@ -1,0 +1,2102 @@
+{
+  "ready": {
+    "before": {
+      "status": "ready",
+      "x": 210,
+      "y": 522,
+      "seed": 31
+    },
+    "after": {
+      "status": "ready",
+      "x": 210,
+      "y": 522,
+      "failReason": null
+    },
+    "wallWaitMs": 1250
+  },
+  "mouseLaunch": {
+    "launch": {
+      "seed": 31,
+      "status": "airborne",
+      "failReason": null,
+      "elapsed": 0.016666666666666666,
+      "player": {
+        "x": 215.33333333333331,
+        "y": 515.53125,
+        "vx": 320,
+        "vy": -384.16666666666663,
+        "angle": -0.09198396921273802,
+        "angularVelocity": 9.424000000000001
+      },
+      "sigils": [
+        {
+          "id": "rune-1",
+          "kind": "cuttable",
+          "x": 333,
+          "y": 435,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "rune-2",
+          "kind": "cuttable",
+          "x": 596,
+          "y": 441,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "ban-1",
+          "kind": "hazard",
+          "x": 713,
+          "y": 625,
+          "width": 54,
+          "height": 92
+        },
+        {
+          "id": "rune-3",
+          "kind": "cuttable",
+          "x": 846,
+          "y": 410,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "rune-4",
+          "kind": "cuttable",
+          "x": 1142,
+          "y": 443,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "ban-2",
+          "kind": "hazard",
+          "x": 1210,
+          "y": 330,
+          "width": 64,
+          "height": 74
+        },
+        {
+          "id": "rune-5",
+          "kind": "cuttable",
+          "x": 1388,
+          "y": 411,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        }
+      ],
+      "platforms": [
+        {
+          "id": "start",
+          "x": 180,
+          "y": 540,
+          "width": 300,
+          "height": 28
+        },
+        {
+          "id": "step-1",
+          "x": 555,
+          "y": 540,
+          "width": 290,
+          "height": 28
+        },
+        {
+          "id": "step-2",
+          "x": 850,
+          "y": 500,
+          "width": 300,
+          "height": 28
+        },
+        {
+          "id": "step-3",
+          "x": 1135,
+          "y": 550,
+          "width": 320,
+          "height": 28
+        },
+        {
+          "id": "step-4",
+          "x": 1375,
+          "y": 510,
+          "width": 310,
+          "height": 28
+        }
+      ],
+      "finishZones": [
+        {
+          "id": "finish-x2",
+          "multiplier": 2,
+          "x": 1625,
+          "y": 550,
+          "width": 170,
+          "height": 32
+        },
+        {
+          "id": "finish-x4",
+          "multiplier": 4,
+          "x": 1760,
+          "y": 550,
+          "width": 100,
+          "height": 32
+        },
+        {
+          "id": "finish-x8",
+          "multiplier": 8,
+          "x": 1840,
+          "y": 550,
+          "width": 60,
+          "height": 32
+        }
+      ],
+      "cuts": 0,
+      "totalCuts": 5,
+      "finishX": 1890,
+      "worldBottom": 700,
+      "landedPlatformId": null,
+      "nextTargetId": "step-1",
+      "lastEvent": "launched",
+      "eventAge": 0.016666666666666666,
+      "multiplier": 0,
+      "finalScore": 0
+    },
+    "after120ms": {
+      "seed": 31,
+      "status": "airborne",
+      "failReason": null,
+      "elapsed": 0.08333333333333333,
+      "player": {
+        "x": 236.66666666666657,
+        "y": 492.29513888888897,
+        "vx": 320,
+        "vy": -320.83333333333314,
+        "angle": 0.5275395978592278,
+        "angularVelocity": 9.126031554248708
+      },
+      "sigils": [
+        {
+          "id": "rune-1",
+          "kind": "cuttable",
+          "x": 333,
+          "y": 435,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "rune-2",
+          "kind": "cuttable",
+          "x": 596,
+          "y": 441,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "ban-1",
+          "kind": "hazard",
+          "x": 713,
+          "y": 625,
+          "width": 54,
+          "height": 92
+        },
+        {
+          "id": "rune-3",
+          "kind": "cuttable",
+          "x": 846,
+          "y": 410,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "rune-4",
+          "kind": "cuttable",
+          "x": 1142,
+          "y": 443,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "ban-2",
+          "kind": "hazard",
+          "x": 1210,
+          "y": 330,
+          "width": 64,
+          "height": 74
+        },
+        {
+          "id": "rune-5",
+          "kind": "cuttable",
+          "x": 1388,
+          "y": 411,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        }
+      ],
+      "platforms": [
+        {
+          "id": "start",
+          "x": 180,
+          "y": 540,
+          "width": 300,
+          "height": 28
+        },
+        {
+          "id": "step-1",
+          "x": 555,
+          "y": 540,
+          "width": 290,
+          "height": 28
+        },
+        {
+          "id": "step-2",
+          "x": 850,
+          "y": 500,
+          "width": 300,
+          "height": 28
+        },
+        {
+          "id": "step-3",
+          "x": 1135,
+          "y": 550,
+          "width": 320,
+          "height": 28
+        },
+        {
+          "id": "step-4",
+          "x": 1375,
+          "y": 510,
+          "width": 310,
+          "height": 28
+        }
+      ],
+      "finishZones": [
+        {
+          "id": "finish-x2",
+          "multiplier": 2,
+          "x": 1625,
+          "y": 550,
+          "width": 170,
+          "height": 32
+        },
+        {
+          "id": "finish-x4",
+          "multiplier": 4,
+          "x": 1760,
+          "y": 550,
+          "width": 100,
+          "height": 32
+        },
+        {
+          "id": "finish-x8",
+          "multiplier": 8,
+          "x": 1840,
+          "y": 550,
+          "width": 60,
+          "height": 32
+        }
+      ],
+      "cuts": 0,
+      "totalCuts": 5,
+      "finishX": 1890,
+      "worldBottom": 700,
+      "landedPlatformId": null,
+      "nextTargetId": "step-1",
+      "lastEvent": "launched",
+      "eventAge": 0.08333333333333333,
+      "multiplier": 0,
+      "finalScore": 0
+    },
+    "rotatedBy": 0.6195235670719658
+  },
+  "desktopFirstLanding": {
+    "seed": 31,
+    "status": "landed",
+    "failReason": null,
+    "elapsed": 0.8416666666666661,
+    "player": {
+      "x": 476.80570038234407,
+      "y": 522,
+      "vx": 0,
+      "vy": 0,
+      "angle": 6.283185307179586,
+      "angularVelocity": 0
+    },
+    "sigils": [
+      {
+        "id": "rune-1",
+        "kind": "cuttable",
+        "x": 333,
+        "y": 435,
+        "radius": 27,
+        "cut": true,
+        "splitAge": 0.6000000000000003
+      },
+      {
+        "id": "rune-2",
+        "kind": "cuttable",
+        "x": 596,
+        "y": 441,
+        "radius": 27,
+        "cut": false,
+        "splitAge": 0
+      },
+      {
+        "id": "ban-1",
+        "kind": "hazard",
+        "x": 713,
+        "y": 625,
+        "width": 54,
+        "height": 92
+      },
+      {
+        "id": "rune-3",
+        "kind": "cuttable",
+        "x": 846,
+        "y": 410,
+        "radius": 27,
+        "cut": false,
+        "splitAge": 0
+      },
+      {
+        "id": "rune-4",
+        "kind": "cuttable",
+        "x": 1142,
+        "y": 443,
+        "radius": 27,
+        "cut": false,
+        "splitAge": 0
+      },
+      {
+        "id": "ban-2",
+        "kind": "hazard",
+        "x": 1210,
+        "y": 330,
+        "width": 64,
+        "height": 74
+      },
+      {
+        "id": "rune-5",
+        "kind": "cuttable",
+        "x": 1388,
+        "y": 411,
+        "radius": 27,
+        "cut": false,
+        "splitAge": 0
+      }
+    ],
+    "platforms": [
+      {
+        "id": "start",
+        "x": 180,
+        "y": 540,
+        "width": 300,
+        "height": 28
+      },
+      {
+        "id": "step-1",
+        "x": 555,
+        "y": 540,
+        "width": 290,
+        "height": 28
+      },
+      {
+        "id": "step-2",
+        "x": 850,
+        "y": 500,
+        "width": 300,
+        "height": 28
+      },
+      {
+        "id": "step-3",
+        "x": 1135,
+        "y": 550,
+        "width": 320,
+        "height": 28
+      },
+      {
+        "id": "step-4",
+        "x": 1375,
+        "y": 510,
+        "width": 310,
+        "height": 28
+      }
+    ],
+    "finishZones": [
+      {
+        "id": "finish-x2",
+        "multiplier": 2,
+        "x": 1625,
+        "y": 550,
+        "width": 170,
+        "height": 32
+      },
+      {
+        "id": "finish-x4",
+        "multiplier": 4,
+        "x": 1760,
+        "y": 550,
+        "width": 100,
+        "height": 32
+      },
+      {
+        "id": "finish-x8",
+        "multiplier": 8,
+        "x": 1840,
+        "y": 550,
+        "width": 60,
+        "height": 32
+      }
+    ],
+    "cuts": 1,
+    "totalCuts": 5,
+    "finishX": 1890,
+    "worldBottom": 700,
+    "landedPlatformId": "step-1",
+    "nextTargetId": "step-2",
+    "lastEvent": "landed",
+    "eventAge": 0,
+    "multiplier": 0,
+    "finalScore": 0
+  },
+  "keyboard": {
+    "first": {
+      "seed": 32,
+      "status": "airborne",
+      "failReason": null,
+      "elapsed": 0.016666666666666666,
+      "player": {
+        "x": 215.33333333333331,
+        "y": 515.53125,
+        "vx": 320,
+        "vy": -384.16666666666663,
+        "angle": -0.09198396921273802,
+        "angularVelocity": 9.424000000000001
+      },
+      "sigils": [
+        {
+          "id": "rune-1",
+          "kind": "cuttable",
+          "x": 333,
+          "y": 435,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "rune-2",
+          "kind": "cuttable",
+          "x": 602,
+          "y": 441,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "ban-1",
+          "kind": "hazard",
+          "x": 713,
+          "y": 625,
+          "width": 54,
+          "height": 92
+        },
+        {
+          "id": "rune-3",
+          "kind": "cuttable",
+          "x": 852,
+          "y": 408,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "rune-4",
+          "kind": "cuttable",
+          "x": 1137,
+          "y": 451,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "ban-2",
+          "kind": "hazard",
+          "x": 1210,
+          "y": 330,
+          "width": 64,
+          "height": 74
+        },
+        {
+          "id": "rune-5",
+          "kind": "cuttable",
+          "x": 1392,
+          "y": 411,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        }
+      ],
+      "platforms": [
+        {
+          "id": "start",
+          "x": 180,
+          "y": 540,
+          "width": 300,
+          "height": 28
+        },
+        {
+          "id": "step-1",
+          "x": 555,
+          "y": 540,
+          "width": 290,
+          "height": 28
+        },
+        {
+          "id": "step-2",
+          "x": 850,
+          "y": 500,
+          "width": 300,
+          "height": 28
+        },
+        {
+          "id": "step-3",
+          "x": 1135,
+          "y": 550,
+          "width": 320,
+          "height": 28
+        },
+        {
+          "id": "step-4",
+          "x": 1375,
+          "y": 510,
+          "width": 310,
+          "height": 28
+        }
+      ],
+      "finishZones": [
+        {
+          "id": "finish-x2",
+          "multiplier": 2,
+          "x": 1625,
+          "y": 550,
+          "width": 170,
+          "height": 32
+        },
+        {
+          "id": "finish-x4",
+          "multiplier": 4,
+          "x": 1760,
+          "y": 550,
+          "width": 100,
+          "height": 32
+        },
+        {
+          "id": "finish-x8",
+          "multiplier": 8,
+          "x": 1840,
+          "y": 550,
+          "width": 60,
+          "height": 32
+        }
+      ],
+      "cuts": 0,
+      "totalCuts": 5,
+      "finishX": 1890,
+      "worldBottom": 700,
+      "landedPlatformId": null,
+      "nextTargetId": "step-1",
+      "lastEvent": "launched",
+      "eventAge": 0.016666666666666666,
+      "multiplier": 0,
+      "finalScore": 0
+    },
+    "repeat": {
+      "seed": 32,
+      "status": "airborne",
+      "failReason": null,
+      "elapsed": 0.049999999999999996,
+      "player": {
+        "x": 225.99999999999994,
+        "y": 503.3854166666667,
+        "vx": 320,
+        "vy": -352.4999999999999,
+        "angle": 0.2202658206488621,
+        "angularVelocity": 9.273819136000004
+      },
+      "sigils": [
+        {
+          "id": "rune-1",
+          "kind": "cuttable",
+          "x": 333,
+          "y": 435,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "rune-2",
+          "kind": "cuttable",
+          "x": 602,
+          "y": 441,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "ban-1",
+          "kind": "hazard",
+          "x": 713,
+          "y": 625,
+          "width": 54,
+          "height": 92
+        },
+        {
+          "id": "rune-3",
+          "kind": "cuttable",
+          "x": 852,
+          "y": 408,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "rune-4",
+          "kind": "cuttable",
+          "x": 1137,
+          "y": 451,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "ban-2",
+          "kind": "hazard",
+          "x": 1210,
+          "y": 330,
+          "width": 64,
+          "height": 74
+        },
+        {
+          "id": "rune-5",
+          "kind": "cuttable",
+          "x": 1392,
+          "y": 411,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        }
+      ],
+      "platforms": [
+        {
+          "id": "start",
+          "x": 180,
+          "y": 540,
+          "width": 300,
+          "height": 28
+        },
+        {
+          "id": "step-1",
+          "x": 555,
+          "y": 540,
+          "width": 290,
+          "height": 28
+        },
+        {
+          "id": "step-2",
+          "x": 850,
+          "y": 500,
+          "width": 300,
+          "height": 28
+        },
+        {
+          "id": "step-3",
+          "x": 1135,
+          "y": 550,
+          "width": 320,
+          "height": 28
+        },
+        {
+          "id": "step-4",
+          "x": 1375,
+          "y": 510,
+          "width": 310,
+          "height": 28
+        }
+      ],
+      "finishZones": [
+        {
+          "id": "finish-x2",
+          "multiplier": 2,
+          "x": 1625,
+          "y": 550,
+          "width": 170,
+          "height": 32
+        },
+        {
+          "id": "finish-x4",
+          "multiplier": 4,
+          "x": 1760,
+          "y": 550,
+          "width": 100,
+          "height": 32
+        },
+        {
+          "id": "finish-x8",
+          "multiplier": 8,
+          "x": 1840,
+          "y": 550,
+          "width": 60,
+          "height": 32
+        }
+      ],
+      "cuts": 0,
+      "totalCuts": 5,
+      "finishX": 1890,
+      "worldBottom": 700,
+      "landedPlatformId": null,
+      "nextTargetId": "step-1",
+      "lastEvent": "launched",
+      "eventAge": 0.049999999999999996,
+      "multiplier": 0,
+      "finalScore": 0
+    }
+  },
+  "desktopCompletion": {
+    "state": {
+      "seed": 33,
+      "status": "won",
+      "failReason": null,
+      "elapsed": 4.6916666666666895,
+      "player": {
+        "x": 1764.2202954000488,
+        "y": 532,
+        "vx": 0,
+        "vy": 0,
+        "angle": -2.0248029390506526,
+        "angularVelocity": 0
+      },
+      "sigils": [
+        {
+          "id": "rune-1",
+          "kind": "cuttable",
+          "x": 333,
+          "y": 436,
+          "radius": 27,
+          "cut": true,
+          "splitAge": 4.450000000000011
+        },
+        {
+          "id": "rune-2",
+          "kind": "cuttable",
+          "x": 599,
+          "y": 441,
+          "radius": 27,
+          "cut": true,
+          "splitAge": 3.6166666666666565
+        },
+        {
+          "id": "ban-1",
+          "kind": "hazard",
+          "x": 713,
+          "y": 625,
+          "width": 54,
+          "height": 92
+        },
+        {
+          "id": "rune-3",
+          "kind": "cuttable",
+          "x": 849,
+          "y": 406,
+          "radius": 27,
+          "cut": true,
+          "splitAge": 2.8416666666666592
+        },
+        {
+          "id": "rune-4",
+          "kind": "cuttable",
+          "x": 1141,
+          "y": 450,
+          "radius": 27,
+          "cut": true,
+          "splitAge": 1.8166666666666627
+        },
+        {
+          "id": "ban-2",
+          "kind": "hazard",
+          "x": 1210,
+          "y": 330,
+          "width": 64,
+          "height": 74
+        },
+        {
+          "id": "rune-5",
+          "kind": "cuttable",
+          "x": 1388,
+          "y": 412,
+          "radius": 27,
+          "cut": true,
+          "splitAge": 1.1499999999999984
+        }
+      ],
+      "platforms": [
+        {
+          "id": "start",
+          "x": 180,
+          "y": 540,
+          "width": 300,
+          "height": 28
+        },
+        {
+          "id": "step-1",
+          "x": 555,
+          "y": 540,
+          "width": 290,
+          "height": 28
+        },
+        {
+          "id": "step-2",
+          "x": 850,
+          "y": 500,
+          "width": 300,
+          "height": 28
+        },
+        {
+          "id": "step-3",
+          "x": 1135,
+          "y": 550,
+          "width": 320,
+          "height": 28
+        },
+        {
+          "id": "step-4",
+          "x": 1375,
+          "y": 510,
+          "width": 310,
+          "height": 28
+        }
+      ],
+      "finishZones": [
+        {
+          "id": "finish-x2",
+          "multiplier": 2,
+          "x": 1625,
+          "y": 550,
+          "width": 170,
+          "height": 32
+        },
+        {
+          "id": "finish-x4",
+          "multiplier": 4,
+          "x": 1760,
+          "y": 550,
+          "width": 100,
+          "height": 32
+        },
+        {
+          "id": "finish-x8",
+          "multiplier": 8,
+          "x": 1840,
+          "y": 550,
+          "width": 60,
+          "height": 32
+        }
+      ],
+      "cuts": 5,
+      "totalCuts": 5,
+      "finishX": 1890,
+      "worldBottom": 700,
+      "landedPlatformId": null,
+      "nextTargetId": null,
+      "lastEvent": "won",
+      "eventAge": 0,
+      "multiplier": 4,
+      "finalScore": 20
+    },
+    "history": [
+      {
+        "status": "ready",
+        "landedPlatformId": "start",
+        "cuts": 0
+      },
+      {
+        "status": "landed",
+        "landedPlatformId": "step-1",
+        "cuts": 1
+      },
+      {
+        "status": "landed",
+        "landedPlatformId": "step-1",
+        "cuts": 1
+      },
+      {
+        "status": "landed",
+        "landedPlatformId": "step-2",
+        "cuts": 2
+      },
+      {
+        "status": "landed",
+        "landedPlatformId": "step-2",
+        "cuts": 2
+      },
+      {
+        "status": "landed",
+        "landedPlatformId": "step-2",
+        "cuts": 3
+      },
+      {
+        "status": "landed",
+        "landedPlatformId": "step-2",
+        "cuts": 3
+      },
+      {
+        "status": "landed",
+        "landedPlatformId": "step-4",
+        "cuts": 4
+      },
+      {
+        "status": "landed",
+        "landedPlatformId": "step-4",
+        "cuts": 4
+      },
+      {
+        "status": "won",
+        "landedPlatformId": null,
+        "cuts": 5
+      }
+    ],
+    "launches": 5
+  },
+  "reactionTolerance": [
+    {
+      "delay": 300,
+      "status": "won",
+      "failReason": null,
+      "multiplier": 4,
+      "cuts": 5,
+      "score": 20
+    },
+    {
+      "delay": 400,
+      "status": "won",
+      "failReason": null,
+      "multiplier": 4,
+      "cuts": 5,
+      "score": 20
+    },
+    {
+      "delay": 500,
+      "status": "won",
+      "failReason": null,
+      "multiplier": 4,
+      "cuts": 5,
+      "score": 20
+    }
+  ],
+  "timingVariation": [
+    {
+      "delay": 180,
+      "x": 510.41666666666805,
+      "y": 413.82638888888897,
+      "vx": 395,
+      "vy": 151.6666666666668,
+      "cuts": 1,
+      "status": "airborne"
+    },
+    {
+      "delay": 650,
+      "x": 618.1390337156762,
+      "y": 439.73958333333337,
+      "vx": 320,
+      "vy": 19.583333333333556,
+      "cuts": 2,
+      "status": "airborne"
+    }
+  ],
+  "hazardFailure": {
+    "origin": {
+      "seed": 101,
+      "status": "landed",
+      "failReason": null,
+      "elapsed": 2.399999999999994,
+      "player": {
+        "x": 972.7904314273908,
+        "y": 482,
+        "vx": 0,
+        "vy": 0,
+        "angle": 6.283185307179586,
+        "angularVelocity": 0
+      },
+      "sigils": [
+        {
+          "id": "rune-1",
+          "kind": "cuttable",
+          "x": 333,
+          "y": 438,
+          "radius": 27,
+          "cut": true,
+          "splitAge": 2.1666666666666616
+        },
+        {
+          "id": "rune-2",
+          "kind": "cuttable",
+          "x": 604,
+          "y": 437,
+          "radius": 27,
+          "cut": true,
+          "splitAge": 1.3083333333333311
+        },
+        {
+          "id": "ban-1",
+          "kind": "hazard",
+          "x": 713,
+          "y": 625,
+          "width": 54,
+          "height": 92
+        },
+        {
+          "id": "rune-3",
+          "kind": "cuttable",
+          "x": 852,
+          "y": 405,
+          "radius": 27,
+          "cut": true,
+          "splitAge": 0.5416666666666672
+        },
+        {
+          "id": "rune-4",
+          "kind": "cuttable",
+          "x": 1143,
+          "y": 444,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "ban-2",
+          "kind": "hazard",
+          "x": 1210,
+          "y": 330,
+          "width": 64,
+          "height": 74
+        },
+        {
+          "id": "rune-5",
+          "kind": "cuttable",
+          "x": 1393,
+          "y": 411,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        }
+      ],
+      "platforms": [
+        {
+          "id": "start",
+          "x": 180,
+          "y": 540,
+          "width": 300,
+          "height": 28
+        },
+        {
+          "id": "step-1",
+          "x": 555,
+          "y": 540,
+          "width": 290,
+          "height": 28
+        },
+        {
+          "id": "step-2",
+          "x": 850,
+          "y": 500,
+          "width": 300,
+          "height": 28
+        },
+        {
+          "id": "step-3",
+          "x": 1135,
+          "y": 550,
+          "width": 320,
+          "height": 28
+        },
+        {
+          "id": "step-4",
+          "x": 1375,
+          "y": 510,
+          "width": 310,
+          "height": 28
+        }
+      ],
+      "finishZones": [
+        {
+          "id": "finish-x2",
+          "multiplier": 2,
+          "x": 1625,
+          "y": 550,
+          "width": 170,
+          "height": 32
+        },
+        {
+          "id": "finish-x4",
+          "multiplier": 4,
+          "x": 1760,
+          "y": 550,
+          "width": 100,
+          "height": 32
+        },
+        {
+          "id": "finish-x8",
+          "multiplier": 8,
+          "x": 1840,
+          "y": 550,
+          "width": 60,
+          "height": 32
+        }
+      ],
+      "cuts": 3,
+      "totalCuts": 5,
+      "finishX": 1890,
+      "worldBottom": 700,
+      "landedPlatformId": "step-2",
+      "nextTargetId": "step-3",
+      "lastEvent": "landed",
+      "eventAge": 0,
+      "multiplier": 0,
+      "finalScore": 0
+    },
+    "result": {
+      "seed": 101,
+      "status": "failed",
+      "failReason": "hazard",
+      "elapsed": 2.9583333333333255,
+      "player": {
+        "x": 1160.8320980940603,
+        "y": 374.99305555555554,
+        "vx": 395,
+        "vy": -141.25000000000014,
+        "angle": 3.8367925700238636,
+        "angularVelocity": 9.886141910092197
+      },
+      "sigils": [
+        {
+          "id": "rune-1",
+          "kind": "cuttable",
+          "x": 333,
+          "y": 438,
+          "radius": 27,
+          "cut": true,
+          "splitAge": 2.724999999999993
+        },
+        {
+          "id": "rune-2",
+          "kind": "cuttable",
+          "x": 604,
+          "y": 437,
+          "radius": 27,
+          "cut": true,
+          "splitAge": 1.8666666666666625
+        },
+        {
+          "id": "ban-1",
+          "kind": "hazard",
+          "x": 713,
+          "y": 625,
+          "width": 54,
+          "height": 92
+        },
+        {
+          "id": "rune-3",
+          "kind": "cuttable",
+          "x": 852,
+          "y": 405,
+          "radius": 27,
+          "cut": true,
+          "splitAge": 1.0999999999999985
+        },
+        {
+          "id": "rune-4",
+          "kind": "cuttable",
+          "x": 1143,
+          "y": 444,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "ban-2",
+          "kind": "hazard",
+          "x": 1210,
+          "y": 330,
+          "width": 64,
+          "height": 74
+        },
+        {
+          "id": "rune-5",
+          "kind": "cuttable",
+          "x": 1393,
+          "y": 411,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        }
+      ],
+      "platforms": [
+        {
+          "id": "start",
+          "x": 180,
+          "y": 540,
+          "width": 300,
+          "height": 28
+        },
+        {
+          "id": "step-1",
+          "x": 555,
+          "y": 540,
+          "width": 290,
+          "height": 28
+        },
+        {
+          "id": "step-2",
+          "x": 850,
+          "y": 500,
+          "width": 300,
+          "height": 28
+        },
+        {
+          "id": "step-3",
+          "x": 1135,
+          "y": 550,
+          "width": 320,
+          "height": 28
+        },
+        {
+          "id": "step-4",
+          "x": 1375,
+          "y": 510,
+          "width": 310,
+          "height": 28
+        }
+      ],
+      "finishZones": [
+        {
+          "id": "finish-x2",
+          "multiplier": 2,
+          "x": 1625,
+          "y": 550,
+          "width": 170,
+          "height": 32
+        },
+        {
+          "id": "finish-x4",
+          "multiplier": 4,
+          "x": 1760,
+          "y": 550,
+          "width": 100,
+          "height": 32
+        },
+        {
+          "id": "finish-x8",
+          "multiplier": 8,
+          "x": 1840,
+          "y": 550,
+          "width": 60,
+          "height": 32
+        }
+      ],
+      "cuts": 3,
+      "totalCuts": 5,
+      "finishX": 1890,
+      "worldBottom": 700,
+      "landedPlatformId": null,
+      "nextTargetId": "step-3",
+      "lastEvent": "failed",
+      "eventAge": 0,
+      "multiplier": 0,
+      "finalScore": 0
+    }
+  },
+  "missFailure": {
+    "seed": 102,
+    "status": "failed",
+    "failReason": "hazard",
+    "elapsed": 2.2166666666666615,
+    "player": {
+      "x": 1161.2083333333326,
+      "y": 305.75347222222223,
+      "vx": 470,
+      "vy": -77.91666666666679,
+      "angle": 1.502808565497331,
+      "angularVelocity": -9.57356144113773
+    },
+    "sigils": [
+      {
+        "id": "rune-1",
+        "kind": "cuttable",
+        "x": 333,
+        "y": 438,
+        "radius": 27,
+        "cut": true,
+        "splitAge": 1.9833333333333287
+      },
+      {
+        "id": "rune-2",
+        "kind": "cuttable",
+        "x": 601,
+        "y": 438,
+        "radius": 27,
+        "cut": false,
+        "splitAge": 0
+      },
+      {
+        "id": "ban-1",
+        "kind": "hazard",
+        "x": 713,
+        "y": 625,
+        "width": 54,
+        "height": 92
+      },
+      {
+        "id": "rune-3",
+        "kind": "cuttable",
+        "x": 849,
+        "y": 411,
+        "radius": 27,
+        "cut": false,
+        "splitAge": 0
+      },
+      {
+        "id": "rune-4",
+        "kind": "cuttable",
+        "x": 1138,
+        "y": 444,
+        "radius": 27,
+        "cut": false,
+        "splitAge": 0
+      },
+      {
+        "id": "ban-2",
+        "kind": "hazard",
+        "x": 1210,
+        "y": 330,
+        "width": 64,
+        "height": 74
+      },
+      {
+        "id": "rune-5",
+        "kind": "cuttable",
+        "x": 1389,
+        "y": 412,
+        "radius": 27,
+        "cut": false,
+        "splitAge": 0
+      }
+    ],
+    "platforms": [
+      {
+        "id": "start",
+        "x": 180,
+        "y": 540,
+        "width": 300,
+        "height": 28
+      },
+      {
+        "id": "step-1",
+        "x": 555,
+        "y": 540,
+        "width": 290,
+        "height": 28
+      },
+      {
+        "id": "step-2",
+        "x": 850,
+        "y": 500,
+        "width": 300,
+        "height": 28
+      },
+      {
+        "id": "step-3",
+        "x": 1135,
+        "y": 550,
+        "width": 320,
+        "height": 28
+      },
+      {
+        "id": "step-4",
+        "x": 1375,
+        "y": 510,
+        "width": 310,
+        "height": 28
+      }
+    ],
+    "finishZones": [
+      {
+        "id": "finish-x2",
+        "multiplier": 2,
+        "x": 1625,
+        "y": 550,
+        "width": 170,
+        "height": 32
+      },
+      {
+        "id": "finish-x4",
+        "multiplier": 4,
+        "x": 1760,
+        "y": 550,
+        "width": 100,
+        "height": 32
+      },
+      {
+        "id": "finish-x8",
+        "multiplier": 8,
+        "x": 1840,
+        "y": 550,
+        "width": 60,
+        "height": 32
+      }
+    ],
+    "cuts": 1,
+    "totalCuts": 5,
+    "finishX": 1890,
+    "worldBottom": 700,
+    "landedPlatformId": null,
+    "nextTargetId": "step-1",
+    "lastEvent": "failed",
+    "eventAge": 0,
+    "multiplier": 0,
+    "finalScore": 0
+  },
+  "mobile": {
+    "launch": {
+      "seed": 41,
+      "status": "airborne",
+      "failReason": null,
+      "elapsed": 0.05833333333333333,
+      "player": {
+        "x": 228.6666666666666,
+        "y": 500.5138888888889,
+        "vx": 320,
+        "vy": -344.5833333333332,
+        "angle": 0.2975476467821955,
+        "angularVelocity": 9.236649370648532
+      },
+      "sigils": [
+        {
+          "id": "rune-1",
+          "kind": "cuttable",
+          "x": 333,
+          "y": 442,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "rune-2",
+          "kind": "cuttable",
+          "x": 603,
+          "y": 435,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "ban-1",
+          "kind": "hazard",
+          "x": 713,
+          "y": 625,
+          "width": 54,
+          "height": 92
+        },
+        {
+          "id": "rune-3",
+          "kind": "cuttable",
+          "x": 852,
+          "y": 406,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "rune-4",
+          "kind": "cuttable",
+          "x": 1136,
+          "y": 445,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "ban-2",
+          "kind": "hazard",
+          "x": 1210,
+          "y": 330,
+          "width": 64,
+          "height": 74
+        },
+        {
+          "id": "rune-5",
+          "kind": "cuttable",
+          "x": 1389,
+          "y": 415,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        }
+      ],
+      "platforms": [
+        {
+          "id": "start",
+          "x": 180,
+          "y": 540,
+          "width": 300,
+          "height": 28
+        },
+        {
+          "id": "step-1",
+          "x": 555,
+          "y": 540,
+          "width": 290,
+          "height": 28
+        },
+        {
+          "id": "step-2",
+          "x": 850,
+          "y": 500,
+          "width": 300,
+          "height": 28
+        },
+        {
+          "id": "step-3",
+          "x": 1135,
+          "y": 550,
+          "width": 320,
+          "height": 28
+        },
+        {
+          "id": "step-4",
+          "x": 1375,
+          "y": 510,
+          "width": 310,
+          "height": 28
+        }
+      ],
+      "finishZones": [
+        {
+          "id": "finish-x2",
+          "multiplier": 2,
+          "x": 1625,
+          "y": 550,
+          "width": 170,
+          "height": 32
+        },
+        {
+          "id": "finish-x4",
+          "multiplier": 4,
+          "x": 1760,
+          "y": 550,
+          "width": 100,
+          "height": 32
+        },
+        {
+          "id": "finish-x8",
+          "multiplier": 8,
+          "x": 1840,
+          "y": 550,
+          "width": 60,
+          "height": 32
+        }
+      ],
+      "cuts": 0,
+      "totalCuts": 5,
+      "finishX": 1890,
+      "worldBottom": 700,
+      "landedPlatformId": null,
+      "nextTargetId": "step-1",
+      "lastEvent": "launched",
+      "eventAge": 0.05833333333333333,
+      "multiplier": 0,
+      "finalScore": 0
+    },
+    "landing": {
+      "seed": 41,
+      "status": "landed",
+      "failReason": null,
+      "elapsed": 0.8416666666666661,
+      "player": {
+        "x": 476.80570038234407,
+        "y": 522,
+        "vx": 0,
+        "vy": 0,
+        "angle": 6.283185307179586,
+        "angularVelocity": 0
+      },
+      "sigils": [
+        {
+          "id": "rune-1",
+          "kind": "cuttable",
+          "x": 333,
+          "y": 442,
+          "radius": 27,
+          "cut": true,
+          "splitAge": 0.6083333333333336
+        },
+        {
+          "id": "rune-2",
+          "kind": "cuttable",
+          "x": 603,
+          "y": 435,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "ban-1",
+          "kind": "hazard",
+          "x": 713,
+          "y": 625,
+          "width": 54,
+          "height": 92
+        },
+        {
+          "id": "rune-3",
+          "kind": "cuttable",
+          "x": 852,
+          "y": 406,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "rune-4",
+          "kind": "cuttable",
+          "x": 1136,
+          "y": 445,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "ban-2",
+          "kind": "hazard",
+          "x": 1210,
+          "y": 330,
+          "width": 64,
+          "height": 74
+        },
+        {
+          "id": "rune-5",
+          "kind": "cuttable",
+          "x": 1389,
+          "y": 415,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        }
+      ],
+      "platforms": [
+        {
+          "id": "start",
+          "x": 180,
+          "y": 540,
+          "width": 300,
+          "height": 28
+        },
+        {
+          "id": "step-1",
+          "x": 555,
+          "y": 540,
+          "width": 290,
+          "height": 28
+        },
+        {
+          "id": "step-2",
+          "x": 850,
+          "y": 500,
+          "width": 300,
+          "height": 28
+        },
+        {
+          "id": "step-3",
+          "x": 1135,
+          "y": 550,
+          "width": 320,
+          "height": 28
+        },
+        {
+          "id": "step-4",
+          "x": 1375,
+          "y": 510,
+          "width": 310,
+          "height": 28
+        }
+      ],
+      "finishZones": [
+        {
+          "id": "finish-x2",
+          "multiplier": 2,
+          "x": 1625,
+          "y": 550,
+          "width": 170,
+          "height": 32
+        },
+        {
+          "id": "finish-x4",
+          "multiplier": 4,
+          "x": 1760,
+          "y": 550,
+          "width": 100,
+          "height": 32
+        },
+        {
+          "id": "finish-x8",
+          "multiplier": 8,
+          "x": 1840,
+          "y": 550,
+          "width": 60,
+          "height": 32
+        }
+      ],
+      "cuts": 1,
+      "totalCuts": 5,
+      "finishX": 1890,
+      "worldBottom": 700,
+      "landedPlatformId": "step-1",
+      "nextTargetId": "step-2",
+      "lastEvent": "landed",
+      "eventAge": 0,
+      "multiplier": 0,
+      "finalScore": 0
+    },
+    "viewport": {
+      "touchAction": "none",
+      "scrollX": 0,
+      "scrollY": 0,
+      "innerWidth": 390,
+      "clientWidth": 390,
+      "scrollWidth": 390,
+      "innerHeight": 844,
+      "scrollHeight": 844
+    },
+    "failure": {
+      "seed": 41,
+      "status": "failed",
+      "failReason": "hazard",
+      "elapsed": 2.483333333333327,
+      "player": {
+        "x": 1163.3890337156747,
+        "y": 324.89583333333337,
+        "vx": 470,
+        "vy": -157.08333333333346,
+        "angle": 5.662171868998703,
+        "angularVelocity": -9.965868860980038
+      },
+      "sigils": [
+        {
+          "id": "rune-1",
+          "kind": "cuttable",
+          "x": 333,
+          "y": 442,
+          "radius": 27,
+          "cut": true,
+          "splitAge": 2.2499999999999947
+        },
+        {
+          "id": "rune-2",
+          "kind": "cuttable",
+          "x": 603,
+          "y": 435,
+          "radius": 27,
+          "cut": true,
+          "splitAge": 1.3916666666666642
+        },
+        {
+          "id": "ban-1",
+          "kind": "hazard",
+          "x": 713,
+          "y": 625,
+          "width": 54,
+          "height": 92
+        },
+        {
+          "id": "rune-3",
+          "kind": "cuttable",
+          "x": 852,
+          "y": 406,
+          "radius": 27,
+          "cut": true,
+          "splitAge": 0.7499999999999998
+        },
+        {
+          "id": "rune-4",
+          "kind": "cuttable",
+          "x": 1136,
+          "y": 445,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "ban-2",
+          "kind": "hazard",
+          "x": 1210,
+          "y": 330,
+          "width": 64,
+          "height": 74
+        },
+        {
+          "id": "rune-5",
+          "kind": "cuttable",
+          "x": 1389,
+          "y": 415,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        }
+      ],
+      "platforms": [
+        {
+          "id": "start",
+          "x": 180,
+          "y": 540,
+          "width": 300,
+          "height": 28
+        },
+        {
+          "id": "step-1",
+          "x": 555,
+          "y": 540,
+          "width": 290,
+          "height": 28
+        },
+        {
+          "id": "step-2",
+          "x": 850,
+          "y": 500,
+          "width": 300,
+          "height": 28
+        },
+        {
+          "id": "step-3",
+          "x": 1135,
+          "y": 550,
+          "width": 320,
+          "height": 28
+        },
+        {
+          "id": "step-4",
+          "x": 1375,
+          "y": 510,
+          "width": 310,
+          "height": 28
+        }
+      ],
+      "finishZones": [
+        {
+          "id": "finish-x2",
+          "multiplier": 2,
+          "x": 1625,
+          "y": 550,
+          "width": 170,
+          "height": 32
+        },
+        {
+          "id": "finish-x4",
+          "multiplier": 4,
+          "x": 1760,
+          "y": 550,
+          "width": 100,
+          "height": 32
+        },
+        {
+          "id": "finish-x8",
+          "multiplier": 8,
+          "x": 1840,
+          "y": 550,
+          "width": 60,
+          "height": 32
+        }
+      ],
+      "cuts": 3,
+      "totalCuts": 5,
+      "finishX": 1890,
+      "worldBottom": 700,
+      "landedPlatformId": null,
+      "nextTargetId": "step-2",
+      "lastEvent": "failed",
+      "eventAge": 0,
+      "multiplier": 0,
+      "finalScore": 0
+    },
+    "restart": {
+      "seed": 42,
+      "status": "ready",
+      "failReason": null,
+      "elapsed": 0,
+      "player": {
+        "x": 210,
+        "y": 522,
+        "vx": 0,
+        "vy": 0,
+        "angle": -0.25,
+        "angularVelocity": 0
+      },
+      "sigils": [
+        {
+          "id": "rune-1",
+          "kind": "cuttable",
+          "x": 333,
+          "y": 435,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "rune-2",
+          "kind": "cuttable",
+          "x": 601,
+          "y": 436,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "ban-1",
+          "kind": "hazard",
+          "x": 713,
+          "y": 625,
+          "width": 54,
+          "height": 92
+        },
+        {
+          "id": "rune-3",
+          "kind": "cuttable",
+          "x": 849,
+          "y": 404,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "rune-4",
+          "kind": "cuttable",
+          "x": 1140,
+          "y": 444,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        },
+        {
+          "id": "ban-2",
+          "kind": "hazard",
+          "x": 1210,
+          "y": 330,
+          "width": 64,
+          "height": 74
+        },
+        {
+          "id": "rune-5",
+          "kind": "cuttable",
+          "x": 1393,
+          "y": 416,
+          "radius": 27,
+          "cut": false,
+          "splitAge": 0
+        }
+      ],
+      "platforms": [
+        {
+          "id": "start",
+          "x": 180,
+          "y": 540,
+          "width": 300,
+          "height": 28
+        },
+        {
+          "id": "step-1",
+          "x": 555,
+          "y": 540,
+          "width": 290,
+          "height": 28
+        },
+        {
+          "id": "step-2",
+          "x": 850,
+          "y": 500,
+          "width": 300,
+          "height": 28
+        },
+        {
+          "id": "step-3",
+          "x": 1135,
+          "y": 550,
+          "width": 320,
+          "height": 28
+        },
+        {
+          "id": "step-4",
+          "x": 1375,
+          "y": 510,
+          "width": 310,
+          "height": 28
+        }
+      ],
+      "finishZones": [
+        {
+          "id": "finish-x2",
+          "multiplier": 2,
+          "x": 1625,
+          "y": 550,
+          "width": 170,
+          "height": 32
+        },
+        {
+          "id": "finish-x4",
+          "multiplier": 4,
+          "x": 1760,
+          "y": 550,
+          "width": 100,
+          "height": 32
+        },
+        {
+          "id": "finish-x8",
+          "multiplier": 8,
+          "x": 1840,
+          "y": 550,
+          "width": 60,
+          "height": 32
+        }
+      ],
+      "cuts": 0,
+      "totalCuts": 5,
+      "finishX": 1890,
+      "worldBottom": 700,
+      "landedPlatformId": "start",
+      "nextTargetId": "step-1",
+      "lastEvent": "ready",
+      "eventAge": 0,
+      "multiplier": 0,
+      "finalScore": 0
+    }
+  },
+  "expression": {
+    "hasSliceMasterBrand": false,
+    "externalUrls": [
+      "https://phaser.io/`+i.LOG_VERSION),this.gameVersion=c(e,`version`,``),this.autoFocus=c(e,`autoFocus`,!0),this.stableSort=c(e,`stableSort`,-1),this.stableSort===-1&&(this.stableSort=+!!o.browser.es2019),o.features.stableSort=this.stableSort,this.domCreateContainer=c(e,`dom.createContainer`,!1),this.domPointerEvents=c(e,`dom.pointerEvents`,`none`),this.inputKeyboard=c(e,`input.keyboard`,!0),this.inputKeyboardEventTarget=c(e,`input.keyboard.target`,window),this.inputKeyboardCapture=c(e,`input.keyboard.capture`,[]),this.inputMouse=c(e,`input.mouse`,!0),this.inputMouseEventTarget=c(e,`input.mouse.target`,null),this.inputMousePreventDefaultDown=c(e,`input.mouse.preventDefaultDown`,!0),this.inputMousePreventDefaultUp=c(e,`input.mouse.preventDefaultUp`,!0),this.inputMousePreventDefaultMove=c(e,`input.mouse.preventDefaultMove`,!0),this.inputMousePreventDefaultWheel=c(e,`input.mouse.preventDefaultWheel`,!0),this.inputTouch=c(e,`input.touch`,o.input.touch),this.inputTouchEventTarget=c(e,`input.touch.target`,null),this.inputTouchCapture=c(e,`input.touch.capture`,!0),this.inputActivePointers=c(e,`input.activePointers`,1),this.inputSmoothFactor=c(e,`input.smoothFactor`,0),this.inputWindowEvents=c(e,`input.windowEvents`,!0),this.inputGamepad=c(e,`input.gamepad`,!1),this.inputGamepadEventTarget=c(e,`input.gamepad.target`,window),this.disableContextMenu=c(e,`disableContextMenu`,!1),this.audio=c(e,`audio`,{}),this.hideBanner=c(e,`banner`,null)===!1,this.hidePhaser=c(e,`banner.hidePhaser`,!1),this.bannerTextColor=c(e,`banner.text`,n),this.bannerBackgroundColor=c(e,`banner.background`,t),this.gameTitle===``&&this.hidePhaser&&(this.hideBanner=!0),this.fps=c(e,`fps`,null),this.disablePreFX=c(e,`disablePreFX`,!1),this.disablePostFX=c(e,`disablePostFX`,!1);var",
+      "https://phaser.io`);else{var",
+      "http://www.w3.org/2000/svg",
+      "http://www.w3.org/1999/xhtml"
+    ],
+    "hasOriginalTitle": true,
+    "hasMultipliers": false
+  },
+  "runtime": {
+    "errors": [],
+    "failedRequests": []
+  }
+}

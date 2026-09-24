@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "reproduction": {
+    "evidence": ["用户反馈：当前可切割物太少，可玩性不够"],
+    "steps": ["fresh browser 逐关进入 Level 01-12", "仅用自然鼠标/触屏完成默认切割循环", "记录每关可切割物数量、形态/运动差异、切割反馈与路线影响"]
+  },
+  "classification": "core_loop-cuttable-variety-and-pacing",
+  "scope": ["12 关 sigil/可切割物数量与形态", "切割物的高低/移动/组合节拍", "切割反馈与分数/路线决策", "自然桌面与 390x844 视口"],
+  "reproductionMatrix": [
+    {"objectType":"cuttable target","lifecycleState":"spawned→aimed→cut→scored","rendererPath":"game-core sigil state → three-world-renderer syncSigils","viewport":"desktop 1180x720"},
+    {"objectType":"cuttable target","lifecycleState":"spawned→aimed→cut→scored","rendererPath":"game-core sigil state → three-world-renderer syncSigils","viewport":"mobile 390x844"}
+  ],
+  "acceptance": [
+    "每关至少有可验证的切割节拍与递进目标链，不能只重复同一静态圆盘",
+    "切割物类型/形态/运动或组合至少形成可感知差异，并改变分数、路线或风险决策",
+    "每个新增可切割物在自然输入下可见、可触发、可归因，且有玩家可见反馈",
+    "12 关自然 QA 记录启动→切割循环→结算→重玩；任一未观测分支保持 BLOCKED",
+    "长度扩展与切割物扩展必须成对验证，不能用堆放无意义对象充数"
+  ],
+  "route": "formal-fixer",
+  "reason": "用户反馈直接命中核心循环可玩性，且与全关卡长度/失败压力问题耦合，必须走 QA→Fixer→QA retest。",
+  "status": "BLOCKED"
+}

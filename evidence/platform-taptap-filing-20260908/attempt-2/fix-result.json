@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "platform-fix-result",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "taptap-filing-package-20260908",
+  "attempt": 2,
+  "targetGame": "mobile-slice-adaptation-20260830（TapTap 名称：疯狂切割）",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "READY_FOR_INDEPENDENT_QA",
+  "why": "formal-fixer remains required because this is attempt 2/5 of a validated platform adapter/build/release issue. The narrow RED regression reproduced the Cocos 3.8.8 manifest precondition: package.json used creator as a string instead of the required object-shaped {version} record. The minimal metadata-only repair resolved TAP-COCOS-EXTENSION-SCAN-003 without changing gameplay or vendor source. All eight tests, lint and typecheck pass; the single Cocos build reached the unchanged official TapTap converter and produced a verified game.zip. Context intentionally omitted: unrelated gameplay QA, other games, shared factory files, non-TapTap platforms, advertising, IAP, cloud save, ranking, and unneeded screenshots.",
+  "filesChanged": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/package.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tests/platform-contract.test.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/build/wechatgame/",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/build/TapBuild/game/",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/build/TapBuild/game.zip"
+  ],
+  "tests": [
+    {
+      "command": "../../../../../../node_modules/.bin/tsx --test tests/*.test.ts (RED)",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-filing-20260908/attempt-2/red-tests.log records 7 passing and the new object-shaped Creator manifest regression failing on actual string 3.8.8."
+    },
+    {
+      "command": "../../../../../../node_modules/.bin/tsx --test tests/*.test.ts (GREEN)",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-filing-20260908/attempt-2/green-tests.log records 8/8 passing, including all seven attempt-1 behaviors."
+    },
+    {
+      "command": "../../../../../../node_modules/.bin/tsc --noEmit -p tsconfig.core.json",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-filing-20260908/attempt-2/typecheck.log"
+    },
+    {
+      "command": "../../../../../../node_modules/.bin/tsc --noEmit -p tsconfig.core.json --noUnusedLocals --noUnusedParameters",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-filing-20260908/attempt-2/lint.log"
+    },
+    {
+      "command": "diff -qr <audited archive extraction> extensions/taptap-minigame-tools",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-filing-20260908/attempt-2/plugin-integrity.log confirms byte-for-byte equality and audited archive SHA-256 6b8a9a3cc62b6c54cefab397097babb771d9d99f90442cddff06310a4c9ed73f."
+    },
+    {
+      "command": "CocosCreator 3.8.8 --project <platform-workspace> --build configPath=./cocos-build-config.json",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-filing-20260908/attempt-2/cocos-build-console.log records official success exit code 36, successful WeChat build, all 11 TapTap conversion steps, and game.zip creation."
+    },
+    {
+      "command": "unzip -tq build/TapBuild/game.zip and root/config/hash checks",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-filing-20260908/attempt-2/package-check.log and package-manifest.txt verify archive integrity, required root files, AppID 928932, name 疯狂切割, portrait orientation, version 1.0.0 and 1,206,619-byte size."
+    }
+  ],
+  "build": {
+    "attempted": true,
+    "passed": true,
+    "zipPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/build/TapBuild/game.zip",
+    "sha256": "b98066570390b384c3471d3cf7fff17d22e176fc23fdf542162cfe53d0b24e96",
+    "bytes": 1206619
+  },
+  "blockers": [
+    {
+      "id": "TAP-DEVICE-QA-002",
+      "detail": "TapTap backend scan and iOS/Android physical-device QR testing have not yet been performed; this package is ready for independent QA, not claimed upload- or release-approved."
+    }
+  ],
+  "evidenceGaps": [
+    "The 390x844 default touch journey still requires independent natural-input and player-visible device/perceptual QA.",
+    "TapTap backend scan and at least one iOS or Android physical-device run remain required before upload confidence.",
+    "The converter emitted a non-fatal Babel deoptimised-styling notice for a generated engine file larger than 500KB; conversion still reported 20 successful, 0 skipped and 0 failed files, and ZIP integrity passed."
+  ]
+}

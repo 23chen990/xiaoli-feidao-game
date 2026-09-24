@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "LevelPackBrowserQa",
+  "passed": true,
+  "desktop": {
+    "viewport": "1180x720",
+    "naturalMouse": true,
+    "levels": [
+      {
+        "attempts": [
+          {
+            "level": 1,
+            "status": "won",
+            "failReason": null,
+            "elapsed": 27.11666666666577,
+            "cuts": 7,
+            "score": 25,
+            "maxX": 2919.587904917161,
+            "taps": 31
+          }
+        ],
+        "winner": {
+          "level": 1,
+          "status": "won",
+          "failReason": null,
+          "elapsed": 27.11666666666577,
+          "cuts": 7,
+          "score": 25,
+          "maxX": 2919.587904917161,
+          "taps": 31
+        }
+      },
+      {
+        "attempts": [
+          {
+            "level": 4,
+            "status": "won",
+            "failReason": null,
+            "elapsed": 17.61666666666631,
+            "cuts": 0,
+            "score": 0,
+            "maxX": 3344.233333333423,
+            "taps": 17
+          }
+        ],
+        "winner": {
+          "level": 4,
+          "status": "won",
+          "failReason": null,
+          "elapsed": 17.61666666666631,
+          "cuts": 0,
+          "score": 0,
+          "maxX": 3344.233333333423,
+          "taps": 17
+        }
+      },
+      {
+        "attempts": [
+          {
+            "level": 7,
+            "status": "won",
+            "failReason": null,
+            "elapsed": 21.61666666666608,
+            "cuts": 5,
+            "score": 13,
+            "maxX": 3563.1906990075836,
+            "taps": 24
+          }
+        ],
+        "winner": {
+          "level": 7,
+          "status": "won",
+          "failReason": null,
+          "elapsed": 21.61666666666608,
+          "cuts": 5,
+          "score": 13,
+          "maxX": 3563.1906990075836,
+          "taps": 24
+        }
+      },
+      {
+        "attempts": [
+          {
+            "level": 10,
+            "status": "won",
+            "failReason": null,
+            "elapsed": 20.39166666666615,
+            "cuts": 2,
+            "score": 4,
+            "maxX": 3895.2368814613287,
+            "taps": 22
+          }
+        ],
+        "winner": {
+          "level": 10,
+          "status": "won",
+          "failReason": null,
+          "elapsed": 20.39166666666615,
+          "cuts": 2,
+          "score": 4,
+          "maxX": 3895.2368814613287,
+          "taps": 22
+        }
+      },
+      {
+        "attempts": [
+          {
+            "level": 12,
+            "status": "won",
+            "failReason": null,
+            "elapsed": 22.59999999999936,
+            "cuts": 5,
+            "score": 15,
+            "maxX": 4204.687305888535,
+            "taps": 26
+          }
+        ],
+        "winner": {
+          "level": 12,
+          "status": "won",
+          "failReason": null,
+          "elapsed": 22.59999999999936,
+          "cuts": 5,
+          "score": 15,
+          "maxX": 4204.687305888535,
+          "taps": 26
+        }
+      }
+    ]
+  },
+  "mobile": {
+    "viewport": "390x844",
+    "nativeTouch": true,
+    "levels": [
+      {
+        "attempts": [
+          {
+            "level": 1,
+            "status": "won",
+            "failReason": null,
+            "elapsed": 26.524999999999135,
+            "cuts": 5,
+            "score": 13,
+            "maxX": 2906.8589342696364,
+            "taps": 31
+          }
+        ],
+        "winner": {
+          "level": 1,
+          "status": "won",
+          "failReason": null,
+          "elapsed": 26.524999999999135,
+          "cuts": 5,
+          "score": 13,
+          "maxX": 2906.8589342696364,
+          "taps": 31
+        }
+      },
+      {
+        "attempts": [
+          {
+            "level": 6,
+            "status": "won",
+            "failReason": null,
+            "elapsed": 19.01666666666623,
+            "cuts": 3,
+            "score": 4,
+            "maxX": 3505.146192229616,
+            "taps": 20
+          }
+        ],
+        "winner": {
+          "level": 6,
+          "status": "won",
+          "failReason": null,
+          "elapsed": 19.01666666666623,
+          "cuts": 3,
+          "score": 4,
+          "maxX": 3505.146192229616,
+          "taps": 20
+        }
+      },
+      {
+        "attempts": [
+          {
+            "level": 12,
+            "status": "won",
+            "failReason": null,
+            "elapsed": 25.824999999999175,
+            "cuts": 6,
+            "score": 9.5,
+            "maxX": 4195.107939286036,
+            "taps": 28
+          }
+        ],
+        "winner": {
+          "level": 12,
+          "status": "won",
+          "failReason": null,
+          "elapsed": 25.824999999999175,
+          "cuts": 6,
+          "score": 9.5,
+          "maxX": 4195.107939286036,
+          "taps": 28
+        }
+      }
+    ],
+    "layout": {
+      "width": 390,
+      "height": 844,
+      "viewport": [
+        390,
+        844
+      ],
+      "theme": {
+        "id": "mechanics-demo-placeholder-v1",
+        "status": "placeholder",
+        "styleLock": false,
+        "assetCount": 5
+      },
+      "selectorButtons": 12
+    }
+  },
+  "persistence": {
+    "level1UnlockedLevel2": true,
+    "refreshRestoredHighestUnlocked": true
+  },
+  "failureReplay": {
+    "level": 4,
+    "stayedOnLevel": true,
+    "cleanReadyState": true
+  },
+  "errors": {
+    "console": [],
+    "pageerror": [],
+    "requestFailures": []
+  },
+  "claimBoundary": "web-lite browser candidate only; no WeChat, Douyin, or TapTap publishability claim"
+}

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixerEvidence",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "attempt": 1,
+  "issueSource": [
+    "artifacts/gameplay-triage-experience-chain-v1.json",
+    "artifacts/factory-research-audit-v1.json"
+  ],
+  "contextOmitted": [
+    "competitor expression, names, assets and tuning values",
+    "POC-only cut implementation not wired to the default runtime",
+    "unrelated shared factory code and platform packaging"
+  ],
+  "filesChanged": [
+    "workspace/prototype-a/src/game-core.ts",
+    "workspace/prototype-a/src/main.ts",
+    "workspace/prototype-a/tests/game-core.test.ts",
+    "workspace/prototype-a/tests/browser-smoke.ts"
+  ],
+  "changes": {
+    "earnings": "Added an event-linked earnings ledger and persistent totalEarnings; each cut emits the same amount used by the local +value feedback and HUD total.",
+    "finish": "Added contact/reward/celebration/terminal phases; reward score and progress completion occur only after reward reveal. Existing contiguous multiplier wall, x0.5 lane, and collision clamp remain intact.",
+    "failure": "Default canvas input no longer replays a terminal run implicitly; explicit replay button remains the recovery action. Bonus test control is hidden from the default path while __GAME_TEST__ remains available.",
+    "feedback": "Natural browser evidence now records visible cut halves, local earnings, persistent total, finish phases, and explicit failure replay."
+  },
+  "tests": {
+    "red": "New game-core tests initially failed for missing earnings and finishPhase fields.",
+    "green": [
+      "pnpm lint",
+      "pnpm typecheck",
+      "pnpm test",
+      "pnpm build"
+    ],
+    "result": "155 tests passed"
+  },
+  "naturalQa": {
+    "command": "pnpm qa:browser",
+    "status": "PASS",
+    "report": "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/report.json",
+    "browserResult": "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/browser-result.json",
+    "coverage": [
+      "desktop 1180x720 normal mouse startup -> cut -> finish reward reveal -> terminal",
+      "mobile 390x844 native touch startup -> cut -> finish reward reveal -> terminal",
+      "desktop and mobile natural failure -> visible reason -> explicit replay button -> ready",
+      "finishPhases observed as contact -> reward -> celebration -> terminal",
+      "totalEarnings observed greater than zero on winning natural runs",
+      "no console errors and no default Bonus test control visible"
+    ],
+    "evidence": [
+      "desktop-natural-failure-replay.png",
+      "mobile-natural-failure-replay.png",
+      "desktop-natural-zero-won.png",
+      "mobile-natural-zero-won.png",
+      "browser-result.json",
+      "report.json"
+    ]
+  },
+  "perceptualQa": {
+    "status": "PASS",
+    "basis": "The default natural journey visibly shows target halves, local +value, persistent earnings total, staged finish messaging, and explicit failure replay in both desktop and mobile evidence.",
+    "limitations": "Evidence is web-lite Chromium only; it is not native WeChat, Douyin, or TapTap certification."
+  },
+  "remainingEvidenceGaps": [
+    "Native WeChat/Douyin/TapTap package runtime not exercised.",
+    "Audio/haptics cannot be fully certified from headless browser evidence.",
+    "No camera mode state machine was added because this game has not been shown to require one; fixed oblique camera remains the chosen applicability decision."
+  ],
+  "status": "PASS_WITH_PLATFORM_SCOPE_GAP"
+}

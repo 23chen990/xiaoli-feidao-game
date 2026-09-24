@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fix-result",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 18,
+  "issueId": "L1-RUNWAY-RECOVERY-CAPTURE-STAGE",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "model": "gpt-6-luna",
+  "routeReason": "The validated issue affects Level 1's core recovery lifecycle and the natural replay, so it remains on the formal QA/Fixer/QA route. Attempt 18 did not pass focused GREEN; no completion claim is made.",
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory modules, renderer/presentation code, platform adapters, level data, persistence, and release configuration.",
+    "Full conversation, unbound media, unrelated repository history, and unavailable candidate source bytes from earlier attempts.",
+    "Natural/perceptual completion claims and fixture-only evidence as a substitute for browser QA."
+  ],
+  "attemptedFiles": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "changedFiles": [],
+  "checks": {
+    "artifactValidation": {
+      "status": "passed before RED",
+      "evidence": "REPAIR_CYCLE_ARTIFACTS_OK",
+      "taskSha256": "401edb6eaefebfb044f371c57bfb8c47d663360131a56bca62d1322439d3c36c",
+      "triageSha256": "9402e7fc92aa3863c00eff76beba7b6a31e194989b1fa8aae86d643503662d91"
+    },
+    "focusedRed": {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "status": "expected failures observed before production edits",
+      "tests": 20,
+      "passed": 15,
+      "failed": 5,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-18/red-targeted.log",
+      "sha256": "5733cec8f3f5ad2c713c1af1377a3fd7bad900aeeb2ca833efbfd232ab1e17e8",
+      "observed": {
+        "integratedEndpoints": [
+          { "frame": 216, "playerX": 305.2000000000005, "playerY": 514.1666666666666, "playerAngle": 4.986276450461116 },
+          { "frame": 302, "playerX": 332.7000000000005, "playerY": 469.7083333333333, "playerAngle": 6.656567983114545 }
+        ],
+        "contactPointX": [315.47808960723034, 368.0817538698364],
+        "relativeNormalVelocity": [175, 190],
+        "postCorrectionY": [509.16666666666663, 464.7083333333333],
+        "pendingCaptures": []
+      }
+    },
+    "focusedGreenCandidates": [
+      {
+        "candidate": 1,
+        "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+        "status": "failed; rolled back immediately",
+        "tests": 20,
+        "passed": 16,
+        "failed": 4,
+        "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-18/green-targeted.log",
+        "sha256": "2f8e2c1087e957531d0ec9eca4f32b14d3b7a4115d233cd9631b67c7def0900a",
+        "observed": {
+          "captures": [216],
+          "replayElapsedSeconds": 6.500000000000113,
+          "replayStatus": "failed",
+          "tapPositionCorrectionPixels": 28.12003042514552,
+          "tapAngleCorrectionRadians": 1.179011183013654,
+          "selector": "white-branch and lift-plank assertions passed",
+          "failureCauseFoundByFollowUp": "an unrelated cuttable-object contact cleared the pending runway pose before the scheduled tap"
+        }
+      },
+      {
+        "candidate": 2,
+        "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+        "status": "failed; rolled back",
+        "tests": 20,
+        "passed": 19,
+        "failed": 1,
+        "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-18/green-targeted-candidate2.log",
+        "sha256": "d59786833938f4e0938853740d67d856614557816a5bbc1ec0ec1fc02473d8d0",
+        "observed": {
+          "captures": [216, 302],
+          "capturePoses": [
+            { "playerX": 305.2000000000005, "playerY": 514.1666666666666, "playerAngle": 4.986276450461116, "anchorOffsetX": -944.7999999999995, "anchorOffsetY": 14.166666666666629 },
+            { "playerX": 332.7000000000005, "playerY": 469.7083333333333, "playerAngle": 6.656567983114545, "anchorOffsetX": -917.2999999999995, "anchorOffsetY": -30.291666666666686 }
+          ],
+          "storedReconstructedConsumedCoordinates": "matched at both taps",
+          "contactPointsX": [315.47808960723034, 368.0817538698364],
+          "postCorrectionY": [509.16666666666663, 464.7083333333333],
+          "selector": "white-branch and lift-plank assertions passed",
+          "tapPositionCorrectionsPixels": [73.61509159887643, 311.1601092086761],
+          "tapAngleCorrectionsRadians": [0.06021232855722136, 1.0699390045934694],
+          "replayElapsedSeconds": 14.616666666666477,
+          "replayStatus": "airborne",
+          "replayPlayerX": 2132.708548404947,
+          "remainingFailure": "tap corrections exceed <=10px / <=0.5rad acceptance"
+        }
+      }
+    ],
+    "fullTests": "not run: focused GREEN did not pass",
+    "lint": "not run: focused GREEN did not pass",
+    "typecheck": "not run: focused GREEN did not pass",
+    "build": "not run: focused GREEN did not pass; no build was attempted",
+    "naturalOrPerceptualQa": "not run; no completion claim"
+  },
+  "rollback": {
+    "performed": true,
+    "files": [
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+        "expectedBaselineSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+        "actualSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+        "matchesBaseline": true
+      },
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts",
+        "expectedBaselineSha256": "7627f8b8052adb8bd33b6b21f7c0cf935b1d23cba5b4570513ce47bd56984510",
+        "actualSha256": "7627f8b8052adb8bd33b6b21f7c0cf935b1d23cba5b4570513ce47bd56984510",
+        "matchesBaseline": true
+      }
+    ]
+  },
+  "status": "BLOCKED",
+  "qaStatus": null,
+  "remainingEvidenceGaps": [
+    "Candidate 2 reproduced both exact integrated endpoint captures, but the player drifted 73.62px and 311.16px from those poses before the scheduled taps; its second angular correction was 1.06994rad.",
+    "The pending-pose movement/release behavior needed to satisfy the tap correction bounds is not established from the current baseline; changing bounded-follow behavior was outside this attempt's accepted scope.",
+    "Candidate 1 exposed and Candidate 2 avoided clearing the pending pose on unrelated cuttable-object contact; final source has been rolled back, so no source fix remains applied.",
+    "Full tests, lint, typecheck, and build were not run because no focused GREEN candidate passed.",
+    "Independent natural-input and perceptual QA remain outstanding; deterministic focused evidence does not close the release blocker."
+  ]
+}

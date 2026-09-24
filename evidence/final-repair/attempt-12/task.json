@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fixer-task-packet",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 12,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "model": "gpt-6-luna",
+  "triagePath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-12/triage.json",
+  "triageSha256": "54a3dbd41cf1f6babaf5aac76087dd23a30da2e165675b87f544617878229766",
+  "issueId": "L1-RUNWAY-RECONSTRUCTION-LINT-ACCEPTANCE",
+  "ownedFiles": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts"
+  ],
+  "expectedSourceFileLimit": 1,
+  "expectedHypothesis": "Attempt 11 proved the pending runway pose reconstruction behavior in focused and full tests; the only acceptance defect was a non-reassigned pendingSupport let binding. Reimplement the validated behavior with const for that binding and no gameplay, geometry, lifetime, renderer, or platform changes.",
+  "testFirst": {
+    "redRequired": true,
+    "redCommand": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+    "greenCommand": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+    "regressionCommand": "pnpm test"
+  },
+  "acceptanceCriteria": [
+    "Run the retained 20-test contract against the baseline source and preserve the RED evidence before editing.",
+    "Modify only src/game-core.ts.",
+    "Reimplement pendingRunwayReleasePose with the exact Attempt 11 validated lifecycle.",
+    "Declare pendingSupport with const; no lint suppression or eslint configuration change.",
+    "Capture both early separating runway contacts at frames 216 and 302.",
+    "Use player-center x<350 and normalY<=-0.9 for the setter, never contact-point x.",
+    "Keep the player airborne and measurably moving while a pending pose is alive.",
+    "Consume each pending pose exactly once on the scheduled normal tap.",
+    "Resolve active support transform plus stored offsets before standard launch.",
+    "Preserve launch vx=150, vy=-300, angular speed, cooldown, and input-buffer behavior.",
+    "Preserve the 2.35-second expiry and all reset/load/terminal/inactive/non-runway clear paths.",
+    "Pass focused tests and pnpm test.",
+    "Pass pnpm lint and pnpm typecheck.",
+    "Run exactly one pnpm build and record the dist SHA-256.",
+    "Do not make or report a natural/perceptual QA claim in this Fixer task."
+  ],
+  "evidenceInputs": [
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-12/triage.json",
+      "sha256": "54a3dbd41cf1f6babaf5aac76087dd23a30da2e165675b87f544617878229766",
+      "role": "prior-cycle-state"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/fix-result.json",
+      "sha256": "0268e4d878dccf42b331184acd2759ddbe98c8c9280da5235e388d5ae75422d9",
+      "role": "prior-fix-receipt"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/green-targeted.log",
+      "sha256": "d0d64f4227589d2edd4aff8ca1939209b75e933d1df89ed0ee51725c61f48ab6",
+      "role": "prior-experiment-rejection"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/tests.log",
+      "sha256": "e6edb16db94c460ddd50905f93b5318b25224ec98b2261d5143d3211e829124f",
+      "role": "prior-experiment-rejection"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/lint.log",
+      "sha256": "d4c0c44b4d2745a607f400c29603fd5a3cd2cf8108d73cdaffaf756cdc287219",
+      "role": "prior-experiment-rejection"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "sha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+      "role": "current-source"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts",
+      "sha256": "7627f8b8052adb8bd33b6b21f7c0cf935b1d23cba5b4570513ce47bd56984510",
+      "role": "current-source"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-summary.json",
+      "sha256": "d0640af40c41c1e49c38a58687c8b6f2635332d3fe02e3e7429e05a74b6307cd",
+      "role": "natural-reproduction"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-10/fix-result.json",
+      "sha256": "63390311bbc2e2de7debe0fbf32a1e639b50d64485496c4f2804c98833897da3",
+      "role": "prior-fix-receipt"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html",
+      "sha256": "599b4c3cb8c6b345b7e18b3a4e06cae33663c0432b918d3115ee78df3bf64118",
+      "role": "current-build"
+    }
+  ],
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory modules, renderers, platform adapters, release configuration, and unrelated QA history.",
+    "The full conversation and all unbound screenshots or recordings.",
+    "Natural/perceptual completion claims; those belong to the independent QA stage.",
+    "The unavailable Attempt 11 failed-source bytes; only the validated behavior contract and lint evidence are carried forward."
+  ],
+  "requiredOutputs": {
+    "fixResultPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-12/fix-result.json",
+    "redLogPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-12/red-targeted.log",
+    "greenLogPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-12/green-targeted.log",
+    "testsLogPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-12/tests.log",
+    "lintLogPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-12/lint.log",
+    "typecheckLogPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-12/typecheck.log",
+    "buildLogPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-12/build.log"
+  },
+  "noRuntimeQaClaim": true,
+  "createdAt": "2026-09-23T10:55:00.000Z"
+}

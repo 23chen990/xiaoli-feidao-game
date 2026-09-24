@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-ledger-reconciliation",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "storedThreadId": "01a07540-7ee1-7c01-899b-0ea12bde1f19",
+  "threadTitle": "评估目标游戏截图复刻",
+  "sourceHistory": {
+    "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/history-extract.json",
+    "sha256": "6254c39cb043c7a25a48e7a5a2947bae2309845e9d5d716fb31c526ae6b31865"
+  },
+  "status": "BLOCKED_UNRECONCILED_HISTORY",
+  "recordedAttempts": [
+    {
+      "attempt": 1,
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/formal-fixer-level01-recording-attempt1.json",
+      "sha256": "5124ab76752f306105238c081e61b38a0483e88e83d22cca96ce6967890c1c43",
+      "status": "PASS_WITH_EVIDENCE_BOUNDARY"
+    },
+    {
+      "attempt": 2,
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/formal-fixer-level01-layout-attempt2.json",
+      "sha256": "fd8528a7c3e68ae1872cee78b234d580adec5ad10f3447a1f1c6ddd07c989cb0",
+      "status": "PASS_WITH_EVIDENCE_BOUNDARY"
+    },
+    {
+      "attempt": 3,
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/formal-fixer-level01-grounded-overlap-attempt3.json",
+      "sha256": "067a07f841b5716bc6283d9056d8681601b5efd8d7f268a30335110c2f941675",
+      "status": "PASS_WITH_EVIDENCE_BOUNDARY"
+    }
+  ],
+  "subsequentTurns": [
+    {
+      "turnId": "01a07746-5c0d-7411-a883-4d81316310e7",
+      "status": "interrupted",
+      "sourceChangeCount": 1,
+      "buildCommandCount": 1
+    },
+    {
+      "turnId": "01a0773e-1dc8-7c11-9a9e-920f4df2bb68",
+      "status": "completed",
+      "sourceChangeCount": 3,
+      "buildCommandCount": 8
+    },
+    {
+      "turnId": "01a07716-2630-7a31-a476-ec28ca287927",
+      "status": "failed",
+      "sourceChangeCount": 6,
+      "buildCommandCount": 16
+    },
+    {
+      "turnId": "01a07711-2ed9-7b50-8997-a055206203e3",
+      "status": "completed",
+      "sourceChangeCount": 4,
+      "buildCommandCount": 1
+    },
+    {
+      "turnId": "01a0770e-bbd0-7f53-b34b-bb8a9f40d03d",
+      "status": "interrupted",
+      "sourceChangeCount": 1,
+      "buildCommandCount": 0
+    }
+  ],
+  "exactConsumedAttempts": null,
+  "automaticAttemptsRemaining": null,
+  "newAutomaticRepairAuthorized": false,
+  "findings": [
+    "首关有编号1/2/3，但编号3在首次写入后又被同一任务覆盖。",
+    "编号3首次写入之后，有多轮源文件改动、构建、失败和中断；没有逐次账目与构建 hash 可将它们可靠归并到预算。",
+    "构建命令数不是自动修复次数，不能直接相加；同样不能以最后文件写着3就推定还剩2次。",
+    "已找回原工作任务，可保留上下文连续性；未新建任务、未重置计数、未触发修复。",
+    "其他关卡历史周期不合并到此首关计数；其存在也不能给此周期续额。"
+  ],
+  "nextAction": "先完成当前构建独立 QA 和具体修复包；再按 AGENTS.md 的人工复核流程明确授权一个有边界的新周期，或提供能闭合旧账目的证据。保持五次上限。"
+}

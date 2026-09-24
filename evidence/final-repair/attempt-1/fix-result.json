@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fix-result",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "issueId": "L1-RUNWAY-EARLY-SHARP-ANCHOR",
+  "status": "QA_PENDING",
+  "why": "The validated portrait reproduction is an early sharp-tip runway anchor before the authored stack. The narrow, normal-aware change routes only an approaching top-face sharp contact on level1-runway-main through the existing hard-surface recovery response. It retains the x>=350 suppression and leaves non-top sharp anchors, blunt contacts, opening white-landing behavior, and debug fixture bypass intact. The issue affects the core gameplay recovery loop, so it remains in the formal QA → Fixer → QA route.",
+  "triagePath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/triage.json",
+  "triageSha256": "0356b1cfa41a091fa21107462f62ea26ca0193063e4945719ef9b7bd8804b41e",
+  "taskPacketPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/task.json",
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory modules, platform adapters, release configuration, and renderer implementation.",
+    "Unverified competitor tuning and unbound external media.",
+    "Fixture traces as natural evidence; no natural or perceptual QA claim is delegated to Fixer.",
+    "Any source file outside the two owned paths unless a new triage record explicitly promotes scope."
+  ],
+  "filesChanged": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "implementation": {
+    "hypothesis": "An early top-face sharp contact on the Level 1 runway that is moving into the surface can preserve route energy by using the existing hard-surface response instead of anchoring.",
+    "guard": "support.id === level1-runway-main && normalY <= -0.9 && relativeNormalVelocity < 0",
+    "preservedBranches": [
+      "Existing x>=350 sharp-contact suppression.",
+      "Non-top runway sharp contact keeps authored anchor behavior.",
+      "Runway body/handle contacts continue through the existing hard-surface bounce response.",
+      "Opening white-landing anchor ordering remains unchanged.",
+      "Debug fixture runway bypass remains unchanged."
+    ]
+  },
+  "tests": [
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "exitCode": 1,
+      "phase": "RED",
+      "result": "The new early top-face assertion failed as intended: actual status anchored, expected airborne. The test output is preserved in the RED log.",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/red-targeted.log"
+    },
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "exitCode": 0,
+      "phase": "GREEN",
+      "result": "14 tests passed. The early top-face contact recovers, while the early side-normal contact remains anchored; later sharp suppression, blunt bounce, replay, and opening anchor assertions pass.",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/green-targeted.log"
+    },
+    {
+      "command": "pnpm test",
+      "exitCode": 0,
+      "phase": "REGRESSION",
+      "result": "196 passed, 0 failed.",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/tests.log"
+    },
+    {
+      "command": "pnpm lint",
+      "exitCode": 0,
+      "phase": "LINT",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/lint.log"
+    },
+    {
+      "command": "pnpm typecheck",
+      "exitCode": 0,
+      "phase": "TYPECHECK",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/typecheck.log"
+    }
+  ],
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0,
+    "count": 1,
+    "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/build.log",
+    "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html",
+    "sha256": "599b4c3cb8c6b345b7e18b3a4e06cae33663c0432b918d3115ee78df3bf64118",
+    "bytes": 2741961
+  },
+  "runtimeQa": {
+    "naturalJourneyClaimed": false,
+    "perceptualGateClaimed": false,
+    "requiredNext": [
+      "Independent Playwright QA must retest the exact early runway top-face tip branch with normal input in portrait 390x844 and desktop 1100x720.",
+      "QA must capture player-visible evidence and verify startup → core loop → terminal/settlement → replay.",
+      "QA must run the perceptual gate; any BLOCKED result keeps the issue open."
+    ]
+  },
+  "remainingEvidenceGaps": [
+    "No natural-input or player-visible post-fix reproduction was run by Fixer.",
+    "Portrait and desktop natural journey, terminal/settlement, replay, and perceptual QA remain for independent QA.",
+    "The task packet path was integrity-checked against the colocated triage file and its SHA-256 matches the packet and authorization."
+  ],
+  "completedAt": "2026-09-23T05:51:42.000Z"
+}

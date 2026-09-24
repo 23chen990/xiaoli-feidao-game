@@ -1,0 +1,5 @@
+command: pnpm exec tsx --test tests/finish-label-layout.test.ts tests/opening-renderer-regression.test.ts
+exitCode: 1
+observedFailure:
+  - ERR_MODULE_NOT_FOUND for src/finish-label-layout before the helper module existed
+  - white-bumper and white-branch floor base assertions failed because the foreground plinths still used a positive z-depth

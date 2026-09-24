@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "experience-complaint-triage",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "report": "用户认为小李飞刀在已经提供完整竞品参照并经历一轮修改后仍然很差，希望定位并优化工厂流程。",
+  "classification": [
+    "core-experience",
+    "reference-fidelity",
+    "visual-hierarchy",
+    "failure-attribution",
+    "mobile-readability",
+    "qa-false-positive",
+    "factory-routing"
+  ],
+  "scope": {
+    "route": "shared-factory",
+    "rationale": "本次先修复会让同类参考型项目误通过的共享工厂门禁；该游戏本身涉及核心循环、失败路径、多个呈现层且已有失败修复历史，后续游戏实现必须保留 formal-fixer 与独立 QA 复测流程。",
+    "generatedWorkspaceModified": false,
+    "contextIntentionallyOmitted": [
+      "其他游戏 run 的源码与 QA 记录",
+      "未核验或已标记为不相关的录屏",
+      "第三方代码、素材、名称、界面表达和数值"
+    ]
+  },
+  "reproduction": {
+    "status": "REPRODUCED",
+    "steps": [
+      "从 390x844 新浏览器上下文进入默认首关并观察 ready 状态。",
+      "只使用正常轻触推进，记录可切物、危险物、失败提示和重玩状态。",
+      "在 1100x720 新浏览器上下文重复默认路径并记录终点接近、终局和重玩状态。",
+      "将可见结果与本 run 已核验的 Slice Master 行为文档和前 30 关设计表逐项比较。"
+    ],
+    "observed": [
+      "390x844 和 1100x720 的初始画面中，刀被大面积白色结构遮挡，首个动作路径不清楚。",
+      "进行中始终显示重玩按钮和屏幕右侧倍率按钮；倍率没有与可到达的世界终点形成清晰因果关系。",
+      "390x844 自然路径在切割 4 个对象后以“碰到危险物”失败，1100x720 路径以“跌出路线”失败；两条记录都没有观察到 replay。",
+      "标记为 finish-approach 与 finish-settlement 的桌面截图 SHA-256 完全相同，且画面仍是失败覆盖层，不能证明成功终点或结算过渡。",
+      "首关已经混入危险物和密集对象，而已核验关卡文档把前 1–5 关定义为单目标、无危险、高成功率的教学段。"
+    ],
+    "evidence": [
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-fixed-portrait-4/frames/startup.png",
+        "sha256": "8990cfa56fd989f55f4a6768f52aad626edceb7843ef9591e2b6c63c31e6eaec",
+        "kind": "runtime-capture",
+        "provenance": "verified-run-artifact"
+      },
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-fixed-portrait-4/frames/end.png",
+        "sha256": "0032c3c57a9b29878e0cd89c2e948b139e837664aca288ba65d927a720923eeb",
+        "kind": "runtime-capture",
+        "provenance": "verified-run-artifact"
+      },
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-fixed-desktop-1/frames/finish-approach.png",
+        "sha256": "6e6a792b089a30b7846fea09dd88cf1fee38eb0f8194487e34c79c8ef8bd80a4",
+        "kind": "runtime-capture",
+        "provenance": "verified-run-artifact"
+      },
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-fixed-portrait-4/recording.json",
+        "sha256": "b0c4dfea4df7fc724b37af4e2ab06e6333387120d722be1d66e54bd4bcd19e43",
+        "kind": "qa-artifact",
+        "provenance": "verified-run-artifact"
+      },
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/incoming/Slice_Master_-_GDD_-70e48814f086.docx",
+        "sha256": "70e48814f086b5bab34275d9d34eab5f28a3c5ad61568c5b239400d82573a91a",
+        "kind": "reference",
+        "provenance": "verified-reference"
+      },
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/incoming/Slice_Master_-30-305d46a2b23a.docx",
+        "sha256": "305d46a2b23a8bcabd0006bb31e56a5986c653d3e65b0d733f6e7c9a293bbe31",
+        "kind": "reference",
+        "provenance": "verified-reference"
+      },
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/docs/triage/factory-quality-diagnosis-2026-09-07.json",
+        "sha256": "b63acad129e0634a83448542926d01865ce48df12d001ce9c50cb8f3ada7fe40",
+        "kind": "factory-source",
+        "provenance": "repository-source"
+      }
+    ]
+  },
+  "acceptanceCriteria": [
+    "参考资料必须先转成来源绑定的 input/state、spatial relation、failure/recovery、feedback sequence、terminal/replay 五维行为检查，缺一项即停在研究阶段。",
+    "Builder 首次只实现一个首关核心切片；在独立 QA 与真人试玩通过前，不生成关卡扩展、进度广度、广告或非必要 HUD。",
+    "首关在 390x844、430x932 和 1100x720 的 ready 状态都能清楚看到刀、首个目标和可预判路径，没有遮挡核心动作的结构。",
+    "首关遵守参考证据中的教学拓扑：单一基础目标、无致命危险、高成功率；危险物只在后续明确教学后出现。",
+    "一次成功反馈按接触、短暂停顿、切开、粒子/声音、世界内奖励、连击升级的可见顺序发生。",
+    "终点倍率作为可到达的世界内第二段玩法出现；进入终点前不显示脱离世界的屏幕边缘倍率按钮。",
+    "进行中不显示重玩控制；失败原因在对象附近可归因，终局后才显示结算与重玩入口。",
+    "三个目标视口均以新浏览器、正常输入证明 startup → 核心循环 → 成功/失败终局 → replay；每个对象和状态分支都有哈希绑定截图与轨迹。",
+    "独立感知审核必须逐像素检查可读性和因果反馈，确定性采集器不得自行给出感知通过结论。"
+  ],
+  "status": "OPEN",
+  "createdAt": "2026-09-08T05:36:00.000Z"
+}

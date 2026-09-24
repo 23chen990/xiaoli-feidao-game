@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fix-red-evidence",
+  "cycleId": "human-review-20260907-l1-followup",
+  "attempt": 3,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "issueId": "L1-RUNWAY-COLLISION-MISMATCH",
+  "testFile": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts",
+  "testName": "L1-RUNWAY visible support stays collidable through the normal forward replay",
+  "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+  "exitCode": 1,
+  "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-3/red-test.log",
+  "logSha256": "0ed7791ff4ba75542043586b1d7888b1307fc01bdd20d73c39f0fb6ce86d1156",
+  "assertion": "visible runway support must not be collidable=false",
+  "observed": "Current authored Level1 support has collidable=false and the new test fails before the replay branch; existing ten Level1 recovery tests pass.",
+  "sourceModifiedBeforeRed": false,
+  "sourceHashesBeforeFix": {
+    "src/game-levels.ts": "c6e7ef7fa8cc37709b037d18bf600e832807926a3158d7e3522a3b3fa14dd3e0",
+    "src/game-core.ts": "b21df1def6f5d7aadacf594a9a9f414c8457a584ce03d0cead7ad24275882474"
+  },
+  "testHashAfterTestAddition": "4e4c75285b18bf3f50176ef837313e79d10e58c71f44a491a4ab14d69cc3d633",
+  "createdAt": "2026-09-23T04:08:00.000Z"
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "role": "QAAgent",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED",
+  "reportPaths": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/qa/reproduction-matrix.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/qa/qa-natural-journey-report.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/qa/perceptual-qa-report.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/qa/qa-report.json"
+  ],
+  "blockers": [
+    "L1-STACK-390: 未自然覆盖同一 stack-a/b 的承托、切开、散开、下落、落地连续链。",
+    "L1-FINISH-390: 本轮手机在前段失败，未观察本构建终点结算/重玩。",
+    "L1-STACK-1100: 未自然覆盖同一 stack-a/b 的承托、切开、散开、下落、落地连续链。",
+    "L1-FINISH-1100: 本轮桌面也在前段失败，未观察本构建终点结算/重玩。"
+  ],
+  "sourceModified": false,
+  "summary": "第5次最终独立 QA：构建与源码保持不变；开场、承托、奖励、危险可见，但两视口均在前段失败，stack 生命周期和终点结算/重玩仍未覆盖。达到自动修复上限。"
+}

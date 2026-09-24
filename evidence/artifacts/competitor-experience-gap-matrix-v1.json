@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "ExperienceGapExactMatrix",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer-new-user-authorized-cycle",
+  "status": "OPEN_PENDING_NATURAL_PERCEPTUAL_REVIEW",
+  "sourceTriage": "artifacts/competitor-experience-gap-triage-v1.json",
+  "cells": [
+    {
+      "issueId": "REWARD-LIFECYCLE-001",
+      "objectType": "cuttable food/object and reward value",
+      "lifecycleStateBranch": ["intact", "sharp contact", "sever", "falling", "settled", "reward reveal", "replay"],
+      "rendererPresentationPath": ["src/game-core.ts", "src/main.ts", "src/three-presentation.ts", "src/three-world-renderer.ts", "src/style.css"],
+      "deviceViewport": ["desktop 1180x720", "mobile portrait 390x844"],
+      "naturalEvidenceRequired": "normal mouse/touch cut followed by player-visible reward animation from the world object",
+      "currentHypothesis": "recordCut updates totalEarnings and HUD/banner immediately; no world-anchored reward lifecycle event exists"
+    },
+    {
+      "issueId": "FINISH-WALL-SEMANTICS-004",
+      "objectType": "finish multiplier wall / reward brick",
+      "lifecycleStateBranch": ["approach", "contact", "lane selection", "reward", "celebration", "terminal", "replay"],
+      "rendererPresentationPath": ["src/game-core.ts", "src/game-levels.ts", "src/three-world-renderer.ts", "src/main.ts", "src/style.css"],
+      "deviceViewport": ["desktop 1180x720", "mobile portrait 390x844"],
+      "naturalEvidenceRequired": "normal route visibly contacts a wall brick, selected label stays bound/readable, terminal overlay does not cover the wall",
+      "currentHypothesis": "wall meshes share a z layer and fixed labels/centered terminal overlay detach or occlude lane identity"
+    },
+    {
+      "issueId": "CAMERA-BEATS-006",
+      "objectType": "camera framing",
+      "lifecycleStateBranch": ["approach", "cut commitment", "reward reveal", "finish", "failure/replay"],
+      "rendererPresentationPath": ["src/three-world-renderer.ts", "src/three-presentation.ts", "src/main.ts"],
+      "deviceViewport": ["desktop 1180x720", "mobile portrait 390x844"],
+      "naturalEvidenceRequired": "event-driven framing changes only at declared events and preserves next action readability",
+      "currentHypothesis": "camera currently smooth-follows one target without explicit event beat state"
+    },
+    {
+      "issueId": "GAME-FEEL-035",
+      "objectType": "knife/object contact and fragments",
+      "lifecycleStateBranch": ["anticipation", "contact resistance", "sever", "fragment flight", "settle", "reward"],
+      "rendererPresentationPath": ["src/game-core.ts", "src/three-presentation.ts", "src/three-cut-visuals.ts", "src/three-world-renderer.ts", "src/main.ts"],
+      "deviceViewport": "mobile portrait 390x844",
+      "naturalEvidenceRequired": "normal input shows a causally ordered visible chain rather than simultaneous HUD-only score feedback",
+      "currentHypothesis": "cut feedback, particles and global earnings banner are not synchronized to a post-settle reward event"
+    }
+  ],
+  "preFixQa": {
+    "browserReport": "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/report.json",
+    "browserStatus": "PASS",
+    "levelPackReport": "qa-level-pack-v1/qa-report.json",
+    "claimBoundary": "These reports prove current web-lite natural flow only; they do not close the experience gaps or platform packaging."
+  },
+  "blockingEvidenceGaps": [
+    "The supplied competitor recording remains unavailable and cannot be used for frame-by-frame claims.",
+    "No real WeChat, Douyin or TapTap device/package evidence exists."
+  ],
+  "acceptance": "All changed branches require fresh natural screenshots/traces and a perceptual report; fixture-only or old mismatched reports cannot close them."
+}

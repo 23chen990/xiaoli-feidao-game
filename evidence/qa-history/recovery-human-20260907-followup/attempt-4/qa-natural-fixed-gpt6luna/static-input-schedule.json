@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "derivedOfflineBeforeBrowserRun": true,
+  "derivation": "A deterministic offline simulation of seed 31 / Level 1 was used to derive timestamps from the policy: launch at 0 ms; thereafter tap on a downward crossing of global player y=320 when at least 240 ms has elapsed since the preceding tap. The live browser runner does not read __GAME_TEST__, state, coordinates, or gameplay events to decide any scheduled input.",
+  "runtimePolicy": "Each item is a normal touch/mouse tap at viewport center on the game surface. Absolute offsets are measured from fresh page navigation. No adaptive gameplay input is sent.",
+  "plannedOffsetsMs": [
+    0, 517, 767, 1017, 1267, 4350, 5350, 6333, 8400, 9417,
+    10417, 10667, 11783, 12667, 13800, 16100, 17100, 18083, 18850
+  ],
+  "viewports": [
+    { "label": "portrait-390x844", "width": 390, "height": 844, "input": "touch" },
+    { "label": "desktop-1100x720", "width": 1100, "height": 720, "input": "mouse" }
+  ]
+}

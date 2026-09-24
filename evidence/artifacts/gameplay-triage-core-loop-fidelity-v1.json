@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageCoreLoopFidelity",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "OPEN",
+  "classification": "core-loop-fidelity-gap",
+  "route": "formal-fixer-candidate",
+  "routeReason": "用户明确反馈玩法几乎没有变化；问题涉及输入决策、路线、障碍节拍、切割改变空间和终点风险，不是单文件视觉修补。",
+  "evidence": {
+    "userReport": "玩法上几乎没有变化，和原版差距太大。",
+    "currentRuntime": [
+      "默认核心仍是 fixed-step flip：点击主要改变垂直冲量、角速度和前进轨迹。",
+      "当前关卡虽然有 moving support、hard block、spike、cuttable 和 finish wall 数据，但默认体验没有让这些机制持续形成不同的玩家决策。",
+      "切割更多是得分/视觉变化，尚未稳定地改变路线、支撑可用性或下一次选择。",
+      "终点倍率墙是结算层，尚未成为前面路线选择的累积结果。"
+    ],
+    "researchBoundary": "只抽象研究中可确认的行为结构，不复制原版表达、素材、名称、UI或数值。"
+  },
+  "reproductionMatrix": [
+    {
+      "issueId": "CORE-DECISION-001",
+      "objectType": "knife / support / target",
+      "lifecycleStateBranch": ["ready", "airborne", "anchored", "recovery"],
+      "rendererPresentationPath": ["src/game-core.ts", "src/main.ts", "src/three-world-renderer.ts"],
+      "deviceViewport": ["desktop 1180x720", "mobile 390x844"],
+      "expected": "不同点击时机应改变接触部位、落点、切割机会和恢复风险，而非主要只改变同一条翻转轨迹。"
+    },
+    {
+      "issueId": "CORE-CUT-ROUTE-002",
+      "objectType": "cuttable block / support / fragment",
+      "lifecycleStateBranch": ["intact", "sharp-contact", "cut", "falling", "post-cut route"],
+      "rendererPresentationPath": ["src/game-core.ts", "src/three-presentation.ts", "src/three-world-renderer.ts"],
+      "deviceViewport": ["desktop", "mobile portrait"],
+      "expected": "切割应打开/关闭真实可达路线、移除支撑或制造新的落点选择；不是只加分和变成两半。"
+    },
+    {
+      "issueId": "CORE-PRESSURE-003",
+      "objectType": "moving support / hard object / spike / gap",
+      "lifecycleStateBranch": ["approach", "timing window", "contact", "failure/recovery"],
+      "rendererPresentationPath": ["src/game-core.ts", "src/game-levels.ts", "src/main.ts"],
+      "deviceViewport": ["desktop", "mobile portrait"],
+      "expected": "运动、硬碰撞、尖刺和间隙应形成可读的等待/提前/收手/补点决策链，并随关卡段落升级。"
+    },
+    {
+      "issueId": "CORE-FINISH-004",
+      "objectType": "finish multiplier wall",
+      "lifecycleStateBranch": ["route setup", "final approach", "lane commitment", "settlement"],
+      "rendererPresentationPath": ["src/game-core.ts", "src/game-levels.ts", "src/three-world-renderer.ts", "src/main.ts"],
+      "deviceViewport": ["desktop", "mobile portrait"],
+      "expected": "终点倍率是前面风险和路线选择的最后一次决策，不是无关的结算 UI。"
+    }
+  ],
+  "acceptanceCriteria": [
+    "至少三个原创机制段要求玩家改变点击时机或落点策略，连续使用同一节奏不能稳定通关。",
+    "至少两个切割事件会改变后续可达路线、支撑或危险关系，且自然输入可触发。",
+    "移动支撑、硬物、尖刺/间隙在同一关卡节奏中承担不同压力来源，并有自然失败与可归因恢复窗口。",
+    "终点墙选择由前段路线和最后一次真实输入准备出来；不同路线能自然到达不同奖励区。",
+    "桌面和 390x844 移动端都需要自然输入证据；fixture/debug 只能作为工程证据。",
+    "所有机制保持原创表达，不复制竞品素材、名称、布局和数值。"
+  ],
+  "nextStage": "RESEARCH_TO_RUNTIME_TRACE_AND_QA",
+  "claimBoundary": "现有 155 个测试和浏览器通过只证明当前简化核心稳定，不证明已经达到参考玩法的决策密度或动态路线深度。"
+}

@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "route": "formal-fixer",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "attempt": 1,
+  "buildSha256": "10cba7632922f9fdeaa2eb33f7a05aa09bd3dbb7ca45a2db24acac282c9fd9a6",
+  "classification": "unresolved-product-or-evidence",
+  "observations": [
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-independent-20260922/portrait-2/recording.json",
+      "sha256": "79985826d63d04385578f570deb675ffe94163045e3a51896f0d50e3f59a6ae1",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "activeMs": 10000,
+      "lastTapMs": 9607.281041999999,
+      "terminalMs": 11353.560916999999,
+      "playerX": 1112.2032679097263,
+      "score": 7,
+      "lastEvents": [
+        {
+          "id": 19,
+          "type": "flip",
+          "x": 1045.0955466666712,
+          "y": 424.92822322834854,
+          "value": 1
+        },
+        {
+          "id": 20,
+          "type": "bounce",
+          "x": 1207.9288799999965,
+          "y": 396.2198898950152,
+          "value": 1,
+          "targetId": "white-column",
+          "contactPart": "handle",
+          "normalX": -1,
+          "normalY": 0
+        },
+        {
+          "id": 21,
+          "type": "cut",
+          "x": 1070,
+          "y": 610,
+          "value": 3,
+          "targetId": "under-slat",
+          "contactPart": "edge"
+        },
+        {
+          "id": 22,
+          "type": "fall",
+          "x": 1112.2032679097263,
+          "y": 720.7094688996839,
+          "value": 0
+        }
+      ],
+      "replayStatus": "ready",
+      "unchanged": true,
+      "limitations": [
+        "Dense browser frame interval exceeded 100ms or missing; exact timing requires video frame inspection and remains unverified."
+      ]
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-independent-20260922/desktop-2/recording.json",
+      "sha256": "0019adf339419631b722a94485059b025fb5048865e4d89b6d94789786377120",
+      "viewport": {
+        "width": 1100,
+        "height": 720
+      },
+      "activeMs": 10000,
+      "lastTapMs": 9112.714750000001,
+      "terminalMs": 11393.533334,
+      "playerX": 927.1587710477041,
+      "score": 6,
+      "lastEvents": [
+        {
+          "id": 17,
+          "type": "flip",
+          "x": 842.9604861147599,
+          "y": 474.8266794551591,
+          "value": 1
+        },
+        {
+          "id": 18,
+          "type": "bounce",
+          "x": 876.7621436673724,
+          "y": 415.11834612182577,
+          "value": 1,
+          "targetId": "side-tag",
+          "contactPart": "handle",
+          "normalX": 0,
+          "normalY": -1
+        },
+        {
+          "id": 19,
+          "type": "cut",
+          "x": 930,
+          "y": 505,
+          "value": 2,
+          "targetId": "side-tag",
+          "contactPart": "edge"
+        },
+        {
+          "id": 20,
+          "type": "fall",
+          "x": 927.1587710477041,
+          "y": 721.8409793126623,
+          "value": 0
+        }
+      ],
+      "replayStatus": "ready",
+      "unchanged": true,
+      "limitations": [
+        "Dense browser frame interval exceeded 100ms or missing; exact timing requires video frame inspection and remains unverified."
+      ]
+    }
+  ],
+  "matrixPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/reproduction-matrix.json",
+  "hypothesis": "The 10-second input cutoff contaminates route-failure diagnosis. First obtain continuous normal-input coverage beyond this cutoff before changing Level1 tuning.",
+  "confirmedProductRootCause": false,
+  "sourceEditPlanned": false,
+  "buildPlanned": false,
+  "externalBlocker": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/dispatch-rejection-4.json",
+  "threadContinuity": "Stored Fixer id retained as provenance. Incoming source thread is coordinator, not evidence of Fixer execution.",
+  "attemptPolicy": "Latest user instructions remove fixed automatic attempt ceilings; historical files retain their original limits as history.",
+  "createdAt": "2026-09-22T04:30:52.313Z"
+}

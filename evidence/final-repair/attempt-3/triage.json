@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-triage",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 3,
+  "issueId": "L1-RUNWAY-RECOVERY-RELEASE-LIFECYCLE",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "classification": "natural-level1-runway-recovery-blocker",
+  "status": "VALIDATED_REPRODUCTION",
+  "priorAttempt": {
+    "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-2/fix-result.json",
+    "sha256": "7bc19e4b8189036cf43da960fc8a925fb13135f12333093e08dc2e8938d5fe3e",
+    "status": "BLOCKED",
+    "candidateRejected": true
+  },
+  "reproduction": {
+    "objectType": "level1-runway-main sharp tip/normalY=-1",
+    "naturalViewport": "390x844",
+    "naturalContactPlayerX": [305.2000000000005, 332.7000000000005],
+    "naturalContactX": [315.47808960723034, 368.0817538698364],
+    "naturalContactVy": [-200, -200],
+    "baselineReplayAnchorTimes": [1.583333333333333, 1.766666666666666],
+    "baselineReplayReleaseTapTimes": [2.327048167, 4.602164],
+    "candidateReplayFailure": {
+      "elapsedSeconds": 6.933333333333468,
+      "playerX": 809.6315869887716,
+      "failReason": "跌出路线"
+    },
+    "evidence": [
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/recording.json",
+        "sha256": "5e4d6457955e0596707116e3c9d325880506f41c24aa5bfd37928ae5cb242717"
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/recording.json",
+        "sha256": "18734f878ef1f4c048f4071326e31b2dad5ee022fa14a8baf6004bd5c20f7ddd"
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-2/green-targeted.log",
+        "sha256": "59f7c447c882e0b31af6c01d191ce68a64beb7a041cabf7de820e4e7060d834f"
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-2/red-targeted.log",
+        "sha256": "798a45bdd7cc093b00ec6da79232ebe54190dec41a3d0e084c2fe97ad01463d1"
+      }
+    ]
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "Level1 runway tip contact",
+      "lifecycleStateBranch": "airborne separating contact -> candidate recovery -> next scheduled flip",
+      "rendererPresentationPath": "SliceSimulation contact branch -> player state/event -> ThreeWorldRenderer visible route",
+      "viewport": "390x844",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/recording.json"],
+      "observation": "Natural contact remains an anchor under attempt-1; its next visible tap is expected to act as an anchored release.",
+      "inference": "A successful recovery must preserve the release meaning of the next normal tap even while avoiding a persistent anchor.",
+      "unknowns": ["Exact latch expiry that avoids stale input reinterpretation."]
+    },
+    {
+      "objectType": "Level1 runway tip contact",
+      "lifecycleStateBranch": "seed-31 fixed replay anchor -> scheduled release tap -> next runway anchor -> scheduled release tap",
+      "rendererPresentationPath": "SliceSimulation act/flipCooldown/inputBuffer/recoveryAge -> fixed replay assertion",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-2/green-targeted.log"],
+      "observation": "Broad recovery candidate changes the scheduled release taps into airborne flips and fails at 6.933s/x≈809.63.",
+      "inference": "Tap lifecycle semantics, not only contact geometry, are causally required by the replay.",
+      "unknowns": ["Whether a one-shot pending release intent can restore route timing without reintroducing the anchor."]
+    },
+    {
+      "objectType": "Opening white-landing support",
+      "lifecycleStateBranch": "fresh start -> teaching anchor -> normal release tap",
+      "rendererPresentationPath": "SliceSimulation anchored act('flip') -> launch event -> ThreeWorldRenderer teaching feedback",
+      "viewport": "1100x720",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/recording.json"],
+      "observation": "The opening support has an authored anchor/release lifecycle that must not be changed by a runway-only latch.",
+      "inference": "Pending release intent must only be set by the exact early runway branch and clear on other support/terminal paths.",
+      "unknowns": ["Whether a delayed latch can overlap the white-landing lifecycle after an unrelated collision."]
+    },
+    {
+      "objectType": "Level1 stack and finish",
+      "lifecycleStateBranch": "runway recovery -> stack cuts/falls -> terminal settlement -> replay",
+      "rendererPresentationPath": "SliceSimulation state/events -> ThreePresentationModel and terminal HUD",
+      "viewport": "1100x720",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/recording.json"],
+      "observation": "Desktop reaches a partial stack branch after runway anchors but fails before successful settlement; portrait does not reach the stack.",
+      "inference": "A lifecycle fix must preserve forward route energy through both scheduled releases before QA can close the natural journey.",
+      "unknowns": ["Whether the latch route reaches both stack branches and visible settlement under normal input."]
+    }
+  ],
+  "rootCauseHypothesis": {
+    "evidence": "Attempt-2 broad recovery removes the anchor but changes the next tap from anchored-release launch to airborne flip; fixed replay fails at x≈809.63. Baseline replay has runway anchors at about 1.583/1.767s and scheduled release taps at 2.327/4.602s.",
+    "changeHypothesis": "On the exact early separating Level1 runway top-tip recovery, remain visibly airborne after separation but set a one-shot pendingRunwayReleaseIntent. The next normal act('flip') consumes it with the existing anchored-release launch semantics (support momentum, launch velocity, cooldown reset, input buffer clear, launch event), then clears the latch. Expire/clear it on reset, loadLevel, terminal, non-runway contact, and a short bounded timeout.",
+    "latchName": "pendingRunwayReleaseIntent",
+    "latchSemantics": "next normal flip tap consumes the pending early runway recovery using anchored-release launch semantics",
+    "expirySeconds": 1.2,
+    "clearOn": ["reset", "loadLevel", "terminal", "non-runway-contact", "expiry"],
+    "rejectedAlternatives": [
+      "Attempt-1 approach-only response: exact natural upward/separating contact still anchors.",
+      "Attempt-2 all-top-normal recovery without tap lifecycle: focused regression passes but fixed replay fails at 6.933s/x≈809.63.",
+      "Threshold-only or global suppression: previously broke replay or changes unrelated support behavior."
+    ]
+  },
+  "scope": {
+    "includedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+    ],
+    "excludedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-levels.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/main.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/style.css",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/src/core",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/src/qa"
+    ],
+    "route": "formal-fixer",
+    "expectedSourceFileLimit": 2
+  },
+  "acceptanceCriteria": [
+    "A RED test proves the exact upward/separating natural-pose contact anchors under attempt-1/2 behavior.",
+    "A GREEN lifecycle test proves the next normal flip tap consumes pendingRunwayReleaseIntent as anchored-release semantics: launch event, cooldown reset, input buffer cleared, forward launch velocity, no persistent anchor.",
+    "A second tap after latch expiry behaves as an ordinary airborne flip and does not receive stale release semantics.",
+    "Non-runway support anchors and their release taps remain unchanged.",
+    "The approach/downward top-normal branch, non-top sharp anchor, later x>=350 suppression, and blunt body/handle bounce remain intact.",
+    "The seed-31 fixed timestamp replay reaches at least 11.9 seconds and x>2000 without failure.",
+    "Only game-core.ts and level1-recovery.test.ts change; no renderer, level, debug, platform, or shared factory files.",
+    "pnpm test, pnpm lint, pnpm typecheck pass and exactly one pnpm build succeeds with a recorded dist SHA-256.",
+    "Independent fresh natural QA must retest both viewports, exact runway branch, stack/settlement, visible terminal and replay; no Fixer runtime claim."
+  ],
+  "evidenceClassification": {
+    "observed": [
+      "Natural and baseline replay top-normal contacts have normalY=-1 and pre-contact vy<0.",
+      "The broad candidate removes anchoring but fails the fixed replay at x≈809.63.",
+      "Baseline release taps occur after the two early runway anchors."
+    ],
+    "inferred": [
+      "The next normal tap must retain anchored-release semantics even when visual anchor is suppressed.",
+      "A one-shot bounded latch is narrower than globally changing airborne flip behavior."
+    ],
+    "unknown": [
+      "Whether support momentum and launch event need a stored support snapshot after the contact has separated.",
+      "Whether a 1.2 second expiry covers normal input without stale reinterpretation.",
+      "Whether the lifecycle fix makes natural stack and terminal journeys pass perceptually."
+    ]
+  },
+  "createdAt": "2026-09-23T06:36:00.000Z"
+}

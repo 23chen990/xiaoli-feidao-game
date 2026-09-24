@@ -1,0 +1,356 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "SpikeImpactNaturalQa",
+  "targetGame": "小李飞刀",
+  "level": 4,
+  "inputPolicy": "fresh browser; visible level picker; mouse/touch only; no state injection or debug scenario",
+  "viewports": [
+    "1180x720",
+    "390x844"
+  ],
+  "runs": [
+    {
+      "viewport": "desktop",
+      "level": 4,
+      "attempt": 1,
+      "policy": "safe",
+      "status": "won",
+      "failReason": null,
+      "elapsed": 18.249999999999606,
+      "maxX": 3450.7333333333977,
+      "taps": 19,
+      "spikes": [
+        {
+          "id": "l4-gap-risk",
+          "x": 1300,
+          "y": 582.9836930444047,
+          "width": 200,
+          "height": 80,
+          "pathY": 435,
+          "pathDy": 147.98369304440473,
+          "minDyInWindow": 135.853965101543,
+          "windowObserved": true,
+          "contacted": false,
+          "failureAtSpike": false,
+          "passedWindowWithoutContact": true
+        }
+      ],
+      "pressureScreenshot": "../../qa-spike-impact-v1/desktop-level-04-attempt-1-spike-window.png",
+      "screenshot": "../../qa-spike-impact-v1/desktop-level-04-attempt-1-won.png",
+      "dessertIntactScreenshot": "../../qa-spike-impact-v1/desktop-level-04-safe-dessert-intact.png",
+      "dessertCutScreenshot": "../../qa-spike-impact-v1/desktop-level-04-safe-dessert-cut.png"
+    },
+    {
+      "viewport": "desktop",
+      "level": 4,
+      "attempt": 1,
+      "policy": "risk",
+      "status": "failed",
+      "failReason": "spike",
+      "elapsed": 7.275000000000151,
+      "maxX": 1261.45000000001,
+      "taps": 8,
+      "spikes": [
+        {
+          "id": "l4-gap-risk",
+          "x": 1300,
+          "y": 582.8188620197236,
+          "width": 200,
+          "height": 80,
+          "pathY": 435,
+          "pathDy": 147.8188620197236,
+          "minDyInWindow": 56.427055213119445,
+          "windowObserved": true,
+          "contacted": false,
+          "failureAtSpike": true,
+          "passedWindowWithoutContact": false
+        }
+      ],
+      "pressureScreenshot": "../../qa-spike-impact-v1/desktop-level-04-attempt-1-spike-window.png",
+      "screenshot": "../../qa-spike-impact-v1/desktop-level-04-attempt-1-failed.png",
+      "dessertIntactScreenshot": "../../qa-spike-impact-v1/desktop-level-04-risk-dessert-intact.png",
+      "dessertCutScreenshot": null
+    },
+    {
+      "viewport": "desktop",
+      "level": 4,
+      "attempt": 2,
+      "policy": "risk",
+      "status": "failed",
+      "failReason": "spike",
+      "elapsed": 7.300000000000153,
+      "maxX": 1265.10000000001,
+      "taps": 8,
+      "spikes": [
+        {
+          "id": "l4-gap-risk",
+          "x": 1300,
+          "y": 582.9685323534276,
+          "width": 200,
+          "height": 80,
+          "pathY": 435,
+          "pathDy": 147.96853235342758,
+          "minDyInWindow": 54.46872187978613,
+          "windowObserved": true,
+          "contacted": false,
+          "failureAtSpike": true,
+          "passedWindowWithoutContact": false
+        }
+      ],
+      "pressureScreenshot": "../../qa-spike-impact-v1/desktop-level-04-attempt-2-spike-window.png",
+      "screenshot": "../../qa-spike-impact-v1/desktop-level-04-attempt-2-failed.png",
+      "dessertIntactScreenshot": "../../qa-spike-impact-v1/desktop-level-04-risk-dessert-intact.png",
+      "dessertCutScreenshot": null
+    },
+    {
+      "viewport": "desktop",
+      "level": 4,
+      "attempt": 3,
+      "policy": "risk",
+      "status": "failed",
+      "failReason": "spike",
+      "elapsed": 7.283333333333485,
+      "maxX": 1262.10000000001,
+      "taps": 8,
+      "spikes": [
+        {
+          "id": "l4-gap-risk",
+          "x": 1300,
+          "y": 582.9685323534276,
+          "width": 200,
+          "height": 80,
+          "pathY": 435,
+          "pathDy": 147.96853235342758,
+          "minDyInWindow": 53.8741720261786,
+          "windowObserved": true,
+          "contacted": false,
+          "failureAtSpike": true,
+          "passedWindowWithoutContact": false
+        }
+      ],
+      "pressureScreenshot": "../../qa-spike-impact-v1/desktop-level-04-attempt-3-spike-window.png",
+      "screenshot": "../../qa-spike-impact-v1/desktop-level-04-attempt-3-failed.png",
+      "dessertIntactScreenshot": "../../qa-spike-impact-v1/desktop-level-04-risk-dessert-intact.png",
+      "dessertCutScreenshot": null
+    },
+    {
+      "viewport": "desktop",
+      "level": 4,
+      "attempt": 4,
+      "policy": "risk",
+      "status": "failed",
+      "failReason": "spike",
+      "elapsed": 7.300000000000153,
+      "maxX": 1265.40000000001,
+      "taps": 8,
+      "spikes": [
+        {
+          "id": "l4-gap-risk",
+          "x": 1300,
+          "y": 582.9234169894771,
+          "width": 200,
+          "height": 80,
+          "pathY": 435,
+          "pathDy": 147.92341698947712,
+          "minDyInWindow": 55.32197644399497,
+          "windowObserved": true,
+          "contacted": false,
+          "failureAtSpike": true,
+          "passedWindowWithoutContact": false
+        }
+      ],
+      "pressureScreenshot": "../../qa-spike-impact-v1/desktop-level-04-attempt-4-spike-window.png",
+      "screenshot": "../../qa-spike-impact-v1/desktop-level-04-attempt-4-failed.png",
+      "dessertIntactScreenshot": "../../qa-spike-impact-v1/desktop-level-04-risk-dessert-intact.png",
+      "dessertCutScreenshot": null
+    },
+    {
+      "viewport": "mobile",
+      "level": 4,
+      "attempt": 1,
+      "policy": "safe",
+      "status": "won",
+      "failReason": null,
+      "elapsed": 17.991666666666287,
+      "maxX": 3451.516666666755,
+      "taps": 17,
+      "spikes": [
+        {
+          "id": "l4-gap-risk",
+          "x": 1300,
+          "y": 582.8586198563672,
+          "width": 200,
+          "height": 80,
+          "pathY": 435,
+          "pathDy": 147.85861985636723,
+          "minDyInWindow": 165.64113055597142,
+          "windowObserved": true,
+          "contacted": false,
+          "failureAtSpike": false,
+          "passedWindowWithoutContact": true
+        }
+      ],
+      "pressureScreenshot": "../../qa-spike-impact-v1/mobile-level-04-attempt-1-spike-window.png",
+      "screenshot": "../../qa-spike-impact-v1/mobile-level-04-attempt-1-won.png",
+      "dessertIntactScreenshot": "../../qa-spike-impact-v1/mobile-level-04-safe-dessert-intact.png",
+      "dessertCutScreenshot": "../../qa-spike-impact-v1/mobile-level-04-safe-dessert-cut.png"
+    },
+    {
+      "viewport": "mobile",
+      "level": 4,
+      "attempt": 1,
+      "policy": "risk",
+      "status": "failed",
+      "failReason": "spike",
+      "elapsed": 7.758333333333509,
+      "maxX": 1346.3499999999992,
+      "taps": 6,
+      "spikes": [
+        {
+          "id": "l4-gap-risk",
+          "x": 1300,
+          "y": 582.8586198563672,
+          "width": 200,
+          "height": 80,
+          "pathY": 435,
+          "pathDy": 147.85861985636723,
+          "minDyInWindow": 56.44729413144512,
+          "windowObserved": true,
+          "contacted": false,
+          "failureAtSpike": true,
+          "passedWindowWithoutContact": false
+        }
+      ],
+      "pressureScreenshot": "../../qa-spike-impact-v1/mobile-level-04-attempt-1-spike-window.png",
+      "screenshot": "../../qa-spike-impact-v1/mobile-level-04-attempt-1-failed.png",
+      "dessertIntactScreenshot": "../../qa-spike-impact-v1/mobile-level-04-risk-dessert-intact.png",
+      "dessertCutScreenshot": null
+    },
+    {
+      "viewport": "mobile",
+      "level": 4,
+      "attempt": 2,
+      "policy": "risk",
+      "status": "failed",
+      "failReason": "spike",
+      "elapsed": 7.066666666666808,
+      "maxX": 1237.400000000013,
+      "taps": 6,
+      "spikes": [
+        {
+          "id": "l4-gap-risk",
+          "x": 1300,
+          "y": 582.7742121080646,
+          "width": 200,
+          "height": 80,
+          "pathY": 435,
+          "pathDy": 147.7742121080646,
+          "minDyInWindow": 56.64770409156387,
+          "windowObserved": true,
+          "contacted": false,
+          "failureAtSpike": true,
+          "passedWindowWithoutContact": false
+        }
+      ],
+      "pressureScreenshot": "../../qa-spike-impact-v1/mobile-level-04-attempt-2-spike-window.png",
+      "screenshot": "../../qa-spike-impact-v1/mobile-level-04-attempt-2-failed.png",
+      "dessertIntactScreenshot": "../../qa-spike-impact-v1/mobile-level-04-risk-dessert-intact.png",
+      "dessertCutScreenshot": null
+    },
+    {
+      "viewport": "mobile",
+      "level": 4,
+      "attempt": 3,
+      "policy": "risk",
+      "status": "failed",
+      "failReason": "spike",
+      "elapsed": 7.475000000000161,
+      "maxX": 1288.4500000000107,
+      "taps": 6,
+      "spikes": [
+        {
+          "id": "l4-gap-risk",
+          "x": 1300,
+          "y": 582.7742121080646,
+          "width": 200,
+          "height": 80,
+          "pathY": 435,
+          "pathDy": 147.7742121080646,
+          "minDyInWindow": 54.79460197719999,
+          "windowObserved": true,
+          "contacted": false,
+          "failureAtSpike": true,
+          "passedWindowWithoutContact": false
+        }
+      ],
+      "pressureScreenshot": "../../qa-spike-impact-v1/mobile-level-04-attempt-3-spike-window.png",
+      "screenshot": "../../qa-spike-impact-v1/mobile-level-04-attempt-3-failed.png",
+      "dessertIntactScreenshot": "../../qa-spike-impact-v1/mobile-level-04-risk-dessert-intact.png",
+      "dessertCutScreenshot": null
+    },
+    {
+      "viewport": "mobile",
+      "level": 4,
+      "attempt": 4,
+      "policy": "risk",
+      "status": "failed",
+      "failReason": "spike",
+      "elapsed": 7.6666666666668375,
+      "maxX": 1319.70000000001,
+      "taps": 9,
+      "spikes": [
+        {
+          "id": "l4-gap-risk",
+          "x": 1300,
+          "y": 582.8586198563672,
+          "width": 200,
+          "height": 80,
+          "pathY": 435,
+          "pathDy": 147.85861985636723,
+          "minDyInWindow": 54.24033733266401,
+          "windowObserved": true,
+          "contacted": false,
+          "failureAtSpike": true,
+          "passedWindowWithoutContact": false
+        }
+      ],
+      "pressureScreenshot": "../../qa-spike-impact-v1/mobile-level-04-attempt-4-spike-window.png",
+      "screenshot": "../../qa-spike-impact-v1/mobile-level-04-attempt-4-failed.png",
+      "dessertIntactScreenshot": "../../qa-spike-impact-v1/mobile-level-04-risk-dessert-intact.png",
+      "dessertCutScreenshot": null
+    }
+  ],
+  "structural": {
+    "spikes": [
+      {
+        "id": "l4-gap-risk",
+        "x": 1300,
+        "y": 565,
+        "reachableWindow": [
+          1160,
+          1440
+        ],
+        "completionPathY": 435,
+        "verticalDistanceFromCompletionPath": 130
+      }
+    ]
+  },
+  "errors": [],
+  "passed": true,
+  "policyCheck": {
+    "safePolicyWon": true,
+    "riskPolicyContacted": true,
+    "safePolicyWonByViewport": {
+      "desktop": true,
+      "mobile": true
+    },
+    "riskPolicyContactedByViewport": {
+      "desktop": true,
+      "mobile": true
+    },
+    "safePolicy": "target height 430 avoids the low spike and must reach won on desktop and mobile",
+    "riskPolicy": "target height 580 deliberately enters the low spike window and must fail with spike on desktop and mobile"
+  },
+  "verdict": "PASS_SAFE_AVOID_AND_RISK_CONTACT",
+  "claimBoundary": "web-lite evidence only; this is targeted supplemental QA and does not prove platform packaging"
+}

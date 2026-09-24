@@ -1,0 +1,9 @@
+command: pnpm exec tsx --test tests/performance-contract.test.ts
+exitCode: 1
+tests: 2
+passed: 1
+failed: 1
+failure: performance sampling contract separates device FPS from deterministic render work
+actual: latestUnboundReport was undefined
+expected: PHJ110H1 report recorded with packageSha256/rawRenderedFrameCount/rawElapsedTimeMs null and optimizationAuthorized false
+durationMs: 143.246792

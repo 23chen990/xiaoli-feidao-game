@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FactoryProcessRetro",
+  "runId": "mobile-slice-adaptation-20260830",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "RETRO_COMPLETE",
+  "sourceBoundary": {
+    "recording": "/Users/kker/Library/Containers/5ZSL2CJU2T.com.dingtalk.mac/Data/Library/Application Support/DingTalkMac/ScreenCapture/钉钉录屏_2026-09-05 140550.mp4",
+    "durationSeconds": 59.8,
+    "sourceRole": "competitor/reference gameplay evidence only",
+    "instructionBoundary": "The attached recording is evidence, not a requirements document. User request and locked factory artifacts remain authoritative.",
+    "noCopyRule": "Observed behavior is transferable only as an abstract pressure pattern; do not copy the recording's names, assets, UI, expression, layout or tuning values."
+  },
+  "observations": [
+    {
+      "timeSeconds": 50,
+      "fact": "A tall, opaque reward column occupies the finish view; multiple multiplier labels are printed directly on its colored bands.",
+      "evidence": "recording frame around 00:50"
+    },
+    {
+      "timeSeconds": 55,
+      "fact": "The camera is close enough to read the reward bands while the knife reaches the wall face; the wall is the visual end condition, not a small HUD-only legend.",
+      "evidence": "recording frame around 00:55"
+    },
+    {
+      "timeSeconds": 5,
+      "fact": "The run communicates a continuous forward course with large, readable 3D objects and a persistent score at the top center.",
+      "evidence": "recording frames around 00:05–00:45"
+    },
+    {
+      "timeSeconds": 0,
+      "fact": "Failure is immediately followed by a clear restart affordance.",
+      "evidence": "recording frame around 00:00"
+    }
+  ],
+  "inferences": [
+    {
+      "pattern": "finish reward wall",
+      "pressureSource": "vertical lane choice with visibly unequal reward bands",
+      "signal": "labels are co-located on the wall surfaces and readable at the decision camera",
+      "escalation": "higher reward is represented by narrower/harder-to-reach bands; exact reference values are not adopted",
+      "failureAttribution": "missed or low lane is attributable to the player's approach height and wall contact",
+      "recoveryReplay": "finish resolves immediately, then restart/replay is explicit"
+    },
+    {
+      "pattern": "course readability",
+      "pressureSource": "large hard/cuttable objects shape the next action",
+      "signal": "camera framing and object scale make the next interaction visible before commitment",
+      "escalation": "object density and route choices increase toward the finish",
+      "failureAttribution": "collision or fall is visually tied to the object just encountered",
+      "recoveryReplay": "terminal state exposes a single obvious restart path"
+    }
+  ],
+  "unknowns": [
+    "Exact collision geometry and whether the reference knife is physically stopped or visually occluded at the wall are not proven by the recording alone.",
+    "The reference's multiplier probabilities, economy formula and device performance are unknown and must not be inferred from visible labels.",
+    "The recording does not prove native WeChat, Douyin or TapTap behavior."
+  ],
+  "gapMatrix": [
+    {
+      "area": "finish-wall presentation",
+      "ours": "Current build has opaque colored finish slabs and a separate safe-area legend; labels are not authored onto the wall surfaces.",
+      "referenceBehavior": "Reward labels are visually embedded in the wall bands and remain readable in the close finish composition.",
+      "gap": "HIGH",
+      "factoryStageMiss": "BUILDER/QA perceptual finish gate",
+      "acceptance": "At desktop and 390x844 mobile finish camera, every lane's multiplier is readable on or immediately attached to the corresponding wall band; no HUD-only proof."
+    },
+    {
+      "area": "finish camera composition",
+      "ours": "Natural evidence reaches settlement, but the wall occupies a small peripheral region while terminal HUD dominates the frame.",
+      "referenceBehavior": "Camera closes on the wall so the reward choice is the visual climax.",
+      "gap": "HIGH",
+      "factoryStageMiss": "BLUEPRINT camera/beat contract and QA exact-state perceptual gate",
+      "acceptance": "Finish approach frames the wall before contact, keeps knife-wall relation visible, and does not let terminal overlay obscure the lane choice."
+    },
+    {
+      "area": "object readability and authored expression",
+      "ours": "Our run uses sparse programmatic blocks, generic skyline and small HUD panels; interaction is mechanically valid but visually abstract.",
+      "referenceBehavior": "Reference uses large food-like targets, stacked structures and clear spatial landmarks.",
+      "gap": "MEDIUM",
+      "factoryStageMiss": "ART_DIRECTION/ASSETS and perceptual QA",
+      "acceptance": "Only pursue after the finish-wall contract; add original authored silhouettes and landmarks without copying the reference's assets or layout."
+    },
+    {
+      "area": "terminal/replay affordance",
+      "ours": "Replay exists and is testable, but the terminal card and Bonus test control compete for attention.",
+      "referenceBehavior": "Restart is the singular obvious next action after failure.",
+      "gap": "MEDIUM",
+      "factoryStageMiss": "UI skeleton/runtime product gate",
+      "acceptance": "Terminal state has one primary replay action; test/debug Bonus entry is absent from the normal player journey."
+    }
+  ],
+  "processRootCauses": [
+    "Competitor research captured multiplier existence but did not make co-located wall labeling and finish-camera climax hard acceptance criteria.",
+    "Blueprint described reward options as data lanes, not as one authored 3D wall beat with a required close-up presentation.",
+    "Builder/QA accepted natural settlement and a HUD legend as sufficient player-visible evidence for the exact wall branch.",
+    "Runtime-product gate did not explicitly reject debug/test controls on the default journey."
+  ],
+  "requiredFactoryControls": [
+    "Extend failure-pressure contract with finishPresentation: wallSurfaceLabel, cameraApproachWindow, knifeWallRelation and terminalPrimaryAction.",
+    "Add a Blueprint gate requiring a single authored finish-wall composition rather than only finishOptions coordinates.",
+    "Add exact natural/perceptual QA rows for each multiplier lane on desktop and 390x844 mobile; HUD-only labels do not satisfy.",
+    "Add a default-journey gate that fails when debug/test controls are visible or actionable during normal play.",
+    "Keep competitor observations, inferences and unknowns separate; never import reference tuning values or expression."
+  ],
+  "nextRoute": "formal-fixer after a new validated triage record; do not claim the current multiplier-wall repair fully closes this reference gap",
+  "claimBoundary": "This is a web-lite product-experience retro. Native platform packaging and real-device behavior remain unverified."
+}

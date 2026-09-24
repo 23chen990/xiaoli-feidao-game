@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FactoryProcessRetro",
+  "runId": "mobile-slice-adaptation-20260830",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "failures": [
+    {
+      "agentOrStage": "ArtifactOrchestrator",
+      "failure": "同一 run 的 mechanics-research-v2 使用了不同的 targetGame 名称“符刃夜行”，而用户目标是“小李飞刀”，存在研究产物与游戏身份绑定不严的问题。",
+      "evidence": ["artifacts/mechanics-research-v2.json", "artifacts/builder-checkpoint-level-pack-v1.json"],
+      "processFix": "所有阶段 artifact 必须校验 runId、targetGame 和 workspace 三元组一致；别名只能放在 aliases 字段，不得替代规范名称。"
+    },
+    {
+      "agentOrStage": "CompetitorResearchAgent",
+      "failure": "记录了移动硬物、空间多样可切物、终点倍率和 bonus 的行为证据，但没有输出逐关可消费的 failure-pressure contract；观察/推断/未知也没有成为 Blueprint 的硬门禁。",
+      "evidence": ["artifacts/mechanics-research-v2.json", "research/slice-master-research-addendum.md"],
+      "processFix": "Reference adaptation 必须先产出并校验失败压力契约，逐项包含压力源、信号、升级、失败归因、恢复/重玩；未知参数不能静默变成实现假设。"
+    },
+    {
+      "agentOrStage": "Blueprint/LevelDesign",
+      "failure": "把 featuredMechanic 和 mechanicTags 当作关卡差异证明，未要求每关独立 beat、压力峰、恢复段、终点选择和目标时长；导致 level-02..12 共用 segments() 模板。",
+      "evidence": ["workspace/prototype-a/src/game-levels.ts", "artifacts/builder-checkpoint-level-pack-v1.json"],
+      "processFix": "Blueprint 必须声明至少四种 level archetype，并为每关绑定压力契约条目和可观察节奏数据；共享模板只能作为局部片段，不能作为整关差异。"
+    },
+    {
+      "agentOrStage": "Builder/QA",
+      "failure": "验证了关卡可通关和 12 个选择按钮，但没有把移动坚硬物递进、可切物类别丰富度、终点倍率选择和 bonus 进入作为独立 runtime-product gate。",
+      "evidence": ["qa-level-pack-v1/qa-report.json", "workspace/prototype-a/src/game-levels.ts"],
+      "processFix": "Builder 需证明契约中的实体类型存在于数据和运行时；QA 需抽测早/中/后期关卡并记录压力源、决策数、自然时长、终点区域和 bonus 结果。"
+    }
+  ],
+  "factoryChangesApplied": [
+    ".agents/skills/seed-to-game-blueprint/SKILL.md",
+    ".agents/skills/web-lite-game-builder/SKILL.md",
+    ".agents/skills/game-playtest/SKILL.md"
+  ],
+  "generalizedRule": "对象可达性门禁适用于所有交互对象，不绑定任何单一对象类型：危险、目标、平台、奖励、触发器、敌人、资源和硬表面都必须有可达路径/可避路径/恢复用途或明确装饰标记。",
+  "nonGoals": [
+    "不把竞品未逐帧测量的运动参数写成已确认数值",
+    "不复制竞品表达、素材、布局或平衡值",
+    "本次只反哺流程，不修改生成游戏代码"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "next-repair-hypothesis",
+  "cycleId": "human-review-20260907-l1-followup",
+  "attempt": 2,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "issueId": "L1-RUNWAY-COLLISION-MISMATCH",
+  "hypothesis": "Level1 的视觉跑道被前段目标作为 supportSurfaceId 使用，但 level1-runway-main 被标记为 collidable=false，因此玩家看到连续地面而碰撞循环跳过该承托面。",
+  "evidence": [
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-levels.ts",
+      "sha256": "c6e7ef7fa8cc37709b037d18bf600e832807926a3158d7e3522a3b3fa14dd3e0",
+      "fact": "level1-runway-main 以 collidable=false 创建，rune-2/3 等目标引用它。"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "sha256": "b21df1def6f5d7aadacf594a9a9f414c8457a584ce03d0cead7ad24275882474",
+      "fact": "支持面碰撞循环在 collidable=false 时跳过。"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-independent-20260922/portrait-2/recording.json",
+      "sha256": "79985826d63d04385578f570deb675ffe94163045e3a51896f0d50e3f59a6ae1",
+      "fact": "390x844 fresh normal input 在 x≈1112 跌出路线。"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-independent-20260922/desktop-2/recording.json",
+      "sha256": "0019adf339419631b722a94485059b025fb5048865e4d89b6d94789786377120",
+      "fact": "1100x720 fresh normal input 在 x≈927 跌出路线。"
+    }
+  ],
+  "redCheck": {
+    "command": "read-only source branch check: level1-runway-main collidable flag + game-core support collision guard",
+    "result": "CONFIRMS",
+    "observation": "源码分支确认视觉跑道与碰撞标志不一致；是否造成玩家失足仍需 Fixer 先写 RED 运行时测试确认。"
+  },
+  "proposedScope": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-levels.ts",
+    "仅相关 Level1 回归测试"
+  ],
+  "dispatchStatus": "REJECTED_BY_AUTOMATIC_APPROVAL_REVIEW",
+  "sourceModified": false,
+  "createdAt": "2026-09-22T04:27:00Z"
+}

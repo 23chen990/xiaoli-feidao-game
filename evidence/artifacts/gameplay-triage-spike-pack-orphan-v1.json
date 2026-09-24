@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED",
+  "classification": "cross-level-gameplay/orphan-hazard-pack",
+  "route": "formal-fixer",
+  "routeReason": "The audit finds the same impact contradiction across multiple authored hazard branches, so this is a core-loop/content-pack issue rather than a two-file local defect.",
+  "evidence": {
+    "sourceArtifact": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-spike-impact-v1/report.json",
+    "naturalConfirmation": "Level 04 desktop and mobile fresh-browser runs both crossed l4-gap-risk without contact or spike failure and still won.",
+    "structuralAudit": "15 authored spikes across 11 levels are labeled pathRole=main, but each is more than 230 simulation units from the interpolated completion path at its x coordinate. This is a screening signal, not by itself a natural-pass/fail result; each branch remains BLOCKED until naturally observed."
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "authored spike hazard pack",
+      "lifecycleState": "spawned → moving/static hazard → player reaches reachableWindow → bypass/contact → failure/recovery",
+      "rendererPresentationPath": "SliceSimulation.spikes → ThreeWorldRenderer.syncSpikes → spike group mesh",
+      "deviceViewport": "desktop 1180x720 and mobile 390x844",
+      "naturalInput": "fresh browser, visible level picker, normal mouse/touch only",
+      "result": "Level 04 confirmed bypass/no contact; other branches require targeted natural retest"
+    }
+  ],
+  "flaggedSpikes": [
+    { "level": 1, "id": "spike-high", "verticalDistanceFromCompletionPath": 345.6 },
+    { "level": 1, "id": "spike-low", "verticalDistanceFromCompletionPath": 238.0 },
+    { "level": 2, "id": "l2-ceiling-risk", "verticalDistanceFromCompletionPath": 390.9 },
+    { "level": 4, "id": "l4-gap-risk", "verticalDistanceFromCompletionPath": 245.0 },
+    { "level": 5, "id": "l5-route-divider", "verticalDistanceFromCompletionPath": 297.0 },
+    { "level": 6, "id": "l6-high-cap", "verticalDistanceFromCompletionPath": 290.5 },
+    { "level": 6, "id": "l6-low-gap", "verticalDistanceFromCompletionPath": 283.3 },
+    { "level": 7, "id": "l7-ceiling", "verticalDistanceFromCompletionPath": 320.0 },
+    { "level": 8, "id": "l8-floor-risk", "verticalDistanceFromCompletionPath": 236.9 },
+    { "level": 9, "id": "l9-low-risk", "verticalDistanceFromCompletionPath": 275.9 },
+    { "level": 10, "id": "l10-falling-risk", "verticalDistanceFromCompletionPath": 290.0 },
+    { "level": 11, "id": "l11-high-risk", "verticalDistanceFromCompletionPath": 369.2 },
+    { "level": 11, "id": "l11-low-risk", "verticalDistanceFromCompletionPath": 261.3 },
+    { "level": 12, "id": "l12-ceiling-risk", "verticalDistanceFromCompletionPath": 306.0 },
+    { "level": 12, "id": "l12-floor-risk", "verticalDistanceFromCompletionPath": 255.4 }
+  ],
+  "acceptanceCriteria": [
+    "Every spike labeled as a gameplay hazard must either intersect a fair natural route/decision window with visible timing pressure, or be explicitly decorative and non-collidable.",
+    "Each flagged object requires exact desktop and mobile natural-input evidence; a sibling level or debug scenario cannot close it.",
+    "The top-level pack remains BLOCKED while any exact branch lacks player-visible causal evidence."
+  ],
+  "decision": "Do not claim completion. This is a cross-level formal-fixer issue discovered by applying the generic feedback lesson.",
+  "claimBoundary": "web-lite diagnosis only; platform packaging remains unverified."
+}

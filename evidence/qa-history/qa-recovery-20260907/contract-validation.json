@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "validated": true,
+  "contractCases": 12,
+  "matrixCases": 12,
+  "ledgerStatus": "BLOCKED_UNRECONCILED_HISTORY",
+  "artifacts": [
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/active-slice-contract.json",
+      "sha256": "0513fec6b10a2ad2cd778f6fb537a58fd5bbca2510da4d850e3059beccb9f9b2"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/reproduction-matrix.json",
+      "sha256": "819f6768f0b9bcb983d008cb2f9bc0706a94ac94846afe369d55ed437481a55d"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/repair-ledger.json",
+      "sha256": "81abd422344d66bb20eab6791d9fcba40125f87079e30506e35009cd5600f499"
+    }
+  ],
+  "checkedAt": "2026-09-07T05:34:23.845Z"
+}

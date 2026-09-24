@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "human-review-20260907-l1-recovery",
+  "attempt": 4,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "storedThreadId": "01a07540-7ee1-7c01-899b-0ea12bde1f19",
+  "status": "READY_FOR_INDEPENDENT_QA",
+  "why": "This formal fix addressed the two validated Level1 presentation defects in the exact opening and finish branches, kept the scope to causally related files, and completed one build after test-first verification. The remaining blocker is the natural-input stack-a/b lifecycle evidence gap, which must be closed by independent QA rather than by self-report.",
+  "contextIntentionallyOmitted": [
+    "Full factory history and unrelated worktree edits outside the causal Level1 presentation path",
+    "Sibling game runs, their assets, and all non-validated issues from the broader repository",
+    "Any qa:* rerun artifacts beyond the explicit evidence files recorded for this attempt"
+  ],
+  "rootCauses": [
+    {
+      "issueId": "L1-FIRST-TARGET-VISIBILITY",
+      "objectType": "foreground support base plinth",
+      "stateBranch": "Level1 opening startup portrait/desktop branch",
+      "renderer": "ThreeWorldRenderer.syncSupports grounded-tabletop base depth",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-world-renderer.ts:291-311",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/opening-renderer-regression.test.ts:34-50",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-3/qa/portrait-1/frames/frame-0000.png"
+      ]
+    },
+    {
+      "issueId": "L1-FINISH-VISIBILITY",
+      "objectType": "finish-wall labels",
+      "stateBranch": "terminal finish-selection HUD branch",
+      "renderer": "main.ts finishWallLabels projection plus clamped screen layout",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/main.ts:196-204",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/finish-label-layout.ts:17-24",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/finish-label-layout.test.ts:5-11",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-3/qa/perceptual-qa-report.json"
+      ]
+    }
+  ],
+  "filesChanged": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/preflight.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/finish-label-layout.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/main.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-world-renderer.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/finish-label-layout.test.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/opening-renderer-regression.test.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/red.log"
+  ],
+  "tests": [
+    {
+      "command": "pnpm exec tsx --test tests/finish-label-layout.test.ts tests/opening-renderer-regression.test.ts",
+      "exitCode": 1,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/red.log",
+      "phase": "RED"
+    },
+    {
+      "command": "pnpm exec tsx --test tests/finish-label-layout.test.ts tests/opening-renderer-regression.test.ts",
+      "exitCode": 0,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/green-target.log",
+      "phase": "GREEN"
+    },
+    {
+      "command": "pnpm test",
+      "exitCode": 0,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/tests.log",
+      "phase": "GREEN"
+    },
+    {
+      "command": "pnpm lint",
+      "exitCode": 0,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/lint.log",
+      "phase": "LINT"
+    },
+    {
+      "command": "pnpm typecheck",
+      "exitCode": 0,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/typecheck.log",
+      "phase": "TYPECHECK"
+    }
+  ],
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0,
+    "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/build.log",
+    "count": 1,
+    "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html",
+    "sha256": "10cba7632922f9fdeaa2eb33f7a05aa09bd3dbb7ca45a2db24acac282c9fd9a6"
+  },
+  "remainingEvidenceGaps": [
+    "L1-STACK-NATURAL-EVIDENCE-GAP still needs an independent normal-input browser trace that captures stack-a/b support, cut, fall, and landing in one visible sequence.",
+    "Independent QA still has to retest the unchanged dist in portrait and desktop to close the user-visible finish and opening branches."
+  ],
+  "completedAt": "2026-09-07T08:20:54Z"
+}

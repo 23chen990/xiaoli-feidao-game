@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "classification": "natural-level1-recovery-shelf",
+  "status": "RETEST_PASS_WITH_GLOBAL_GAP",
+  "reproductionMatrix": [
+    {"objectType":"mid-course recovery shelf","lifecycleState":"airborne→landing→relaunch","rendererPath":"game-core supports→three-world-renderer syncSupports","viewport":"desktop 1180x720"},
+    {"objectType":"mid-course recovery shelf","lifecycleState":"airborne→landing→relaunch","rendererPath":"game-core supports→three-world-renderer syncSupports","viewport":"mobile 390x844"}
+  ],
+  "evidence": ["qa-level-pack-v1/qa-report.json", "qa-level-pack-v1/runner-report.json", "qa-all-levels-v1/report.json"],
+  "rootCause": "Opening route had no broad lower recovery surface after the column/bridge sequence, so normal touch timing could fall before the next authored beat.",
+  "fix": "Added white-recovery-shelf at x=1760,y=590,width=420,height=46 and preserved explicit route metadata.",
+  "acceptance": ["standard desktop/mobile natural samples win Level 1", "shelf is reachable in both viewports", "full 12-level natural sweep remains separately reported and cannot be waived"],
+  "decision": "Level 1 targeted retest passes; global all-level sweep remains BLOCKED for non-terminal traces in qa-all-levels-v1."
+}

@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fix-result",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 17,
+  "issueId": "L1-RUNWAY-RECOVERY-PER-EDGE-LATCH",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "model": "gpt-6-luna",
+  "routeReason": "The validated issue affects the core recovery lifecycle and requires the formal QA/Fixer/QA route. The Attempt17 per-edge candidate failed focused GREEN and was rolled back immediately.",
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory modules, renderer/presentation code, platform adapters, level data, persistence, and release files.",
+    "Full conversation, unbound media, unrelated repository history, and unavailable candidate source bytes from Attempts 11–16.",
+    "Natural/perceptual completion claims and fixture-only evidence as a substitute for browser QA."
+  ],
+  "changedFiles": [],
+  "attemptedFiles": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "checks": {
+    "artifactValidation": "passed before RED: REPAIR_CYCLE_ARTIFACTS_OK",
+    "focusedRed": {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "status": "expected failures observed before source edits",
+      "tests": 20,
+      "passed": 15,
+      "failed": 5,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-17/red-targeted.log",
+      "sha256": "2e0c78d0579fcfdd3fbcacc5d000a8c425e01fa97fa40f09c9d7f11a8830e8d1",
+      "baselineSourceSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+      "baselineTestSha256": "7627f8b8052adb8bd33b6b21f7c0cf935b1d23cba5b4570513ce47bd56984510"
+    },
+    "focusedGreen": {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "status": "failed; candidate rolled back immediately",
+      "tests": 20,
+      "passed": 15,
+      "failed": 5,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-17/green-targeted.log",
+      "sha256": "5854db2046fe8e051c5639ef342005778ce4a794d7bdf25af3e2ceadaf851cda",
+      "observed": {
+        "captures": [216],
+        "expectedCaptures": [216, 302],
+        "replayElapsedSeconds": 5.908333333333417,
+        "replayStatus": "failed",
+        "replayPlayerX": 981.2104496289047,
+        "firstConsumeCorrectionPixels": 12.302890355973728,
+        "selector": "early white-branch and late lift-plank assertions passed",
+        "pendingPoseContract": "candidate omitted playerX/playerY/playerAngle fields required by fixture contract",
+        "traceEvidence": "no complete per-edge trace was established"
+      }
+    },
+    "fullTests": "not run: focused GREEN failed and protocol required immediate rollback",
+    "lint": "not run: focused GREEN failed and protocol required immediate rollback",
+    "typecheck": "not run: focused GREEN failed and protocol required immediate rollback",
+    "build": "not run: focused GREEN failed and protocol required immediate rollback"
+  },
+  "rollback": {
+    "performed": true,
+    "files": [
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+        "expectedBaselineSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+        "actualSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+        "matchesBaseline": true,
+        "candidateSha256": "cf0a03f1fea2b1e107a6dc0e2b0c6647349f310cb0e35bd2d9f6e6af4d7c7312"
+      },
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts",
+        "expectedBaselineSha256": "7627f8b8052adb8bd33b6b21f7c0cf935b1d23cba5b4570513ce47bd56984510",
+        "actualSha256": "7627f8b8052adb8bd33b6b21f7c0cf935b1d23cba5b4570513ce47bd56984510",
+        "matchesBaseline": true,
+        "candidateSha256": null,
+        "candidateSha256Note": "The focused test candidate was not edited."
+      }
+    ]
+  },
+  "buildSha256": "599b4c3cb8c6b345b7e18b3a4e06cae33663c0432b918d3115ee78df3bf64118",
+  "buildUnchanged": true,
+  "status": "BLOCKED",
+  "qaStatus": null,
+  "remainingEvidenceGaps": [
+    "The candidate captured frame216 only; frame302 was not reached, the route failed at 5.9083 seconds, and the candidate omitted the fixture's retained playerX/playerY/playerAngle fields.",
+    "The candidate did not establish the required ordered per-edge contact enter/leave, set/consume/expire/clear/rearm, or ordinary-anchor trace with collision context.",
+    "Frame528 clear reason remains unknown; this attempt does not attribute it to TTL, collision, terminal, or inactivity.",
+    "Full tests, lint, typecheck, and build were not run because focused GREEN failed.",
+    "Independent natural-input and perceptual QA remain outstanding; no completion claim is made."
+  ]
+}

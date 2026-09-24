@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageCompetitiveUiFeel",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "PASS_AFTER_RETEST",
+  "classification": "competitive-ui-and-game-feel-gap",
+  "route": "formal-fixer-candidate",
+  "evidence": {
+    "userReport": "用户追问竞品级 UI 表达和整体爽感是否被认真考虑。",
+    "latestScreenshot": "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/mobile-natural-zero-won.png",
+    "observed": [
+      "HUD 信息完整但像调试信息堆叠，主次层级不够明确。",
+      "终点倍率墙仍主要表现为右侧纵向标签，墙体、刀路和选中倍率的空间关系不够强。",
+      "切割反馈已有收益 banner、跳字和粒子，但缺少按切割价值分级的冲击、停顿、镜头/画面强调与落点确认。",
+      "场景几何和色彩仍偏原型灰盒，UI 与世界反馈没有形成统一的奖励节奏。",
+      "结算面板仍然是最大视觉元素，容易抢走终点墙和收益揭示的高潮。"
+    ]
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "cuttable target and reward feedback",
+      "lifecycleStateBranch": ["approach", "sharp-contact", "cut", "fragment-settle", "earnings-reveal"],
+      "rendererPresentationPath": ["src/game-core.ts", "src/main.ts", "src/style.css", "src/three-world-renderer.ts"],
+      "deviceViewport": ["desktop 1180x720", "mobile 390x844"],
+      "expected": "切割命中、结构改变、价值、冲击和落点确认在约100ms级联读出，并按普通/高价值切割分级。"
+    },
+    {
+      "objectType": "finish multiplier wall",
+      "lifecycleStateBranch": ["approach", "lane commitment", "contact", "reward", "celebration", "terminal"],
+      "rendererPresentationPath": ["src/game-core.ts", "src/main.ts", "src/style.css", "src/three-world-renderer.ts"],
+      "deviceViewport": ["desktop 1180x720", "mobile 390x844"],
+      "expected": "倍率墙在空间上是终点主角，命中格、倍率变化和最终收益先于结算面板成为视觉焦点。"
+    }
+  ],
+  "acceptanceCriteria": [
+    "自然切割时至少有命中闪、短促冲击/停顿、结构变化、收益跳字、累计值更新五层可见反馈，且不阻塞下一次输入。",
+    "高价值或路线改变切割的反馈强度明显高于普通切割，形成可感知的价值分级。",
+    "终点接触到奖励揭示期间，倍率墙和选中倍率的视觉权重高于结算面板；结算面板延后出现。",
+    "桌面 1180x720 与移动 390x844 均保持安全区、可读性和触控可用，不依赖颜色单一传达关键状态。",
+    "所有表达保持原创，不复制竞品素材、名称、UI布局或调参。"
+  ],
+  "retestEvidence": {
+    "artifact": "artifacts/formal-fixer-competitive-ui-feel-attempt1.json",
+    "desktop": { "routeOpeningCount": 1, "finishHighlightedCount": 1, "finishPhases": ["contact", "reward", "celebration", "terminal"] },
+    "mobile": { "normalInput": true, "safeArea": true, "overflow": false, "consoleErrors": 0 },
+    "tests": 160
+  },
+  "claimBoundary": "竞品级 UI/爽感目标已在 web-lite 桌面与移动自然流程中通过本轮专项验收；原生平台音频、震动硬件和包级验证仍不在证据范围。"
+}

@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FactoryProcessRetro",
+  "runId": "mobile-slice-adaptation-20260830",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "RETRO_COMPLETE",
+  "sourceBoundary": {
+    "recordings": [
+      "/Users/kker/Library/Containers/5ZSL2CJU2T.com.dingtalk.mac/Data/Library/Application Support/DingTalkMac/ScreenCapture/钉钉录屏_2026-09-05 140908.mp4",
+      "/Users/kker/Library/Containers/5ZSL2CJU2T.com.dingtalk.mac/Data/Library/Application Support/DingTalkMac/ScreenCapture/钉钉录屏_2026-09-05 141313.mp4"
+    ],
+    "sourceRole": "competitor/reference gameplay evidence only",
+    "instructionBoundary": "The recordings are evidence, not requirement documents. User request and locked factory artifacts remain authoritative.",
+    "noCopyRule": "Transfer abstract feedback principles only; do not copy third-party assets, names, UI expression, layouts or tuning values."
+  },
+  "whatTheyHaveThatWeDoNot": [
+    {
+      "capability": "surface-authored cuttable vocabulary",
+      "referenceEvidence": "Waffle-like panels, fruit/round targets, layered cake stacks, colored columns and spring-like hazards are immediately distinguishable by silhouette and material.",
+      "oursEvidence": "Default runtime mostly exposes programmatic box/cone/support geometry; foodStyle exists in data and presentation but does not yet create the same readable interaction vocabulary across the whole course.",
+      "gapSeverity": "MEDIUM-HIGH",
+      "missingFactoryGate": "Object-role visual semantic gate across early/mid/late natural samples."
+    },
+    {
+      "capability": "cut consequence chain",
+      "referenceEvidence": "A successful cut visibly produces a separated piece, score increment, motion continuation and a new route state before the next target.",
+      "oursEvidence": "Default path records cuts, produces split halves, particles and a CSS feedback pop, but the chain is quieter and less materially differentiated.",
+      "gapSeverity": "HIGH",
+      "missingFactoryGate": "Natural exact-object cut trace must prove anticipation → contact → separation → score → next decision."
+    },
+    {
+      "capability": "impact-time feedback stack",
+      "referenceEvidence": "Visible knife arc/trail, impact flash/particles, object break, floating score and camera framing overlap in a short readable moment.",
+      "oursEvidence": "Main runtime has cut particles, a short impact flash and a feedback pop; the richer slash-trail/hit-stop/camera-trauma implementation exists in poc-3d.ts but is not the default game journey.",
+      "gapSeverity": "HIGH",
+      "missingFactoryGate": "Runtime-product wiring gate must reject a feedback feature that only exists in a POC/compatibility path."
+    },
+    {
+      "capability": "failure recovery choice",
+      "referenceEvidence": "The second recording shows an explicit CONTINUE? overlay with a clear no-thanks/yes decision after failure.",
+      "oursEvidence": "Our default terminal has replay and progression, but no equivalent recovery choice; Bonus test entry is exposed before failure and is not a player-facing recovery decision.",
+      "gapSeverity": "MEDIUM",
+      "missingFactoryGate": "Default journey must distinguish player recovery choice from debug/test entry."
+    },
+    {
+      "capability": "finish-wall climax",
+      "referenceEvidence": "The wall carries many surface labels and remains in the same frame as knife contact and impact feedback.",
+      "oursEvidence": "Current repair has opaque contiguous wall geometry and HUD labels; wall-surface labels and close camera composition remain incomplete.",
+      "gapSeverity": "HIGH",
+      "missingFactoryGate": "Exact lane label + knife-wall relation + impact screenshot at desktop and 390x844."
+    }
+  ],
+  "cutFeelDecomposition": [
+    {
+      "phase": "anticipation",
+      "referenceSignals": ["large target silhouette", "knife arc visible", "next route object framed"],
+      "oursSignals": ["target exists", "knife rotation exists", "direction HUD exists"],
+      "missing": "The target does not consistently announce material, cut direction and consequence before contact."
+    },
+    {
+      "phase": "contact",
+      "referenceSignals": ["clear blade overlap", "brief impact pause/flash impression", "strong spatial framing"],
+      "oursSignals": ["deterministic contact", "short flash", "particles"],
+      "missing": "No default-path hit-stop/camera-trauma proof; contact lacks a distinct weight change from ordinary motion."
+    },
+    {
+      "phase": "separation",
+      "referenceSignals": ["large, readable pieces split and travel", "material remains recognizable"],
+      "oursSignals": ["two fragments", "authored cut-half geometry", "falling lifecycle"],
+      "missing": "Fragment motion and silhouettes are less visually legible at the gameplay camera; style variation is not yet as immediate as the reference."
+    },
+    {
+      "phase": "reward",
+      "referenceSignals": ["floating money/score near contact", "continuous score at top center", "route continues immediately"],
+      "oursSignals": ["feedback pop", "HUD score", "combo score"],
+      "missing": "The reference makes per-cut earnings and the persistent total update simultaneously; our generic +value and score counter do not yet establish one authored currency reward beat."
+    },
+    {
+      "phase": "recovery",
+      "referenceSignals": ["failure overlay", "one explicit continue decision", "clear replay context"],
+      "oursSignals": ["failed terminal", "replay button", "next level button"],
+      "missing": "No explicit recover/decline moment; debug Bonus control competes with the normal journey."
+    }
+  ],
+  "whatToAddToOurFactory": [
+    "Add a realtime earnings contract: every cut and finish multiplier must emit a local delta plus persistent-total update in one natural trace; a final score assertion alone is insufficient.",
+    "Make cut-feel a runtime-wired product gate: slash trail, impact flash, bounded hit-stop, camera response, particles, fragment separation, score pop and next-target reveal must all be observed on the default path.",
+    "Require a three-object natural sample (early/mid/late) with objectId-specific evidence for anticipation, contact, separation and recovery.",
+    "Add a material/role visual contract so cuttable targets, hard surfaces and hazards are distinguishable without helper text.",
+    "Add a terminal recovery contract: replay is primary; any continue/recovery choice must be a normal player affordance, never a debug/test button.",
+    "Promote the finish-wall surface-label and camera-composition gate from retro recommendation to formal perceptual acceptance criteria."
+  ],
+  "implementationEvidenceGap": {
+    "defaultRuntimeEntrypoints": ["src/main.ts", "src/game-core.ts", "src/three-world-renderer.ts"],
+    "richerButNotDefaultPath": ["src/poc-3d.ts", "src/cut-poc-3d-core.ts"],
+    "risk": "A passing POC feedback trace must not be used as proof that the default game journey has the same cutting feel.",
+    "requiredAction": "Either wire the approved feel stack into the default runtime or label the POC explicitly as non-product evidence and keep the product gate BLOCKED."
+  },
+  "nextRoute": "formal-fixer triage for default-path cut-feel and finish-wall presentation; no code change performed in this retro.",
+  "claimBoundary": "Web-lite experience/process retro only; native platform packaging and real-device behavior remain unverified."
+}

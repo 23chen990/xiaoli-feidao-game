@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "passed": false,
+  "checks": [
+    {
+      "name": "unchanged /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "passed": true,
+      "evidence": "sha256 0c8ae7b8b3aa412c9c4064fae55f4c6c35a195927bb09e47c53753dd17452aa2"
+    },
+    {
+      "name": "unchanged /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-levels.ts",
+      "passed": true,
+      "evidence": "sha256 6e10cc6dfb04795ffdcf3008533bec75f5c594ac4b54d56873f2d4ed2cdb6722"
+    },
+    {
+      "name": "unchanged /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-content.ts",
+      "passed": true,
+      "evidence": "sha256 211a831824d47994721156f9584c8a63efb802376421f76ad8b5a24e961749f7"
+    }
+  ],
+  "issues": [
+    {
+      "id": "L1-ENGINEERING-REGRESSIONS",
+      "severity": "error",
+      "message": "完整测试174项中6项失败：首切/密度节奏、连续切割收益、安全终点策略、bonus入口、晚期选择时序、LEVEL-CATALOG-RED-007。需按当前批准合同诊断首关逻辑或明确替换失效的旧模板断言；不得直接跳过、弱化测试或扩关。",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/green-suite.log; /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/engineering-triage.json"
+    }
+  ],
+  "screenshots": [],
+  "consoleLog": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/green-suite.log",
+  "testedAt": "2026-09-07T05:56:47.894Z"
+}

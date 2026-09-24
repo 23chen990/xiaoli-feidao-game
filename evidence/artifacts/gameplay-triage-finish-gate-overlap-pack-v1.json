@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED",
+  "classification": "cross-level-rendering/transparent-finish-option-overlap",
+  "route": "formal-fixer",
+  "routeReason": "The same transparent finish layout is generated for levels 04–12 and affects reward readability at the core settlement moment.",
+  "evidence": {
+    "sourceArtifact": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/gameplay-triage-yellow-finish-gate-clipping-v1.json",
+    "structuralFinding": "Levels 04–12 add a bonus gate at y=500, height=96 while the safe gate remains y=570, height=240; their ranges overlap from y=452 to y=548. ThreeWorldRenderer.syncFinish assigns every finish mesh z=-0.24 and uses transparent materials.",
+    "scope": "9 levels share the same overlap pattern; Level 04 has direct screenshot evidence, while the other levels require viewport-specific perceptual retest."
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "finish reward gates (safe + bonus)",
+      "lifecycleState": "spawned → camera enters finish → reward selection → terminal/replay",
+      "rendererPresentationPath": "finishOptions → syncFinish → finishMaterial → transparent WebGL meshes at shared z",
+      "deviceViewport": "desktop and mobile",
+      "naturalInput": "normal play to settlement; no debug/state injection",
+      "result": "Level 04 shows yellow bonus surface visually embedded in green safe gate; levels 05–12 pending exact screenshot confirmation"
+    }
+  ],
+  "acceptanceCriteria": [
+    "All reward choices remain visually separable at the finish camera on desktop and mobile.",
+    "No transparent finish mesh is spatially ambiguous or reads as geometry penetration.",
+    "Reward selection and replay semantics remain unchanged after visual separation."
+  ],
+  "decision": "Keep BLOCKED and route as a pack-level perceptual issue; do not fix only Level 04.",
+  "claimBoundary": "web-lite diagnosis only; platform packaging remains unverified."
+}

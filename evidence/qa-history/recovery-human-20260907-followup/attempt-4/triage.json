@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "attempt-triage",
+  "cycleId": "human-review-20260907-l1-followup",
+  "attempt": 4,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "issueId": "L1-RUNWAY-COLLISION-MISMATCH",
+  "objectType": "level1-runway-main and the blade support contact manifold",
+  "stateBranch": "opening teaching -> runway sharp contact suppression -> controlled runway body bounce -> forward recovery",
+  "renderer": "game-core support collision -> ThreeWorldRenderer event/presentation",
+  "deviceViewports": ["390x844", "1100x720"],
+  "reproduction": {
+    "source": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-2-runway-red-evidence.json",
+    "tapTimesMs": [194.1381250000004, 1586.8637500000004, 2327.048167, 4602.164, 5309.087709, 6275.0135, 6948.908875, 7607.319334000001, 8567.920042000002, 9607.281041999999],
+    "beforeFix": "runwayCollidable=false fails by fall at x≈1228; full runway collidable=true avoids the fall but changes the opening and existing fixtures",
+    "newHypothesis": "retain full runway collision physics, suppress runway sharp anchors after x=350, and suppress only the duplicate early runway bounce event before elapsed=1.5s"
+  },
+  "classification": "confirmed-product-defect",
+  "scope": ["src/game-levels.ts", "src/game-core.ts", "tests/level1-recovery.test.ts"],
+  "acceptance": [
+    "No Level1 sharp runway hit at player.x>=350 enters anchored state.",
+    "A Level1 runway body/handle contact still emits a controlled bounce and resets recoveryAge.",
+    "The opening branch retains its authored white-landing anchor and alternative white-bumper bounce without a duplicate runway event.",
+    "The normal seed31 replay passes the 12-second/x>2000 check."
+  ],
+  "evidence": [
+    "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-3/experiment-rejection.json",
+    "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-3/red-evidence.json"
+  ],
+  "createdAt": "2026-09-23T04:35:00.000Z"
+}

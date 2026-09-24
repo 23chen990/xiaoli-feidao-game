@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "FIXED_PENDING_PERCEPTUAL_REVIEW",
+  "classification": "placement-validity/ground-intersection-flicker",
+  "route": "formal-fixer",
+  "routeReason": "The reported white support is a shared gameplay renderer/collision object on the default route; it requires deterministic placement checks and natural desktop/mobile retest.",
+  "evidence": {
+    "attachedScreenshot": "/var/folders/f2/s76hhpss3llc2_zw9g63x7380000gn/T/codex-clipboard-38365992-fbdc-4948-925d-7cbbacfb8e7e.png",
+    "screenshotIsInstruction": false,
+    "observation": "White hard-surface geometry visibly intersects the green ground plane and flickers near the blade.",
+    "owningBranch": "LevelDefinition.supports → SliceSimulation.updateSupports/collision → ThreeWorldRenderer.syncSupports"
+  },
+  "reproductionMatrix": [
+    {"objectType":"grounded white support","lifecycleState":"spawned → airborne approach → ground/recovery contact","rendererPresentationPath":"LevelDefinition.supports → syncSupports → WebGL box mesh","deviceViewport":"desktop 1180x720","result":"reproduced as below-ground intersection in prior evidence; fixed by floor-bounded authored placement"},
+    {"objectType":"grounded white support","lifecycleState":"spawned → airborne approach → ground/recovery contact","rendererPresentationPath":"LevelDefinition.supports → syncSupports → WebGL box mesh","deviceViewport":"mobile 390x844","result":"all authored supports structurally checked; sampled mobile natural levels pass"}
+  ],
+  "allLevelAudit": {
+    "levelsChecked": 12,
+    "supportsChecked": "every authored support",
+    "checks": ["floor-bounded placement", "route corridor reachability", "debug anchor/release player effect"],
+    "test": "tests/orphan-object-reachability.test.ts"
+  },
+  "acceptanceCriteria": [
+    "Every authored support ends at or above worldBottom; no mesh penetrates the rendered ground plane.",
+    "Finish recovery supports are thin floor-edge shelves and do not block upward access to selectable reward lanes.",
+    "Natural desktop and mobile level-pack journeys pass with no console/page errors."
+  ],
+  "filesChanged": ["src/game-levels.ts", "src/game-core.ts", "tests/spike-finish-pressure.test.ts"]
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion":1,"artifactType":"repair-triage","cycleId":"human-review-20260923-continue","attempt":17,
+  "issueId":"L1-RUNWAY-RECOVERY-PER-EDGE-LATCH","targetGame":"mobile-slice-adaptation-20260830","workspace":"/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "classification":"natural-level1-runway-recovery-blocker","status":"VALIDATED_REPRODUCTION",
+  "priorAttempt":{"path":"/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-16/fix-result.json","sha256":"17cb1fdd0a61ca1be833cc814cd0069ddb57781ebef5c430054280725c839980","status":"BLOCKED","candidateRejected":true},
+  "reproduction":{
+    "attempt16Divergence":{
+      "expectedCaptureFrames":[216,302],"observedCaptureFrames":[216],"firstTapPositionCorrectionPixels":34.93269818920056,"firstTapAngleCorrectionRadians":1.5107346193876157,
+      "postLaunchPlayerX":332.7000000000005,"selectorObserved":"undefined","replayStatus":"failed","replayElapsedSeconds":5.991666666666754,
+      "evidence":[
+        {"path":"/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-16/green-targeted.log","sha256":"80d479047f3754119a92b146531f7a6697aa2c33335d2089d76d56d61bfdae6d"},
+        {"path":"/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-16/fix-result.json","sha256":"17cb1fdd0a61ca1be833cc814cd0069ddb57781ebef5c430054280725c839980"},
+        {"path":"/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/green-targeted.log","sha256":"d0d64f4227589d2edd4aff8ca1939209b75e933d1df89ed0ee51725c61f48ab6"}
+      ]
+    },
+    "edgeRequirement":{
+      "key":"supportId + sharp contact part + top-face class",
+      "duplicateRule":"do not overwrite or re-capture while the keyed contact manifold remains active",
+      "rearmRule":"rearm only after the keyed contact leaves and a distinct qualifying edge is observed",
+      "separatingTopRule":"a qualifying separating runway top contact remains airborne and never falls through to ordinary anchor"
+    }
+  },
+  "reproductionMatrix":[
+    {"objectType":"pending runway pose","lifecycleStateBranch":"first keyed top-edge contact → pending → first tap","rendererPresentationPath":"ThreePresentationModel airborne player","viewport":"deterministic-fixed-step","evidence":["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-16/green-targeted.log"],"observation":"Attempt16 captured only frame216 and required a 34.93px first-tap correction.","inference":"The first edge was not reproduced with the validated pending motion contract.","unknowns":["The missing keyed edge or its rearm state was not recorded."]},
+    {"objectType":"pending runway pose","lifecycleStateBranch":"first consume → contact leaves → second keyed top-edge contact","rendererPresentationPath":"fixedUpdate support collision path","viewport":"deterministic-fixed-step","evidence":["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/green-targeted.log"],"observation":"The validated reference has a second capture at frame302; Attempt16 has none.","inference":"A global latch or ordinary-anchor fall-through may suppress the second edge.","unknowns":["Whether the same part, a new part, or a support transition produced frame302 is unknown."]},
+    {"objectType":"runway support selector","lifecycleStateBranch":"test-only early/late candidate selection","rendererPresentationPath":"SliceSimulation selector API","viewport":"deterministic-fixed-step","evidence":["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-16/green-targeted.log"],"observation":"Attempt16's runtime selector was undefined while the trace selected white-branch.","inference":"The selector contract is missing from the candidate and must be restored independently of latch state.","unknowns":["No natural selector observation exists."]},
+    {"objectType":"default browser journey","lifecycleStateBranch":"startup → runway → terminal → replay","rendererPresentationPath":"web-lite Three.js presentation","viewport":"1100x720","evidence":["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-summary.json"],"observation":"Natural/perceptual QA remains blocked and is not substituted by fixed-step fixtures.","inference":"A deterministic per-edge fix still needs fresh normal-input QA in both viewports.","unknowns":["No Attempt17 natural trace exists."]}
+  ],
+  "rootCauseHypothesis":{
+    "evidence":"Attempt16's lifecycle candidate captured only frame216, failed to expose the runtime selector, and ended with a launch at x=332.7 rather than a second stored pose. Attempt11 independently proves that the desired behavior has two distinct keyed runway edges at frames216 and302; the candidate did not record enough edge state to distinguish suppression from ordinary-anchor fall-through.",
+    "changeHypothesis":"Implement the pending pose setter and runtime selector with a per-edge latch keyed by supportId, sharp contact part, and top-face class. A live keyed manifold cannot overwrite; only an observed no-hit transition can rearm that key. A qualifying separating top contact remains airborne and stores the immutable support-relative pose, while side/body/approaching contacts keep their existing branches.",
+    "stateName":"pendingRunwayReleasePose",
+    "edgeRule":"latch the runway support plus sharp top-contact class per edge; duplicate edges cannot overwrite, and only a clear keyed manifold can rearm",
+    "selectorRule":"runtime release selector returns the same reachable authored support selected by the recorded candidate trace, including white-branch and late lift-plank fixtures",
+    "preservedBranches":["standard anchored release and recoveryAge reset","approaching runway top hard-surface recovery","side sharp runway anchor","later x>=350 runway suppression","body/handle bounce","non-runway and opening support launches"],
+    "rejectedAlternatives":["another bounded-follow gain adjustment","one global disarm boolean for all runway contacts","allowing a separating top contact to fall through to ordinary anchor","assuming frame528 was TTL without a clear-reason trace","loosening capture-frame or tap-correction assertions"]
+  },
+  "scope":{
+    "includedFiles":["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts","/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"],
+    "excludedFiles":["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-presentation.ts","/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/style.css","/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms","/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist"],
+    "route":"formal-fixer","expectedSourceFileLimit":2
+  },
+  "acceptanceCriteria":[
+    "Run and save RED focused evidence before edits.",
+    "Record per-edge contact enter/leave, pose set, consume, expire, clear, rearm, and ordinary-anchor events with support, part, top class, frame, recoveryAge, status, and collision context.",
+    "Expose a runtime selector whose early and late fixture results match the recorded white-branch and lift-plank candidates.",
+    "Capture exactly frames216 and302 with the retained pose coordinates and no same-manifold overwrite.",
+    "Keep both pending intervals airborne with measurable 12–13px-scale motion and normal rotation.",
+    "Consume each saved pose once at the scheduled taps and emit the standard launch from the stored support-relative pose.",
+    "A separating runway top contact never falls through to an ordinary anchor while the keyed edge is active.",
+    "Rearm a keyed edge only after an observed no-hit transition; side/body contacts do not rearm the sharp-top key.",
+    "Preserve exact 2.35-second TTL and clear on reset/load/terminal/inactive/non-runway branches.",
+    "Keep tap corrections within retained focused bounds without adding a new per-frame follow gain.",
+    "Trace frame528's clear reason if the replay reaches it; do not assume TTL, collision, terminal, or inactivity without evidence.",
+    "Preserve approaching, side/body, x>=350, non-runway, opening, later-route, and ordinary anchored release behavior.",
+    "Reach at least 11.9 seconds and player x>2000 in the fixed replay without failure.",
+    "Run focused tests and pnpm test only after focused GREEN passes.",
+    "Run pnpm lint and pnpm typecheck only after focused GREEN passes, then exactly one pnpm build with dist hash.",
+    "Rollback both owned files immediately on focused failure and make no natural/perceptual completion claim."
+  ],
+  "evidenceClassification":{
+    "observed":["Attempt16 captured only frame216 and failed at 5.9917s.","Attempt16 selector assertion observed undefined.","Attempt11 captured the validated distinct edges [216,302] and completed the route."],
+    "inferred":["A global latch or ordinary-anchor fall-through can suppress the second keyed edge.","A per-support/per-contact edge latch is a falsifiable narrower rule."],
+    "unknown":["The exact frame528 clear reason and whether it belongs to the same top manifold remain unknown until the new trace records a contact leave/enter sequence."]
+  },
+  "createdAt":"2026-09-23T12:35:00.000Z"
+}

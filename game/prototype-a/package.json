@@ -1,0 +1,29 @@
+{
+  "name": "rune-blade-night-run-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "tsx --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src tests scripts vite.config.ts --config eslint.config.js",
+    "build": "tsx scripts/build.ts",
+    "build:3d": "tsx scripts/build-3d.ts",
+    "qa:browser": "pnpm build && tsx scripts/qa-browser.ts",
+    "qa:levels": "pnpm build && tsx scripts/qa-level-pack.ts",
+    "qa:3d": "pnpm build:3d && tsx scripts/qa-browser-3d.ts"
+  },
+  "dependencies": {
+    "three": "0.185.0",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/three": "0.185.4",
+    "eslint": "^9.35.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.41.0",
+    "vite": "^8.2.2"
+  }
+}

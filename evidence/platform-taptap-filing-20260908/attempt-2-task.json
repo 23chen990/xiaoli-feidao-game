@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-task",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "taptap-filing-package-20260908",
+  "attempt": 2,
+  "targetGame": "mobile-slice-adaptation-20260830（TapTap 名称：疯狂切割）",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "platformWorkspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame",
+  "outputDirectory": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-filing-20260908/attempt-2",
+  "triagePath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-filing-20260908/triage.json",
+  "researchPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/open-source-research-taptap-cocos-v1.json",
+  "officialPlugin": {
+    "version": "1.2.2",
+    "sourceUrl": "https://app-res.tapimg.com/file/2026-04-14/67e7d94f5e586596dab061816d1c509d.zip",
+    "sha256": "6b8a9a3cc62b6c54cefab397097babb771d9d99f90442cddff06310a4c9ed73f"
+  },
+  "tapTapGame": {
+    "name": "疯狂切割",
+    "appId": "928932",
+    "identityEvidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-ac1cdf15-9886-4559-b83c-a0cf1566078c-954468d979ce.png"
+  },
+  "instructions": [
+    "This is attempt 2/5 of the existing formal platform cycle. Preserve attempt-1 and the GREEN gameplay/platform tests. You are FixerAgent and own only the target platformWorkspace plus attempt-2 evidence. Do not edit web-lite, shared factory code, other platforms, or other runs.",
+    "Read only attempt-1/fix-result.json, attempt-1/cocos-build-console.log, the platform project's package/build/extension manifests, triage and research. Diagnose TAP-COCOS-EXTENSION-SCAN-003 before editing; do not change gameplay unless a new RED test proves it is causally required.",
+    "Add the narrowest failing regression for the verified Cocos 3.8.8 project/extension manifest contract and capture RED. Apply the minimal metadata or extension-layout repair, then run the targeted test and existing 7 tests to GREEN.",
+    "Retain official plugin 1.2.2 unchanged at the audited hash. Do not patch vendor source to hide the error. If the official documented installation location is global rather than project-local, relocate it without duplicating vendor code and record the exact path/decision.",
+    "Run lint and typecheck. Execute at most one Cocos build in this attempt. Use TapTap name 疯狂切割 and ID 928932 only. If build succeeds, inspect build/TapBuild/game.zip root entries, bytes, SHA-256 and required identifiers; otherwise output BLOCKED with the exact new evidence.",
+    "Write a strict PlatformFixResultSchema artifact to attempt-2/fix-result.json. Do not claim device or upload readiness without independent TapTap backend scan testing."
+  ],
+  "acceptanceChecks": [
+    "A RED regression reproduces the manifest/extension dependency-scan precondition missing in attempt 1 and turns GREEN after the minimal fix.",
+    "All attempt-1 tests remain GREEN and no existing game behavior files outside the platform project change.",
+    "The single Cocos build exits without TAP-COCOS-EXTENSION-SCAN-003 and the official converter is reached.",
+    "If produced, game.zip contains game.js, game.json and project.config.json, identifies 928932, is below 20MB and has a recorded SHA-256.",
+    "fix-result.json validates and accurately reports remaining backend/device evidence gaps."
+  ],
+  "contextIntentionallyOmitted": [
+    "Unrelated gameplay QA and previous Level 1 repair cycles",
+    "Other games, shared factory files and non-TapTap platforms",
+    "Advertising, IAP, cloud save and ranking",
+    "All screenshots except the verified TapTap identity evidence"
+  ]
+}

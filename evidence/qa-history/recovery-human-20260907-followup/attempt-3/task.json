@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-task",
+  "route": "formal-fixer",
+  "cycleId": "human-review-20260907-l1-followup",
+  "attempt": 3,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "authorizationPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/authorization.json",
+  "outputDirectory": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-3",
+  "issues": [
+    {
+      "id": "L1-RUNWAY-COLLISION-MISMATCH",
+      "severity": "error",
+      "message": "Level1 的可见连续跑道被前段可收集目标作为 supportSurfaceId 使用，但 level1-runway-main 被标记为 collidable=false，支持面碰撞循环跳过该承托，导致同一自然输入回放在 x≈1228 跌出路线。",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-2-runway-red-evidence.json",
+      "classification": "confirmed-product-defect",
+      "acceptance": [
+        "回归测试先在当前 collidable=false 实现下失败，再在仅将 Level1 runway 改为可碰撞后通过",
+        "同一 visible-guided tap 时间序列在 12 秒内保持 airborne 或 anchored 且前进超过 x=2000，不在 runway 支持缺失处 fall",
+        "只修改 Level1 runway 因果配置及其针对性回归测试；其他关卡、共享工厂和发布配置不变"
+      ]
+    }
+  ],
+  "triagePath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/triage.json",
+  "contractPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/../qa-recovery-20260907/active-slice-contract.json",
+  "contractSha256": "0513fec6b10a2ad2cd778f6fb537a58fd5bbca2510da4d850e3059beccb9f9b2",
+  "expectedBuildSha256": "10cba7632922f9fdeaa2eb33f7a05aa09bd3dbb7ca45a2db24acac282c9fd9a6",
+  "instructions": [
+    "这是新授权周期第3/5次；保留 attempt-1 和 attempt-2 的历史证据，不回写或删除它们。",
+    "先写 RED 回归测试并在当前源码下确认失败；再做最小 Level1 runway 配置修改。",
+    "只允许修改 src/game-levels.ts 与针对该 issue 的回归测试；不改其他关卡、共享工厂、发布配置或无关渲染。",
+    "完成后运行完整 tests、lint、typecheck，最多执行一次 pnpm build，并写严格 FixResultSchema 的 fix-result.json。",
+    "独立 QA 仍需用新构建做手机和桌面自然输入复测；不得用 fixture 或状态注入宣称通过。"
+  ],
+  "outputSchema": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/schemas.ts#FixResultSchema"
+}

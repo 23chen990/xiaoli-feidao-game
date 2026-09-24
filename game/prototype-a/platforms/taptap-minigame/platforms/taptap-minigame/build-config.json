@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "platform": "wechatgame",
+  "orientation": "portrait",
+  "output": "build/wechatgame",
+  "appId": "928932",
+  "gameName": "疯狂切割",
+  "gameVersion": "1.0.0",
+  "convertToTapMiniGame": true,
+  "plugin": {
+    "name": "taptap-minigame-tools",
+    "version": "1.2.2",
+    "sha256": "6b8a9a3cc62b6c54cefab397097babb771d9d99f90442cddff06310a4c9ed73f"
+  }
+}

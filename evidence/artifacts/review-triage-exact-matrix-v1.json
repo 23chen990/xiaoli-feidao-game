@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "ReviewTriageExactMatrix",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "capturedAt": "2026-09-06",
+  "status": "BLOCKED_REVIEW_CLOSURE",
+  "inputs": [
+    "artifacts/review-coverage-audit-v2.json",
+    "artifacts/reference-doc-review-v1.json",
+    "artifacts/core-comparison-contract-v1.json",
+    "artifacts/qa-repeatability-audit-v1.json",
+    "reference-evidence/manifest.json"
+  ],
+  "localChecks": {
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "unitTests": { "status": "PASS", "passed": 160, "failed": 0 },
+    "levelPackCommand": "pnpm qa:levels",
+    "levelPackReport": "qa-level-pack-v1/qa-report.json",
+    "levelPackTruth": "PARTIAL_PASS_RUNNER_FAILED",
+    "levelPackFailure": "desktop level 4 natural attempts included spike failures; runner smokeExitCode=1",
+    "browserCommand": "pnpm qa:browser",
+    "browserTruth": "BLOCKED_NATURAL_ASSERTION",
+    "browserFailure": "desktop-natural sigil did not visibly descend; browser smoke exit 1",
+    "performance": { "medianMs": 16.7, "p95Ms": 24.2, "over50Percent": 0.167, "withinTargets": true, "scope": "headless Chromium only" }
+  },
+  "matrix": [
+    { "stream": "REVIEW-STREAM-001", "coverage": "PARTIAL_ONLY", "status": "OPEN", "nextEvidence": "01-12 × portrait/landscape × spawn/contact/cut/settled/terminal exact traces" },
+    { "stream": "REVIEW-STREAM-002", "coverage": "PARTIAL_EVIDENCE_ADDED", "status": "OPEN", "nextEvidence": "12-level natural beat/duration/pressure sweep" },
+    { "stream": "REVIEW-STREAM-003", "coverage": "PARTIAL_ONLY", "status": "OPEN_OR_BLOCKED", "nextEvidence": "route-changing cuts and moving-support branch traces desktop/mobile" },
+    { "stream": "REVIEW-STREAM-004", "coverage": "PARTIAL_ONLY", "status": "PACK_BLOCKED", "nextEvidence": "all marked spikes exact hit/avoid/fail attribution" },
+    { "stream": "REVIEW-STREAM-005", "coverage": "PARTIAL_ONLY", "status": "OPEN_OR_BLOCKED", "nextEvidence": "dessert/log/crate/crystal cut silhouette/cap lifecycle" },
+    { "stream": "REVIEW-STREAM-006", "coverage": "NOT_CLOSED", "status": "UNSTATUSSED", "nextEvidence": "3-second fragment/sigil settle screenshots desktop/mobile" },
+    { "stream": "REVIEW-STREAM-007", "coverage": "NOT_CLOSED", "status": "OPEN", "nextEvidence": "each food family natural cut readability" },
+    { "stream": "REVIEW-STREAM-008", "coverage": "PLAYER_VISIBLE_GAP_CONFIRMED", "status": "BLOCKED", "nextEvidence": "separated finish wall and support flicker perceptual evidence" },
+    { "stream": "REVIEW-STREAM-009", "coverage": "NOT_CLOSED", "status": "INCOMPLETE", "nextEvidence": "Bonus entry/flight/low-arc/background semantics trace" },
+    { "stream": "REVIEW-STREAM-010", "coverage": "PARTIAL_EVIDENCE_ADDED", "status": "INCOMPLETE", "nextEvidence": "unlock→Bonus→return→refresh natural journey" },
+    { "stream": "REVIEW-STREAM-011", "coverage": "PARTIAL_ONLY", "status": "OPEN_OR_BLOCKED_FLAKY", "nextEvidence": "repeatable startup→loop→failure/recovery→finish→replay" },
+    { "stream": "REVIEW-STREAM-012", "coverage": "NOT_REVERIFIABLE_ON_CURRENT_HOST", "status": "BLOCKED", "nextEvidence": "re-ingest recording with identity review" },
+    { "stream": "REVIEW-STREAM-013", "coverage": "PLAYER_VISIBLE_GAP_CONFIRMED", "status": "OPEN", "nextEvidence": "wall-local multiplier/reward animation and ledger consistency" },
+    { "stream": "REVIEW-STREAM-014", "coverage": "PARTIAL_ONLY", "status": "P2_METADATA_GAP", "nextEvidence": "immutable targetGame/run/version/entrypoint fingerprints" },
+    { "stream": "REVIEW-STREAM-015", "coverage": "NOT_CLOSED", "status": "WEB_LITE_ONLY", "nextEvidence": "WeChat/Douyin/TapTap adapters/config/build/QA" },
+    { "stream": "REVIEW-STREAM-016", "coverage": "NOT_CLOSED", "status": "QUARANTINED_OR_OPEN", "nextEvidence": "identity fingerprints and formal fixer retest" }
+  ],
+  "formalFixerGate": {
+    "eligible": false,
+    "reason": "Review closure prerequisites are unmet; natural mobile repeatability, perceptual finish gaps, unavailable recording, platform scope, and metadata identity remain blocked.",
+    "rule": "Do not modify generated game or claim QA→Fixer→QA completion until exact matrix closure is achieved."
+  },
+  "claimBoundary": "web-lite evidence only; no native platform publishability or competitor-video verification claim",
+  "nextRoute": "Keep BLOCKED; obtain missing recording or quarantine permanently, complete exact natural matrix, then formal QA→Fixer→QA for core loop/economy/finish/camera/lifecycle issues."
+}

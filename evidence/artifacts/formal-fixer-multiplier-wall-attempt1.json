@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixerSummary",
+  "route": "formal-fixer",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "attempt": 1,
+  "issueIds": ["MULTIPLIER-WALL-011"],
+  "threadContinuity": {"storedBuilderThreadId": null, "replacement": "local workspace-scoped formal-fixer execution", "reason": "No active stored Builder thread was exposed for this run."},
+  "routeReason": "Core-loop finish geometry and settlement collision are shared across levels and mobile/desktop presentation paths.",
+  "contextOmitted": ["unrelated art-provider gaps", "native packaging gaps", "prior closed fixer issues", "unrelated QA screenshots"],
+  "filesChanged": [
+    "src/game-levels.ts",
+    "src/game-core.ts",
+    "src/three-world-renderer.ts",
+    "src/main.ts",
+    "src/style.css",
+    "index.html",
+    "tests/game-core.test.ts",
+    "tests/level-pressure.test.ts"
+  ],
+  "fix": {
+    "wall": "Finish options are contiguous from the bonus cap/high multiplier lanes through the broad safe lane.",
+    "multipliers": ["×4", "×2", "÷3", "×0.5", "×1 safe"],
+    "difficulty": "Higher multipliers use narrower lanes; ×0.5 and safe lanes are broader recovery choices.",
+    "collision": "Swept knife-part contact with the finish wall selects the visible lane and settles before the wall plane; the knife is clamped outside the wall face.",
+    "presentation": "Finish wall meshes are opaque and multiplier labels are rendered in the HUD safe area for desktop/mobile readability."
+  },
+  "tests": {
+    "red": "New wall-contiguity and no-penetration tests failed before implementation.",
+    "green": "pnpm lint; pnpm typecheck; pnpm test — 151 passed; pnpm build — passed.",
+    "targeted": "game-core and level-pressure suites — 41 passed."
+  },
+  "qa": {
+    "deterministicBrowserProduct": "tests/artifacts/qa-3d-main-v1/browser-result.json passed=true; natural desktop/mobile runs reached terminal wins and replay paths.",
+    "perceptualEvidence": "tests/artifacts/qa-3d-main-v1/desktop-natural-won.png and mobile-natural-zero-won.png",
+    "infrastructureGap": "qa-browser report is blocked only by host performance sampling (over50Percent 1.5–3.5%), while product smoke/natural evidence passed; rerun on a stable host is required before release claim."
+  },
+  "status": "PASS_WITH_QA_EVIDENCE_GAP",
+  "remainingEvidenceGaps": ["stable-host performance gate rerun", "native WeChat/Douyin/TapTap packaging"],
+  "claimBoundary": "web-lite browser repair evidence only; not a native platform publishability claim."
+}

@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "QaRetestSummary",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "deterministic": {"status":"PASS","tests":121},
+  "build": {"status":"PASS","artifact":"artifacts/build-report-v2.json"},
+  "targetedNaturalRetest": {"status":"PASS","artifact":"artifacts/gameplay-triage-natural-level1-v2.json","evidence":"qa-level-pack-v1/qa-report.json","desktopLevels":[1,4,7,10,12],"mobileLevels":[1,6,12],"consoleErrors":0,"pageErrors":0,"requestFailures":0},
+  "fullNaturalSweep": {"status":"BLOCKED","artifact":"qa-all-levels-v1/report.json","results":24,"nonTerminalOrFailed":["desktop level 1","desktop level 8","desktop level 12","mobile level 1","mobile level 5","mobile level 12"]},
+  "perceptual": {"status":"BLOCKED","artifact":"artifacts/perceptual-qa-report-v2.json"},
+  "decision": "Preserve BLOCKED product gate; targeted Level 1 recovery fix is verified, but full natural all-level closure and platform packaging evidence are still missing."
+}

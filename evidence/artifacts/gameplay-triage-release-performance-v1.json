@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageReleasePerformance",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "OPEN_BLOCKED",
+  "classification": "release-performance-gate",
+  "route": "formal-fixer",
+  "routeReason": "The failure is on the default runtime browser gate and affects the core-loop release path; it cannot be closed by unit tests or a fixture-only trace.",
+  "reproduction": {
+    "command": "pnpm qa:browser",
+    "capturedAt": "2026-09-06",
+    "entrypoint": "index.html",
+    "viewport": "390x844 native-touch plus desktop smoke",
+    "evidence": [
+      "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/report.json",
+      "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/console.log",
+      "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/browser-result.json"
+    ],
+    "observed": {
+      "medianMs": 24.85,
+      "p95Ms": 83.3,
+      "over50Percent": 18.833,
+      "drawCalls": 29,
+      "triangles": 544,
+      "withinTargets": false,
+      "smokeExitCode": 1
+    },
+    "playerJourney": "The smoke runner reaches natural desktop/mobile terminal phases, but the independent release performance assertion fails; a green BrowserSmokeResult does not override this blocker."
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "default runtime scene / knife / cuttable route",
+      "lifecycleStateBranch": ["startup", "airborne", "cut", "finish", "replay"],
+      "rendererPresentationPath": ["src/main.ts", "src/game-core.ts", "src/three-world-renderer.ts", "src/three-presentation.ts"],
+      "deviceViewport": ["desktop 1180x720", "mobile portrait 390x844"],
+      "expected": "The declared startup-to-replay journey stays within release frame-time thresholds without hiding long frames."
+    },
+    {
+      "objectType": "finish wall / terminal overlay / reward feedback",
+      "lifecycleStateBranch": ["finish approach", "contact", "reward", "celebration", "terminal"],
+      "rendererPresentationPath": ["src/main.ts", "src/three-world-renderer.ts", "src/style.css"],
+      "deviceViewport": ["desktop 1180x720", "mobile portrait 390x844"],
+      "expected": "Terminal presentation and reward feedback do not introduce long-frame spikes or obscure the next replay action."
+    }
+  ],
+  "acceptanceCriteria": [
+    "pnpm qa:browser exits zero and its BrowserQaReport.passed is true",
+    "release performance assertion reports withinTargets=true for the same default entrypoint and target viewports",
+    "natural startup -> core loop -> terminal/settlement -> replay remains player-visible on desktop and 390x844 mobile",
+    "perceptual QA rechecks finish wall, reward ownership and terminal overlay after the performance repair",
+    "no fixture/state injection, sibling entrypoint or web-lite-only evidence is used to close this issue"
+  ],
+  "contextOmitted": [
+    "unavailable user recordings and quarantined mismatched recordings",
+    "platform packaging outside the web-lite QA gate",
+    "unrelated historical fixer issues and screenshots"
+  ],
+  "evidenceGaps": [
+    "Current performance evidence is local headless Chromium and is not mobile hardware certification.",
+    "The supplied reference recording remains unavailable, so frame/audio comparison is not claimable.",
+    "The current run still has unresolved natural/perceptual review streams in review-coverage-audit-v2."
+  ],
+  "nextStage": "FORMAL_FIXER_REBUILD_THEN_QA_RETEST"
+}

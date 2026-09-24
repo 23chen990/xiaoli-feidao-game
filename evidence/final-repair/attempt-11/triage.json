@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-triage",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 11,
+  "issueId": "L1-RUNWAY-RECOVERY-VIRTUAL-POSE-RECONSTRUCTION",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "classification": "natural-level1-runway-recovery-blocker",
+  "status": "VALIDATED_REPRODUCTION",
+  "priorAttempt": {
+    "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-10/fix-result.json",
+    "sha256": "63390311bbc2e2de7debe0fbf32a1e639b50d64485496c4f2804c98833897da3",
+    "status": "BLOCKED",
+    "candidateRejected": true
+  },
+  "reproduction": {
+    "baselineRunwayContacts": [
+      {
+        "frame": 216,
+        "playerX": 305.2,
+        "playerY": 514.166666667,
+        "playerAngle": 4.98627645,
+        "contactX": 315.478089607,
+        "contactY": 477.583051837,
+        "normalY": -1,
+        "relativeNormalVelocity": 180
+      },
+      {
+        "frame": 302,
+        "playerX": 332.7,
+        "playerY": 469.708333333,
+        "playerAngle": 6.656567983,
+        "contactX": 368.08175387,
+        "contactY": 483.56948383,
+        "normalY": -1,
+        "relativeNormalVelocity": 195
+      }
+    ],
+    "baselineReleasePoses": [
+      {
+        "tapSeconds": 2.327048167,
+        "playerX": 305.2,
+        "playerY": 514.166666667,
+        "playerAngle": 4.98627645
+      },
+      {
+        "tapSeconds": 4.602164,
+        "playerX": 332.7,
+        "playerY": 469.708333333,
+        "playerAngle": 6.656567983
+      }
+    ],
+    "secondPoseHoldSeconds": 2.092,
+    "naturalEvidence": [
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/recording.json",
+        "sha256": "5e4d6457955e0596707116e3c9d325880506f41c24aa5bfd37928ae5cb242717"
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/recording.json",
+        "sha256": "18734f878ef1f4c048f4071326e31b2dad5ee022fa14a8baf6004bd5c20f7ddd"
+      }
+    ],
+    "priorFailureEvidence": [
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-10/fix-result.json",
+        "sha256": "63390311bbc2e2de7debe0fbf32a1e639b50d64485496c4f2804c98833897da3"
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-9/fix-result.json",
+        "sha256": "663e46f77a7ee79bf4f298d10c4069d0b4561a725d29f51879620b54eb3fdca4"
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-8/fix-result.json",
+        "sha256": "45841660e1fdb10f8fa71ec20a0fa99f8d62eba28b0a07a41f0058aec3d1aa19"
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/replay-final.json",
+        "sha256": "565cd8f55bca0a4c63b17198583d36840c74ba91059d97b297d495c14c54c834"
+      }
+    ]
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "runway sharp tip",
+      "lifecycleStateBranch": "first separating top-tip contact with virtual recovery required",
+      "rendererPresentationPath": "Three.js player mesh, runway collision feedback, and airborne transform",
+      "viewport": "390x844",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/recording.json"],
+      "observation": "The natural portrait run enters the early runway branch that becomes a visible anchor.",
+      "inference": "A support-relative pose can preserve the authored release start while the visible state remains airborne.",
+      "unknowns": ["The lost attempt-8 candidate source cannot be reused, so the pose state must be reconstructed and revalidated."]
+    },
+    {
+      "objectType": "runway sharp tip",
+      "lifecycleStateBranch": "second separating top-tip contact and long pending hold",
+      "rendererPresentationPath": "Three.js player transform, pending pose correction, and launch feedback",
+      "viewport": "1100x720",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/recording.json"],
+      "observation": "Desktop natural input repeats the anchor branch and later stack/settlement pressure.",
+      "inference": "The reconstructed state must be simulation-level, persist for the measured second hold, and remain visually airborne.",
+      "unknowns": ["The perceptual size of any second tap correction is not yet measured."]
+    },
+    {
+      "objectType": "pending runway virtual pose",
+      "lifecycleStateBranch": "set at both contacts, consumed once at taps, bounded expiry",
+      "rendererPresentationPath": "SliceSimulation pose fields, support transform, launch event, and camera presentation",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-10/red-targeted.log"],
+      "observation": "Baseline has two ordinary anchors at frames 216/302; prior candidate evidence matched only the first virtual release and lacked the second pose.",
+      "inference": "The next candidate should explicitly model both support-relative poses and a bounded lifetime of at least 2.092s plus margin.",
+      "unknowns": ["Whether the reconstructed airborne presentation and route replay pass natural QA remains unknown."]
+    },
+    {
+      "objectType": "runway support",
+      "lifecycleStateBranch": "baseline anchored release versus reconstructed virtual release",
+      "rendererPresentationPath": "support follow, anchor offsets, standard velocity, cooldown, and launch event",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-3/fix-result.json"],
+      "observation": "The baseline route succeeds when each pose is held anchored until its tap; velocity-only repairs fail later.",
+      "inference": "The reconstruction must preserve pose and release semantics together instead of tuning a global vertical velocity.",
+      "unknowns": ["Exact bounded TTL margin and visible correction limit require focused candidate evidence."]
+    }
+  ],
+  "rootCauseHypothesis": {
+    "evidence": "Attempts 9 and 10 establish that the restored baseline has no pending-pose state to inspect, while attempt 8 matched the first baseline release pose but lost the second. Both baseline contacts are early top-normal separating tips below the player-center x=350 suppression boundary, and the second release needs a support-relative pose held for about 2.092 seconds.",
+    "changeHypothesis": "Reconstruct an explicit pendingRunwayReleasePose state from the validated contract: on every early separating runway top-tip contact with player center x<350, store supportId, support-relative offsets, contact player x/y/angle, and age while leaving the visible simulation airborne; consume it exactly once on a normal tap by resolving the active support transform plus stored offsets and applying standard anchored-release velocity/feedback. Use a bounded lifetime of 2.35 seconds (2.092 second observed hold plus margin), and clear it on expiry, reset/loadLevel, terminal, non-runway contact, or inactive support.",
+    "stateName": "pendingRunwayReleasePose",
+    "poseFields": ["supportId", "anchorOffsetX", "anchorOffsetY", "playerX", "playerY", "playerAngle", "age"],
+    "setterRule": "capture every early separating runway top-tip contact with player center x<350 and normalY<=-0.9; do not use contact-point x as the suppression basis",
+    "lifetimeSeconds": 2.35,
+    "releaseRule": "consume once on normal airborne tap by resolving active support transform plus stored offsets, then use standard anchored-release velocity and launch feedback",
+    "rejectedAlternatives": [
+      "Repeating a contact-point/player-center gate guess without reconstructing the missing setter cannot be validated against the baseline source.",
+      "Changing TTL alone cannot create the second pose because the restored baseline has no pending state.",
+      "Velocity-only or clearance-only corrections already failed attempts 3–7 and do not preserve the release pose.",
+      "Renderer or viewport-specific work cannot address deterministic collision and release state.",
+      "An unbounded latch or permanent airborne freeze would violate lifecycle and perceptual acceptance."
+    ]
+  },
+  "scope": {
+    "includedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+    ],
+    "excludedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-presentation.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/main.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/src/core",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/research"
+    ],
+    "route": "formal-fixer",
+    "expectedSourceFileLimit": 2
+  },
+  "acceptanceCriteria": [
+    "A RED test on restored baseline reproduces both ordinary runway anchors at fixed frames 216 and 302.",
+    "A GREEN test proves a pendingRunwayReleasePose is set at both early separating top-tip contacts using player-center x<350 and normalY<=-0.9.",
+    "The pose stores supportId, anchor offsets, contact player x/y/angle, and bounded age; contact-point x is not used as the suppression basis.",
+    "The visible player remains status airborne and continues a measurable normal motion before each tap; no hidden anchored status or indefinite freeze is accepted.",
+    "The first release consumes pose 1 exactly once and matches baseline x≈305.2, y≈514.17, angle≈4.98628 before standard release velocity.",
+    "The second pose remains pending for at least 2.092 seconds and the second release consumes it exactly once at x≈332.7, y≈469.71, angle≈6.65657 before standard release velocity.",
+    "Any tap-time correction for both poses is measured and remains within a documented focused-test bound; a large unreviewed teleport blocks the candidate.",
+    "The 2.35 second lifetime is bounded; expiry, reset/loadLevel, terminal, non-runway contact, and inactive-support clears are explicit and tested.",
+    "Standard launch velocity, angular velocity, cooldown reset, input-buffer clearing, and launch event remain unchanged for virtual and ordinary anchored releases.",
+    "Opening white landing, non-runway anchors, side sharp contacts, approaching top recovery, later x>=350 runway suppression, and blunt bounce remain unchanged.",
+    "The same seed-31 fixed timestamp replay reaches at least 11.9 seconds and x>2000 without failure or authored-support stall.",
+    "Only game-core.ts and level1-recovery.test.ts change; no renderer, level, platform, shared factory, or release files.",
+    "pnpm test, pnpm lint, pnpm typecheck pass and exactly one pnpm build succeeds with a recorded dist SHA-256.",
+    "Independent fresh natural QA must retest both viewports, exact runway branch, visible feedback, terminal/settlement, and replay; no Fixer runtime or perceptual claim."
+  ],
+  "evidenceClassification": {
+    "observed": [
+      "Baseline deterministic replay has two top-normal separating runway contacts and two anchored release poses.",
+      "Attempt 8 matched the first pose but failed to observe the second pending pose; attempts 9 and 10 confirmed the baseline has no pending state to inspect.",
+      "The second baseline contact-to-tap hold is approximately 2.092 seconds."
+    ],
+    "inferred": [
+      "A fresh explicit virtual-pose state can preserve baseline release timing without reporting an authored anchor.",
+      "A 2.35 second bounded lifetime covers the measured hold with a small margin while retaining expiry semantics."
+    ],
+    "unknown": [
+      "Whether the reconstructed airborne presentation avoids a perceptually unacceptable correction or freeze.",
+      "Whether the reconstructed candidate passes the full fixed replay and natural QA.",
+      "Whether any unrelated collision branch clears the pose before the second tap."
+    ]
+  },
+  "createdAt": "2026-09-23T10:18:00.000Z"
+}

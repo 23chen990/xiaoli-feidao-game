@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixEvidence",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "attempt": 1,
+  "issueIds": ["USER-PROGRESSION-001", "USER-BONUS-TEST-001"],
+  "filesChanged": ["src/main.ts", "src/game-core.ts", "index.html", "src/style.css", "tests/level-progress.test.ts", "tests/level-ui.test.ts"],
+  "behavior": {
+    "ordinaryTerminalTap": "advances to next unlocked level; final level has no next transition",
+    "replayButton": "replays the same level",
+    "bonusTestButton": "explicitly labeled UI shortcut, one-shot, only for levels authored with bonus support",
+    "productionBonusRoute": "unchanged; normal play still enters through finish gate collision"
+  },
+  "verification": {
+    "tests": { "command": "pnpm test", "passed": true, "passedCount": 135 },
+    "lint": { "command": "pnpm lint", "passed": true },
+    "typecheck": { "command": "pnpm typecheck", "passed": true },
+    "build": { "command": "pnpm build", "passed": true, "distBytes": 2723330 },
+    "browserSmoke": { "command": "pnpm qa:browser", "passed": true }
+  },
+  "evidenceGaps": ["A dedicated Playwright assertion for the new terminal tap and test button should be added to the next full QA retest."]
+}

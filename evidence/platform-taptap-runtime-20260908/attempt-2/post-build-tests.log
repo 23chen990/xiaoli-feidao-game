@@ -1,0 +1,54 @@
+$ tsx --test tests/*.test.ts
+✔ one touch deterministically launches and then flips the blade (2.988417ms)
+✔ sharp contact cuts once and blunt contact visibly reflects (0.264334ms)
+✔ hazard and fall failures are attributable and touch replays from ready (0.170583ms)
+✔ finish produces a settlement and touch starts a clean replay (0.166ms)
+✔ declares a Cocos Creator 3.8.8 project for 疯狂切割 (3.005708ms)
+✔ uses the object-shaped Creator manifest required by the Cocos dependency scanner (0.956958ms)
+✔ locks the TapTap intermediate build to portrait and the reviewed AppID (0.67325ms)
+✔ rejects missing and placeholder AppIDs while accepting the reviewed AppID (2.098875ms)
+✔ OPPO launch contract records native host ownership and package entrypoints (1.241042ms)
+✔ vivo scene construction avoids runtime MeshRenderer and Material activation (0.220042ms)
+✔ portrait runtime uses a 390x844 fixed-width design and safe-area layout (0.604708ms)
+✔ first frame draws a non-monochrome, non-empty visible field (0.073375ms)
+✖ official TapTap ZIP starts at the portrait fixed-width resolution (9.018ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 12
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 145.426708
+
+✖ failing tests:
+
+test at tests/zip-settings-contract.test.ts:10:1
+✖ official TapTap ZIP starts at the portrait fixed-width resolution (9.018ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      designResolution: {
+        height: 844,
+        policy: 4,
+        width: 390
+      },
+  +   exactFitScreen: true
+  -   exactFitScreen: false
+    }
+  
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tests/zip-settings-contract.test.ts:15:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.start (node:internal/test_runner/test:1015:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { exactFitScreen: true, designResolution: { width: 390, height: 844, policy: 4 } },
+    expected: { exactFitScreen: false, designResolution: { width: 390, height: 844, policy: 4 } },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+[ELIFECYCLE] Test failed. See above for more details.
+[WARN]  Local package.json exists, but node_modules missing, did you mean to install?

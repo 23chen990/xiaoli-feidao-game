@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "platform-fix-result",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "taptap-filing-package-20260908",
+  "attempt": 1,
+  "targetGame": "mobile-slice-adaptation-20260830（TapTap 名称：疯狂切割）",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED",
+  "why": "formal-fixer was selected because this is a platform adapter/build/release-configuration task. RED then GREEN tests established package metadata, portrait AppID 928932 validation, and the one-touch cut/reflect/fail/finish/replay rules. The only permitted Cocos Creator 3.8.8 build attempt failed during official extension dependency scanning with TypeError: Reflect.get called on non-object and produced no official game.zip, so packaging cannot be claimed complete. Context intentionally omitted: other factory runs, unrelated QA history, non-TapTap platform work, advertising, IAP, cloud save, and ranking.",
+  "filesChanged": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/package.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tsconfig.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tsconfig.core.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/cocos-build-config.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/assets/scenes/main.scene",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/assets/scripts/GameBootstrap.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/assets/scripts/core/game-rules.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/assets/scripts/core/tap-config.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tests/game-rules.test.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tests/platform-contract.test.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/platforms/taptap-minigame/build-config.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/extensions/taptap-minigame-tools/",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/README.md",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/THIRD_PARTY_NOTICES.md"
+  ],
+  "tests": [
+    {
+      "command": "../../../../../../node_modules/.bin/tsx --test tests/*.test.ts",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-filing-20260908/attempt-1/green-tests.log (7/7 passing after red-tests.log recorded 0/7)"
+    },
+    {
+      "command": "../../../../../../node_modules/.bin/tsc --noEmit -p tsconfig.core.json",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-filing-20260908/attempt-1/typecheck.log"
+    },
+    {
+      "command": "../../../../../../node_modules/.bin/tsc --noEmit -p tsconfig.core.json --noUnusedLocals --noUnusedParameters",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-filing-20260908/attempt-1/lint.log"
+    },
+    {
+      "command": "shasum -a 256 attempt-1/taptap-cocos-plugin-1.2.2.zip",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-filing-20260908/attempt-1/plugin-sha256.log matches audited 6b8a9a3cc62b6c54cefab397097babb771d9d99f90442cddff06310a4c9ed73f"
+    },
+    {
+      "command": "CocosCreator --project <platform-workspace> --build configPath=./cocos-build-config.json",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-filing-20260908/attempt-1/cocos-build-console.log"
+    },
+    {
+      "command": "test -f build/TapBuild/game.zip",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-filing-20260908/attempt-1/package-check.log"
+    }
+  ],
+  "build": {
+    "attempted": true,
+    "passed": false,
+    "zipPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/build/TapBuild/game.zip",
+    "sha256": "",
+    "bytes": 0
+  },
+  "blockers": [
+    {
+      "id": "TAP-COCOS-EXTENSION-SCAN-003",
+      "detail": "Cocos Creator 3.8.8 failed before build completion while scanning the installed official taptap-minigame-tools 1.2.2 extension: TypeError: Reflect.get called on non-object. The process did not naturally exit and was stopped after the failure was captured."
+    },
+    {
+      "id": "TAP-DEVICE-QA-002",
+      "detail": "TapTap backend scan and iOS/Android physical-device QR testing have not been performed."
+    }
+  ],
+  "evidenceGaps": [
+    "No official build/TapBuild/game.zip exists, so root-file inventory, package byte size, and SHA-256 cannot be verified.",
+    "The Cocos runtime scene has not yet passed an independent natural-input 390x844 device/perceptual gate.",
+    "TapTap backend scan and at least one iOS or Android physical-device run remain required before upload confidence."
+  ]
+}

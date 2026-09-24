@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "platform-reproduction-matrix",
+  "targetGame": "mobile-slice-adaptation-20260830（TapTap 名称：疯狂切割）",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "evidencePackageHash": null,
+  "evidencePackageHashStatus": "UNKNOWN",
+  "rendererPipeline": [
+    "Cocos Creator 3.8.8 main.scene",
+    "GameBootstrap.start/buildCourse dynamic Node + MeshRenderer/material creation",
+    "Cocos 微信小游戏中间产物",
+    "TapTap 官方 taptap-minigame-tools 1.2.2 converter",
+    "TapTap InstantGameActivity native container"
+  ],
+  "cases": [
+    {
+      "id": "TAP-OPPO-ACTIVITY-LAUNCH",
+      "objectType": "TapTap InstantGameActivity",
+      "lifecycleStateBranch": "cold launch → TapTap package activity resolve",
+      "rendererPresentationPath": "TapTap automation launcher → com.taptap.instantgame.container.InstantGameActivity",
+      "device": { "brand": "OPPO", "model": "PKB110", "os": "Android 16", "resolution": "1080x2374" },
+      "viewport": "1080x2374 portrait",
+      "observed": "The runner repeatedly reports the activity missing and ends with minigame_activity_not_exists; no game frame is reached.",
+      "expected": "The native activity resolves and presents the package loading screen, then the Cocos first frame.",
+      "status": "FAIL",
+      "evidence": [
+        "reference-evidence/verified/taptap-qa-file-d1c51037326403a2",
+        "reference-evidence/verified/taptap-qa-oppo-final-20260908",
+        "reference-evidence/verified/user-taptap-qa-device-table-20260908"
+      ],
+      "siblingCoverage": "EXACT_BRANCH"
+    },
+    {
+      "id": "TAP-VIVO-ACTIVITY-AND-LOAD",
+      "objectType": "TapTap InstantGameActivity + loading screen",
+      "lifecycleStateBranch": "cold launch → activity resolve → package loading → startup OCR",
+      "rendererPresentationPath": "TapTap native container → Cocos adapter startup screen",
+      "device": { "brand": "vivo", "model": "V2001A/PD2001", "os": "OriginOS 3 (Android 13 runtime)", "resolution": "2152x1080 physical; 360x792 app viewport" },
+      "viewport": "portrait app viewport 360x792",
+      "observed": "Activity, loading, and both OCR startup checks pass; traversal_test_success is recorded before final image analysis.",
+      "expected": "The startup branch remains successful and hands off to a rendered Cocos scene.",
+      "status": "PASS",
+      "evidence": [
+        "reference-evidence/verified/taptap-qa-file-e3b0c44298fc1c14",
+        "reference-evidence/verified/taptap-qa-file-2b8ee698bc44ff4e"
+      ],
+      "siblingCoverage": "EXACT_BRANCH"
+    },
+    {
+      "id": "TAP-VIVO-COCOS-DYNAMIC-MESH-START",
+      "objectType": "GameBootstrap dynamic MeshRenderer geometry",
+      "lifecycleStateBranch": "main.scene load → GameBootstrap.start → buildCourse → first render",
+      "rendererPresentationPath": "GameBootstrap.createBox/createSphere/createSpike → Cocos model/material initialization → TapTap WebGL host",
+      "device": { "brand": "vivo", "model": "V2001A/PD2001", "os": "OriginOS 3 (Android 13 runtime)", "resolution": "2152x1080 physical; 360x792 app viewport" },
+      "viewport": "portrait app viewport 360x792",
+      "observed": "Cocos console logs TypeError reading localSetLayout and TypeError reading null.length while the scene is being built; subsequent captures have luma_std=0.00 and color_area_ratio=0.",
+      "expected": "The dynamically created course, blade, feedback bar, camera and light render without uncaught exceptions on the first frame.",
+      "status": "FAIL",
+      "evidence": [
+        "reference-evidence/verified/taptap-qa-file-e19948c17c7d2202",
+        "reference-evidence/verified/taptap-qa-file-3a5f704083a9f4e5",
+        "reference-evidence/verified/taptap-qa-vivo-final-20260908"
+      ],
+      "siblingCoverage": "EXACT_BRANCH"
+    },
+    {
+      "id": "TAP-VIVO-TRAVERSAL-PRESENTATION",
+      "objectType": "player-visible rendered frame",
+      "lifecycleStateBranch": "normal traversal → repeated screenshot capture → black/white detector",
+      "rendererPresentationPath": "Cocos scene render target → TapTap screenshot capture/ROI metrics",
+      "device": { "brand": "vivo", "model": "V2001A/PD2001", "os": "OriginOS 3 (Android 13 runtime)", "resolution": "2152x1080 physical; 360x792 app viewport" },
+      "viewport": "portrait app viewport 360x792",
+      "observed": "All 10 retained captures are classified as black/white; the supplied final screenshot is an almost uniform dark navy frame with only the debug overlay visible.",
+      "expected": "Normal traversal keeps nonzero luminance variation and visible game geometry/feedback; the detector reports normal frames.",
+      "status": "FAIL",
+      "evidence": [
+        "reference-evidence/verified/taptap-qa-file-52f1ec9895cf2fe3",
+        "reference-evidence/verified/taptap-qa-screen-6e2bcdd68b767f84",
+        "reference-evidence/verified/taptap-qa-vivo-final-20260908"
+      ],
+      "siblingCoverage": "EXACT_BRANCH"
+    },
+    {
+      "id": "TAP-ANDROID-PASS-SIBLINGS",
+      "objectType": "Android activity + rendered package",
+      "lifecycleStateBranch": "cold launch → traversal → result",
+      "rendererPresentationPath": "TapTap container and package runtime (device-specific)",
+      "device": { "brand": "Huawei/Redmi/OnePlus", "model": "nova 9 Pro / Redmi K40 / OnePlus6T", "os": "Harmony/MIUI/Android", "resolution": "not provided in the screenshot" },
+      "viewport": "device-specific; not provided",
+      "observed": "The backend table marks three Android devices as passed.",
+      "expected": "A passing sibling must not be used to close the OPPO activity or vivo renderer branches.",
+      "status": "PASS",
+      "evidence": ["reference-evidence/verified/user-taptap-qa-device-table-20260908"],
+      "siblingCoverage": "SIBLING_ONLY"
+    },
+    {
+      "id": "TAP-IOS-PASS-SIBLING",
+      "objectType": "iOS package runtime",
+      "lifecycleStateBranch": "backend iOS device test",
+      "rendererPresentationPath": "TapTap iOS container (device-specific)",
+      "device": { "brand": "iOS", "model": "not provided", "os": "iOS", "resolution": "not provided" },
+      "viewport": "not provided",
+      "observed": "The backend summary reports 100% on one iOS device.",
+      "expected": "iOS success does not cover Android native activity or Cocos rendering branches.",
+      "status": "PASS",
+      "evidence": ["reference-evidence/verified/user-taptap-qa-summary-20260908"],
+      "siblingCoverage": "SIBLING_ONLY"
+    }
+  ],
+  "acceptanceCriteria": [
+    "OPPO PKB110 resolves the expected TapTap activity and reaches the package first frame without minigame_activity_not_exists.",
+    "vivo V2001A/PD2001 loads the Cocos scene without localSetLayout or null.length exceptions and retains visible nonuniform frames through traversal.",
+    "The default portrait journey remains touch-driven and preserves cut, reflect, attributable failure, settlement and replay behavior.",
+    "The repaired package keeps TapTap game name 疯狂切割, AppID 928932, portrait orientation, and a package identity that is re-hashed before QA.",
+    "The new Cocos build is produced once for the attempt and independently re-tested; all five Android devices must meet the 80% backend threshold before filing is considered passed."
+  ],
+  "evidenceGaps": [
+    "The supplied backend screenshots/logs identify the game and devices but do not expose the exact uploaded ZIP SHA-256; they cannot close an exact-package QA gate.",
+    "No OPPO or vivo device is connected to this workspace for post-fix natural-input retest."
+  ]
+}

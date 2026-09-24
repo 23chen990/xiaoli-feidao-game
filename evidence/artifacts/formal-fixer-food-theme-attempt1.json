@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixerSummary",
+  "route": "formal-fixer",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "attempt": 1,
+  "contextOmitted": ["unrelated choke/rebound repairs", "platform packaging", "third-party expression or tuning"],
+  "filesChanged": ["src/three-cut-visuals.ts", "tests/food-theme.test.ts"],
+  "fix": "Dessert cuttables now use an authored extruded cake-slice profile for intact targets and rectangular split halves; crystal geometry remains restricted to non-dessert sigils.",
+  "tests": {"targeted":"FOOD-THEME-RED-004 passed", "all":"134 passed", "typecheck":"pass", "lint":"pass", "build":"pass", "build3d":"pass"},
+  "runtimeEvidence": {
+    "desktopIntact": "runs/mobile-slice-adaptation-20260830/qa-food-theme-v2-desktop-intact.png",
+    "desktopNatural": "runs/mobile-slice-adaptation-20260830/qa-food-theme-v2-desktop-natural-cut.png",
+    "mobileIntact": "runs/mobile-slice-adaptation-20260830/qa-food-theme-v2-mobile-intact.png",
+    "mobileNatural": "runs/mobile-slice-adaptation-20260830/qa-food-theme-v2-mobile-natural-cut.png",
+    "defaultJourney": "existing level-pack natural runner reaches Level 04 branch but remains blocked by unrelated spike/fall retries"
+  },
+  "status": "PASS_WITH_EVIDENCE_GAP",
+  "remainingEvidenceGaps": ["A dedicated natural tap that cuts the Level 04 target was not isolated in this retest; the visual mismatch is closed for intact branch, but cut lifecycle needs independent QA capture.", "Full product gate remains blocked by the pre-existing Level 04 natural journey failure."]
+}

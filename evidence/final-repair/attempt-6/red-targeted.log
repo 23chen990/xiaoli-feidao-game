@@ -1,0 +1,9 @@
+Command: pnpm exec tsx --test tests/level1-recovery.test.ts
+Exit code: 1
+Phase: RED on restored baseline, before production edits.
+Focused result: 15 passed, 2 failed.
+Expected failure: L1-RUNWAY early separating top-face tip contact ...
+  AssertionError: an upward top-face contact must not become an authored anchor
+  actual='anchored', expected='airborne'
+The expiry test also failed because the baseline first contact remained anchored.
+This confirms the exact separating top-tip reproduction against the packet baseline.

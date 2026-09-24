@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-triage",
+  "cycleId": "human-review-20260923-continue",
+  "issueId": "L1-RUNWAY-EARLY-SHARP-ANCHOR",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "classification": "natural-level1-runway-recovery-blocker",
+  "status": "VALIDATED_REPRODUCTION",
+  "reproduction": {
+    "freshContext": true,
+    "inputMode": "visible normal touch/mouse; no fixture, debug API, or state injection",
+    "observations": [
+      {
+        "viewport": "390x844",
+        "supportId": "level1-runway-main",
+        "playerX": 329.4500000000005,
+        "elapsedSeconds": 1.5583333333333302,
+        "cuts": 1,
+        "terminal": null,
+        "replay": null,
+        "evidence": {
+          "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-4/qa-natural/portrait-390x844/recording.json",
+          "sha256": "4cdfa07fe1e596ecdd70a15b16ae91b9949f3d1ad950c235bf78fb6c924dc007",
+          "role": "natural-reproduction"
+        }
+      },
+      {
+        "viewport": "1100x720",
+        "supportId": "white-landing",
+        "playerX": 273.9500000000005,
+        "elapsedSeconds": 1.3749999999999976,
+        "cuts": 1,
+        "terminal": null,
+        "replay": null,
+        "evidence": {
+          "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-4/qa-natural/desktop-1100x720/recording.json",
+          "sha256": "730d8af87a3a15830d0450f438ec3197a43701c32dcc3b1389ecf8a1fa5e5159",
+          "role": "natural-reproduction"
+        }
+      }
+    ],
+    "result": "Portrait normal input cuts rune-1 and then anchors on the Level1 runway before the stack branch. Desktop normal input reaches the separate white-landing teaching anchor. Neither viewport reaches terminal, settlement, or replay."
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "Level1 runway support, sharp blade tip/edge",
+      "lifecycleStateBranch": "fresh start -> rune-1 cut -> airborne opening -> runway sharp contact -> anchored dead-end",
+      "rendererPresentationPath": "SliceSimulation support sharp-hit branch -> ThreeWorldRenderer knife/support sync -> natural-input recorder",
+      "viewport": "390x844",
+      "evidence": [
+        {
+          "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-4/qa-natural/portrait-390x844/recording.json",
+          "sha256": "4cdfa07fe1e596ecdd70a15b16ae91b9949f3d1ad950c235bf78fb6c924dc007",
+          "role": "natural-reproduction"
+        }
+      ],
+      "observed": "First runway anchor transition is around x=301.95; the recorder ends in a repeated anchored pose around x=329.45 with one cut and no terminal/replay.",
+      "inference": "The existing x>=350 suppression does not cover this contact.",
+      "unknowns": ["Whether a normal-aware recovery response preserves forward route stability under real input."]
+    },
+    {
+      "objectType": "Level1 runway support, sharp blade tip/edge",
+      "lifecycleStateBranch": "airborne -> approaching top-face contact -> controlled recovery response",
+      "rendererPresentationPath": "SliceSimulation contact manifold -> bounce/launch feedback event -> ThreeWorldRenderer presentation",
+      "viewport": "deterministic-fixed-step",
+      "evidence": [
+        {
+          "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/experiment-rejection.json",
+          "sha256": "8f953f27d8b06aae517c4be7e32d899cd61447a28e1ec0f3cfaa6d029ed5af5f",
+          "role": "prior-experiment-rejection"
+        }
+      ],
+      "observed": "Threshold-only suppression passed a focused early-contact assertion but broke the established forward replay before the stack.",
+      "inference": "The contact cannot simply be removed; a narrow response must preserve the manifold and route energy.",
+      "unknowns": ["Exact relative normal velocity and restitution values that keep the replay stable."]
+    },
+    {
+      "objectType": "Level1 runway support, body/handle",
+      "lifecycleStateBranch": "airborne -> blunt contact -> hard-surface bounce -> forward recovery",
+      "rendererPresentationPath": "SliceSimulation blunt-hit branch -> bounce event -> ThreeWorldRenderer event feedback",
+      "viewport": "deterministic-fixed-step",
+      "evidence": [
+        {
+          "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/fix-result.json",
+          "sha256": "a16f412c0ae480af79472f86b1cdcaa4f0a6037f07a9778e7cd0a13c64f58a56",
+          "role": "prior-fix-receipt"
+        }
+      ],
+      "observed": "Prior cycle explicitly retained body/handle bounce as a required path, but did not obtain independent natural evidence.",
+      "inference": "The new change must not broaden or bypass the blunt response.",
+      "unknowns": ["Whether the narrow sharp response changes later body/handle timing in the normal replay."]
+    },
+    {
+      "objectType": "white-landing teaching support",
+      "lifecycleStateBranch": "fresh start -> rune-1 cut -> opening landing -> anchored teaching pause",
+      "rendererPresentationPath": "SliceSimulation authored opening support -> ThreeWorldRenderer visible anchor -> normal input",
+      "viewport": "1100x720",
+      "evidence": [
+        {
+          "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-4/qa-natural/desktop-1100x720/recording.json",
+          "sha256": "730d8af87a3a15830d0450f438ec3197a43701c32dcc3b1389ecf8a1fa5e5159",
+          "role": "natural-reproduction"
+        }
+      ],
+      "observed": "Desktop natural input anchors on white-landing around x=273.95 at 1.375 seconds.",
+      "inference": "The opening authored teaching contact is separate from the runway branch and must remain intact.",
+      "unknowns": ["Whether a sharp normal guard accidentally changes opening support ordering."]
+    },
+    {
+      "objectType": "Level1 ladder stack A/B",
+      "lifecycleStateBranch": "forward replay -> lower support cut -> upper object falls -> stable stack branch",
+      "rendererPresentationPath": "SliceSimulation cut/support relationship -> ThreePresentationModel phase sync -> natural QA screenshots",
+      "viewport": "deterministic-fixed-step",
+      "evidence": [
+        {
+          "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html",
+          "sha256": "5b2e1604b93d66614229f6481e71f82dfd2864e099cbd3c3af5ed34371ca30e5",
+          "role": "current-build"
+        }
+      ],
+      "observed": "The established seed-31 replay is the regression gate for reaching beyond x=2000; the natural stack branch remains unobserved in the previous QA cycle.",
+      "inference": "A successful response must not trade the early dead-end for a replay failure before the stack.",
+      "unknowns": ["Whether the exact natural input reaches and visibly resolves the stack after the narrow response."]
+    }
+  ],
+  "rootCauseHypothesis": {
+    "evidence": "The portrait trace's first runway contact is an early tip contact around x=301.95 with contact point x≈338.845 and normal (0,-1); the existing suppression begins at x>=350. Threshold-only suppression at 250 and 290 was rejected because it broke the fixed forward replay.",
+    "changeHypothesis": "For level1-runway-main only, route an approaching sharp top-face contact (normalY <= -0.9 and velocity into the surface) through the existing respondToHardSurface recovery response instead of anchoring. Keep the x>=350 suppression, opening white-landing behavior, blunt body/handle branch, and debug fixture bypass unchanged.",
+    "expectedContact": {
+      "supportId": "level1-runway-main",
+      "part": "tip",
+      "normalYAtOrBelow": -0.9,
+      "approachOnly": true,
+      "earlyXRange": [290, 350],
+      "contactPointX": 338.845
+    },
+    "rejectedAlternatives": [
+      "x>=250 threshold-only sharp suppression: focused assertion passed but seed-31 forward replay ended at 4.575 seconds before runway traversal.",
+      "x>=290 threshold-only sharp suppression: replay fell at about x=967.47 and 5.392 seconds before the stack.",
+      "Broad runway removal or renderer-only masking: conflicts with the authored visible support and prior collision evidence."
+    ]
+  },
+  "scope": {
+    "includedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+    ],
+    "excludedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-levels.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/main.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/style.css",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/src/core",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/src/qa"
+    ],
+    "route": "formal-fixer",
+    "expectedSourceFileLimit": 2
+  },
+  "acceptanceCriteria": [
+    "A focused regression test reproduces an approaching early top-face runway tip contact and proves it does not enter an anchored dead-end.",
+    "The focused test proves the response remains forward-moving or upward-recovering with anchorId null after the early contact.",
+    "An early sharp runway contact with a non-top normal retains its authored anchor behavior.",
+    "The later x>=350 sharp runway behavior remains airborne and the runway body/handle contact still emits a controlled bounce.",
+    "The opening white-landing teaching anchor remains the first authored opening anchor.",
+    "The seed-31 fixed timestamp replay reaches at least 11.9 seconds and player x>2000 without failing.",
+    "Only the two owned source/test files change; no debug fixture or renderer path is altered.",
+    "pnpm test, pnpm lint, pnpm typecheck pass and exactly one pnpm build succeeds with a recorded dist hash.",
+    "The Fixer receipt makes no natural or perceptual QA claim; independent Playwright QA must retest portrait and desktop normal input."
+  ],
+  "evidenceClassification": {
+    "observed": [
+      "Portrait natural input first contacts level1-runway-main around x=301.95 and remains anchored around x=329.45.",
+      "Desktop natural input reaches the separate white-landing support around x=273.95.",
+      "Threshold-only suppression at 250 and 290 broke the established forward replay and was reverted."
+    ],
+    "inferred": [
+      "The early contact is an approaching top-face tip/edge manifold with normalY near -1.",
+      "A contact-normal-aware hard-surface response can preserve route energy better than removing the contact."
+    ],
+    "unknown": [
+      "Whether restitution response remains stable under the exact natural input on both viewports.",
+      "Whether the Level1 stack and terminal/replay journey become reachable after the change."
+    ]
+  },
+  "priorCycle": {
+    "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/cycle-state.json",
+    "sha256": "d54f4026ee30b6d0ac21eef7ffab9215ac621ddce5e2628da7a966200e3756a8",
+    "status": "BLOCKED",
+    "historyPreserved": true
+  },
+  "createdAt": "2026-09-23T05:34:51.300Z"
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "TddRedEvidence",
+  "capturedAt": "2026-08-31T02:05:00+08:00",
+  "command": "pnpm test",
+  "exitCode": 1,
+  "baselineBeforeRed": {
+    "testsPassed": 57,
+    "testsFailed": 0
+  },
+  "redResult": {
+    "testsPassed": 56,
+    "testsFailed": 2,
+    "expectedFailures": [
+      {
+        "test": "build is a self-contained single-canvas Three.js playable page",
+        "reason": "Existing release dist lacked PerspectiveCamera and still bundled Phaser."
+      },
+      {
+        "test": "tests/three-presentation.test.ts",
+        "reason": "Required src/three-presentation.ts production contract did not yet exist (ERR_MODULE_NOT_FOUND)."
+      }
+    ],
+    "unexpectedFailures": []
+  }
+}

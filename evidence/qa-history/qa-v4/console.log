@@ -1,0 +1,20 @@
+testedAt=2026-08-30T14:02:30Z
+desktop.pageErrors=[]
+mobile.pageErrors=[]
+desktop.consoleErrors=[]
+mobile.consoleErrors=[]
+browserWarnings=Headless Chromium WebGL ReadPixels performance warnings only
+contacts.anchor=single real click; anchored white-landing at 1.496 s wall time
+contacts.bounce=second real click at 450 ms; blunt bounce at 0.816 s wall time
+bonus.safe=real-input branch correction at x=2609; finishSelection=safe; won at 15.387 s
+bonus.entry=real-input branch correction at x=2506; finishSelection=bonus; phase=bonus at 16.194 s
+bonus.play=real click in bonus; cut event observed; fall failure after 2.607 s
+bonus.oneChance=one terminal real click returned phase=ordinary status=ready
+runtime.realMs=1645
+runtime.simulatedDelta=1.5916666666667325
+runtime.beforeStatus=airborne
+runtime.afterStatus=airborne
+mobile.first=launch,cut,anchor on white-landing
+mobile.failure=spike
+mobile.restart=phase ordinary; status ready; failReason null
+mobile.layout=390x844; scrollWidth 390; scrollHeight 844; scrollX 0; scrollY 0

@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "HumanQaClosureReport",
+  "targetGame": "符刃夜行",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "buildSha256": "d1b6c178d9838775c1bcdde7a6afce68dd55f0148fc36357d4d165f7e835c823",
+  "passed": true,
+  "humanIssues": [
+    {
+      "id": "HUMAN-COURSE-CHOKE-001",
+      "passed": true,
+      "evidence": [
+        "Fifteen independent 1180x720 mouse runs started from ordinary reset without loadScenario, debug pose/velocity, step, state mutation or segment jumps; 10 won, exactly meeting the 2/3 gate.",
+        "Winning input policies used only global target heights 300, 320 or 430, descending state and a general no-progress correction. No obstacle x coordinate, choke interval, y=520 answer or hazard position was present in the input logic.",
+        "All ten desktop wins crossed the former choke and reached maxX 3000.067..3137.967 in 16.759..18.445 seconds, with winning no-progress bounce streak at most one. They reached ember-four, mist-half and calm-moon rather than a single scripted gate.",
+        "Two 390x844 runs used native CDP touchStart/touchEnd; mobile-2 crossed the former choke and won at mist-half with maxX=3001.197 in 19.4 seconds and no overflow.",
+        "Before-choke, after-choke and finish screenshots visibly show the widened route, traversal beyond the former wall segment and actual finish settlement."
+      ],
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/desktop-9-before-choke.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/desktop-9-after-choke.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/desktop-9-final.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/mobile-2-before-choke.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/mobile-2-after-choke.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/mobile-2-final.png"
+      ]
+    },
+    {
+      "id": "HUMAN-PHYSICS-REBOUND-002",
+      "passed": true,
+      "evidence": [
+        "Runtime course data names the former object white-column; mechanics catalog and source/dist searches contain no recoil-wall, recoilLesson, SafeSupport.recoil or dedicated recoil identity.",
+        "Current full-course screenshots render white-column with the same white hard-support language as other rigid supports, without pink recoil outline or left-pointing recoil arrow; hot pink in the course is confined to lethal spike geometry.",
+        "An ordinary white-column handle impact had normal=(-1,0), pre-impact vx=190 and reflected vx=-136.8, exactly the generic 0.72 normal restitution with tangent motion preserved.",
+        "A natural lift-plank handle impact emitted normal=(0,1) while the moving surface had vy=70.467 and the blade left with vy=143.501, demonstrating surface-relative reflection on a moving support.",
+        "A natural hanging-above handle impact emitted normal=(0,-1) while the uncut block remained solid=true/cut=false; pre-impact vy=350 reflected to -235.6.",
+        "A real-input sharp branch on the same white-column emitted tip contact, normal=(-1,0), anchorId=white-column and zero player velocity, preserving sharp anchoring after generic blunt reflection.",
+        "After the generic-hard column bounce, the separated blade retained outward vx=-201.6 for the observed interval and emitted no second column bounce or injected 120/250 minimum velocity."
+      ],
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/desktop-15-before-choke.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/desktop-15-after-choke.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/white-column-sharp-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/recoil-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/diag-generic-hard-passive.png"
+      ]
+    }
+  ],
+  "naturalPlay": {
+    "desktopAttempts": 15,
+    "desktopWins": 10,
+    "mobileAttempts": 2,
+    "mobileWins": 1,
+    "runs": [
+      {"label":"desktop-1","input":"mouse; global targetY=430; descending/no-progress correction","maxX":1216.533,"status":"failed:fall","elapsed":12.194,"finishGateId":null,"maxNoProgressBounceStreak":2},
+      {"label":"desktop-2","input":"mouse; global targetY=380; descending/no-progress correction","maxX":1240.984,"status":"failed:fall","elapsed":8.949,"finishGateId":null,"maxNoProgressBounceStreak":3},
+      {"label":"desktop-3","input":"mouse; global targetY=300; descending/no-progress correction","maxX":3001.45,"status":"won","elapsed":17.988,"finishGateId":"ember-four","maxNoProgressBounceStreak":1},
+      {"label":"desktop-4","input":"mouse; global targetY=300; descending/no-progress correction; 240ms cooldown","maxX":3012.067,"status":"won","elapsed":17.255,"finishGateId":"mist-half","maxNoProgressBounceStreak":1},
+      {"label":"desktop-5","input":"mouse; global targetY=320; descending/no-progress correction","maxX":3001.186,"status":"won","elapsed":18.196,"finishGateId":"mist-half","maxNoProgressBounceStreak":1},
+      {"label":"desktop-6","input":"mouse; global targetY=280; descending/no-progress correction","maxX":1201.443,"status":"failed:fall","elapsed":9.857,"finishGateId":null,"maxNoProgressBounceStreak":1},
+      {"label":"desktop-7","input":"mouse; global targetY=300; descending/no-progress correction; 230ms cooldown","maxX":3007.85,"status":"won","elapsed":17.559,"finishGateId":"mist-half","maxNoProgressBounceStreak":1},
+      {"label":"desktop-8","input":"mouse; global targetY=310; descending/no-progress correction; 250ms cooldown","maxX":3016.935,"status":"won","elapsed":18.445,"finishGateId":"mist-half","maxNoProgressBounceStreak":1},
+      {"label":"desktop-9","input":"mouse; global targetY=320; descending/no-progress correction; 240ms cooldown","maxX":3001.533,"status":"won","elapsed":17.025,"finishGateId":"mist-half","maxNoProgressBounceStreak":1},
+      {"label":"desktop-10","input":"mouse; global targetY=300; descending/no-progress correction","maxX":3001.383,"status":"won","elapsed":16.759,"finishGateId":"ember-four","maxNoProgressBounceStreak":1},
+      {"label":"desktop-11","input":"mouse; global targetY=430; descending/no-progress correction","maxX":3137.967,"status":"won","elapsed":18.26,"finishGateId":"calm-moon","maxNoProgressBounceStreak":1},
+      {"label":"desktop-12","input":"mouse; global targetY=430; descending/no-progress correction","maxX":1232.507,"status":"failed:fall","elapsed":8.729,"finishGateId":null,"maxNoProgressBounceStreak":1},
+      {"label":"desktop-13","input":"mouse; global targetY=430; descending/no-progress correction","maxX":1236.19,"status":"failed:fall","elapsed":8.77,"finishGateId":null,"maxNoProgressBounceStreak":1},
+      {"label":"desktop-14","input":"mouse; global targetY=300; descending/no-progress correction","maxX":3000.067,"status":"won","elapsed":16.786,"finishGateId":"ember-four","maxNoProgressBounceStreak":1},
+      {"label":"desktop-15","input":"mouse; global targetY=320; descending/no-progress correction","maxX":3000.083,"status":"won","elapsed":17.44,"finishGateId":"mist-half","maxNoProgressBounceStreak":1},
+      {"label":"mobile-1","input":"native CDP touchStart/touchEnd; global targetY=300; descending/no-progress correction","maxX":1201.947,"status":"failed:fall","elapsed":9.538,"finishGateId":null,"maxNoProgressBounceStreak":1},
+      {"label":"mobile-2","input":"native CDP touchStart/touchEnd; global targetY=320; descending/no-progress correction","maxX":3001.197,"status":"won","elapsed":19.4,"finishGateId":"mist-half","maxNoProgressBounceStreak":1}
+    ],
+    "evidence": [
+      "No full-course input decision used player x, an obstacle interval, y=520 or any support/spike coordinate. Absolute x was read only to record maxX and trigger evidence screenshots, never to choose an input.",
+      "Desktop wins: 10/15 = 0.6667. Mobile produced a native-CDP-touch win. Every winning run exceeded the former screenshot location and settled a visible finish gate.",
+      "The 390x844 document and canvas remained exactly viewport-sized with scrollX/Y=0 and zero console/page errors."
+    ]
+  },
+  "checks": [
+    {
+      "id": "BUILD_HASH",
+      "passed": true,
+      "evidence": ["SHA-256 independently recalculated as d1b6c178d9838775c1bcdde7a6afce68dd55f0148fc36357d4d165f7e835c823 before and after review."],
+      "screenshots": []
+    },
+    {
+      "id": "COURSE_NO_ORACLE_AND_REACTION",
+      "passed": true,
+      "evidence": ["Ten coordinate-free desktop wins and one native-touch mobile win traversed the former choke; successful global policies used three target heights and reached three finish gates.","Winning runs had at most one consecutive no-progress bounce, leaving observation and correction time instead of a repeated hidden-answer trap."],
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/desktop-9-before-choke.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/desktop-9-after-choke.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/desktop-9-final.png"
+      ]
+    },
+    {
+      "id": "GENERIC_HARD_IDENTITY_AND_VISUAL",
+      "passed": true,
+      "evidence": ["Course support id is white-column and catalog contains generic-hard/back-contact; no recoil-wall or recoil field exists in current runtime/source/dist.","The column uses ordinary white support styling with no pink recoil outline or left arrow; course hot-pink geometry is lethal spike geometry."],
+      "screenshots": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/desktop-15-before-choke.png"]
+    },
+    {
+      "id": "GENERIC_HARD_REFLECTION",
+      "passed": true,
+      "evidence": ["Static column: handle, normal=(-1,0), pre vx=190, post vx=-136.8.","Moving lift-plank: handle, normal=(0,1), surface vy=70.467, reflected player vy=143.501.","Uncut hanging-above block: handle, normal=(0,-1), pre vy=350, post vy=-235.6 while solid=true/cut=false."],
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/recoil-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/desktop-15-before-choke.png"
+      ]
+    },
+    {
+      "id": "SHARP_STABLE_AND_SEPARATING",
+      "passed": true,
+      "evidence": ["The same ordinary white-column accepted a real-input tip contact and anchored with anchorId=white-column after blunt-reflection checks.","After the initial generic-hard bounce, outward vx=-201.6 persisted without a repeated column bounce or 120/250 minimum impulse, confirming separated contact only depenetrated."],
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/white-column-sharp-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/diag-generic-hard-passive.png"
+      ]
+    },
+    {
+      "id": "REGRESSION_MECHANICS",
+      "passed": true,
+      "evidence": ["Real-input spot checks passed first cut, moving-platform carry/launch, side and below cuts, tower-middle split with top collapse, and dualRole anchor/cut/release.","Spike and fall remained distinct and each reset fully on one real input. Multiplication and division gates settled once; deterministic seeds alternated bonus availability and bonus failure returned to ordinary play."],
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/cut-side-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/cut-below-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/tower-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/dual-anchored-hold.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/dual-end-120.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/failure-spike.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/failure-fall.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/finish-multiply-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/finish-divide-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/bonus-ended.png"
+      ]
+    },
+    {
+      "id": "FIXED_STEP_AND_PLATFORM",
+      "passed": true,
+      "evidence": ["30/60/120Hz and a single 0.5s long frame preserved [launch, cut:tower-middle], airborne outcome, two fragments and top collapse.","A 1.551s renderer stall advanced worldTime by 1.817s and retained moving-platform anchoring. Desktop and 390x844 native touch had zero console/page errors and no overflow."],
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/runtime-30hz.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/runtime-long-frame.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/runtime-stall-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/mobile-2-final.png"
+      ]
+    }
+  ],
+  "issues": [],
+  "screenshots": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/desktop-9-before-choke.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/desktop-9-after-choke.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/desktop-9-final.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/mobile-2-before-choke.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/mobile-2-after-choke.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/mobile-2-final.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/white-column-sharp-anchor.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/recoil-before.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/cut-side-after.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/tower-after.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/dual-end-120.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/finish-multiply-after.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/bonus-ended.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/runtime-long-frame.png"
+  ],
+  "consoleLog": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v9/console.log",
+  "previewClosed": true,
+  "validatedWith": "Zod strict schema parse using the task-supplied HumanQaClosureReport contract",
+  "testedAt": "2026-08-30T16:59:01Z"
+}

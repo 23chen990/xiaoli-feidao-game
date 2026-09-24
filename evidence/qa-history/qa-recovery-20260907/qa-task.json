@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "role": "QAAgent",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "outputDirectory": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa",
+  "sourceTriage": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/gameplay-triage-user-recording-level01-v1.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/gameplay-triage-user-feedback-grounded-tabletops-v1.json"
+  ],
+  "sourceMatrices": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/reproduction-matrix-user-recording-level01-v1.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/reproduction-matrix-user-feedback-grounded-tabletops-v1.json"
+  ],
+  "instructions": [
+    "You are independent QAAgent, not the Builder. Other agents are working in this repository; never revert or modify their files. Own only outputDirectory. Never modify generated workspace, source, tests, configuration or dist. Do not rebuild. Serve existing dist from localhost with cleanup.",
+    "Read .agents/skills/game-playtest/SKILL.md. Audit Level 1 only, existing default index.html journey, fresh browser storage, ordinary touch/mouse/keyboard only. No debug URLs, state setters, fixtures, injected storage, event dispatch or internal-state-driven auto-play. Read-only state observation is permitted for engineering assertions, not deciding taps. Use screenshot-driven decisions or fixed declared input cadence; acknowledge limits of automation.",
+    "Primary viewport390x844, secondary1100x720, optionally844x390. Capture startup, actual cutting, approach to stack/hazard, finish/settlement and replay when naturally reachable. Bounded at most 3 runs per viewport. If unreachable, report BLOCKED with genuine screenshots and traces rather than tuning indefinitely.",
+    "Use the exact manifest reference-evidence/manifest.json. Only VERIFIED usable sources bound to this workspace are admissible; screenshot entries PENDING cannot be used. Recording reference-evidence/incoming/_2026-09-06-135548-3781e4dcd3d2.mp4 SHA256 3781e4dcd3d21094f186cf442b3ee30cddfbb2fbe68d87c5c7470a2c742bf75a is verified. If unable to inspect reference video pixels, report that limitation. User text requirement for grounded tabletops remains a requirement, distinct from the quarantined screenshot.",
+    "Inspect actual screenshots using view_image. Cover exact objects and state branches in supplied matrices. Record grounded tabletop contact, stacked intact contact, intact-to-cut overlap separation, hazard pressure, reward feedback attachment and finish/replay. Do not infer visual pass from getState or unit tests.",
+    "Calculate SHA256 file manifest for current dist and relevant source snapshot, plus natural traces/screenshots. Keep engineering, natural-journey and perceptual reports independent. Validate outputs using existing QaReportSchema, NaturalFlowEvidenceSchema, PerceptualQaReportSchema and local MatrixSchema. Return only ResultSchema validated JSON with file paths, blockers and concise Chinese summary. No free-chat messages to other agents.",
+    "Keep work bounded to evidence capture and report. Do not implement repair or expand to other levels/platforms. Use existing Playwright installation and local runtime."
+  ],
+  "acceptance": [
+    "Evidence proves actual current default journey or explicitly reports where blocked.",
+    "Natural traces have no forbidden operations; unobserved object/state cells stay BLOCKED.",
+    "Each report contains real evidence paths; hashes and target workspace bind observations to this run."
+  ],
+  "outputSchemas": [
+    "src/schemas/index.ts#QaReportSchema",
+    "src/schemas/natural-flow.ts#NaturalFlowEvidenceSchema",
+    "src/schemas/product-experience.ts#PerceptualQaReportSchema",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/recovery-schemas.ts#MatrixSchema",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/recovery-schemas.ts#ResultSchema"
+  ]
+}

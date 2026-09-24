@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixerRetestReport",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "issue": "THEME-DESSERT-001",
+  "status": "PASS",
+  "rootCauseFixed": "Dessert half icing reused circular sigil geometry; it now shares the exact authored dessert half-slice geometry with the body.",
+  "tests": {"all":"145 passed","typecheck":"pass","lint":"pass","build":"pass"},
+  "naturalEvidence": {"report":"runs/mobile-slice-adaptation-20260830/qa-level-pack-v1/qa-report.json","desktop":"pass","mobile":"pass","replay":"pass","consoleErrors":0,"pageErrors":0},
+  "acceptance": ["intact and dropped halves share cake-slice silhouette","cut cap remains visible","desktop and 390x844 natural journeys pass"]
+}

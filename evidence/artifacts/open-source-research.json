@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "researchId": "mobile-slice-adaptation-open-source-v1",
+  "targetGame": "符刃夜行单键翻转切割灰盒",
+  "targetWorkspace": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "researchedAt": "2026-08-31T00:44:50+08:00",
+  "candidates": [
+    {
+      "name": "Phaser 3.90.0",
+      "repositoryUrl": "https://github.com/phaserjs/phaser",
+      "immutableRevision": "a9965625f49cf366584f454556b039e06e8adad6",
+      "version": "v3.90.0",
+      "directLicenseEvidence": "https://github.com/phaserjs/phaser/blob/v3.90.0/LICENSE.md",
+      "licenseSpdx": "MIT",
+      "targetPlatformFit": {
+        "webLite": {
+          "verdict": "APPROVED",
+          "evidence": "The existing workspace already pins Phaser 3.90.0 and produces a self-contained browser QA build; official release evidence: https://github.com/phaserjs/phaser/releases/tag/v3.90.0"
+        },
+        "wechatMiniGame": {
+          "verdict": "REJECTED",
+          "evidence": "No validated Phaser 3 export adapter was found. The official archived minigame-adaptor is Unity-oriented rather than a Phaser runtime adapter: https://github.com/wechat-miniprogram/minigame-adaptor"
+        },
+        "douyinMiniGame": {
+          "verdict": "REJECTED",
+          "evidence": "Official engine guidance lists Unity, Cocos, Godot, Laya and Egret but provides no verified Phaser adapter: https://developer.open-douyin.com/docs/resource/zh-CN/mini-game/develop/guide/game-engine/engine-adaptation-instructions"
+        },
+        "tapTapMiniGame": {
+          "verdict": "REJECTED",
+          "evidence": "TapTap Mini Game has no BOM or DOM and requires an engine-specific adapter; official guidance documents Unity, Cocos, Laya and Egret but not Phaser: https://developer.taptap.cn/minigameapidoc/dev/tutorial/overview/"
+        }
+      },
+      "maintenanceRisk": "MEDIUM",
+      "securityRisk": "LOW",
+      "attributionDuties": [
+        "Retain the Phaser MIT copyright and permission notice in distributions containing substantial portions of the library."
+      ],
+      "decision": "REUSE",
+      "approvedScope": [
+        "Existing web-lite development renderer and browser QA build only."
+      ],
+      "rationale": "Continue using the already-installed, license-verified renderer for the current browser prototype. This decision does not approve any mini-game platform package."
+    },
+    {
+      "name": "three.js r185",
+      "repositoryUrl": "https://github.com/mrdoob/three.js",
+      "immutableRevision": "cb3b077ee63818a8cc1ab273f08704d89b8ac492",
+      "version": "r185 / npm 0.185.0",
+      "directLicenseEvidence": "https://github.com/mrdoob/three.js/blob/r185/LICENSE",
+      "licenseSpdx": "MIT",
+      "targetPlatformFit": {
+        "webLite": {
+          "verdict": "APPROVED",
+          "evidence": "The r185 tag is immutable at cb3b077ee63818a8cc1ab273f08704d89b8ac492; npm publishes the matching three@0.185.0 package. WebGLRenderer and GLTFLoader cover the isolated browser-only 3D rendering spike."
+        },
+        "wechatMiniGame": {
+          "verdict": "REJECTED",
+          "evidence": "No validated repository adapter or real-device evidence in this run proves three.js r185 works as a WeChat Mini Game package. Approval is limited to web-lite QA."
+        },
+        "douyinMiniGame": {
+          "verdict": "REJECTED",
+          "evidence": "No validated repository adapter or real-device evidence in this run proves three.js r185 works as a Douyin Mini Game package. Approval is limited to web-lite QA."
+        },
+        "tapTapMiniGame": {
+          "verdict": "REJECTED",
+          "evidence": "No validated repository adapter or real-device evidence in this run proves three.js r185 works as a TapTap Mini Game package. Approval is limited to web-lite QA."
+        }
+      },
+      "maintenanceRisk": "MEDIUM",
+      "securityRisk": "LOW",
+      "attributionDuties": [
+        "Retain the three.js MIT copyright and permission notice in distributions containing substantial portions of the library."
+      ],
+      "decision": "REUSE",
+      "approvedScope": [
+        "Isolated web-lite 3D rendering and GLTF loading POC only; do not treat it as a three-platform adapter."
+      ],
+      "rationale": "Use the small, renderer-only dependency to test the user-approved oblique 3D camera, solid thickness and visible cut caps without replacing the deterministic gameplay simulation."
+    },
+    {
+      "name": "DefinitelyTyped three 0.185.4",
+      "repositoryUrl": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "immutableRevision": "npm 0.185.4 / sha512-gAsBIC07NIFrxjbf7tH2t71c38uulFfk/RFoC7FNBSjMRAQ8J1x/RBvusX0N5PJouaYFJawXQqfCQ0RKUx/1nA==",
+      "version": "@types/three 0.185.4",
+      "directLicenseEvidence": "https://registry.npmjs.org/@types/three/-/three-0.185.4.tgz",
+      "licenseSpdx": "MIT",
+      "targetPlatformFit": {
+        "webLite": {
+          "verdict": "APPROVED",
+          "evidence": "Build-time TypeScript declarations only; npm metadata identifies the DefinitelyTyped repository and MIT license."
+        },
+        "wechatMiniGame": {
+          "verdict": "CONDITIONAL",
+          "evidence": "Declarations are erased at build time, but this run still has no validated WeChat package adapter."
+        },
+        "douyinMiniGame": {
+          "verdict": "CONDITIONAL",
+          "evidence": "Declarations are erased at build time, but this run still has no validated Douyin package adapter."
+        },
+        "tapTapMiniGame": {
+          "verdict": "CONDITIONAL",
+          "evidence": "Declarations are erased at build time, but this run still has no validated TapTap package adapter."
+        }
+      },
+      "maintenanceRisk": "LOW",
+      "securityRisk": "LOW",
+      "attributionDuties": [
+        "Retain the MIT license if the declaration package or substantial portions are redistributed."
+      ],
+      "decision": "REUSE",
+      "approvedScope": [
+        "Development-only TypeScript declarations for the approved three.js r185 POC."
+      ],
+      "rationale": "Use only at build time so the 3D POC remains type-checked without adding runtime code."
+    },
+    {
+      "name": "Quaternius Ultimate Stylized Nature Pack May 2022",
+      "repositoryUrl": "https://quaternius.com/packs/ultimatestylizednature.html",
+      "immutableRevision": "May 2022 release / public Google Drive folder 1IV3bXHzkNvuNWFHPi4KPx-G4ghuxIuT-",
+      "version": "May 2022",
+      "directLicenseEvidence": "https://quaternius.com/packs/ultimatestylizednature.html",
+      "licenseSpdx": "CC0-1.0",
+      "targetPlatformFit": {
+        "webLite": {
+          "verdict": "APPROVED",
+          "evidence": "The official pack page lists 63 textured models, CC0, and glTF/FBX/OBJ/Blend formats. The POC may import a single glTF nature prop after recording its file hash."
+        },
+        "wechatMiniGame": {
+          "verdict": "CONDITIONAL",
+          "evidence": "Static glTF content contains no platform code, but texture, vertex and package-size budgets require a separate WeChat import and real-device test."
+        },
+        "douyinMiniGame": {
+          "verdict": "CONDITIONAL",
+          "evidence": "Static glTF content contains no platform code, but texture, vertex and package-size budgets require a separate Douyin import and real-device test."
+        },
+        "tapTapMiniGame": {
+          "verdict": "CONDITIONAL",
+          "evidence": "Static glTF content contains no platform code, but texture, vertex and package-size budgets require a separate TapTap import and real-device test."
+        }
+      },
+      "maintenanceRisk": "MEDIUM",
+      "securityRisk": "LOW",
+      "attributionDuties": [
+        "CC0 does not require attribution; preserve the downloaded License.txt and provenance record inside this run for auditability."
+      ],
+      "decision": "REUSE",
+      "approvedScope": [
+        "One or more unmodified glTF background nature props in the isolated web-lite 3D POC, with exact source URL and SHA-256 recorded before use."
+      ],
+      "rationale": "Use a verified CC0 online 3D model to prove the asset-loading path while keeping gameplay cuttables as original programmatic geometry with deterministic cut states."
+    },
+    {
+      "name": "Kenney Nature Kit 1.0",
+      "repositoryUrl": "https://kenney.nl/assets/nature-kit",
+      "immutableRevision": "1.0 / 2020 release / archive sha256 fa7974a0d342bfe63c38664ba9f8ec1a4aab8ea25f099bdc56870e33588c4d9d",
+      "version": "1.0",
+      "directLicenseEvidence": "https://kenney.nl/assets/nature-kit",
+      "licenseSpdx": "CC0-1.0",
+      "targetPlatformFit": {
+        "webLite": {
+          "verdict": "APPROVED",
+          "evidence": "The official 1.0 page lists 330 3D files and CC0. The downloaded official archive hash is fa7974a0d342bfe63c38664ba9f8ec1a4aab8ea25f099bdc56870e33588c4d9d and includes GLB models plus License.txt. The selected tree_simple.glb and log_stack.glb hashes are 93891ea740447634930de19c31a7c1c9f4add94122e6db03aca9f75aea32f9d6 and 90eaae4a01ba1f25c2f0c6d83087e4a7a8fac684f2452615245333968d118d68."
+        },
+        "wechatMiniGame": {
+          "verdict": "CONDITIONAL",
+          "evidence": "Static GLB content contains no platform code, but loader compatibility, vertex count and package-size budgets require a separate WeChat import and real-device test."
+        },
+        "douyinMiniGame": {
+          "verdict": "CONDITIONAL",
+          "evidence": "Static GLB content contains no platform code, but loader compatibility, vertex count and package-size budgets require a separate Douyin import and real-device test."
+        },
+        "tapTapMiniGame": {
+          "verdict": "CONDITIONAL",
+          "evidence": "Static GLB content contains no platform code, but loader compatibility, vertex count and package-size budgets require a separate TapTap import and real-device test."
+        }
+      },
+      "maintenanceRisk": "LOW",
+      "securityRisk": "LOW",
+      "attributionDuties": [
+        "CC0 does not require attribution; preserve License.txt, the official download URL and file hashes inside this run for auditability."
+      ],
+      "decision": "REUSE",
+      "approvedScope": [
+        "Selected unmodified GLB nature props as decorative background objects in the isolated web-lite 3D POC only."
+      ],
+      "rationale": "The official archive is directly downloadable, hashable and includes small low-poly GLB props suitable for proving the online-asset import path. The equivalent legacy ASCII FBX files were rejected after the current Three.js FBXLoader failed their nonstandard UV layout during browser QA."
+    },
+    {
+      "name": "OpenGameArt CC0 Low-Poly Swords 2022",
+      "repositoryUrl": "https://opengameart.org/content/3d-swords-lowpol-cc0",
+      "immutableRevision": "2022-03-19 release / swords_1.zip sha256 b02cf19d39c4d8aaf6ab20581b9f0ff77f62c5f2c9307a08c0d406bcac354cdc",
+      "version": "2022-03-19",
+      "directLicenseEvidence": "https://opengameart.org/content/3d-swords-lowpol-cc0",
+      "licenseSpdx": "CC0-1.0",
+      "targetPlatformFit": {
+        "webLite": {
+          "verdict": "APPROVED",
+          "evidence": "The source page identifies the collection as CC0 and describes each GLB as roughly 300 triangles with tiny embedded PBR textures. The direct swords_1.zip download is pinned at sha256 b02cf19d39c4d8aaf6ab20581b9f0ff77f62c5f2c9307a08c0d406bcac354cdc. Browser contact-sheet inspection selected the curved Sword6.glb silhouette, pinned at sha256 273c7133513bdcf619abb24ffe44e8c642b48f993d8baeb7a6de0473955d488c."
+        },
+        "wechatMiniGame": {
+          "verdict": "CONDITIONAL",
+          "evidence": "The selected GLB is small static content, but the Three.js POC still lacks a validated WeChat adapter and real-device import evidence."
+        },
+        "douyinMiniGame": {
+          "verdict": "CONDITIONAL",
+          "evidence": "The selected GLB is small static content, but the Three.js POC still lacks a validated Douyin adapter and real-device import evidence."
+        },
+        "tapTapMiniGame": {
+          "verdict": "CONDITIONAL",
+          "evidence": "The selected GLB is small static content, but the Three.js POC still lacks a validated TapTap adapter and real-device import evidence."
+        }
+      },
+      "maintenanceRisk": "MEDIUM",
+      "securityRisk": "LOW",
+      "attributionDuties": [
+        "CC0 does not require attribution; preserve the source page, archive hash and selected GLB hash inside this run for auditability."
+      ],
+      "decision": "REUSE",
+      "approvedScope": [
+        "One selected unmodified GLB weapon model as the visible blade in the isolated web-lite 3D POC, after browser rendering inspection and exact file-hash recording."
+      ],
+      "rationale": "The collection supplies compact directly loadable GLB weapons with a clearly stated CC0 license, avoiding another runtime conversion path while replacing the blunt temporary procedural axe."
+    },
+    {
+      "name": "WeChat minigame-adaptor archived snapshot",
+      "repositoryUrl": "https://github.com/wechat-miniprogram/minigame-adaptor",
+      "immutableRevision": "3ccb9639a46b9b948b18e427351a3287e5b7699c",
+      "version": "archived-2024-10-11",
+      "directLicenseEvidence": "https://github.com/wechat-miniprogram/minigame-adaptor/blob/3ccb9639a46b9b948b18e427351a3287e5b7699c/LICENSE",
+      "licenseSpdx": "BSD-3-Clause WITH bundled third-party notices",
+      "targetPlatformFit": {
+        "webLite": {
+          "verdict": "REJECTED",
+          "evidence": "It is not a browser renderer and adds no value to the existing web-lite QA build."
+        },
+        "wechatMiniGame": {
+          "verdict": "REJECTED",
+          "evidence": "The repository is archived and its documented workflow targets Unity art-resource migration, not Phaser 3 game export."
+        },
+        "douyinMiniGame": {
+          "verdict": "REJECTED",
+          "evidence": "It is a WeChat-specific archived toolchain with no Douyin platform support."
+        },
+        "tapTapMiniGame": {
+          "verdict": "REJECTED",
+          "evidence": "It is a WeChat-specific archived toolchain with no TapTap Mini Game support."
+        }
+      },
+      "maintenanceRisk": "HIGH",
+      "securityRisk": "MEDIUM",
+      "attributionDuties": [
+        "Retain the BSD 3-Clause notice and all bundled third-party Apache and other license notices if any portion is redistributed."
+      ],
+      "decision": "REJECT",
+      "approvedScope": [],
+      "rationale": "Archived, platform-specific and incompatible with the current Phaser prototype architecture; reuse would add migration risk without proving any target package."
+    }
+  ],
+  "conclusion": {
+    "approvedCandidateNames": [
+      "Phaser 3.90.0",
+      "three.js r185",
+      "DefinitelyTyped three 0.185.4",
+      "Quaternius Ultimate Stylized Nature Pack May 2022",
+      "Kenney Nature Kit 1.0",
+      "OpenGameArt CC0 Low-Poly Swords 2022"
+    ],
+    "rejectedCandidateNames": [
+      "WeChat minigame-adaptor archived snapshot"
+    ],
+    "noSuitablePlatformAdapter": true,
+    "architectureDecision": "Keep Phaser 3.90.0 and the existing deterministic simulation untouched for the original web-lite prototype. Use the isolated three.js r185 web-lite POC with build-time DefinitelyTyped declarations, hash-verified Kenney CC0 GLB background props and one hash-verified OpenGameArt CC0 GLB blade selected by browser inspection. Keep cuttable geometry and visible cut caps original, and layer non-simulating trail, flash, particles, brief hit-stop and camera trauma onto the cut event. Do not claim WeChat, Douyin or TapTap Mini Game publishability; each platform still requires an isolated adapter spike, platform-specific tests and real-device evidence."
+  }
+}

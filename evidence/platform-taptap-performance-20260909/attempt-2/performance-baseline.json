@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "taptap-render-work-attempt-2-baseline",
+  "measurementKind": "deterministic-source-work-proxy",
+  "deviceFpsMeasured": false,
+  "reportedBackendFps": 0.020356234,
+  "reportedBackendFpsRootCause": "UNCONFIRMED",
+  "tapTapThreshold": null,
+  "observations": {
+    "staticDynamicLayerSeparationPresent": true,
+    "airborneUpdateCallsFullRedraw": false,
+    "staticDrawsPerActiveFrame": 0,
+    "dynamicDrawsPerActiveFrame": 1,
+    "packageOwnedRemainingBottleneckDemonstrated": false
+  },
+  "missingSamplerInputs": [
+    "exact-uploaded-package-sha256",
+    "raw-rendered-frame-count",
+    "raw-elapsed-time-ms",
+    "cpu-gpu-trace",
+    "published-backend-threshold"
+  ],
+  "interpretation": "The current source retains the prior static/dynamic Graphics separation and contains no full-scene redraw in the active update loop. This source proxy cannot distinguish physical rendering from TapTap sampler behavior, so no further package optimization is authorized."
+}

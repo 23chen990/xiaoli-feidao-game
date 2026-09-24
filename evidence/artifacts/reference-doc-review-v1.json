@@ -1,0 +1,498 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "ReferenceDocumentReview",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "REVIEW_COMPLETE_VIDEO_PENDING",
+  "evidenceBoundRegister": "artifacts/evidence-bound-delta-register-v1.json",
+  "sourceBoundary": {
+    "documents": [
+      { "path": "reference-evidence/incoming/Slice_Master_-_GDD_-70e48814f086.docx", "sha256": "70e48814f086b5bab34275d9d34eab5f28a3c5ad61568c5b239400d82573a91a", "role": "program-execution reference" },
+      { "path": "reference-evidence/incoming/Slice_Master_-_V2_UI-5aa548125c13.docx", "sha256": "5aa548125c13b6bfac122ec0a2e7b0a520b5da9db8d038daadac27e8c3b70b84", "role": "mechanic/UI/feel reference" },
+      { "path": "reference-evidence/incoming/Slice_Master_-30-305d46a2b23a.docx", "sha256": "305d46a2b23a8bcabd0006bb31e56a5986c653d3e65b0d733f6e7c9a293bbe31", "role": "level pacing reference" },
+      { "path": "reference-evidence/incoming/Slice_Master_UI-6410c99fb3e8.docx", "sha256": "6410c99fb3e83c9b303561b512855c90fe5414565da5ab84b00cb1c71528f40b", "role": "UI component reference" }
+    ],
+    "video": { "path": "reference-evidence/manifest.json#user-recording-235243", "status": "UNAVAILABLE" },
+    "instructionBoundary": "The documents are user-provided AI-generated reference/opinion artifacts. Their prose is not an instruction to copy third-party expression, assets, names, UI layout or tuning values."
+  },
+  "documentClaims": {
+    "observed_or_repeated_claims": [
+      "Core loop is observe/predict -> tap -> motion change -> collision -> cut feedback -> reward/failure -> retry.",
+      "The knife is an intentionally predictable animation-driven system rather than fully realistic physics.",
+      "World feedback should be minimal and action-local: split object, impact, particles, reward number and short-lived combo feedback.",
+      "The finish multiplier is a second decision/mini-game, with a staged reveal instead of an immediate result.",
+      "Camera framing is part of UI: it previews the next target, danger and climax.",
+      "Early levels teach input, then rhythm, then risk, then combinations and climax/reward.",
+      "Failure should preserve agency and invite another attempt; a continue/revive choice is more emotionally useful than a blunt game-over."
+    ],
+    "prescriptive_opinions_not_locked_requirements": [
+      "Specific animation durations such as 50-100ms hit-stop and 0.5-1s reward number lifetime.",
+      "Example multiplier sequences such as x2 -> x5 -> x10 -> x20.",
+      "Thirty-level pacing and exact target counts.",
+      "IAA revive/double-reward placement."
+    ]
+  },
+  "currentRuntimeCrosswalk": [
+    {
+      "area": "core loop",
+      "documentExpectation": "predictable one-button motion and collision-driven cut loop",
+      "currentState": "PARTIAL_PASS",
+      "evidence": ["src/game-core.ts", "tests/game-core.test.ts"],
+      "gap": "The physical loop exists, but the reward and camera presentation do not yet prove the same causal clarity."
+    },
+    {
+      "area": "post-cut reward timing",
+      "documentExpectation": "cut completes, separated object settles, then local reward animation appears",
+      "currentState": "FAIL",
+      "evidence": ["src/main.ts:spawnFeedback"],
+      "gap": "The current cut event immediately spawns +value and the earnings banner before the post-cut separation lifecycle is complete."
+    },
+    {
+      "area": "world UI",
+      "documentExpectation": "reward number follows the cut object; HUD remains minimal",
+      "currentState": "FAIL",
+      "evidence": ["index.html", "src/main.ts", "src/style.css"],
+      "gap": "The dominant reward signal is a screen-space banner/HUD addition, not a post-cut object-local reward moment."
+    },
+    {
+      "area": "finish multiplier",
+      "documentExpectation": "wall is a staged second mini-game with a visible reveal and reward burst",
+      "currentState": "PARTIAL",
+      "evidence": ["src/three-world-renderer.ts:syncFinish", "src/main.ts:finishWallLabels"],
+      "gap": "Physical finish meshes exist, but multiplier labels are still a fixed screen-right column and the overlay can dominate the wall read."
+    },
+    {
+      "area": "camera as UI",
+      "documentExpectation": "preview, pressure and climax framing",
+      "currentState": "FAIL",
+      "evidence": ["src/three-world-renderer.ts:render", "src/three-presentation.ts:createCameraSpec"],
+      "gap": "The runtime has a stable follow camera and mobile lead adjustment, not authored reveal/pressure/finish beats."
+    },
+    {
+      "area": "level pacing",
+      "documentExpectation": "teach -> rhythm -> risk -> combination -> climax/reward",
+      "currentState": "PARTIAL_PASS",
+      "evidence": ["src/game-levels.ts", "tests/course-stage.test.ts"],
+      "gap": "Twelve authored levels and stage metadata exist, but the document's event-density and reward-climax contract is not fully player-visible."
+    },
+    {
+      "area": "failure/retry",
+      "documentExpectation": "clear attributable failure and agency-preserving continuation",
+      "currentState": "PARTIAL",
+      "evidence": ["src/main.ts", "tests/browser-smoke.ts"],
+      "gap": "Explicit Replay is verified; a meaningful continue/revive choice is not implemented."
+    }
+  ],
+  "expandedFindings": [
+    {
+      "id": "REWARD-LIFECYCLE-001",
+      "severity": "P0",
+      "area": "reward-causality",
+      "finding": "recordCut mutates score, totalEarnings and the earnings ledger before the separated object has completed its visible lifecycle; the UI then shows the result immediately on the cut event.",
+      "evidence": ["src/game-core.ts:1358", "src/main.ts:255"],
+      "acceptance": "cut complete -> halves visibly separate/settle -> local reward animation -> cumulative total sync; no top-left reward banner as the primary reward signal"
+    },
+    {
+      "id": "COMBO-UI-002",
+      "severity": "P1",
+      "area": "combo-feedback",
+      "finding": "The simulation calculates combo, but the default presentation never renders combo escalation or a short-lived combo moment; counterText only exposes cuts, score and total earnings.",
+      "evidence": ["src/game-core.ts:1358", "src/main.ts:204"],
+      "acceptance": "consecutive cuts create a brief, non-blocking world/action feedback tier and then disappear without obscuring the next target"
+    },
+    {
+      "id": "UI-HIERARCHY-003",
+      "severity": "P0",
+      "area": "visual-hierarchy",
+      "finding": "HUD, stage/distance text, gate legend, earnings banner, fixed finish labels, bottom instruction and terminal overlay compete simultaneously; the terminal overlay can cover the action and wall.",
+      "evidence": ["index.html", "src/main.ts:178", "src/style.css:78", "tests/artifacts/qa-3d-main-v1/mobile-natural-zero-won.png"],
+      "acceptance": "during active play only the minimum HUD remains; action/reward/danger layers are world-local; terminal content never occludes the wall before its reveal has been read"
+    },
+    {
+      "id": "FINISH-WALL-SEMANTICS-004",
+      "severity": "P0",
+      "area": "finish-wall",
+      "finding": "The core has an aggregate finish-wall sweep and clamps the player before the wall, but the renderer presents separate unlabelled meshes while the multiplier text is detached in a fixed viewport column. There is no dedicated natural-input proof for tip, edge, body and handle against every multiplier lane.",
+      "evidence": ["src/game-core.ts:961", "src/three-world-renderer.ts:305", "src/style.css:152"],
+      "acceptance": "one contiguous wall, each brick visibly carries its own multiplier including x0.5, no knife part crosses the wall, and the selected brick alone owns the reveal"
+    },
+    {
+      "id": "FINISH-DIFFICULTY-005",
+      "severity": "P1",
+      "area": "finish-risk-reward",
+      "finding": "Higher displayed multipliers are placed in lanes, but the runtime selection is primarily nearest-overlap plus routeBias; difficulty is not yet authored as a legible risk curve tied to lane width, movement, approach visibility or recovery cost.",
+      "evidence": ["src/game-core.ts:1345", "src/game-levels.ts:99"],
+      "acceptance": "a player can understand why x4 is harder than x2 and why x0.5 is a valid fallback before contact, without relying on a fixed legend"
+    },
+    {
+      "id": "CAMERA-BEATS-006",
+      "severity": "P1",
+      "area": "camera-as-ui",
+      "finding": "Camera targeting only eases horizontal targetX with a fixed vertical target and fixed FOV; cut impact scales the knife but does not provide authored preview, pressure, near-miss or finish-climax framing.",
+      "evidence": ["src/three-world-renderer.ts:337", "src/three-presentation.ts:101"],
+      "acceptance": "camera exposes the next target, preserves the danger read, and gives the finish wall a distinct reveal/settlement beat without motion sickness"
+    },
+    {
+      "id": "FAILURE-RECOVERY-007",
+      "severity": "P1",
+      "area": "failure-recovery",
+      "finding": "Failure copy explains spike/fall and replay exists, but there is no agency-preserving continue/revive state, near-miss explanation, or fast return to the exact decision context.",
+      "evidence": ["src/main.ts:227", "tests/artifacts/qa-3d-main-v1/mobile-natural-zero-failed.png"],
+      "acceptance": "failure identifies the cause visually, offers immediate retry, and optionally offers a clearly secondary continue/revive path without forcing an ad"
+    },
+    {
+      "id": "AUDIO-TOUCH-008",
+      "severity": "P1",
+      "area": "juice",
+      "finding": "Feedback audio is a small oscillator table with one tone per event; there is no layered cut material sound, variation, ducking, adaptive intensity, or mobile haptic channel.",
+      "evidence": ["src/main.ts:78"],
+      "acceptance": "cut, bounce, spike, reward and finish have distinguishable layered feedback with variation and optional mobile-safe haptics; audio never masks the next input"
+    },
+    {
+      "id": "VISUAL-IDENTITY-009",
+      "severity": "P1",
+      "area": "visual-expression",
+      "finding": "The active theme and asset manifest are explicitly placeholder/programmatic-original; current screenshots read as flat colored boxes and generic panels rather than a production-ready food/cut target vocabulary.",
+      "evidence": ["src/theme.ts:1", "src/three-presentation.ts:1", "tests/artifacts/qa-3d-main-v1/mobile-natural-zero-cut-halves.png"],
+      "acceptance": "replace placeholder read with an original, coherent target/material language while preserving the generic-mechanic boundary"
+    },
+    {
+      "id": "LEVEL-PACING-010",
+      "severity": "P1",
+      "area": "level-pacing",
+      "finding": "The runtime catalog is 12 authored levels with three course roles and target durations capped at 45 seconds; the reference table describes a five-phase 1-30 teaching arc. This is a product-scope mismatch, not merely a missing label.",
+      "evidence": ["src/game-levels.ts:51", "tests/level-catalog.test.ts:7", "reference-evidence/incoming/Slice_Master_-30-305d46a2b23a.docx"],
+      "acceptance": "either author the agreed scope or explicitly version the 12-level slice as a vertical slice; every level must expose safe start, rhythm, risk, recovery, climax and reward beats"
+    },
+    {
+      "id": "QA-GATE-011",
+      "severity": "P0",
+      "area": "factory-qa",
+      "finding": "The same default mobile natural run is timing-sensitive: one qa:browser execution failed mobile-natural-zero on a spike at 8.67s after four cuts, while the immediate rerun passed mobile-natural-zero at 27.08s. A single green report therefore cannot establish a stable default journey; the failure must be treated as flaky until repeated runs converge.",
+      "evidence": ["tests/artifacts/qa-3d-main-v1/mobile-natural-zero-failed.png", "tests/artifacts/qa-3d-main-v1/mobile-natural-zero-won.png", "tests/artifacts/qa-3d-main-v1/report.json", "tests/artifacts/qa-3d-main-v1/browser-result.json"],
+      "acceptance": "the natural default journey must pass repeatedly on each declared mobile viewport with bounded variance; any reproduced failure or unexplained branch divergence keeps QA BLOCKED regardless of fixture/unit results"
+    },
+    {
+      "id": "IDENTITY-CONTAMINATION-012",
+      "severity": "P1",
+      "area": "factory-metadata",
+      "finding": "Historical artifacts inside this run use multiple naming generations. The user has clarified that 灵刃飞斩 and 小李飞刀 are the same game's historical names, so title variance alone is not cross-game contamination. The remaining issue is metadata: release evidence still needs immutable targetGame/workspace/run/version fields instead of relying on display titles.",
+      "evidence": ["artifacts/*.json", "qa-*/**/report.json"],
+      "acceptance": "all new artifacts carry immutable targetGame, workspace, entrypoint and version fingerprints; historical title aliases are recorded as lineage, while genuinely mismatched targetGame/workspace artifacts remain quarantined"
+    },
+    {
+      "id": "PLATFORM-SCOPE-013",
+      "severity": "P1",
+      "area": "release-readiness",
+      "finding": "The current proof is web-lite browser QA only; it does not prove WeChat Mini Game, Douyin Mini Game or TapTap Mini Game adapter behavior.",
+      "evidence": ["src/three-presentation.ts:18", "tests/artifacts/qa-v5/acceptance-report.json"],
+      "acceptance": "platform adapter, configuration and target-mobile input/readability evidence remain isolated under this run before release claims"
+    },
+    {
+      "id": "ENTRYPOINT-014",
+      "severity": "P0",
+      "area": "factory-entrypoint",
+      "finding": "The workspace has two playable HTML entrypoints from the same game's development lineage: index.html is the main game, while poc-3d.html is a separate 3D cut-surface POC with different assets/UI and build output. qa:3d builds and tests only the POC, so a successful 3D QA run is not evidence for the default game journey.",
+      "evidence": ["package.json:12", "package.json:14", "scripts/build.ts", "scripts/build-3d.ts", "poc-3d.html", "index.html"],
+      "acceptance": "every QA command names its entrypoint and targetGame; the default release gate must exercise index.html, and POC evidence must be explicitly quarantined as non-release"
+    },
+    {
+      "id": "POC-EVIDENCE-015",
+      "severity": "P1",
+      "area": "evidence-boundary",
+      "finding": "The POC is a historical same-game variant (灵刃飞斩) with separate GLB assets and a separate build output. The title difference is not itself a wrong-game signal, but screenshots still need an entrypoint/version fingerprint so POC evidence is not mistaken for main-game evidence.",
+      "evidence": ["poc-3d.html:5", "scripts/build-3d.ts:41", "tests/browser-smoke-3d.ts:1"],
+      "acceptance": "all screenshots/reports include entrypoint hash, targetGame, workspace and build output; mismatched evidence is rejected before review"
+    },
+    {
+      "id": "STATE-UI-016",
+      "severity": "P1",
+      "area": "ui-architecture",
+      "finding": "HUD is updated from renderHud every frame and visibility is controlled by several independent hidden flags; there is no explicit screen stack or event-driven reward/terminal presentation state, making overlay races and stale banners likely.",
+      "evidence": ["src/main.ts:171", "src/main.ts:213", "src/main.ts:446", "index.html:10"],
+      "acceptance": "active-play, finish-reveal, failure, and terminal are explicit presentation states; HUD updates are event-driven and each state owns input, visibility and focus"
+    },
+    {
+      "id": "ACCESSIBILITY-017",
+      "severity": "P2",
+      "area": "accessibility",
+      "finding": "The runtime exposes reducedMotion and soundEnabled in storage schema, but the main game does not visibly provide settings controls, does not wire reducedMotion into the presentation, and has no haptic/visual alternative for audio cues.",
+      "evidence": ["src/level-progress.ts:17", "src/main.ts:135", "src/style.css:376"],
+      "acceptance": "reduced motion, sound and haptic preferences are reachable in UI, persist, and change the actual feedback bundle without removing critical state cues"
+    },
+    {
+      "id": "PERFORMANCE-018",
+      "severity": "P2",
+      "area": "performance",
+      "finding": "The main renderer disables shadows but creates a large self-contained bundle and runs an update/render loop every frame; performance reporting exists, but no current default-game mobile report proves the declared frame budget after the latest build.",
+      "evidence": ["src/three-world-renderer.ts:113", "src/main.ts:441", "src/three-presentation.ts:175", "pnpm qa:browser"],
+      "acceptance": "fresh default-game mobile performance evidence records 600+ frames, median/p95 frame time, draw calls, triangles and memory against the release budget"
+    },
+    {
+      "id": "INPUT-019",
+      "severity": "P1",
+      "area": "input-release",
+      "finding": "The main action is released only on shell pointerup/pointercancel. If a finger leaves the shell before release, ActionInput can remain held and ignore the next tap.",
+      "evidence": ["src/main.ts:379", "src/main.ts:382", "src/game-core.ts:644"],
+      "acceptance": "pointer capture or window-level cancellation guarantees every pointerdown has a release, including interruption, app switch and drag-out"
+    },
+    {
+      "id": "FINISH-INPUT-020",
+      "severity": "P0",
+      "area": "finish-state-lock",
+      "finding": "settleFinishGate sets status to ready during contact/reward/celebration, but act() does not guard finishPhase; a tap during the reveal can launch or alter input while the finish animation is supposed to be locked.",
+      "evidence": ["src/game-core.ts:655", "src/game-core.ts:1389", "src/main.ts:220"],
+      "acceptance": "finish contact through celebration consumes no gameplay input; only the declared terminal action is accepted after reveal"
+    },
+    {
+      "id": "EVENT-MEMORY-021",
+      "severity": "P2",
+      "area": "runtime-performance",
+      "finding": "SliceState.events is bounded to 96 entries, but cloneState still copies the entire queue and consumeEvents scans all retained entries every render frame; long bonus/retry sessions pay a repeated presentation cost even after the event cursor has advanced.",
+      "evidence": ["src/game-core.ts:458", "src/game-core.ts:470", "src/main.ts:283"],
+      "acceptance": "keep the bounded safety cap, but expose a cursor-drain or last-event slice so settled events are not cloned/scanned every frame"
+    },
+    {
+      "id": "SIM-INTERPOLATION-022",
+      "severity": "P2",
+      "area": "physics-rendering",
+      "finding": "Simulation advances at a fixed 120Hz, but renderer consumes the latest state directly without interpolation against the accumulator; 60Hz/90Hz/120Hz visual cadence can show phase stepping even when deterministic state tests pass.",
+      "evidence": ["src/game-core.ts:702", "src/main.ts:446", "src/three-world-renderer.ts:337"],
+      "acceptance": "render pose interpolates between fixed states while collision remains fixed-step; mobile natural capture shows no visible cadence jitter"
+    },
+    {
+      "id": "SAVE-NAMESPACE-023",
+      "severity": "P0",
+      "area": "game-isolation",
+      "finding": "Progress is stored under the generic key slice-master-neutral-progress-v2 without an immutable target-game namespace; another game in the same browser can inherit levels and settings.",
+      "evidence": ["src/level-progress.ts:4", "src/main.ts:135"],
+      "acceptance": "storage keys include targetGame and schema version; migrations cannot cross-populate another generated game"
+    },
+    {
+      "id": "SETTINGS-WIRING-024",
+      "severity": "P1",
+      "area": "accessibility-settings",
+      "finding": "soundEnabled and reducedMotion are persisted in the schema but the default UI exposes no settings surface; ToneBus does not consult soundEnabled and reducedMotion is only a media-query CSS fallback.",
+      "evidence": ["src/level-progress.ts:17", "src/main.ts:78", "src/style.css:376"],
+      "acceptance": "settings are reachable, persisted per target game and visibly change audio, hit-stop, flash and number-pop behavior"
+    },
+    {
+      "id": "REPLAY-COPY-025",
+      "severity": "P1",
+      "area": "terminal-affordance",
+      "finding": "Terminal copy says ‘再次轻触·重新开始’, but onPointerDown explicitly ignores input while status is failed or won; only the small replay button works.",
+      "evidence": ["src/theme.ts:124", "src/main.ts:342", "src/main.ts:390"],
+      "acceptance": "copy and input agree: either the whole terminal affordance restarts on tap or the copy directs the player to the visible replay control"
+    },
+    {
+      "id": "SEMANTIC-VISUAL-026",
+      "severity": "P1",
+      "area": "world-semantics",
+      "finding": "High-value cuttable objects, recovery supports, branch supports and ordinary platforms share largely the same visual language; value and route role are mostly metadata rather than immediate world-readable affordance.",
+      "evidence": ["src/game-levels.ts:88", "src/three-world-renderer.ts:244", "src/three-world-renderer.ts:284"],
+      "acceptance": "value tier and route role are readable without HUD text, while the expression remains original and does not copy competitor art"
+    },
+    {
+      "id": "HAZARD-TELEGRAPH-027",
+      "severity": "P1",
+      "area": "hazard-readability",
+      "finding": "Spikes are visually colored and collidable, but there is no event-driven pre-warning or danger-state change as the player enters the decision window; current default mobile evidence still reaches a spike failure before finish.",
+      "evidence": ["src/three-world-renderer.ts:270", "src/game-core.ts:1029", "tests/artifacts/qa-3d-main-v1/browser-result.json"],
+      "acceptance": "hazard approach is visible early enough to choose a route, and the failure frame shows the exact hazard/contact context"
+    },
+    {
+      "id": "CAMERA-BOUNDS-028",
+      "severity": "P2",
+      "area": "camera-bounds",
+      "finding": "cameraTargetX is not clamped to authored start/finish bounds and has no velocity-based vertical look-ahead; extra aspect ratios can expose empty space or hide the next target.",
+      "evidence": ["src/three-world-renderer.ts:337", "src/three-presentation.ts:101"],
+      "acceptance": "camera has authored bounds, deadzone/look-ahead policy and aspect-ratio coverage for portrait, landscape and tablet sizes"
+    },
+    {
+      "id": "PLATFORM-ADAPTER-029",
+      "severity": "P1",
+      "area": "platform-delivery",
+      "finding": "The main presentation contract explicitly says web-lite development and QA only; there are no isolated WeChat, Douyin or TapTap adapters/configuration/evidence in this workspace.",
+      "evidence": ["src/three-presentation.ts:18", "package.json"],
+      "acceptance": "release claims are withheld until each target mini-game adapter has its own build/config/input/readability evidence"
+    },
+    {
+      "id": "FINISH-SETTLEMENT-030",
+      "severity": "P0",
+      "area": "finish-economy",
+      "finding": "The finish operation is applied to score only; totalEarnings and the earnings ledger remain at the pre-wall cut total. A successful x4 wall selection can therefore show a multiplied terminal score while the HUD still reports the unmultiplied earnings total.",
+      "evidence": ["src/game-core.ts:1369", "src/game-core.ts:1379", "src/game-core.ts:855", "src/main.ts:204", "tests/game-core.test.ts:616"],
+      "acceptance": "define one authoritative reward currency, apply the selected wall operation in the staged reward phase, update the ledger once, and render the same final value on the selected wall brick and terminal summary"
+    },
+    {
+      "id": "RUNTIME-IDENTITY-031",
+      "severity": "P2",
+      "area": "runtime-metadata",
+      "finding": "The display titles 小李飞刀 and 灵刃飞斩 are confirmed historical names for the same game, so their difference is not a product identity defect. A separate metadata gap remains: the main HTML/theme does not expose an immutable targetGame and version fingerprint, while the active theme still declares mechanics-demo-placeholder-v1.",
+      "evidence": ["src/theme.ts:52", "src/theme.ts:164", "index.html:1", "poc-3d.html:5", "package.json:12"],
+      "acceptance": "preserve the approved 小李飞刀 title lineage, but add immutable targetGame, entrypoint and version metadata to main/POC DOM, QA reports and screenshots; do not quarantine an artifact solely because it uses 灵刃飞斩"
+    },
+    {
+      "id": "TAB-LIFECYCLE-032",
+      "severity": "P2",
+      "area": "runtime-lifecycle",
+      "finding": "The default loop only handles resize and pagehide. There is no visibilitychange/blur pause or accumulator clamp, so backgrounding or app-switching can advance a fixed-step backlog on return and create an unintentional death or a burst of stale audio/feedback.",
+      "evidence": ["src/main.ts:384", "src/main.ts:454", "src/game-core.ts:702"],
+      "acceptance": "pause simulation/input while hidden, release held actions, clamp resumed wall time, and resume with one readable frame rather than a catch-up burst"
+    },
+    {
+      "id": "POST-TERMINAL-033",
+      "severity": "P2",
+      "area": "runtime-lifecycle",
+      "finding": "requestAnimationFrame is scheduled again on every tick even after failed/won terminal state; the game no longer advances simulation but continues syncing DOM, projection facts and WebGL frames until pagehide.",
+      "evidence": ["src/main.ts:441", "src/main.ts:446", "src/game-core.ts:704"],
+      "acceptance": "throttle or stop the render loop at terminal state, resume only for an explicit replay/next-level action, and keep the terminal screenshot stable"
+    },
+    {
+      "id": "INPUT-AFFORDANCE-034",
+      "severity": "P1",
+      "area": "input-affordance",
+      "finding": "The critical one-tap action is carried mainly by a small bottom text instruction; the theme's TAP icon token is never rendered and the playfield has no visible gesture affordance or pressed state for first-time mobile users.",
+      "evidence": ["src/theme.ts:96", "src/theme.ts:185", "src/main.ts:75", "src/style.css:259"],
+      "acceptance": "show a compact visual tap/flip affordance during the first safe beat, make press feedback visible without covering the knife, and let the helper text reinforce rather than carry the rule alone"
+    },
+    {
+      "id": "GAME-FEEL-035",
+      "severity": "P1",
+      "area": "impact-juice",
+      "finding": "Cut feedback currently combines a short simulation hit-stop, a knife scale pulse, radial particles and a CSS flash, but there is no directional slash trail, camera trauma, material-specific debris or near-miss accent; repeated cuts therefore lack a visible escalation arc.",
+      "evidence": ["src/main.ts:255", "src/three-world-renderer.ts:324", "src/three-world-renderer.ts:337", "src/style.css:342"],
+      "acceptance": "layer restrained directional impact, contact-specific debris and combo/near-miss escalation while preserving target readability and reduced-motion behavior"
+    },
+    {
+      "id": "SPATIAL-COMPOSITION-036",
+      "severity": "P0",
+      "area": "scene-composition",
+      "finding": "The supplied visual evidence reads as a dominant, near-camera stack/wall with a large central knife, while the current main mobile capture reads as a sparse horizontal course with a smaller low-left knife, fixed edge labels and a large HUD/terminal stack. The camera therefore communicates a different gameplay priority even before the finish wall is reached.",
+      "evidence": ["/var/folders/f2/s76hhpss3llc2_zw9g63x7380000gn/T/codex-clipboard-28f27e10-27bf-4074-84a9-269e94abe1d5.png", "tests/artifacts/qa-3d-main-v1/mobile-natural-zero-cut-halves.png", "src/three-presentation.ts:101", "src/style.css:84"],
+      "acceptance": "make the declared finish wall and active cut target own the mobile composition at the right beats, keep the knife legible at touch distance, and reduce fixed chrome that competes with the playfield"
+    },
+    {
+      "id": "DEPTH-CUES-037",
+      "severity": "P1",
+      "area": "3d-readability",
+      "finding": "The main renderer disables shadow mapping and uses broad programmatic box/support materials; oblique perspective exists, but contact shadows, occlusion and material separation are weak, so wall thickness and knife penetration are harder to read than the collision state itself.",
+      "evidence": ["src/three-world-renderer.ts:113", "src/three-world-renderer.ts:150", "src/three-world-renderer.ts:244", "tests/artifacts/qa-3d-main-v1/mobile-natural-zero-cut-halves.png"],
+      "acceptance": "add a mobile-budgeted depth cue system (baked/contact shadow, AO-like grounding or authored occlusion) that makes wall thickness, blade contact and separated halves readable without copying third-party assets"
+    },
+    {
+      "id": "DUPLICATED-UI-038",
+      "severity": "P1",
+      "area": "information-hierarchy",
+      "finding": "The same finish multipliers are repeated in the top-right gate legend, the fixed right-side label column and the terminal reward copy, while cut earnings are repeated in the HUD counter and the transient banner. This increases scan cost without clarifying which physical object owns the value.",
+      "evidence": ["src/main.ts:188", "src/main.ts:205", "src/main.ts:221", "src/style.css:121", "tests/artifacts/qa-3d-main-v1/mobile-natural-zero-won.png"],
+      "acceptance": "choose one canonical world-local owner for each multiplier/reward; keep HUD to cumulative summary and show terminal value only after the selected brick reveal"
+    },
+    {
+      "id": "FINISH-REVEAL-TIMING-039",
+      "severity": "P1",
+      "area": "finish-reveal",
+      "finding": "finishWallLabels is rebuilt and visible on every render, even while the player is far from the finish; the player sees a detached reward list before seeing the physical wall or its approach preview.",
+      "evidence": ["src/main.ts:188", "src/style.css:152", "tests/artifacts/qa-3d-main-v1/mobile-natural-zero-failed.png"],
+      "acceptance": "gate labels appear only in a world-anchored finish preview/approach window, then stay attached to the continuous wall through contact and reward reveal"
+    },
+    {
+      "id": "FINISH-LANE-IDENTITY-040",
+      "severity": "P0",
+      "area": "finish-lane-readability",
+      "finding": "All multiply lanes, including x4, x2 and x0.5, use the same finishMultiplyMaterial and the world meshes contain no multiplier text. The actual lane identity is therefore carried only by the detached fixed labels, not by the reward bricks themselves.",
+      "evidence": ["src/three-world-renderer.ts:64", "src/three-world-renderer.ts:305", "src/main.ts:193", "tests/artifacts/qa-3d-main-v1/mobile-natural-zero-won.png"],
+      "acceptance": "each reward brick has a readable local label/icon and an authored visual distinction that remains legible in portrait without relying on a screen-edge legend"
+    },
+    {
+      "id": "SMALL-VIEWPORT-041",
+      "severity": "P2",
+      "area": "responsive-qa",
+      "finding": "Natural UI evidence covers 390x844 and desktop 1180x720 only; fixed HUD/banner/terminal widths, 38px action buttons and the always-on right label column are not verified on 320x568, narrow landscape or tablet aspect ratios.",
+      "evidence": ["tests/browser-smoke.ts:304", "src/style.css:84", "src/style.css:285", "src/style.css:367"],
+      "acceptance": "add target-size matrix coverage for small portrait, narrow landscape and tablet; no critical label, action or finish brick may be clipped or occluded"
+    }
+  ],
+  "designHealthScore": {
+    "scale": "Nielsen 0-4",
+    "scores": {
+      "visibility_of_system_status": 1,
+      "match_real_world": 2,
+      "user_control_and_freedom": 2,
+      "consistency_and_standards": 1,
+      "error_prevention": 2,
+      "recognition_not_recall": 1,
+      "flexibility_and_efficiency": 2,
+      "aesthetic_and_minimalist_design": 1,
+      "error_recovery": 2,
+      "help_and_documentation": 2
+    },
+    "total": "16/40",
+    "interpretation": "prototype mechanics are present, but the player-facing hierarchy and evidence integrity are not release-ready"
+  },
+  "personaRedFlags": [
+    { "persona": "first-time mobile player", "risk": "cannot tell whether the top-left banner, fixed right labels or physical brick caused the reward; the central terminal can hide the next action" },
+    { "persona": "risk-seeking score chaser", "risk": "x4/x2/x0.5 are visible as a detached legend, but the actual risk and selection ownership are not legible on the wall" },
+    { "persona": "returning retry player", "risk": "a spike/fall produces a modal stop and replay, but no near-miss explanation or continue choice preserves the emotional thread" }
+  ],
+  "factoryIntegrityFindings": [
+    "Do not treat mismatched historical targetGame artifacts as evidence for this run.",
+    "Do not accept a green report while the same declared mobile natural branch can fail on one run and pass on another.",
+    "Keep the unavailable 235243 recording blocked; do not substitute another recording.",
+    "Do not accept qa:3d/Poc screenshots as proof of index.html; every report must fingerprint its entrypoint and targetGame.",
+    "Do not close the finish-economy issue until score, totalEarnings, ledger and wall-local reveal agree after x4, x2, x0.5 and divide branches."
+  ],
+  "latestRuntimeObservation": {
+    "command": "pnpm qa:browser",
+    "runAt": "2026-09-06",
+    "result": "BLOCKED_FLAKY",
+    "evidence": [
+      "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/report.json",
+      "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/browser-result.json",
+      "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/mobile-natural-zero-failed.png",
+      "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/mobile-natural-zero-won.png",
+      "artifacts/qa-repeatability-audit-v1.json"
+    ],
+    "observations": [
+      "An earlier execution on this same target/date failed mobile-natural-zero on spike at 8.67s after four cuts; its failure screenshot remains preserved.",
+      "The immediate rerun exits 0 and mobile-natural-zero wins at 27.08s with six cuts and reaches all finish phases; its win screenshot remains preserved.",
+      "The pass/fail divergence on the nominally identical default run is unexplained, so QA remains blocked as flaky rather than accepted as green.",
+      "The current evidence still shows total earnings in the top-left HUD and fixed multiplier labels on the right edge rather than object/wall-local reward ownership."
+    ]
+  },
+  "unknowns_blocking_frame_claims": [
+    "The supplied 235243 recording is not readable on this host, so exact frame timing, audio and device presentation remain unverified.",
+    "The documents are AI-generated secondary analysis; claims about the reference game must be corroborated by the recording before they become locked runtime requirements.",
+    "Exact competitor values, assets, copy and layout remain out of scope for copying even if documents mention them."
+  ],
+  "nextReviewOrder": [
+    "post-cut separation -> local reward animation -> cumulative total",
+    "finish wall brick-local multiplier reveal and overlay occlusion order",
+    "camera beats for preview, pressure and finish climax",
+    "minimal HUD and transient combo hierarchy",
+    "failure continue/revive agency",
+    "early-to-late level rhythm and event density",
+    "runtime identity fingerprint and default-vs-POC entrypoint isolation",
+    "hidden-tab/input lifecycle and terminal render throttling"
+  ],
+  "auditClosure": {
+    "localSourceReview": "CURRENT_REGISTER_COMPLETE_LEGACY_REVIEW_STREAMS_OPEN",
+    "findingsCount": 41,
+    "reviewCoverageAudit": "artifacts/review-coverage-audit-v2.json",
+    "scannedAreas": [
+      "default index.html entrypoint and alternate poc-3d.html entrypoint",
+      "core simulation, fixed-step input, contact taxonomy, finish wall and reward ledger",
+      "Three.js presentation, camera, cut halves, world labels and overlay layering",
+      "HUD/settings/accessibility/audio/input lifecycle and persistence namespace",
+      "duplicate multiplier/earnings channels, finish reveal timing and small-viewport action sizes",
+      "desktop/mobile natural QA runner, fixture scenarios, reports and screenshots",
+      "run artifact targetGame/workspace identity and platform-scope contracts"
+    ],
+    "remainingUnknowns": [
+      "frame-level and audio timing from the unavailable 235243 recording",
+      "real-device behavior outside local headless Chromium",
+      "whether the reference game's exact expression matches the document claims"
+    ],
+    "closureRule": "The 41-item register is complete for its current evidence scope, but the 16 legacy review streams listed in review-coverage-audit-v2 remain open, quarantined, source-unavailable, performance-blocked or pending perceptual QA; do not report all factory reviews complete."
+  }
+}

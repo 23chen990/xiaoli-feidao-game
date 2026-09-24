@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "platform-fix-result",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "taptap-runtime-compat-20260908",
+  "attempt": 3,
+  "targetGame": "mobile-slice-adaptation-20260830（TapTap 名称：疯狂切割）",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED",
+  "why": "formal-fixer remains required because this is attempt 3/5 of the validated TapTap runtime/release issue. Before rebuilding, the read-only ZIP contract correctly failed against the attempt-2 archive: it was already 390x844/policy 4 but exactFitScreen=true. The final source configuration explicitly supplied exactFitScreen=false, 390x844, fitWidth=true, fitHeight=false in cocos-build-config.json and matched the project general design resolution. The one permitted Cocos Creator 3.8.8 build used the unchanged official TapTap plugin 1.2.2 and generated a new valid ZIP, but the wechatgame intermediate build ignored the explicit exactFitScreen field and again serialized exactFitScreen=true. Per the build cap, no ZIP was manually changed and no second build was attempted. The real ZIP contract therefore remains RED and this attempt is BLOCKED. The other 12 gameplay, Graphics, identity, portrait and compatibility checks pass; lint and typecheck pass. Context intentionally omitted: pre-attempt-2 packaging history, other runs, web-lite, WeChat/Douyin code, shared factory code, ads, IAP, cloud saves, rankings, and non-SHA-bound screenshots as passing evidence.",
+  "filesChanged": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/build/TapBuild/game/",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/build/TapBuild/game.zip"
+  ],
+  "tests": [
+    {
+      "command": "PlatformRepairTaskSchema.parse(attempt-3/task.json)",
+      "passed": true,
+      "evidence": "Task was Zod-validated before RED or build actions."
+    },
+    {
+      "command": "pnpm exec tsx --test tests/zip-settings-contract.test.ts (pre-build RED)",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-runtime-20260908/attempt-3/red-tests.log — attempt-2 ZIP was 390x844/policy4 but exactFitScreen=true."
+    },
+    {
+      "command": "pnpm test (same post-build ZIP)",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-runtime-20260908/attempt-3/post-build-tests.log — 12/13 pass; only the real ZIP exactFitScreen=false contract fails."
+    },
+    {
+      "command": "pnpm lint",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-runtime-20260908/attempt-3/lint.log"
+    },
+    {
+      "command": "pnpm typecheck",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-runtime-20260908/attempt-3/typecheck.log"
+    },
+    {
+      "command": "unzip integrity/root metadata/settings/size/SHA and official plugin checks",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-runtime-20260908/attempt-3/package-check.log — archive/root/AppID 928932/name 疯狂切割/portrait/version 1.0.0/size/plugin pass, but src/settings.json exactFitScreen=true fails."
+    }
+  ],
+  "build": {
+    "attempted": true,
+    "passed": true,
+    "zipPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/build/TapBuild/game.zip",
+    "sha256": "6695e7a4050cc9a8b5887e5ba16a90fcae5275798f0c3e1372d23ae986b69b20",
+    "bytes": 1206521
+  },
+  "blockers": [
+    {
+      "id": "TAP-RUNTIME-STARTUP-SETTINGS-004",
+      "detail": "Cocos Creator 3.8.8 wechatgame serialization ignores the explicit top-level exactFitScreen=false build option and emits true. A later authorized attempt must identify a supported project/build-template override that does not modify the official TapTap plugin, then perform one build and require the ZIP contract to pass."
+    }
+  ],
+  "evidenceGaps": [
+    "No exact-SHA-bound OPPO PKB110 Android 16 rerun exists; native InstantGameActivity availability and launch remain unverified.",
+    "No exact-SHA-bound vivo V2001A/PD2001 OriginOS 3 natural-input rerun exists; absence of scene-construction TypeError and non-black/white first frame remain unverified.",
+    "No TapTap developer-backend upload or scan was performed or claimed.",
+    "SHA-256 6695e7a4050cc9a8b5887e5ba16a90fcae5275798f0c3e1372d23ae986b69b20 identifies the only attempt-3 build, but it fails the exactFitScreen contract and is not a repaired release candidate."
+  ]
+}

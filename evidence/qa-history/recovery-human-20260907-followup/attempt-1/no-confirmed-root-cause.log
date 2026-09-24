@@ -1,0 +1,1 @@
+No RED test was authored because the newly supplied natural-input recordings stop scheduling normal input at activeMs=10000 and fail after that cutoff. The recordings are valid evidence of failure under the capture policy, but do not isolate a product root cause shared by portrait and desktop. Stack-a/b and finish branches were not naturally observed.

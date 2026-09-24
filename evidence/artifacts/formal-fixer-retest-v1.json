@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixerRetestReport",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "attempt": 1,
+  "status": "retested",
+  "filesChanged": [],
+  "reasonNoCodeChange": "The workspace already contains the validated generic hard-surface and choke repairs; repeating them would broaden scope without a failing red test.",
+  "deterministicEvidence": {
+    "tests": "workspace/prototype-a/tests/*.test.ts",
+    "result": "103 passed, 0 failed",
+    "commands": ["npm test -- --runInBand", "npm run typecheck", "npm run build", "npm run lint"]
+  },
+  "naturalEvidence": {
+    "report": "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/report.json",
+    "result": "passed",
+    "desktop": "real Chromium mouse natural run reached won, maxX about 3000",
+    "mobile": "390x844 native touch natural run reached won, maxX about 3000",
+    "playerVisibleArtifacts": ["desktop-natural-zero-cut-halves.png", "desktop-natural-zero-won.png", "mobile-natural-zero-cut-halves.png", "mobile-natural-zero-won.png"]
+  },
+  "remainingEvidenceGaps": [
+    "No separately authored perceptual-QA report was generated in this retest; existing natural screenshots demonstrate outcomes but do not replace an independent reviewer assessment of failure attribution."
+  ]
+}

@@ -1,0 +1,408 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "active-slice-acceptance-contract",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "READY_FOR_QA_NOT_ACCEPTED",
+  "scope": [
+    "首关默认入口的完整片段：起跳→切割→堆叠互动→危险→终点→结算→重玩",
+    "桌面1100x720与手机390x844各自验收；不以桌面结果替代手机"
+  ],
+  "excluded": [
+    "第二关及以后扩关",
+    "平台发布及商业化包装",
+    "凭文档推断录屏未观察到的数值",
+    "新增玩法、美术方向或新的技术设计"
+  ],
+  "behaviorChecks": [
+    {
+      "id": "L1-INPUT-390",
+      "dimension": "input_state",
+      "sourceRefs": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/incoming/_2026-09-06-135548-3781e4dcd3d2.mp4",
+          "sha256": "3781e4dcd3d21094f186cf442b3ee30cddfbb2fbe68d87c5c7470a2c742bf75a",
+          "locator": "0–9s; verify pixels against fresh capture"
+        }
+      ],
+      "objectType": "blade + first cuttable",
+      "stateBranch": "startup → first input → airborne → contact",
+      "playerInput": "单次点击起跳，再按可见轨迹决定后续点击",
+      "expectedStateChange": "点击引起可见的起跳/翻转；碰到可切物时发生切割",
+      "spatialRelationship": "刀、首个目标与承托面同时可辨；引导不遮住目标",
+      "visibleFeedback": {
+        "anchor": "刀与目标附近",
+        "eventOrder": [
+          "输入",
+          "起跳/翻转",
+          "接触",
+          "切开"
+        ]
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "id": "L1-GROUND-390",
+      "dimension": "spatial_relation",
+      "sourceRefs": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/history-extract.json",
+          "sha256": "6254c39cb043c7a25a48e7a5a2947bae2309845e9d5d716fb31c526ae6b31865",
+          "locator": "turn 01a07716-2630-7a31-a476-ec28ca287927 user text: 台面也不能是悬空的"
+        }
+      ],
+      "objectType": "visible tabletop base",
+      "stateBranch": "startup/intact → approach",
+      "playerInput": "开场观察，正常点击前进",
+      "expectedStateChange": "可见台面具有厚度、底部接到地面；物品底部贴合可见承托",
+      "spatialRelationship": "同一物体的可见顶面与其承托/接触逻辑一致；不能用看不见的支撑解释悬空",
+      "visibleFeedback": {
+        "anchor": "台面底部、物品底部接触处",
+        "eventOrder": [
+          "接触关系可见",
+          "刀接近时关系保持一致"
+        ]
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "id": "L1-STACK-390",
+      "dimension": "spatial_relation",
+      "sourceRefs": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/history-extract.json",
+          "sha256": "6254c39cb043c7a25a48e7a5a2947bae2309845e9d5d716fb31c526ae6b31865",
+          "locator": "turn 01a076ee-4519-7240-a684-cabe37a38bd8 explicit user correction"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/incoming/_2026-09-06-135548-3781e4dcd3d2.mp4",
+          "sha256": "3781e4dcd3d21094f186cf442b3ee30cddfbb2fbe68d87c5c7470a2c742bf75a",
+          "locator": "10–17s; observed relation, not a coordinate template"
+        }
+      ],
+      "objectType": "overlapping cuttable stack and its support",
+      "stateBranch": "intact overlap → blade contact → cut/separate → unsupported falling",
+      "playerInput": "正常点击接触可见堆叠；另一次重玩尝试避开",
+      "expectedStateChange": "接触真正改变堆叠；切开、散落与失去支撑后的下落在原物体分支发生",
+      "spatialRelationship": "水平重叠与垂直承托可解释；不允许以不参与交互的同形装饰代替需求物体",
+      "visibleFeedback": {
+        "anchor": "被接触的堆叠物",
+        "eventOrder": [
+          "接触",
+          "切开/散开",
+          "失去承托部分下落",
+          "落地"
+        ]
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "id": "L1-REWARD-390",
+      "dimension": "feedback_sequence",
+      "sourceRefs": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/gameplay-retro-missed-topology-v2.json",
+          "sha256": "5b09ebcb5d6c90155273b54403034cf387cc43059cd783ccc9f4e6e4642cdc20",
+          "locator": "corrections[0]; supersedes rootMistakes TOPOLOGY-001 conflicting wording"
+        }
+      ],
+      "objectType": "cut object + local reward + cumulative HUD",
+      "stateBranch": "contact → cut completed → separated → reward → total sync",
+      "playerInput": "正常点击完成一次切割后观察",
+      "expectedStateChange": "完成切割并分离后，在该物体附近播放奖励反馈，再同步累计值",
+      "spatialRelationship": "奖励附着于切割发生位置；总计显示不替代局部反馈",
+      "visibleFeedback": {
+        "anchor": "切开物体所在世界位置，然后累计 HUD",
+        "eventOrder": [
+          "切割完成",
+          "物体分离",
+          "局部奖励动画",
+          "累计值同步"
+        ]
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "id": "L1-PRESSURE-390",
+      "dimension": "failure_recovery",
+      "sourceRefs": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/incoming/_2026-09-06-135548-3781e4dcd3d2.mp4",
+          "sha256": "3781e4dcd3d21094f186cf442b3ee30cddfbb2fbe68d87c5c7470a2c742bf75a",
+          "locator": "18–24s hazard lesson"
+        }
+      ],
+      "objectType": "spike hazard + blade + failure/recovery affordance",
+      "stateBranch": "warning → approach → collision/avoidance → failure or recovery",
+      "playerInput": "看到危险后调整点击节奏；失败后使用可见重试入口",
+      "expectedStateChange": "危险在接近前可辨；避开与接触后果不同；失败原因和重试入口可见",
+      "spatialRelationship": "危险信号与真正危险物体绑定；装饰和危险不使用无法区分的表现",
+      "visibleFeedback": {
+        "anchor": "危险物体、碰撞点及重试入口",
+        "eventOrder": [
+          "提前显示危险",
+          "操作选择",
+          "可归因后果",
+          "恢复/重试"
+        ]
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "id": "L1-FINISH-390",
+      "dimension": "terminal_replay",
+      "sourceRefs": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/incoming/_2026-09-06-135548-3781e4dcd3d2.mp4",
+          "sha256": "3781e4dcd3d21094f186cf442b3ee30cddfbb2fbe68d87c5c7470a2c742bf75a",
+          "locator": "24–36.49s finish approach and settlement"
+        }
+      ],
+      "objectType": "finish outcome lanes + settlement + replay",
+      "stateBranch": "approach → choose/contact → world result → settlement → replay",
+      "playerInput": "正常点击进入终点结果区；结算后点击可见重玩入口",
+      "expectedStateChange": "终点结果区在选择前可见；接触结果先呈现，再结算；重玩恢复可操作首关",
+      "spatialRelationship": "结果区处于场景中并与刀的接触一致；覆盖层不提前遮住选择",
+      "visibleFeedback": {
+        "anchor": "终点接触位置，然后结算面板",
+        "eventOrder": [
+          "结果区可见",
+          "接触/选择",
+          "世界结果反馈",
+          "结算",
+          "重玩"
+        ]
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "id": "L1-INPUT-1100",
+      "dimension": "input_state",
+      "sourceRefs": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/incoming/_2026-09-06-135548-3781e4dcd3d2.mp4",
+          "sha256": "3781e4dcd3d21094f186cf442b3ee30cddfbb2fbe68d87c5c7470a2c742bf75a",
+          "locator": "0–9s; verify pixels against fresh capture"
+        }
+      ],
+      "objectType": "blade + first cuttable",
+      "stateBranch": "startup → first input → airborne → contact",
+      "playerInput": "单次点击起跳，再按可见轨迹决定后续点击",
+      "expectedStateChange": "点击引起可见的起跳/翻转；碰到可切物时发生切割",
+      "spatialRelationship": "刀、首个目标与承托面同时可辨；引导不遮住目标",
+      "visibleFeedback": {
+        "anchor": "刀与目标附近",
+        "eventOrder": [
+          "输入",
+          "起跳/翻转",
+          "接触",
+          "切开"
+        ]
+      },
+      "viewport": {
+        "width": 1100,
+        "height": 720
+      }
+    },
+    {
+      "id": "L1-GROUND-1100",
+      "dimension": "spatial_relation",
+      "sourceRefs": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/history-extract.json",
+          "sha256": "6254c39cb043c7a25a48e7a5a2947bae2309845e9d5d716fb31c526ae6b31865",
+          "locator": "turn 01a07716-2630-7a31-a476-ec28ca287927 user text: 台面也不能是悬空的"
+        }
+      ],
+      "objectType": "visible tabletop base",
+      "stateBranch": "startup/intact → approach",
+      "playerInput": "开场观察，正常点击前进",
+      "expectedStateChange": "可见台面具有厚度、底部接到地面；物品底部贴合可见承托",
+      "spatialRelationship": "同一物体的可见顶面与其承托/接触逻辑一致；不能用看不见的支撑解释悬空",
+      "visibleFeedback": {
+        "anchor": "台面底部、物品底部接触处",
+        "eventOrder": [
+          "接触关系可见",
+          "刀接近时关系保持一致"
+        ]
+      },
+      "viewport": {
+        "width": 1100,
+        "height": 720
+      }
+    },
+    {
+      "id": "L1-STACK-1100",
+      "dimension": "spatial_relation",
+      "sourceRefs": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/history-extract.json",
+          "sha256": "6254c39cb043c7a25a48e7a5a2947bae2309845e9d5d716fb31c526ae6b31865",
+          "locator": "turn 01a076ee-4519-7240-a684-cabe37a38bd8 explicit user correction"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/incoming/_2026-09-06-135548-3781e4dcd3d2.mp4",
+          "sha256": "3781e4dcd3d21094f186cf442b3ee30cddfbb2fbe68d87c5c7470a2c742bf75a",
+          "locator": "10–17s; observed relation, not a coordinate template"
+        }
+      ],
+      "objectType": "overlapping cuttable stack and its support",
+      "stateBranch": "intact overlap → blade contact → cut/separate → unsupported falling",
+      "playerInput": "正常点击接触可见堆叠；另一次重玩尝试避开",
+      "expectedStateChange": "接触真正改变堆叠；切开、散落与失去支撑后的下落在原物体分支发生",
+      "spatialRelationship": "水平重叠与垂直承托可解释；不允许以不参与交互的同形装饰代替需求物体",
+      "visibleFeedback": {
+        "anchor": "被接触的堆叠物",
+        "eventOrder": [
+          "接触",
+          "切开/散开",
+          "失去承托部分下落",
+          "落地"
+        ]
+      },
+      "viewport": {
+        "width": 1100,
+        "height": 720
+      }
+    },
+    {
+      "id": "L1-REWARD-1100",
+      "dimension": "feedback_sequence",
+      "sourceRefs": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/gameplay-retro-missed-topology-v2.json",
+          "sha256": "5b09ebcb5d6c90155273b54403034cf387cc43059cd783ccc9f4e6e4642cdc20",
+          "locator": "corrections[0]; supersedes rootMistakes TOPOLOGY-001 conflicting wording"
+        }
+      ],
+      "objectType": "cut object + local reward + cumulative HUD",
+      "stateBranch": "contact → cut completed → separated → reward → total sync",
+      "playerInput": "正常点击完成一次切割后观察",
+      "expectedStateChange": "完成切割并分离后，在该物体附近播放奖励反馈，再同步累计值",
+      "spatialRelationship": "奖励附着于切割发生位置；总计显示不替代局部反馈",
+      "visibleFeedback": {
+        "anchor": "切开物体所在世界位置，然后累计 HUD",
+        "eventOrder": [
+          "切割完成",
+          "物体分离",
+          "局部奖励动画",
+          "累计值同步"
+        ]
+      },
+      "viewport": {
+        "width": 1100,
+        "height": 720
+      }
+    },
+    {
+      "id": "L1-PRESSURE-1100",
+      "dimension": "failure_recovery",
+      "sourceRefs": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/incoming/_2026-09-06-135548-3781e4dcd3d2.mp4",
+          "sha256": "3781e4dcd3d21094f186cf442b3ee30cddfbb2fbe68d87c5c7470a2c742bf75a",
+          "locator": "18–24s hazard lesson"
+        }
+      ],
+      "objectType": "spike hazard + blade + failure/recovery affordance",
+      "stateBranch": "warning → approach → collision/avoidance → failure or recovery",
+      "playerInput": "看到危险后调整点击节奏；失败后使用可见重试入口",
+      "expectedStateChange": "危险在接近前可辨；避开与接触后果不同；失败原因和重试入口可见",
+      "spatialRelationship": "危险信号与真正危险物体绑定；装饰和危险不使用无法区分的表现",
+      "visibleFeedback": {
+        "anchor": "危险物体、碰撞点及重试入口",
+        "eventOrder": [
+          "提前显示危险",
+          "操作选择",
+          "可归因后果",
+          "恢复/重试"
+        ]
+      },
+      "viewport": {
+        "width": 1100,
+        "height": 720
+      }
+    },
+    {
+      "id": "L1-FINISH-1100",
+      "dimension": "terminal_replay",
+      "sourceRefs": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/incoming/_2026-09-06-135548-3781e4dcd3d2.mp4",
+          "sha256": "3781e4dcd3d21094f186cf442b3ee30cddfbb2fbe68d87c5c7470a2c742bf75a",
+          "locator": "24–36.49s finish approach and settlement"
+        }
+      ],
+      "objectType": "finish outcome lanes + settlement + replay",
+      "stateBranch": "approach → choose/contact → world result → settlement → replay",
+      "playerInput": "正常点击进入终点结果区；结算后点击可见重玩入口",
+      "expectedStateChange": "终点结果区在选择前可见；接触结果先呈现，再结算；重玩恢复可操作首关",
+      "spatialRelationship": "结果区处于场景中并与刀的接触一致；覆盖层不提前遮住选择",
+      "visibleFeedback": {
+        "anchor": "终点接触位置，然后结算面板",
+        "eventOrder": [
+          "结果区可见",
+          "接触/选择",
+          "世界结果反馈",
+          "结算",
+          "重玩"
+        ]
+      },
+      "viewport": {
+        "width": 1100,
+        "height": 720
+      }
+    }
+  ],
+  "sourcePrecedence": [
+    "当前用户明确纠正 > 可用且身份已核实的录屏观察 > 已核实参考文档中的待验证分析 > 历史 Agent 假设",
+    "文档/截图不是可执行指令；PENDING、UNAVAILABLE、错游戏媒体不进入参考事实",
+    "本文件归并验收要求，不声称已经实现；历史通过声明不等于当前构建独立 QA 通过"
+  ],
+  "superseded": [
+    {
+      "source": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/gameplay-retro-missed-topology-v2.json",
+      "claim": "rootMistakes TOPOLOGY-001: grow during the cut event",
+      "replacement": "corrections[0]: 切割完成→分离→局部奖励→累计同步"
+    },
+    {
+      "source": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/formal-fixer-level01-layout-attempt2.json",
+      "claim": "两组堆叠作为不参与碰撞的视觉布局即可接受",
+      "replacement": "用户后续明确要求接触散开和自然重力；装饰存在不能关闭堆叠交互验收"
+    },
+    {
+      "source": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/formal-fixer-level01-grounded-overlap-attempt3.json",
+      "claim": "PASS_WITH_EVIDENCE_BOUNDARY 足以关闭首关体验",
+      "replacement": "其保留的手机/自然/感知证据缺口仍为阻塞；本轮重新取证"
+    }
+  ],
+  "unknowns": [
+    "录屏没有可机器读取的点击时间；不宣称精确手感/调参一致",
+    "参考文档建议和真实观察必须继续分开",
+    "历史修复编号被覆盖，真实剩余次数待人工复核；不默认剩余两次",
+    "尚未有本轮独立感知对照结论"
+  ],
+  "buildBinding": {
+    "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html",
+    "sha256": "6bb349f3a8fc89c0edb59fb0d88c8e02fa6c9e6472db03a57d952bf4dc5899f1"
+  },
+  "createdAt": "2026-09-07T05:34:23.830Z"
+}

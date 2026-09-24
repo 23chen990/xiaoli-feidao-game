@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "OPEN",
+  "classification": "presentation-state/lifecycle-stale-visual",
+  "route": "formal-fixer",
+  "routeReason": "The runtime presentation branch is part of the core cut/fall/recovery loop and requires build plus independent QA retest.",
+  "evidence": {
+    "deterministicTest": "tests/three-presentation.test.ts:143",
+    "observed": "After syncing the same cuttable from falling=true to falling=false, CutVisualEntity.facts() still reports lifecycle=falling.",
+    "reportedScreenshotIsInstruction": false,
+    "owningBranch": "ThreePresentationModel -> CutVisualEntity.sync -> CutVisualEntity.facts"
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "cut sigil / l4-entry",
+      "lifecycleState": "cut -> falling -> landed",
+      "rendererPresentationPath": "ThreePresentationModel.sync -> ThreeCutVisualManager.sync -> CutVisualEntity.facts",
+      "deviceViewport": "deterministic runtime model (desktop/mobile renderer-independent)",
+      "naturalInput": "not applicable to this state-model regression; natural QA remains required after rebuild",
+      "result": "RED: second sync reports falling instead of landed"
+    }
+  ],
+  "acceptanceCriteria": [
+    "CutVisualEntity must derive lifecycle from the latest synced presentation state.",
+    "The existing regression test must pass for falling and landed states.",
+    "Rebuild must succeed and the exact cut/fall/land branch must be checked by deterministic and player-visible QA.",
+    "The separate spike no-player-impact issue remains BLOCKED until its exact desktop and mobile natural branches create attributable pressure."
+  ],
+  "decision": "Fix lifecycle state only; do not widen scope or mark the spike-pressure issue complete."
+}

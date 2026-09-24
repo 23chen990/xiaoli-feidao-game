@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "platform-qa-result",
+  "role": "QAAgent",
+  "targetGame": "mobile-slice-adaptation-20260830（TapTap 名称：疯狂切割）",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame",
+  "testedSha256": "b98066570390b384c3471d3cf7fff17d22e176fc23fdf542162cfe53d0b24e96",
+  "engineeringVerdict": "PASS",
+  "naturalJourneyVerdict": "BLOCKED",
+  "perceptualVerdict": "BLOCKED",
+  "filingPackageVerdict": "READY_FOR_BACKEND_SCAN",
+  "checks": [
+    {
+      "id": "TAP-ZIP-IDENTITY-INTEGRITY",
+      "passed": true,
+      "evidence": "Independent shasum -a 256 returned b98066570390b384c3471d3cf7fff17d22e176fc23fdf542162cfe53d0b24e96, exactly matching qa-task.json; stat reported 1,206,619 bytes and unzip -t reported no errors. The ZIP was not rebuilt or modified."
+    },
+    {
+      "id": "TAP-ROOT-METADATA",
+      "passed": true,
+      "evidence": "Independent unzip listing and unzip -p inspection confirmed root game.js, game.json and project.config.json. project.config.json declares compileType game, projectname 疯狂切割 and appid 928932; game.json declares deviceOrientation portrait and productVersion 1.0.0. The 1,206,619-byte archive is below 20 MB."
+    },
+    {
+      "id": "TAP-NO-HTML-WRAPPER",
+      "passed": true,
+      "evidence": "The exact ZIP entry list contains no .html/.htm file. Searches of the archived game.js, application.js and src/settings.json found no index.html, location.href, iframe or webview entry path; game.js initializes the adapter/SystemJS/Cocos Application directly."
+    },
+    {
+      "id": "TAP-INITIAL-SCENE-WIRED",
+      "passed": true,
+      "evidence": "ZIP src/settings.json declares launch.launchScene db://assets/scenes/main.scene, preloadBundles main and script package project://src/chunks/bundle.js. ZIP assets/main/config.json maps the main scene, while assets/main/import/c9/c9468ad9-5977-4390-b6fc-b02806174123.json contains the GameRoot component type that is registered as GameBootstrap in assets/main/index.js. This is structural package evidence, not runtime proof."
+    },
+    {
+      "id": "TAP-GAMEPLAY-IMPLEMENTATION-PRESENT",
+      "passed": true,
+      "evidence": "Direct inspection of the exact ZIP's assets/main/index.js confirmed registered TOUCH_END input, launch/flip tap handling, sharp moon-fruit cut, blunt stone reflect, hazard/fall failure, finish settlement.complete with score, terminal tap reset to ready, and visible feedback color/name updates. These compiled branches match source tests but remain structural evidence only."
+    },
+    {
+      "id": "TAP-READONLY-TESTS-LINT-TYPECHECK",
+      "passed": true,
+      "evidence": "Independent read-only runs from the platform workspace all exited 0: ../../../../../../node_modules/.bin/tsx --test tests/*.test.ts reported 8 tests, 8 pass, 0 fail; ../../../../../../node_modules/.bin/tsc --noEmit -p tsconfig.core.json passed; the same command with --noUnusedLocals --noUnusedParameters passed. No Cocos build or converter was invoked."
+    },
+    {
+      "id": "TAP-NATURAL-DEVICE-JOURNEY",
+      "passed": false,
+      "evidence": "BLOCKED: no authenticated TapTap backend scan, QR launch, or iOS/Android physical-device runtime was available. Therefore startup through touch core loop, failure/settlement and replay was not observed naturally on the submitted TapTap package; web-lite and test APIs were intentionally not used as substitutes."
+    },
+    {
+      "id": "TAP-PERCEPTUAL-PORTRAIT-QA",
+      "passed": false,
+      "evidence": "BLOCKED: without real TapTap rendering on a target phone, independent QA could not inspect portrait framing, touch affordances, visible cut/reflect/failure attribution, settlement readability or replay discoverability. Static scene and color/name code cannot establish a perceptual PASS."
+    }
+  ],
+  "issues": [
+    {
+      "id": "TAP-BACKEND-DEVICE-QA-PENDING",
+      "severity": "warning",
+      "message": "The frozen package is statically ready for the next TapTap backend upload/scan step, but is not yet backend-approved or device-validated.",
+      "evidence": "No TapTap backend result, QR test record, device log, natural-input trace, screenshot or video for this exact SHA-256 was available to independent QA."
+    }
+  ],
+  "evidenceGaps": [
+    "TapTap backend upload and automated scan result for exact SHA-256 b98066570390b384c3471d3cf7fff17d22e176fc23fdf542162cfe53d0b24e96.",
+    "At least one iOS or Android physical-device QR run of the exact ZIP covering cold start, normal touch launch/flip, cut/reflect, attributable failure, settlement and terminal-touch replay.",
+    "Player-visible portrait evidence at a representative 390x844 viewport confirming safe framing, legible feedback and understandable replay; src/settings.json has a 1280x720 design resolution, whose real portrait presentation cannot be resolved statically."
+  ]
+}

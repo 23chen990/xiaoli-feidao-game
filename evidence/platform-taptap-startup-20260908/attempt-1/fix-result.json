@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "platform-fix-result",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "taptap-startup-compat-20260908",
+  "attempt": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED",
+  "why": "formal-fixer was required because startup is a release-blocking cross-device failure with ambiguous ownership. The Zod-validated evidence does not demonstrate a package-owned compatibility defect: on ZTE A2022P, the TapTap host process com.taptap throws a FATAL EXCEPTION on its own LightWorkThread before InstantGameActivity or the Cocos first frame appears; Android then force-finishes TapTap PageProxyActivity and shows a TapTap crash dialog. The exception stack body is absent. OPPO PDBM00 is present only in the backend table without raw logs or or a package SHA, while the supplied OPPO raw branch is PKB110/Android 16 and cannot substitute for PDBM00/Android 9. RED first showed that the project lacked this explicit ownership/device-identity contract. GREEN adds only the structured startup contract; no speculative game workaround, vendor modification or unrelated gameplay change was made. The single Cocos Creator 3.8.8 build with official plugin 1.2.2 produced a fresh auditable ZIP, and 18/18 tests, lint, typecheck and package checks pass. That engineering evidence cannot clear natural/perceptual startup on the two failed devices, so status remains BLOCKED. Context intentionally omitted: other games/runs, web-lite, WeChat/Douyin, shared factory code, unrelated gameplay/assets, unbound performance evidence, unavailable proprietary TapTap source and invented backend rules.",
+  "filesChanged": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/startup-contract.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tests/startup-compat.test.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/build/TapBuild/game/",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/build/TapBuild/game.zip"
+  ],
+  "tests": [
+    {
+      "command": "Zod validation of task.json, triage.json, reproduction-matrix.json and evidence manifest",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-startup-20260908/attempt-1/input-validation.log"
+    },
+    {
+      "command": "pnpm exec tsx --test tests/startup-compat.test.ts (RED)",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-startup-20260908/attempt-1/red-tests.log — startup ownership, absent package SHA and distinct device branches were not yet recorded."
+    },
+    {
+      "command": "pnpm test",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-startup-20260908/attempt-1/green-tests.log — 18/18 pass after the single build, including static/dynamic Graphics, first frame, touch journey and startup branch contracts."
+    },
+    {
+      "command": "pnpm lint",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-startup-20260908/attempt-1/lint.log"
+    },
+    {
+      "command": "pnpm typecheck",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-startup-20260908/attempt-1/typecheck.log"
+    },
+    {
+      "command": "unzip integrity/root metadata/settings/runtime markers/size/SHA and official plugin checks",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-startup-20260908/attempt-1/package-check.log — ZIP valid; roots present; AppID 928932, name 疯狂切割, portrait, version 1.0.0; 390x844/policy4; static/dynamic Graphics markers; 1206608 bytes; official plugin archive hash matched."
+    }
+  ],
+  "build": {
+    "attempted": true,
+    "passed": true,
+    "zipPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/build/TapBuild/game.zip",
+    "sha256": "38036b56d671eaf6419fa88059e22fe103262607872bc7eb8339ea6b32b74cae",
+    "bytes": 1206608
+  },
+  "blockers": [
+    {
+      "id": "TAPTAP-HOST-ZTE-A2022P-FATAL-001",
+      "detail": "TapTap client owner/test infrastructure must provide the missing exception stack and a host build that does not crash com.taptap before InstantGameActivity is available on ZTE A2022P."
+    },
+    {
+      "id": "TAPTAP-OPPO-PDBM00-RAW-TRACE-002",
+      "detail": "OPPO PDBM00/Android 9 requires its own raw logcat/autotest and exact-SHA rerun; OPPO PKB110/Android 16 is a separate adjacent branch and cannot close it."
+    }
+  ],
+  "evidenceGaps": [
+    "Build 196126 screenshots and ZTE logs do not include the uploaded ZIP SHA, so they are not bound to SHA-256 38036b56d671eaf6419fa88059e22fe103262607872bc7eb8339ea6b32b74cae.",
+    "The exception stack body following the ZTE com.taptap FATAL EXCEPTION is absent, preventing precise host root-cause diagnosis.",
+    "No OPPO PDBM00 raw trace, physical viewport, player-visible first frame or ordinary touch/terminal/replay evidence exists.",
+    "No exact-SHA ZTE A2022P natural/perceptual rerun reaches InstantGameActivity or the Cocos first frame.",
+    "No TapTap backend upload, scan or pass was performed or claimed."
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "artifactType": "gameplay-triage",
+  "schemaVersion": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "reproduction": {
+    "evidence": "User reports low moving spikes barely create player pressure.",
+    "matrix": {
+      "levels": ["08", "09", "10", "11", "12"],
+      "hazardBranches": ["low floor spike", "moving low spike", "low-route recovery", "finish approach"],
+      "playerResponses": ["stay on main line", "drop to low line", "rise before hazard", "late recovery"],
+      "viewports": ["mobile portrait", "mobile landscape", "desktop"]
+    }
+  },
+  "classification": "cross-level hazard pressure/readability defect",
+  "acceptance": [
+    "Each low moving spike intersects a deliberate low-route decision window.",
+    "The hazard motion is visible and materially changes the safe timing window.",
+    "A readable high/recovery escape remains available.",
+    "Natural-input QA records both pressure and successful avoidance across affected levels."
+  ],
+  "resolution": {
+    "change": "Levels 8 and 9 low-route spikes now sit closer to the declared low-route decision band, use a larger readable body, and move through the full permitted timing amplitude (24px). The main/high escape remains clear.",
+    "affectedLevels": [8, 9]
+  },
+  "evidence": {
+    "tests": "152 passed, 0 failed",
+    "typecheck": "passed",
+    "lint": "passed",
+    "build": "passed",
+    "naturalQA": "passed",
+    "perceptualQA": "passed",
+    "runnerReport": "runs/mobile-slice-adaptation-20260830/qa-level-pack-v1/runner-report.json",
+    "qaReport": "runs/mobile-slice-adaptation-20260830/qa-level-pack-v1/qa-report.json"
+  },
+  "status": "PASS"
+}

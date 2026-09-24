@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "role": "QAAgent",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED",
+  "reportPaths": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/reproduction-matrix.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/qa-natural-journey-report.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/perceptual-qa-report.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/qa-report.json"
+  ],
+  "blockers": [
+    "L1-STACK-390: 未取得指定 stack-a/b 同一对象从承托到散开、掉落、落地的完整自然像素链。",
+    "L1-FINISH-390: 本轮手机在前段失败，未取得本构建终点结算与重玩证据。",
+    "L1-STACK-1100: 未取得指定 stack-a/b 同一对象从承托到散开、掉落、落地的完整自然像素链。"
+  ],
+  "sourceModified": false,
+  "summary": "第4次构建：首个目标在双视口恢复可见，桌面自然通关/结算/重玩通过，手机开场与奖励/危险可见；stack 自然生命周期和手机终点覆盖仍阻塞。"
+}

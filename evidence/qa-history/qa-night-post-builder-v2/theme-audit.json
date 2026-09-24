@@ -1,0 +1,88 @@
+{
+  "themeZodValidated": true,
+  "assetManifestZodValidated": true,
+  "courseBlueprintZodValidated": true,
+  "themeId": "mechanics-demo-placeholder-v1",
+  "assetRoles": [
+    "knife",
+    "cuttable",
+    "terrain",
+    "hazard",
+    "feedback"
+  ],
+  "alternateThemeZodValidated": true,
+  "coreTraceDefaultSha256": "9ec153a3c547c4c8f1c0ac219a419eebfe9fe57c82ea6d0d9799173f4061cbe1",
+  "coreTraceAlternateSha256": "9ec153a3c547c4c8f1c0ac219a419eebfe9fe57c82ea6d0d9799173f4061cbe1",
+  "identicalCoreTraceAcrossThemeBoundary": true,
+  "coreImportsTheme": false,
+  "coreDomReferences": 0,
+  "coreAssetFilenameReferences": 0,
+  "presentationImportsTheme": true,
+  "cssLiteralColorsOutsideFallbackRoot": 0,
+  "productionThemeUsesZodParse": false,
+  "rendererResolvesAssetManifestRoles": false,
+  "cssDuplicatesThemeDefaults": true,
+  "htmlDuplicatesThemeCopy": true,
+  "themedCoreIds": [
+    "white-bumper",
+    "white-landing",
+    "white-branch",
+    "lantern-ferry",
+    "white-column",
+    "ember-four",
+    "mist-half",
+    "calm-moon",
+    "jade-two"
+  ],
+  "blueprint": [
+    {
+      "id": "stage-1-read-and-cut",
+      "role": "teach",
+      "difficulty": 1,
+      "intensity": 0.28,
+      "mechanicIds": [
+        "INPUT_TO_MOTION",
+        "CONTACT_TAXONOMY",
+        "CUT_OR_REFLECT"
+      ],
+      "labelToken": "stage.teach"
+    },
+    {
+      "id": "stage-2-recover-and-choose",
+      "role": "develop",
+      "difficulty": 2,
+      "intensity": 0.57,
+      "mechanicIds": [
+        "CUT_OR_REFLECT",
+        "FAILURE_AND_RESTART",
+        "FEEDBACK_TIMING"
+      ],
+      "labelToken": "stage.develop"
+    },
+    {
+      "id": "stage-3-structure-and-finish",
+      "role": "test",
+      "difficulty": 3,
+      "intensity": 0.84,
+      "mechanicIds": [
+        "CONTACT_TAXONOMY",
+        "FAILURE_AND_RESTART",
+        "STAGED_DIFFICULTY"
+      ],
+      "labelToken": "stage.test"
+    }
+  ],
+  "runtimeThemeFacts": {
+    "contract": {
+      "id": "mechanics-demo-placeholder-v1",
+      "status": "placeholder",
+      "styleLock": false,
+      "assetCount": 5
+    },
+    "dataset": {
+      "id": "mechanics-demo-placeholder-v1",
+      "status": "placeholder"
+    },
+    "canvasCount": 1
+  }
+}

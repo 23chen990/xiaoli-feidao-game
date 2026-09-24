@@ -1,0 +1,47 @@
+{
+  "artifactType": "gameplay-triage",
+  "schemaVersion": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "reproduction": {
+    "evidence": [
+      "User asks whether removing Level 6's meaningless spike covered the other levels.",
+      "Prior screenshots show dense or overlapping obstacle placement and mismatched cut-piece presentation."
+    ],
+    "scope": "all levels, authored spikes, generated moving hazards, supports and finish approach",
+    "matrix": {
+      "objectTypes": ["authored spike", "generated moving spike", "moving support", "hard block"],
+      "lifecycleBranches": ["pre-contact", "natural route contact", "avoidance window", "failure/replay"],
+      "presentationPaths": ["Three.js world", "HUD pressure/readability", "QA telemetry"],
+      "viewports": ["desktop", "mobile portrait", "mobile landscape"]
+    }
+  },
+  "classification": "cross-level gameplay/readability audit",
+  "acceptance": [
+    "Every collidable hazard has a declared path role and decision impact.",
+    "Every natural route hazard has a reachable avoidance or recovery window.",
+    "Decorative hazards are not collidable.",
+    "Natural-input QA passes all 12 levels with no blind hazard failure.",
+    "Any changed level is covered by unit and runtime evidence."
+  ],
+  "audit": {
+    "level01": "two fixed teaching hazards; broad recovery shelf verified",
+    "level02": "ceiling timing hazard; route remains readable",
+    "level03": "decorative spike removed from collision path",
+    "level04": "moving gap hazard with high-line escape and recovery shelves",
+    "level05": "moving route divider with declared timing window",
+    "level06": "blind floor spike removed; moving lift remains meaningful pressure",
+    "level07": "moving ceiling timing hazard with declared window",
+    "level08": "moving floor hazard with declared window",
+    "level09": "moving low hazard with ferry/lift route alternatives",
+    "level10": "falling-risk spike starts after tower-exit decision window",
+    "level11": "high/low hazards create explicit lane choice",
+    "level12": "ceiling/floor hazards bracket a readable bridge-to-finish route"
+  },
+  "evidence": {
+    "targetedTests": "29 passed, 0 failed",
+    "latestNaturalQA": "runs/mobile-slice-adaptation-20260830/qa-level-pack-v1/qa-report.json",
+    "latestRunnerQA": "runs/mobile-slice-adaptation-20260830/qa-level-pack-v1/runner-report.json"
+  },
+  "status": "PASS"
+}

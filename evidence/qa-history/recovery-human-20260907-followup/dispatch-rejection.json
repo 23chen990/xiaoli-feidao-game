@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "dispatch-rejection",
+  "cycleId": "human-review-20260907-l1-followup",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "action": "向原 stored Fixer 线程派发可能修改生成游戏工作区的第1次 formal-fixer任务",
+  "status": "REJECTED_BY_AUTOMATIC_APPROVAL_REVIEW",
+  "reason": "安全策略为 never，拒绝执行可能修改游戏工作区的外部 Codex 线程派发；不得通过其他线程、脚本或间接方式绕过。",
+  "taskPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/task.json",
+  "triagePath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/triage.json",
+  "sourceModified": false,
+  "recordedAt": "2026-09-07T09:20:00.000Z"
+}

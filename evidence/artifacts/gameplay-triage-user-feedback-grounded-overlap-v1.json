@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "gameplay-triage",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "reportedAt": "2026-09-06T15:00:00+08:00",
+  "route": "formal-fixer",
+  "classification": "core_physics_object_support_and_layout_mismatch",
+  "source": {
+    "userFeedback": "原版物品直接摆放在台面上，物体可重叠，不悬空，并受到自然重力影响；当前实现完全不一样。",
+    "evidence": ["reference-evidence/incoming/_2026-09-06-135548-3781e4dcd3d2.mp4", "artifacts/gameplay-triage-user-recording-level01-v1.json"]
+  },
+  "rootCauseHypothesis": [
+    "Level 1 collectible centers are authored independently of support-top surfaces, so several objects render in mid-air.",
+    "Intact collectibles are treated as kinematic display objects instead of supported dynamic bodies; only cut fragments currently receive gravity.",
+    "The layout contract does not encode intentional horizontal overlap between tabletop items and stacked objects."
+  ],
+  "scope": {
+    "include": ["Level 1 item placement", "support/resting geometry", "intentional horizontal overlap", "gravity after support loss", "desktop and portrait framing"],
+    "exclude": ["third-party model copying", "audio", "other levels", "platform packaging"]
+  },
+  "acceptance": [
+    "Every visible Level 1 tabletop item has a declared support surface or is a deliberate airborne moving object.",
+    "At least one authored item pair intentionally overlaps horizontally while remaining supported and readable.",
+    "When an item's support is removed, it falls under the existing fixed-step gravity and settles instead of hovering.",
+    "Natural desktop and 390x844 portrait runs show no unexplained floating tabletop items."
+  ],
+  "contextOmitted": ["unrelated historical screenshots", "other prototype workspaces", "shared factory code"]
+}

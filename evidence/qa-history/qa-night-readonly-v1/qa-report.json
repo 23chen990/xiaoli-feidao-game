@@ -1,0 +1,940 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "NightReadOnlyMechanicsQaArtifact",
+  "targetGame": "符刃夜行",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "buildSha256Before": "ab9a0d5254fc3a69d0eb5e597b87a9d4ded12a9bccfe03617ed891e87a368841",
+  "buildSha256After": "ab9a0d5254fc3a69d0eb5e597b87a9d4ded12a9bccfe03617ed891e87a368841",
+  "testedAt": "2026-08-30T18:54:26.763Z",
+  "passed": false,
+  "cases": [
+    {
+      "id": "NATURAL-CHOKE-001",
+      "title": "原卡口自然通过率",
+      "provenance": "NATURAL_INPUT",
+      "repeatableSteps": [
+        "打开普通起点，不调用场景或状态修改桥。",
+        "桌面执行五个仅改变全局高度阈值的真实鼠标策略。",
+        "移动端执行两个 390x844 原生 CDP 触摸策略。",
+        "点击决策不读取任何障碍坐标，统计 maxX、终态和原卡口前后截图。"
+      ],
+      "expected": [
+        "桌面至少 4/5 越过 x=1650 且至少 3/5 通关。",
+        "移动端至少 1/2 越过并通关。",
+        "不存在连续三次以上同点无进展反弹。"
+      ],
+      "actual": [
+        "desktop former-choke pass=4/5; desktop full wins=1/5",
+        "mobile former-choke pass=2/2; mobile full wins=2/2",
+        "desktop maxX=2999.139, 2175.183, 3000.65, 2259.251, 1221.575",
+        "desktop terminal outcomes=ready/none, airborne/none, won/none, failed/fall, airborne/none",
+        "desktop-natural-5 stopped at maxX=1221.575 with 26 repeated no-progress white-column contacts"
+      ],
+      "severity": "BLOCKER",
+      "mechanicalCause": "原卡口并非所有策略都过不去：4/5 桌面与 2/2 移动策略已越过；但一组仅小幅改变时机的桌面策略在普通 white-column 前形成 26 次重新接触循环，因此卡口问题仍可自然复现且容错不足。",
+      "acceptanceCriteria": [
+        "5/5 desktop variants pass the former choke",
+        "2/2 mobile variants pass the former choke",
+        "no run has maxNoProgressBounceStreak>=3",
+        "desktop full-course success remains observable without debug placement"
+      ],
+      "suggestedTests": [
+        "保留 desktop-natural-5 的全局高度/升降策略作为失败回归夹具；修复应消除重复回接而不是增加专用反弹物。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/raw-evidence.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-3-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-3-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-3-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-3-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-3-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-2-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-2-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-2-terminal.png"
+      ]
+    },
+    {
+      "id": "WHITE-HARD-REFLECTION-002",
+      "title": "普通白柱钝端按入射法线反射",
+      "provenance": "TARGETED_DIAGNOSTIC",
+      "repeatableSteps": [
+        "加载 generic-hard 可重复初态并标记为专项诊断。",
+        "不输入，使用真实时钟等待普通 white-column 的首次碰撞。",
+        "读取 bounce 事件 contactPart、normalX 和碰撞前后速度，并截取接触画面。"
+      ],
+      "expected": [
+        "目标为普通 white-column。",
+        "contactPart 为 body 或 handle。",
+        "左表面法线 normalX=-1。",
+        "入射 vx>0，反射后 vx<0。"
+      ],
+      "actual": [
+        "target=white-column, part=handle, normal=(-1,0)",
+        "initial velocity=(280,0)",
+        "bounce-state velocity=(-201.6,195)",
+        "natural white-column blunt bounce count=35"
+      ],
+      "severity": "NONE",
+      "mechanicalCause": "普通硬表面使用接触法线反射相对入射速度；未观察到专用反弹体身份。",
+      "acceptanceCriteria": [
+        "targetId=white-column",
+        "contactPart=body|handle",
+        "normalX=-1",
+        "vxBefore>0",
+        "vxAfter<0"
+      ],
+      "suggestedTests": [
+        "对普通静态支撑的 body/handle 左、右、上、下入射建立参数化法线反射测试。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/raw-evidence.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-separated.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-no-input-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-one-touch-restart.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-recovery.png"
+      ]
+    },
+    {
+      "id": "SEPARATION-003",
+      "title": "反弹后连续离面且不重复注入冲量",
+      "provenance": "TARGETED_DIAGNOSTIC",
+      "repeatableSteps": [
+        "从 generic-hard 首次 bounce 后不输入。",
+        "以约 10ms 间隔记录 350ms 轨迹。",
+        "统计同一 white-column 的 bounce 事件数量并截取碰撞、分离画面。"
+      ],
+      "expected": [
+        "速度连续由正变负，无位置瞬移。",
+        "玩家中心持续向左离开白柱。",
+        "同一接触只产生一次 bounce。",
+        "没有吸附或每帧重复最低速度注入。"
+      ],
+      "actual": [
+        "bounce x=1138.533, separated x=799.173",
+        "same-target bounce count=1",
+        "trajectory samples=37"
+      ],
+      "severity": "NONE",
+      "mechanicalCause": "首次法线反射后 recoveryAge 抑制重入，轨迹向离面方向连续演进。",
+      "acceptanceCriteria": [
+        "separatedX<bounceX for left-face reflection",
+        "sameTargetBounceCount=1",
+        "trajectory contains no discontinuous teleport"
+      ],
+      "suggestedTests": [
+        "保存接触前后 40 帧轨迹并断言离面距离单调增长、同一接触只发一个 bounce 事件。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/raw-evidence.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-separated.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-no-input-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-one-touch-restart.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-recovery.png"
+      ]
+    },
+    {
+      "id": "RECOVERY-BRANCH-004",
+      "title": "反弹后补点可救回，不补点会落空",
+      "provenance": "TARGETED_DIAGNOSTIC",
+      "repeatableSteps": [
+        "分支 A 加载 generic-hard 后完全不输入，等待终态。",
+        "分支 B 在首次负 vx bounce 后使用真实 mouse click 一次。",
+        "比较两分支终态和点击前后速度。"
+      ],
+      "expected": [
+        "不输入分支最终 fall。",
+        "补点分支 vx 明显恢复，短期内不进入同一坠落失败。"
+      ],
+      "actual": [
+        "no-input=failed/fall",
+        "recovery beforeTap vx=-201.6, afterTap vx=8.4",
+        "recovery later=airborne/null"
+      ],
+      "severity": "NONE",
+      "mechanicalCause": "负向反弹制造真实坠落压力；一次真实补点通过 airborne flip 改善速度并脱离即时失败。",
+      "acceptanceCriteria": [
+        "no-input status=failed and failReason=fall",
+        "beforeTap vx<0",
+        "afterTap vx>beforeTap vx",
+        "recovery later status!=failed"
+      ],
+      "suggestedTests": [
+        "为同一初态保留无输入/一次输入双分支实时浏览器回归。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/raw-evidence.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-separated.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-no-input-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-one-touch-restart.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-recovery.png"
+      ]
+    },
+    {
+      "id": "SHARP-ANCHOR-005",
+      "title": "同一普通白柱锐端锚定、钝端反弹",
+      "provenance": "NATURAL_INPUT",
+      "repeatableSteps": [
+        "汇总七次自然真实输入中 targetId=white-column 的 anchor 与 bounce 事件。",
+        "比较 contactPart 和同一目标身份。"
+      ],
+      "expected": [
+        "同一 white-column 至少观测一次 tip/edge anchor。",
+        "同一 white-column 至少观测一次 body/handle bounce。"
+      ],
+      "actual": [
+        "natural anchors=20: tip@-1,0; tip@-1,0; tip@1,0; tip@-1,0; tip@-1,0; tip@1,0; tip@-1,0; tip@0,-1; tip@-1,0; edge@-1,0; tip@-1,0; tip@-1,0; tip@-1,0; tip@-1,0; tip@-1,0; tip@1,0; tip@-1,0; tip@0,-1; tip@-1,0; edge@-1,0",
+        "natural bounces=35: body@-1,0; body@-1,0; handle@-1,0; body@-1,0; handle@-1,0; body@-1,0; handle@-1,0; handle@-1,0; handle@-1,0; handle@-1,0; handle@-1,0; handle@-1,0; handle@-1,0; handle@-1,0; handle@-1,0; handle@-1,0; handle@-1,0; handle@-1,0; handle@-1,0; handle@-1,0; handle@-1,0; handle@-1,0; handle@-1,0; handle@-1,0; handle@-1,0; handle@-1,0; handle@-1,0; handle@-1,0; handle@-1,0; handle@-1,0; handle@-1,0; handle@-1,0; body@-1,0; handle@-1,0; body@-1,0",
+        "targeted blunt=handle"
+      ],
+      "severity": "NONE",
+      "mechanicalCause": "同一普通支撑通过接触部位区分锚定与反弹。",
+      "acceptanceCriteria": [
+        "same targetId=white-column",
+        "anchor contactPart=tip|edge",
+        "bounce contactPart=body|handle"
+      ],
+      "suggestedTests": [
+        "增加同一普通白柱、相同速度、仅改变刀角的真实输入成对浏览器用例。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/raw-evidence.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-3-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-3-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-3-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-3-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-3-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-2-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-2-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-2-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-separated.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-no-input-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-one-touch-restart.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-recovery.png"
+      ]
+    },
+    {
+      "id": "MOVING-SUPPORT-006",
+      "title": "移动支撑的表面相对速度反射",
+      "provenance": "TARGETED_DIAGNOSTIC",
+      "repeatableSteps": [
+        "分别加载 moving-horizontal 与 moving-vertical 锚定初态。",
+        "用真实鼠标点击释放刀。",
+        "使用真实时钟记录玩家与支撑位置/速度，寻找同一支撑 body/handle bounce。"
+      ],
+      "expected": [
+        "至少一个移动支撑出现 body/handle bounce。",
+        "反射方向与接触法线及支撑表面速度一致。"
+      ],
+      "actual": [
+        "horizontal target=lantern-ferry, bounce=none",
+        "vertical target=lift-plank, bounce=none",
+        "moving bounce count=0"
+      ],
+      "severity": "MEDIUM",
+      "mechanicalCause": "现有 moving-* 场景从锚定释放后没有再次以钝端撞回同一支撑，无法用当前只读桥闭合该专项证据。",
+      "acceptanceCriteria": [
+        "at least one moving support body|handle bounce",
+        "event normal present",
+        "post-contact relative normal velocity separates"
+      ],
+      "suggestedTests": [
+        "为测试桥增加只构造入射初态、不直接触发碰撞的 moving-support-blunt 场景；随后必须由真实时钟产生事件。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/raw-evidence.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-moving-horizontal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-moving-vertical.png"
+      ]
+    },
+    {
+      "id": "MOBILE-RUNTIME-007",
+      "title": "390x844 原生触摸与运行时洁净度",
+      "provenance": "NATURAL_INPUT",
+      "repeatableSteps": [
+        "以 390x844、isMobile=true、hasTouch=true 启动页面。",
+        "仅用 CDP touchStart/touchEnd 完成两次自然试玩。",
+        "检查 Canvas、滚动溢出、console 与 page errors。"
+      ],
+      "expected": [
+        "至少一次移动端通关。",
+        "单 Canvas，无横纵溢出。",
+        "console/page errors 为零。"
+      ],
+      "actual": [
+        "mobile wins=2/2",
+        "layoutOk=true",
+        "runtime errors=0"
+      ],
+      "severity": "NONE",
+      "mechanicalCause": "原生触摸路径、单 Canvas 与移动布局在本构建中工作正常。",
+      "acceptanceCriteria": [
+        "mobileWins>=1",
+        "canvasCount=1",
+        "no overflow",
+        "errors=[]"
+      ],
+      "suggestedTests": [
+        "保留两种全局高度策略作为移动只读回归。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/raw-evidence.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/console.log",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-2-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-2-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-2-terminal.png"
+      ]
+    },
+    {
+      "id": "CONTACT-EXPLAINABILITY-008",
+      "title": "正刃、刀背与边缘碰撞结果可解释",
+      "provenance": "NATURAL_INPUT",
+      "repeatableSteps": [
+        "汇总七次自然输入的 cut、anchor、bounce 事件。",
+        "用普通白柱专项反射补充钝端 contactPart 与法线证据。",
+        "只评价通用机制关系，不评价 HUD、素材或临时配色。"
+      ],
+      "expected": [
+        "tip/edge 接触可导致 cut 或 anchor。",
+        "body/handle 接触普通硬表面导致 bounce。",
+        "bounce 事件包含可解释的接触法线。"
+      ],
+      "actual": [
+        "natural cut parts=tip, edge",
+        "natural white anchor parts=tip, edge",
+        "targeted white bounce part=handle, normal=(-1,0)"
+      ],
+      "severity": "NONE",
+      "mechanicalCause": "同一套接触部位分类能解释切割、锚定和反弹三种结果。",
+      "acceptanceCriteria": [
+        "natural cut includes tip|edge",
+        "white-column anchor includes tip|edge",
+        "white-column bounce includes body|handle and a contact normal"
+      ],
+      "suggestedTests": [
+        "建立接触部位×表面类型的浏览器事件矩阵，断言事件类型、法线和后续速度。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/raw-evidence.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-separated.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-no-input-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-one-touch-restart.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-recovery.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-3-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-3-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-3-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-3-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-3-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png"
+      ]
+    },
+    {
+      "id": "STUCK-REBOUND-009",
+      "title": "卡住或异常反弹原因与复现路径",
+      "provenance": "NATURAL_INPUT",
+      "repeatableSteps": [
+        "用五组桌面和两组移动全局高度策略完整试玩。",
+        "按 targetId 与接触 x 距离统计连续无进展 bounce。",
+        "在 generic-hard 专项中记录首次反弹后 350ms 连续轨迹与事件数。"
+      ],
+      "expected": [
+        "自然试玩不出现连续三次同目标、近同位置的无进展反弹。",
+        "专项反弹后离面且同一接触只注入一次冲量。",
+        "若发生卡住，证据应给出目标、contactPart、法线与连续轨迹。"
+      ],
+      "actual": [
+        "desktop-natural-5 maxX=1221.575, maxNoProgressBounceStreak=26",
+        "generic-hard isolated contact emitted exactly one bounce and moved x=1138.533 -> 799.173 away from the face",
+        "isolated reflection vx=280 -> -201.6; one recovery click changed vx=-201.6 -> 8.4"
+      ],
+      "severity": "HIGH",
+      "mechanicalCause": "专项碰撞证明单次重叠不会重复注入冲量；自然卡住来自刀被反弹后再次飞回同一白柱形成新的合法接触。当前一次救回点击只把 vx 从 -201.6 提到 8.4，几乎没有前进速度，容易再次落回柱面，形成控制/关卡循环而非物理解算瞬移。",
+      "acceptanceCriteria": [
+        "isolated overlap emits one bounce only",
+        "recovery input produces enough positive clearance speed to leave the column encounter",
+        "natural maxNoProgressBounceStreak<3"
+      ],
+      "suggestedTests": [
+        "以 desktop-natural-5 策略记录每次 bounce 后首个真实点击的 vxBefore/vxAfter 和下一次 targetId；断言三次接触内离开 white-column。",
+        "增加恢复速度下限的性质测试，但避免把任何白柱做成专用反弹体。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/raw-evidence.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-separated.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-no-input-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-one-touch-restart.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-recovery.png"
+      ]
+    },
+    {
+      "id": "FAILURE-RECOVERY-010",
+      "title": "失败、重开与反弹补救的一致性",
+      "provenance": "TARGETED_DIAGNOSTIC",
+      "repeatableSteps": [
+        "分支 A 不补点，等待 white-column 反弹后的 fall。",
+        "失败画面用一次真实鼠标点击重开。",
+        "分支 B 在负 vx 后补点，比较短期状态。"
+      ],
+      "expected": [
+        "无输入分支明确 fall。",
+        "一次真实输入完整重置 seed、失败原因、切割和事件。",
+        "补点分支短期脱离同一失败。"
+      ],
+      "actual": [
+        "no-input=failed/fall",
+        "restart={\"beforeSeed\":31,\"afterSeed\":32,\"status\":\"ready\",\"failReason\":null,\"cuts\":0,\"events\":0}",
+        "recovery later=airborne/null"
+      ],
+      "severity": "NONE",
+      "mechanicalCause": "失败原因、一次触重开和空中补救遵循一致状态转换。",
+      "acceptanceCriteria": [
+        "fall failure is attributable",
+        "one real click increments seed and returns ready",
+        "failReason=null, cuts=0 after restart",
+        "recovery branch avoids immediate same failure"
+      ],
+      "suggestedTests": [
+        "对 spike、fall、won 分别断言一次真实输入后的完整状态清零与 seed 迁移。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/raw-evidence.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-separated.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-no-input-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-one-touch-restart.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/targeted-white-column-recovery.png"
+      ]
+    },
+    {
+      "id": "PROGRESSIVE-TEACHING-011",
+      "title": "关卡逐步教学并增加组合难度",
+      "provenance": "NATURAL_INPUT",
+      "repeatableSteps": [
+        "从普通起点读取运行时 courseSegments 与每段机制构成，仅作事后结构分析。",
+        "对照完整自然试玩中机制出现顺序和终点选择。",
+        "不要求复制任何第三方具体关卡或数值。"
+      ],
+      "expected": [
+        "前段先呈现基础切割与安全支撑。",
+        "中段引入移动支撑、普通白柱和恢复分支。",
+        "后段组合结构块、尖刺与多种终点门。"
+      ],
+      "actual": [
+        "segment-observe already contains 7 sigils, three block placements (above/side/below), four supports, and one horizontally moving support",
+        "segment-recover combines white-column, dual-role bridge, vertical lift, and spike in the next band",
+        "segment-structure adds a three-block tower, another spike, and multiple finish operations",
+        "course data has labels but no introduce/practice/combine/assessment metadata"
+      ],
+      "severity": "HIGH",
+      "mechanicalCause": "整体难度确实上升，但开场段同时引入过多新机制，缺少 introduce→practice→combine 的安全练习与机器可验证教学元数据；因此“逐步教学”不成立。",
+      "acceptanceCriteria": [
+        "each new mechanic has one isolated safe introduction",
+        "a practice beat repeats it before combination",
+        "later segments combine only previously introduced mechanics",
+        "course schema declares teaches/practices/combines"
+      ],
+      "suggestedTests": [
+        "为课程段增加 teaches/practices/combines 元数据并做顺序验证；首段一次只引入切割与一种支撑接触。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/raw-evidence.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-choke-after.png"
+      ]
+    },
+    {
+      "id": "CORE-COLLISION-DECOUPLING-012",
+      "title": "核心碰撞与 HUD/主题表达解耦",
+      "provenance": "TARGETED_DIAGNOSTIC",
+      "repeatableSteps": [
+        "只读扫描 game-core.ts 的 DOM、HUD 文案、颜色和资产文件名依赖。",
+        "对照 main.ts 确认 DOM/HUD 绑定位于表现入口。"
+      ],
+      "expected": [
+        "核心碰撞和状态机不依赖 DOM、HUD 文案、颜色或资产文件名。"
+      ],
+      "actual": [
+        "game-core DOM refs=0",
+        "game-core asset filename refs=0",
+        "game-core 中的 0x9e3779b9 是随机数混合常量，不是主题颜色",
+        "main HUD separated from core=true"
+      ],
+      "severity": "NONE",
+      "mechanicalCause": "核心碰撞、课程状态和事件模型没有 DOM 或资产文件依赖；HUD 绑定留在 main 表现层。",
+      "acceptanceCriteria": [
+        "game-core DOM refs=0",
+        "game-core asset filename refs=0",
+        "theme replacement cannot change collision state transitions"
+      ],
+      "suggestedTests": [
+        "用两套主题运行同 seed/input trace，断言 SliceState 与 FeedbackEvent 序列一致。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/architecture-scan.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/main.ts"
+      ]
+    },
+    {
+      "id": "LEVEL-THEME-COUPLING-013",
+      "title": "关卡语义 ID 与主题表达耦合",
+      "provenance": "TARGETED_DIAGNOSTIC",
+      "repeatableSteps": [
+        "只读检查 createCourse 中的 segment label、support ID 和其他主题化标识。"
+      ],
+      "expected": [
+        "核心关卡使用中性语义 ID；主题文案和展示名来自 theme tokens 或本地化映射。"
+      ],
+      "actual": [
+        "courseSegments.label 直接包含“看相下刃/借势救刃/断柱择门”",
+        "核心 support ID 包含 white-bumper、white-column、lantern-ferry 等颜色/题材表达",
+        "这些字段位于 game-core.ts 而非主题映射"
+      ],
+      "severity": "MEDIUM",
+      "mechanicalCause": "碰撞数学本身已解耦，但关卡核心数据仍混入颜色、夜市文案和题材化 ID，换肤需要改核心课程数据。",
+      "acceptanceCriteria": [
+        "core IDs are semantic and theme-neutral",
+        "segment display labels resolved outside game-core",
+        "theme swap changes no course topology or collision IDs"
+      ],
+      "suggestedTests": [
+        "将核心 ID 改为 support-static-01 / segment-recovery 等中性语义；展示名从 ThemeTokens/localization 注入。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/raw-evidence.json"
+      ]
+    },
+    {
+      "id": "SAVE-SKIN-INDEPENDENCE-014",
+      "title": "存档与主题表达独立",
+      "provenance": "TARGETED_DIAGNOSTIC",
+      "repeatableSteps": [
+        "只读搜索 save、persist、storage 模块与 schema。"
+      ],
+      "expected": [
+        "存档只保存语义 ID 与数值，不保存 HUD 文案、颜色或资产文件名。"
+      ],
+      "actual": [
+        "save/persist/storage source files=none",
+        "当前原型没有可验证的 save schema"
+      ],
+      "severity": "MEDIUM",
+      "mechanicalCause": "当前没有存档实现，无法证明换肤后旧存档仍可加载；结论为 INCONCLUSIVE，而不是通过。",
+      "acceptanceCriteria": [
+        "versioned save schema exists",
+        "saved IDs are theme-neutral",
+        "theme A save loads under theme B with identical gameplay state"
+      ],
+      "suggestedTests": [
+        "未来引入存档时增加跨主题 round-trip 测试，并禁止序列化 HUD 文案、颜色和资产文件名。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/architecture-scan.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts"
+      ]
+    },
+    {
+      "id": "CENTRAL-THEME-PIPELINE-015",
+      "title": "统一 ThemeTokens 与 AssetManifest 换肤入口",
+      "provenance": "TARGETED_DIAGNOSTIC",
+      "repeatableSteps": [
+        "只读扫描 src 中 theme/token 与 asset manifest 文件。",
+        "统计 renderer 和 CSS 的硬编码颜色。"
+      ],
+      "expected": [
+        "主题颜色只经 ThemeTokens。",
+        "正式资产只经 AssetManifest。",
+        "main、renderer、CSS 和 index 不散落主题常量。"
+      ],
+      "actual": [
+        "theme token files=none",
+        "asset manifest files=none",
+        "renderer hardcoded colors=21",
+        "CSS hardcoded colors=15"
+      ],
+      "severity": "HIGH",
+      "mechanicalCause": "当前 main/renderer/CSS/index 的主题表达仍分散硬编码，没有统一 ThemeTokens/AssetManifest；换肤会要求跨文件修改。",
+      "acceptanceCriteria": [
+        "one validated ThemeTokens source",
+        "one validated AssetManifest source",
+        "renderer and CSS consume tokens rather than literal theme colors",
+        "theme swap leaves core trace unchanged"
+      ],
+      "suggestedTests": [
+        "建立严格 ThemeTokens/AssetManifest schema；以第二套测试主题构建并比较同 seed/input trace。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/architecture-scan.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/main.ts",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-world-renderer.ts",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/style.css",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html"
+      ]
+    },
+    {
+      "id": "FULL-COURSE-TOLERANCE-016",
+      "title": "完整整关对小幅输入时机变化的容错",
+      "provenance": "NATURAL_INPUT",
+      "repeatableSteps": [
+        "桌面五次只改变全局高度阈值与轮询偏差。",
+        "移动端两次使用相同类型的原生触摸策略。",
+        "全程不调用 loadScenario、step、debug pose 或障碍坐标点击答案。"
+      ],
+      "expected": [
+        "桌面至少 3/5 明确 won。",
+        "移动端至少 1/2 won。",
+        "未明确终态的尝试不得按胜利计数。"
+      ],
+      "actual": [
+        "desktop won=1/5",
+        "mobile won=2/2",
+        "desktop outcomes: ready-after-near-finish race, airborne timeout, won, fall, airborne repeated-column loop"
+      ],
+      "severity": "HIGH",
+      "mechanicalCause": "移动端两组策略均完成，但桌面小幅时机变化只有一组明确完成；完整路线容错不足，且一次临近终点点击与终态之间出现自动重开竞态，未按胜利计。",
+      "acceptanceCriteria": [
+        "desktop won>=3/5",
+        "mobile won>=1/2",
+        "terminal state remains visible long enough for the next intentional restart input"
+      ],
+      "suggestedTests": [
+        "终点状态增加输入释放/短暂锁，避免同一临近终点点击跨帧触发重开；保留五组策略回归。"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/raw-evidence.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-1-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-2-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-3-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-3-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-3-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-3-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-3-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-4-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/desktop-natural-5-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-bounce.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-1-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-2-choke-before.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-2-white-column-anchor.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-2-choke-after.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-readonly-v1/mobile-natural-2-terminal.png"
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "caseId": "NATURAL-CHOKE-001",
+      "severity": "BLOCKER",
+      "summary": "原卡口并非所有策略都过不去：4/5 桌面与 2/2 移动策略已越过；但一组仅小幅改变时机的桌面策略在普通 white-column 前形成 26 次重新接触循环，因此卡口问题仍可自然复现且容错不足。"
+    },
+    {
+      "caseId": "MOVING-SUPPORT-006",
+      "severity": "MEDIUM",
+      "summary": "现有 moving-* 场景从锚定释放后没有再次以钝端撞回同一支撑，无法用当前只读桥闭合该专项证据。"
+    },
+    {
+      "caseId": "STUCK-REBOUND-009",
+      "severity": "HIGH",
+      "summary": "专项碰撞证明单次重叠不会重复注入冲量；自然卡住来自刀被反弹后再次飞回同一白柱形成新的合法接触。当前一次救回点击只把 vx 从 -201.6 提到 8.4，几乎没有前进速度，容易再次落回柱面，形成控制/关卡循环而非物理解算瞬移。"
+    },
+    {
+      "caseId": "PROGRESSIVE-TEACHING-011",
+      "severity": "HIGH",
+      "summary": "整体难度确实上升，但开场段同时引入过多新机制，缺少 introduce→practice→combine 的安全练习与机器可验证教学元数据；因此“逐步教学”不成立。"
+    },
+    {
+      "caseId": "LEVEL-THEME-COUPLING-013",
+      "severity": "MEDIUM",
+      "summary": "碰撞数学本身已解耦，但关卡核心数据仍混入颜色、夜市文案和题材化 ID，换肤需要改核心课程数据。"
+    },
+    {
+      "caseId": "SAVE-SKIN-INDEPENDENCE-014",
+      "severity": "MEDIUM",
+      "summary": "当前没有存档实现，无法证明换肤后旧存档仍可加载；结论为 INCONCLUSIVE，而不是通过。"
+    },
+    {
+      "caseId": "CENTRAL-THEME-PIPELINE-015",
+      "severity": "HIGH",
+      "summary": "当前 main/renderer/CSS/index 的主题表达仍分散硬编码，没有统一 ThemeTokens/AssetManifest；换肤会要求跨文件修改。"
+    },
+    {
+      "caseId": "FULL-COURSE-TOLERANCE-016",
+      "severity": "HIGH",
+      "summary": "移动端两组策略均完成，但桌面小幅时机变化只有一组明确完成；完整路线容错不足，且一次临近终点点击与终态之间出现自动重开竞态，未按胜利计。"
+    }
+  ],
+  "summary": {
+    "naturalDesktopWins": 1,
+    "naturalDesktopAttempts": 5,
+    "naturalMobileWins": 2,
+    "naturalMobileAttempts": 2,
+    "reboundVerdict": "FAIL",
+    "chokeVerdict": "FAIL"
+  },
+  "validatedWith": "zod@4 strict object schemas; finalized after black-box evidence review and independent read-only architecture audit",
+  "previewClosed": true
+}

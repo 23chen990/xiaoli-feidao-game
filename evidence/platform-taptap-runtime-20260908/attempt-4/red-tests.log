@@ -1,0 +1,46 @@
+✖ TapTap runtime contract scopes exactFitScreen to Web and retains portrait fixed-width controls (1.796625ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 154.069291
+
+✖ failing tests:
+
+test at tests/screen-scope-contract.test.ts:9:1
+✖ TapTap runtime contract scopes exactFitScreen to Web and retains portrait fixed-width controls (1.796625ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + undefined
+  - {
+  -   designResolution: {
+  -     height: 844,
+  -     mode: 'fixed-width',
+  -     policy: 4,
+  -     width: 390
+  -   },
+  -   exactFitScreen: {
+  -     blocksTapTapMiniGame: false,
+  -     packagedNonWebDefault: true,
+  -     scope: 'web-only'
+  -   },
+  -   runtimePolicy: 'ResolutionPolicy.FIXED_WIDTH',
+  -   safeAreaSource: 'screen.safeArea'
+  - }
+  
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tests/screen-scope-contract.test.ts:11:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.start (node:internal/test_runner/test:1015:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: { designResolution: { width: 390, height: 844, policy: 4, mode: 'fixed-width' }, runtimePolicy: 'ResolutionPolicy.FIXED_WIDTH', safeAreaSource: 'screen.safeArea', exactFitScreen: { scope: 'web-only', packagedNonWebDefault: true, blocksTapTapMiniGame: false } },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

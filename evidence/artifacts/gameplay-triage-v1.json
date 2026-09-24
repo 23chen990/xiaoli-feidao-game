@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "reproduction": {
+    "evidence": "用户反馈与 qa-v8 技术审计：硬面恢复分支可注入过高水平速度，导致刀具意外飞出可读路线。",
+    "steps": ["从 level-01 起点启动", "以钝部位连续接触硬面并观察恢复", "记录 player.vx 与 x 是否脱离路线"]
+  },
+  "classification": "core-loop-physics-course-reachability-and-clarity",
+  "scope": ["通用硬面入射反射", "分离接触不注入速度", "普通硬柱与尖刺卡口可达性", "自然桌面/触屏整关", "失败归因与重玩"],
+  "acceptance": [
+    "硬面接触可反向或反射，但水平速度绝对值不超过 240 世界单位/秒",
+    "默认文案明确：切中可切物得分；误触硬物、危险物或失足失败",
+    "普通静态、移动支撑和未切实体块共用同一入射反射规则，分离接触不得凭空加速",
+    "真实 Chromium 鼠标与 390x844 原生触屏从 reset 起点自然穿过卡口并至少一次抵达终点",
+    "固定步进与真实浏览器启动→切割→失败/结算→重玩流程保持可复现"
+  ],
+  "route": "formal-fixer",
+  "reason": "问题影响核心物理、关卡可达性与默认旅程，且此前存在 debug/fixture 通过而自然体验未证明的 QA 缺口；必须走 QA→Fixer→QA retest。"
+}

@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "role": "QAAgent",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED",
+  "reportPaths": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/recording.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/recording.json"
+  ],
+  "blockers": [
+    "QA in progress: exact stack dynamic branch and hazard contact still need supplementary capture."
+  ],
+  "sourceModified": false,
+  "summary": "Six sequential fixed runs complete. Both 950ms runs naturally won ×4 and replayed (portrait56, desktop48). Reward same-frame separation/local+1/HUD accepted; finish full labels visible before contact both viewports. Screenshot-pixel-only guided follow-up is running for stack coverage; no game changes."
+}

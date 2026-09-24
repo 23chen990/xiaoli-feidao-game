@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "reference-quality-audit",
+  "targetRunId": "mobile-slice-adaptation-20260830",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "targetWorkspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "runRoot": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830",
+  "checkedAt": "2026-09-09T07:59:16.573Z",
+  "evidence": {
+    "manifestPath": "reference-evidence/manifest.json",
+    "status": "VERIFIED",
+    "relevantEntryCount": 5,
+    "verifiedRelevantEntryCount": 5,
+    "quarantinedEntryCount": 5,
+    "purposeCounts": {
+      "gameplayReference": 1,
+      "designDocument": 4,
+      "platformQa": 25,
+      "packageIdentity": 1,
+      "other": 5
+    },
+    "blockers": []
+  },
+  "bootstrap": {
+    "status": "INCOMPLETE",
+    "files": [
+      {
+        "path": "state.json",
+        "status": "MISSING",
+        "blockers": [
+          "bootstrap:missing:state.json"
+        ]
+      },
+      {
+        "path": "input/seed.yaml",
+        "status": "MISSING",
+        "blockers": [
+          "bootstrap:missing:input/seed.yaml"
+        ]
+      },
+      {
+        "path": "artifacts/pipeline-plan.json",
+        "status": "MISSING",
+        "blockers": [
+          "bootstrap:missing:artifacts/pipeline-plan.json"
+        ]
+      }
+    ],
+    "blockers": [
+      "bootstrap:missing:state.json",
+      "bootstrap:missing:input/seed.yaml",
+      "bootstrap:missing:artifacts/pipeline-plan.json"
+    ]
+  },
+  "permissionManifest": {
+    "path": "artifacts/permission-manifest.json",
+    "status": "MISSING",
+    "blockers": [
+      "permission-manifest:missing"
+    ]
+  },
+  "build": {
+    "path": "artifacts/build-report.json",
+    "requiredNow": false,
+    "status": "PENDING",
+    "blockers": []
+  },
+  "contracts": [
+    {
+      "id": "reference-behavior-analysis",
+      "path": "artifacts/reference-behavior-analysis.json",
+      "requiredNow": false,
+      "status": "PENDING",
+      "blockers": []
+    },
+    {
+      "id": "reference-fidelity-contract",
+      "path": "artifacts/reference-fidelity-contract.json",
+      "requiredNow": false,
+      "status": "PENDING",
+      "blockers": []
+    },
+    {
+      "id": "product-experience-contract",
+      "path": "artifacts/product-experience-contract.json",
+      "requiredNow": false,
+      "status": "PENDING",
+      "blockers": []
+    },
+    {
+      "id": "reference-fidelity-gate",
+      "path": "artifacts/reference-fidelity-gate.json",
+      "requiredNow": false,
+      "status": "PENDING",
+      "blockers": []
+    },
+    {
+      "id": "perceptual-qa-gate",
+      "path": "artifacts/perceptual-qa-gate.json",
+      "requiredNow": false,
+      "status": "PENDING",
+      "blockers": []
+    },
+    {
+      "id": "core-demo-acceptance",
+      "path": "human/playtest-acceptance.json",
+      "requiredNow": false,
+      "status": "PENDING",
+      "blockers": []
+    }
+  ],
+  "disposition": "REQUIRES_NEW_RUN_MIGRATION",
+  "summary": {
+    "standardResumeSafe": false,
+    "migrationRequired": true,
+    "completionClaimAllowed": false
+  },
+  "blockers": [
+    "bootstrap:missing:state.json",
+    "bootstrap:missing:input/seed.yaml",
+    "bootstrap:missing:artifacts/pipeline-plan.json",
+    "permission-manifest:missing"
+  ],
+  "nextActions": [
+    "Create a new canonical reference_reskin run from a validated seed; do not synthesize missing state, seed, or pipeline files in the historical run.",
+    "Re-ingest only verified reference/design sources into the new run and bind them to its workspace/game path."
+  ],
+  "generatedWorkspaceModified": false
+}

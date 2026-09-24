@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixAttempt",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "attempt": 2,
+  "sourceTriage": "artifacts/gameplay-triage-user-recording-level01-v1.json",
+  "exactMatrix": "artifacts/reproduction-matrix-user-recording-level01-v1.json",
+  "contextOmitted": ["other levels", "other prototype workspaces", "third-party expressive assets and audio"],
+  "filesChanged": [
+    "src/game-levels.ts",
+    "src/game-core.ts",
+    "tests/level-catalog.test.ts"
+  ],
+  "changes": [
+    "Added an authored opening collectible line and a pre-hazard collectible marker.",
+    "Added two visible mid-route ladder-stack layout objects with stable IDs and branch metadata.",
+    "Added a non-colliding layout-only block flag so visual stack placement cannot distort the existing physics/reward route.",
+    "Aligned Level 1's bonus lane to the resulting authored finish approach while preserving safe and bonus branches."
+  ],
+  "tests": {"red":"LEVEL-CATALOG-RED-007 failed before layout additions.","green":"pnpm test passed 166/166","lint":"PASS","typecheck":"PASS","build":"PASS","qaBrowser":{"status":"PASS","evidence":"BrowserQaRunnerResult passed=true, previewClosed=true"}},
+  "status": "PASS_WITH_EVIDENCE_BOUNDARY",
+  "remainingEvidenceGaps": [
+    "The reference's third-party visual/audio expression remains intentionally original.",
+    "A fresh 390x844 portrait recording still needs to verify the same object spacing under mobile framing.",
+    "Exact tap timestamps are observational only until a side-by-side replay capture is available."
+  ],
+  "nextStep": "Review the first-level build against the supplied recording; only after acceptance should Level 2 be ingested and changed."
+}

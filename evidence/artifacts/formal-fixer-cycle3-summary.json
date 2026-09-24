@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "cycle": 3,
+  "attempt": 1,
+  "route": "formal-fixer",
+  "targetGame": "小李飞刀",
+  "workspace": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "filesChanged": ["src/main.ts", "src/style.css", "tests/perceptual-level-pressure.test.ts"],
+  "fix": "HUD now exposes level family and moving-hard pressure state; terminal settlement displays the actual multiplier or bonus result.",
+  "tests": {"perceptualRegression": "pass", "full": "110 pass", "lint": "pass", "typecheck": "pass"},
+  "build": "pass",
+  "qaReports": ["runs/mobile-slice-adaptation-20260830/qa-level-pack-v1/runner-report.json"],
+  "qa": {"natural": "pass", "desktopLevels": [1,4,7,10,12], "mobileLevels": [1,6,12], "consoleErrors": 0, "pageErrors": 0},
+  "remainingEvidenceGaps": ["Perceptual screenshot reviewer should verify the new family badge and finish reward text at 390x844", "web-lite evidence does not prove WeChat/Douyin/TapTap packaging"]
+}

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "attempt": 2,
+  "supersessions": [
+    {
+      "old": "4 collectibles inside x=850..1250; 5 before x=1200",
+      "reason": "Coordinate templates are not the reviewed media contract; current sequence has five supported targets before the first stack.",
+      "replacement": "Assert >=5 teaching targets precede actual first stack, each support ID resolves, and a hazard follows stack before finish. Both ladder groups must be collidable, touch an overlapping real parent."
+    },
+    {
+      "old": "Pose x=target.x-38 against mixed old dense cluster",
+      "reason": "Knife pose already overlaps a target and changes to other targets inside the old window; results do not establish the intended three distinct contacts.",
+      "replacement": "Place knife tip at the actual outer edge for named three consecutive targets. Assert event IDs, exact baseValue*(combo index+1), and sum equals score."
+    },
+    {
+      "old": "late y440 is bonus; y500 is safe; all flight phases use430",
+      "reason": "Current wall lanes and post-collision approach no longer correspond to old guessed trigger heights; bonus has its own existing hazard corridor.",
+      "replacement": "Retain real-input deterministic safe/bonus wins with current lane-relative late trigger and bonus corridor policy. No gate values, bonus rules, gravity or impulse tuning changed to satisfy bot."
+    },
+    {
+      "old": "dual-role debug scenario also traverses every newly interactive stack",
+      "reason": "Fixture documented bridge-only isolation but isolated collectibles only.",
+      "replacement": "Disable unrelated collision objects only inside debugLoadScenario('dual-role'). Default journey still contains fully interactive stacks. Not natural QA evidence."
+    },
+    {
+      "old": "Require separate delayed local and HUD frames",
+      "reason": "Explicit source-grounded reward-acceptance-clarification.json permits same-frame separated geometry, reward and total.",
+      "replacement": "Removed experimental CutRewardQueue and all HUD delay wiring. Retained intact-zero, same-target separated geometry/reward and reset checks."
+    }
+  ],
+  "runtimeEntrypoints": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/index.html",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/main.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-levels.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-presentation.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-world-renderer.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-cut-visuals.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/style.css"
+  ],
+  "runtimeProductGate": "NOT ACCEPTED: current built diagnostic closed safe/replay on both viewports; independent natural/perceptual QA remains required and known floating legacy supports remain."
+}

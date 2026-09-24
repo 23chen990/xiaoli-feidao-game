@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "passed": false,
+  "checks": [
+    {
+      "name": "single-touch jump and flip",
+      "passed": true,
+      "evidence": "touch-ready.png shows the embedded starting knife; touch-100ms.png shows the same knife displaced forward/upward and rotated near horizontal after one native touch; touch-600ms.png shows continued forward travel and descent."
+    },
+    {
+      "name": "landing and next-action state",
+      "passed": true,
+      "evidence": "touch-1300ms.png and retry-01.png show the knife settled flat on the white track after the jump; a later touch launches it again. No separate landed UI is shown."
+    },
+    {
+      "name": "ordinary cuttable objects",
+      "passed": true,
+      "evidence": "Direct play visibly cut green/red apples, yellow citrus/lemon-like fruit, cheese, and coconut. retry-02.png through retry-06.png show the sequence and fragments falling off the track."
+    },
+    {
+      "name": "continuous cutting feedback and cash",
+      "passed": true,
+      "evidence": "retry-02.png shows separated apple pieces with floating +$1; retry-05.png shows coconut-related +$5; gap-after.png shows several colored cylinders scattered with stacked +$1 feedback. A persistent cash total was not visible in the observed segment."
+    },
+    {
+      "name": "gap flight and timing pressure",
+      "passed": true,
+      "evidence": "gap-edge.png visibly instructs KEEP TAPPING TO FLY. retry-09.png followed by retry-10.png records low-frequency tapping falling into grass and returning to the start; gap-rapid-2.png through gap-rapid-10.png show rapid touches adding successive aerial arcs and crossing the gap."
+    },
+    {
+      "name": "special level objects",
+      "passed": true,
+      "evidence": "gap-after.png shows racks of colored cylindrical bars breaking apart; post-gap-02.png shows a bright pink spike pad with a BEWARE OF SPIKES warning and visible watermelon/coconut/small fruit beyond it."
+    },
+    {
+      "name": "failure and retry",
+      "passed": true,
+      "evidence": "Low-frequency gap play visibly put the knife on the grass in retry-09.png; retry-10.png immediately shows the original start/tutorial again. No explicit failure dialog or manual restart button was observed."
+    },
+    {
+      "name": "three ordinary levels",
+      "passed": false,
+      "evidence": "Only the first ordinary level and repeated restarts of that level were directly observed; no level completion or two additional ordinary levels were reached."
+    },
+    {
+      "name": "finish multiplier",
+      "passed": false,
+      "evidence": "No finish multiplier zones or multiplier result were directly reached in the successful black-box sessions."
+    },
+    {
+      "name": "reward or hidden-coin level",
+      "passed": false,
+      "evidence": "No reward/hidden-coin trigger, bonus layout, payout, or bonus failure rule was directly reached."
+    },
+    {
+      "name": "knife unlock affects ability",
+      "passed": false,
+      "evidence": "No knife unlock screen or alternate knife was directly reached, so cosmetic versus mechanical effects could not be determined."
+    },
+    {
+      "name": "non-cuttable, break-knife, and spike outcomes",
+      "passed": false,
+      "evidence": "A spike pad and warning were directly visible, and the later sequence restarted, but the exact collision frame was not captured. No distinct break-knife object or complete non-cuttable taxonomy was directly observed."
+    }
+  ],
+  "issues": [
+    {
+      "id": "RESEARCH-LIMIT-001",
+      "severity": "warning",
+      "message": "Only the first ordinary level was directly playable to the observed spike section; three-level comparison was not completed.",
+      "evidence": "Successful sessions repeatedly returned to the first tutorial after gap or spike-section failure."
+    },
+    {
+      "id": "RESEARCH-LIMIT-002",
+      "severity": "warning",
+      "message": "Finish multipliers and reward/hidden-coin levels were not directly observed.",
+      "evidence": "The black-box sessions did not reach the first finish; no multiplier or bonus-level screenshot exists."
+    },
+    {
+      "id": "RESEARCH-LIMIT-003",
+      "severity": "warning",
+      "message": "Knife unlock effects and break-knife rules remain unverified.",
+      "evidence": "No unlock screen, alternate knife, or explicit broken-knife state appeared during direct play."
+    },
+    {
+      "id": "RESEARCH-LIMIT-004",
+      "severity": "warning",
+      "message": "The public embedded game was intermittent under automated Chromium.",
+      "evidence": "Some fresh attempts remained on a dark game surface after activation, and one navigation failed with ERR_TUNNEL_CONNECTION_FAILED; successful attempts are represented by the listed screenshots."
+    }
+  ],
+  "screenshots": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/slice-master-research-20260830/blackbox/touch-ready.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/slice-master-research-20260830/blackbox/touch-100ms.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/slice-master-research-20260830/blackbox/touch-600ms.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/slice-master-research-20260830/blackbox/touch-1300ms.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/slice-master-research-20260830/blackbox/retry-02.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/slice-master-research-20260830/blackbox/retry-05.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/slice-master-research-20260830/blackbox/retry-09.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/slice-master-research-20260830/blackbox/retry-10.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/slice-master-research-20260830/blackbox/gap-edge.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/slice-master-research-20260830/blackbox/gap-rapid-5.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/slice-master-research-20260830/blackbox/gap-after.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/slice-master-research-20260830/blackbox/post-gap-02.png"
+  ],
+  "consoleLog": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/slice-master-research-20260830/blackbox/research.log",
+  "testedAt": "2026-08-30T12:12:00Z"
+}

@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "taptap-render-work-attempt-2-after",
+  "measurementKind": "deterministic-source-work-proxy",
+  "deviceFpsMeasured": false,
+  "reportedBackendFpsRootCause": "UNCONFIRMED",
+  "tapTapThreshold": null,
+  "observations": {
+    "airborneUpdateCallsFullRedraw": false,
+    "staticDrawsPerActiveFrame": 0,
+    "dynamicDrawsPerActiveFrame": 1,
+    "packageOwnedRemainingBottleneckDemonstrated": false
+  },
+  "sourceRuntimeChanged": false,
+  "interpretation": "Attempt 2 adds an explicit unbound-report and no-optimization decision contract. The prior retained-layer implementation remains unchanged because the deterministic benchmark found no new package-owned rendering bottleneck; device FPS and sampler attribution remain unmeasured."
+}

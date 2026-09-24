@@ -1,0 +1,305 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "ReviewCoverageAudit",
+  "auditVersion": 2,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "INCOMPLETE_LEGACY_REVIEW_STREAMS",
+  "scope": "在 review-coverage-audit-v1 基础上，复核本 run 的 triage、retro、formal-fixer、perceptual QA 与最新等级包证据；不把抽样通过、fixture/debug 通过或历史录屏摘要当作整条自然旅程闭环。",
+  "freshEvidence": {
+    "command": "pnpm qa:levels",
+    "capturedAt": "2026-09-06",
+    "artifacts": [
+      "qa-level-pack-v1/qa-report.json",
+      "qa-level-pack-v1/runner-report.json",
+      "artifacts/perceptual-qa-level-pressure-v2.json"
+    ],
+    "deterministicResult": "PASS",
+    "coverage": {
+      "desktop": "1180x720; sampled levels 1,4,7,10,12; level 4 had two failed attempts before a natural win",
+      "mobile": "390x844 native touch; sampled levels 1,6,12",
+      "persistence": "level 1 unlock and refresh restore passed",
+      "failureReplay": "level 4 failure/replay stayed on level and returned to ready state",
+      "console": "0 console errors, 0 page errors, 0 request failures",
+      "claimBoundary": "web-lite browser candidate only; no WeChat, Douyin, TapTap packaging claim"
+    },
+    "defaultBrowserRun": {
+      "command": "pnpm qa:browser",
+      "runnerReport": "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/report.json",
+      "status": "BLOCKED_RELEASE_PERFORMANCE_GATE",
+      "smokeExitCode": 1,
+      "failure": "Browser smoke reached natural desktop/mobile wins and passed its BrowserSmokeResult, but the release performance assertion failed: medianMs=24.9, p95Ms=58.4, over50Percent=8.5, withinTargets=false.",
+      "interpretation": "This is an independent engineering/performance blocker; the natural journey result cannot be upgraded to a release PASS while the performance gate fails."
+    },
+    "perceptualInterpretation": [
+      {
+        "observation": "desktop level 4 and level 12 finish screenshots still show the yellow bonus surface visually embedded in the translucent green safe wall",
+        "evidence": [
+          "qa-level-pack-v1/perceptual-v2-desktop-level-04-won.png",
+          "qa-level-pack-v1/perceptual-v2-desktop-level-12-won.png",
+          "qa-level-pack-v1/perceptual-v2-mobile-level-12-won.png"
+        ],
+        "classification": "OBSERVED_PRODUCT_GAP"
+      },
+      {
+        "observation": "the terminal overlay covers most of the finish wall, while fixed right-side multiplier labels remain detached from the world reward geometry",
+        "evidence": [
+          "qa-level-pack-v1/perceptual-v2-desktop-level-12-won.png",
+          "qa-level-pack-v1/perceptual-v2-mobile-level-12-won.png"
+        ],
+        "classification": "OBSERVED_PRODUCT_GAP"
+      }
+    ]
+  },
+  "currentRegister": {
+    "artifact": "artifacts/reference-doc-review-v1.json",
+    "findingCount": 41,
+    "meaning": "当前源码、截图和可访问 QA 的证据边界内已整理出的差距；不是所有历史 review stream 的完成证明。"
+  },
+  "identityQuarantine": [
+    {
+      "artifact": "artifacts/human-qa-v8.json",
+      "storedTargetGame": "符刃夜行",
+      "expectedTargetGame": "mobile-slice-adaptation-20260830",
+      "decision": "QUARANTINED_MISMATCHED_METADATA",
+      "reason": "虽然 workspace 路径相同，但 artifact 的 targetGame 不是本 run 的 immutable game id；在完成身份复核前，不把它作为本游戏的 QA 通过或竞品证据。"
+    }
+  ],
+  "unresolvedStreams": [
+    {
+      "id": "REVIEW-STREAM-001",
+      "topic": "all-level spatial spacing, occlusion and viewport coverage",
+      "artifacts": ["artifacts/gameplay-triage-asset-spacing-all-levels-v1.json"],
+      "storedStatus": "OPEN",
+      "coverage": "PARTIAL_ONLY",
+      "newEvidenceEffect": "等级包仅抽样桌面/移动若干关，未覆盖 01-12 × portrait/landscape × spawned/approach/contact/cut/settled/terminal，因此不关闭。",
+      "missingClosure": "为每个关卡和每个生命周期分支提供 exact object × renderer × viewport 的自然截图/trace，尤其是横屏。"
+    },
+    {
+      "id": "REVIEW-STREAM-002",
+      "topic": "all-level pressure, cuttable variety, duration and pacing",
+      "artifacts": [
+        "artifacts/gameplay-triage-all-level-pressure-v1.json",
+        "artifacts/gameplay-triage-cuttable-variety-v1.json",
+        "artifacts/gameplay-triage-level-variety-v1.json"
+      ],
+      "storedStatus": "BLOCKED_OR_UNSTATUSSED",
+      "coverage": "PARTIAL_EVIDENCE_ADDED",
+      "newEvidenceEffect": "抽样通关时长约 19-33 秒且有 level 4 失败后重试，证明存在压力/时长差异；但没有 12 关完整 beat、有效决策数、路线变化和 35-60 秒目标的自然 sweep。",
+      "missingClosure": "12 关桌面/390x844 自然记录：时长、压力峰、恢复段、可切物类型/组合、路线决策和终局节拍。"
+    },
+    {
+      "id": "REVIEW-STREAM-003",
+      "topic": "route-changing cuts, moving support meaning and hard-object reachability",
+      "artifacts": [
+        "artifacts/gameplay-triage-core-loop-fidelity-v1.json",
+        "artifacts/gameplay-triage-moving-platform-no-purpose-v1.json",
+        "artifacts/gameplay-triage-hard-object-reachability-v3.json",
+        "artifacts/gameplay-triage-unreachable-hard-object-v1.json"
+      ],
+      "storedStatus": "OPEN_OR_BLOCKED",
+      "coverage": "PARTIAL_ONLY",
+      "newEvidenceEffect": "等级包证明若干关可完成，不证明移动对象会改变选择，也不证明至少两个切割事件改变后续路线。",
+      "missingClosure": "exact objectId 的触碰、避让、切割、恢复和结果差异；每个分支需桌面与移动自然证据。"
+    },
+    {
+      "id": "REVIEW-STREAM-004",
+      "topic": "hazard impact and orphan-spike pack",
+      "artifacts": [
+        "artifacts/gameplay-triage-spike-pack-orphan-v1.json",
+        "artifacts/gameplay-triage-spike-no-player-impact-v1.json",
+        "artifacts/gameplay-triage-spike-no-player-impact-v2-retest.json",
+        "artifacts/gameplay-triage-spike-no-player-impact-v3-retest.json",
+        "artifacts/gameplay-triage-all-level-hazard-purpose-v1.json"
+      ],
+      "storedStatus": "PACK_BLOCKED",
+      "coverage": "PARTIAL_ONLY",
+      "newEvidenceEffect": "等级包只对抽样关完成通关；不能替代 15 个被标记 spike 分支的逐对象自然命中/避让/失败归因。",
+      "missingClosure": "每个 hazard 要么与公平路线和可见时机相交，要么显式标记 decorative/non-collidable；所有 exact branches 需自然 QA。"
+    },
+    {
+      "id": "REVIEW-STREAM-005",
+      "topic": "cut cap, geometry, fragment and visual lifecycle",
+      "artifacts": [
+        "artifacts/gameplay-triage-cut-piece-square-cap-v2.json",
+        "artifacts/gameplay-triage-cut-geometry-shape-v1.json",
+        "artifacts/gameplay-triage-cut-visual-lifecycle-v1.json",
+        "artifacts/formal-fixer-cut-geometry-attempt1.json",
+        "artifacts/formal-fixer-cut-visual-lifecycle-attempt1.json",
+        "artifacts/formal-fixer-cut-visual-lifecycle-attempt2.json"
+      ],
+      "storedStatus": "OPEN_OR_BLOCKED",
+      "coverage": "PARTIAL_ONLY",
+      "newEvidenceEffect": "等级包没有跨 dessert/log/crate/crystal skin 的切割 silhouette/cap 生命周期证据；不能用单一 sigil 或 POC 通过代替。",
+      "missingClosure": "每种 skin 在桌面和 390x844 上自然完成 spawned→contact→sever→fall/settle→reward，并保留玩家可见证据。"
+    },
+    {
+      "id": "REVIEW-STREAM-006",
+      "topic": "fragment and sigil grounding/settling",
+      "artifacts": [
+        "artifacts/gameplay-triage-fragment-drop-v1.json",
+        "artifacts/gameplay-triage-sigil-floating-v2.json"
+      ],
+      "storedStatus": "UNSTATUSSED",
+      "coverage": "NOT_CLOSED",
+      "newEvidenceEffect": "等级包没有等待 exact cut fragments 3 秒后落地稳定的独立桌面/移动截图；通关本身不能关闭悬空/穿地分支。",
+      "missingClosure": "同一 exact object/state branch 的自然切割、下落、落地稳定和无穿模证据。"
+    },
+    {
+      "id": "REVIEW-STREAM-007",
+      "topic": "food-theme cross-level expression",
+      "artifacts": [
+        "artifacts/gameplay-triage-food-theme-cross-level-audit-v1.json",
+        "artifacts/gameplay-triage-food-theme-visual-mismatch-v1.json",
+        "artifacts/gameplay-triage-food-theme-visual-mismatch-v2.json",
+        "artifacts/formal-fixer-food-theme-attempt1.json",
+        "artifacts/formal-fixer-food-theme-attempt2.json"
+      ],
+      "storedStatus": "REPAIRED_PENDING_QA_OR_OPEN",
+      "coverage": "NOT_CLOSED",
+      "newEvidenceEffect": "等级包截图没有逐 food family 的自然切割可读性验证。",
+      "missingClosure": "每个 family 的目标轮廓、切面材质、碎片和奖励反馈在桌面/移动端自然复测。"
+    },
+    {
+      "id": "REVIEW-STREAM-008",
+      "topic": "ground support flicker, depth and finish-gate overlap",
+      "artifacts": [
+        "artifacts/gameplay-triage-ground-white-support-flicker-v1.json",
+        "artifacts/gameplay-triage-finish-gate-overlap-pack-v1.json",
+        "artifacts/gameplay-triage-yellow-finish-gate-clipping-v1.json"
+      ],
+      "storedStatus": "FIXED_PENDING_PERCEPTUAL_REVIEW_OR_BLOCKED",
+      "coverage": "NEW_PLAYER_VISIBLE_REPRODUCTION_CONFIRMS_FINISH_GAP",
+      "newEvidenceEffect": "结构 placement 通过不能关闭感知门；最新 desktop level 4/12 和 mobile level 12 截图仍观察到黄/绿墙重叠。",
+      "missingClosure": "exact support 的无闪烁/无穿地桌面与移动证据，以及所有含 Bonus wall 的关卡完成视觉分离与结算重玩复测。"
+    },
+    {
+      "id": "REVIEW-STREAM-009",
+      "topic": "Bonus flight, backdrop semantics and low-arc playability",
+      "artifacts": [
+        "artifacts/gameplay-triage-bonus-flight-v1.json",
+        "artifacts/gameplay-triage-bonus-backdrop-hard-object-v1.json",
+        "artifacts/gameplay-triage-bonus-low-arc-v1.json",
+        "artifacts/formal-fixer-bonus-flight-attempt1.json"
+      ],
+      "storedStatus": "UNSTATUSSED_OR_INCOMPLETE",
+      "coverage": "NOT_CLOSED",
+      "newEvidenceEffect": "等级包没有自然进入 Bonus 并完成飞行/低弧线/背景高塔分支。",
+      "missingClosure": "Bonus 的进入条件、飞行节奏、低弧线可达性、背景与碰撞语义、失败与恢复的 exact natural trace。"
+    },
+    {
+      "id": "REVIEW-STREAM-010",
+      "topic": "level progression, Bonus entry and persistence journey",
+      "artifacts": [
+        "artifacts/gameplay-triage-level-progression-bonus-v1.json",
+        "artifacts/formal-fixer-level-progression-bonus-attempt1.json"
+      ],
+      "storedStatus": "UNSTATUSSED_OR_INCOMPLETE",
+      "coverage": "PARTIAL_EVIDENCE_ADDED",
+      "newEvidenceEffect": "等级包仅证明 level 1 unlock level 2、刷新恢复最高解锁和 level 4 failure replay；Bonus 进入/返回和全链路持久化仍未证明。",
+      "missingClosure": "真实玩家流程中的解锁→下一关→Bonus 进入→返回→重启/刷新恢复，且不依赖 state injection。"
+    },
+    {
+      "id": "REVIEW-STREAM-011",
+      "topic": "full experience chain and failure/recovery/replay",
+      "artifacts": [
+        "artifacts/gameplay-triage-experience-chain-v1.json",
+        "artifacts/gameplay-retro-missed-topology-v2.json",
+        "artifacts/gameplay-triage-natural-level1-v2.json",
+        "artifacts/formal-fixer-experience-chain-attempt1.json",
+        "artifacts/qa-repeatability-audit-v1.json"
+      ],
+      "storedStatus": "OPEN_OR_BLOCKED_FLAKY",
+      "coverage": "PARTIAL_ONLY",
+      "newEvidenceEffect": "等级包的失败/重玩子流程通过，但默认移动自然旅程已有同目标一次失败、一次成功，仍是不可接受的 repeatability gap。",
+      "missingClosure": "fresh browser 正常输入完成 startup→core loop→cut/settle/reward→failure/recovery→finish→replay，并在重复运行中稳定。"
+    },
+    {
+      "id": "REVIEW-STREAM-012",
+      "topic": "recording-based factory retro re-verification",
+      "artifacts": [
+        "artifacts/factory-retro-reference-recordings-deep-v2.json",
+        "artifacts/factory-retro-reference-recording-20260905-supplement-v1.json",
+        "artifacts/factory-retro-cut-feel-supplement-v1.json"
+      ],
+      "storedStatus": "RETRO_COMPLETE_BUT_SOURCE_UNAVAILABLE",
+      "coverage": "NOT_REVERIFIABLE_ON_CURRENT_HOST",
+      "newEvidenceEffect": "录屏源仍不可访问；历史逐帧/音频观察只能保留为先前 review artifact，不能在本轮升级为可复核事实。",
+      "missingClosure": "重新 ingest 并完成 identity review，得到 PENDING→verified 的可用源，再逐帧/逐音频复核。"
+    },
+    {
+      "id": "REVIEW-STREAM-013",
+      "topic": "multiplier wall and post-cut earnings presentation",
+      "artifacts": [
+        "artifacts/gameplay-triage-multiplier-wall-v1.json",
+        "artifacts/gameplay-triage-realtime-earnings-v1.json",
+        "artifacts/qa-retest-multiplier-wall-v1.json",
+        "artifacts/formal-fixer-multiplier-wall-attempt1.json"
+      ],
+      "storedStatus": "OPEN_OR_PASS_WITH_INFRASTRUCTURE_GAP",
+      "coverage": "PLAYER_VISIBLE_GAP_CONFIRMED",
+      "newEvidenceEffect": "最新 finish screenshots 仍显示固定右侧倍率标签、终点墙与终局 overlay 脱节；等级包没有证明切割后收益动画绑定到世界物体。",
+      "missingClosure": "独立自然 QA 证明切割后再出现绑定在物体/收益砖上的收益动画、倍率墙可读、结算账本一致、重玩不重复记账。"
+    },
+    {
+      "id": "REVIEW-STREAM-014",
+      "topic": "runtime identity, default entrypoint and factory metadata",
+      "artifacts": [
+        "artifacts/reference-doc-review-v1.json",
+        "artifacts/exhaustive-reproduction-matrix-v1.json"
+      ],
+      "storedStatus": "P2_METADATA_GAP",
+      "coverage": "PARTIAL_ONLY",
+      "newEvidenceEffect": "已纠正“灵刃飞斩/小李飞刀”为同一游戏历史命名；但 index 与 poc 仍是不同构建/资产/QA 入口，当前缺 immutable targetGame/version/entrypoint fingerprint。",
+      "missingClosure": "默认 index、POC、测试和发布包均输出不可混淆的 targetGame、runId、version、entrypoint 证据；标题不能作为唯一身份。"
+    },
+    {
+      "id": "REVIEW-STREAM-015",
+      "topic": "native platform adapter and release scope",
+      "artifacts": [
+        "artifacts/reference-doc-review-v1.json",
+        "artifacts/formal-fixer-consolidated-final-v1.json",
+        "artifacts/qa-retest-v2-summary.json"
+      ],
+      "storedStatus": "WEB_LITE_ONLY",
+      "coverage": "NOT_CLOSED",
+      "newEvidenceEffect": "等级包明确声明仅 web-lite；没有 WeChat、Douyin、TapTap adapter/config/build/QA 证据。",
+      "missingClosure": "三个目标平台分别完成 adapter、配置、测试、构建与自然体验 QA，且不混用 web-lite 证据。"
+    },
+    {
+      "id": "REVIEW-STREAM-016",
+      "topic": "legacy artifact identity and stale fixer evidence",
+      "artifacts": [
+        "artifacts/human-qa-v8.json",
+        "artifacts/formal-fixer-consolidated-issues-v1.json",
+        "artifacts/formal-fixer-retest-v2-independent.json"
+      ],
+      "storedStatus": "QUARANTINED_OR_OPEN",
+      "coverage": "NOT_CLOSED",
+      "newEvidenceEffect": "发现 human-qa-v8.json 的 storedTargetGame 为“符刃夜行”，与本 run immutable targetGame 不一致；formal-fixer consolidated issue set 仍 OPEN，independent retest 仍 BLOCKED。",
+      "missingClosure": "逐个 artifact 补 immutable targetGame/runId/workspace/entrypoint fingerprint；错误身份的历史证据隔离，不得参与本游戏的 PASS 结论；OPEN/BLOCKED fixer issues 需保留正式 QA retest。"
+    }
+  ],
+  "factoryFeedback": {
+    "status": "ACTIONABLE_NOT_YET_CLOSED",
+    "genericLessons": [
+      "研究阶段必须输出逐帧/逐状态证据边界、failure-pressure contract、camera beat、economy lifecycle 和 reward presentation topology；只有对象清单不足以锁定体验。",
+      "所有录屏必须即时 ingest 到目标 run 的 reference-evidence/incoming，并通过 identity review；缺失源要 quarantine，不能拿邻近时间戳或历史摘要替代。",
+      "QA 必须把 deterministic engineering truth、natural journey truth、perceptual truth 分开；抽样关卡 PASS 不能覆盖全关卡和 exact branch BLOCKED。",
+      "默认入口、POC、兼容路径和调试路径必须有 immutable fingerprints；同一游戏历史改名不能再被误判为跨游戏，但不同入口也不能互相冒充产品证据。",
+      "终点收益、倍率墙、切割反馈和镜头节拍要作为一条 action→feedback→settlement 链验收；不能只验证分数数值或 HUD 是否存在。"
+    ]
+  },
+  "conclusion": {
+    "priorAnswerCorrection": "此前把当前 41 项清单完成误说成所有历史复盘完成；这是过度表述。",
+    "currentTruth": "本次新增等级包证据使若干流达到 PARTIAL_EVIDENCE_ADDED，但仍有 16 条历史 review stream 未闭环、被 exact branch 阻塞、身份隔离、源不可复核或受平台边界限制。",
+    "doNotClaim": [
+      "整个工厂复盘已全部完成",
+      "所有 triage/fixer 已修复",
+      "录屏观察已重新验证",
+      "Bonus/全关卡/横竖屏/真机平台已通过",
+      "倍率墙、收益动画、镜头节拍已达到竞品级"
+    ],
+    "nextRoute": "先按 15 条 stream 的 exact matrix 补自然 QA；核心循环、经济、终点演出、跨模块问题继续走 formal QA→Fixer→QA，不在本轮把 review 结果直接当成修复完成。"
+  }
+}

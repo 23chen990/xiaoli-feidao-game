@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fixer-task-packet",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 3,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "model": "gpt-6-luna",
+  "triagePath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-3/triage.json",
+  "triageSha256": "2108795e3d8e651426e68a378412e8aea1af6abf434f0941cd0bb1c4fb6a42a1",
+  "issueId": "L1-RUNWAY-RECOVERY-RELEASE-LIFECYCLE",
+  "ownedFiles": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "expectedSourceFileLimit": 2,
+  "expectedHypothesis": "On the exact early separating Level1 runway top-tip recovery, keep the blade visibly airborne but set a bounded one-shot pendingRunwayReleaseIntent. The next normal act('flip') consumes it with the existing anchored-release launch semantics, then clears it. Preserve all other support and airborne flip behavior.",
+  "testFirst": {
+    "redRequired": true,
+    "redCommand": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+    "greenCommand": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+    "regressionCommand": "pnpm test"
+  },
+  "acceptanceCriteria": [
+    "A RED test proves the exact upward/separating natural-pose contact anchors under attempt-1/2 behavior.",
+    "A GREEN lifecycle test proves the next normal flip tap consumes pendingRunwayReleaseIntent as anchored-release semantics: launch event, cooldown reset, input buffer cleared, forward launch velocity, no persistent anchor.",
+    "A second tap after latch expiry behaves as an ordinary airborne flip and does not receive stale release semantics.",
+    "Non-runway support anchors and their release taps remain unchanged.",
+    "The approach/downward top-normal branch, non-top sharp anchor, later x>=350 suppression, and blunt body/handle bounce remain intact.",
+    "The seed-31 fixed timestamp replay reaches at least 11.9 seconds and x>2000 without failure.",
+    "Only game-core.ts and level1-recovery.test.ts change; no renderer, level, debug, platform, or shared factory files.",
+    "pnpm test, pnpm lint, pnpm typecheck pass and exactly one pnpm build succeeds with a recorded dist SHA-256.",
+    "Independent fresh natural QA must retest both viewports, exact runway branch, stack/settlement, visible terminal and replay; no Fixer runtime claim."
+  ],
+  "evidenceInputs": [
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-2/fix-result.json",
+      "sha256": "7bc19e4b8189036cf43da960fc8a925fb13135f12333093e08dc2e8938d5fe3e",
+      "role": "prior-fix-receipt"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-summary.json",
+      "sha256": "d0640af40c41c1e49c38a58687c8b6f2635332d3fe02e3e7429e05a74b6307cd",
+      "role": "natural-reproduction"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/recording.json",
+      "sha256": "5e4d6457955e0596707116e3c9d325880506f41c24aa5bfd37928ae5cb242717",
+      "role": "natural-reproduction"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/recording.json",
+      "sha256": "18734f878ef1f4c048f4071326e31b2dad5ee022fa14a8baf6004bd5c20f7ddd",
+      "role": "natural-reproduction"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-2/green-targeted.log",
+      "sha256": "59f7c447c882e0b31af6c01d191ce68a64beb7a041cabf7de820e4e7060d834f",
+      "role": "prior-experiment-rejection"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "sha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+      "role": "current-source"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts",
+      "sha256": "cbe17f77293f0e327200536f9adabbee5180fd78d6eaa7587f55dc4ab7d3dcec",
+      "role": "current-source"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html",
+      "sha256": "599b4c3cb8c6b345b7e18b3a4e06cae33663c0432b918d3115ee78df3bf64118",
+      "role": "current-build"
+    }
+  ],
+  "contextIntentionallyOmitted": [
+    "Unrelated games, factory modules, platform adapters, release configuration, and renderer implementation.",
+    "Full conversation and unbound competitor media; only exact branch QA evidence is included.",
+    "Natural/perceptual claims; Fixer must leave browser QA independent.",
+    "Any source file outside the two owned paths unless a new triage record promotes scope."
+  ],
+  "requiredOutputs": {
+    "fixResultPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-3/fix-result.json",
+    "redLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-3/red-targeted.log",
+    "greenLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-3/green-targeted.log",
+    "testsLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-3/tests.log",
+    "lintLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-3/lint.log",
+    "typecheckLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-3/typecheck.log",
+    "buildLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-3/build.log"
+  },
+  "noRuntimeQaClaim": true,
+  "createdAt": "2026-09-23T06:36:00.000Z"
+}

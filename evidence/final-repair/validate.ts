@@ -1,0 +1,96 @@
+import { readFileSync } from 'node:fs';
+import {
+  AuthorizationSchema,
+  CycleStateSchema,
+  TaskPacketSchema,
+  TriageSchema,
+  QaTaskSchema,
+  QaSummarySchema,
+  Attempt2TaskPacketSchema,
+  Attempt2TriageSchema,
+  Attempt3TaskPacketSchema,
+  Attempt3TriageSchema,
+  Attempt4TaskPacketSchema,
+  Attempt4TriageSchema,
+  Attempt5TaskPacketSchema,
+  Attempt5TriageSchema,
+  Attempt6TaskPacketSchema,
+  Attempt6TriageSchema,
+  Attempt7TaskPacketSchema,
+  Attempt7TriageSchema,
+  Attempt8TaskPacketSchema,
+  Attempt8TriageSchema,
+  Attempt9TaskPacketSchema,
+  Attempt9TriageSchema,
+  Attempt10TaskPacketSchema,
+  Attempt10TriageSchema,
+  Attempt11TaskPacketSchema,
+  Attempt11TriageSchema,
+  Attempt12TaskPacketSchema,
+  Attempt12TriageSchema,
+  Attempt13TaskPacketSchema,
+  Attempt13TriageSchema,
+  Attempt14TaskPacketSchema,
+  Attempt14TriageSchema,
+  Attempt15TaskPacketSchema,
+  Attempt15TriageSchema,
+  Attempt16TaskPacketSchema,
+  Attempt16TriageSchema,
+  Attempt17TaskPacketSchema,
+  Attempt17TriageSchema,
+  Attempt18TaskPacketSchema,
+  Attempt18TriageSchema,
+  Attempt19TaskPacketSchema,
+  Attempt19TriageSchema,
+  Attempt21TaskPacketSchema,
+  Attempt21TriageSchema,
+} from './schemas.js';
+
+const root = new URL('.', import.meta.url);
+const read = (name: string) => JSON.parse(readFileSync(new URL(name, root), 'utf8')) as unknown;
+
+TriageSchema.parse(read('triage.json'));
+AuthorizationSchema.parse(read('authorization.json'));
+CycleStateSchema.parse(read('cycle-state.json'));
+TaskPacketSchema.parse(read('attempt-1/task.json'));
+QaTaskSchema.parse(read('attempt-1/qa-task.json'));
+QaSummarySchema.parse(read('attempt-1/qa-summary.json'));
+Attempt2TriageSchema.parse(read('attempt-2/triage.json'));
+Attempt2TaskPacketSchema.parse(read('attempt-2/task.json'));
+Attempt3TriageSchema.parse(read('attempt-3/triage.json'));
+Attempt3TaskPacketSchema.parse(read('attempt-3/task.json'));
+Attempt4TriageSchema.parse(read('attempt-4/triage.json'));
+Attempt4TaskPacketSchema.parse(read('attempt-4/task.json'));
+Attempt5TriageSchema.parse(read('attempt-5/triage.json'));
+Attempt5TaskPacketSchema.parse(read('attempt-5/task.json'));
+Attempt6TriageSchema.parse(read('attempt-6/triage.json'));
+Attempt6TaskPacketSchema.parse(read('attempt-6/task.json'));
+Attempt7TriageSchema.parse(read('attempt-7/triage.json'));
+Attempt7TaskPacketSchema.parse(read('attempt-7/task.json'));
+Attempt8TriageSchema.parse(read('attempt-8/triage.json'));
+Attempt8TaskPacketSchema.parse(read('attempt-8/task.json'));
+Attempt9TriageSchema.parse(read('attempt-9/triage.json'));
+Attempt9TaskPacketSchema.parse(read('attempt-9/task.json'));
+Attempt10TriageSchema.parse(read('attempt-10/triage.json'));
+Attempt10TaskPacketSchema.parse(read('attempt-10/task.json'));
+Attempt11TriageSchema.parse(read('attempt-11/triage.json'));
+Attempt11TaskPacketSchema.parse(read('attempt-11/task.json'));
+Attempt12TriageSchema.parse(read('attempt-12/triage.json'));
+Attempt12TaskPacketSchema.parse(read('attempt-12/task.json'));
+Attempt13TriageSchema.parse(read('attempt-13/triage.json'));
+Attempt13TaskPacketSchema.parse(read('attempt-13/task.json'));
+Attempt14TriageSchema.parse(read('attempt-14/triage.json'));
+Attempt14TaskPacketSchema.parse(read('attempt-14/task.json'));
+Attempt15TriageSchema.parse(read('attempt-15/triage.json'));
+Attempt15TaskPacketSchema.parse(read('attempt-15/task.json'));
+Attempt16TriageSchema.parse(read('attempt-16/triage.json'));
+Attempt16TaskPacketSchema.parse(read('attempt-16/task.json'));
+Attempt17TriageSchema.parse(read('attempt-17/triage.json'));
+Attempt17TaskPacketSchema.parse(read('attempt-17/task.json'));
+Attempt18TriageSchema.parse(read('attempt-18/triage.json'));
+Attempt18TaskPacketSchema.parse(read('attempt-18/task.json'));
+Attempt19TriageSchema.parse(read('attempt-19/triage.json'));
+Attempt19TaskPacketSchema.parse(read('attempt-19/task.json'));
+Attempt21TriageSchema.parse(read('attempt-21/triage.json'));
+Attempt21TaskPacketSchema.parse(read('attempt-21/task.json'));
+console.log('REPAIR_CYCLE_ARTIFACTS_OK');

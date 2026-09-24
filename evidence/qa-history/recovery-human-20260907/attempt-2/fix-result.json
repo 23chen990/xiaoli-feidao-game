@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "human-review-20260907-l1-recovery",
+  "attempt": 2,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "storedThreadId": "01a07540-7ee1-7c01-899b-0ea12bde1f19",
+  "status": "READY_FOR_INDEPENDENT_QA",
+  "why": "Validated physics, support layout and presentation issues span multiple runtime modules. One bounded formal-fixer attempt, one build; unit/source/runtime implementation checks do not constitute independent QA or product acceptance.",
+  "contextIntentionallyOmitted": [
+    "Full conversation and other game history",
+    "Other levels, shared factory, platform/release changes",
+    "Unverified media and copied competitor assets/tuning"
+  ],
+  "rootCauses": [
+    {
+      "issueId": "L1-STACK-DECORATIVE-SUBSTITUTION",
+      "objectType": "level1-rainbow-step-a/b and level1-ladder-stack-a/b",
+      "stateBranch": "intact bearing relationship → blade collision → cut → released dependant",
+      "renderer": "game-levels → game-core → ThreePresentationModel/CutVisualEntity",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/red.log",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/green-suite.log",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/built-runtime.log",
+        "Four visible objects were collidable:false and disconnected in XY; the two lower objects now rest on runway and offset upper objects name their lower parent. Actual tip contact cuts the lower and releases the same upper ID."
+      ]
+    },
+    {
+      "issueId": "REMAINING-PERCEPTUAL-CONTRACT",
+      "objectType": "supported Level1 collectibles; reward shelf and bridge/lift/tower/late table bases",
+      "stateBranch": "initial resting state / airborne player → supported or gravity motion",
+      "renderer": "createCourse/updateSupportedSigils; ThreeWorldRenderer.syncSupports",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/red-placement.log",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/red.log",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/green-suite.log",
+        "Airborne player status previously froze supported collectibles; removed status-dependent freeze. Initial collectibles now rest on their declared surfaces; late targets no longer reference the distant runway. Existing grounded-base branch now ends at actual floor=700, and reward shelf joins that branch."
+      ]
+    },
+    {
+      "issueId": "L1-FINISH-VISIBILITY",
+      "objectType": "all Level1 reward bands and DOM labels",
+      "stateBranch": "approach → lane contact/settlement",
+      "renderer": "createCameraSpec + ThreeWorldRenderer.render + style.css finish-wall-labels",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/red.log",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/built-policy-390-finish.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/built-policy-1100-finish.png",
+        "Fixed-position container at right/top50% applied an extra offset to projected coordinates. It is now origin-aligned. Level1-only finish-aware camera smoothly widens before choice and stops following beyond wall; opening camera unchanged."
+      ]
+    },
+    {
+      "issueId": "L1-ENGINEERING-REGRESSIONS",
+      "objectType": "teaching sequence, combo contacts, safe/bonus policy, bridge fixture",
+      "stateBranch": "current Level1 topology → actual cuts → safe or bonus completion",
+      "renderer": "catalog and deterministic simulation",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/red-suite.log",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/green-suite.log",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/test-supersession.json",
+        "Old exact coordinate/count windows and finish-height policies did not describe current reviewed contract. Replaced with supported teaching-before-stack relationship checks, exact event ID/value/combo assertions, and current lane-relative policy. Bridge-only fixture now isolates new interactive stacks instead of changing default runtime. All 187 tests pass."
+      ]
+    },
+    {
+      "issueId": "L1-OPENING-TABLE-BRANCH",
+      "objectType": "opening-table-a/b and first intact rune-1",
+      "stateBranch": "startup intact",
+      "renderer": "preserved previous material and support-base branches",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/green-suite.log",
+        "Previous opening tests preserved and pass in both viewports. b-table pixel ownership remains independent-QA gap. No claim that a passing sibling closes it."
+      ]
+    }
+  ],
+  "filesChanged": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-levels.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-world-renderer.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-presentation.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/style.css",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/game-core.test.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level-catalog.test.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/opening-renderer-regression.test.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "tests": [
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts tests/opening-renderer-regression.test.ts",
+      "exitCode": 1,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/red.log",
+      "phase": "RED"
+    },
+    {
+      "command": "pnpm test (baseline with added RED coverage)",
+      "exitCode": 1,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/red-suite.log",
+      "phase": "RED"
+    },
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts (initial placement RED)",
+      "exitCode": 1,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/red-placement.log",
+      "phase": "RED"
+    },
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts (SUPERSEDED reward delay hypothesis; see reward clarification)",
+      "exitCode": 1,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/red-reward.log",
+      "phase": "RED"
+    },
+    {
+      "command": "pnpm test (intermediate green-suite-1)",
+      "exitCode": 1,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/green-suite-1.log",
+      "phase": "GREEN"
+    },
+    {
+      "command": "pnpm test (intermediate green-suite-2)",
+      "exitCode": 0,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/green-suite-2.log",
+      "phase": "GREEN"
+    },
+    {
+      "command": "pnpm test (intermediate green-suite-3)",
+      "exitCode": 0,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/green-suite-3.log",
+      "phase": "GREEN"
+    },
+    {
+      "command": "pnpm test (intermediate green-suite-4)",
+      "exitCode": 0,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/green-suite-4.log",
+      "phase": "GREEN"
+    },
+    {
+      "command": "pnpm test (final; 187/187 passing)",
+      "exitCode": 0,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/green-suite.log",
+      "phase": "GREEN"
+    },
+    {
+      "command": "pnpm lint",
+      "exitCode": 0,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/lint.log",
+      "phase": "LINT"
+    },
+    {
+      "command": "pnpm typecheck",
+      "exitCode": 0,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/typecheck.log",
+      "phase": "TYPECHECK"
+    },
+    {
+      "command": "Playwright fixed 950ms Space input source-preview smoke (both runs failed by fall; diagnostic only)",
+      "exitCode": 0,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/source-runtime.log",
+      "phase": "GREEN"
+    },
+    {
+      "command": "Playwright on unchanged built dist; state-observed policy with real Space/replay input, no state injection (implementation-only)",
+      "exitCode": 0,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/built-runtime.log",
+      "phase": "GREEN"
+    }
+  ],
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0,
+    "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/build.log",
+    "count": 1,
+    "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html",
+    "sha256": "b234fd16adb1bf70e7bc021fd33a4703de03e59657bd21fb82419bda712747a6"
+  },
+  "remainingEvidenceGaps": [
+    "Source-preview server emitted Three.js texture-update warnings during preview/HMR. Built runtime script recorded pageerror only, not console warnings; QA should inspect console and asset readiness separately.",
+    "Independent QA must retest unchanged hash on 390x844 and 1100x720; this is not productPASS.",
+    "Confirmed remaining visual gap: old high white-bumper/white-branch slabs and hanging-above object remain elevated without visible bearing geometry. Source startup screenshot documents this; current patch does not close entire GROUND contract.",
+    "Other legacy support/tower intersection relationships were not reauthored; exact-object natural/perceptual review remains necessary.",
+    "Opening-table-b overlaps runway: its own exposed base pixel ownership is still unobserved.",
+    "Built state-observed input policy won calm-moon and replayed to ready on both viewports with no page errors. It reads internal y/vy to schedule real inputs and is implementation evidence, NOT independent natural-player acceptance.",
+    "Built desktop trace has four handle rebounds against stack-a before cutting its bearing block. Natural player-feel QA must assess this exact branch; do not hide behind unit tests.",
+    "Full natural same-ID stack contact → released unsupported upper → fall/landing chain, bypass alternative, hazard approach/contact/failure and bonus journey still require independent captures.",
+    "Reward timing follows reward-acceptance-clarification.json: abandoned queue and HUD delay were removed. red-reward.log / green-suite-4.log are superseded experiment evidence, not new requirements or final implementation. main.ts reward behavior restored; test checks intact zero, separated halves, target ID and replay reset.",
+    "Web build is QA evidence only; no target mini-game platform publishability claim."
+  ],
+  "completedAt": "2026-09-07T06:28:00Z"
+}

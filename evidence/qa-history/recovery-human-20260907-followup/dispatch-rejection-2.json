@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "dispatch-rejection",
+  "cycleId": "human-review-20260907-l1-followup",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "action": "resume stored Fixer thread for attempt 1 using the validated attempt-1/task.json",
+  "status": "REJECTED_BY_AUTOMATIC_APPROVAL_REVIEW",
+  "reason": "Automatic approval review classified the dispatch as potentially allowing an external Fixer to modify the generated game workspace; policy forbids the action even after the user's general repair authorization and forbids a workaround.",
+  "taskPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/task.json",
+  "triagePath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/triage.json",
+  "sourceModified": false,
+  "recordedAt": "2026-09-07T09:30:00.000Z"
+}

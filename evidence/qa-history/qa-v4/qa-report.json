@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "passed": true,
+  "checks": [
+    {
+      "name": "CONTACTS",
+      "passed": true,
+      "evidence": "Using seed 31 and real Chromium mouse input, a single opening click cut once and sharply anchored on white-landing at 1.496 s wall time. Repeating the opening with only one simple timing change—a second click at 450 ms—cut once and produced a visible blunt bounce at 0.816 s. contact-anchor.png and contact-450.png show the distinct branches; the bounce branch remained airborne and recoverable."
+    },
+    {
+      "name": "BONUS",
+      "passed": true,
+      "evidence": "The same visible-state real-input route split reliably near the finish: a correction at x≈2609 selected safe and won at 15.387 s, while moving that correction slightly earlier to x≈2506 selected bonus and entered the visibly distinct purple bonus course at 16.194 s. A real click in bonus produced a cut, then no further correction caused fall failure after 2.607 s. One terminal real click returned to phase=ordinary/status=ready, proving the failed bonus chance did not restart in bonus."
+    },
+    {
+      "name": "RUNTIME",
+      "passed": true,
+      "evidence": "During active mid-course flight, a 1.394 s main-thread stall plus observation overhead measured 1.645 s wall time and advanced simulation by 1.592 s. The blade remained airborne and progressed from x=686.1 to x=963.05, so accumulated active time was not silently truncated."
+    },
+    {
+      "name": "MOBILE",
+      "passed": true,
+      "evidence": "At 390x844, native touch produced launch, first cut and anchor on white-landing. A separate native-touch cadence reached spike failure, and one native terminal touch returned to ordinary/ready with failReason cleared. scrollWidth/innerWidth and scrollHeight/innerHeight were exactly 390/390 and 844/844 with scrollX=scrollY=0."
+    },
+    {
+      "name": "ERRORS",
+      "passed": true,
+      "evidence": "Desktop and mobile Chromium sessions recorded zero page errors and zero console errors. Only Chromium WebGL ReadPixels performance warnings appeared; no game exception or failed runtime request was observed."
+    }
+  ],
+  "issues": [],
+  "screenshots": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v4/contact-anchor.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v4/contact-450.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v4/safe-finish.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v4/bonus-entry.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v4/bonus-play.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v4/bonus-end.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v4/mobile-first-anchor.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v4/mobile-restart.png"
+  ],
+  "consoleLog": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v4/console.log",
+  "testedAt": "2026-08-30T14:02:30Z"
+}

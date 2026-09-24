@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "cells": [
+    {
+      "id": "L1-FIRST-TARGET-VISIBILITY-390x844",
+      "objectType": "rune-1 sigil sphere",
+      "stateBranch": "intact before first cut → contact → split",
+      "renderer": "default main Three.js intact scalar-material path",
+      "viewport": "390x844",
+      "acceptance": "完整物体可见且底部与承托接触；自然首次输入切到同一对象。",
+      "status": "PASS",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-1/frames/startup.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-1/frames/dense-0024.jpg",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-1/recording.json"
+      ],
+      "notes": "完整球体、接触及分离已逐张检查。"
+    },
+    {
+      "id": "L1-OPENING-TABLE-A-390x844",
+      "objectType": "opening-table-a",
+      "stateBranch": "startup/intact → first cut",
+      "renderer": "default ThreeWorldRenderer.syncSupports",
+      "viewport": "390x844",
+      "acceptance": "具备从薄顶面延伸至实际地面的厚基座，并承托首个物体。",
+      "status": "PASS",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-1/frames/startup.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-1/recording.json"
+      ],
+      "notes": "首个独立柱体和底部接地可见；支持的是exact opening-table-a。"
+    },
+    {
+      "id": "L1-OPENING-TABLE-B-390x844",
+      "objectType": "opening-table-b",
+      "stateBranch": "startup/intact → approach",
+      "renderer": "default ThreeWorldRenderer.syncSupports",
+      "viewport": "390x844",
+      "acceptance": "同一opening-table-b基座接地与承托关系有自然可见证据。",
+      "status": "BLOCKED",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-3/frames/frame-0000.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-3/recording.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-world-renderer.ts"
+      ],
+      "notes": "源码精确分支已补入、结束于实际地面；但b位于main runway内部，默认画面基座重叠。当前截图只确认该区域连续接地，不能独立归属b的底部；这属于证据缺口，不宣称代码修复失败，也不推定必须改变布局。"
+    },
+    {
+      "id": "L1-FIRST-TARGET-VISIBILITY-1100x720",
+      "objectType": "rune-1 sigil sphere",
+      "stateBranch": "intact before first cut → contact → split",
+      "renderer": "default main Three.js intact scalar-material path",
+      "viewport": "1100x720",
+      "acceptance": "完整物体可见且底部与承托接触；自然首次输入切到同一对象。",
+      "status": "PASS",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-1/frames/startup.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-1/frames/dense-0020.jpg",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-1/recording.json"
+      ],
+      "notes": "完整球体、接触及分离已逐张检查。"
+    },
+    {
+      "id": "L1-OPENING-TABLE-A-1100x720",
+      "objectType": "opening-table-a",
+      "stateBranch": "startup/intact → first cut",
+      "renderer": "default ThreeWorldRenderer.syncSupports",
+      "viewport": "1100x720",
+      "acceptance": "具备从薄顶面延伸至实际地面的厚基座，并承托首个物体。",
+      "status": "PASS",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-1/frames/startup.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-1/recording.json"
+      ],
+      "notes": "首个独立柱体和底部接地可见；支持的是exact opening-table-a。"
+    },
+    {
+      "id": "L1-OPENING-TABLE-B-1100x720",
+      "objectType": "opening-table-b",
+      "stateBranch": "startup/intact → approach",
+      "renderer": "default ThreeWorldRenderer.syncSupports",
+      "viewport": "1100x720",
+      "acceptance": "同一opening-table-b基座接地与承托关系有自然可见证据。",
+      "status": "BLOCKED",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-3/frames/frame-0000.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-3/recording.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-world-renderer.ts"
+      ],
+      "notes": "源码精确分支已补入、结束于实际地面；但b位于main runway内部，默认画面基座重叠。当前截图只确认该区域连续接地，不能独立归属b的底部；这属于证据缺口，不宣称代码修复失败，也不推定必须改变布局。"
+    }
+  ]
+}

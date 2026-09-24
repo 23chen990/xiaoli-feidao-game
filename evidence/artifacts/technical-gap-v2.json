@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "TechnicalGapArtifact",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "currentArchitecture": {
+    "files": [
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+        "responsibility": "120Hz 固定步长确定性模拟、关卡数据、单键输入、圆形切割物、静态支撑、尖刺、终点和一次性奖励局。"
+      },
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/main.ts",
+        "responsibility": "Phaser 灰盒渲染、鼠标/触屏/键盘输入、镜头、HUD、反馈和 window.__PROTOTYPE_TEST__ 测试桥。"
+      },
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/game-core.test.ts",
+        "responsibility": "25 项现有回归中的核心模拟、接触、失败、终点、奖励局和固定步长测试。"
+      },
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/browser-smoke.ts",
+        "responsibility": "真实 Chromium 鼠标、键盘、原生触屏、移动端布局、低帧和奖励局验证。"
+      },
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/build.test.ts",
+        "responsibility": "验证 dist/index.html 自包含、可立即试玩、测试桥和关键说明文案。"
+      },
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/package.json",
+        "responsibility": "test、lint、typecheck、build 脚本及 Phaser、Playwright、TypeScript 依赖。"
+      },
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/open-source-research.json",
+        "responsibility": "已完成的开源复用证据；仅批准 Phaser 3.90.0 用于 web-lite 开发和浏览器 QA。"
+      },
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/src/schemas/open-source-research.ts",
+        "responsibility": "open-source-research.json 的严格 Zod schema；当前 artifact 满足版本、许可证、不可变版本和平台适配结论要求。"
+      },
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v4/qa-report.json",
+        "responsibility": "当前已通过版本的不可变 QA 基线，包含接触、奖励局、低帧、移动端和零运行时错误证据。"
+      }
+    ],
+    "strengths": [
+      "核心模拟与 Phaser 渲染已分离，可优先在无浏览器环境测试行为。",
+      "120Hz 固定步长、帧累积和种子关卡已覆盖 30/60/120Hz 及长帧回归。",
+      "单键输入已去重，鼠标、键盘和原生触屏共用相同动作语义。",
+      "锐端切割、锐端锚定、钝端反弹、尖刺/坠落失败和一触重开已有稳定基线。",
+      "奖励局失败后不能原地重试的状态转换已存在。",
+      "构建产物为单文件自包含 HTML，适合作为可试玩验收件。"
+    ],
+    "constraints": [
+      "SafeSupport 只有静态 AABB，没有原点、运动参数、速度或锚定相对坐标。",
+      "当前 fixedUpdate 在 ready 或 anchored 状态立即返回，因此移动环境和坍落物无法在这些状态继续演化。",
+      "segmentTouchesBox 只返回布尔值，没有首次接触时间、接触法线或相对速度，无法正确产生方向性后退。",
+      "钝端碰撞强制把 vx 变为正值，不能表现侧墙将刀撞回左侧。",
+      "切割目标只有圆形 CuttableSigil，切开后仅增加 splitAge，没有实体碎片、矩形物、结构依赖或坍落。",
+      "接触模型仅有锐端与钝端两个点，没有刀尖、刀刃、刀身/刀背、刀柄分类。",
+      "终点仅有 safe 和 bonus 两类，且普通关每局都提供奖励入口；没有乘法/除法运算门。",
+      "浏览器 smoke 依赖外部 4182 服务器，package.json 没有独立可重复执行的浏览器 QA 脚本。",
+      "workspace 位于被 Git 忽略的 run 输出中，无法通过 Git 区分历史生成改动与用户改动，必须把当前全部文件视为需保留的用户/生成状态。",
+      "现有开源研究只批准 Phaser 用于 web-lite，不得据此宣称微信、抖音或 TapTap 包可发布。",
+      "不得复制第三方代码、素材、关卡布局、UI、名称或完整调参；新关卡必须采用原创灰盒编排。"
+    ]
+  },
+  "proposedChanges": [
+    {
+      "file": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "change": "保留单一确定性模拟，新增 worldTime；把环境更新放到玩家状态判断之前。扩展 SafeSupport 为可选的轴向运动描述，并记录每步位移和速度。锚定时保存玩家相对支撑面的 attachment offset，支撑面移动时携带刀；重新起跳继承支撑速度。",
+      "tests": ["MOV-001", "MOV-002", "MOV-003", "FIXED-001"],
+      "risk": "HIGH"
+    },
+    {
+      "file": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "change": "用返回 time-of-impact、法线和 surface velocity 的 swept point/AABB 接触查询替代布尔碰撞；定义 tip、edge、body/spine、handle 四类采样接触。锐端对支撑面锚定，非锐接触按相对速度和法线反射，可在侧向撞击后得到负 vx；空中点击施加有上限的向前恢复冲量，使后退状态可救回但不会瞬间抹除碰撞结果。",
+      "tests": ["CONTACT-001", "CONTACT-002", "RECOIL-001", "RECOIL-002", "RECOIL-003", "FIXED-001"],
+      "risk": "HIGH"
+    },
+    {
+      "file": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "change": "在保留现有圆形 sigil 回归的同时增加矩形 CuttableBlock；方块可位于台面上方、侧面、下方或形成竖塔。只有 tip/edge 扫掠可以切割，body/spine/handle 接触走实体反弹。切割时生成两个确定性 fragment；结构块通过 supportedBy 依赖形成堆叠，父块被切开后其上层完整块转为 falling，碎片和坍落块受重力、角速度和世界边界控制，不引入完整刚体引擎。",
+      "tests": ["CUT-001", "CUT-002", "CUT-003", "STRUCT-001", "STRUCT-002", "FIXED-001"],
+      "risk": "HIGH"
+    },
+    {
+      "file": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "change": "把终点改为数据驱动 FinishGate，支持 multiply、divide、bonus 三种操作并抽出纯 applyFinishOperation。提供所需倍率/除法能力，但使用项目原创的空间编排、风险宽度和节奏。奖励入口由种子确定是否出现，进入后设置 consumed；成功或失败后的下一触都进入新普通局，不能重复同一奖励局。",
+      "tests": ["FINISH-001", "FINISH-002", "FINISH-003", "BONUS-001", "BONUS-002"],
+      "risk": "MEDIUM"
+    },
+    {
+      "file": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "change": "重写 createCourse 为原创机制展示路线：先无文字演示上方矩形切割，再展示侧挂/下挂木块、可移动支撑携带、侧墙后退可救、切塔坍落、尖刺与空隙压力，最后进入数学终点或偶发奖励局。种子只改变受控参数，不破坏教学顺序。",
+      "tests": ["COURSE-001", "COURSE-002", "COURSE-003", "PLAY-001"],
+      "risk": "HIGH"
+    },
+    {
+      "file": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/main.ts",
+      "change": "保持现有原创夜市场景、单键输入、镜头和声音代码不扩展；新增移动支撑、矩形切割物、碎片、坍落块、接触部位提示及数学门的灰盒绘制。更新测试桥以暴露只读场景状态和确定性 loadScenario/debug 辅助，便于 Reviewer 逐项验证，不制作正式 UI。",
+      "tests": ["RENDER-001", "PLAY-001", "PLAY-002"],
+      "risk": "MEDIUM"
+    },
+    {
+      "file": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/game-core.test.ts",
+      "change": "测试先行加入移动平台、锚定携带、四部位分类、法线反弹、后退救回、三种位置矩形切割、父子结构坍落、碎片分离、数学终点、偶发奖励和固定步长一致性；保留现有 25 项可兼容回归，仅在终点数据结构发生有意变化时改写对应断言。",
+      "tests": ["MOV-001", "MOV-002", "MOV-003", "CONTACT-001", "CONTACT-002", "RECOIL-001", "RECOIL-002", "RECOIL-003", "CUT-001", "CUT-002", "CUT-003", "STRUCT-001", "STRUCT-002", "FINISH-001", "FINISH-002", "FINISH-003", "BONUS-001", "BONUS-002", "COURSE-001", "COURSE-002", "COURSE-003", "FIXED-001"],
+      "risk": "MEDIUM"
+    },
+    {
+      "file": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/browser-smoke.ts",
+      "change": "增加真实鼠标和原生触屏的机制验收场景与截图：移动平台携带、侧撞后退和一触救回、台下切割、切塔坍落、数学终点、奖励出现/不出现及失败后不可重试；继续记录 console/page error 和移动端无滚动。",
+      "tests": ["PLAY-001", "PLAY-002", "RENDER-001"],
+      "risk": "MEDIUM"
+    },
+    {
+      "file": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/build.test.ts",
+      "change": "更新自包含构建断言，加入新机制的可见标签和测试桥能力，同时保留 AudioContext 存在性但不增加或评价新声音。",
+      "tests": ["BUILD-001"],
+      "risk": "LOW"
+    },
+    {
+      "file": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/package.json",
+      "change": "新增独立 qa:browser 脚本；不增加生产依赖。脚本应使用现有 Vite 和 Playwright 启动临时本地预览、运行 smoke 并可靠关闭服务器。",
+      "tests": ["QA-SCRIPT-001"],
+      "risk": "LOW"
+    }
+  ],
+  "testMatrix": [
+    {"id": "MOV-001", "behavior": "移动支撑面的坐标由 seed、worldTime、轴、振幅、周期和相位确定。", "level": "unit", "assertion": "同 seed 同时间完全相同；不同帧分割在允许误差内收敛；位移不越过配置振幅。"},
+    {"id": "MOV-002", "behavior": "锐端锚定移动支撑后，刀保持固定的局部 attachment offset。", "level": "unit", "assertion": "多个固定步后玩家位移等于支撑位移，anchorId 不变且不穿透。"},
+    {"id": "MOV-003", "behavior": "从移动支撑重新起跳时继承支撑表面速度。", "level": "unit", "assertion": "起跳速度等于基础冲量与支撑速度的组合，清除 anchorId 且状态变为 airborne。"},
+    {"id": "CONTACT-001", "behavior": "刀尖、刀刃、刀身/刀背、刀柄接触能被确定性分类。", "level": "unit", "assertion": "四个固定姿态分别返回唯一预期 contactPart、法线和有效首次接触时间。"},
+    {"id": "CONTACT-002", "behavior": "只有刀尖或刀刃可切割；刀身/刀背和刀柄不能误切。", "level": "unit", "assertion": "相同矩形目标的四种接触中仅 sharp 类改变 cut 状态并只记分一次。"},
+    {"id": "RECOIL-001", "behavior": "向右运动的刀以非锐部位撞击竖直表面后真正向左后退。", "level": "unit", "assertion": "碰撞前 vx 大于零，碰撞后 vx 小于零，bounce 事件携带负向法线信息。"},
+    {"id": "RECOIL-002", "behavior": "顶部、底部和侧面的反弹遵循接触法线而不是固定向上/向右。", "level": "unit", "assertion": "相对法线速度碰撞后换向，切向速度按配置保留且玩家被移出穿透。"},
+    {"id": "RECOIL-003", "behavior": "后退状态可通过空中点击救回。", "level": "unit", "assertion": "碰撞后一次或有限次数点击使 vx 朝前改善并避免立即失败，同时第一帧仍可观察到负 vx。"},
+    {"id": "CUT-001", "behavior": "台面上方矩形物可被锐刃扫过切开。", "level": "unit", "assertion": "目标进入 split，生成两个 fragment，分数和 cut 事件各增加一次。"},
+    {"id": "CUT-002", "behavior": "支撑侧面与下方矩形物可由对应入射方向切开。", "level": "unit", "assertion": "两个位置均无需先移动到台面上方即可被锐刃命中，非锐姿态不切。"},
+    {"id": "CUT-003", "behavior": "高速或低帧下的矩形切割使用连续扫掠避免穿透漏判。", "level": "unit", "assertion": "单个长帧和等时长细分帧命中同一目标并得到相同切割结果。"},
+    {"id": "STRUCT-001", "behavior": "堆叠结构的承重父块切开后，上层完整块开始坍落。", "level": "unit", "assertion": "父块 split 后所有直接或递归依赖子块变为 falling，y 和 vy 随固定步增长。"},
+    {"id": "STRUCT-002", "behavior": "切割碎片沿切线两侧分离并受重力坠落。", "level": "unit", "assertion": "两 fragment 的初始分离速度方向相反，随后 y 增大且不会再次记分或碰撞为完整块。"},
+    {"id": "FINISH-001", "behavior": "数学终点支持乘法。", "level": "unit", "assertion": "各配置乘法门通过纯函数得到确定性整数分数，并只应用一次。"},
+    {"id": "FINISH-002", "behavior": "数学终点支持除法。", "level": "unit", "assertion": "除数大于零，结果遵守项目定义的取整规则且不会出现 NaN、Infinity 或负分。"},
+    {"id": "FINISH-003", "behavior": "数学门与奖励门根据空间命中选择，未命中任何门会失败。", "level": "unit", "assertion": "同一入场 x 下不同 y 只触发一个 gateId，越界不重复结算。"},
+    {"id": "BONUS-001", "behavior": "奖励入口只在确定性的一部分普通局出现。", "level": "unit", "assertion": "固定 seed 集合同时包含 available=true 和 false；同 seed 重置结果一致。"},
+    {"id": "BONUS-002", "behavior": "奖励局每次只有一次机会。", "level": "unit", "assertion": "奖励失败或成功后下一触均进入 seed+1 的 ordinary/ready，不能回到已消费奖励局。"},
+    {"id": "COURSE-001", "behavior": "原创普通路线覆盖上方、侧面和下方切割物。", "level": "unit", "assertion": "课程数据中三种 placement 均存在且没有复用第三方关卡坐标。"},
+    {"id": "COURSE-002", "behavior": "原创路线覆盖至少一个移动支撑和一个可产生横向后退的碰撞面。", "level": "unit", "assertion": "课程数据存在 motion support 与竖直接触面，且测试路径可以触发 carry 和 negative vx。"},
+    {"id": "COURSE-003", "behavior": "原创路线覆盖至少一组可见堆叠坍落和失败压力。", "level": "unit", "assertion": "存在 supportedBy 依赖链、尖刺和空隙，切开承重块后出现坍落。"},
+    {"id": "FIXED-001", "behavior": "新增环境、接触、碎片和坍落在 30/60/120Hz 及 420ms 长帧下保持确定性。", "level": "unit", "assertion": "关键坐标、状态、事件顺序和分数在容差内一致，原有时间不丢失测试继续通过。"},
+    {"id": "RENDER-001", "behavior": "所有新增机制在灰盒画面中语义可辨。", "level": "browser", "assertion": "截图中移动支撑有运动标记，切割物与不可切支撑颜色/轮廓不同，碎片和数学门标签可见，无控制台错误。"},
+    {"id": "PLAY-001", "behavior": "桌面真实输入可完整经历移动携带、后退救回、台下切割、坍落和至少一种数学终点。", "level": "browser", "assertion": "Playwright 只通过鼠标/键盘输入完成机制路径，状态事件和截图同时证明每项发生。"},
+    {"id": "PLAY-002", "behavior": "390x844 原生触屏可以完成同一核心循环并一触重开。", "level": "browser", "assertion": "原生 touch 产生输入，页面无滚动/溢出，失败后一次触摸回到 ready，console/page error 为零。"},
+    {"id": "BUILD-001", "behavior": "交付物仍为可离线打开的单文件 web-lite demo。", "level": "unit", "assertion": "dist/index.html 包含内联脚本/样式、测试桥和新增机制标签，不包含外部 script/link。"},
+    {"id": "QA-SCRIPT-001", "behavior": "浏览器 QA 可从 package script 独立重复执行。", "level": "manual", "assertion": "一次命令启动临时预览、完成桌面和移动端 smoke、退出码为零并关闭子进程。"}
+  ],
+  "implementationOrder": [
+    "冻结当前文件哈希和 qa-v4，不覆盖历史证据；先把本轮机制验收矩阵保存为新的 run artifact。",
+    "在 tests/game-core.test.ts 先写 MOV、CONTACT、RECOIL、CUT、STRUCT、FINISH、BONUS 和 FIXED 失败测试。",
+    "在 game-core.ts 先实现纯几何接触结果和四部位分类，再接入现有 fixedUpdate。",
+    "加入 worldTime、移动支撑、锚定相对坐标和支撑速度继承。",
+    "加入法线反弹、真实负向 vx 及有限前向恢复冲量。",
+    "加入矩形切割物、碎片和 supportedBy 坍落依赖，不引入通用刚体或新生产依赖。",
+    "加入数据驱动数学终点和基于 seed 的偶发一次性奖励规则。",
+    "用原创机制教学路线替换仅圆形目标的课程编排，同时保留现有单键、失败、一触重开和固定步长回归。",
+    "在 main.ts 完成灰盒可视化和测试场景桥；声音代码保持冻结。",
+    "更新 build/browser 测试和 package QA 脚本，运行 test、lint、typecheck、build，再由独立 Reviewer 执行桌面与移动端真实试玩。",
+    "Reviewer 若发现明确问题，仅交给 FixerAgent 最多两轮；全部通过后打开最终 demo 给用户验收。"
+  ],
+  "preserve": [
+    "只修改目标 workspace；不改 prototype-b、prototype-c、旧妖怪夜市 fixture 或共享 factory 代码。",
+    "保留当前一触翻转、按键去重、触屏 preventDefault 和一触重开体验。",
+    "保留 120Hz 固定步长、低帧追赶、种子确定性和深拷贝 getState。",
+    "保留锐端切割/锚定、非锐反弹、尖刺与坠落不同失败原因的既有语义。",
+    "保留现有原创名称“符刃夜行”、夜市场景表达和占位美术方向；不复制第三方 UI、素材或关卡布局。",
+    "声音工作已暂停；保留现有 ToneBus 和 AudioContext 解锁回归，但不新增、替换或调音。",
+    "保留 window.__PROTOTYPE_TEST__ 的 resetGame、getState、act、step、getViewState 兼容接口，只做向后兼容扩展。",
+    "保留自包含 dist/index.html 构建方式和当前 Phaser 3.90.0 依赖，不新增生产依赖。",
+    "保留 /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v4 全部报告、日志和截图，不覆盖，新的证据写入新 QA 目录。",
+    "遵守 open-source-research.json 的限制：Phaser 仅作为 web-lite 开发/QA renderer，不宣称三种小游戏平台可发布。",
+    "工作区未被 Git 跟踪，因此 BuilderAgent 必须在编辑前记录现有源码/测试哈希，并避免清空、重建或覆盖整个目录。"
+  ],
+  "openQuestions": [
+    "矩形可切物在未切开时是否允许锐端锚定，需要机制研究 artifact 明确；最小建议是锐端切穿、非锐部位反弹，避免与白色支撑语义混淆。",
+    "移动支撑是否携带附着在其侧面/底面的刀，需要实际证据确认；架构可支持任意接触面的局部 attachment offset。",
+    "用户观察到的后退是所有非锐侧撞都发生，还是特定材质/障碍专属；实现应先做数据驱动 restitution/impulse，避免写死到全部支撑。",
+    "数学门的精确数值序列、宽度和排列若来自第三方调参，不应原样复制；引擎可以支持所需操作和值域，但试玩路线应采用项目自己的空间配置与风险平衡。",
+    "奖励局出现频率尚无可靠实测；应使用原创且确定性的 seed 规则，并在 Reviewer 报告中明确这是项目调参而非第三方复刻。",
+    "完整通用刚体切割超出最小 demo；建议验收范围锁定为轴对齐矩形、两片确定性碎片和显式 supportedBy 坍落链。"
+  ]
+}

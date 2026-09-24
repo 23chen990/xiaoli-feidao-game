@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "reproduction": {
+    "evidence": ["用户红框截图：蓝色切碎物体悬在空间", "tests/artifacts/qa-3d-main-v1/desktop-natural-sigil-grounded.png", "tests/artifacts/qa-3d-main-v1/mobile-natural-sigil-grounded.png"],
+    "steps": ["fresh browser 启动默认关卡", "仅用真实鼠标或原生触屏切中蓝色 sigil", "等待 3 秒观察两半下落与落地"]
+  },
+  "classification": "physics+core_experience",
+  "scope": ["sigil 碎片重力/落地", "切割状态到 3D renderer 的同步", "结算状态下仍更新碎片"],
+  "acceptance": ["sigil y 随时间下降并到达 worldBottom-radius", "落地后 vy=0 且视觉不悬空/不穿模", "桌面鼠标和 390x844 原生触屏自然 trace + grounded screenshot"] ,
+  "route": "formal-fixer",
+  "reason": "核心玩法的可见切割结果与物理状态不一致，且旧验证只覆盖 block fragment/fixture，必须独立自然复测。"
+}

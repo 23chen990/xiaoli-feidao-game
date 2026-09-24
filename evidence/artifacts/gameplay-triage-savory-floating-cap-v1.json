@@ -1,0 +1,41 @@
+{
+  "artifactType": "gameplay-triage",
+  "schemaVersion": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "reproduction": {
+    "evidence": "Attached screenshot shows a savory/log cut half with a detached circular yellow sigil-like surface below the cut face.",
+    "branch": "savory intact -> cut -> falling -> landed",
+    "matrix": {
+      "objectTypes": ["savory/log cuttable"],
+      "lifecycleStates": ["intact", "cut", "falling", "landed"],
+      "rendererPaths": ["Three.js body mesh", "half overlay/cap mesh"],
+      "viewports": ["mobile landscape", "desktop" ]
+    }
+  },
+  "classification": "cross-skin cut-face presentation defect",
+  "acceptance": [
+    "Savory cut halves use their authored log cut-face silhouette/material.",
+    "No circular generic sigil/cap floats outside a savory half.",
+    "Fruit, dessert, savory and mystic half branches remain visually distinct.",
+    "Natural-input runtime QA passes the exact savory cut branch with visible evidence."
+  ],
+  "resolution": {
+    "change": "Hide the generic cap overlay for log halves because the authored half-log cylinder already contains its end face; dessert keeps the same protection.",
+    "files": [
+      "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-cut-visuals.ts",
+      "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/three-presentation.test.ts"
+    ]
+  },
+  "evidence": {
+    "tests": "151 passed, 0 failed",
+    "typecheck": "passed",
+    "lint": "passed",
+    "build": "passed",
+    "naturalQA": "passed",
+    "perceptualQA": "passed",
+    "runnerReport": "runs/mobile-slice-adaptation-20260830/qa-level-pack-v1/runner-report.json",
+    "qaReport": "runs/mobile-slice-adaptation-20260830/qa-level-pack-v1/qa-report.json"
+  },
+  "status": "PASS"
+}

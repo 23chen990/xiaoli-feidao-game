@@ -1,0 +1,3 @@
+command: pnpm lint
+exitCode: 0
+result: tsc --noEmit -p tsconfig.core.json --noUnusedLocals --noUnusedParameters passed

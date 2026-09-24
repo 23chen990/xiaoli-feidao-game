@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "reproduction": {
+    "evidence": "用户反馈：切碎的物品在 3D 场景中悬在空间；重点核对碎片重力、地面接触与渲染坐标对齐。",
+    "steps": ["从默认起点自然切中可切物", "观察切碎两半的下落", "等待至少 3 秒确认碎片稳定落地且不穿过地面"]
+  },
+  "classification": "physics/core_experience/render-coordinate-alignment",
+  "scope": ["碎片重力与地面/支撑碰撞", "碎片视觉坐标与模拟地面一致", "自然鼠标/触屏复测"],
+  "acceptance": [
+    "碎片受重力下落并在地面或有效支撑顶部稳定，速度和角速度衰减至零",
+    "渲染地面顶面与模拟 worldBottom 同平面，碎片不悬空、不穿模",
+    "fresh browser 中真实鼠标与 390x844 原生触屏完成切碎→下落→落地稳定并保留截图/trace"
+  ],
+  "route": "formal-fixer",
+  "reason": "问题影响核心物理与玩家可见反馈，并涉及 3D 渲染/物理坐标一致性，必须 QA→Fixer→QA retest。"
+}

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "ThreeCutPocBrowserQaReport",
+  "passed": true,
+  "url": "http://127.0.0.1:50729/poc-3d.html",
+  "smokeExitCode": 0,
+  "previewClosed": true,
+  "evidence": [
+    "desktop-intact-crate.png",
+    "desktop-impact-crate.png",
+    "desktop-cut-crate.png",
+    "desktop-cut-log.png",
+    "desktop-cut-crystal.png",
+    "mobile-cut-crate.png",
+    "console.log"
+  ],
+  "error": null
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "runtime-red-evidence",
+  "cycleId": "human-review-20260907-l1-followup",
+  "attempt": 2,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "hypothesis": "level1-runway-main collidable=false causes the visible runway to be skipped by support collision.",
+  "replaySource": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-independent-20260922/portrait-2/recording.json",
+  "replaySourceSha256": "79985826d63d04385578f570deb675ffe94163045e3a51896f0d50e3f59a6ae1",
+  "command": "SliceSimulation(31,1), replay same visible-guided tap timestamps at 120Hz; compare runway collidable=false vs true without changing source.",
+  "results": [
+    {"runwayCollidable": false, "status": "failed", "failReason": "fall", "timeSeconds": 10.908333333333355, "playerX": 1228.500611879152, "playerY": 719.1864933960865, "score": 3, "cuts": 2},
+    {"runwayCollidable": true, "status": "airborne", "failReason": null, "timeSeconds": 12, "playerX": 2134.2585484049473, "playerY": 413.60841326580186, "score": 4, "cuts": 2}
+  ],
+  "sourceModified": false,
+  "interpretation": "Distinct RED evidence supports a causal Level1 runway collision mismatch; Fixer must reproduce with a test before editing.",
+  "createdAt": "2026-09-22T04:00:00Z"
+}

@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "platform-qa-result",
+  "role": "QAAgent",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "testedSha256": "38036b56d671eaf6419fa88059e22fe103262607872bc7eb8339ea6b32b74cae",
+  "engineeringVerdict": "PASS",
+  "naturalJourneyVerdict": "BLOCKED",
+  "perceptualVerdict": "BLOCKED",
+  "filingPackageVerdict": "READY_FOR_BACKEND_SCAN",
+  "checks": [
+    {
+      "id": "TAP-START-A1-SCHEMAS",
+      "passed": true,
+      "evidence": "Independent PlatformQaTaskSchema and PlatformFixResultSchema parsing passed. FixerResult remains BLOCKED for missing exact-device evidence, which is consistent with a separate static engineering PASS."
+    },
+    {
+      "id": "TAP-START-A1-ZIP-IDENTITY-INTEGRITY",
+      "passed": true,
+      "evidence": "Independent shasum -a 256 returned exactly 38036b56d671eaf6419fa88059e22fe103262607872bc7eb8339ea6b32b74cae before result assessment. The ZIP is 1,206,608 bytes and unzip -tq reported no compressed-data errors. It was not rebuilt, modified, repackaged or uploaded."
+    },
+    {
+      "id": "TAP-START-A1-PACKAGE-CONTRACT",
+      "passed": true,
+      "evidence": "The exact ZIP contains root game.js, game.json and project.config.json. Metadata declares appid 928932, projectname 疯狂切割, compileType game, portrait and productVersion 1.0.0. ZIP src/settings.json declares 390x844/policy4 and launch scene db://assets/scenes/main.scene."
+    },
+    {
+      "id": "TAP-START-A1-RUNTIME-MARKERS",
+      "passed": true,
+      "evidence": "Exact-ZIP assets/main/index.js contains GameBootstrap, FIXED_WIDTH and screen.safeArea setup, separate static/dynamic Graphics layers, first-frame drawing, TOUCH_END input, cut/reflect, hazard/fall, settlement and terminal replay branches. These are structural package facts, not device startup evidence."
+    },
+    {
+      "id": "TAP-START-A1-PLUGIN-METADATA",
+      "passed": true,
+      "evidence": "Independent hashing of the retained official TapTap plugin 1.2.2 archive returned 6b8a9a3cc62b6c54cefab397097babb771d9d99f90442cddff06310a4c9ed73f; the installed extension package identifies TapTap version 1.2.2."
+    },
+    {
+      "id": "TAP-START-A1-STARTUP-OWNERSHIP-CONTRACT",
+      "passed": true,
+      "evidence": "startup-contract.json separately assigns com.taptap, PageProxyActivity and InstantGameActivity availability to the TapTap host, while game.js/game.json/project.config.json and the Cocos Graphics first frame belong to the package. It records packageShaBoundToFailureReport=null and requires an exact-SHA natural rerun."
+    },
+    {
+      "id": "TAP-START-A1-DEVICE-BRANCH-SEPARATION",
+      "passed": true,
+      "evidence": "startup-contract.json and reproduction-matrix.json keep OPPO PDBM00/Android 9 as backend-only with no raw trace, ZTE A2022P/Android 13 as host-fatal-exception, and OPPO PKB110/Android 16 as adjacent-model-mismatch. No sibling branch was used to close another model."
+    },
+    {
+      "id": "TAP-START-A1-TESTS-LINT-TYPECHECK",
+      "passed": true,
+      "evidence": "Independent read-only execution from platforms/taptap-minigame passed: pnpm test reported 18 tests, 18 pass, 0 fail; pnpm lint exited 0; pnpm typecheck exited 0. No Cocos build or converter was invoked."
+    },
+    {
+      "id": "TAP-START-A1-ZTE-A2022P-NATURAL-FIRST-FRAME",
+      "passed": false,
+      "evidence": "BLOCKED: supplied ZTE evidence shows a FATAL EXCEPTION in the com.taptap host before InstantGameActivity or the Cocos first frame is observed, followed by host termination. The exception stack body and exact package SHA binding are absent, so QA cannot classify this as a Cocos package crash or prove natural startup for SHA 38036b56d671eaf6419fa88059e22fe103262607872bc7eb8339ea6b32b74cae."
+    },
+    {
+      "id": "TAP-START-A1-OPPO-PDBM00-NATURAL-FIRST-FRAME",
+      "passed": false,
+      "evidence": "BLOCKED: OPPO PDBM00/Android 9 appears only in a backend table reporting mini-game Activity startup failure. No raw logcat, autotest trace, exact-SHA identity, physical viewport, player-visible first frame or ordinary-input journey is present."
+    },
+    {
+      "id": "TAP-START-A1-OPPO-PKB110-MISMATCH",
+      "passed": false,
+      "evidence": "BLOCKED as substitute evidence: OPPO PKB110/Android 16 is not OPPO PDBM00/Android 9. Its Activity-watcher failure and non-game final screenshot are adjacent evidence only and cannot pass or diagnose the PDBM00 branch."
+    },
+    {
+      "id": "TAP-START-A1-BACKEND-RETEST",
+      "passed": false,
+      "evidence": "BLOCKED: no TapTap backend scan or exact-SHA device rerun exists for this ZIP. READY_FOR_BACKEND_SCAN indicates only that static package checks allow the next backend step; it does not clear host, natural-journey or perceptual blockers."
+    }
+  ],
+  "issues": [
+    {
+      "id": "TAPTAP-HOST-ZTE-A2022P-FATAL-001",
+      "severity": "warning",
+      "message": "ZTE A2022P startup remains blocked by a TapTap host-process fatal exception before the package first frame, with the exception stack body missing.",
+      "evidence": "The verified ZTE log records FATAL EXCEPTION in com.taptap, force-finishing PageProxyActivity and host-process termination; it does not bind the run to the new ZIP SHA or show Cocos execution."
+    },
+    {
+      "id": "TAPTAP-OPPO-PDBM00-RAW-TRACE-002",
+      "severity": "warning",
+      "message": "OPPO PDBM00 requires its own exact-SHA raw startup trace and visible first-frame rerun.",
+      "evidence": "Only backend-table evidence exists for PDBM00; the available OPPO raw evidence identifies PKB110 and cannot be substituted."
+    }
+  ],
+  "evidenceGaps": [
+    "Exact-SHA ZTE A2022P trace reaching or failing before InstantGameActivity, including the complete com.taptap exception stack body and player-visible first-frame evidence.",
+    "Exact-SHA OPPO PDBM00/Android 9 raw logcat, automation trace, physical viewport and natural startup through ordinary touch, terminal settlement and replay.",
+    "TapTap backend scan/retest explicitly bound to SHA-256 38036b56d671eaf6419fa88059e22fe103262607872bc7eb8339ea6b32b74cae.",
+    "Player-visible evidence on both failed target branches confirming portrait Graphics first frame, readable feedback and responsive ordinary-input gameplay."
+  ]
+}

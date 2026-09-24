@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "attempt-triage",
+  "cycleId": "human-review-20260907-l1-followup",
+  "attempt": 3,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "issueId": "L1-RUNWAY-COLLISION-MISMATCH",
+  "objectType": "level1-runway-main and runway-supported early sigils",
+  "stateBranch": "visible runway -> support collision -> forward recovery",
+  "renderer": "game-core support collision -> ThreeWorldRenderer",
+  "deviceViewports": ["390x844", "1100x720"],
+  "reproduction": {
+    "source": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-independent-20260922/portrait-2/recording.json",
+    "normalInputOnly": true,
+    "tapTimesMs": [194.1381250000004, 1586.8637500000004, 2327.048167, 4602.164, 5309.087709, 6275.0135, 6948.908875, 7607.319334000001, 8567.920042000002, 9607.281041999999],
+    "observedBeforeFix": "runwayCollidable=false reaches fail/fall at 10.908333333333355 seconds, x=1228.500611879152",
+    "redComparison": "same replay with runwayCollidable=true remains airborne at 12 seconds, x=2134.2585484049473"
+  },
+  "classification": "confirmed-product-defect",
+  "scope": ["src/game-levels.ts", "tests/level1-recovery.test.ts"],
+  "acceptance": [
+    "The Level1 runway is collidable in the authored course.",
+    "The replay regression advances beyond x=2000 by 12 seconds without fail/fall caused by the missing runway support.",
+    "No other level or shared code is changed."
+  ],
+  "evidence": [
+    "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-2-runway-red-evidence.json",
+    "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-2-next-hypothesis.json"
+  ],
+  "createdAt": "2026-09-23T00:00:00.000Z"
+}

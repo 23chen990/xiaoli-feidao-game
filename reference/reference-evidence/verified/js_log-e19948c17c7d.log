@@ -1,0 +1,38 @@
+2026/9/8 13:07:01  [info]   Webglhost Git CommitId: 7372e37  Tue Sep 08 2026 13:07:01 GMT+0800 (中国标准时间)
+2026/9/8 13:07:01  [log]   欢迎使用 vConsole
+2026/9/8 13:07:01  [info]   run tj-proxy.js
+2026/9/8 13:07:01  [info]   use a new namespace: tap
+2026/9/8 13:07:01  [log]   {"brand":"vivo","model":"V2001A","pixelRatio":3,"devicePixelRatio":3,"screenWidth":360,"screenHeight":792,"windowWidth":360,"windowHeight":792,"statusBarHeight":33,"language":"zh_CN","version":"1.1.0","system":"Android 13","platform":"android","fontSizeSetting":16,"SDKVersion":"3.4.7","benchmarkLevel":32,"cameraAuthorized":false,"locationAuthorized":false,"microphoneAuthorized":false,"notificationAuthorized":true,"phoneCalendarAuthorized":false,"bluetoothAuthorized":true,"enableDebug":true,"safeArea":{"left":0,"right":360,"top":33,"bottom":792,"width":360,"height":759},"bluetoothEnabled":false,"wifiEnabled":false,"locationEnabled":true,"deviceOrientation":"portrait","fontSizeScaleFactor":1,"deviceAbi":"arm64-v8a","abi":"arm64-v8a","cpuType":"Qualcomm Technologies, Inc SM7250","memorySize":"7447","screenTop":0,"mode":"default","translateLanguage":"language_default","versionTaptap":"296101001","host":{"appId":"TapTap"},"tapSDKVersion":"2.16.30"}
+2026/9/8 13:07:02  [warn]   Read json failed: path: wxfile://usr/gamecaches/cacheList.json message: readFileSync:fail no such file "wxfile://usr/gamecaches/cacheList.json",
+2026/9/8 13:07:02  [log]   LoadScene db://assets/scenes/main.scene: 51 ms
+2026/9/8 13:07:02  [error]   TypeError: Cannot read properties of undefined (reading 'localSetLayout')
+    at e.initialize (wxfile://code/GameContext/index.js:1553:574788)
+    at e.initSubModel (wxfile://code/GameContext/index.js:1553:584030)
+    at e._updateModelParams (wxfile://code/GameContext/index.js:1553:994818)
+    at e._updateModels (wxfile://code/GameContext/index.js:1553:993166)
+    at e.onLoad (wxfile://code/GameContext/index.js:1553:987291)
+    at wxfile://code/GameContext/index.js:1553:650538
+    at e._invoke (wxfile://code/GameContext/index.js:1553:647342)
+    at i.invoke (wxfile://code/GameContext/index.js:1553:646672)
+    at e.activateNode (wxfile://code/GameContext/index.js:1553:651258)
+    at e._onHierarchyChangedBase (wxfile://code/GameContext/index.js:1553:381292)
+    at e._onHierarchyChanged (wxfile://code/GameContext/index.js:1553:382743)
+    at e.setParent (wxfile://code/GameContext/index.js:1553:376371)
+    at e.addChild (wxfile://code/GameContext/index.js:1553:376987)
+    at i.createBox (wxfile://code/GameContext
+2026/9/8 13:07:02  [error]   TypeError: Cannot read properties of null (reading 'length')
+    at PH (wxfile://code/GameContext/index.js:1553:982839)
+    at e._updateStandardSkin (wxfile://code/GameContext/index.js:1553:1000325)
+    at e.onEnable (wxfile://code/GameContext/index.js:1553:988825)
+    at e.qP [as _invoke] (wxfile://code/GameContext/index.js:1553:648007)
+    at i.invoke (wxfile://code/GameContext/index.js:1553:646672)
+    at e.activateNode (wxfile://code/GameContext/index.js:1553:651278)
+    at e._onHierarchyChangedBase (wxfile://code/GameContext/index.js:1553:381292)
+    at e._onHierarchyChanged (wxfile://code/GameContext/index.js:1553:382743)
+    at e.setParent (wxfile://code/GameContext/index.js:1553:376371)
+    at e.addChild (wxfile://code/GameContext/index.js:1553:376987)
+    at i.createBox (wxfile://code/GameContext/index.js:1428:86)
+    at i.buildCourse (wxfile://code/GameContext/index.js:1416:16)
+    at i.start (wxfile://code/GameContext/index.js:1380:44)
+    at wxfile://code/GameContext/index.js:1553:647628
+    at e.

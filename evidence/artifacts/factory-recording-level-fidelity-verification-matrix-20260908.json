@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "experience-reproduction-matrix",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "axes": {
+    "objectTypes": [
+      "recording derivative",
+      "semantic level contract",
+      "builder handoff",
+      "candidate runtime trace",
+      "historical generated game"
+    ],
+    "lifecycleStateBranches": [
+      "identity-bound extraction",
+      "research reconstruction",
+      "builder preflight and wiring",
+      "natural-input comparison and repair",
+      "historical product validation"
+    ],
+    "rendererPaths": [
+      "AVFoundation frame extraction",
+      "Zod semantic reconstruction",
+      "generated runtime scene",
+      "independent source-candidate comparison"
+    ],
+    "viewports": [
+      {
+        "label": "source-recording",
+        "width": 1100,
+        "height": 720
+      },
+      {
+        "label": "target-phone-portrait",
+        "width": 390,
+        "height": 844
+      },
+      {
+        "label": "target-large-phone",
+        "width": 430,
+        "height": 932
+      }
+    ]
+  },
+  "cells": [
+    {
+      "id": "verified-recording-extraction",
+      "objectType": "recording derivative",
+      "lifecycleStateBranch": "identity-bound extraction",
+      "rendererPath": "AVFoundation frame extraction",
+      "viewport": {
+        "label": "source-recording",
+        "width": 1100,
+        "height": 720
+      },
+      "status": "PASS",
+      "expected": "标准工厂只处理与目标 run、游戏、工作区和 SHA-256 匹配的录屏，并确定性生成可复核的时间戳帧与联系表。",
+      "observed": "唯一核验录屏在 8 FPS 下请求并提取 292 帧及 19 张联系表；全部保持 1100×720，逐文件哈希写入 v2 清单；相同命令复跑返回复用结果。",
+      "evidence": [
+        {
+          "path": "reference-evidence/incoming/_2026-09-06-135548-3781e4dcd3d2.mp4",
+          "sha256": "3781e4dcd3d21094f186cf442b3ee30cddfbb2fbe68d87c5c7470a2c742bf75a",
+          "kind": "reference",
+          "provenance": "verified-reference"
+        },
+        {
+          "path": "runs/mobile-slice-adaptation-20260830/artifacts/reference-frame-manifest.json",
+          "sha256": "c5b0c35f4f5bfb210827aac55b423db6381820cbb110a4c10510b05db3f0c440",
+          "kind": "qa-artifact",
+          "provenance": "verified-run-artifact"
+        },
+        {
+          "path": "src/core/reference-recording.ts",
+          "sha256": "a3846206679b8fc091f48f34ded5b4a6ef3b4275ec1b498ae5dd446cf693bfd5",
+          "kind": "factory-source",
+          "provenance": "repository-source"
+        },
+        {
+          "path": "tools/extract-video-frames.swift",
+          "sha256": "80ec774a89e9b179f4fac60a6a463ce09f84db16a328f9cd4ee30d4dcb776a10",
+          "kind": "factory-source",
+          "provenance": "repository-source"
+        }
+      ]
+    },
+    {
+      "id": "semantic-reconstruction-contract",
+      "objectType": "semantic level contract",
+      "lifecycleStateBranch": "research reconstruction",
+      "rendererPath": "Zod semantic reconstruction",
+      "viewport": {
+        "label": "source-recording",
+        "width": 1100,
+        "height": 720
+      },
+      "status": "PASS",
+      "expected": "研究结果必须覆盖来源帧、对象生命周期、检查点、摆放、关系、输入、反馈、镜头、终态和重玩；来源不一致或未知未解决时阻塞。",
+      "observed": "新增 schema、验证器与派生契约会核验帧时间邻近性、对象/关系/动作端点和完整终态；READY 契约缺少任一必要结构时 Zod 拒绝，原始坐标与第三方表达不会进入 Builder 契约。",
+      "evidence": [
+        {
+          "path": "src/schemas/reference-recording.ts",
+          "sha256": "ae7170379beafa5bd934e920a0279486ebbdade43eeb13a149f7f6a58489d0ea",
+          "kind": "factory-source",
+          "provenance": "repository-source"
+        },
+        {
+          "path": "src/core/reference-level.ts",
+          "sha256": "4742d4a2248ba1d0f4c4631bc9217c165bfeeb426e1f6b60833ef01d28fe797e",
+          "kind": "factory-source",
+          "provenance": "repository-source"
+        },
+        {
+          "path": "tests/unit/reference-level-reconstruction.test.ts",
+          "sha256": "010c12caf40f0f68bc2ed1eb4fbc6eb5ebb1d4fe52664568c06a1554ba481767",
+          "kind": "factory-source",
+          "provenance": "repository-source"
+        }
+      ]
+    },
+    {
+      "id": "builder-recording-contract-phone",
+      "objectType": "builder handoff",
+      "lifecycleStateBranch": "builder preflight and wiring",
+      "rendererPath": "generated runtime scene",
+      "viewport": {
+        "label": "target-phone-portrait",
+        "width": 390,
+        "height": 844
+      },
+      "status": "PASS",
+      "expected": "录屏重建缺失、BLOCKED 或哈希失配时 Builder 不启动；READY 时必须实现全部语义关卡结构并暴露只读运行时探针。",
+      "observed": "replica-preview 与完整流水线均把实现契约列为 Builder 强制输入；提示要求逐项接线，探针仅允许 getSnapshot 与 getNaturalInputTarget，契约失配会停在研究阶段。",
+      "evidence": [
+        {
+          "path": "src/providers/codex-account.ts",
+          "sha256": "dcd0f96db3a8a214d4d839eaaf7a83992e5fc2a75cf7015ba23a43e83c4573c2",
+          "kind": "factory-source",
+          "provenance": "repository-source"
+        },
+        {
+          "path": "src/factory.ts",
+          "sha256": "ed7fc6f66dc025f1ab64ecd23b1483a172d931d3eca5f6bf119568b6439fcc17",
+          "kind": "factory-source",
+          "provenance": "repository-source"
+        },
+        {
+          "path": "src/core/pipeline-plan.ts",
+          "sha256": "9aac91194d220b5c7b51f84647e6d036beecba336f23cc10ded40f10d70fb702",
+          "kind": "factory-source",
+          "provenance": "repository-source"
+        }
+      ]
+    },
+    {
+      "id": "independent-runtime-comparison",
+      "objectType": "candidate runtime trace",
+      "lifecycleStateBranch": "natural-input comparison and repair",
+      "rendererPath": "independent source-candidate comparison",
+      "viewport": {
+        "label": "target-phone-portrait",
+        "width": 390,
+        "height": 844
+      },
+      "status": "PASS",
+      "expected": "QA 只用自然输入生成绑定同一契约与 build hash 的候选轨迹，独立检查完整关卡，并在失败时进入有上限的正式修复与复测。",
+      "observed": "QA runner 使用真实 page.mouse 输入，重新计算并核验对象、生命周期、检查点、摆放、关系、动作目的检查点、镜头、终态和重玩；集成回归证明首轮关系失败进入 Fixer，第二轮复测通过且 fixAttempts 为 1。",
+      "evidence": [
+        {
+          "path": "src/qa/reference-level-qa.ts",
+          "sha256": "152445b203fc27b68c7af7d0a3b66ea11c374bfb51815da696524c74d36a6aae",
+          "kind": "factory-source",
+          "provenance": "repository-source"
+        },
+        {
+          "path": "tests/integration/orchestrator.test.ts",
+          "sha256": "2003136101dfc8bd19e639096eee0b65964a3ed4b1599bd4fcbcc46f96369423",
+          "kind": "factory-source",
+          "provenance": "repository-source"
+        },
+        {
+          "path": "factory-eval/latest.json",
+          "sha256": "167e20a2a91850a3c82b1152cd11a98a798e12201dc8deba0371cc448a7c4689",
+          "kind": "qa-artifact",
+          "provenance": "verified-run-artifact"
+        }
+      ]
+    },
+    {
+      "id": "historical-game-phone-product",
+      "objectType": "historical generated game",
+      "lifecycleStateBranch": "historical product validation",
+      "rendererPath": "generated runtime scene",
+      "viewport": {
+        "label": "target-phone-portrait",
+        "width": 390,
+        "height": 844
+      },
+      "status": "BLOCKED",
+      "expected": "小李飞刀由新链路重新研究、构建，并以自然输入和独立感知证据证明第一关完整流程。",
+      "observed": "本轮只修改共享工厂，未修改历史 workspace/prototype-a；该目录缺少可安全恢复的新控制面，审计结论仍为 REQUIRES_NEW_RUN_MIGRATION，因此不能把工厂回归通过当作旧游戏修复通过。",
+      "evidence": [
+        {
+          "path": "runs/mobile-slice-adaptation-20260830/artifacts/reference-quality-audit.json",
+          "sha256": "b3b8089fb3cfde1de7b370939455c2387ba28028fa8011400ffa212bab241c3e",
+          "kind": "qa-artifact",
+          "provenance": "verified-run-artifact"
+        }
+      ]
+    },
+    {
+      "id": "historical-game-large-phone-product",
+      "objectType": "historical generated game",
+      "lifecycleStateBranch": "historical product validation",
+      "rendererPath": "generated runtime scene",
+      "viewport": {
+        "label": "target-large-phone",
+        "width": 430,
+        "height": 932
+      },
+      "status": "BLOCKED",
+      "expected": "新候选在大屏手机投影下保持声明的对象可见性、粗粒度摆放、交互可达性、终态和重玩。",
+      "observed": "历史游戏尚未用录屏级契约重建，也没有当前 build hash 下覆盖该视口的运行轨迹与独立感知证据。",
+      "evidence": [
+        {
+          "path": "runs/mobile-slice-adaptation-20260830/artifacts/reference-quality-audit.json",
+          "sha256": "b3b8089fb3cfde1de7b370939455c2387ba28028fa8011400ffa212bab241c3e",
+          "kind": "qa-artifact",
+          "provenance": "verified-run-artifact"
+        }
+      ]
+    }
+  ],
+  "confirmedFindings": [
+    "共享工厂已经补齐录屏来源、逐帧派生、语义重建、Builder 实现契约、自然输入运行轨迹、独立比较和正式修复闭环。",
+    "真实录屏抽帧与幂等复用已经在目标 run 上完成；来源、目标、工作区和派生文件均有哈希绑定。",
+    "录屏比较失败会进入既有五次上限的正式 Fixer 流程，不能由 Builder 自述或单测覆盖。",
+    "历史小李飞刀游戏没有被本轮修改，也没有获得新链路下的产品通过结论。"
+  ],
+  "remainingGaps": [
+    "从已核验 seed 创建标准新 run，并把五份参考材料重新摄入该 run。",
+    "由 ResearchAgent 根据 292 帧生成该第一关的真实 READY 重建契约。",
+    "由 Builder/Fixer 在新 run 的 workspace/game 构建候选，并完成全部移动端自然输入、独立感知与真人 CORE_DEMO 验收。"
+  ],
+  "createdAt": "2026-09-08T10:09:14.000Z"
+}

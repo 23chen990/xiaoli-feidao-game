@@ -1,0 +1,7 @@
+page.evaluate: ReferenceError: found is not defined
+    at eval (eval at evaluate (:311:30), <anonymous>:10:115)
+    at Array.some (<anonymous>)
+    at eval (eval at evaluate (:311:30), <anonymous>:10:27)
+    at UtilityScript.evaluate (<anonymous>:313:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+    at main (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/run-post-builder-qa.cjs:408:27)

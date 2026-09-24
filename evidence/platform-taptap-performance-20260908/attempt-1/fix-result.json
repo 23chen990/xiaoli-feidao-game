@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "platform-fix-result",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "taptap-performance-compat-20260908",
+  "attempt": 1,
+  "targetGame": "mobile-slice-adaptation-20260830（TapTap 名称：疯狂切割）",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED",
+  "why": "formal-fixer was required because the reported TapTap performance gate spans four Android devices, release packaging and an ambiguous sampler reading. Zod-validated triage/matrix evidence confirms four FPS failures but does not bind the report to the current ZIP or provide a TapTap threshold/raw trace; therefore 0.02150376 is not treated as a confirmed rendering root cause. RED established both the missing sampling contract and a deterministic engineering bottleneck: GameBootstrap called full redrawCourse on every airborne update, repeatedly clearing and rebuilding all static Graphics geometry. The narrow causal repair separates retained static course Graphics from dynamic blade/feedback Graphics. At a nominal 60 Hz observation window, the source-work proxy changes from 36,000 full-scene redraws and approximately 648,000 repeated static fill/stroke operations over ten minutes to zero; this is not presented as a device FPS measurement. Cold start/first frame, fixed-width safe-area presentation, touch launch/flip, cut, reflection, failure/settlement and replay contracts remain intact. The one permitted Cocos Creator 3.8.8 build used unchanged official plugin 1.2.2 and produced an auditable package; 16/16 tests, performance contract, lint, typecheck, ZIP integrity and metadata pass. Status remains BLOCKED until exact-SHA device/backend natural and performance QA distinguishes real frame performance from sampler failure. Context intentionally omitted: prior runtime-cycle details beyond its package contract, other games/runs, web-lite, WeChat/Douyin, shared factory code, unrelated product systems and any invented FPS threshold.",
+  "filesChanged": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/assets/scripts/GameBootstrap.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/performance-contract.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tests/performance-contract.test.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tests/runtime-compat.test.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/build/TapBuild/game/",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/build/TapBuild/game.zip"
+  ],
+  "tests": [
+    {
+      "command": "Zod validation of task.json, triage.json, reproduction-matrix.json and cycle-state.json",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-performance-20260908/attempt-1/input-validation.log"
+    },
+    {
+      "command": "pnpm exec tsx --test tests/performance-contract.test.ts (RED)",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-performance-20260908/attempt-1/red-tests.log — missing sampling contract and per-frame full-course redraw both reproduced before implementation/build."
+    },
+    {
+      "command": "deterministic pre/post 10-minute render-work proxy",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-performance-20260908/attempt-1/performance-baseline.json and performance-after.json — avoided 36,000 full-scene redraws and approximately 648,000 static fill/stroke operations; device FPS intentionally not claimed."
+    },
+    {
+      "command": "pnpm test",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-performance-20260908/attempt-1/green-tests.log — 16/16 pass after the single build."
+    },
+    {
+      "command": "pnpm exec tsx --test tests/performance-contract.test.ts",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-performance-20260908/attempt-1/performance-benchmark-postbuild.log — 2/2 sampling/work separation checks pass."
+    },
+    {
+      "command": "pnpm lint",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-performance-20260908/attempt-1/lint.log"
+    },
+    {
+      "command": "pnpm typecheck",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-performance-20260908/attempt-1/typecheck.log"
+    },
+    {
+      "command": "unzip integrity/root metadata/settings/runtime markers/size/SHA and official plugin checks",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-performance-20260908/attempt-1/package-check.log — ZIP valid, required roots present, AppID 928932, 疯狂切割, portrait, 1.0.0, 390x844/policy4, static/dynamic layer markers present, size 1206608 bytes, official plugin archive hash matched."
+    }
+  ],
+  "build": {
+    "attempted": true,
+    "passed": true,
+    "zipPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/build/TapBuild/game.zip",
+    "sha256": "b224cd5470efb70e1de7d63f9361f7269835e4bf7adaa53123e76d67dfe24173",
+    "bytes": 1206608
+  },
+  "blockers": [
+    {
+      "id": "TAP-PERF-EXACT-SHA-DEVICE-QA-001",
+      "detail": "TapTap performance acceptance remains blocked until PHJ110, Huawei P30, Xiaomi 14 and OnePlus8_EEA are naturally retested for cold start, visible first frame, ordinary touch/terminal/replay and ten-minute stability on exact ZIP SHA b224cd5470efb70e1de7d63f9361f7269835e4bf7adaa53123e76d67dfe24173."
+    }
+  ],
+  "evidenceGaps": [
+    "No raw PHJ110 rendered-frame count, elapsed time, CPU/GPU split, memory timeline or touch trace is bound to the new ZIP SHA.",
+    "Huawei P30, Xiaomi 14 and OnePlus8_EEA lack per-device numeric traces, physical resolutions and exact-SHA natural/perceptual reruns.",
+    "The TapTap FPS threshold is absent from supplied evidence and was not invented.",
+    "The contradictory backend FPS 0.02150376 with 0.0% reported stutter remains an unconfirmed sampler-versus-rendering question.",
+    "No TapTap backend upload or performance acceptance was performed or claimed."
+  ]
+}

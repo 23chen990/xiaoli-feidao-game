@@ -1,0 +1,364 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "natural-branch-projection",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "buildHash": "599b4c3cb8c6b345b7e18b3a4e06cae33663c0432b918d3115ee78df3bf64118",
+  "source": "Read-only __GAME_TEST__.getState snapshots during fresh-context natural-input sessions; no setters, storage injection, debug API, fixture, or internal events dispatched.",
+  "inputTrials": [
+    {
+      "id": "static-550ms",
+      "viewports": [
+        {
+          "label": "portrait-390x844",
+          "width": 390,
+          "height": 844,
+          "input": "touch"
+        },
+        {
+          "label": "desktop-1100x720",
+          "width": 1100,
+          "height": 720,
+          "input": "mouse"
+        }
+      ],
+      "result": "both reach one cut and visible failure before x>1000; replay click returns to ready; exact runway contact event not observed"
+    },
+    {
+      "id": "static-spaced-1600ms",
+      "viewports": [
+        {
+          "label": "portrait-390x844",
+          "width": 390,
+          "height": 844,
+          "input": "touch"
+        },
+        {
+          "label": "desktop-1100x720",
+          "width": 1100,
+          "height": 720,
+          "input": "mouse"
+        }
+      ],
+      "result": "both naturally emit exact level1-runway-main top-face sharp tip anchor; desktop later reaches x>1000 before visible failure; portrait also crosses x>1000 before visible failure"
+    },
+    {
+      "id": "desktop-white-opening",
+      "viewports": [
+        {
+          "label": "desktop-1100x720",
+          "width": 1100,
+          "height": 720,
+          "input": "mouse"
+        }
+      ],
+      "result": "white-landing not observed; same run reaches runway branch instead"
+    },
+    {
+      "id": "static-950ms",
+      "viewports": [
+        {
+          "label": "portrait-390x844",
+          "width": 390,
+          "height": 844,
+          "input": "touch"
+        },
+        {
+          "label": "desktop-1100x720",
+          "width": 1100,
+          "height": 720,
+          "input": "mouse"
+        }
+      ],
+      "result": "fresh portrait and desktop sessions; fixed cadence; early terminal before required runway or white landing event projection"
+    }
+  ],
+  "matrix": [
+    {
+      "id": "L1-RUNWAY-EARLY-SHARP-390",
+      "objectType": "level1-runway-main sharp blade tip",
+      "lifecycleStateBranch": "fresh start → first cut → airborne → early top-face contact → anchored",
+      "rendererPresentationPath": "SliceSimulation support sharp-hit event → ThreeWorldRenderer visible blade/support presentation",
+      "viewport": "390x844",
+      "status": "FAIL",
+      "observed": {
+        "atMs": 2241.0092500000005,
+        "worldTime": 3.7499999999999893,
+        "eventDelta": {
+          "eventId": 5,
+          "type": "anchor",
+          "targetId": "level1-runway-main",
+          "contactPart": "tip",
+          "normalX": 0,
+          "normalY": -1,
+          "eventX": 315.47808960723034,
+          "eventY": 477.5830518367219
+        },
+        "supportId": "level1-runway-main",
+        "part": "tip",
+        "normal": {
+          "x": 0,
+          "y": -1
+        },
+        "lifecycleState": "anchored",
+        "player": {
+          "x": 305.2000000000005,
+          "y": 514.1666666666666,
+          "vx": 0,
+          "vy": 0,
+          "angle": 4.986276450461116,
+          "angularVelocity": 0
+        },
+        "anchorId": "level1-runway-main",
+        "cuts": 1
+      },
+      "followUp": {
+        "atMs": 3849.2346250000005,
+        "eventDelta": {
+          "eventId": 7,
+          "type": "anchor",
+          "targetId": "level1-runway-main",
+          "contactPart": "tip",
+          "normalX": 0,
+          "normalY": -1,
+          "eventX": 368.0817538698364,
+          "eventY": 483.5694838301122
+        },
+        "supportId": "level1-runway-main",
+        "part": "tip",
+        "normal": {
+          "x": 0,
+          "y": -1
+        },
+        "lifecycleState": "anchored",
+        "player": {
+          "x": 332.7000000000005,
+          "y": 469.7083333333333,
+          "vx": 0,
+          "vy": 0,
+          "angle": 6.656567983114545,
+          "angularVelocity": 0
+        },
+        "anchorId": "level1-runway-main"
+      },
+      "evidence": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/recording.json",
+          "sha256": "5e4d6457955e0596707116e3c9d325880506f41c24aa5bfd37928ae5cb242717"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/frames/journey-03s.png",
+          "sha256": "d5af6c3676f1879771c0afeee87a8d75c96c4d47fc3f7f2033de569a7b89b3e6"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/video/page@990e13d909728d3d4015c9daaf2ae9f4.webm",
+          "sha256": "a00e14ad0a8538dc3072aa9759d2ab1ec27b92721b6a14d2dca63dd008f725c3"
+        }
+      ],
+      "conclusion": "The exact natural top-face tip branch still emits anchor on level1-runway-main at player x≈305, then anchors again at x≈333 within the reproduced dead-end area. Later input recovers and crosses x>1000, but does not change the observed incorrect anchor response at this contact."
+    },
+    {
+      "id": "L1-RUNWAY-DESKTOP-CONTROL",
+      "objectType": "level1-runway-main sharp blade tip",
+      "lifecycleStateBranch": "fresh start → first cut → airborne → early top-face contact → anchored",
+      "rendererPresentationPath": "SliceSimulation support sharp-hit event → ThreeWorldRenderer visible blade/support presentation",
+      "viewport": "1100x720",
+      "status": "FAIL",
+      "observed": {
+        "atMs": 2279.0426249999996,
+        "worldTime": 3.791666666666656,
+        "eventDelta": {
+          "eventId": 5,
+          "type": "anchor",
+          "targetId": "level1-runway-main",
+          "contactPart": "tip",
+          "normalX": 0,
+          "normalY": -1,
+          "eventX": 315.47808960723034,
+          "eventY": 477.5830518367219
+        },
+        "supportId": "level1-runway-main",
+        "part": "tip",
+        "normal": {
+          "x": 0,
+          "y": -1
+        },
+        "lifecycleState": "anchored",
+        "player": {
+          "x": 305.2000000000005,
+          "y": 514.1666666666666,
+          "vx": 0,
+          "vy": 0,
+          "angle": 4.986276450461116,
+          "angularVelocity": 0
+        },
+        "anchorId": "level1-runway-main",
+        "cuts": 1
+      },
+      "evidence": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/recording.json",
+          "sha256": "18734f878ef1f4c048f4071326e31b2dad5ee022fa14a8baf6004bd5c20f7ddd"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/frames/journey-03s.png",
+          "sha256": "5e93ba89e7df005b02706a481fcf18f21530cffbbdf9da66a90b55bf7b0611d9"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/video/page@abb94e91b82c72a4cd56323384cd2994.webm",
+          "sha256": "997b3c621ba5feb5c506b152b97ee6444528ea61b70e6219312b1f2bed4a85d8"
+        }
+      ],
+      "conclusion": "Desktop also emits an early runway top-face tip anchor. This is recorded separately from the required desktop white-landing opening control."
+    },
+    {
+      "id": "L1-WHITE-LANDING-OPENING-1100",
+      "objectType": "white-landing teaching support",
+      "lifecycleStateBranch": "fresh start → first cut → opening landing → anchored teaching pause",
+      "rendererPresentationPath": "authored white-landing support → ThreeWorldRenderer visible anchor → normal mouse input",
+      "viewport": "1100x720",
+      "status": "BLOCKED",
+      "observed": null,
+      "evidence": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/desktop-white-opening/recording.json",
+          "sha256": "b85dbc67872b28f389bb8cc3e173771d713f9d8bc52359bf71a6548ecf44c845"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/desktop-white-opening/frames/startup.png",
+          "sha256": "b72c003129b9dc0586b4acd2a73bbcadfecc88c7f281433e8035b3919d36a44a"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/desktop-white-opening/frames/journey-03s.png",
+          "sha256": "8b0197560dd1fac9d6a01a3a5abb08ff0a3ef6fdcc19e6a31f584e7eda59fd70"
+        }
+      ],
+      "conclusion": "Required separate white-landing anchor was not observed in any fresh desktop session; a sibling runway branch cannot close this viewport/state cell."
+    },
+    {
+      "id": "L1-TERMINAL-REPLAY-BOTH",
+      "objectType": "visible failure settlement and replay control",
+      "lifecycleStateBranch": "natural journey → visible failed terminal → visible replay click → ready",
+      "rendererPresentationPath": "game DOM terminal layer and replay button over ThreeWorldRenderer canvas",
+      "viewport": "390x844 + 1100x720",
+      "status": "PASS",
+      "observed": {
+        "portrait": {
+          "terminal": {
+            "atMs": 10874.834125000001,
+            "outcome": "failed",
+            "exactCopy": "跌出路线\n分数 5\n再次轻触 · 重新开始",
+            "status": "failed",
+            "visible": true,
+            "visiblePixels": true,
+            "css": {
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "width": 281.15625,
+              "height": 152.75
+            }
+          },
+          "replay": {
+            "clickedVisibleControl": true,
+            "controlText": "重玩",
+            "input": "touch",
+            "x": 195,
+            "y": 533,
+            "status": "ready",
+            "player": {
+              "x": 120,
+              "y": 420,
+              "vx": 0,
+              "vy": 0,
+              "angle": -0.35,
+              "angularVelocity": 0
+            },
+            "screenshot": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/frames/replay.png"
+          }
+        },
+        "desktop": {
+          "terminal": {
+            "atMs": 15746.042417,
+            "outcome": "failed",
+            "exactCopy": "跌出路线\n分数 12\n再次轻触 · 重新开始",
+            "status": "failed",
+            "visible": true,
+            "visiblePixels": true,
+            "css": {
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "width": 281.15625,
+              "height": 152.75
+            }
+          },
+          "replay": {
+            "clickedVisibleControl": true,
+            "controlText": "重玩",
+            "input": "mouse",
+            "x": 550,
+            "y": 471,
+            "status": "ready",
+            "player": {
+              "x": 120,
+              "y": 420,
+              "vx": 0,
+              "vy": 0,
+              "angle": -0.35,
+              "angularVelocity": 0
+            },
+            "screenshot": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/frames/replay.png"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/frames/terminal.png",
+          "sha256": "804af48973f9d7621b81f55c26fabd324f782e2f5c54129fb483331e76f91e5e"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/frames/replay.png",
+          "sha256": "6beb4cb9fc312998ceb10ff9f5788f4efcd50cd2a1cec2983047be33ffa20820"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/frames/terminal.png",
+          "sha256": "a3528ceb64ebebd09d6f5e48873c21b3798938d388b0634d03a10b49f4673453"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/frames/replay.png",
+          "sha256": "1ad0c6ad96bac0da528ac5c5e63efc5200e677c407aa18165a53813fc807bd2b"
+        }
+      ],
+      "conclusion": "Both viewports show exact visible failure copy matching read-only status=failed; clicking the visible 重玩 control produces read-only status=ready and a replay screenshot."
+    },
+    {
+      "id": "L1-LATER-ROUTE-BOTH",
+      "objectType": "level-one route progression",
+      "lifecycleStateBranch": "natural input → runway recovery attempt → later course → terminal failure",
+      "rendererPresentationPath": "normal input → SliceSimulation → ThreeWorldRenderer",
+      "viewport": "390x844 + 1100x720",
+      "status": "PASS",
+      "observed": {
+        "portraitMaxX": 1242.6393030528507,
+        "desktopMaxX": 1426.0941862703844
+      },
+      "evidence": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/recording.json",
+          "sha256": "5e4d6457955e0596707116e3c9d325880506f41c24aa5bfd37928ae5cb242717"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/recording.json",
+          "sha256": "18734f878ef1f4c048f4071326e31b2dad5ee022fa14a8baf6004bd5c20f7ddd"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/frames/journey-14s.png",
+          "sha256": "b91a307d5ee664d1907ac532016cf739d643d3441749258a823e6e1215ca5ad4"
+        }
+      ],
+      "conclusion": "The spaced static schedule crosses x>1000 in both viewports before visible failure; the 550 ms schedule ends earlier and is preserved as separate evidence."
+    }
+  ],
+  "checkedAt": "2026-09-23T06:13:59.790Z"
+}

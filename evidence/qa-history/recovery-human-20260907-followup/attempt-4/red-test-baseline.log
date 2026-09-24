@@ -1,0 +1,62 @@
+✔ L1-STACK a: actual knife contact cuts the bearing object and releases the overlapping upper object (6.370542ms)
+✔ L1-STACK-VISUAL-EVIDENCE a: same target stays visible and separates into two halves after cut (1.365666ms)
+✔ L1-STACK b: actual knife contact cuts the bearing object and releases the overlapping upper object (2.309083ms)
+✔ L1-STACK-VISUAL-EVIDENCE b: same target stays visible and separates into two halves after cut (0.739208ms)
+✔ L1-GRAVITY active airborne play does not freeze a hovering supported collectible (2.836667ms)
+✔ L1-REWARD intact has zero earnings; a real cut names the separated target and replay clears earnings (2.84125ms)
+✔ L1-PLACEMENT every initial collectible has a touching support, including the late and bridge targets (0.187667ms)
+✖ L1-RUNWAY visible support stays collidable through the normal forward replay (0.568666ms)
+✖ L1-RUNWAY later sharp contact stays airborne while body contact still bounces (5.793875ms)
+✔ L1-RUNWAY opening keeps the authored white landing anchor before runway bounce feedback (6.222875ms)
+✔ L1-FINISH labels use viewport coordinates without a second offset (1.971375ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 390x844 (1.179209ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 1100x720 (0.210584ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 11
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 291.876958
+
+✖ failing tests:
+
+test at tests/level1-recovery.test.ts:104:1
+✖ L1-RUNWAY visible support stays collidable through the normal forward replay (0.568666ms)
+  AssertionError [ERR_ASSERTION]: the visible runway cannot be decorative when it carries runway targets
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:108:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: false,
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/level1-recovery.test.ts:134:1
+✖ L1-RUNWAY later sharp contact stays airborne while body contact still bounces (5.793875ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(bodyState.events.some((event) => event.type === 'bounce' && event.targetId === 'level1-runway-main'))
+  
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:157:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

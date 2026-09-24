@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-task",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "taptap-performance-compat-20260909",
+  "attempt": 2,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "platformWorkspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame",
+  "outputDirectory": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-performance-20260909/attempt-2",
+  "triagePath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-performance-20260909/triage.json",
+  "researchPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-filing-20260908/open-source-research.json",
+  "officialPlugin": {
+    "version": "1.2.2",
+    "sourceUrl": "https://developer.taptap.cn/docs/sdk/mini-game/",
+    "sha256": "6b8a9a3cc62b6c54cefab397097babb771d9d99f90442cddff06310a4c9ed73f"
+  },
+  "tapTapGame": {
+    "name": "疯狂切割",
+    "appId": "928932",
+    "identityEvidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-54627493-c054-4e19-b1e8-3f17ab8caa37-e1bc9b9cdd21.png"
+  },
+  "instructions": [
+    "This is performance repair attempt 2/5; preserve prior attempt-1 evidence and do not reset or overwrite platform-taptap-performance-20260908.",
+    "Before editing, Zod-validate this task, triage.json, reproduction-matrix.json and the evidence manifest. Read prior performance attempt-1/performance-baseline.json, performance-after.json and fix-result.json.",
+    "Use test-first development: add or extend a RED contract only if it measures a causally relevant rendering/sampling distinction. The new screenshot's FPS 0.020356234 is not a confirmed physical FPS root cause because stutter is 0.0%, memory is bounded and no threshold/raw frame trace/SHA is shown.",
+    "Benchmark the current Cocos Graphics package. Static/dynamic layer separation already exists; do not repeat or broaden that optimization unless a deterministic benchmark proves a remaining full-scene or avoidable draw bottleneck. Do not invent a TapTap FPS threshold or alter gameplay to chase an unbound metric.",
+    "If the source benchmark cannot distinguish real rendering from the TapTap sampler, preserve the current runtime and produce a BLOCKED result with the exact evidence gap. If a new causal package-owned bottleneck is proven, apply the narrowest change while preserving first frame, safe area, touch core loop, failure/settlement and replay.",
+    "Use at most one Cocos Creator 3.8.8 plus official TapTap plugin 1.2.2 build for attempt 2. Do not upload to TapTap, modify other platforms, or change shared factory code."
+  ],
+  "acceptanceChecks": [
+    "RED/GREEN performance contract separates device FPS from deterministic source render work and records the new screenshot as unbound to a package SHA.",
+    "All existing platform tests, lint and typecheck pass; static/dynamic Graphics and runtime journey contracts remain intact.",
+    "At most one build succeeds, ZIP integrity and TapTap metadata are auditable, and the exact new ZIP SHA/bytes are recorded.",
+    "Independent QA receives the exact SHA and rechecks PHJ110, Huawei P30, Xiaomi 14 and OnePlus8_EEA; natural/perceptual remain BLOCKED without raw exact-SHA traces.",
+    "If no package-owned bottleneck is demonstrated, status is BLOCKED and the report must explicitly preserve the sampler-versus-rendering uncertainty rather than claim a fix."
+  ],
+  "contextIntentionallyOmitted": [
+    "Other games/runs, web-lite, WeChat/Douyin and shared factory code",
+    "Startup host-crash evidence except as a separate prior cycle",
+    "Unbound TapTap screenshots, unknown thresholds and sibling-device pass claims",
+    "Unrelated gameplay, assets, advertisements and release systems"
+  ]
+}

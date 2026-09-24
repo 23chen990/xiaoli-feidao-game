@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fix-result",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 9,
+  "issueId": "L1-RUNWAY-RECOVERY-VIRTUAL-POSE-TTL",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "routeReason": "This is a repeated core-loop natural reproduction with multiple failed repair attempts and an explicit independent QA retest obligation.",
+  "status": "BLOCKED",
+  "candidateRejected": false,
+  "productionCandidateCreated": false,
+  "baselineVerification": {
+    "source": {
+      "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "sha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+      "matchesTaskPacketBaseline": true
+    },
+    "test": {
+      "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts",
+      "sha256": "be57c4dbd2d3f0e0790b9637d992082a104887ecac80b2f61a3d7ee49fc1dfcd",
+      "matchesTaskPacketBaseline": true
+    },
+    "dist": {
+      "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html",
+      "sha256": "599b4c3cb8c6b345b7e18b3a4e06cae33663c0432b918d3115ee78df3bf64118",
+      "unchanged": true
+    }
+  },
+  "baselineRed": {
+    "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+    "exitCode": 1,
+    "result": "The test-only fixed replay reached the first runway tip anchor at frame 216 and the second at frame 302. The second exact contact anchored; the pending-pose assertion failed. The baseline instance exposes no pending-runway fields, so this trace does not prove expiry.",
+    "log": "red-targeted.log",
+    "sha256": "b69eaadce4c23d05cdf768158e7920fc7d3dba641879e72c70972b116b40e8da"
+  },
+  "traceFinding": {
+    "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+    "phase": "test-only-before-production-change",
+    "checkpointFrames": [215, 280, 301, 553],
+    "runtimePendingFields": [],
+    "pendingLifecycleTransitionsObserved": 0,
+    "secondContact": {
+      "traceFrameAfterFixedStep": 302,
+      "packetFrameConvention": 301,
+      "worldTimeSeconds": 2.516666667,
+      "player": { "x": 332.7, "y": 469.708333333, "angle": 6.656567983 },
+      "contactPart": "tip",
+      "contactNormal": { "x": 0, "y": -1 },
+      "status": "anchored",
+      "anchorId": "level1-runway-main",
+      "pendingPose": false,
+      "incomingPlayerVyFromPriorCheckpoint": -195,
+      "relativeNormalVelocitySign": "outward/positive"
+    },
+    "scheduledSecondTap": {
+      "tapTimeSeconds": 4.602164,
+      "quantizedReplayFrame": 553,
+      "statusBeforeAct": "anchored",
+      "statusAfterAct": "airborne",
+      "statusAfterFixedStep": "anchored"
+    },
+    "clearAudit": {
+      "set": "no pending pose state exists in the restored baseline",
+      "consume": "not observable; no pending pose state exists",
+      "expiry": "not observable; no pending pose age, bound, or reason exists",
+      "reset": "not invoked during this replay",
+      "terminal": "not reached during this replay interval",
+      "nonRunwayContact": "none during the replay interval",
+      "inactiveSupport": "not observable; no pending support association exists in the restored baseline"
+    },
+    "interpretation": "The observed second tip contact is separating/upward. The baseline's recovery predicate handles only approaching runway top contacts; this contact follows the ordinary anchor path. No candidate lifecycle was available to determine whether a candidate sets a pose and later clears it."
+  },
+  "rollback": {
+    "performed": true,
+    "files": [
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+        "sha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+        "matchesTaskPacketBaseline": true
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts",
+        "sha256": "be57c4dbd2d3f0e0790b9637d992082a104887ecac80b2f61a3d7ee49fc1dfcd",
+        "matchesTaskPacketBaseline": true
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html",
+        "sha256": "599b4c3cb8c6b345b7e18b3a4e06cae33663c0432b918d3115ee78df3bf64118",
+        "unchanged": true
+      }
+    ]
+  },
+  "changedFiles": [],
+  "filesChangedDuringDiagnosticThenRestored": [
+    "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "testsRun": [
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "exitCode": 1,
+      "result": "RED trace recorded; 15 passed and 4 failed on the restored baseline. The new trace failed because the exact second contact anchors and no pending lifecycle state exists. Existing baseline runway recovery expectations also remain failing.",
+      "log": "red-targeted.log"
+    }
+  ],
+  "fullChecks": {
+    "pnpmTest": { "status": "NOT_RUN", "log": "tests.log" },
+    "pnpmLint": { "status": "NOT_RUN", "log": "lint.log" },
+    "pnpmTypecheck": { "status": "NOT_RUN", "log": "typecheck.log" },
+    "pnpmBuild": { "status": "NOT_RUN", "buildCount": 0, "log": "build.log", "distSha256": null }
+  },
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory code, platform adapters, renderer, release configuration, and unrelated QA records.",
+    "Full conversation, unbound media, and source bytes for the rejected attempt 8 candidate.",
+    "Natural/perceptual completion claims; independent browser QA remains required."
+  ],
+  "nextDistinctHypothesis": "The candidate may never set a pending pose at the second contact: the seed-31 replay reaches an upward/separating top-face tip contact, and the restored baseline routes that case to ordinary anchoring because its recovery predicate only accepts approaching contact. First recover or reproduce the candidate lifecycle implementation and instrument the exact second-contact setter/clear path; evaluate TTL only if the trace records a pose set before a later clear.",
+  "remainingEvidenceGaps": [
+    "Attempt 8 candidate source is unavailable in the minimal packet and its preserved log has no set/clear/expiry trace, so the TTL hypothesis cannot be evaluated in this attempt.",
+    "No candidate was tested for pending-pose persistence or the required replay to at least 11.9 seconds and x greater than 2000.",
+    "No fresh natural-input or perceptual QA was run. Both viewports, exact runway branch presentation, terminal/settlement, and replay require independent QA retest."
+  ],
+  "runtimeQaClaim": false,
+  "naturalQaClaim": false,
+  "perceptualQaClaim": false,
+  "buildCount": 0,
+  "createdAt": "2026-09-23T09:37:25.000Z"
+}

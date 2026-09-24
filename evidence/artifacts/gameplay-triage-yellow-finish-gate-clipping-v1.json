@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED",
+  "classification": "renderer-depth-overlap/finish-gate-visual-clipping",
+  "route": "formal-fixer",
+  "routeReason": "The defect is in the core finish presentation path and can misrepresent the selectable reward; it requires targeted natural QA and a perceptual retest before any completion claim.",
+  "evidence": {
+    "attachedScreenshot": "/var/folders/f2/s76hhpss3llc2_zw9g63x7380000gn/T/codex-clipboard-c5a030f4-72a5-418e-883f-33aee9504330.png",
+    "screenshotIsInstruction": false,
+    "observation": "The red box highlights a translucent green vertical gate containing a yellow rectangular pattern. This is visual evidence, not an instruction.",
+    "hypothesis": "The yellow is the level-04 BONUS finish gate visible through/overlapping the translucent SAFE finish gate, not a terrain block or food object. The screenshot shows a depth/overlap presentation defect that reads as geometry clipping."
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "finish option: safe gate + bonus gate",
+      "lifecycleState": "spawned at finish → camera arrives → ordinary settlement → terminal overlay/replay",
+      "rendererPresentationPath": "SliceSimulation.finishOptions → ThreeWorldRenderer.syncFinish → finishMaterial(kind) → transparent WebGL meshes",
+      "deviceViewport": "desktop screenshot context; exact viewport pending fresh capture",
+      "result": "overlapping translucent gates; yellow bonus appears inside green safe gate"
+    },
+    {
+      "objectType": "finish option: safe gate + bonus gate",
+      "lifecycleState": "spawned at finish → camera arrives → ordinary settlement → terminal overlay/replay",
+      "rendererPresentationPath": "SliceSimulation.finishOptions → ThreeWorldRenderer.syncFinish → finishMaterial(kind) → transparent WebGL meshes",
+      "deviceViewport": "mobile 390x844 targeted retest required",
+      "result": "not yet independently captured; preserve BLOCKED"
+    }
+  ],
+  "sourceEvidence": {
+    "level4FinishX": 3450,
+    "safeGate": { "kind": "safe", "x": 3450, "y": 570, "height": 240, "materialColor": "0x55c99b", "opacity": 0.72, "z": -0.24 },
+    "bonusGate": { "kind": "bonus", "x": 3450, "y": 500, "height": 96, "materialColor": "0xf7b94c", "opacity": 0.8, "z": -0.24 },
+    "verticalRanges": { "safe": [450, 690], "bonus": [452, 548], "overlap": [452, 548] },
+    "interpretation": "Both meshes share finishX and z while their vertical ranges overlap by 96 simulation units. Transparent blending therefore exposes the yellow bonus mesh through the green safe mesh; this is an authored layout/rendering overlap, not a collision proof."
+  },
+  "acceptanceCriteria": [
+    "Finish choices remain visually separable at the finish camera on desktop and mobile; no yellow bonus mesh reads as embedded in the green safe gate.",
+    "The exact finish branch is captured with normal input and player-visible evidence; no fixture/state injection may close the issue.",
+    "Reward semantics remain correct after visual separation and replay."
+  ],
+  "decision": "No source code was changed after the user asked to stop. Preserve BLOCKED pending formal fixer and perceptual QA retest.",
+  "claimBoundary": "web-lite diagnosis only; no platform packaging claim."
+}

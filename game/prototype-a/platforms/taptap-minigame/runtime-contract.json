@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "platform": "taptap-minigame",
+  "appId": "928932",
+  "gameName": "疯狂切割",
+  "orientation": "portrait",
+  "hostActivity": "com.taptap.instantgame.container.InstantGameActivity",
+  "hostActivityOwner": "TapTap Android container",
+  "packageRootEntrypoints": ["game.js", "game.json", "project.config.json"],
+  "screenContract": {
+    "designResolution": { "width": 390, "height": 844, "policy": 4, "mode": "fixed-width" },
+    "runtimePolicy": "ResolutionPolicy.FIXED_WIDTH",
+    "safeAreaSource": "screen.safeArea",
+    "exactFitScreen": {
+      "scope": "web-only",
+      "packagedNonWebDefault": true,
+      "blocksTapTapMiniGame": false
+    }
+  },
+  "requiresExactShaDeviceRerun": true
+}

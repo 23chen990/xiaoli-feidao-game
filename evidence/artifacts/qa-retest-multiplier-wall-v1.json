@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "QaRetestArtifact",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "issueId": "MULTIPLIER-WALL-011",
+  "decision": "PASS_WITH_INFRASTRUCTURE_GAP",
+  "deterministic": {
+    "wallContiguous": true,
+    "hasHalfMultiplier": true,
+    "higherMultiplierNarrower": true,
+    "knifeStopsBeforeWall": true,
+    "evidence": ["tests/game-core.test.ts", "tests/level-pressure.test.ts"]
+  },
+  "natural": {
+    "desktop": "PASS",
+    "mobile390x844": "PASS",
+    "defaultJourney": "startup → cut/reflect loop → wall settlement → replay observed in browser-result.json",
+    "exactBranch": "ordinary finish wall / safe and multiplier lanes",
+    "screenshots": ["tests/artifacts/qa-3d-main-v1/desktop-natural-won.png", "tests/artifacts/qa-3d-main-v1/mobile-natural-zero-won.png"]
+  },
+  "perceptual": {
+    "wallReadsOpaque": true,
+    "multiplierLabelsVisible": true,
+    "mobileSafeArea": true,
+    "blocked": false
+  },
+  "infrastructure": {
+    "lint": true,
+    "typecheck": true,
+    "testsPassed": 151,
+    "build": true,
+    "browserPerformance": "BLOCKED_BY_HOST_SCHEDULING",
+    "performanceEvidence": ["tests/artifacts/qa-3d-main-v1/report.json", "tests/artifacts/qa-3d-main-v1/console.log"]
+  },
+  "claimBoundary": "web-lite QA only; native platform packaging and real-device behavior remain unverified."
+}

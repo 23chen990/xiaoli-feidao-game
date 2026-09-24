@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "taptap-render-work-after",
+  "measurementKind": "deterministic-source-work-proxy",
+  "deviceFpsMeasured": false,
+  "reportedBackendFpsRootCause": "UNCONFIRMED",
+  "tapTapThreshold": null,
+  "observations": {
+    "airborneUpdateCallsFullRedraw": false,
+    "nominalObservationFramesAt60HzFor10Minutes": 36000,
+    "fullSceneClearAndRedraws": 0,
+    "repeatedStaticFillOrStrokeOperations": 0,
+    "dynamicLayerRedraws": 36000
+  },
+  "comparison": {
+    "avoidedFullSceneRedraws": 36000,
+    "avoidedStaticFillOrStrokeOperations": 648000
+  },
+  "interpretation": "Static background and course geometry are retained in one Graphics layer; only blade and feedback are cleared/redrawn while airborne. These deterministic source-work reductions do not establish physical-device FPS or validate the TapTap sampler."
+}

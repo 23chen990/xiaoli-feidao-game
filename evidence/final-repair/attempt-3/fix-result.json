@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fix-result",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 3,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "issueId": "L1-RUNWAY-RECOVERY-RELEASE-LIFECYCLE",
+  "status": "BLOCKED",
+  "why": "The exact separating runway contact was recovered and its next tap used anchored-release launch semantics, but the required seed-31 fixed timestamp replay failed at 6.458333333333444 seconds, before the required 11.9 seconds and x>2000. The replay left the top of the world (diagnostic state: x=947.5867050393286, y=-128.11650427504605, failReason=fall). The production candidate was rejected and reverted. No runtime QA or perceptual completion is claimed.",
+  "triagePath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-3/triage.json",
+  "taskPacketPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-3/task.json",
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory modules, platform adapters, release configuration, and renderer implementation.",
+    "Full conversation, unrelated QA output, and unbound competitor media.",
+    "Natural journey and perceptual completion claims; independent QA remains required.",
+    "All source files outside game-core.ts and tests/level1-recovery.test.ts."
+  ],
+  "filesChanged": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "implementation": {
+    "hypothesis": "An early separating Level1 runway top-tip recovery can remain airborne while setting a bounded one-shot pendingRunwayReleaseIntent. The next normal flip tap consumes that intent using anchored-release launch semantics, then clears it.",
+    "decision": "REJECTED",
+    "productionCandidateReverted": true,
+    "currentProductionSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+    "evidence": [
+      "RED: the exact natural-pose upward/separating contact became anchored under the restored attempt-1/2 production behavior; see red-targeted.log.",
+      "The candidate passed the exact contact recovery and expiry checks, and its consumed tap emitted launch semantics with forward velocity, cooldown reset, input buffer clear, and no persistent anchor.",
+      "The candidate failed the seed-31 fixed timestamp replay at 6.458333333333444 seconds. It left the world top at x=947.5867050393286, y=-128.11650427504605, with failReason=fall; see green-targeted.log for the replay gate failure.",
+      "After rejection, src/game-core.ts was restored byte-for-byte to the packet current-source SHA-256. The exact lifecycle regression remains in the owned test file."
+    ],
+    "nextHypothesis": "The current launch path replaces the separating contact's outgoing vertical response with the anchored launch velocity (vy=-300); the replay then exits through the world top. A revised triage should inspect the natural and fixed replay tap/contact ordering and test preserving a bounded snapshot of the runway recovery's outgoing velocity across the one-shot tap, while retaining a visible launch event and clearing the intent. Revalidate against the fixed replay before any broader suite or build."
+  },
+  "tests": [
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "exitCode": 1,
+      "phase": "RED",
+      "result": "The exact separating-contact regression failed as intended against restored production behavior: actual anchored, expected airborne. The expiry lifecycle test also failed at the expected airborne recovery precondition.",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-3/red-targeted.log"
+    },
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "exitCode": 1,
+      "phase": "REJECTED-CANDIDATE",
+      "result": "The candidate's contact, next-tap lifecycle, and expiry assertions passed, but the fixed replay failed at 6.458333333333444 seconds. Candidate production code was reverted.",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-3/green-targeted.log"
+    },
+    {
+      "command": "pnpm test",
+      "phase": "NOT-RUN",
+      "result": "No candidate passed the focused replay gate; see tests.log."
+    },
+    {
+      "command": "pnpm lint",
+      "phase": "NOT-RUN",
+      "result": "No candidate passed the focused replay gate; see lint.log."
+    },
+    {
+      "command": "pnpm typecheck",
+      "phase": "NOT-RUN",
+      "result": "No candidate passed the focused replay gate; see typecheck.log."
+    }
+  ],
+  "build": {
+    "command": "pnpm build",
+    "count": 0,
+    "phase": "NOT-RUN",
+    "result": "No accepted candidate; see build.log.",
+    "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-3/build.log"
+  },
+  "runtimeQa": {
+    "naturalJourneyClaimed": false,
+    "perceptualGateClaimed": false,
+    "requiredNext": [
+      "Revise and validate the next release-lifecycle hypothesis against the fixed timestamp replay.",
+      "Independent natural-input QA must retest both viewports and the exact runway branch.",
+      "QA must capture player-visible evidence for startup, core loop, terminal settlement, and replay; any natural or perceptual BLOCKED result keeps the issue open."
+    ]
+  },
+  "remainingEvidenceGaps": [
+    "No accepted production change or build was produced in attempt 3.",
+    "The preserved lifecycle regression is expected to fail against restored production behavior.",
+    "The candidate passed focused contact and expiry assertions but failed the required fixed replay.",
+    "Full suite, lint, and typecheck were not run after candidate rejection.",
+    "Natural-input and perceptual post-fix QA remain unrun."
+  ],
+  "completedAt": "2026-09-23T06:45:00.000Z"
+}

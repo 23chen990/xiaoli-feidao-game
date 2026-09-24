@@ -1,0 +1,76 @@
+{
+  "schemaVersion":1,
+  "artifactType":"repair-triage",
+  "cycleId":"human-review-20260923-continue",
+  "attempt":16,
+  "issueId":"L1-RUNWAY-RECOVERY-LIFECYCLE-REARM",
+  "targetGame":"mobile-slice-adaptation-20260830",
+  "workspace":"/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "classification":"natural-level1-runway-recovery-blocker",
+  "status":"VALIDATED_REPRODUCTION",
+  "priorAttempt":{"path":"/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-15/fix-result.json","sha256":"651843bbc6fb9a90798c6f87e63abc9a3990a70ceee939fb11a2a9cb43e77200","status":"BLOCKED","candidateRejected":true},
+  "reproduction":{
+    "attempt15Divergence":{
+      "expectedCaptureFrames":[216,302],
+      "observedCaptureFrames":[216,296],
+      "secondPose":{"playerX":325.2000000000005,"playerY":479.8333333333333,"playerAngle":6.2155698081230994},
+      "replay":{"elapsedSeconds":7.141666666666811,"status":"failed","playerX":652.9333333333367},
+      "evidence":[
+        {"path":"/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-15/green-targeted.log","sha256":"afd94256abccec50f3d1aebf8b580d7976dffae91e9e08849b2aab7a7febbaf3"},
+        {"path":"/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-15/fix-result.json","sha256":"651843bbc6fb9a90798c6f87e63abc9a3990a70ceee939fb11a2a9cb43e77200"},
+        {"path":"/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/green-targeted.log","sha256":"d0d64f4227589d2edd4aff8ca1939209b75e933d1df89ed0ee51725c61f48ab6"}
+      ]
+    },
+    "lifecycleSignals":{
+      "postConsumeTap":{"waitSeconds":0.14,"expectedEvent":"flip","observedEvent":"launch"},
+      "ttlStep":{"preAgeSeconds":2.3416666666666663,"expectedPending":false,"observedPendingAgeSeconds":0},
+      "evidence":[
+        {"path":"/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-15/green-targeted.log","sha256":"afd94256abccec50f3d1aebf8b580d7976dffae91e9e08849b2aab7a7febbaf3"},
+        {"path":"/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-15/triage.json","sha256":"5d92692fd6ddbb95454f897e51a94690c8f37d8e403a777584592507de865e48"}
+      ]
+    }
+  },
+  "reproductionMatrix":[
+    {"objectType":"pending runway pose","lifecycleStateBranch":"capture edge → airborne pending → scheduled tap","rendererPresentationPath":"ThreePresentationModel airborne player","viewport":"deterministic-fixed-step","evidence":["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/green-targeted.log"],"observation":"The validated reference captured frames 216 and 302 with 12–13px motion and two one-shot releases.","inference":"The lifecycle contract is observable without an authored anchor.","unknowns":["Attempt11 source bytes were not retained."]},
+    {"objectType":"pending runway pose","lifecycleStateBranch":"consume → 0.14s cooldown → ordinary airborne tap","rendererPresentationPath":"SliceSimulation act/launch event path","viewport":"deterministic-fixed-step","evidence":["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-15/green-targeted.log"],"observation":"The candidate emitted launch where the isolated contract expected a later ordinary flip.","inference":"Consumption may leave the old contact episode armed and re-trigger recovery.","unknowns":["The exact re-triggering contact is not yet recorded."]},
+    {"objectType":"pending runway pose","lifecycleStateBranch":"TTL last step → expiry → same-step contact evaluation","rendererPresentationPath":"fixedUpdate lifecycle and collision path","viewport":"deterministic-fixed-step","evidence":["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-15/green-targeted.log"],"observation":"A pose with age 0 was observed after the test crossed the 2.35s lifetime boundary.","inference":"Expiry may be followed by same-manifold re-capture or ordering contamination.","unknowns":["Whether a fresh contact edge occurred is unknown."]},
+    {"objectType":"default browser journey","lifecycleStateBranch":"startup → runway → terminal → replay","rendererPresentationPath":"web-lite Three.js presentation","viewport":"390x844","evidence":["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-summary.json"],"observation":"Independent natural QA remains blocked and is not replaced by deterministic traces.","inference":"A deterministic lifecycle fix still requires fresh natural QA in both viewports.","unknowns":["No Attempt16 natural trace exists."]}
+  ],
+  "rootCauseHypothesis":{
+    "evidence":"Attempt15 changed capture 2 to frame296 and still failed after a pose was consumed; its isolated post-consume and TTL assertions indicate a pending setter can re-arm while the prior contact episode remains eligible. Attempt11's validated trace supplies the lifecycle target but not source bytes.",
+    "changeHypothesis":"Rebuild the validated support-relative pending pose lifecycle while atomically clearing a consumed pose, resetting recoveryAge like a standard anchored release, and adding a contact-edge arm: after tap consumption or TTL expiry, suppress the setter until the runway qualifying contact leaves and a distinct fresh edge is observed; preserve normal motion and do not add a new follow gain.",
+    "stateName":"pendingRunwayReleasePose",
+    "rearmRule":"after tap consumption or TTL expiry, disarm the setter until a fresh qualifying runway contact edge is observed; do not rearm from the same contact manifold",
+    "diagnosticRule":"record ordered contact-edge, set, consume, expire, clear, and rearm events with frame, elapsed, age, status, anchorId, pose, and collision context",
+    "preservedBranches":["approaching runway top recovery","side sharp runway anchor","later x>=350 runway suppression","body/handle bounce","non-runway and opening support launches","standard launch velocity and cooldown"],
+    "rejectedAlternatives":["another bounded-follow gain adjustment","assuming frame528 was TTL expiry without a reason trace","changing the 2.35s lifetime to hide re-capture","renderer-only pose offset","loosening the capture-frame or tap-correction assertions"]
+  },
+  "scope":{
+    "includedFiles":["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts","/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"],
+    "excludedFiles":["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-presentation.ts","/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/style.css","/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms","/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist"],
+    "route":"formal-fixer","expectedSourceFileLimit":2
+  },
+  "acceptanceCriteria":[
+    "Run and save RED focused evidence before edits.",
+    "Record every runway contact edge, pose set, consume, expiry, clear, and rearm with frame, elapsed, age, support, status, anchor, and collision context.",
+    "Capture the two reference poses at frames 216 and 302 without same-manifold re-capture.",
+    "Keep the player airborne with measurable motion and rotation while pending.",
+    "Consume each pose exactly once at the scheduled taps and preserve standard launch semantics.",
+    "After consumption, reset recoveryAge using standard anchored-release ordering and ensure the isolated 0.14s tap emits one ordinary flip rather than a relaunch.",
+    "After TTL expiry, the pose must be null and must not be re-captured without a fresh contact edge.",
+    "Preserve the 2.35-second lifetime and test it at the exact boundary.",
+    "Keep first and second tap corrections within the retained focused bounds.",
+    "Preserve approaching, side/body, x>=350, non-runway, opening, and later-route branches.",
+    "Reach at least 11.9 seconds and player x>2000 in the fixed replay without failure.",
+    "Run focused tests and pnpm test only after focused GREEN passes.",
+    "Run pnpm lint and pnpm typecheck only after focused GREEN passes.",
+    "Run exactly one pnpm build only after all prior checks pass and record the dist hash.",
+    "Rollback both owned files immediately on focused failure and make no natural/perceptual completion claim."
+  ],
+  "evidenceClassification":{
+    "observed":["Attempt15 captured [216,296] and failed at 7.1417s.","Attempt15 recorded post-consume launch and a zero-age pose after the TTL boundary.","Attempt11 recorded the validated [216,302] lifecycle and route x=2132.7."],
+    "inferred":["A stale contact episode may re-arm the setter after consume or expiry.","A contact-edge latch can be tested without changing follow gains."],
+    "unknown":["The actual frame528 clear reason and whether it is the same manifold remain unknown until lifecycle diagnostics run."]
+  },
+  "createdAt":"2026-09-23T12:10:00.000Z"
+}

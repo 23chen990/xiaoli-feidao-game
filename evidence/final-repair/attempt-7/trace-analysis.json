@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "runway-release-trace-analysis",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+  "phase": "test-only-before-production-change",
+  "traceSource": "red-targeted.log lines prefixed RUNWAY_RELEASE_TRACE",
+  "selectionRule": "Reject inactive, non-collidable, non-forward supports and supports whose ballistic requiredVy is below the top-boundary limit or above the 760px/s vertical cap; among remaining candidates select the smallest positive center-entry time.",
+  "earlyRunwayRelease": {
+    "tapId": "early-runway-release",
+    "player": { "x": 332.7, "y": 494.1, "vx": 150, "vy": -80 },
+    "selectedSupportId": "white-branch",
+    "selected": {
+      "entryTime": 0.9153333333333334,
+      "supportTop": 263,
+      "verticalBand": { "min": 226, "max": 266 },
+      "predictedY": 672.2238666666667,
+      "requiredVy": -545.648798252003,
+      "upperBoundaryLimit": -863.3191762031005
+    },
+    "remainingCandidates": ["white-branch", "lantern-ferry"],
+    "rejectionExamples": {
+      "level1-runway-main": ["vertical-corridor-unreachable"],
+      "opening-table-b": ["non-collidable"],
+      "white-branch": [],
+      "lift-plank": ["vertical-corridor-unreachable"]
+    }
+  },
+  "lateLiftPlankRelease": {
+    "tapId": "late-lift-plank-release",
+    "player": { "x": 1750, "y": 450, "vx": 150, "vy": 0 },
+    "selectedSupportId": "lift-plank",
+    "selected": {
+      "entryTime": 0.6,
+      "supportTop": 416,
+      "verticalBand": { "min": 379, "max": 419 },
+      "predictedY": 558,
+      "requiredVy": -265,
+      "upperBoundaryLimit": -832.1057625085888
+    },
+    "remainingCandidates": ["lift-plank", "tower-approach", "level1-reward-shelf"],
+    "rejectionExamples": {
+      "lift-plank": [],
+      "lift-table": ["non-collidable"],
+      "white-recovery-shelf": ["vertical-corridor-unreachable"]
+    }
+  },
+  "interpretation": [
+    "The broad runway is not a valid early recovery target because its required vertical launch velocity exceeds the physically available corridor.",
+    "At the late route point lift-plank remains the earliest active, collidable, forward support with a reachable ballistic corridor.",
+    "The early candidate requires a theoretical launch velocity of about -545.65, while the current recovery snapshot is -80. The lifecycle acceptance requires the consumed release to preserve that recovery snapshot. Therefore the selection must remain a route viability decision and must not overwrite or clamp the snapshotted release velocity.",
+    "The two diagnostic poses are deterministic test fixtures; this trace is engineering evidence only, not natural-input or perceptual QA."
+  ],
+  "baseline": {
+    "exitCode": 1,
+    "testsPassed": 16,
+    "testsFailed": 2,
+    "expectedFailure": "Exact separating top-face runway contact anchors instead of returning airborne."
+  }
+}

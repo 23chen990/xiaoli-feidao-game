@@ -1,0 +1,8 @@
+Command: pnpm exec tsx --test tests/level1-recovery.test.ts
+Exit code: 1
+Phase: candidate targeted replay; candidate immediately reverted after failure.
+Focused result: 15 passed, 2 failed.
+The fixed seed-31 normal-input timestamp replay terminated at 5.466666666666728 seconds,
+before the required 11.9 seconds and x>2000 route gate.
+The lifecycle assertion also found no expected launch feedback on the consumed tap.
+The replay criterion failed; no further candidate tuning or rerun was performed.

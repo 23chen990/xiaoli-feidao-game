@@ -1,0 +1,319 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "experience-reproduction-matrix",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "axes": {
+    "objectTypes": [
+      "recording frame",
+      "player blade",
+      "cuttable/support/hazard",
+      "finish/settlement/replay",
+      "complete level"
+    ],
+    "lifecycleStateBranches": [
+      "ingested and identity-bound",
+      "ready/pre-contact",
+      "input/contact/cut/fall",
+      "finish/settlement/replay",
+      "builder handoff",
+      "independent comparison"
+    ],
+    "rendererPaths": [
+      "AVFoundation frame extraction",
+      "reference level reconstruction",
+      "generated runtime scene",
+      "source-candidate QA comparison"
+    ],
+    "viewports": [
+      {
+        "label": "source-recording",
+        "width": 1100,
+        "height": 720
+      },
+      {
+        "label": "target-phone-portrait",
+        "width": 390,
+        "height": 844
+      },
+      {
+        "label": "target-large-phone",
+        "width": 430,
+        "height": 932
+      }
+    ]
+  },
+  "cells": [
+    {
+      "id": "recording-identity-source",
+      "objectType": "recording frame",
+      "lifecycleStateBranch": "ingested and identity-bound",
+      "rendererPath": "AVFoundation frame extraction",
+      "viewport": {
+        "label": "source-recording",
+        "width": 1100,
+        "height": 720
+      },
+      "status": "PASS",
+      "expected": "来源、目标游戏、目标工作区和 SHA-256 唯一绑定且可用。",
+      "observed": "manifest 将 user-recording-20260906-level01 标记为 VERIFIED_TARGET / VERIFIED / gameplay-reference；文件哈希匹配。",
+      "evidence": [
+        {
+          "path": "reference-evidence/incoming/_2026-09-06-135548-3781e4dcd3d2.mp4",
+          "sha256": "3781e4dcd3d21094f186cf442b3ee30cddfbb2fbe68d87c5c7470a2c742bf75a",
+          "kind": "reference",
+          "provenance": "verified-reference"
+        },
+        {
+          "path": "reference-evidence/manifest.json",
+          "sha256": "246a5028cb6e7927adf10cceb61d85131600be1aee3518c8a6201f1577e6dd15",
+          "kind": "qa-artifact",
+          "provenance": "verified-run-artifact"
+        }
+      ]
+    },
+    {
+      "id": "recording-event-frames-source",
+      "objectType": "recording frame",
+      "lifecycleStateBranch": "ready/pre-contact",
+      "rendererPath": "AVFoundation frame extraction",
+      "viewport": {
+        "label": "source-recording",
+        "width": 1100,
+        "height": 720
+      },
+      "status": "REPRODUCED",
+      "expected": "标准研究阶段生成覆盖事件边界的真实时间戳逐帧清单。",
+      "observed": "标准工厂无此输出；历史恢复目录仅有 0/6/13/21/29/34 秒六帧，无法定位接触、切割和状态转换。",
+      "evidence": [
+        {
+          "path": "reference-evidence/incoming/_2026-09-06-135548-3781e4dcd3d2.mp4",
+          "sha256": "3781e4dcd3d21094f186cf442b3ee30cddfbb2fbe68d87c5c7470a2c742bf75a",
+          "kind": "reference",
+          "provenance": "verified-reference"
+        },
+        {
+          "path": "qa-recovery-20260907/reference-frames/manifest.json",
+          "sha256": "22e2b0a21dd25ffdab3b692c409e3af258e1803c6b05ee2f767c2ac68df30d87",
+          "kind": "qa-artifact",
+          "provenance": "verified-run-artifact"
+        },
+        {
+          "path": "src/schemas/reference-fidelity.ts",
+          "sha256": "f3579822f31c5eb563b46c01069ac07d84934bee564119354e41a52cae4d7be1",
+          "kind": "factory-source",
+          "provenance": "repository-source"
+        }
+      ]
+    },
+    {
+      "id": "blade-input-trajectory-source",
+      "objectType": "player blade",
+      "lifecycleStateBranch": "input/contact/cut/fall",
+      "rendererPath": "reference level reconstruction",
+      "viewport": {
+        "label": "source-recording",
+        "width": 1100,
+        "height": 720
+      },
+      "status": "REPRODUCED",
+      "expected": "每次自然输入、刀具姿态/运动阶段、接触对象和结果均由来源帧定位。",
+      "observed": "现有 schema 只有文字式 playerInput/expectedStateChange，没有输入时间戳、轨迹或对象边界。",
+      "evidence": [
+        {
+          "path": "reference-evidence/incoming/_2026-09-06-135548-3781e4dcd3d2.mp4",
+          "sha256": "3781e4dcd3d21094f186cf442b3ee30cddfbb2fbe68d87c5c7470a2c742bf75a",
+          "kind": "reference",
+          "provenance": "verified-reference"
+        },
+        {
+          "path": "src/schemas/reference-fidelity.ts",
+          "sha256": "f3579822f31c5eb563b46c01069ac07d84934bee564119354e41a52cae4d7be1",
+          "kind": "factory-source",
+          "provenance": "repository-source"
+        },
+        {
+          "path": "src/providers/codex-account.ts",
+          "sha256": "241ad224a182b6ae45cdc2c58f2de35811dff82245414516d33acf0bfc41ef77",
+          "kind": "factory-source",
+          "provenance": "repository-source"
+        }
+      ]
+    },
+    {
+      "id": "object-topology-source",
+      "objectType": "cuttable/support/hazard",
+      "lifecycleStateBranch": "ready/pre-contact",
+      "rendererPath": "reference level reconstruction",
+      "viewport": {
+        "label": "source-recording",
+        "width": 1100,
+        "height": 720
+      },
+      "status": "REPRODUCED",
+      "expected": "对象语义 ID、支撑/可达/碰撞关系、相对几何和出场顺序均可机器读取。",
+      "observed": "现有 spatialRelationship 是自由文本，不能机器比较，也没有对象生命周期检查点。",
+      "evidence": [
+        {
+          "path": "reference-evidence/incoming/_2026-09-06-135548-3781e4dcd3d2.mp4",
+          "sha256": "3781e4dcd3d21094f186cf442b3ee30cddfbb2fbe68d87c5c7470a2c742bf75a",
+          "kind": "reference",
+          "provenance": "verified-reference"
+        },
+        {
+          "path": "src/schemas/reference-fidelity.ts",
+          "sha256": "f3579822f31c5eb563b46c01069ac07d84934bee564119354e41a52cae4d7be1",
+          "kind": "factory-source",
+          "provenance": "repository-source"
+        }
+      ]
+    },
+    {
+      "id": "terminal-replay-source",
+      "objectType": "finish/settlement/replay",
+      "lifecycleStateBranch": "finish/settlement/replay",
+      "rendererPath": "reference level reconstruction",
+      "viewport": {
+        "label": "source-recording",
+        "width": 1100,
+        "height": 720
+      },
+      "status": "REPRODUCED",
+      "expected": "终点触发、结算可见反馈、重玩动作与复位状态均绑定来源检查点。",
+      "observed": "五维行为分析可以写文字用例，但录屏帧、输入时间和终态对象没有结构化绑定。",
+      "evidence": [
+        {
+          "path": "reference-evidence/incoming/_2026-09-06-135548-3781e4dcd3d2.mp4",
+          "sha256": "3781e4dcd3d21094f186cf442b3ee30cddfbb2fbe68d87c5c7470a2c742bf75a",
+          "kind": "reference",
+          "provenance": "verified-reference"
+        },
+        {
+          "path": "src/schemas/reference-fidelity.ts",
+          "sha256": "f3579822f31c5eb563b46c01069ac07d84934bee564119354e41a52cae4d7be1",
+          "kind": "factory-source",
+          "provenance": "repository-source"
+        }
+      ]
+    },
+    {
+      "id": "builder-contract-phone",
+      "objectType": "complete level",
+      "lifecycleStateBranch": "builder handoff",
+      "rendererPath": "generated runtime scene",
+      "viewport": {
+        "label": "target-phone-portrait",
+        "width": 390,
+        "height": 844
+      },
+      "status": "REPRODUCED",
+      "expected": "Builder 只在 READY 重建契约存在时开工，并实现所有声明检查点和规范化空间关系。",
+      "observed": "FULL_BUILD 当前只强制 reference-fidelity-contract；该工件不携带逐帧关卡重建数据。",
+      "evidence": [
+        {
+          "path": "src/schemas/reference-fidelity.ts",
+          "sha256": "f3579822f31c5eb563b46c01069ac07d84934bee564119354e41a52cae4d7be1",
+          "kind": "factory-source",
+          "provenance": "repository-source"
+        },
+        {
+          "path": "src/providers/codex-account.ts",
+          "sha256": "241ad224a182b6ae45cdc2c58f2de35811dff82245414516d33acf0bfc41ef77",
+          "kind": "factory-source",
+          "provenance": "repository-source"
+        }
+      ]
+    },
+    {
+      "id": "builder-responsive-large",
+      "objectType": "complete level",
+      "lifecycleStateBranch": "builder handoff",
+      "rendererPath": "generated runtime scene",
+      "viewport": {
+        "label": "target-large-phone",
+        "width": 430,
+        "height": 932
+      },
+      "status": "BLOCKED",
+      "expected": "同一规范化关卡契约按明确投影规则适配大屏手机，关键对象仍可见、可达、可交互。",
+      "observed": "没有规范化几何与投影策略，无法证明跨视口保持来源关卡结构。",
+      "evidence": [
+        {
+          "path": "src/schemas/reference-fidelity.ts",
+          "sha256": "f3579822f31c5eb563b46c01069ac07d84934bee564119354e41a52cae4d7be1",
+          "kind": "factory-source",
+          "provenance": "repository-source"
+        }
+      ]
+    },
+    {
+      "id": "qa-source-candidate",
+      "objectType": "complete level",
+      "lifecycleStateBranch": "independent comparison",
+      "rendererPath": "source-candidate QA comparison",
+      "viewport": {
+        "label": "source-recording",
+        "width": 1100,
+        "height": 720
+      },
+      "status": "REPRODUCED",
+      "expected": "QA 在来源视口和同一检查点计算候选轨迹差异并绑定 build hash。",
+      "observed": "不存在源录屏帧/重建契约/候选轨迹三方哈希绑定的比较报告。",
+      "evidence": [
+        {
+          "path": "reference-evidence/incoming/_2026-09-06-135548-3781e4dcd3d2.mp4",
+          "sha256": "3781e4dcd3d21094f186cf442b3ee30cddfbb2fbe68d87c5c7470a2c742bf75a",
+          "kind": "reference",
+          "provenance": "verified-reference"
+        },
+        {
+          "path": "src/schemas/reference-fidelity.ts",
+          "sha256": "f3579822f31c5eb563b46c01069ac07d84934bee564119354e41a52cae4d7be1",
+          "kind": "factory-source",
+          "provenance": "repository-source"
+        }
+      ]
+    },
+    {
+      "id": "qa-natural-phone",
+      "objectType": "complete level",
+      "lifecycleStateBranch": "independent comparison",
+      "rendererPath": "source-candidate QA comparison",
+      "viewport": {
+        "label": "target-phone-portrait",
+        "width": 390,
+        "height": 844
+      },
+      "status": "REPRODUCED",
+      "expected": "独立 QA 以自然输入跑完启动、核心循环、终态、结算和重玩，并检查用户点名分支。",
+      "observed": "已有一般 runtime/perceptual gate，但没有录屏级同构比较工件，无法据此宣布符合录屏。",
+      "evidence": [
+        {
+          "path": "reference-evidence/incoming/_2026-09-06-135548-3781e4dcd3d2.mp4",
+          "sha256": "3781e4dcd3d21094f186cf442b3ee30cddfbb2fbe68d87c5c7470a2c742bf75a",
+          "kind": "reference",
+          "provenance": "verified-reference"
+        },
+        {
+          "path": "src/providers/codex-account.ts",
+          "sha256": "241ad224a182b6ae45cdc2c58f2de35811dff82245414516d33acf0bfc41ef77",
+          "kind": "factory-source",
+          "provenance": "repository-source"
+        }
+      ]
+    }
+  ],
+  "confirmedFindings": [
+    "问题覆盖录屏、对象、生命周期、呈现路径和视口轴；不是某一个美术资源或单个游戏文件的局部缺陷。",
+    "来源录屏身份已确认，证据可用；阻塞点位于共享工厂的派生证据、关卡契约、Builder 输入和 QA 比较链。",
+    "历史六帧提取证明当前机器能够读取录屏，但该临时工件未进入标准流水线且粒度不足。",
+    "在缺少事件级时序和可机器比较空间结构时，现有工厂只能判断一般行为是否存在，不能证明录屏关卡同构。"
+  ],
+  "remainingGaps": [
+    "尚未由标准工厂生成逐帧清单。",
+    "尚未生成 Zod 校验的参考关卡重建契约。",
+    "尚未建立候选运行时语义轨迹和源/候选比较门禁。",
+    "共享工厂完成后仍需开新 run，以新链路重建并独立验收该游戏。"
+  ],
+  "createdAt": "2026-09-08T08:12:44.490013Z"
+}

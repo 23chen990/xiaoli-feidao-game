@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "startedFromReset": true,
+  "actions": [
+    "手机与桌面从新浏览器上下文使用正常 touch/mouse 输入；时间戳见 recording.json。",
+    "未注入状态、存储、debug 或 fixture。"
+  ],
+  "transitions": [
+    {
+      "name": "startup-to-core",
+      "changed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/qa/portrait-1/recording.json"
+    },
+    {
+      "name": "visible-failure-phone",
+      "changed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/qa/portrait-1/frames/terminal.png"
+    },
+    {
+      "name": "visible-failure-desktop",
+      "changed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/qa/desktop-1/frames/terminal.png"
+    }
+  ],
+  "completion": "terminal",
+  "replayObserved": true,
+  "forbiddenOperations": [],
+  "screenshots": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/qa/portrait-1/frames/frame-0000.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/qa/portrait-1/frames/frame-0000.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/qa/portrait-1/frames/frame-0001.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/qa/portrait-1/frames/terminal.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/qa/desktop-1/frames/frame-0000.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/qa/desktop-1/frames/terminal.png"
+  ],
+  "passed": false,
+  "blockers": [
+    "两个视口均在前段失败，手机和桌面终点结算未覆盖。",
+    "stack-a/b 连续自然生命周期未覆盖。"
+  ],
+  "runner": "independent-QA-normal-input-recorder",
+  "buildHash": "10cba7632922f9fdeaa2eb33f7a05aa09bd3dbb7ca45a2db24acac282c9fd9a6",
+  "runtime": "Chromium against unchanged dist/index.html; no rebuild during QA",
+  "device": {
+    "width": 390,
+    "height": 844,
+    "label": "390x844 and 1100x720 sequential captures"
+  },
+  "observedAt": "2026-09-07T08:51:04.403Z"
+}

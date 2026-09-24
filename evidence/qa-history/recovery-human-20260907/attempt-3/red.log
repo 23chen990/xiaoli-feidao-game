@@ -1,0 +1,88 @@
+✔ L1-STACK a: actual knife contact cuts the bearing object and releases the overlapping upper object (5.868083ms)
+✖ L1-STACK-VISUAL-EVIDENCE a: same target stays visible and separates into two halves after cut (5.692916ms)
+✔ L1-STACK b: actual knife contact cuts the bearing object and releases the overlapping upper object (2.325916ms)
+✔ L1-STACK-VISUAL-EVIDENCE b: same target stays visible and separates into two halves after cut (0.998042ms)
+✔ L1-GRAVITY active airborne play does not freeze a hovering supported collectible (2.532834ms)
+✔ L1-REWARD intact has zero earnings; a real cut names the separated target and replay clears earnings (3.143583ms)
+✔ L1-PLACEMENT every initial collectible has a touching support, including the late and bridge targets (0.252ms)
+✔ L1-FINISH labels use viewport coordinates without a second offset (0.887209ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 390x844 (1.278209ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 1100x720 (0.305583ms)
+✔ L1-OPENING-TABLE-BRANCH opening-table-a joins its underside to the actual floor (3.293667ms)
+✔ L1-OPENING-TABLE-BRANCH opening-table-b joins its underside to the actual floor (0.475709ms)
+✔ L1-OPENING-TABLE-BRANCH level1-reward-shelf joins its underside to the actual floor (0.3815ms)
+✔ L1-OPENING-TABLE-BRANCH bridge-table joins its underside to the actual floor (0.394666ms)
+✔ L1-OPENING-TABLE-BRANCH lift-table joins its underside to the actual floor (0.343042ms)
+✔ L1-OPENING-TABLE-BRANCH tower-table joins its underside to the actual floor (0.366084ms)
+✔ L1-OPENING-TABLE-BRANCH late-table joins its underside to the actual floor (0.368833ms)
+✖ L1-OPENING-TABLE-BRANCH white-bumper joins its underside to the actual floor (0.902333ms)
+✖ L1-OPENING-TABLE-BRANCH white-branch joins its underside to the actual floor (0.43ms)
+✔ L1-FIRST-TARGET-VISIBILITY rune-1 intact submits triangles at 390x844 (10.7665ms)
+✔ L1-FIRST-TARGET-VISIBILITY rune-1 intact submits triangles at 1100x720 (2.2205ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 18
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 431.158875
+
+✖ failing tests:
+
+test at tests/level1-recovery.test.ts:36:3
+✖ L1-STACK-VISUAL-EVIDENCE a: same target stays visible and separates into two halves after cut (5.692916ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(released.y > 379 || released.vy > 0)
+  
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:49:12)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/opening-renderer-regression.test.ts:35:3
+✖ L1-OPENING-TABLE-BRANCH white-bumper joins its underside to the actual floor (0.902333ms)
+  AssertionError [ERR_ASSERTION]: white-bumper never entered the runtime grounded-base branch
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/opening-renderer-regression.test.ts:42:14)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/opening-renderer-regression.test.ts:35:3
+✖ L1-OPENING-TABLE-BRANCH white-branch joins its underside to the actual floor (0.43ms)
+  AssertionError [ERR_ASSERTION]: white-branch never entered the runtime grounded-base branch
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/opening-renderer-regression.test.ts:42:14)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

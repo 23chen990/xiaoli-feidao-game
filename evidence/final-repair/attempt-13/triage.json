@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-triage",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 13,
+  "issueId": "L1-RUNWAY-RECOVERY-PRE-CORRECTION-POSE",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "classification": "natural-level1-runway-recovery-blocker",
+  "status": "VALIDATED_REPRODUCTION",
+  "priorAttempt": {
+    "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-12/fix-result.json",
+    "sha256": "bbf6c8f5ca78c826fa2753746244ef1d758c23a878db7f6bb8c4cbe1cf0633bd",
+    "status": "BLOCKED",
+    "candidateRejected": true
+  },
+  "reproduction": {
+    "baselineContacts": [
+      {
+        "ordinal": "first",
+        "frame": 216,
+        "playerX": 305.2,
+        "playerY": 514.1666666666666,
+        "playerAngle": 4.986276450461116,
+        "contactPointX": 315.47809,
+        "contactPointY": 477.58305,
+        "normalY": -1,
+        "relativeNormalVelocity": 180
+      },
+      {
+        "ordinal": "second",
+        "frame": 302,
+        "playerX": 332.7,
+        "playerY": 469.7083333333333,
+        "playerAngle": 6.656567983114545,
+        "contactPointX": 368.08175,
+        "contactPointY": 483.56948,
+        "normalY": -1,
+        "relativeNormalVelocity": 195
+      }
+    ],
+    "candidateDivergence": {
+      "firstPosePlayerY": 509.16666666666663,
+      "firstPoseExpectedY": 514.1666666666666,
+      "firstPoseDeltaY": -5,
+      "secondContactFrame": 305,
+      "secondContactExpectedFrame": 302,
+      "releaseCount": 1,
+      "routePlayerX": 1749.6789775152486,
+      "expiryStatus": "anchored",
+      "evidence": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-12/green-targeted.log",
+          "sha256": "6ce740637cde7eaee2d551b09e31d5774b507cf0927abd9114ded74c9e95e101"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-12/fix-result.json",
+          "sha256": "bbf6c8f5ca78c826fa2753746244ef1d758c23a878db7f6bb8c4cbe1cf0633bd"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/green-targeted.log",
+          "sha256": "d0d64f4227589d2edd4aff8ca1939209b75e933d1df89ed0ee51725c61f48ab6"
+        }
+      ]
+    },
+    "orderingEvidence": {
+      "responseHelper": "respondToHardSurface",
+      "correctionPixels": 5,
+      "correctionDirection": "contact normal",
+      "observedNormalY": -1,
+      "hypothesis": "The candidate applied the normal correction before storing the integrated pose, shifting the first pose upward by exactly five simulation pixels and changing the next contact timing."
+    }
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "level1 runway sharp tip",
+      "lifecycleStateBranch": "early separating contact before recovery response",
+      "rendererPresentationPath": "ThreePresentationModel airborne player",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-12/green-targeted.log"],
+      "observation": "Candidate first pose is exactly five pixels above the baseline pose.",
+      "inference": "The contact response order is causally involved.",
+      "unknowns": ["The natural renderer must still be retested after the focused branch passes."]
+    },
+    {
+      "objectType": "pending runway release pose",
+      "lifecycleStateBranch": "second contact and one-shot release",
+      "rendererPresentationPath": "airborne motion and launch feedback",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/green-targeted.log"],
+      "observation": "Validated Attempt 11 recorded frames 216 and 302 and two releases; Attempt 12 recorded frame 305 and one release.",
+      "inference": "Restoring the pre-correction pose should restore the release trajectory and second contact timing.",
+      "unknowns": ["The exact candidate setter/clear order must be proven by the new focused trace."]
+    },
+    {
+      "objectType": "ordinary runway side/body contact",
+      "lifecycleStateBranch": "non-qualifying hard-surface branch",
+      "rendererPresentationPath": "bounce/anchor feedback path",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/task.json"],
+      "observation": "The contract requires side/body and x>=350 contacts to retain their existing behavior.",
+      "inference": "The new handoff must not widen the runway recovery branch.",
+      "unknowns": ["Natural side/body contact perceptual evidence remains outstanding."]
+    },
+    {
+      "objectType": "default browser journey",
+      "lifecycleStateBranch": "startup → runway → terminal → replay",
+      "rendererPresentationPath": "web-lite Three.js presentation",
+      "viewport": "390x844",
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-summary.json"],
+      "observation": "Earlier natural QA was blocked on the runway recovery branch.",
+      "inference": "A focused pass is necessary but not sufficient for release.",
+      "unknowns": ["No fresh natural or perceptual trace exists for this repair yet."]
+    }
+  ],
+  "rootCauseHypothesis": {
+    "evidence": "The candidate's first pose Y differs from the validated baseline by exactly -5 pixels, matching respondToHardSurface's normal correction on the observed normalY=-1 contact; the same candidate then reaches its second contact three fixed frames late and stalls after an unexpected anchor.",
+    "changeHypothesis": "On the qualifying separating runway top sharp contact, capture the integrated player pose and support offsets before any hard-surface correction, then skip correction and ordinary-anchor handling for that contact step. Consume the pose by resolving the current active support transform plus the stored offsets and emit the standard launch from that restored pose.",
+    "branch": "separating runway top sharp contact before hard-surface correction",
+    "qualification": "active collidable level1-runway-main, normalY<=-0.9, relative normal velocity>=0, player center x<350, recovery lockout satisfied",
+    "orderingRule": "capture integrated player pose and support offsets before respondToHardSurface; skip correction and ordinary anchor for this branch",
+    "preservedBranches": [
+      "Approaching runway top contacts continue to use hard-surface recovery.",
+      "Runway side and body contacts retain their authored anchor/bounce behavior.",
+      "The x>=350 runway sharp suppression remains unchanged.",
+      "Non-runway support launches remain ordinary launches.",
+      "Reset, level load, terminal, expiry, inactive support, and non-runway clear behavior remain bounded."
+    ],
+    "rejectedAlternatives": [
+      "Do not call respondToHardSurface before snapshotting the qualifying pose.",
+      "Do not interpolate the stored pose back to contact.time.",
+      "Do not widen the player-center threshold or use contact-point x as the setter gate.",
+      "Do not change the pose TTL, launch velocities, or tap schedule.",
+      "Do not edit renderer, platform, level, persistence, or release configuration."
+    ]
+  },
+  "scope": {
+    "includedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+    ],
+    "excludedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-presentation.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/style.css",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist"
+    ],
+    "route": "formal-fixer",
+    "expectedSourceFileLimit": 2
+  },
+  "acceptanceCriteria": [
+    "Run a red focused test before modifying production code.",
+    "Record a trace of the integrated pose before and after any contact correction for both contacts.",
+    "Capture the first runway pose at frame 216 with the baseline x, y, and angle.",
+    "Capture the second runway pose at frame 302 with the baseline x, y, and angle.",
+    "Use the separating top-contact qualification exactly: active runway, normalY<=-0.9, relative normal velocity>=0, player center x<350.",
+    "Snapshot player pose and support offsets before respondToHardSurface changes position.",
+    "Skip the hard-surface correction and ordinary anchor for the qualifying branch only.",
+    "Keep both poses airborne with measurable motion and rotation until release.",
+    "Consume both poses exactly once at the scheduled taps and emit launch at the restored pose.",
+    "Preserve standard launch vx=150, vy=-300, angular speed, cooldown, and input-buffer behavior.",
+    "Preserve the bounded 2.35-second lifetime and every explicit clear path.",
+    "Keep approaching, side/body, x>=350, non-runway, and opening branches unchanged.",
+    "Pass the focused retained test contract and pnpm test.",
+    "Pass pnpm lint and pnpm typecheck.",
+    "Run exactly one pnpm build and record its output hash.",
+    "Do not claim natural or perceptual completion from this Fixer task."
+  ],
+  "evidenceClassification": {
+    "observed": [
+      "Attempt 12 candidate first pose Y is five pixels above baseline.",
+      "Attempt 12 candidate second contact is frame 305 instead of 302 and only one pose was released.",
+      "Attempt 12 candidate route stalls at x=1749.6789775152486 and expiry fixture is anchored."
+    ],
+    "inferred": [
+      "The exact five-pixel delta matches the normal correction in respondToHardSurface.",
+      "Capturing before correction and skipping the ordinary anchor should preserve the baseline trajectory."
+    ],
+    "unknown": [
+      "The candidate's full setter/clear order is not directly observable after rollback.",
+      "Natural and perceptual QA remain outstanding."
+    ]
+  },
+  "createdAt": "2026-09-23T11:05:00.000Z"
+}

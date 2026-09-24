@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "buildSha256": "10cba7632922f9fdeaa2eb33f7a05aa09bd3dbb7ca45a2db24acac282c9fd9a6",
+  "cells": [
+    {
+      "objectType": "blade / white-column / under-slat",
+      "stateBranch": "airborne → handle bounce → cut → fall → failure replay",
+      "renderer": "game-core → ThreeWorldRenderer → DOM terminal",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "coverage": "OBSERVED",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-independent-20260922/portrait-2/recording.json",
+      "finding": "Failure followed the 10-second input-window cutoff; replay returned ready. Shared product cause unconfirmed."
+    },
+    {
+      "objectType": "level1-rainbow-step-a / level1-ladder-stack-a",
+      "stateBranch": "support → cut → upper falls → rests",
+      "renderer": "game-core → ThreeWorldRenderer / CutVisualEntity",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "coverage": "UNOBSERVED",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-independent-20260922/portrait-2/recording.json",
+      "finding": "No recorded contact with this stack. Sibling cuts cannot close this branch."
+    },
+    {
+      "objectType": "level1-rainbow-step-b / level1-ladder-stack-b",
+      "stateBranch": "support → cut → upper falls → rests",
+      "renderer": "game-core → ThreeWorldRenderer / CutVisualEntity",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "coverage": "UNOBSERVED",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-independent-20260922/portrait-2/recording.json",
+      "finding": "No recorded contact with this stack. Sibling cuts cannot close this branch."
+    },
+    {
+      "objectType": "finish lanes",
+      "stateBranch": "approach → contact → world result → settlement → replay",
+      "renderer": "ThreeWorldRenderer → finish-label-layout → DOM",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "coverage": "UNOBSERVED",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-independent-20260922/portrait-2/recording.json",
+      "finding": "Run failed before finish. Failure replay is not finish replay evidence."
+    },
+    {
+      "objectType": "blade / side-tag",
+      "stateBranch": "airborne → handle bounce → cut → fall → failure replay",
+      "renderer": "game-core → ThreeWorldRenderer → DOM terminal",
+      "viewport": {
+        "width": 1100,
+        "height": 720
+      },
+      "coverage": "OBSERVED",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-independent-20260922/desktop-2/recording.json",
+      "finding": "Failure followed the 10-second input-window cutoff; replay returned ready. Shared product cause unconfirmed."
+    },
+    {
+      "objectType": "level1-rainbow-step-a / level1-ladder-stack-a",
+      "stateBranch": "support → cut → upper falls → rests",
+      "renderer": "game-core → ThreeWorldRenderer / CutVisualEntity",
+      "viewport": {
+        "width": 1100,
+        "height": 720
+      },
+      "coverage": "UNOBSERVED",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-independent-20260922/desktop-2/recording.json",
+      "finding": "No recorded contact with this stack. Sibling cuts cannot close this branch."
+    },
+    {
+      "objectType": "level1-rainbow-step-b / level1-ladder-stack-b",
+      "stateBranch": "support → cut → upper falls → rests",
+      "renderer": "game-core → ThreeWorldRenderer / CutVisualEntity",
+      "viewport": {
+        "width": 1100,
+        "height": 720
+      },
+      "coverage": "UNOBSERVED",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-independent-20260922/desktop-2/recording.json",
+      "finding": "No recorded contact with this stack. Sibling cuts cannot close this branch."
+    },
+    {
+      "objectType": "finish lanes",
+      "stateBranch": "approach → contact → world result → settlement → replay",
+      "renderer": "ThreeWorldRenderer → finish-label-layout → DOM",
+      "viewport": {
+        "width": 1100,
+        "height": 720
+      },
+      "coverage": "UNOBSERVED",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-independent-20260922/desktop-2/recording.json",
+      "finding": "Run failed before finish. Failure replay is not finish replay evidence."
+    }
+  ]
+}

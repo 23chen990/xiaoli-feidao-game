@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fix-result",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 4,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "issueId": "L1-RUNWAY-RECOVERY-RELEASE-VELOCITY",
+  "status": "BLOCKED",
+  "why": "The packet's exact early separating Level1 runway top-tip branch was covered by a valid RED test: restored production anchored it instead of recovering airborne. A candidate preserved a one-shot release intent with a post-recovery vy snapshot, but the seed-31 fixed timestamp replay ended at 6.8 seconds, below the required 11.9 seconds and x>2000. The candidate was immediately reverted. No natural runtime or perceptual completion is claimed.",
+  "triagePath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-4/triage.json",
+  "taskPacketPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-4/task.json",
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory modules, platform adapters, release configuration, and renderer implementation.",
+    "Full conversation, unrelated QA output, and unbound competitor media.",
+    "Natural journey and perceptual completion claims; independent QA remains required.",
+    "All source files outside src/game-core.ts and tests/level1-recovery.test.ts."
+  ],
+  "filesChanged": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "implementation": {
+    "hypothesis": "Keep the one-shot pendingRunwayReleaseIntent for the exact early separating runway top-tip recovery, but consume the captured post-recovery vertical velocity on the next normal tap instead of forcing LAUNCH_VY.",
+    "decision": "REJECTED",
+    "productionCandidateReverted": true,
+    "restoredProductionSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+    "evidence": [
+      "RED: focused tests showed the exact early separating top-face tip pose became anchored under restored production behavior; see red-targeted.log.",
+      "The candidate focused run failed the seed-31 timestamp replay at 6.8 seconds, below the required 11.9 seconds and x>2000; see green-targeted.log.",
+      "The candidate also exposed a lifecycle assertion issue: a follow-up tap during cooldown remained buffered, so the event tail still showed launch. This was recorded as a gap and not used to excuse the replay failure.",
+      "After candidate rejection, src/game-core.ts was restored byte-for-byte to the packet's current-source SHA-256."
+    ]
+  },
+  "tests": [
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "exitCode": 1,
+      "phase": "RED",
+      "result": "15 passed, 2 failed. The exact reported separating runway contact failed as intended: actual anchored, expected airborne. The expired-intent lifecycle test also failed its airborne precondition against the restored baseline.",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-4/red-targeted.log"
+    },
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "exitCode": 1,
+      "phase": "REJECTED-CANDIDATE",
+      "result": "The candidate's replay gate ended at 6.8 seconds, below acceptance. The contact recovery, non-runway launch, and expiry assertions passed; the added second-tap assertion also needs to clear cooldown before inspecting the next event. The candidate was reverted.",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-4/green-targeted.log"
+    },
+    {
+      "command": "pnpm test",
+      "exitCode": null,
+      "phase": "NOT-RUN",
+      "result": "Not run after the candidate failed the required focused replay gate; see tests.log."
+    },
+    {
+      "command": "pnpm lint",
+      "exitCode": null,
+      "phase": "NOT-RUN",
+      "result": "Not run after the candidate failed the required focused replay gate; see lint.log."
+    },
+    {
+      "command": "pnpm typecheck",
+      "exitCode": null,
+      "phase": "NOT-RUN",
+      "result": "Not run after the candidate failed the required focused replay gate; see typecheck.log."
+    }
+  ],
+  "build": {
+    "command": "pnpm build",
+    "count": 0,
+    "phase": "NOT-RUN",
+    "result": "Not run after the candidate failed the required focused replay gate; no dist SHA-256 is claimed.",
+    "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-4/build.log"
+  },
+  "runtimeQa": {
+    "naturalJourneyClaimed": false,
+    "perceptualGateClaimed": false,
+    "requiredNext": [
+      "A future distinct hypothesis should compare consumption-time vertical velocity with the contact-time snapshot: the replay's first scheduled release tap is at 2.327048167 seconds, and the contact-time snapshot candidate failed at 6.8 seconds.",
+      "Independent fresh natural-input QA must retest both viewports and the exact runway branch after a candidate clears the deterministic replay gate.",
+      "QA must capture visible startup, core loop, terminal settlement, and replay; any natural or perceptual BLOCKED result keeps the issue open."
+    ]
+  },
+  "remainingEvidenceGaps": [
+    "No accepted production change or build was produced; src/game-core.ts matches the packet's restored baseline hash.",
+    "The focused candidate replay failed at 6.8 seconds; the log does not record the terminal player coordinates or failReason.",
+    "The added one-shot second-tap assertion needs to advance or clear flip cooldown before checking the resulting ordinary air-flip event.",
+    "Full suite, lint, typecheck, and build were not run after candidate rejection.",
+    "Natural-input and perceptual post-fix QA remain unrun."
+  ],
+  "nextHypothesis": "The contact-time vy snapshot may be stale by the scheduled release tap: the first replay release tap occurs at 2.327048167 seconds, while the recovery snapshot is captured at runway contact and gravity changes the airborne velocity before consumption. A distinct next attempt should preserve the one-shot intent but capture the current outgoing vertical velocity at release-tap time, then test the same 11.9-second/x>2000 replay before broader checks.",
+  "completedAt": "2026-09-23T07:14:46.000Z"
+}

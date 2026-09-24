@@ -1,0 +1,81 @@
+No errors detected in compressed data of build/TapBuild/game.zip.
+application.js
+assets/
+assets/internal/
+assets/internal/config.json
+assets/internal/import/
+assets/internal/import/07/
+assets/internal/import/07/07d3aae9f.json
+assets/internal/index.js
+assets/main/
+assets/main/config.json
+assets/main/import/
+assets/main/import/c9/
+assets/main/import/c9/c9468ad9-5977-4390-b6fc-b02806174123.json
+assets/main/import/fd/
+assets/main/import/fd/fd8ec536-a354-4a17-9c74-4f3883c378c8.json
+assets/main/index.js
+check-version.js
+cocos-js/
+cocos-js/_virtual_cc-BncijMet.js
+cocos-js/assets/
+cocos-js/assets/bullet.release.wasm-BIzkn7bF.wasm
+cocos-js/assets/spine-CC34fKUR.wasm
+cocos-js/bullet.release.asm-DxRECbrD.js
+cocos-js/bullet.release.wasm-DRRYxUJj.js
+cocos-js/bullet.release.wasm-mT4aJDLq.js
+cocos-js/cc.js
+cocos-js/spine-BGFFnNyc.js
+cocos-js/spine.asm-DxRECbrD.js
+cocos-js/spine.js-1Pcan4ap.js
+cocos-js/spine.wasm-DmQjMU-3.js
+engine-adapter.js
+first-screen.js
+game.js
+game.json
+logo.png
+project.config.json
+slogan.png
+src/
+src/chunks/
+src/chunks/bundle.js
+src/effect.bin
+src/import-map.js
+src/polyfills.bundle.js
+src/settings.json
+src/system.bundle.js
+web-adapter.js
+--- root entries ---
+application.js
+check-version.js
+engine-adapter.js
+first-screen.js
+game.js
+game.json
+logo.png
+project.config.json
+slogan.png
+web-adapter.js
+--- package metadata ---
+{"description":"项目配置文件。","miniprogramRoot":"./","setting":{"urlCheck":true,"postcss":true,"minified":true,"newFeature":false,"enhance":true,"useIsolateContext":true},"compileType":"game","libVersion":"widelyUsed","appid":"928932","projectname":"疯狂切割","condition":{"search":{"current":-1,"list":[]},"conversation":{"current":-1,"list":[]},"game":{"currentL":-1,"list":[],"current":-1},"miniprogram":{"current":-1,"list":[]}}}
+{
+  "deviceOrientation": "portrait",
+  "networkTimeout": {
+    "request": 5000,
+    "connectSocket": 5000,
+    "uploadFile": 5000,
+    "downloadFile": 500000
+  },
+  "productVersion": "1.0.0",
+  "convertScriptVersion": "2.0.4-ts"
+}
+--- archive facts ---
+1206522 bytes
+fd3ebdae9d4bd9761b5d18867e2df24ceb3355d6f07e547f06881c8aa6d8a393  build/TapBuild/game.zip
+--- runtime bundle contracts ---
+   2 390
+   1 844
+   1 Graphics runtime ready
+--- official plugin integrity ---
+3622ff27e296cd1ca5e74e8edf6fff96bb3a35fd648fb7efef0496498aa2e504  extensions/taptap-minigame-tools/package.json
+4:  "version": "1.2.2",

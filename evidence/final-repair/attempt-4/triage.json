@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-triage",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 4,
+  "issueId": "L1-RUNWAY-RECOVERY-RELEASE-VELOCITY",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "classification": "natural-level1-runway-recovery-blocker",
+  "status": "VALIDATED_REPRODUCTION",
+  "priorAttempt": {
+    "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-3/fix-result.json",
+    "sha256": "1eaf2ba780265331802d85d6bd5cd19b2a83807eb2b85d29eca85be9c22fcc47",
+    "status": "BLOCKED",
+    "candidateRejected": true
+  },
+  "reproduction": {
+    "objectType": "level1-runway-main sharp tip/normalY=-1",
+    "naturalViewport": "390x844",
+    "naturalContactPlayerX": [305.2, 332.7],
+    "naturalContactX": [315.47808960723034, 368.0817538698364],
+    "naturalContactVy": [-200, -195],
+    "baselineReplayAnchorTimes": [1.5833333333333333, 1.7666666666666666],
+    "baselineReplayReleaseTapTimes": [2.327048167, 4.602164],
+    "candidateReplayFailure": {
+      "elapsedSeconds": 6.458333333333444,
+      "playerX": 947.5867050393286,
+      "playerY": -128.11650427504605,
+      "failReason": "fall"
+    },
+    "evidence": [
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-summary.json",
+        "sha256": "d0640af40c41c1e49c38a58687c8b6f2635332d3fe02e3e7429e05a74b6307cd"
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/recording.json",
+        "sha256": "5e4d6457955e0596707116e3c9d325880506f41c24aa5bfd37928ae5cb242717"
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-2/green-targeted.log",
+        "sha256": "59f7c447c882e0b31af6c01d191ce68a64beb7a041cabf7de820e4e7060d834f"
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-3/fix-result.json",
+        "sha256": "1eaf2ba780265331802d85d6bd5cd19b2a83807eb2b85d29eca85be9c22fcc47"
+      }
+    ]
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "runway sharp tip",
+      "lifecycleStateBranch": "airborne separating upward contact",
+      "rendererPresentationPath": "Three.js player mesh and runway collision feedback",
+      "viewport": "390x844",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/recording.json"],
+      "observation": "The visible knife is moving upward through the runway tip region but is reported anchored at x≈305 and x≈333.",
+      "inference": "The sharp contact sweep is being promoted to a persistent support anchor despite separating motion.",
+      "unknowns": ["Whether the browser frame timing changes the exact contact step remains unmeasured."]
+    },
+    {
+      "objectType": "runway sharp tip",
+      "lifecycleStateBranch": "airborne separating recovery followed by pending release tap",
+      "rendererPresentationPath": "Three.js feedback event and visible player trajectory",
+      "viewport": "1100x720",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/recording.json"],
+      "observation": "The same tip/normalY=-1 branch recurs in the desktop natural trace and later reaches stack pressure.",
+      "inference": "The defect is not portrait-only and must preserve the later desktop route.",
+      "unknowns": ["The exact browser tap-to-fixed-step phase is not directly exposed by the renderer."]
+    },
+    {
+      "objectType": "runway support",
+      "lifecycleStateBranch": "anchored replay release",
+      "rendererPresentationPath": "deterministic fixed-step SliceSimulation act('flip')",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-2/green-targeted.log"],
+      "observation": "Removing the anchor changes the scheduled taps at 2.327s and 4.602s from support release to airborne flips and the replay later fails.",
+      "inference": "The lifecycle must preserve one release intent without reintroducing the anchor.",
+      "unknowns": ["The correct outgoing vertical velocity may be the post-recovery response rather than LAUNCH_VY."]
+    },
+    {
+      "objectType": "runway sharp tip",
+      "lifecycleStateBranch": "one-shot pending release candidate",
+      "rendererPresentationPath": "fixed-step game-core state and event stream",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-3/fix-result.json"],
+      "observation": "The candidate consumed the lifecycle tap but overwrote vertical motion and failed at 6.4583s, x≈947.6, y≈−128.1.",
+      "inference": "Full anchored launch semantics over-energize the vertical path; a bounded post-recovery velocity snapshot is a distinct testable correction.",
+      "unknowns": ["A snapshot may need clamping or expiry to avoid stale velocity and top-boundary failure."]
+    }
+  ],
+  "rootCauseHypothesis": {
+    "evidence": "Attempt 3 passed contact and lifecycle assertions but failed only after the pending tap replaced the recovery response with LAUNCH_VY=-300; the fixed replay leaves the world through the top at 6.4583s.",
+    "changeHypothesis": "On the exact early separating runway top-tip recovery, keep the one-shot pendingRunwayReleaseIntent, but capture the post-recovery outgoing vertical velocity and consume it once on the next normal tap instead of overwriting it with LAUNCH_VY. Preserve launch feedback, forward support velocity, cooldown reset, and buffer clearing.",
+    "latchName": "pendingRunwayReleaseIntent",
+    "velocitySnapshotName": "pendingRunwayReleaseVy",
+    "snapshotSemantics": "capture the post-recovery outgoing vertical velocity and use it once instead of overwriting it with LAUNCH_VY",
+    "expirySeconds": 1.2,
+    "rejectedAlternatives": [
+      "Approach-only relative-normal guard leaves the observed separating natural branch anchored.",
+      "Broad early top-normal recovery removes the anchored-release semantics needed by the fixed replay.",
+      "A full anchored-release latch restores the input meaning but launches too far upward and fails the fixed replay."
+    ]
+  },
+  "scope": {
+    "includedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+    ],
+    "excludedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-presentation.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/main.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/src/core",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/research"
+    ],
+    "route": "formal-fixer",
+    "expectedSourceFileLimit": 2
+  },
+  "acceptanceCriteria": [
+    "A RED test proves the exact upward/separating natural-pose contact anchors under the restored attempt-3 baseline.",
+    "A GREEN lifecycle test proves the next normal flip consumes the pending intent and emits one launch event without creating a persistent anchor.",
+    "The consumed tap preserves the post-recovery vertical velocity snapshot within an explicit bounded tolerance and does not force LAUNCH_VY.",
+    "The pending velocity and intent expire together, and a later airborne tap is an ordinary air flip.",
+    "Non-runway support anchors and their release taps remain unchanged.",
+    "The approaching/downward top-normal branch, non-top sharp anchor, later x>=350 suppression, and blunt body/handle bounce remain intact.",
+    "The seed-31 fixed timestamp replay reaches at least 11.9 seconds and x>2000 without failure.",
+    "Only game-core.ts and level1-recovery.test.ts change; no renderer, level, debug, platform, or shared factory files.",
+    "pnpm test, pnpm lint, pnpm typecheck pass and exactly one pnpm build succeeds with a recorded dist SHA-256.",
+    "Independent fresh natural QA must retest both viewports, exact runway branch, stack/settlement, visible terminal and replay; no Fixer runtime claim."
+  ],
+  "evidenceClassification": {
+    "observed": [
+      "Natural portrait and desktop recordings visibly anchor the runway tip branch at player x≈305 and x≈333.",
+      "The attempt-3 candidate failed the fixed replay at 6.4583s with y≈−128.1 and failReason=fall."
+    ],
+    "inferred": [
+      "The pending tap must preserve release lifecycle semantics while retaining the recovery response's vertical energy.",
+      "A bounded post-recovery velocity snapshot is causally narrower than a new renderer or level change."
+    ],
+    "unknown": [
+      "The exact snapshot capture point and clamp bounds must be established by the focused red/green test.",
+      "Natural post-fix perceptual and console-error status remains unverified."
+    ]
+  },
+  "createdAt": "2026-09-23T07:00:00.000Z"
+}

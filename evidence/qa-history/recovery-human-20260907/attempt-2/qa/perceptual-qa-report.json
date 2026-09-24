@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "perceptual-qa-report",
+  "game": "mobile-slice-adaptation-20260830",
+  "passed": false,
+  "features": [
+    {
+      "featureId": "L1-INPUT-390",
+      "playerVisible": true,
+      "naturalTriggerVerified": true,
+      "screenshotEvidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/frame-0000.png"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/frame-0000.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/recording.json"
+      ],
+      "notes": [
+        "PASS: 开场目标和刀均可见；正常触摸后切割与 HUD 变化可见。"
+      ]
+    },
+    {
+      "featureId": "L1-GROUND-390",
+      "playerVisible": true,
+      "naturalTriggerVerified": true,
+      "screenshotEvidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/frame-0000.png"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/frame-0000.png"
+      ],
+      "notes": [
+        "PASS: 首个球体台面有可见厚度并接到下方地面。"
+      ]
+    },
+    {
+      "featureId": "L1-STACK-390",
+      "playerVisible": false,
+      "naturalTriggerVerified": false,
+      "screenshotEvidence": [],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/recording.json"
+      ],
+      "notes": [
+        "BLOCKED: 录制走到同一关卡的后段，但没有足够清晰的逐对象画面证据确认指定 stack-b 的承托、散开和落地。"
+      ]
+    },
+    {
+      "featureId": "L1-REWARD-390",
+      "playerVisible": true,
+      "naturalTriggerVerified": true,
+      "screenshotEvidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/frame-0000.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/frame-0010.png"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/frame-0000.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/frame-0010.png"
+      ],
+      "notes": [
+        "PASS: 完整态 HUD 为 0；切面/分离后目标附近出现 +4，累计值同步。"
+      ]
+    },
+    {
+      "featureId": "L1-PRESSURE-390",
+      "playerVisible": true,
+      "naturalTriggerVerified": true,
+      "screenshotEvidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/frame-0006.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-1/frames/terminal.png"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/frame-0006.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-1/frames/terminal.png"
+      ],
+      "notes": [
+        "PASS: 尖刺在接近前可见；失败路线显示“跌出路线”和重试入口。"
+      ]
+    },
+    {
+      "featureId": "L1-FINISH-390",
+      "playerVisible": true,
+      "naturalTriggerVerified": true,
+      "screenshotEvidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/frame-0015.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/replay.png"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/frame-0015.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/replay.png"
+      ],
+      "notes": [
+        "PASS: 终点倍率栏在手机视口可见；正常通关进入结算并重玩回到 ready。"
+      ]
+    },
+    {
+      "featureId": "L1-INPUT-1100",
+      "playerVisible": true,
+      "naturalTriggerVerified": true,
+      "screenshotEvidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/frame-0000.png"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/frame-0000.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/recording.json"
+      ],
+      "notes": [
+        "PASS: 开场目标和刀均可见；正常鼠标输入后切割与 HUD 变化可见。"
+      ]
+    },
+    {
+      "featureId": "L1-GROUND-1100",
+      "playerVisible": true,
+      "naturalTriggerVerified": true,
+      "screenshotEvidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/frame-0000.png"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/frame-0000.png"
+      ],
+      "notes": [
+        "PASS: 首个球体台面有可见厚度并接到下方地面。"
+      ]
+    },
+    {
+      "featureId": "L1-STACK-1100",
+      "playerVisible": false,
+      "naturalTriggerVerified": false,
+      "screenshotEvidence": [],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/recording.json"
+      ],
+      "notes": [
+        "BLOCKED: 录制走到同一关卡的后段，但没有足够清晰的逐对象画面证据确认指定 stack-b 的承托、散开和落地。"
+      ]
+    },
+    {
+      "featureId": "L1-REWARD-1100",
+      "playerVisible": true,
+      "naturalTriggerVerified": true,
+      "screenshotEvidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/frame-0000.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/frame-0010.png"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/frame-0000.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/frame-0010.png"
+      ],
+      "notes": [
+        "PASS: 完整态 HUD 为 0；切面/分离后目标附近出现局部奖励，累计值同步。"
+      ]
+    },
+    {
+      "featureId": "L1-PRESSURE-1100",
+      "playerVisible": true,
+      "naturalTriggerVerified": true,
+      "screenshotEvidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/frame-0006.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-1/frames/terminal.png"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/frame-0006.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-1/frames/terminal.png"
+      ],
+      "notes": [
+        "PASS: 尖刺在接近前可见；失败路线显示“跌出路线”和重试入口。"
+      ]
+    },
+    {
+      "featureId": "L1-FINISH-1100",
+      "playerVisible": true,
+      "naturalTriggerVerified": true,
+      "screenshotEvidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/frame-0015.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/replay.png"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/frame-0015.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/replay.png"
+      ],
+      "notes": [
+        "PASS: 终点倍率栏在桌面视口可见；正常通关进入结算并重玩回到 ready。"
+      ]
+    }
+  ],
+  "checkedAt": "2026-09-07T07:26:44.475Z"
+}

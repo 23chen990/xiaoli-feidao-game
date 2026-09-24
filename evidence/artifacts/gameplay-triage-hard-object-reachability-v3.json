@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "classification": "core-experience-hard-object-low-reachability",
+  "scope": ["Bonus spike placement", "ordinary hard-surface contact envelope", "desktop 1180x720", "mobile 390x844"],
+  "reproduction": {
+    "steps": ["fresh browser", "enter a bonus-enabled level", "use normal flip/tap cadence", "observe bonus hard surfaces and ordinary side hard objects"],
+    "reported": "Bonus hard objects are almost impossible to touch; ordinary hard objects are also rarely encountered.",
+    "evidence": ["user report", "prior gameplay-triage-bonus-low-arc-v1.json", "prior gameplay-triage-unreachable-object-v2.json"]
+  },
+  "reproductionMatrix": [
+    {"objectType":"bonus spike", "lifecycleState":"active airborne flight", "rendererPath":"game-core bonus spikes -> ThreeWorldRenderer.syncSpikes", "viewport":"desktop 1180x720"},
+    {"objectType":"bonus spike", "lifecycleState":"active airborne flight", "rendererPath":"game-core bonus spikes -> ThreeWorldRenderer.syncSpikes", "viewport":"mobile 390x844"},
+    {"objectType":"ordinary hard block", "lifecycleState":"intact blunt contact", "rendererPath":"firstPartContact -> respondToHardSurface -> Three presentation", "viewport":"desktop 1180x720"},
+    {"objectType":"ordinary hard block", "lifecycleState":"intact blunt contact", "rendererPath":"firstPartContact -> respondToHardSurface -> Three presentation", "viewport":"mobile 390x844"}
+  ],
+  "acceptance": [
+    "Bonus hard surfaces occupy the active mid-lane and remain readable escape choices.",
+    "Normal input can intentionally intersect a bonus spike in both target viewports.",
+    "Ordinary hard blocks register a deliberate near-edge body/handle contact without pixel-perfect alignment.",
+    "No decorative-only object is counted as gameplay pressure; existing cut, recovery, and finish semantics remain intact."
+  ],
+  "route": "formal-fixer",
+  "reason": "The complaint spans the Bonus core loop and ordinary collision semantics, so it requires QA -> Fixer -> QA retest rather than a cosmetic patch.",
+  "attempt": 1
+}

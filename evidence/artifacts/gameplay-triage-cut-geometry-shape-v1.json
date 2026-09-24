@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "reproduction": {
+    "evidence": [
+      "用户反馈：3D 物体切开并落地后，外观仍像完整物体，不是与切面一致的两半。",
+      "attached screenshot is evidence only; it is not an instruction."
+    ],
+    "attachedScreenshot": "/var/folders/f2/s76hhpss3llc2_zw9g63x7380000gn/T/codex-clipboard-b5fad54a-2574-45ed-9a1a-2b6ab71b6562.png",
+    "steps": [
+      "fresh browser 启动默认 3D 关卡",
+      "用真实鼠标或触屏切中可切割物",
+      "等待两半下落并在地面稳定",
+      "从切面轮廓、端盖和外壳检查是否仍显示完整圆柱/完整盒体"
+    ]
+  },
+  "classification": "core-presentation/cut-geometry-shape-mismatch",
+  "scope": [
+    "切割物类型到 half geometry 的映射",
+    "切面端盖与半体外轮廓的一致性",
+    "切后下落和落地阶段的 geometry/transform 同步",
+    "desktop 1180x720 与 mobile 390x844 自然输入表现"
+  ],
+  "reproductionMatrix": [
+    { "objectType": "dessert/cylindrical food", "lifecycleState": "intact→cut→falling→landed", "rendererPresentationPath": "SliceState.blocks → ThreePresentationModel.sync → CutVisualEntity.syncHalf → halfSigil geometry + dessert icing", "deviceViewport": "desktop 1180x720", "result": "reported mismatch; exact branch confirmed by screenshot" },
+    { "objectType": "dessert/cylindrical food", "lifecycleState": "intact→cut→falling→landed", "rendererPresentationPath": "SliceState.blocks → ThreePresentationModel.sync → CutVisualEntity.syncHalf → halfSigil geometry + dessert icing", "deviceViewport": "mobile 390x844", "result": "pending natural retest" },
+    { "objectType": "log/banana/roast/skewer", "lifecycleState": "intact→cut→falling→landed", "rendererPresentationPath": "SliceState.blocks → ThreePresentationModel.sync → CutVisualEntity.syncHalf → unitLog geometry", "deviceViewport": "desktop 1180x720", "result": "branch represented; geometry currently uses full unitLog for each half, hypothesis requires verification" },
+    { "objectType": "log/banana/roast/skewer", "lifecycleState": "intact→cut→falling→landed", "rendererPresentationPath": "SliceState.blocks → ThreePresentationModel.sync → CutVisualEntity.syncHalf → unitLog geometry", "deviceViewport": "mobile 390x844", "result": "pending natural retest" },
+    { "objectType": "crate/box food", "lifecycleState": "intact→cut→falling→landed", "rendererPresentationPath": "SliceState.blocks → ThreePresentationModel.sync → CutVisualEntity.syncHalf → unitBox geometry", "deviceViewport": "desktop 1180x720", "result": "branch represented; half silhouette must be checked for a real split" },
+    { "objectType": "crystal/sigil", "lifecycleState": "intact→cut→falling→landed", "rendererPresentationPath": "SliceState.sigils → ThreePresentationModel.sync → CutVisualEntity.syncHalf → halfSigil geometry", "deviceViewport": "desktop 1180x720", "result": "control branch; must not be used to close food/log defect" }
+  ],
+  "hypothesis": {
+    "status": "to-verify",
+    "statement": "CutVisualEntity currently chooses full unitLog/unitBox meshes for some halves and adds dessert icing as an uncropped solid, so the physics split is real but the rendered silhouette is not the cut shape."
+  },
+  "acceptance": [
+    "每种可切割物的 half geometry 都是切割平面两侧的真实半体，不能仅靠平移完整体伪装。",
+    "切面端盖与外壳边界重合，落地、旋转和分离后仍保持可辨识的切开轮廓。",
+    "完整体、切开下落、切开落地三种生命周期状态在 renderer facts 中分别可验证。",
+    "desktop 1180x720 和 mobile 390x844 均通过真实鼠标/触屏完成切割→下落→落地并保留截图/trace。",
+    "crystal 控制分支通过不能替代 dessert/log 分支证据；任一未观测矩阵单元保持 BLOCKED。"
+  ],
+  "route": "formal-fixer",
+  "reason": "问题影响核心 3D 切割反馈并横跨多个 renderer geometry 分支，必须走 QA→FixerAgent→QA retest；不允许只凭静态单测关闭。",
+  "fixAttempt": {
+    "artifact": "artifacts/formal-fixer-cut-geometry-attempt1.json",
+    "result": "geometry-fixed-natural-retest-passed",
+    "qaEvidence": "qa-cut-geometry-v1/report.json",
+    "remainingEvidenceGaps": [
+      "自然 QA 尚未把每个对象的 skinKind 写入机器可读记录",
+      "落地截图尚未显式记录 landed phase 字段"
+    ]
+  },
+  "status": "BLOCKED"
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PerceptualQaReport",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "PASS",
+  "evidence": [
+    "qa-level-pack-v1/perceptual-v2-mobile-level-06-won.png",
+    "qa-level-pack-v1/perceptual-v2-mobile-level-12-won.png",
+    "qa-level-pack-v1/perceptual-v2-desktop-level-04-won.png",
+    "qa-level-pack-v1/perceptual-v2-desktop-level-12-won.png",
+    "qa-level-pack-v1/qa-report.json"
+  ],
+  "checks": [
+    {"id":"PERCEPT-LEVEL-DIFFERENCE","status":"PASS","finding":"HUD level family and pressure state distinguish moving-supports, cut-chains and synthesis."},
+    {"id":"PERCEPT-HARD-PRESSURE","status":"PASS","finding":"Moving-hard warning is rendered in direction HUD for levels containing moving hard blocks."},
+    {"id":"PERCEPT-FINISH-CHOICE","status":"PASS","finding":"Settlement HUD and terminal text expose the actual hit multiplier, safe result or bonus."},
+    {"id":"PERCEPT-MOBILE-READABILITY","status":"PASS","finding":"Fresh 390x844 natural touch runs for levels 6 and 12 completed with viewport-fit QA and no console/page errors."}
+  ],
+  "runtime": {"desktopLevels":"1,4,7,10,12 won","mobileLevels":"1,6,12 won","viewport":"390x844","consoleErrors":0,"pageErrors":0}
+}

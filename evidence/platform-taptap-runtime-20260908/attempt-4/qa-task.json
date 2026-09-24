@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "platform-qa-task",
+  "role": "QAAgent",
+  "targetGame": "mobile-slice-adaptation-20260830（TapTap 名称：疯狂切割）",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "zipPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/build/TapBuild/game.zip",
+  "expectedSha256": "5c087808f6835f90b31e162ffd48402b898476bd35f74d482cd0972d6615430b",
+  "fixerResultPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-runtime-20260908/attempt-4/fix-result.json",
+  "checks": [
+    "只读计算 game.zip SHA-256，必须精确匹配 5c087808f6835f90b31e162ffd48402b898476bd35f74d482cd0972d6615430b；不重建、不修改、不上传。",
+    "运行 unzip -t 并核对根入口 game.js/game.json/project.config.json、project AppID 928932、项目名 疯狂切割、portrait、版本 1.0.0、大小小于 20MB。",
+    "读取同一 ZIP 的 src/settings.json，核对 designResolution 390x844/policy4；结合 runtime-contract.json 核对 TapTap 小游戏的 fixed-width、ResolutionPolicy.FIXED_WIDTH、safe-area 及 Web-only exactFitScreen 语义。",
+    "只读核对 platform tests 的 14/14 GREEN、lint、typecheck、FixerResult Zod 状态，以及官方 TapTap plugin 1.2.2 SHA-256；确认无官方插件源码改写。",
+    "核对默认启动→Graphics 首帧→触摸核心循环→失败/结算→重玩相关静态入口和修复证据；不得用 fixture/debug 注入冒充自然玩家体验。",
+    "自然旅程和感知复测必须以该精确 ZIP 在 OPPO PKB110 Android 16、vivo V2001A/PD2001 OriginOS 3 完成；当前无设备/后台精确包绑定时分别标记 BLOCKED，不得用旧 SHA 或 sibling 设备通过替代。"
+  ],
+  "prohibitedActions": [
+    "不得修改目标工作区、ZIP、测试、构建配置或官方插件。",
+    "不得运行 Cocos build、TapTap 上传、后台提审或设备安装。",
+    "不得把 attempt 1/2/3 的 stale ZIP、用户截图、未绑定 SHA 的旧日志当作本次包的自然/感知通过证据。",
+    "不得把静态测试、fixture、状态注入或通过设备 sibling 分支冒充 OPPO/vivo 自然输入和玩家可见复测。"
+  ],
+  "outputPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-runtime-20260908/attempt-4/independent-qa/qa-report.json"
+}

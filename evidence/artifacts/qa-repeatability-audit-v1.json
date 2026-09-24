@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "QaRepeatabilityAudit",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED_FLAKY_DEFAULT_MOBILE",
+  "command": "pnpm qa:browser",
+  "entrypoint": "index.html",
+  "viewport": "390x844 native-touch",
+  "runs": [
+    {
+      "ordinal": 1,
+      "status": "failed",
+      "label": "mobile-natural-zero",
+      "elapsedSeconds": 8.67,
+      "cuts": 4,
+      "failReason": "spike",
+      "finishReached": false,
+      "evidence": "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/mobile-natural-zero-failed.png"
+    },
+    {
+      "ordinal": 2,
+      "status": "won",
+      "label": "mobile-natural-zero",
+      "elapsedSeconds": 27.08,
+      "cuts": 6,
+      "finishGateId": "calm-moon",
+      "finishPhases": ["contact", "reward", "celebration", "terminal"],
+      "evidence": "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/mobile-natural-zero-won.png"
+    }
+  ],
+  "interpretation": {
+    "observed": "nominally identical default natural run produced divergent terminal outcomes",
+    "inference": "input timing, render cadence, physics or route hazard alignment is not repeatable enough for a default mobile release gate",
+    "acceptance": "run the same seeded natural scenario repeatedly, record input timestamps and state hashes, identify the divergence, and keep QA blocked until variance is explained and bounded"
+  }
+}

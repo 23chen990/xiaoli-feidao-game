@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixerSummary",
+  "route": "formal-fixer",
+  "why": "Core loop pressure and level variety required QA retest; second and final repair attempt.",
+  "targetGame": "小李飞刀",
+  "workspace": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "contextOmitted": ["unrelated factory refactors", "platform packaging", "third-party competitor assets or tuning"],
+  "filesChanged": ["src/game-levels.ts", "src/game-core.ts", "tests/level-pressure.test.ts"],
+  "tests": {"targeted": "pass", "lint": "pass", "typecheck": "pass", "build": "pass"},
+  "runtimeEvidence": {"artifact": "runs/mobile-slice-adaptation-20260830/qa-level-pack-v1/runner-report.json", "passed": true, "naturalDesktopLevels": [1,4,7,10,12], "naturalMobileLevels": [1,6,12], "consoleErrors": 0, "pageErrors": 0},
+  "remainingEvidenceGaps": ["QA retest must confirm perceptual pressure and finish-zone readability on target devices", "platform packages remain outside web-lite evidence"],
+  "fixAttempts": 2
+}

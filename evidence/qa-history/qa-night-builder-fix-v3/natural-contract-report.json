@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "NaturalInputContractQa",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "buildSha256": "28bb8b6a19014c140ea4119d377692d50aa25d7a4f749c33e7e97b1b6dd2355c",
+  "testedAt": "2026-08-30T21:03:58.890Z",
+  "inputContract": {
+    "desktopAttempts": 5,
+    "mobileAttempts": 2,
+    "obstacleCoordinateOracle": false
+  },
+  "desktopRuns": [
+    {
+      "label": "desktop-natural-1",
+      "platform": "desktop-real-mouse",
+      "inputPolicy": "global-height=530; vertical-threshold=-128; wait-bias=0; no obstacle-coordinate oracle",
+      "status": "won",
+      "failReason": null,
+      "maxX": 3064.704000000001,
+      "elapsed": 20.41666666666615,
+      "cuts": 9,
+      "finishGateId": "calm-moon",
+      "maxNoProgressBounceStreak": 2,
+      "whiteColumnBounceCount": 3,
+      "whiteColumnAnchorCount": 5,
+      "stageIdsVisited": [
+        "stage-1-read-and-cut",
+        "stage-2-recover-and-choose",
+        "stage-3-structure-and-finish"
+      ],
+      "inputCount": 24,
+      "screenshot": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-builder-fix-v3/desktop-natural-1-won.png"
+    },
+    {
+      "label": "desktop-natural-2",
+      "platform": "desktop-real-mouse",
+      "inputPolicy": "global-height=540; vertical-threshold=-124; wait-bias=1; no obstacle-coordinate oracle",
+      "status": "won",
+      "failReason": null,
+      "maxX": 3000.1993333333476,
+      "elapsed": 25.10833333333255,
+      "cuts": 9,
+      "finishGateId": "calm-moon",
+      "maxNoProgressBounceStreak": 1,
+      "whiteColumnBounceCount": 1,
+      "whiteColumnAnchorCount": 3,
+      "stageIdsVisited": [
+        "stage-1-read-and-cut",
+        "stage-2-recover-and-choose",
+        "stage-3-structure-and-finish"
+      ],
+      "inputCount": 30,
+      "screenshot": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-builder-fix-v3/desktop-natural-2-won.png"
+    },
+    {
+      "label": "desktop-natural-3",
+      "platform": "desktop-real-mouse",
+      "inputPolicy": "global-height=550; vertical-threshold=-120; wait-bias=2; no obstacle-coordinate oracle",
+      "status": "won",
+      "failReason": null,
+      "maxX": 3001.4397642666127,
+      "elapsed": 26.89166666666578,
+      "cuts": 4,
+      "finishGateId": "calm-moon",
+      "maxNoProgressBounceStreak": 2,
+      "whiteColumnBounceCount": 0,
+      "whiteColumnAnchorCount": 2,
+      "stageIdsVisited": [
+        "stage-1-read-and-cut",
+        "stage-2-recover-and-choose",
+        "stage-3-structure-and-finish"
+      ],
+      "inputCount": 31,
+      "screenshot": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-builder-fix-v3/desktop-natural-3-won.png"
+    },
+    {
+      "label": "desktop-natural-4",
+      "platform": "desktop-real-mouse",
+      "inputPolicy": "global-height=560; vertical-threshold=-116; wait-bias=3; no obstacle-coordinate oracle",
+      "status": "won",
+      "failReason": null,
+      "maxX": 3000.5765866666443,
+      "elapsed": 24.38333333333259,
+      "cuts": 5,
+      "finishGateId": "calm-moon",
+      "maxNoProgressBounceStreak": 2,
+      "whiteColumnBounceCount": 0,
+      "whiteColumnAnchorCount": 2,
+      "stageIdsVisited": [
+        "stage-1-read-and-cut",
+        "stage-2-recover-and-choose",
+        "stage-3-structure-and-finish"
+      ],
+      "inputCount": 28,
+      "screenshot": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-builder-fix-v3/desktop-natural-4-won.png"
+    },
+    {
+      "label": "desktop-natural-5",
+      "platform": "desktop-real-mouse",
+      "inputPolicy": "global-height=570; vertical-threshold=-112; wait-bias=4; no obstacle-coordinate oracle",
+      "status": "won",
+      "failReason": null,
+      "maxX": 3000.57818909694,
+      "elapsed": 31.52499999999885,
+      "cuts": 4,
+      "finishGateId": "calm-moon",
+      "maxNoProgressBounceStreak": 2,
+      "whiteColumnBounceCount": 2,
+      "whiteColumnAnchorCount": 4,
+      "stageIdsVisited": [
+        "stage-1-read-and-cut",
+        "stage-2-recover-and-choose",
+        "stage-3-structure-and-finish"
+      ],
+      "inputCount": 35,
+      "screenshot": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-builder-fix-v3/desktop-natural-5-won.png"
+    }
+  ],
+  "mobileRuns": [
+    {
+      "label": "mobile-natural-1",
+      "platform": "390x844-native-touch",
+      "inputPolicy": "global-height=535; vertical-threshold=-124; wait-bias=1; no obstacle-coordinate oracle",
+      "status": "won",
+      "failReason": null,
+      "maxX": 3000.729333333348,
+      "elapsed": 25.08333333333255,
+      "cuts": 9,
+      "finishGateId": "calm-moon",
+      "maxNoProgressBounceStreak": 1,
+      "whiteColumnBounceCount": 1,
+      "whiteColumnAnchorCount": 3,
+      "stageIdsVisited": [
+        "stage-1-read-and-cut",
+        "stage-2-recover-and-choose",
+        "stage-3-structure-and-finish"
+      ],
+      "inputCount": 30,
+      "screenshot": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-builder-fix-v3/mobile-natural-1-won.png"
+    },
+    {
+      "label": "mobile-natural-2",
+      "platform": "390x844-native-touch",
+      "inputPolicy": "global-height=555; vertical-threshold=-116; wait-bias=3; no obstacle-coordinate oracle",
+      "status": "won",
+      "failReason": null,
+      "maxX": 3001.208292158757,
+      "elapsed": 34.28333333333203,
+      "cuts": 4,
+      "finishGateId": "calm-moon",
+      "maxNoProgressBounceStreak": 2,
+      "whiteColumnBounceCount": 0,
+      "whiteColumnAnchorCount": 2,
+      "stageIdsVisited": [
+        "stage-1-read-and-cut",
+        "stage-2-recover-and-choose",
+        "stage-3-structure-and-finish"
+      ],
+      "inputCount": 36,
+      "screenshot": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-builder-fix-v3/mobile-natural-2-won.png"
+    }
+  ],
+  "summary": {
+    "desktopWins": 5,
+    "desktopChokePasses": 5,
+    "mobileWins": 2,
+    "mobileChokePasses": 2,
+    "maxNoProgressBounceStreak": 2,
+    "fullStageDesktopWin": true,
+    "fullStageMobileWin": true
+  },
+  "blockerClosed": true,
+  "passed": true,
+  "consoleErrors": [],
+  "pageErrors": [],
+  "requestFailures": [],
+  "previewClosed": true,
+  "validatedWith": "zod@4 strict NaturalInputContractQa"
+}

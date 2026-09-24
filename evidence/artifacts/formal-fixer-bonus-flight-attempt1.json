@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixEvidence",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "attempt": 1,
+  "filesChanged": ["src/game-core.ts", "tests/level-progress.test.ts"],
+  "behavior": { "bonusTargets": "wave-spawned ballistic arcs from the lower edge with per-target launch velocity, gravity, drift and rotation; offscreen targets are recycled", "cutDebris": "cut halves keep momentum briefly, then return to the pool instead of settling into a ground pile" },
+  "verification": { "tests": "pnpm test (139 passed)", "lint": "pnpm lint (passed)", "typecheck": "pnpm typecheck (passed)", "build": "pnpm build (passed)" },
+  "evidenceGaps": ["Natural Playwright screenshot of the updated bonus flight should be captured in the next QA retest."]
+}

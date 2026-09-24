@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "IndependentNaturalQaSeal",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "outputDirectory": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-4/qa-natural-fixed-gpt6luna",
+  "status": "INVALIDATED_BY_SOURCE_CHANGE",
+  "build": {
+    "expectedSha256": "5b2e1604b93d66614229f6481e71f82dfd2864e099cbd3c3af5ed34371ca30e5",
+    "beforeSha256": "5b2e1604b93d66614229f6481e71f82dfd2864e099cbd3c3af5ed34371ca30e5",
+    "afterSha256": "5b2e1604b93d66614229f6481e71f82dfd2864e099cbd3c3af5ed34371ca30e5",
+    "distUnchanged": true
+  },
+  "source": {
+    "aggregateBeforeSha256": "b58b63f8c827f5f173903def1883456d4655580dbefe4fa017e2bc9c99365162",
+    "aggregateAfterSha256": "a6fc11adb6f542c15b3b93e401d7c8cb0f060ddbc6cf99acf8c89bb25860d5d7",
+    "changedFiles": [
+      {
+        "path": "src/game-core.ts",
+        "beforeSha256": "3e1712698b9ce3a2d2f0eaf3aacd81405828caa02b1fb99f2abeec5f4c845051",
+        "afterSha256": "eb319bf2701abc3658b408b245abea3f24f2bbd9fba6b2d81ac504f645e540f3"
+      }
+    ]
+  },
+  "selectorIssue": {
+    "classification": "QA_RUNNER_EVIDENCE_INVALID",
+    "details": "The first runner version treated #terminal-actions.isVisible() as proof of settlement. That container is visible from startup because its CSS display:flex overrides its hidden attribute; #terminal-text was empty at the recorded detection times (portrait 24 ms, desktop 174 ms). The early selector signal cannot prove a terminal, and the run did not prove a visible replay transition.",
+    "supersedes": "terminal and replay fields in qa-natural-fixed-report.json are not valid evidence because they were based on the faulty selector gate."
+  },
+  "observations": {
+    "normalInput": "Fresh Chromium contexts used 19 fixed, predeclared center taps per viewport: touch at 390x844 and mouse at 1100x720. No __GAME_TEST__ calls, state injection, or gameplay-state-driven scheduling were used.",
+    "startupAndCoreLoop": "Canvas and the opening run were captured. Both viewport t-09000ms screenshots visibly show a failure settlement panel after gameplay input.",
+    "levelOneStackContactAndFalling": "BLOCKED: the fixed runs ended in an early visible failure before Level 1 stack-a/stack-b support-contact-cut-fall-landing sequences were evidenced. No stack lifecycle branch is closed by these captures.",
+    "terminalAndReplay": "The t-09000ms screenshots show terminal copy, but the runner’s terminal selector was invalid and no valid player-visible replay transition was recorded. Replay remains BLOCKED."
+  },
+  "evidence": [
+    "static-input-schedule.json",
+    "portrait-390x844/screenshots/startup.png",
+    "portrait-390x844/screenshots/t-06000ms.png",
+    "portrait-390x844/screenshots/t-09000ms.png",
+    "portrait-390x844/video/page@1988c8cfd7ec9119950be54b6601b9c4.webm",
+    "portrait-390x844/playwright-trace.zip",
+    "desktop-1100x720/screenshots/startup.png",
+    "desktop-1100x720/screenshots/t-06000ms.png",
+    "desktop-1100x720/screenshots/t-09000ms.png",
+    "desktop-1100x720/video/page@1b383340a7949df1d1c446742d53409b.webm",
+    "desktop-1100x720/playwright-trace.zip",
+    "qa-natural-fixed-report.json"
+  ],
+  "nextAction": "Do not rerun against attempt4. Wait for attempt5’s fixed dist SHA and run an independent fresh-browser QA bound to that build."
+}

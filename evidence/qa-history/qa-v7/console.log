@@ -1,0 +1,20 @@
+2026-08-30T15:58:00Z independent repair-attempt-1 Chromium review
+buildSha256=b55684eeca9ee0fe4768906c8fc54918a6ba9de1b4883116af79dab94ec4adc2
+naturalDesktopAttempts=3 naturalMobileAttempts=1 naturalFirstCut=true understoodWithin10Seconds=true
+recoilBranchA=no input at 2.8s status:failed failReason:spike; initial normalX:-1 vx:-201.6
+recoilBranchB=one real click at 300ms; common 2.8s checkpoint status:airborne failReason:null; vx after click:8.4
+dualSupport=real launch anchorId:dual-bridge-face status:anchored
+dualCut=real follow-up input block.cut:true block.solid:false face.active:false anchorId:null
+movingHorizontalPhase0=supportVx:160.518 playerLaunchVx:297.573
+movingHorizontalPhase900ms=supportVx:-143.571 playerLaunchVx:-1.746
+movingVertical=anchor carried offset:(0,-52); launch inherited vertical support motion
+spatialCuts=hanging-above,side-tag,under-slat all solid true->false with two fragments
+tower=tower-middle cut once; two fragments; tower-top unsupported and falling
+failureReset=spike and fall each one real input to ordinary ready, score/cuts/fragments reset
+finish=12x4=48 and 12/3=4; one operation event each; extra real click changes landing to miss
+bonusSeeds=31:false,32:true,33:false,34:true,35:false,36:true; bonus failure returns ordinary ready
+runtime30/60/120/longFrame=same [launch,cut:tower-middle], airborne outcome, two fragments, top falling
+runtimeStall=wallElapsed:1.549 worldDelta:1.800 anchor preserved
+mobile=390x844 native touch first cut/restart, scrollWidth:390 scrollHeight:844 scrollX:0 scrollY:0
+consoleErrors=0 pageErrors=0
+preview4187Closed=true

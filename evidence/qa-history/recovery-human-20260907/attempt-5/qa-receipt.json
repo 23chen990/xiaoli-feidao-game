@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "cycleId": "human-review-20260907-l1-recovery",
+  "attempt": 5,
+  "status": "BLOCKED",
+  "buildSha256": "10cba7632922f9fdeaa2eb33f7a05aa09bd3dbb7ca45a2db24acac282c9fd9a6",
+  "matrixCounts": {
+    "PASS": 8,
+    "BLOCKED": 4
+  },
+  "passingCheckIds": [
+    "L1-INPUT-390",
+    "L1-GROUND-390",
+    "L1-REWARD-390",
+    "L1-PRESSURE-390",
+    "L1-INPUT-1100",
+    "L1-GROUND-1100",
+    "L1-REWARD-1100",
+    "L1-PRESSURE-1100"
+  ],
+  "remainingCheckIds": [
+    "L1-STACK-390",
+    "L1-FINISH-390",
+    "L1-STACK-1100",
+    "L1-FINISH-1100"
+  ],
+  "evidence": [
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/qa/result.json",
+      "sha256": "0a2dc22b72f41552df583cf7b093720ff12b1031bfdaa127a708386b2bf8e4ba"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/qa/reproduction-matrix.json",
+      "sha256": "722ab5c2e2aa3b48441a095c7fadd097ca26f129e91879533aa9a744f7ea62f4"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/qa/qa-report.json",
+      "sha256": "f5e37fa48d3186757abc313dcec318af09da5cf8ce6b578c94eedc79299483ba"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/qa/perceptual-qa-report.json",
+      "sha256": "377a9b65a8799b192d5ae8853ab371b1abcb3cd583419fa75e65e3bd9ac27e17"
+    }
+  ],
+  "verifiedAt": "2026-09-07T08:51:05.012Z"
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "CoreComparisonContract",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED_VIDEO_UNAVAILABLE_AND_NATURAL_MOBILE_FLAKY",
+  "sourceBoundary": {
+    "documents": [
+      "reference-evidence/incoming/Slice_Master_-_GDD_-70e48814f086.docx",
+      "reference-evidence/incoming/Slice_Master_-_V2_UI-5aa548125c13.docx",
+      "reference-evidence/incoming/Slice_Master_-30-305d46a2b23a.docx",
+      "reference-evidence/incoming/Slice_Master_UI-6410c99fb3e8.docx"
+    ],
+    "runtimeEvidence": [
+      "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/browser-result.json",
+      "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/report.json",
+      "workspace/prototype-a/src/main.ts",
+      "workspace/prototype-a/src/game-core.ts",
+      "workspace/prototype-a/src/three-world-renderer.ts",
+      "workspace/prototype-a/src/style.css"
+    ],
+    "expressionRule": "只迁移可验证的行为关系和体验压力，不复制竞品素材、名称、UI表达、布局或数值。"
+  },
+  "coreContracts": [
+    {
+      "id": "PREDICTION_TO_PROOF",
+      "observation": "参考体验的核心不是点击本身，而是玩家先预判刀的落点，再由刀刃接触把预判兑现。",
+      "inference": "所有镜头、目标布局和反馈都必须服务于‘我知道为什么成功/失败’。",
+      "currentGap": "当前有可预测运动和碰撞逻辑，但世界画面没有稳定地预告下一目标、危险边界和可恢复窗口；文字阶段/距离承担了过多引导。",
+      "acceptance": [
+        "自然移动端玩家在点击前能看见下一目标和危险边界",
+        "同一输入在相同初始状态下产生可重复结果",
+        "失败能归因到时机、接触部位或路线，而不是只显示通用失败"
+      ]
+    },
+    {
+      "id": "CUT_TO_REWARD_LIFECYCLE",
+      "observation": "参考体验把切割、分离/落下、收益出现和累计结算作为连续但有先后的一个动作链。",
+      "inference": "收益数字是切割成功的证明，不应早于物体的视觉结果。",
+      "currentGap": "当前 cut 事件立即改变 score/totalEarnings，并在同一事件生成 +value 和左上角 earnings banner；缺少 cut/settle/reward 的生命周期状态。",
+      "acceptance": [
+        "切割瞬间只确认命中和裂开",
+        "物体分离/停稳后才出现对象本地收益动画",
+        "累计收益在收益动画完成时同步",
+        "连续切割出现短暂且不遮挡的 Combo 强化"
+      ]
+    },
+    {
+      "id": "WALL_AS_DECISION_OBJECT",
+      "observation": "参考终点是写满倍率的实体墙；不同砖块是最后一次风险选择，而不是屏幕上的列表。",
+      "inference": "墙必须同时承担碰撞、视觉标签、风险梯度、选择确认和结算高潮。",
+      "currentGap": "核心已有 aggregate wall collision，但倍率文字脱离墙固定在 viewport 右侧，终点 overlay 还会遮住墙；高倍率的难度也没有被宽度、移动、可达性和恢复成本明确表达。",
+      "acceptance": [
+        "墙体连续，刀尖/刀刃/刀身/刀柄都不能穿过",
+        "每个砖块直接显示自己的 x4/x2/x0.5 等倍率",
+        "高倍率选择的风险在接近墙前可读",
+        "命中后只强化被选砖块，再播放倍率和最终收益爆发"
+      ]
+    },
+    {
+      "id": "CAMERA_AND_FEEDBACK_RHYTHM",
+      "observation": "参考体验的镜头不是固定方向；安全、连续切割、危险、终点和奖励各有不同的注意力构图。",
+      "inference": "镜头本身是 UI，不能只做水平跟随。",
+      "currentGap": "当前镜头主要只平滑 cameraTargetX，刀冲击只做自身缩放；没有 preview/pressure/near-miss/finish reveal 的镜头节奏。",
+      "acceptance": [
+        "前方目标和危险在移动端保持可读",
+        "切大物、连切、擦边和终点分别有可区分但不晕眩的构图变化",
+        "奖励和 Combo 不遮挡下一次操作信息"
+      ]
+    },
+    {
+      "id": "EMOTIONAL_LOOP_AND_QA_TRUTH",
+      "observation": "参考节奏是安全校准 → 连续成功 → 风险 → 恢复 → 终点高潮；失败后快速重试。",
+      "inference": "关卡结构和工厂 QA 必须验证玩家实际走过这条情绪曲线，而不只是验证状态字段存在。",
+      "currentGap": "当前 12 关/3 阶段的元数据存在，但同一默认移动端自然运行在一次执行中于 8.67 秒、4 次切割后撞尖刺失败，立即重跑又在 27.08 秒通关，说明默认路线/时序尚未具备可重复的 QA 真值。",
+      "acceptance": [
+        "默认移动端首局自然输入能完成 declared core loop",
+        "每关至少能观察到安全、连切、风险、恢复和结算中的已声明阶段",
+        "任何默认 viewport 的自然失败都将 QA 标记为 BLOCKED",
+        "历史 artifact 的 targetGame/workspace 不匹配时不得进入当前 release 证据"
+      ]
+    }
+  ],
+  "latestNaturalEvidence": {
+    "command": "pnpm qa:browser",
+    "status": "BLOCKED_FLAKY",
+    "observations": [
+      {
+        "run": "earlier same-target execution",
+        "label": "mobile-natural-zero",
+        "status": "failed",
+        "elapsedSeconds": 8.67,
+        "cuts": 4,
+        "failReason": "spike",
+        "reachedFinishWall": false,
+        "screenshot": "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/mobile-natural-zero-failed.png"
+      },
+      {
+        "run": "immediate rerun",
+        "label": "mobile-natural-zero",
+        "status": "won",
+        "elapsedSeconds": 27.08,
+        "cuts": 6,
+        "finishGateId": "calm-moon",
+        "finishPhases": ["contact", "reward", "celebration", "terminal"],
+        "screenshot": "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/mobile-natural-zero-won.png"
+      }
+    ],
+    "note": "The same nominal default run has divergent outcomes; a one-off green result cannot close the natural mobile gate."
+  },
+  "unresolved": [
+    "The supplied 235243 recording is unavailable on this host, so exact frame and audio timing remain unverified.",
+    "The four DOCX files are secondary AI-generated references; recording evidence is still required before locking competitor-specific claims."
+  ]
+}

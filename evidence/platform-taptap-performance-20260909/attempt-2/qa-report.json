@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "platform-qa-result",
+  "role": "QAAgent",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "testedSha256": "522aead7c8fe3aaa90602cd294d8629569e828f45922e9d48b9d5e08e184e455",
+  "engineeringVerdict": "PASS",
+  "naturalJourneyVerdict": "BLOCKED",
+  "perceptualVerdict": "BLOCKED",
+  "filingPackageVerdict": "READY_FOR_BACKEND_SCAN",
+  "checks": [
+    {
+      "id": "TAP-PERF-A2-SCHEMAS",
+      "passed": true,
+      "evidence": "Independent Zod parsing passed for attempt-2/qa-task.json with PlatformQaTaskSchema and attempt-2/fix-result.json with PlatformFixResultSchema. The FixerResult remains BLOCKED for sampler attribution and exact-SHA device evidence, consistent with separate static engineering and natural/perceptual verdicts."
+    },
+    {
+      "id": "TAP-PERF-A2-ZIP-IDENTITY-INTEGRITY",
+      "passed": true,
+      "evidence": "Before result assessment, independent shasum -a 256 returned exactly 522aead7c8fe3aaa90602cd294d8629569e828f45922e9d48b9d5e08e184e455 for build/TapBuild/game.zip. The archive is 1,206,608 bytes and unzip -tq reported no compressed-data errors. It was not modified, rebuilt, repackaged, substituted or uploaded."
+    },
+    {
+      "id": "TAP-PERF-A2-PACKAGE-CONTRACT",
+      "passed": true,
+      "evidence": "The exact ZIP contains root game.js, game.json and project.config.json. Metadata declares compileType game, appid 928932, projectname 疯狂切割, portrait and productVersion 1.0.0. ZIP src/settings.json declares launch scene main and designResolution 390x844 policy 4."
+    },
+    {
+      "id": "TAP-PERF-A2-RUNTIME-MARKERS",
+      "passed": true,
+      "evidence": "Exact-ZIP assets/main/index.js contains FIXED_WIDTH and screen.safeArea setup, separate staticGraphics and dynamicGraphics layers, lifecycle static/dynamic draw calls, dynamic-only airborne redraw, TOUCH_END input, cut/reflect, hazard/fall, settlement and terminal replay branches. These are structural engineering facts, not physical-device performance evidence."
+    },
+    {
+      "id": "TAP-PERF-A2-PLUGIN-METADATA",
+      "passed": true,
+      "evidence": "Recorded package-check evidence identifies official TapTap plugin version 1.2.2 and archive SHA-256 6b8a9a3cc62b6c54cefab397097babb771d9d99f90442cddff06310a4c9ed73f; the installed extension package.json independently identifies TapTap version 1.2.2."
+    },
+    {
+      "id": "TAP-PERF-A2-NO-OPTIMIZATION-CONTRACT",
+      "passed": true,
+      "evidence": "performance-contract.json records backendFpsThreshold=null, reportedFpsRootCause=UNCONFIRMED, a retained render-work contract of one static lifecycle draw, zero static active-frame draws and one dynamic active-frame draw, plus latestUnboundReport packageSha256/rawRenderedFrameCount/rawElapsedTimeMs all null. Its decision is remainingPackageBottleneck=NOT_DEMONSTRATED and optimizationAuthorized=false."
+    },
+    {
+      "id": "TAP-PERF-A2-SOURCE-PROXY-BOUNDARY",
+      "passed": true,
+      "evidence": "attempt-2 performance baseline/after artifacts both identify deterministic-source-work-proxy, deviceFpsMeasured=false or equivalent unmeasured device state, zero static/full-course active-frame redraws and one dynamic redraw. They explicitly do not establish device FPS or sampler behavior, and sourceRuntimeChanged=false."
+    },
+    {
+      "id": "TAP-PERF-A2-TESTS-LINT-TYPECHECK",
+      "passed": true,
+      "evidence": "Independent read-only execution from platforms/taptap-minigame passed: pnpm test reported 18 tests, 18 pass, 0 fail; pnpm lint exited 0; pnpm typecheck exited 0. No build or converter was invoked by QA."
+    },
+    {
+      "id": "TAP-PERF-A2-RECORDED-BUILD-PACKAGE",
+      "passed": true,
+      "evidence": "Recorded attempt-2 logs show one Cocos build reaching TapTap conversion: 20 JavaScript files converted, 0 skipped, 0 failed; game.zip creation and onAfterBuild passed. The launcher later reported exit code 36 after the completed converter/ZIP stages. Independent ZIP hash, integrity and metadata checks passed for the declared output."
+    },
+    {
+      "id": "TAP-PERF-A2-EVIDENCE-PROVENANCE",
+      "passed": true,
+      "evidence": "reference-evidence/manifest.json marks the supplied performance screenshot VERIFIED_TARGET and usable to confirm the TapTap report phenomenon, while its notes explicitly state that build number and package SHA are absent. It therefore cannot bind the reported metrics to this ZIP."
+    },
+    {
+      "id": "TAP-PERF-A2-PHJ110H1-EXACT-SHA",
+      "passed": false,
+      "evidence": "BLOCKED: PHJ110H1 reports 0.020356234 with 0% stutter, average/peak memory 239.28/259.50 MB and cold start 2.05 s, but the screenshot has no package SHA, raw rendered-frame count, raw elapsed time, CPU/GPU trace, threshold, visible first frame or natural-input trace. The value is not accepted as confirmed physical FPS."
+    },
+    {
+      "id": "TAP-PERF-A2-HUAWEI-P30-EXACT-SHA",
+      "passed": false,
+      "evidence": "BLOCKED: Huawei P30 has only a warning tab in unbound screenshot evidence; no per-device numeric trace, raw frame/elapsed data, physical viewport, exact-SHA identity or natural/perceptual run exists."
+    },
+    {
+      "id": "TAP-PERF-A2-XIAOMI14-EXACT-SHA",
+      "passed": false,
+      "evidence": "BLOCKED: Xiaomi 14 has only a warning tab in unbound screenshot evidence; no per-device numeric trace, raw frame/elapsed data, physical viewport, exact-SHA identity or natural/perceptual run exists."
+    },
+    {
+      "id": "TAP-PERF-A2-ONEPLUS8-EEA-EXACT-SHA",
+      "passed": false,
+      "evidence": "BLOCKED: OnePlus8_EEA has only a warning tab in unbound screenshot evidence; no per-device numeric trace, raw frame/elapsed data, physical viewport, exact-SHA identity or natural/perceptual run exists."
+    },
+    {
+      "id": "TAP-PERF-A2-NATURAL-PERCEPTUAL-JOURNEY",
+      "passed": false,
+      "evidence": "BLOCKED: no exact-SHA device evidence covers cold start, player-visible first frame, ordinary touch/core loop, cut/reflect, failure/settlement, replay and ten-minute stability across the four required device branches. Deterministic tests and source proxies cannot substitute."
+    },
+    {
+      "id": "TAP-PERF-A2-BACKEND-ACCEPTANCE",
+      "passed": false,
+      "evidence": "BLOCKED: no TapTap backend performance threshold, uploaded build identity or acceptance result is bound to this exact SHA. READY_FOR_BACKEND_SCAN means only that the statically valid package can proceed to the next backend step; it is not a performance or release pass."
+    }
+  ],
+  "issues": [
+    {
+      "id": "TAP-PERF-SAMPLER-ATTRIBUTION-002",
+      "severity": "warning",
+      "message": "The reported 0.020356234 remains unbound and cannot be classified as confirmed physical FPS or a package-owned root cause.",
+      "evidence": "The verified screenshot lacks package SHA, rendered-frame count, elapsed time, sampler diagnostics and threshold while reporting 0% stutter and bounded memory."
+    },
+    {
+      "id": "TAP-PERF-EXACT-SHA-DEVICE-QA-002",
+      "severity": "warning",
+      "message": "PHJ110H1, Huawei P30, Xiaomi 14 and OnePlus8_EEA exact-SHA natural, perceptual and performance QA remains outstanding.",
+      "evidence": "The cycle matrix preserves these exact device branches as blocked where raw numeric or player-visible evidence is absent; no sibling or aggregate result closes them."
+    }
+  ],
+  "evidenceGaps": [
+    "TapTap build number, upload timestamp and uploaded ZIP SHA for the supplied performance screenshot.",
+    "PHJ110H1 raw rendered-frame count, elapsed time, CPU/GPU frame trace, backend FPS threshold and exact-SHA natural/player-visible trace.",
+    "Huawei P30, Xiaomi 14 and OnePlus8_EEA exact-SHA per-device FPS, memory, stutter, raw frame/elapsed and physical viewport evidence.",
+    "Exact-SHA four-device evidence for cold start, visible first frame, ordinary touch/core loop, terminal settlement, replay and ten-minute stability."
+  ]
+}

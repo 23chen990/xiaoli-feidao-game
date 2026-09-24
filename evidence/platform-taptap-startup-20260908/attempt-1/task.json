@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-task",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "taptap-startup-compat-20260908",
+  "attempt": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "platformWorkspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame",
+  "outputDirectory": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-startup-20260908/attempt-1",
+  "triagePath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-startup-20260908/triage.json",
+  "researchPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-filing-20260908/open-source-research.json",
+  "officialPlugin": {
+    "version": "1.2.2",
+    "sourceUrl": "https://developer.taptap.cn/docs/sdk/mini-game/",
+    "sha256": "6b8a9a3cc62b6c54cefab397097babb771d9d99f90442cddff06310a4c9ed73f"
+  },
+  "tapTapGame": {
+    "name": "疯狂切割",
+    "appId": "928932",
+    "identityEvidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-54627493-c054-4e19-b1e8-3f17ab8caa37-e1bc9b9cdd21.png"
+  },
+  "instructions": [
+    "Before editing, Zod-validate this task, triage.json, reproduction-matrix.json and the target evidence manifest; preserve the exact target workspace and attempt count.",
+    "Use test-first development: add a RED startup-compatibility contract that distinguishes TapTap host/container Activity availability from Cocos package first-frame rendering, and records the current evidence that no package SHA is bound.",
+    "Inspect only causally related TapTap package/config/adapter/runtime files and the supplied ZTE/OPPO evidence. Do not assume the missing InstantGameActivity is a game bug: the ZTE logcat explicitly shows com.taptap FATAL EXCEPTION and a TapTap crash dialog, while the exception stack body is absent.",
+    "If a package-owned compatibility defect is demonstrated, apply the narrowest fix while preserving the retained static/dynamic Graphics optimization, portrait safe-area first frame, touch core loop, failure/settlement and replay. If the evidence demonstrates a TapTap client/device harness crash independent of package code, do not invent a source workaround; produce a BLOCKED fix result naming the external owner and the missing proof.",
+    "Use at most one Cocos Creator 3.8.8 plus official TapTap plugin 1.2.2 build in this attempt. Do not upload to TapTap, modify other platforms, modify shared factory code or replace the game template.",
+    "Record separate branches for OPPO PDBM00 (backend table, raw trace missing), ZTE A2022P (matching raw logs), and OPPO PKB110 (supplied raw directory but model mismatch); never substitute one device for another."
+  ],
+  "acceptanceChecks": [
+    "RED and GREEN startup contracts pass and distinguish host crash/Activity watcher failure from game first-frame behavior without inventing an FPS or Activity threshold.",
+    "All existing platform tests, lint and typecheck pass; the retained static/dynamic Graphics contract remains present.",
+    "At most one build succeeds, ZIP integrity and TapTap metadata are auditable, and the result contains the exact new ZIP SHA-256 and bytes.",
+    "Independent QA receives only the minimal task/result and must retest the exact SHA; natural/perceptual startup remains BLOCKED unless OPPO PDBM00 and ZTE A2022P player-visible traces exist.",
+    "If no package-owned fix is justified, status is BLOCKED with evidence showing the ZTE host FATAL EXCEPTION and the OPPO model mismatch; do not claim the game or package passed."
+  ],
+  "contextIntentionallyOmitted": [
+    "Other games/runs, web-lite, WeChat/Douyin and shared factory code",
+    "Unrelated gameplay systems, assets and release metadata",
+    "Unbound prior performance screenshots and old package SHA claims",
+    "TapTap proprietary client source, unavailable exception stack frames and invented backend rules"
+  ]
+}

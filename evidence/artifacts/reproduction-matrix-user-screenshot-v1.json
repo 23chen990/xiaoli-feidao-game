@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "ReproductionMatrix",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "sourceEvidence": "reference-evidence/incoming/codex-clipboard-36b515d4-bdb6-4494-9731-3358edb479ba-c0598bf7e993.png",
+  "cells": [
+    {"objectType":"stacked cuttable tower","lifecycle":"intact → cut → fragments/falling","renderer":"Three.js presentation","viewport":"desktop 1280x720","expected":"silhouette, cut feedback, and falling fragments remain readable","status":"PENDING"},
+    {"objectType":"ordinary hard support","lifecycle":"airborne body/handle contact","renderer":"Three.js presentation","viewport":"desktop 1280x720","expected":"incident reflection is visible and uses no dedicated rebound identity","status":"PENDING"},
+    {"objectType":"stacked cuttable tower","lifecycle":"intact → cut → recovery","renderer":"Three.js presentation","viewport":"mobile 390x844 portrait","expected":"cut height and recovery lane remain visible without overlap","status":"PENDING"},
+    {"objectType":"finish/reward wall","lifecycle":"approach → settle → replay","renderer":"Three.js + HUD presentation","viewport":"mobile 390x844 portrait","expected":"reward choice and replay affordance are player-visible","status":"PENDING"}
+  ],
+  "gate": "No cell may be closed from fixture/debug evidence alone; each must receive normal-input screenshot evidence in the affected viewport."
+}

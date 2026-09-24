@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "reproduction": {
+    "evidence": [
+      "用户反馈：每个关卡体验相似、长度偏短、难度设计感弱",
+      "src/game-levels.ts：level-02 至 level-12 统一由 segments(finishX, prefix) 生成三段 teach/develop/test，强度固定为 0.28/0.56/0.84",
+      "qa-level-pack-v1/qa-report.json：桌面 level 1/4/7/10/12 通关耗时约 19.1–25.1 秒，移动 level 1/6/12 约 23.2–32.1 秒"
+    ],
+    "steps": [
+      "fresh browser 启动并依次选择 level-01、04、07、10、12",
+      "只使用真实鼠标或 390x844 原生触屏，不注入状态",
+      "记录每关开始到结算的耗时、失败点、有效决策数、障碍/支撑组合与玩家可见提示",
+      "比较关卡首个教学点、压力峰值、恢复段、终局测试和可选路线是否有显著差异"
+    ]
+  },
+  "classification": "core_experience-level_variety-pacing_difficulty",
+  "scope": [
+    "关卡节奏模板与压力曲线",
+    "每关关键路径、分叉与恢复空间",
+    "障碍组合的交互复杂度而非仅对象数量",
+    "关卡长度、检查点与终局测试",
+    "HUD/视觉是否表达当前关卡独有机制"
+  ],
+  "reproductionMatrix": [
+    { "objectType": "sigil", "lifecycleState": "未切/切后碎片", "rendererPath": "ThreeCutVisualManager → three-world-renderer", "viewport": "桌面 1180x720 / 移动 390x844" },
+    { "objectType": "block", "lifecycleState": "完整/切开/坠落", "rendererPath": "three-presentation + three-world-renderer", "viewport": "桌面 1180x720 / 移动 390x844" },
+    { "objectType": "support", "lifecycleState": "静态/水平移动/垂直移动/锚定", "rendererPath": "game-core motion → syncSupports", "viewport": "桌面 1180x720 / 移动 390x844" },
+    { "objectType": "spike", "lifecycleState": "常驻危险/失败后重启", "rendererPath": "syncSpikes + failure overlay", "viewport": "桌面 1180x720 / 移动 390x844" },
+    { "objectType": "finish", "lifecycleState": "未到达/结算/重玩", "rendererPath": "syncFinish + terminal HUD", "viewport": "桌面 1180x720 / 移动 390x844" }
+  ],
+  "acceptance": [
+    "至少 4 种可辨识的关卡节奏 archetype，而不是所有关卡都 teach→develop→test 同构",
+    "每关自然通关目标时长达到 35–60 秒区间，并在中段设置至少一个可归因的压力峰与恢复段",
+    "level-01/02/03 完成教学；level-04/05/06 引入移动支撑组合；level-07/08/09 要求连续决策；level-10/11/12 进行双机制终局测试",
+    "每关至少存在一个会改变路线或风险收益的选择，且失败原因可由画面状态归因",
+    "桌面和 390x844 移动端自然输入均能走完：启动→核心挑战→结算→重玩，并保留逐关耗时/失败/决策 evidence"
+  ],
+  "route": "formal-fixer",
+  "reason": "问题影响核心关卡循环、难度曲线与默认体验，且需要同时调整关卡数据、运行时节奏/提示与 QA 证据，不能作为局部两文件修补；应走 QA→Fixer→QA retest。"
+}

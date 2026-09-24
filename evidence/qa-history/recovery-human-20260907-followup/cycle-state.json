@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "cycleId": "human-review-20260907-l1-followup",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "maximumAttempts": 5,
+  "attemptsStarted": 5,
+  "attemptsCompleted": 5,
+  "currentAttempt": 5,
+  "status": "BLOCKED",
+  "authorizationPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/authorization.json",
+  "storedThreadId": "01a07540-7ee1-7c01-899b-0ea12bde1f19",
+  "historyPreserved": true,
+  "attempts": [
+    {
+      "attempt": 1,
+      "taskPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/task.json",
+      "status": "BLOCKED",
+      "fixReceiptPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/fix-result.json",
+      "reservedAt": "2026-09-07T09:12:45.411Z"
+    },
+    {
+      "attempt": 2,
+      "taskPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-2-next-hypothesis.json",
+      "status": "BLOCKED",
+      "fixReceiptPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-2/fix-result.json",
+      "reservedAt": "2026-09-22T08:16:01.114Z"
+    },
+    {
+      "attempt": 3,
+      "taskPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-3/task.json",
+      "status": "BLOCKED",
+      "fixReceiptPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-3/fix-result.json",
+      "reservedAt": "2026-09-23T04:00:00.000Z"
+    },
+    {
+      "attempt": 4,
+      "taskPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-4/task.json",
+      "status": "QA",
+      "fixReceiptPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-4/fix-result.json",
+      "reservedAt": "2026-09-23T04:35:00.000Z"
+    },
+    {
+      "attempt": 5,
+      "taskPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/task.json",
+      "status": "BLOCKED",
+      "fixReceiptPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/fix-result.json",
+      "reservedAt": "2026-09-23T05:00:00.000Z",
+      "completedAt": "2026-09-23T05:09:54.000Z"
+    }
+  ]
+}

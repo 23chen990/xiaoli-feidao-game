@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-triage",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 10,
+  "issueId": "L1-RUNWAY-RECOVERY-SECOND-SETTER-GATE",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "classification": "natural-level1-runway-recovery-blocker",
+  "status": "VALIDATED_REPRODUCTION",
+  "priorAttempt": {
+    "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-9/fix-result.json",
+    "sha256": "663e46f77a7ee79bf4f298d10c4069d0b4561a725d29f51879620b54eb3fdca4",
+    "status": "BLOCKED",
+    "candidateRejected": true
+  },
+  "reproduction": {
+    "baselineContacts": [
+      {
+        "ordinal": "first",
+        "frame": 216,
+        "worldTimeSeconds": 1.8,
+        "preContactPlayerX": 303.95,
+        "preContactPlayerY": 515.625,
+        "preContactVy": -180,
+        "contactPointX": 315.478089607,
+        "contactPointY": 477.583051837,
+        "normalX": 0,
+        "normalY": -1,
+        "relativeNormalVelocity": 180,
+        "anchorPlayerX": 305.2,
+        "anchorPlayerY": 514.166666667,
+        "anchorAngle": 4.98627645
+      },
+      {
+        "ordinal": "second",
+        "frame": 302,
+        "worldTimeSeconds": 2.516666667,
+        "preContactPlayerX": 331.45,
+        "preContactPlayerY": 471.291666667,
+        "preContactVy": -195,
+        "contactPointX": 368.08175387,
+        "contactPointY": 483.56948383,
+        "normalX": 0,
+        "normalY": -1,
+        "relativeNormalVelocity": 195,
+        "anchorPlayerX": 332.7,
+        "anchorPlayerY": 469.708333333,
+        "anchorAngle": 6.656567983
+      }
+    ],
+    "authoredSuppressionBoundaryX": 350,
+    "candidateObservation": {
+      "firstPoseMatched": true,
+      "secondPosePresentAtTap": false,
+      "secondTapSeconds": 4.602164,
+      "replayElapsedSeconds": 10.858333333,
+      "evidence": [
+        {
+          "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-8/fix-result.json",
+          "sha256": "45841660e1fdb10f8fa71ec20a0fa99f8d62eba28b0a07a41f0058aec3d1aa19"
+        },
+        {
+          "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-8/green-targeted.log",
+          "sha256": "155fcfad4d7b3613086eb8f954bb53c3a66fddfd8ba805bb2a883342d479c46e"
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-9/fix-result.json",
+        "sha256": "663e46f77a7ee79bf4f298d10c4069d0b4561a725d29f51879620b54eb3fdca4"
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-9/red-targeted.log",
+        "sha256": "b69eaadce4c23d05cdf768158e7920fc7d3dba641879e72c70972b116b40e8da"
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-7/trace-analysis.json",
+        "sha256": "19696c78f7b235cd7a3eb93f62844e5768a826d54e991b5c4ca25bb4f02e8ee1"
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-summary.json",
+        "sha256": "d0640af40c41c1e49c38a58687c8b6f2635332d3fe02e3e7429e05a74b6307cd"
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+        "sha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7"
+      }
+    ]
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "runway sharp tip",
+      "lifecycleStateBranch": "first separating top-tip contact eligible for virtual recovery",
+      "rendererPresentationPath": "Three.js player mesh and runway anchor feedback",
+      "viewport": "390x844",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/recording.json"],
+      "observation": "The natural portrait branch reaches the first visible runway anchor at the early runway corridor.",
+      "inference": "The candidate's first virtual pose path is active in this early corridor.",
+      "unknowns": ["The exact candidate setter predicate is not preserved in the rolled-back source."]
+    },
+    {
+      "objectType": "runway sharp tip",
+      "lifecycleStateBranch": "second separating top-tip contact before second release",
+      "rendererPresentationPath": "Three.js player transform, anchor event, and launch presentation",
+      "viewport": "1100x720",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/recording.json"],
+      "observation": "The same natural branch is reproduced on desktop and later pressure is visible.",
+      "inference": "The setter gate must cover both early contact poses without viewport-specific thresholds.",
+      "unknowns": ["The candidate's second-contact branch decision and clear reason are absent from the preserved log."]
+    },
+    {
+      "objectType": "runway sharp tip",
+      "lifecycleStateBranch": "fixed-step first versus second contact branch decision",
+      "rendererPresentationPath": "SliceSimulation collision normal, relative velocity, and pending pose setter",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-9/red-targeted.log"],
+      "observation": "Both baseline contacts are top-normal separating tips with relative normal velocities +180 and +195; pre-contact player x advances from 303.95 to 331.45, below the authored x>=350 suppression boundary.",
+      "inference": "A candidate gate narrower than the full early corridor, a first-contact-only latch, or a sign/ordinal mismatch could admit pose 1 but skip pose 2.",
+      "unknowns": ["No candidate-side setter telemetry exists, so the gate cause must be tested rather than asserted."]
+    },
+    {
+      "objectType": "pending runway virtual pose",
+      "lifecycleStateBranch": "second pose pending or absent at the 4.602164s tap",
+      "rendererPresentationPath": "simulation pending state and standard anchored release",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["runs/mobile-slice-adaptation-20260923/recovery-human-20260923-continue/attempt-8/green-targeted.log"],
+      "observation": "Attempt 8 matched the first release pose but had no pending pose at the second scheduled tap and stopped at 10.858333s.",
+      "inference": "The second contact must be instrumented at the setter decision before changing lifetime or release velocity.",
+      "unknowns": ["If the setter is repaired, the existing short TTL may become the next independent blocker."]
+    }
+  ],
+  "rootCauseHypothesis": {
+    "evidence": "Attempt 9 measured both baseline separating contacts: pre-contact x≈303.95 and x≈331.45, both normalY=-1 and outward relative normal velocity, while the authored suppression boundary is x>=350. Attempt 8 reports a first pose match but no second pose at tap; its candidate-side branch predicate was not preserved.",
+    "changeHypothesis": "Instrument and, only if confirmed, align the pendingRunwayReleaseIntent setter gate with the existing player-center x>=350 suppression boundary rather than the sharp contact-point x: the first contact point is x≈315.48 but the second is x≈368.08 while its player center is only x≈331.45. Accept both early separating top-tip contacts while retaining x>=350 suppression, side/body behavior, and explicit pending lifecycle clears. Do not change TTL or release velocity in this attempt; if the repaired setter reveals a later expiry, revert and record that as the next distinct hypothesis.",
+    "setterName": "pendingRunwayReleaseIntent",
+    "gateRequirement": "accept both early separating runway top-tip contacts at pre-contact player x 303.95 and 331.45 while preserving the authored x>=350 suppression boundary and side/body branches",
+    "traceRequirement": "record pre-contact x, normalY, relativeNormalVelocity, branch decision, pose set/skip reason, and pending age for both contacts before changing any TTL",
+    "rejectedAlternatives": [
+      "Changing TTL before observing a second pose set would repeat attempt 9's unproven expiry diagnosis.",
+      "Another vertical-velocity clamp repeats attempts 4–6 without repairing the missing setter branch.",
+      "A support-clearance selector repeats attempts 6–7 and does not explain why the second contact has no pose.",
+      "Renderer or viewport-specific code cannot explain identical deterministic contact geometry in portrait and desktop evidence.",
+      "Removing the x>=350 suppression would change later runway behavior and violate the authored branch boundary."
+    ]
+  },
+  "scope": {
+    "includedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+    ],
+    "excludedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-presentation.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/main.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/src/core",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/research"
+    ],
+    "route": "formal-fixer",
+    "expectedSourceFileLimit": 2
+  },
+  "acceptanceCriteria": [
+    "A RED test on restored baseline reproduces both ordinary runway anchors at fixed frames 216 and 302.",
+    "A focused trace records pre-contact x, normalY, relative normal velocity, candidate setter branch, pose set/skip reason, and pending age for both contacts.",
+    "The trace demonstrates a concrete setter-gate difference before production behavior is changed; an unsupported gate guess fails the attempt.",
+    "The candidate accepts the first and second early separating top-tip contacts at x≈303.95 and x≈331.45 without an anchor event.",
+    "The authored x>=350 later runway sharp-contact suppression boundary remains intact.",
+    "The first and second pose fields match baseline x/y/angle within a documented epsilon before any release velocity is applied.",
+    "The visible player remains airborne and moving before each normal tap; no hidden anchor or freeze is used.",
+    "No TTL, global velocity clamp, support selector, renderer, or viewport-specific change is made in this attempt; if the setter candidate exposes expiry, stop and report it.",
+    "Non-runway support anchors, opening white landing, side sharp contact, approaching top contact, and blunt bounce remain unchanged.",
+    "If the setter-only candidate passes the fixed replay, it reaches at least 11.9 seconds and x>2000; otherwise revert immediately and preserve the failure evidence.",
+    "Only game-core.ts and level1-recovery.test.ts change; no renderer, level, platform, shared factory, or release files.",
+    "Full pnpm test, lint, typecheck, and exactly one build run only after the focused setter and route gates pass; otherwise record NOT_RUN.",
+    "Independent fresh natural QA remains mandatory for any passing candidate; no Fixer runtime or perceptual claim."
+  ],
+  "evidenceClassification": {
+    "observed": [
+      "Both baseline runway contacts are top-normal separating tips at x≈303.95 and x≈331.45, below x>=350 suppression.",
+      "Attempt 8 matched the first virtual release pose but had no pending pose at the second scheduled tap.",
+      "Attempt 9 found no pending lifecycle state in the restored baseline and rolled back all candidate changes."
+    ],
+    "inferred": [
+      "The second contact may be excluded by a candidate setter gate, first-contact-only latch, or branch sign/ordinal condition.",
+      "A setter-only repair should be tested before revisiting TTL or release velocity."
+    ],
+    "unknown": [
+      "The attempt 8 candidate source and branch telemetry were not preserved.",
+      "Whether a setter-only candidate can pass the route gate without a longer TTL is unknown.",
+      "Natural/perceptual behavior remains unverified."
+    ]
+  },
+  "createdAt": "2026-09-23T09:42:00.000Z"
+}

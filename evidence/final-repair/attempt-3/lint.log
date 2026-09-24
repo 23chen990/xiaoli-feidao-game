@@ -1,0 +1,2 @@
+NOT RUN: pnpm lint
+Reason: Candidate rejected by the focused fixed-timestamp replay gate; production changes were reverted before repository-wide validation.

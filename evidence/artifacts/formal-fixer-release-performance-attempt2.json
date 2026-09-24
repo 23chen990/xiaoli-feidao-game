@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixAttempt",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "attempt": 2,
+  "attemptBudget": {"maxAutomaticAttempts": 2, "used": 2, "exhausted": true},
+  "issueIds": ["MOBILE-CAMERA-PROJECTION-001", "CORE-CUT-ROUTE-002", "RELEASE-PERF-001"],
+  "sourceTriage": "artifacts/review-triage-exact-matrix-performance-attempt2.json",
+  "contextOmitted": ["unavailable recordings", "quarantined mismatched evidence", "platform packaging", "unrelated historical issues"],
+  "change": {
+    "files": ["src/three-world-renderer.ts", "src/three-presentation.ts", "tests/three-presentation.test.ts"],
+    "summary": [
+      "Snap the first camera target to the actual player when delta=0.",
+      "Use a conservative portrait camera lead.",
+      "Track route-opening evidence cumulatively for the active run while still cleaning transient meshes.",
+      "Keep the low-poly main renderer MSAA-disabled for the performance gate."
+    ]
+  },
+  "verification": {
+    "lint": "PASS",
+    "typecheck": "PASS",
+    "unitTests": "PASS (160)",
+    "build": "PASS",
+    "browserQa": {
+      "status": "PASS",
+      "report": "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/report.json",
+      "desktop": {"status": "won", "cuts": 5, "routeOpeningCount": 1, "finishPhases": ["contact", "reward", "celebration", "terminal"]},
+      "mobile": {"viewport": "390x844", "status": "won", "cuts": 6, "routeOpeningCount": 1, "finishPhases": ["contact", "reward", "celebration", "terminal"]}
+    },
+    "levelPackQa": {"status": "PASS", "report": "qa-level-pack-v1/qa-report.json"}
+  },
+  "status": "BLOCKED_RELEASE",
+  "remainingEvidenceGaps": [
+    "Perceptual finish-wall/reward-locality review still has unresolved observations in review-coverage-audit-v2.",
+    "The unavailable user recording remains blocked and cannot be reverified.",
+    "WeChat, Douyin and TapTap adapters/builds have no independent evidence.",
+    "The default browser QA is web-lite evidence only, not real-device certification."
+  ],
+  "nextStep": "Do not auto-repair further. Preserve this attempt as the cap; require a new user-directed cycle or explicit QA/perceptual follow-up before release packaging."
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "startedFromReset": true,
+  "actions": [
+    "两种视口分别从新浏览器上下文开始，使用正常 touch/mouse 输入；完整时间戳见各 recording.json。",
+    "未注入状态、存储、debug 或 fixture；只读状态仅用于观察终点。"
+  ],
+  "transitions": [
+    {
+      "name": "startup-to-core",
+      "changed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/recording.json"
+    },
+    {
+      "name": "visible-true-terminal-phone",
+      "changed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/terminal.png"
+    },
+    {
+      "name": "visible-true-terminal-desktop",
+      "changed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/terminal.png"
+    },
+    {
+      "name": "replay-to-ready-phone",
+      "changed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/replay.png"
+    },
+    {
+      "name": "replay-to-ready-desktop",
+      "changed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/replay.png"
+    }
+  ],
+  "completion": "settlement",
+  "replayObserved": true,
+  "forbiddenOperations": [],
+  "screenshots": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/frame-0000.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/frame-0006.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/frame-0010.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/frame-0015.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/terminal.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/replay.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/frame-0000.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/frame-0006.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/frame-0010.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/frame-0015.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/terminal.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/replay.png"
+  ],
+  "passed": true,
+  "blockers": [],
+  "runner": "independent-QA-normal-input-recorder",
+  "buildHash": "b234fd16adb1bf70e7bc021fd33a4703de03e59657bd21fb82419bda712747a6",
+  "runtime": "Chromium against unchanged dist/index.html; no rebuild during QA",
+  "device": {
+    "width": 390,
+    "height": 844,
+    "label": "390x844 and 1100x720 sequential captures"
+  },
+  "observedAt": "2026-09-07T07:26:44.475Z"
+}

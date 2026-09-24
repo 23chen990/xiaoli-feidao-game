@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "classification": "legacy_first_level_unit_regressions_exposed_by_recovery",
+  "route": "formal-fixer",
+  "scope": [
+    "当前首关且现行合同要求的路线、切割与终点分支",
+    "审查旧的坐标/密度断言是否仍对应当前已批准合同；记录保留或替换理由"
+  ],
+  "sourceEvidence": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/green-suite.log",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/fix-result.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/active-slice-contract.json"
+  ],
+  "files": [
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "beforeSha256": "0c8ae7b8b3aa412c9c4064fae55f4c6c35a195927bb09e47c53753dd17452aa2",
+      "currentSha256": "0c8ae7b8b3aa412c9c4064fae55f4c6c35a195927bb09e47c53753dd17452aa2",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-levels.ts",
+      "beforeSha256": "6e10cc6dfb04795ffdcf3008533bec75f5c594ac4b54d56873f2d4ed2cdb6722",
+      "currentSha256": "6e10cc6dfb04795ffdcf3008533bec75f5c594ac4b54d56873f2d4ed2cdb6722",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-content.ts",
+      "beforeSha256": "211a831824d47994721156f9584c8a63efb802376421f76ad8b5a24e961749f7",
+      "currentSha256": "211a831824d47994721156f9584c8a63efb802376421f76ad8b5a24e961749f7",
+      "unchanged": true
+    }
+  ],
+  "cells": [
+    {
+      "objectType": "first collectible and cuttable sequence",
+      "stateBranch": "startup→first cut→continued cuts",
+      "renderer": "deterministic simulation; default renderer retest separately",
+      "viewport": "unit simulation; runtime390x844+1100x720",
+      "acceptance": "切割序列可达、分数正确；不以旧模板硬编码坐标代替已批准首关关系"
+    },
+    {
+      "objectType": "finish safe/bonus gates",
+      "stateBranch": "natural/declared policy→safe result or bonus entry→settlement",
+      "renderer": "simulation + default Three.js/HUD",
+      "viewport": "unit simulation; runtime390x844+1100x720",
+      "acceptance": "现有安全路线和奖励路线行为可达且结果对应；不为单条fixture修改无关关卡"
+    },
+    {
+      "objectType": "Level1 authored stack/target/support layout",
+      "stateBranch": "intact→contact→cut/fall",
+      "renderer": "catalog + simulation + default Three.js",
+      "viewport": "unit catalog; runtime390x844+1100x720",
+      "acceptance": "真实承托、可交互堆叠、序列与用户纠正一致；测试不得只断言装饰存在"
+    }
+  ],
+  "causeStatus": "三个核心文件相对审计快照均未改变，当前修改仅两处渲染；六项失败的具体根因/旧断言有效性仍需Fixer按现行合同判断，不能假定全部属于新回归。"
+}

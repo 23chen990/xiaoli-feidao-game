@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FactoryProcessRetro",
+  "runId": "mobile-slice-adaptation-20260830",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "incident": {
+    "summary": "Level 03 下方尖刺/硬物在画面中被玩家理解为危险对象，但不在自然可达路径中，也不改变任何玩家决策。",
+    "evidence": [
+      "用户截图 codex-clipboard-5ae64dda-e74a-4da4-9888-f3c919d41cec.png",
+      "artifacts/gameplay-triage-unreachable-object-v2.json",
+      "artifacts/orphan-object-audit-v1.json",
+      "artifacts/perceptual-qa-orphan-object-v2.json"
+    ],
+    "classification": "core_experience/orphan_interactive_object/repeated_qa_misclassification"
+  },
+  "stageReview": [
+    {
+      "stage": "COMPETITOR_RESEARCH",
+      "failure": "记录了危险、移动硬物和空间对象的行为模式，但没有把‘对象必须有可达路径和决策影响’作为通用研究输出。",
+      "missedControl": "failure-pressure contract 缺少 objectRole/reachableStateWindow/decisionImpact/visualSemantic",
+      "retroControl": "所有交互对象研究条目必须区分主路径、分支、恢复、装饰，并写明自然输入证据要求；未知不得由实现自行补齐"
+    },
+    {
+      "stage": "BLUEPRINT",
+      "failure": "只声明了对象坐标和 mechanic 标签，没有强制对象用途、路径交集和玩家决策字段。",
+      "missedControl": "completionPath 存在，但对象级路径关系不可验证",
+      "retroControl": "Blueprint schema/acceptance 要求每个交互对象声明 pathRole、reachableStateWindow、decisionImpact；缺失即退回 Blueprint"
+    },
+    {
+      "stage": "BUILDER",
+      "failure": "第一次修复添加了 pathRole 元数据，但保留了危险形状的可见表现；随后又把 x-window 穿越误当作交互证据。",
+      "missedControl": "没有 authored-path audit，也没有语义视觉与 collider 一致性门禁",
+      "retroControl": "Builder preflight 必须检查交互对象与自然路径的真实交集/绕行/恢复；decorative 对象不得使用危险视觉，也不得拥有 gameplay collider"
+    },
+    {
+      "stage": "QA",
+      "failure": "Level-pack 采样没有覆盖 Level 03；专项 QA 曾将‘经过同一 x 区间’记为 pathObserved，且报告顶层 PASS 与子检查 BLOCKED 不一致。",
+      "missedControl": "未强制 exact objectId 的自然证据；未强制 PASS 由所有子检查派生",
+      "retroControl": "自然 QA 必须记录 targetId 的触碰/有意绕行/恢复结果；只经过 x 窗口不得 PASS；任何子检查 BLOCKED 都强制顶层 BLOCKED"
+    },
+    {
+      "stage": "FIX",
+      "failure": "Fixer 先将对象移入路径，后又仅通过 decorative 标记解决碰撞，未立即检查危险视觉语义。",
+      "missedControl": "修复验收只覆盖可达坐标和通关，未覆盖对象视觉语义",
+      "retroControl": "每次修复必须复核对象的 gameplay semantics、visual semantics、natural evidence 三者一致；重复缺陷自动升级为 formal-fixer"
+    }
+  ],
+  "rootCauses": [
+    "把‘对象存在’误当成‘对象有玩法意义’",
+    "把‘玩家经过 x 区间’误当成‘玩家与对象发生交互’",
+    "把装饰/碰撞分类当成数据标签问题，没有验证视觉语义",
+    "QA 抽样关卡与用户复现关卡不一致",
+    "报告聚合逻辑允许 PASS 与子项 BLOCKED 共存"
+  ],
+  "factoryChangesRequired": [
+    "Blueprint：交互对象级 pathRole/reachableStateWindow/decisionImpact/visualSemantic 为必填",
+    "Builder： authored-path audit 必须在构建交接前生成，孤立对象或危险视觉-碰撞不一致直接阻断",
+    "QA： exact matrix 必须覆盖用户点名的 objectId/state/renderer/viewport；x-window 经过不算交互",
+    "QA report：顶层 status 由子检查纯函数派生，存在 BLOCKED/FAIL 时禁止 PASS",
+    "Fix：重复同类反馈不允许走局部修补，必须保留 triage、自然截图和独立感知 retest",
+    "Factory eval：增加 orphan interactive object、misleading decorative hazard、blocked-child-pass 三个回归案例"
+  ],
+  "evidenceAfterFix": [
+    "artifacts/perceptual-qa-orphan-object-v3.json",
+    "artifacts/formal-fixer-orphan-object-summary.json",
+    "artifacts/gameplay-triage-unreachable-object-v2.json"
+  ],
+  "status": "RETRO_COMPLETE",
+  "remainingGaps": [
+    "需要把本次三个 factory eval 案例落入共享工厂测试集并实际执行一次",
+    "web-lite 证据仍不等于微信/抖音/TapTap 平台发布证据"
+  ]
+}

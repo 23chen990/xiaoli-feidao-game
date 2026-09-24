@@ -1,0 +1,24 @@
+2026-08-30 public-page black-box observation: https://poki.com/zh/g/slice-master
+Method: visible Chromium page only, 1180x720 viewport with native touch events at the visible game surface. No source, script, asset, iframe-resource, or network inspection was performed.
+
+Directly observed:
+- The first visible instruction is "TAP ANYWHERE TO JUMP AND FLIP!". The knife begins embedded upright/diagonal in a white start block.
+- One native touch sends the knife forward and upward while rotating. At about 100 ms it is high and near-horizontal; after roughly 0.6-1.3 seconds it can settle flat on the next white surface. While flat it remains available for the next touch.
+- Visible cuttable objects in the observed ordinary level: green apple, red apple, yellow citrus/lemon-like fruit, cheese block, and coconut. Cut halves/fragments visibly separate and fall away.
+- Cutting common fruit visibly floats "+$1". Cutting the coconut visibly floated "+$5".
+- The end of the first ordinary slicing stretch displays "KEEP TAPPING TO FLY" over a large gap. Low-frequency 1.25-second tapping dropped the knife into the grass and the same tutorial/start layout returned, directly establishing a fall-and-retry loop.
+- Rapid repeated native touches raised the knife through the gap. Each touch visibly added another forward/upward arc and continued rotation; the landing section contained racks of colored cylindrical bars.
+- Contact with the colored bars scattered multiple cylinders, with stacked "+$1" feedback visible.
+- A later stretch visibly contained a bright pink spike pad, accompanied by a visible "BEWARE OF SPIKES!" warning, plus watermelon, coconut, and small orange/yellow fruit farther ahead. The following low-frequency sequence returned to the start, but the exact collision frame was not captured.
+- No separate failure dialog was seen; observed retries returned directly to the ordinary-level start/tutorial.
+
+Not directly reached or verified:
+- Completion of the first ordinary level, two additional ordinary levels, or any level-number UI.
+- Finish multiplier landing zones or multiplier calculation.
+- Reward/hidden-coin level trigger, content, payout, or failure rule.
+- Knife unlock screen, unlock cost, or whether different knives change ability.
+- A distinct "break knife" object/rule, non-cuttable-object taxonomy, or a direct captured spike-contact frame.
+- Persistent cash total; only floating per-cut dollar rewards were directly visible.
+
+Site limitation:
+- The embedded game was intermittent: some fresh Chromium attempts stayed dark after activation, and one navigation returned ERR_TUNNEL_CONNECTION_FAILED. Successful sessions nevertheless supported native-touch black-box play and the observations above.

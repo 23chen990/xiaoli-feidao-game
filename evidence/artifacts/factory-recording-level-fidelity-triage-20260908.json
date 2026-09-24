@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "experience-complaint-triage",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "report": "用户要求工厂能够依据已提供的第一关录屏，稳定生成在核心玩法、物体空间关系、出场顺序、镜头、输入响应、失败/结算/重玩上与参考关卡同构的产品；现有工厂和已生成游戏均未达到该标准，多轮修改后体验仍明显偏离。",
+  "classification": [
+    "core-experience",
+    "reference-fidelity",
+    "qa-false-positive",
+    "factory-routing"
+  ],
+  "scope": {
+    "route": "shared-factory",
+    "rationale": "问题存在于录屏证据到 Builder 与 QA 的共享契约链：当前通用工厂没有逐帧时序/空间工件和同输入对比门禁。先修共享工厂；本轮不修改生成游戏工作区。",
+    "generatedWorkspaceModified": false,
+    "contextIntentionallyOmitted": [
+      "与第一关录屏还原无关的历史游戏日志、旧截图与其他关卡缺陷",
+      "未绑定该目标录屏 SHA-256 的媒体",
+      "第三方代码、素材、名称、UI 文案和美术表达"
+    ]
+  },
+  "reproduction": {
+    "status": "REPRODUCED",
+    "steps": [
+      "核验目标 run 的 evidence-provenance manifest，确认第一关录屏为 VERIFIED_TARGET 且 gameplay-reference 可用。",
+      "检查标准 REFERENCE_DEEP_RESEARCH 输出结构与 AgentProvider 提示，查找逐帧、时间戳、对象边界、轨迹、镜头和输入序列字段。",
+      "检查 FULL_BUILD 输入与 QA 输入，查找由源录屏和候选构建共同绑定的同输入、同检查点比较工件。",
+      "检查历史 qa-recovery 中的六帧临时抽帧结果，确认它不属于标准 stage contract、没有对象/输入时间线，也未作为 Builder 与 QA 的强制输入。"
+    ],
+    "observed": [
+      "录屏身份和 SHA-256 已核验，但标准流水线只把整段 MP4 当作来源文件。",
+      "ReferenceBehaviorCheck 仅保存文字式 spatialRelationship 和单个 viewport，不保存逐帧时间戳、规范化对象几何、生命周期轨迹、镜头与输入检查点。",
+      "Provider 提示明确禁止坐标和调参值，Builder 无法获得可复现的摆放和时序数据。",
+      "历史恢复目录只有六个稀疏截图；没有事件级帧序列、关卡重建契约或源/候选差分门禁。",
+      "现有 QA 可以验证一般行为检查，但不能证明候选关卡在相同输入下重现录屏中的空间拓扑和事件顺序。"
+    ],
+    "evidence": [
+      {
+        "path": "reference-evidence/incoming/_2026-09-06-135548-3781e4dcd3d2.mp4",
+        "sha256": "3781e4dcd3d21094f186cf442b3ee30cddfbb2fbe68d87c5c7470a2c742bf75a",
+        "kind": "reference",
+        "provenance": "verified-reference"
+      },
+      {
+        "path": "reference-evidence/manifest.json",
+        "sha256": "246a5028cb6e7927adf10cceb61d85131600be1aee3518c8a6201f1577e6dd15",
+        "kind": "qa-artifact",
+        "provenance": "verified-run-artifact"
+      },
+      {
+        "path": "src/schemas/reference-fidelity.ts",
+        "sha256": "f3579822f31c5eb563b46c01069ac07d84934bee564119354e41a52cae4d7be1",
+        "kind": "factory-source",
+        "provenance": "repository-source"
+      },
+      {
+        "path": "src/providers/codex-account.ts",
+        "sha256": "241ad224a182b6ae45cdc2c58f2de35811dff82245414516d33acf0bfc41ef77",
+        "kind": "factory-source",
+        "provenance": "repository-source"
+      },
+      {
+        "path": "qa-recovery-20260907/reference-frames/manifest.json",
+        "sha256": "22e2b0a21dd25ffdab3b692c409e3af258e1803c6b05ee2f767c2ac68df30d87",
+        "kind": "qa-artifact",
+        "provenance": "verified-run-artifact"
+      }
+    ]
+  },
+  "acceptanceCriteria": [
+    "每个已验证 gameplay-reference 录屏必须确定性生成 run 内逐帧清单，记录源 SHA-256、真实时间戳、画面尺寸和每帧 SHA-256；缺失或不匹配即阻塞。",
+    "研究阶段必须产出 Zod 校验的关卡重建契约，分别记录观察、推断和未知，并覆盖对象语义 ID、生命周期、规范化空间关系、出场/交互顺序、镜头、自然输入、反馈、失败、结算与重玩。",
+    "参考型构建在关卡重建契约缺失、BLOCKED 或来源哈希失配时不得进入 Builder；Builder 必须报告每个检查点的运行时接线和证据。",
+    "参考型 QA 必须在相同声明视口、检查点与自然输入下生成候选运行轨迹，并对对象/状态/空间拓扑/事件顺序进行机器比较，所有证据绑定同一 build hash。",
+    "独立 QA 必须检查用户点名的第一关对象与状态分支，并通过可感知门禁；仅有单测、fixture 或 Builder 自述不得完成。",
+    "标准流水线必须保持第三方代码、素材、名称、UI 文案、美术表达和调参值为原创，同时证明通用玩法、关卡因果结构和空间拓扑达到声明容差。",
+    "新增共享工厂代码通过 lint、typecheck、单元/集成测试，并使用该录屏实际产出标准逐帧工件作为校准证据。"
+  ],
+  "status": "READY_FOR_REPAIR",
+  "createdAt": "2026-09-08T08:12:44.490013Z"
+}

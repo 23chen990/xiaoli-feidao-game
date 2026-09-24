@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "InteractiveObjectReachabilityAudit",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "method": {
+    "structuralPass": "Compare each interactive object's authored bounds and x-window with completionPath and declared route role.",
+    "naturalPassRequired": true,
+    "warning": "A coordinate-distance mismatch is a high-risk signal, not proof of unreachable gameplay; airborne and recovery branches require natural replay."
+  },
+  "findings": [
+    {
+      "id": "L03-FLOOR-SPIKE-ORPHAN-RISK",
+      "level": 3,
+      "objectIds": ["l3-low-risk"],
+      "objectType": "hazard",
+      "evidence": "User screenshot shows the spike strip isolated at the lower-right edge while the visible player/support route remains above and left.",
+      "structuralSignal": "Spike y=680; completionPath at x=2200 is materially higher, with no declared branch/route role connecting the player to the floor hazard.",
+      "status": "HIGH_RISK_NEEDS_NATURAL_REPRO",
+      "requiredDecision": "Either make the spike strip intersect a deliberate low recovery/shortcut path, or mark it decorative and remove its gameplay collider."
+    },
+    {
+      "id": "L03-SUPPORT-ROUTE-SEMANTICS",
+      "level": 3,
+      "objectIds": ["l3-ramp", "l3-rebound", "l3-recovery-pad"],
+      "objectType": "support",
+      "evidence": "The level's supports are spatially separated from the declared completionPath and no route-role metadata explains which are main, branch or recovery.",
+      "structuralSignal": "All three supports require large vertical deviation from the nominal path; their intended touch/recovery windows are implicit.",
+      "status": "HIGH_RISK_NEEDS_NATURAL_REPRO",
+      "requiredDecision": "Declare and test the intended interaction window for each support; unreferenced supports must not remain collidable."
+    }
+  ],
+  "crossLevelPattern": {
+    "status": "PROCESS_BLOCKER",
+    "finding": "Level data has completionPath but no per-object pathRole, reachable-state window, or decisionImpact field, so structural validation cannot reject orphan interactive objects automatically.",
+    "nextGate": "Add those fields to the level contract and require natural evidence for main/branch/recovery objects."
+  },
+  "decision": "Do not treat the level pack as fully validated until the high-risk objects are naturally touched, intentionally avoided, or explicitly downgraded to decoration."
+}

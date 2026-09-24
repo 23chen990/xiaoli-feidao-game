@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fix-result",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 12,
+  "issueId": "L1-RUNWAY-RECONSTRUCTION-LINT-ACCEPTANCE",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "routeReason": "The validated issue affects the core recovery state path and remains under formal QA/Fixer retest obligations. The attempt packet limited ownership to src/game-core.ts and required rollback immediately if any acceptance check failed.",
+  "status": "BLOCKED",
+  "candidateRejected": true,
+  "rejectionReason": "The reconstructed candidate failed the retained focused contract: 16 passed and 4 failed. Failures included the second replay contact occurring at frame 305 instead of 302, the ordinary forward replay stopping at x=1749.6789775152486 after anchoring, a release event position mismatch in the focused fixture, and the expiry fixture becoming anchored before the pending pose could expire. Per packet, no tuning was attempted; the source was restored to the exact baseline hash.",
+  "rollback": {
+    "requested": true,
+    "performed": true,
+    "sourceChanged": true,
+    "testChanged": false,
+    "files": [
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+        "expectedBaselineSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+        "actualSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+        "matchesBaseline": true
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts",
+        "expectedSha256": "7627f8b8052adb8bd33b6b21f7c0cf935b1d23cba5b4570513ce47bd56984510",
+        "actualSha256": "7627f8b8052adb8bd33b6b21f7c0cf935b1d23cba5b4570513ce47bd56984510",
+        "matchesBaseline": true
+      }
+    ]
+  },
+  "evidence": {
+    "focusedRed": {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "status": "EXPECTED_FAIL",
+      "exitCode": 1,
+      "summary": "15 passed, 5 failed; missing pending runway pose lifecycle and release selector",
+      "log": "red-targeted.log",
+      "sha256": "92cbf9e025012fcc95df7881e892f271c7d78f542037c5cdd45e00c70615029d"
+    },
+    "focusedGreen": {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "status": "FAIL",
+      "exitCode": 1,
+      "summary": "16 passed, 4 failed",
+      "log": "green-targeted.log",
+      "sha256": "6ce740637cde7eaee2d551b09e31d5774b507cf0927abd9114ded74c9e95e101",
+      "failureEvidence": [
+        "Expected runway pose frames [216, 302], observed [216, 305].",
+        "Normal forward replay ended anchored at playerX=1749.6789775152486 instead of progressing past x=2000.",
+        "Focused release event position did not match the recorded playerX.",
+        "Expiry fixture observed anchored state instead of airborne state before expiry."
+      ]
+    },
+    "fullTests": {
+      "command": "pnpm test",
+      "status": "NOT_RUN",
+      "exitCode": null,
+      "summary": null,
+      "log": null
+    },
+    "lint": {
+      "command": "pnpm lint",
+      "status": "NOT_RUN",
+      "exitCode": null,
+      "summary": null,
+      "log": null
+    },
+    "typecheck": {
+      "command": "pnpm typecheck",
+      "status": "NOT_RUN",
+      "exitCode": null,
+      "summary": null,
+      "log": null
+    },
+    "build": {
+      "command": "pnpm build",
+      "status": "NOT_RUN",
+      "reason": "Packet requires immediate rollback when an acceptance check fails.",
+      "buildCount": 0,
+      "log": null,
+      "distSha256": null
+    },
+    "naturalQa": {
+      "status": "NOT_RUN",
+      "claim": false,
+      "reason": "Natural-input and perceptual QA belong to the independent QA retest and were not performed in this Fixer attempt."
+    }
+  },
+  "changedFiles": [],
+  "attemptedFiles": [
+    "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts"
+  ],
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory modules, renderers, platform adapters, level data, release configuration, and unrelated QA history.",
+    "Full conversation and unbound media.",
+    "Natural or perceptual completion claims.",
+    "The unavailable Attempt 11 candidate source bytes; implementation used only the validated behavior contract and retained tests."
+  ],
+  "remainingEvidenceGaps": [
+    "The retained focused contract still fails on the baseline source and on this reconstructed candidate; the candidate has been rejected.",
+    "Full tests, lint, typecheck, and build were not run after the focused candidate failure, in accordance with the packet rollback rule.",
+    "Independent natural-input and perceptual QA remain outstanding."
+  ],
+  "runtimeQaClaim": false,
+  "naturalQaClaim": false,
+  "perceptualQaClaim": false,
+  "buildCount": 0,
+  "createdAt": "2026-09-23T11:10:00Z"
+}

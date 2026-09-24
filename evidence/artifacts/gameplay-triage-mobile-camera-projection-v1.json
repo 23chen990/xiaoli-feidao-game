@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageMobileCameraProjection",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "PASS_AFTER_RETEST",
+  "classification": "runtime-presentation-regression",
+  "route": "formal-fixer",
+  "routeReason": "默认移动端旅程首屏失败，涉及 3D camera/presentation 与自然 QA；根因尚未定位，不能走 direct-builder。",
+  "reproduction": {
+    "command": "pnpm qa:browser",
+    "result": "FAIL",
+    "error": "tests/browser-smoke.ts:301 AssertionError: mobileInitial.render.knifeProjection.x >= 0 && knifeProjection.x + width <= 390",
+    "evidence": [
+      "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/report.json",
+      "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/console.log",
+      "workspace/prototype-a/tests/browser-smoke.ts:279-304"
+    ],
+    "viewport": "390x844",
+    "input": "fresh browser launch; no debug/state injection",
+    "lifecycle": "startup initial render before first natural touch"
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "knife projection",
+      "lifecycleStateBranch": "startup initial render",
+      "rendererPresentationPath": ["src/three-world-renderer.ts", "src/three-presentation.ts", "src/main.ts"],
+      "deviceViewport": "mobile portrait 390x844",
+      "observed": "knifeProjection exists but violates horizontal viewport containment",
+      "expected": "knife projection is fully inside 390px viewport while target and critical HUD remain readable"
+    },
+    {
+      "objectType": "knife projection",
+      "lifecycleStateBranch": "startup initial render",
+      "rendererPresentationPath": ["src/three-world-renderer.ts", "src/three-presentation.ts", "src/main.ts"],
+      "deviceViewport": "desktop baseline",
+      "observed": "desktop smoke path is not the failing matrix cell",
+      "expected": "desktop remains stable after mobile correction"
+    }
+  ],
+  "scope": {
+    "inScope": ["mobile initial camera framing", "projection containment", "target/knife readability", "desktop regression check"],
+    "outOfScope": ["inventing camera transitions", "changing level geometry without evidence", "third-party expression", "native mini-game packaging"]
+  },
+  "acceptanceCriteria": [
+    "Fresh 390x844 browser launch passes the knife projection containment assertion without debug controls.",
+    "The initial target and critical HUD remain visible and readable at the same viewport.",
+    "Desktop natural journey and finish-wall branch remain passing after the correction.",
+    "A Playwright natural trace and screenshot cover the exact mobile startup matrix cell.",
+    "pnpm lint, pnpm typecheck, pnpm test, pnpm build and pnpm qa:browser all pass after repair.",
+    "If the fix introduces camera state changes, they are documented as required by this game's applicability profile, not generalized to all factory games."
+  ],
+  "claimBoundary": "此 artifact 只确认移动端首屏投影越界，不证明镜头多模式、即时收益或终点演出已经修复。"
+}

@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "experience-reproduction-matrix",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "axes": {
+    "objectTypes": [
+      "player knife",
+      "basic cuttable and support",
+      "danger object",
+      "finish multiplier lane",
+      "HUD and replay control"
+    ],
+    "lifecycleStateBranches": [
+      "fresh ready and first prediction",
+      "approach and contact",
+      "successful cut and support release",
+      "danger contact and attributable failure",
+      "finish approach and settlement",
+      "terminal and replay to fresh ready"
+    ],
+    "rendererPaths": [
+      "game-core to ThreePresentationModel to ThreeWorldRenderer",
+      "world renderer plus DOM HUD",
+      "failure overlay and replay DOM"
+    ],
+    "viewports": [
+      { "label": "phone-compact", "width": 390, "height": 844 },
+      { "label": "phone-tall", "width": 430, "height": 932 },
+      { "label": "desktop-reference", "width": 1100, "height": 720 }
+    ]
+  },
+  "cells": [
+    {
+      "id": "knife-ready-390",
+      "objectType": "player knife",
+      "lifecycleStateBranch": "fresh ready and first prediction",
+      "rendererPath": "game-core to ThreePresentationModel to ThreeWorldRenderer",
+      "viewport": { "label": "phone-compact", "width": 390, "height": 844 },
+      "status": "REPRODUCED",
+      "expected": "The knife, first target and intended action corridor are immediately legible without instructions covering them.",
+      "observed": "The knife is mostly hidden behind oversized white structures and the action corridor is visually ambiguous.",
+      "evidence": [{ "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-fixed-portrait-4/frames/startup.png", "sha256": "8990cfa56fd989f55f4a6768f52aad626edceb7843ef9591e2b6c63c31e6eaec", "kind": "runtime-capture", "provenance": "verified-run-artifact" }]
+    },
+    {
+      "id": "knife-ready-1100",
+      "objectType": "player knife",
+      "lifecycleStateBranch": "fresh ready and first prediction",
+      "rendererPath": "game-core to ThreePresentationModel to ThreeWorldRenderer",
+      "viewport": { "label": "desktop-reference", "width": 1100, "height": 720 },
+      "status": "REPRODUCED",
+      "expected": "The knife and first target form a clear foreground action pair.",
+      "observed": "The knife is tucked behind the first support while large walls dominate the center of the frame.",
+      "evidence": [{ "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-fixed-desktop-1/frames/startup.png", "sha256": "b72c003129b9dc0586b4acd2a73bbcadfecc88c7f281433e8035b3919d36a44a", "kind": "runtime-capture", "provenance": "verified-run-artifact" }]
+    },
+    {
+      "id": "intro-danger-390",
+      "objectType": "danger object",
+      "lifecycleStateBranch": "danger contact and attributable failure",
+      "rendererPath": "world renderer plus DOM HUD",
+      "viewport": { "label": "phone-compact", "width": 390, "height": 844 },
+      "status": "REPRODUCED",
+      "expected": "The introductory level contains one basic target and no lethal danger, matching the verified level 1–5 teaching topology.",
+      "observed": "The natural run ends after four cuts with the terminal reason 碰到危险物, proving lethal danger is already on the introductory path.",
+      "evidence": [
+        { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-fixed-portrait-4/frames/end.png", "sha256": "0032c3c57a9b29878e0cd89c2e948b139e837664aca288ba65d927a720923eeb", "kind": "runtime-capture", "provenance": "verified-run-artifact" },
+        { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/incoming/Slice_Master_-30-305d46a2b23a.docx", "sha256": "305d46a2b23a8bcabd0006bb31e56a5986c653d3e65b0d733f6e7c9a293bbe31", "kind": "reference", "provenance": "verified-reference" }
+      ]
+    },
+    {
+      "id": "support-resolution-390",
+      "objectType": "basic cuttable and support",
+      "lifecycleStateBranch": "successful cut and support release",
+      "rendererPath": "game-core to ThreePresentationModel to ThreeWorldRenderer",
+      "viewport": { "label": "phone-compact", "width": 390, "height": 844 },
+      "status": "BLOCKED",
+      "expected": "One continuous natural-input capture shows the same target intact, contacted, split, unsupported, falling and resting.",
+      "observed": "Existing engineering checks and separate frames do not prove the complete visible chain for the same object ID.",
+      "evidence": [{ "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/triage.json", "sha256": "d144fee1c265e2a252e04bc3dc504717f5e89bac7f67ae91ac71aa9988baf054", "kind": "qa-artifact", "provenance": "verified-run-artifact" }]
+    },
+    {
+      "id": "finish-presentation-1100",
+      "objectType": "finish multiplier lane",
+      "lifecycleStateBranch": "finish approach and settlement",
+      "rendererPath": "world renderer plus DOM HUD",
+      "viewport": { "label": "desktop-reference", "width": 1100, "height": 720 },
+      "status": "REPRODUCED",
+      "expected": "Multiplier choices appear as reachable world geometry at the finish and contact produces a distinct world result before settlement.",
+      "observed": "Multiplier pills float at the screen edge during ordinary play and failure; finish-approach and finish-settlement captures are byte-identical failed-state images.",
+      "evidence": [
+        { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-fixed-desktop-1/frames/finish-approach.png", "sha256": "6e6a792b089a30b7846fea09dd88cf1fee38eb0f8194487e34c79c8ef8bd80a4", "kind": "runtime-capture", "provenance": "verified-run-artifact" },
+        { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-fixed-desktop-1/frames/finish-settlement.png", "sha256": "6e6a792b089a30b7846fea09dd88cf1fee38eb0f8194487e34c79c8ef8bd80a4", "kind": "runtime-capture", "provenance": "verified-run-artifact" }
+      ]
+    },
+    {
+      "id": "hud-replay-390",
+      "objectType": "HUD and replay control",
+      "lifecycleStateBranch": "fresh ready and first prediction",
+      "rendererPath": "world renderer plus DOM HUD",
+      "viewport": { "label": "phone-compact", "width": 390, "height": 844 },
+      "status": "REPRODUCED",
+      "expected": "The mobile play state reserves its center for prediction and action; replay appears only after a terminal outcome.",
+      "observed": "Large status text, helper text, multiplier controls and a replay button occupy the play state before terminal outcome.",
+      "evidence": [{ "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-fixed-portrait-4/frames/startup.png", "sha256": "8990cfa56fd989f55f4a6768f52aad626edceb7843ef9591e2b6c63c31e6eaec", "kind": "runtime-capture", "provenance": "verified-run-artifact" }]
+    },
+    {
+      "id": "terminal-replay-390",
+      "objectType": "HUD and replay control",
+      "lifecycleStateBranch": "terminal and replay to fresh ready",
+      "rendererPath": "failure overlay and replay DOM",
+      "viewport": { "label": "phone-compact", "width": 390, "height": 844 },
+      "status": "BLOCKED",
+      "expected": "After an attributable terminal result, normal touch on replay returns to a fresh Level 1 ready state.",
+      "observed": "A failure terminal was captured, but recording.replay is null, so replay recovery is unobserved.",
+      "evidence": [{ "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-fixed-portrait-4/recording.json", "sha256": "b0c4dfea4df7fc724b37af4e2ab06e6333387120d722be1d66e54bd4bcd19e43", "kind": "qa-artifact", "provenance": "verified-run-artifact" }]
+    },
+    {
+      "id": "terminal-replay-1100",
+      "objectType": "HUD and replay control",
+      "lifecycleStateBranch": "terminal and replay to fresh ready",
+      "rendererPath": "failure overlay and replay DOM",
+      "viewport": { "label": "desktop-reference", "width": 1100, "height": 720 },
+      "status": "BLOCKED",
+      "expected": "The natural route reaches a successful finish or attributable failure and replay returns to fresh ready.",
+      "observed": "The route ends with 跌出路线 and recording.replay is null; successful finish and recovery are both unobserved.",
+      "evidence": [{ "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-fixed-desktop-1/recording.json", "sha256": "c7da20fa98988a8e58245411e675468cc45fe7395d906c979b2482fd67500433", "kind": "qa-artifact", "provenance": "verified-run-artifact" }]
+    },
+    {
+      "id": "default-journey-430",
+      "objectType": "player knife, targets, finish and replay",
+      "lifecycleStateBranch": "fresh ready through terminal and replay",
+      "rendererPath": "world renderer plus DOM HUD",
+      "viewport": { "label": "phone-tall", "width": 430, "height": 932 },
+      "status": "BLOCKED",
+      "expected": "A complete fresh natural-input journey proves every required branch at the second target phone size.",
+      "observed": "No 430x932 exact-branch natural capture exists in the current repair evidence.",
+      "evidence": []
+    }
+  ],
+  "confirmedFindings": [
+    "The current default product does not preserve the reference's introductory pacing and hazard topology.",
+    "The current visual hierarchy obscures the controllable object and gives persistent HUD controls more weight than the play action.",
+    "Existing captures establish failure terminals but do not establish successful finish or replay recovery.",
+    "The historical QA labels finish states without a distinct pixel transition, so those labels cannot serve as perceptual proof.",
+    "The shared factory previously lacked a mandatory source-bound behavior analysis and exact feature-by-viewport perceptual matrix."
+  ],
+  "remainingGaps": [
+    "No 430x932 natural-input capture exists for the current build.",
+    "No current natural-input capture reaches successful finish, settlement and replay.",
+    "The same-object cut/support/fall/rest visible chain remains unobserved.",
+    "The generated game workspace has not been repaired in this shared-factory change."
+  ],
+  "createdAt": "2026-09-08T05:36:00.000Z"
+}

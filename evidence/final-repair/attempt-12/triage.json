@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-triage",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 12,
+  "issueId": "L1-RUNWAY-RECONSTRUCTION-LINT-ACCEPTANCE",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "classification": "formal-fixer-acceptance-blocker",
+  "status": "VALIDATED_REPRODUCTION",
+  "priorAttempt": {
+    "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/fix-result.json",
+    "sha256": "0268e4d878dccf42b331184acd2759ddbe98c8c9280da5235e388d5ae75422d9",
+    "status": "BLOCKED",
+    "candidateRejected": true
+  },
+  "reproduction": {
+    "baselineSourceSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+    "retainedTestContractSha256": "7627f8b8052adb8bd33b6b21f7c0cf935b1d23cba5b4570513ce47bd56984510",
+    "acceptanceFailure": {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/lint.log",
+      "sha256": "d4c0c44b4d2745a607f400c29603fd5a3cd2cf8108d73cdaffaf756cdc287219",
+      "line": 698,
+      "rule": "prefer-const",
+      "binding": "pendingSupport"
+    },
+    "behaviorEvidence": {
+      "focusedTestsPassed": true,
+      "fullTestsPassed": true,
+      "typecheckPassed": true,
+      "lintPassed": false,
+      "buildRun": false,
+      "evidence": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/green-targeted.log",
+          "sha256": "d0d64f4227589d2edd4aff8ca1939209b75e933d1df89ed0ee51725c61f48ab6"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/tests.log",
+          "sha256": "e6edb16db94c460ddd50905f93b5318b25224ec98b2261d5143d3211e829124f"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/typecheck.log",
+          "sha256": "8366207267355d3e3d5bf3bf6e8c94c5f93f6078c34f08973fa2b38cdda6cc92"
+        },
+        {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/lint.log",
+          "sha256": "d4c0c44b4d2745a607f400c29603fd5a3cd2cf8108d73cdaffaf756cdc287219"
+        }
+      ]
+    },
+    "rollbackEvidence": {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/fix-result.json",
+      "sha256": "0268e4d878dccf42b331184acd2759ddbe98c8c9280da5235e388d5ae75422d9",
+      "status": "BLOCKED",
+      "testBaselineUnavailable": true
+    }
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "level1 runway sharp tip",
+      "lifecycleStateBranch": "early separating contact → pending pose",
+      "rendererPresentationPath": "ThreePresentationModel airborne player",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/green-targeted.log"],
+      "observation": "Both baseline runway contacts and releases pass in the focused candidate replay.",
+      "inference": "The runtime reconstruction branch is behaviorally viable before lint acceptance.",
+      "unknowns": ["Natural player-visible traces still require independent QA."]
+    },
+    {
+      "objectType": "pending runway release pose",
+      "lifecycleStateBranch": "pose age and one-shot tap consumption",
+      "rendererPresentationPath": "airborne motion and launch event path",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/tests.log"],
+      "observation": "Full test suite passed with the reconstructed pose lifecycle.",
+      "inference": "Changing only binding mutability should preserve the lifecycle.",
+      "unknowns": ["Build and natural viewport presentation are not yet retested."]
+    },
+    {
+      "objectType": "pendingSupport local binding",
+      "lifecycleStateBranch": "release tap support resolution",
+      "rendererPresentationPath": "simulation state only; no renderer change",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/lint.log"],
+      "observation": "ESLint reports the binding is never reassigned at line 698.",
+      "inference": "A const declaration is the narrowest acceptance fix and has no runtime semantic delta.",
+      "unknowns": ["The candidate source must be reimplemented from the validated packet because the failed source was rolled back."]
+    },
+    {
+      "objectType": "default browser journey",
+      "lifecycleStateBranch": "startup → runway branch → terminal → replay",
+      "rendererPresentationPath": "web-lite Three.js presentation",
+      "viewport": "390x844",
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-summary.json"],
+      "observation": "Prior natural QA was blocked on the exact recovery branch.",
+      "inference": "A passing code gate still requires fresh natural and perceptual QA.",
+      "unknowns": ["No new natural QA evidence exists for Attempt 12."]
+    }
+  ],
+  "rootCauseHypothesis": {
+    "evidence": "Attempt 11 focused replay, full tests, and typecheck passed; the only acceptance failure is the deterministic ESLint prefer-const diagnostic for pendingSupport.",
+    "changeHypothesis": "Reconstruct the validated pending runway pose implementation and declare the non-reassigned pendingSupport binding with const; this should preserve the exact replay behavior while satisfying lint.",
+    "stateName": "pendingRunwayReleasePose",
+    "correction": "declare pendingSupport with const because the binding is never reassigned; this removes the lint error without changing runtime behavior",
+    "preservedBehavior": [
+      "Capture both early separating runway top-tip contacts using player-center x<350 and normalY<=-0.9.",
+      "Keep the player airborne with measurable motion while retaining the pose until the normal tap.",
+      "Consume each pose once with the standard anchored-release velocity and clear it on expiry/reset/terminal/non-runway/inactive support paths."
+    ],
+    "rejectedAlternatives": [
+      "Do not widen or retune the runway contact geometry.",
+      "Do not change the 2.35-second pose lifetime or tap timing.",
+      "Do not edit renderer, platform, level, persistence, or release configuration files.",
+      "Do not claim completion from focused tests without lint, typecheck, build, and independent natural QA."
+    ]
+  },
+  "scope": {
+    "includedFiles": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts"],
+    "excludedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-presentation.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/style.css",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms"
+    ],
+    "route": "formal-fixer",
+    "expectedSourceFileLimit": 1
+  },
+  "acceptanceCriteria": [
+    "Run a red focused test from the retained pending-pose contract before editing production code.",
+    "Reimplement only the validated pendingRunwayReleasePose behavior in src/game-core.ts.",
+    "Use const for pendingSupport and produce no prefer-const lint diagnostic.",
+    "Capture both baseline seed-31 runway contacts at frames 216 and 302.",
+    "Keep both captured poses airborne with measurable position and rotation motion.",
+    "Consume both poses exactly once at the baseline taps.",
+    "Preserve standard launch velocity vx=150 and vy=-300.",
+    "Preserve the 2.35-second bounded pose lifetime.",
+    "Clear pending state on reset, level load, terminal, expiry, inactive support, and non-runway contact.",
+    "Pass the focused retained contract and full pnpm test suite.",
+    "Pass pnpm lint and pnpm typecheck.",
+    "Run exactly one pnpm build and record its dist hash.",
+    "Do not claim natural or perceptual completion before independent QA retests both viewports and replay."
+  ],
+  "evidenceClassification": {
+    "observed": [
+      "The only Attempt 11 static-check failure is prefer-const at game-core.ts line 698.",
+      "Attempt 11 focused and full tests passed before the lint gate.",
+      "The test contract currently present in the workspace has SHA-256 7627f8b8052adb8bd33b6b21f7c0cf935b1d23cba5b4570513ce47bd56984510."
+    ],
+    "inferred": [
+      "Changing let to const is behavior-preserving because pendingSupport is never reassigned.",
+      "The validated reconstruction can be reimplemented without changing its geometry or lifecycle rules."
+    ],
+    "unknown": [
+      "The final build hash is not known until the candidate passes all checks.",
+      "Natural-input and perceptual QA have not yet been rerun."
+    ]
+  },
+  "createdAt": "2026-09-23T10:52:00.000Z"
+}

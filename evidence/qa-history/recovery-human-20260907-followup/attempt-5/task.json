@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "human-review-20260907-l1-followup",
+  "attempt": 5,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "triagePath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/triage.json",
+  "validatedIssue": "L1-RUNWAY-EARLY-SHARP-ANCHOR",
+  "scope": ["src/game-core.ts", "tests/level1-recovery.test.ts"],
+  "hypothesis": "The current runway sharp-contact cutoff x>=350 is above the natural sharp-contact positions x=301.95 and x=329.45. Lower the Level1-only cutoff to x>=250, preserving the opening support anchor and blunt bounce response.",
+  "acceptance": [
+    "Focused test fails before implementation for an early runway sharp contact and passes after the cutoff change.",
+    "Opening white-landing anchor and runway body/handle bounce regressions remain green.",
+    "Run all 195+ tests, lint, typecheck, and exactly one build; record exit codes and build hash.",
+    "Hand off to independent QA without claiming natural or perceptual pass."
+  ]
+}

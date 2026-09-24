@@ -1,0 +1,260 @@
+{
+  "viewport": {
+    "label": "desktop-1100x720",
+    "width": 1100,
+    "height": 720,
+    "input": "mouse"
+  },
+  "freshBrowserContext": true,
+  "startToCoreLoop": {
+    "visibleCanvas": true,
+    "normalInputCount": 19
+  },
+  "fixedInputs": [
+    {
+      "plannedMs": 0,
+      "dispatchedMs": 1,
+      "kind": "mouse",
+      "coordinate": [
+        550,
+        360
+      ]
+    },
+    {
+      "plannedMs": 517,
+      "dispatchedMs": 518,
+      "kind": "mouse",
+      "coordinate": [
+        550,
+        360
+      ]
+    },
+    {
+      "plannedMs": 767,
+      "dispatchedMs": 782,
+      "kind": "mouse",
+      "coordinate": [
+        550,
+        360
+      ]
+    },
+    {
+      "plannedMs": 1017,
+      "dispatchedMs": 1017,
+      "kind": "mouse",
+      "coordinate": [
+        550,
+        360
+      ]
+    },
+    {
+      "plannedMs": 1267,
+      "dispatchedMs": 1289,
+      "kind": "mouse",
+      "coordinate": [
+        550,
+        360
+      ]
+    },
+    {
+      "plannedMs": 4350,
+      "dispatchedMs": 4352,
+      "kind": "mouse",
+      "coordinate": [
+        550,
+        360
+      ]
+    },
+    {
+      "plannedMs": 5350,
+      "dispatchedMs": 5351,
+      "kind": "mouse",
+      "coordinate": [
+        550,
+        360
+      ]
+    },
+    {
+      "plannedMs": 6333,
+      "dispatchedMs": 6332,
+      "kind": "mouse",
+      "coordinate": [
+        550,
+        360
+      ]
+    },
+    {
+      "plannedMs": 8400,
+      "dispatchedMs": 8400,
+      "kind": "mouse",
+      "coordinate": [
+        550,
+        360
+      ]
+    },
+    {
+      "plannedMs": 9417,
+      "dispatchedMs": 9418,
+      "kind": "mouse",
+      "coordinate": [
+        550,
+        360
+      ]
+    },
+    {
+      "plannedMs": 10417,
+      "dispatchedMs": 10419,
+      "kind": "mouse",
+      "coordinate": [
+        550,
+        360
+      ]
+    },
+    {
+      "plannedMs": 10667,
+      "dispatchedMs": 10667,
+      "kind": "mouse",
+      "coordinate": [
+        550,
+        360
+      ]
+    },
+    {
+      "plannedMs": 11783,
+      "dispatchedMs": 11784,
+      "kind": "mouse",
+      "coordinate": [
+        550,
+        360
+      ]
+    },
+    {
+      "plannedMs": 12667,
+      "dispatchedMs": 12667,
+      "kind": "mouse",
+      "coordinate": [
+        550,
+        360
+      ]
+    },
+    {
+      "plannedMs": 13800,
+      "dispatchedMs": 13802,
+      "kind": "mouse",
+      "coordinate": [
+        550,
+        360
+      ]
+    },
+    {
+      "plannedMs": 16100,
+      "dispatchedMs": 16102,
+      "kind": "mouse",
+      "coordinate": [
+        550,
+        360
+      ]
+    },
+    {
+      "plannedMs": 17100,
+      "dispatchedMs": 17102,
+      "kind": "mouse",
+      "coordinate": [
+        550,
+        360
+      ]
+    },
+    {
+      "plannedMs": 18083,
+      "dispatchedMs": 18084,
+      "kind": "mouse",
+      "coordinate": [
+        550,
+        360
+      ]
+    },
+    {
+      "plannedMs": 18850,
+      "dispatchedMs": 18851,
+      "kind": "mouse",
+      "coordinate": [
+        550,
+        360
+      ]
+    }
+  ],
+  "terminal": {
+    "visible": true,
+    "atMs": 174,
+    "visibleText": ""
+  },
+  "replay": {
+    "clickedVisibleReplayButton": false,
+    "visiblePostReplayScreenshot": false
+  },
+  "consoleErrors": [],
+  "pageErrors": [],
+  "screenshots": [
+    {
+      "file": "desktop-1100x720/screenshots/startup.png",
+      "sha256": "b72c003129b9dc0586b4acd2a73bbcadfecc88c7f281433e8035b3919d36a44a"
+    },
+    {
+      "file": "desktop-1100x720/screenshots/t-00200ms.png",
+      "sha256": "eabebac98c0cf41a90f6f7be4a34b12ccb5204a7ca38ba854d7bb6a2d6fe32ff"
+    },
+    {
+      "file": "desktop-1100x720/screenshots/t-01000ms.png",
+      "sha256": "b32da6ededc4a732cab93ce380d65e63633f91a2cc39089871e4066c24c49e5e"
+    },
+    {
+      "file": "desktop-1100x720/screenshots/t-03000ms.png",
+      "sha256": "a9d1c20fea1a325a3ae6e265a3d51461889751452ab4637008bcdeef6deb383a"
+    },
+    {
+      "file": "desktop-1100x720/screenshots/t-06000ms.png",
+      "sha256": "a9d1c20fea1a325a3ae6e265a3d51461889751452ab4637008bcdeef6deb383a"
+    },
+    {
+      "file": "desktop-1100x720/screenshots/t-09000ms.png",
+      "sha256": "a9d1c20fea1a325a3ae6e265a3d51461889751452ab4637008bcdeef6deb383a"
+    },
+    {
+      "file": "desktop-1100x720/screenshots/t-12000ms.png",
+      "sha256": "a9d1c20fea1a325a3ae6e265a3d51461889751452ab4637008bcdeef6deb383a"
+    },
+    {
+      "file": "desktop-1100x720/screenshots/t-15000ms.png",
+      "sha256": "a9d1c20fea1a325a3ae6e265a3d51461889751452ab4637008bcdeef6deb383a"
+    },
+    {
+      "file": "desktop-1100x720/screenshots/t-18000ms.png",
+      "sha256": "a9d1c20fea1a325a3ae6e265a3d51461889751452ab4637008bcdeef6deb383a"
+    },
+    {
+      "file": "desktop-1100x720/screenshots/t-20500ms.png",
+      "sha256": "a9d1c20fea1a325a3ae6e265a3d51461889751452ab4637008bcdeef6deb383a"
+    },
+    {
+      "file": "desktop-1100x720/screenshots/t-24000ms.png",
+      "sha256": "a9d1c20fea1a325a3ae6e265a3d51461889751452ab4637008bcdeef6deb383a"
+    },
+    {
+      "file": "desktop-1100x720/screenshots/terminal.png",
+      "sha256": "a9d1c20fea1a325a3ae6e265a3d51461889751452ab4637008bcdeef6deb383a"
+    },
+    {
+      "file": "desktop-1100x720/screenshots/replay.png",
+      "sha256": "b72c003129b9dc0586b4acd2a73bbcadfecc88c7f281433e8035b3919d36a44a"
+    }
+  ],
+  "trace": {
+    "path": "desktop-1100x720/playwright-trace.zip",
+    "sha256": "b646017a655caa612b02fc635791feb233214f9f50d2baf4c6600b6c8786195a"
+  },
+  "video": {
+    "path": "desktop-1100x720/video/page@1b383340a7949df1d1c446742d53409b.webm",
+    "sha256": "d8d041bf5f680491d5623a777704b13dfc5bfd44bcd2ffad028140aa57be79a8"
+  },
+  "elapsedWallMs": 36450
+}

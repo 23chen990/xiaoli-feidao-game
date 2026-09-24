@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PerceptualQaReport",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED",
+  "evidence": [
+    "qa-level-pack-v1/desktop-level-04-won.png",
+    "qa-level-pack-v1/desktop-level-12-won.png",
+    "qa-level-pack-v1/qa-report.json"
+  ],
+  "checks": [
+    { "id": "PERCEPT-LEVEL-DIFFERENCE", "status": "FAIL", "finding": "Level 4 与 Level 12 的截图仍共享相同天空、平台、刀具和结算遮罩，关卡独有压力不可仅凭画面识别。" },
+    { "id": "PERCEPT-HARD-PRESSURE", "status": "BLOCKED", "finding": "自然通关截图未捕获移动坚硬物接近/错相压力的可读瞬间，不能证明玩家能看懂其运动。" },
+    { "id": "PERCEPT-FINISH-CHOICE", "status": "FAIL", "finding": "结算遮罩覆盖终点区域，截图中看不到 ×2/×3/安全区或 bonus 入口的清晰视觉结果。" },
+    { "id": "PERCEPT-MOBILE-READABILITY", "status": "BLOCKED", "finding": "移动端仅有通关截图，未独立核对终点倍率、移动硬物和阶段提示在 390x844 的可读性。" }
+  ],
+  "requiredRetest": [
+    "桌面与 390x844 移动端各抽测早/中/后期关卡",
+    "捕获移动坚硬物进入镜头、接触前窗口和终点选择前画面",
+    "终点结算必须同时展示命中区域、倍率/bonus 结果且不被遮罩完全覆盖",
+    "独立评审能仅凭截图说出各抽测关卡的压力源和不同之处"
+  ]
+}

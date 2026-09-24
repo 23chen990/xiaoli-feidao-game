@@ -1,0 +1,39 @@
+✔ L1-STACK a: actual knife contact cuts the bearing object and releases the overlapping upper object (5.334791ms)
+✔ L1-STACK-VISUAL-EVIDENCE a: same target stays visible and separates into two halves after cut (1.774042ms)
+✔ L1-STACK b: actual knife contact cuts the bearing object and releases the overlapping upper object (1.729625ms)
+✔ L1-STACK-VISUAL-EVIDENCE b: same target stays visible and separates into two halves after cut (0.4695ms)
+✔ L1-GRAVITY active airborne play does not freeze a hovering supported collectible (1.618708ms)
+✔ L1-REWARD intact has zero earnings; a real cut names the separated target and replay clears earnings (2.13675ms)
+✔ L1-PLACEMENT every initial collectible has a touching support, including the late and bridge targets (0.14925ms)
+✖ L1-RUNWAY visible support stays collidable through the normal forward replay (0.514542ms)
+✔ L1-FINISH labels use viewport coordinates without a second offset (1.014667ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 390x844 (1.069916ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 1100x720 (0.206208ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 10
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 340.376792
+
+✖ failing tests:
+
+test at tests/level1-recovery.test.ts:104:1
+✖ L1-RUNWAY visible support stays collidable through the normal forward replay (0.514542ms)
+  AssertionError [ERR_ASSERTION]: the visible runway cannot be decorative when it carries runway targets
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:108:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: false,
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }

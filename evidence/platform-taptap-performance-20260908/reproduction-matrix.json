@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "experience-reproduction-matrix",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "axes": {
+    "objectTypes": [
+      "TapTap Android aggregate performance gate",
+      "PHJ110 Cocos Graphics frame presentation",
+      "PHJ110 Cocos Graphics steady-state loop",
+      "PHJ110 touch core loop",
+      "Huawei P30 performance gate",
+      "Xiaomi 14 performance gate",
+      "OnePlus8_EEA performance gate"
+    ],
+    "lifecycleStateBranches": [
+      "cold start",
+      "10-minute steady run",
+      "ordinary touch core loop",
+      "terminal settlement and replay",
+      "backend aggregate report"
+    ],
+    "rendererPaths": [
+      "Cocos Graphics UI through Canvas/Camera",
+      "Cocos GameBootstrap update loop",
+      "TapTap converted minigame runtime",
+      "TapTap performance sampler"
+    ],
+    "viewports": [
+      {
+        "label": "logical package viewport; physical resolution not reported by screenshot",
+        "width": 390,
+        "height": 844
+      }
+    ]
+  },
+  "cells": [
+    {
+      "id": "perf-android-aggregate-20260908",
+      "objectType": "TapTap Android aggregate performance gate",
+      "lifecycleStateBranch": "backend aggregate report",
+      "rendererPath": "TapTap performance sampler",
+      "viewport": {"label": "logical package viewport; physical resolution not reported by screenshot", "width": 390, "height": 844},
+      "status": "REPRODUCED",
+      "expected": "All five Android devices meet the TapTap performance FPS standard.",
+      "observed": "Android functional pass rate is 100%, but four devices are explicitly marked FPS not meeting standard; exact per-device FPS and ZIP SHA are absent.",
+      "evidence": [{
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-9092aa3c-19d5-40f6-bb78-b1aebb0f68fa-dd3ada4efe62.png",
+        "sha256": "dd3ada4efe6209d9db40f1eb3273d4be26a44f02bafc8342f4eb98a4c5de66d9",
+        "kind": "reference",
+        "provenance": "verified-reference"
+      }]
+    },
+    {
+      "id": "perf-phj110-cold-start-20260908",
+      "objectType": "PHJ110 Cocos Graphics frame presentation",
+      "lifecycleStateBranch": "cold start",
+      "rendererPath": "Cocos Graphics UI through Canvas/Camera",
+      "viewport": {"label": "logical package viewport; physical resolution not reported by screenshot", "width": 390, "height": 844},
+      "status": "REPRODUCED",
+      "expected": "Cold start reaches a stable visible frame and reports a normal FPS sample.",
+      "observed": "PHJ110 reports cold start 2.03s and FPS 0.02150376; the screenshot does not distinguish actual render starvation from sampler failure.",
+      "evidence": [{
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-20633ea7-42dc-44a3-88c8-93db2079c4a4-f834ac624716.png",
+        "sha256": "f834ac624716c8d6b345f4f33d28c36eafedf838d99e352f289b52131491aaaf",
+        "kind": "reference",
+        "provenance": "verified-reference"
+      }]
+    },
+    {
+      "id": "perf-phj110-steady-20260908",
+      "objectType": "PHJ110 Cocos Graphics steady-state loop",
+      "lifecycleStateBranch": "10-minute steady run",
+      "rendererPath": "Cocos GameBootstrap update loop",
+      "viewport": {"label": "logical package viewport; physical resolution not reported by screenshot", "width": 390, "height": 844},
+      "status": "REPRODUCED",
+      "expected": "Ten-minute runtime keeps FPS above the TapTap threshold without unbounded memory growth.",
+      "observed": "PHJ110 shows average memory 242.29MB, 10-minute peak 257.98MB, FPS 0.02150376 and zero reported stutter; the contradictory metrics require raw trace validation.",
+      "evidence": [{
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-20633ea7-42dc-44a3-88c8-93db2079c4a4-f834ac624716.png",
+        "sha256": "f834ac624716c8d6b345f4f33d28c36eafedf838d99e352f289b52131491aaaf",
+        "kind": "reference",
+        "provenance": "verified-reference"
+      }]
+    },
+    {
+      "id": "perf-phj110-touch-loop-20260908",
+      "objectType": "PHJ110 touch core loop",
+      "lifecycleStateBranch": "ordinary touch core loop",
+      "rendererPath": "TapTap converted minigame runtime",
+      "viewport": {"label": "logical package viewport; physical resolution not reported by screenshot", "width": 390, "height": 844},
+      "status": "BLOCKED",
+      "expected": "Touch input, Graphics redraw, cut/reflect/failure and replay remain responsive while FPS is sampled.",
+      "observed": "The screenshot contains no touch trace, frame timeline or exact-package identity, so the natural core loop cannot be localized to this branch.",
+      "evidence": [{
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-9092aa3c-19d5-40f6-bb78-b1aebb0f68fa-dd3ada4efe62.png",
+        "sha256": "dd3ada4efe6209d9db40f1eb3273d4be26a44f02bafc8342f4eb98a4c5de66d9",
+        "kind": "reference",
+        "provenance": "verified-reference"
+      }]
+    },
+    {
+      "id": "perf-huawei-p30-20260908",
+      "objectType": "Huawei P30 performance gate",
+      "lifecycleStateBranch": "10-minute steady run",
+      "rendererPath": "TapTap performance sampler",
+      "viewport": {"label": "logical package viewport; physical resolution not reported by screenshot", "width": 390, "height": 844},
+      "status": "BLOCKED",
+      "expected": "Huawei P30 FPS meets the TapTap standard on the exact uploaded package.",
+      "observed": "Huawei P30 is one of four FPS-not-meeting devices in the report, but its numeric trace and package SHA are not shown.",
+      "evidence": [{
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-9092aa3c-19d5-40f6-bb78-b1aebb0f68fa-dd3ada4efe62.png",
+        "sha256": "dd3ada4efe6209d9db40f1eb3273d4be26a44f02bafc8342f4eb98a4c5de66d9",
+        "kind": "reference",
+        "provenance": "verified-reference"
+      }]
+    },
+    {
+      "id": "perf-xiaomi14-20260908",
+      "objectType": "Xiaomi 14 performance gate",
+      "lifecycleStateBranch": "10-minute steady run",
+      "rendererPath": "TapTap performance sampler",
+      "viewport": {"label": "logical package viewport; physical resolution not reported by screenshot", "width": 390, "height": 844},
+      "status": "BLOCKED",
+      "expected": "Xiaomi 14 FPS meets the TapTap standard on the exact uploaded package.",
+      "observed": "Xiaomi 14 is one of four FPS-not-meeting devices in the report, but its numeric trace and package SHA are not shown.",
+      "evidence": [{
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-9092aa3c-19d5-40f6-bb78-b1aebb0f68fa-dd3ada4efe62.png",
+        "sha256": "dd3ada4efe6209d9db40f1eb3273d4be26a44f02bafc8342f4eb98a4c5de66d9",
+        "kind": "reference",
+        "provenance": "verified-reference"
+      }]
+    },
+    {
+      "id": "perf-oneplus8-eea-20260908",
+      "objectType": "OnePlus8_EEA performance gate",
+      "lifecycleStateBranch": "10-minute steady run",
+      "rendererPath": "TapTap performance sampler",
+      "viewport": {"label": "logical package viewport; physical resolution not reported by screenshot", "width": 390, "height": 844},
+      "status": "BLOCKED",
+      "expected": "OnePlus8_EEA FPS meets the TapTap standard on the exact uploaded package.",
+      "observed": "OnePlus8_EEA is one of four FPS-not-meeting devices in the report, but its numeric trace and package SHA are not shown.",
+      "evidence": [{
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-9092aa3c-19d5-40f6-bb78-b1aebb0f68fa-dd3ada4efe62.png",
+        "sha256": "dd3ada4efe6209d9db40f1eb3273d4be26a44f02bafc8342f4eb98a4c5de66d9",
+        "kind": "reference",
+        "provenance": "verified-reference"
+      }]
+    }
+  ],
+  "confirmedFindings": [
+    "后台截图明确显示 Android 功能运行 5/5 通过，但性能 FPS 有 4 台设备未达标。",
+    "PHJ110 的 FPS 读数极低而卡顿率为 0.0%，说明需要同时排查真实渲染性能和 TapTap 性能采集链路。",
+    "截图开发版本为 0.0.1/195724，未与当前本地 ZIP SHA 绑定，不能直接闭合当前包的性能问题。"
+  ],
+  "remainingGaps": [
+    "四台失败 Android 设备的逐机 FPS 原始日志、渲染 trace 和分辨率未提供。",
+    "TapTap 性能标准的具体 FPS 数值未出现在截图中。",
+    "当前开发版本截图没有 ZIP SHA-256，无法确认是否对应本地 5c087808...5430b 包。",
+    "没有自然触摸、首帧可见性和 10 分钟设备录像来区分真实低帧与采集异常。"
+  ],
+  "createdAt": "2026-09-08T06:44:25Z"
+}

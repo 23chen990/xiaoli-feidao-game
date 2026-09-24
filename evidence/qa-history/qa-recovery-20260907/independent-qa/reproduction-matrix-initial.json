@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "cells": [
+    {
+      "id": "L1-INPUT-390",
+      "objectType": "blade + first cuttable",
+      "stateBranch": "startup → first input → airborne → contact",
+      "renderer": "default index.html → src/main.ts → Three.js + HUD",
+      "viewport": "390x844",
+      "acceptance": "点击引起可见的起跳/翻转；碰到可切物时发生切割；刀、首个目标与承托面同时可辨；引导不遮住目标",
+      "status": "PENDING",
+      "evidence": [],
+      "notes": "独立 QA 在自己的矩阵中记录实测结果；未观察到不得关闭。"
+    },
+    {
+      "id": "L1-GROUND-390",
+      "objectType": "visible tabletop base",
+      "stateBranch": "startup/intact → approach",
+      "renderer": "default index.html → src/main.ts → Three.js + HUD",
+      "viewport": "390x844",
+      "acceptance": "可见台面具有厚度、底部接到地面；物品底部贴合可见承托；同一物体的可见顶面与其承托/接触逻辑一致；不能用看不见的支撑解释悬空",
+      "status": "PENDING",
+      "evidence": [],
+      "notes": "独立 QA 在自己的矩阵中记录实测结果；未观察到不得关闭。"
+    },
+    {
+      "id": "L1-STACK-390",
+      "objectType": "overlapping cuttable stack and its support",
+      "stateBranch": "intact overlap → blade contact → cut/separate → unsupported falling",
+      "renderer": "default index.html → src/main.ts → Three.js + HUD",
+      "viewport": "390x844",
+      "acceptance": "接触真正改变堆叠；切开、散落与失去支撑后的下落在原物体分支发生；水平重叠与垂直承托可解释；不允许以不参与交互的同形装饰代替需求物体",
+      "status": "PENDING",
+      "evidence": [],
+      "notes": "独立 QA 在自己的矩阵中记录实测结果；未观察到不得关闭。"
+    },
+    {
+      "id": "L1-REWARD-390",
+      "objectType": "cut object + local reward + cumulative HUD",
+      "stateBranch": "contact → cut completed → separated → reward → total sync",
+      "renderer": "default index.html → src/main.ts → Three.js + HUD",
+      "viewport": "390x844",
+      "acceptance": "完成切割并分离后，在该物体附近播放奖励反馈，再同步累计值；奖励附着于切割发生位置；总计显示不替代局部反馈",
+      "status": "PENDING",
+      "evidence": [],
+      "notes": "独立 QA 在自己的矩阵中记录实测结果；未观察到不得关闭。"
+    },
+    {
+      "id": "L1-PRESSURE-390",
+      "objectType": "spike hazard + blade + failure/recovery affordance",
+      "stateBranch": "warning → approach → collision/avoidance → failure or recovery",
+      "renderer": "default index.html → src/main.ts → Three.js + HUD",
+      "viewport": "390x844",
+      "acceptance": "危险在接近前可辨；避开与接触后果不同；失败原因和重试入口可见；危险信号与真正危险物体绑定；装饰和危险不使用无法区分的表现",
+      "status": "PENDING",
+      "evidence": [],
+      "notes": "独立 QA 在自己的矩阵中记录实测结果；未观察到不得关闭。"
+    },
+    {
+      "id": "L1-FINISH-390",
+      "objectType": "finish outcome lanes + settlement + replay",
+      "stateBranch": "approach → choose/contact → world result → settlement → replay",
+      "renderer": "default index.html → src/main.ts → Three.js + HUD",
+      "viewport": "390x844",
+      "acceptance": "终点结果区在选择前可见；接触结果先呈现，再结算；重玩恢复可操作首关；结果区处于场景中并与刀的接触一致；覆盖层不提前遮住选择",
+      "status": "PENDING",
+      "evidence": [],
+      "notes": "独立 QA 在自己的矩阵中记录实测结果；未观察到不得关闭。"
+    },
+    {
+      "id": "L1-INPUT-1100",
+      "objectType": "blade + first cuttable",
+      "stateBranch": "startup → first input → airborne → contact",
+      "renderer": "default index.html → src/main.ts → Three.js + HUD",
+      "viewport": "1100x720",
+      "acceptance": "点击引起可见的起跳/翻转；碰到可切物时发生切割；刀、首个目标与承托面同时可辨；引导不遮住目标",
+      "status": "PENDING",
+      "evidence": [],
+      "notes": "独立 QA 在自己的矩阵中记录实测结果；未观察到不得关闭。"
+    },
+    {
+      "id": "L1-GROUND-1100",
+      "objectType": "visible tabletop base",
+      "stateBranch": "startup/intact → approach",
+      "renderer": "default index.html → src/main.ts → Three.js + HUD",
+      "viewport": "1100x720",
+      "acceptance": "可见台面具有厚度、底部接到地面；物品底部贴合可见承托；同一物体的可见顶面与其承托/接触逻辑一致；不能用看不见的支撑解释悬空",
+      "status": "PENDING",
+      "evidence": [],
+      "notes": "独立 QA 在自己的矩阵中记录实测结果；未观察到不得关闭。"
+    },
+    {
+      "id": "L1-STACK-1100",
+      "objectType": "overlapping cuttable stack and its support",
+      "stateBranch": "intact overlap → blade contact → cut/separate → unsupported falling",
+      "renderer": "default index.html → src/main.ts → Three.js + HUD",
+      "viewport": "1100x720",
+      "acceptance": "接触真正改变堆叠；切开、散落与失去支撑后的下落在原物体分支发生；水平重叠与垂直承托可解释；不允许以不参与交互的同形装饰代替需求物体",
+      "status": "PENDING",
+      "evidence": [],
+      "notes": "独立 QA 在自己的矩阵中记录实测结果；未观察到不得关闭。"
+    },
+    {
+      "id": "L1-REWARD-1100",
+      "objectType": "cut object + local reward + cumulative HUD",
+      "stateBranch": "contact → cut completed → separated → reward → total sync",
+      "renderer": "default index.html → src/main.ts → Three.js + HUD",
+      "viewport": "1100x720",
+      "acceptance": "完成切割并分离后，在该物体附近播放奖励反馈，再同步累计值；奖励附着于切割发生位置；总计显示不替代局部反馈",
+      "status": "PENDING",
+      "evidence": [],
+      "notes": "独立 QA 在自己的矩阵中记录实测结果；未观察到不得关闭。"
+    },
+    {
+      "id": "L1-PRESSURE-1100",
+      "objectType": "spike hazard + blade + failure/recovery affordance",
+      "stateBranch": "warning → approach → collision/avoidance → failure or recovery",
+      "renderer": "default index.html → src/main.ts → Three.js + HUD",
+      "viewport": "1100x720",
+      "acceptance": "危险在接近前可辨；避开与接触后果不同；失败原因和重试入口可见；危险信号与真正危险物体绑定；装饰和危险不使用无法区分的表现",
+      "status": "PENDING",
+      "evidence": [],
+      "notes": "独立 QA 在自己的矩阵中记录实测结果；未观察到不得关闭。"
+    },
+    {
+      "id": "L1-FINISH-1100",
+      "objectType": "finish outcome lanes + settlement + replay",
+      "stateBranch": "approach → choose/contact → world result → settlement → replay",
+      "renderer": "default index.html → src/main.ts → Three.js + HUD",
+      "viewport": "1100x720",
+      "acceptance": "终点结果区在选择前可见；接触结果先呈现，再结算；重玩恢复可操作首关；结果区处于场景中并与刀的接触一致；覆盖层不提前遮住选择",
+      "status": "PENDING",
+      "evidence": [],
+      "notes": "独立 QA 在自己的矩阵中记录实测结果；未观察到不得关闭。"
+    }
+  ]
+}

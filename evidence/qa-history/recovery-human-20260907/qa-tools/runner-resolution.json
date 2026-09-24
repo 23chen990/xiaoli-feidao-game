@@ -1,0 +1,6 @@
+{
+  "id": "QA-CAPTURE-FALL-LABEL-RESOLVED",
+  "severity": "warning",
+  "message": "已先红后绿补入跌出路线识别。portrait-2和desktop-2均捕获真正failed面板后重玩；第一轮保留为采集器漏判，不当作游戏未终结。",
+  "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/qa-tools/policy-test.log; /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-2/recording.json; /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-2/recording.json"
+}

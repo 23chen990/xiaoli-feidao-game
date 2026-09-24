@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "CutGeometryNaturalQa",
+  "passed": true,
+  "cases": [
+    {
+      "level": 1,
+      "viewport": "desktop",
+      "capturedCut": true,
+      "terminal": "airborne",
+      "cutVisuals": [
+        {
+          "id": "rune-1",
+          "visibleHalves": 2,
+          "caps": [
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:rune-1:halfA",
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:rune-1:halfB"
+          ]
+        },
+        {
+          "id": "rune-8",
+          "visibleHalves": 2,
+          "caps": [
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:rune-8:halfA",
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:rune-8:halfB"
+          ]
+        },
+        {
+          "id": "rune-10",
+          "visibleHalves": 2,
+          "caps": [
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:rune-10:halfA",
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:rune-10:halfB"
+          ]
+        },
+        {
+          "id": "side-tag",
+          "visibleHalves": 2,
+          "caps": [
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:side-tag:halfA",
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:side-tag:halfB"
+          ]
+        },
+        {
+          "id": "tower-base",
+          "visibleHalves": 2,
+          "caps": [
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:tower-base:halfA",
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:tower-base:halfB"
+          ]
+        },
+        {
+          "id": "tower-middle",
+          "visibleHalves": 2,
+          "caps": [
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:tower-middle:halfA",
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:tower-middle:halfB"
+          ]
+        },
+        {
+          "id": "tower-top",
+          "visibleHalves": 2,
+          "caps": [
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:tower-top:halfA",
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:tower-top:halfB"
+          ]
+        }
+      ],
+      "traceSamples": 133
+    },
+    {
+      "level": 4,
+      "viewport": "desktop",
+      "capturedCut": true,
+      "terminal": "won",
+      "cutVisuals": [
+        {
+          "id": "l4-entry",
+          "visibleHalves": 2,
+          "caps": [
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:l4-entry:halfA",
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:l4-entry:halfB"
+          ]
+        },
+        {
+          "id": "l4-transfer",
+          "visibleHalves": 2,
+          "caps": [
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:l4-transfer:halfA",
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:l4-transfer:halfB"
+          ]
+        },
+        {
+          "id": "l4-over",
+          "visibleHalves": 2,
+          "caps": [
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:l4-over:halfA",
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:l4-over:halfB"
+          ]
+        },
+        {
+          "id": "level-04-hard-mover-a",
+          "visibleHalves": 2,
+          "caps": [
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:level-04-hard-mover-a:halfA",
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:level-04-hard-mover-a:halfB"
+          ]
+        }
+      ],
+      "traceSamples": 175
+    },
+    {
+      "level": 7,
+      "viewport": "desktop",
+      "capturedCut": true,
+      "terminal": "failed",
+      "cutVisuals": [
+        {
+          "id": "l7-chain-1",
+          "visibleHalves": 2,
+          "caps": [
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:l7-chain-1:halfA",
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:l7-chain-1:halfB"
+          ]
+        }
+      ],
+      "traceSamples": 15
+    },
+    {
+      "level": 1,
+      "viewport": "mobile",
+      "capturedCut": true,
+      "terminal": "anchored",
+      "cutVisuals": [
+        {
+          "id": "rune-1",
+          "visibleHalves": 2,
+          "caps": [
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:rune-1:halfA",
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:rune-1:halfB"
+          ]
+        },
+        {
+          "id": "rune-3",
+          "visibleHalves": 2,
+          "caps": [
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:rune-3:halfA",
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:rune-3:halfB"
+          ]
+        },
+        {
+          "id": "side-tag",
+          "visibleHalves": 2,
+          "caps": [
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:side-tag:halfA",
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:side-tag:halfB"
+          ]
+        }
+      ],
+      "traceSamples": 240
+    },
+    {
+      "level": 4,
+      "viewport": "mobile",
+      "capturedCut": true,
+      "terminal": "airborne",
+      "cutVisuals": [],
+      "traceSamples": 306
+    },
+    {
+      "level": 7,
+      "viewport": "mobile",
+      "capturedCut": true,
+      "terminal": "airborne",
+      "cutVisuals": [
+        {
+          "id": "l7-chain-1",
+          "visibleHalves": 2,
+          "caps": [
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:l7-chain-1:halfA",
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:l7-chain-1:halfB"
+          ]
+        },
+        {
+          "id": "l7-chain-2",
+          "visibleHalves": 2,
+          "caps": [
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:l7-chain-2:halfA",
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:l7-chain-2:halfB"
+          ]
+        },
+        {
+          "id": "l7-chain-7",
+          "visibleHalves": 2,
+          "caps": [
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:l7-chain-7:halfA",
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:l7-chain-7:halfB"
+          ]
+        },
+        {
+          "id": "level-07-hard-mover-a",
+          "visibleHalves": 2,
+          "caps": [
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:level-07-hard-mover-a:halfA",
+            "capMaterial:PROGRAMMATIC_ORIGINAL:cap:level-07-hard-mover-a:halfB"
+          ]
+        }
+      ],
+      "traceSamples": 311
+    }
+  ],
+  "error": null
+}

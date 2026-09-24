@@ -1,0 +1,61 @@
+{
+  "sha256": "3781e4dcd3d21094f186cf442b3ee30cddfbb2fbe68d87c5c7470a2c742bf75a",
+  "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/incoming/_2026-09-06-135548-3781e4dcd3d2.mp4",
+  "error": "Error: locator.evaluate: metadata timeout",
+  "thumbnail": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/_2026-09-06-135548-3781e4dcd3d2.mp4.png",
+  "thumbnailInspected": true,
+  "thumbnailTimestamp": "Quick Look selected; unknown exact time",
+  "observations": [
+    "0s：完整首批目标在白台上方可见且接触台面；白台具有落地侧壁及接触阴影。当前首个 intact 目标缺失、开场承托薄板浮空。",
+    "5.79s：切片分离且奖励文字位于切割处附近。当前截帧有局部奖励，但不足以确认严格时序。",
+    "13.59s：横档依靠可见立柱，各组高低关系可读；当前绿色砖块与下方白台分离，精确可交互重叠堆叠仍缺证。",
+    "21.26s：高对比尖刺垫在接近路径上突出可见，周围有足够空白分辨危险轮廓。当前失败截图中碰撞原因的空间关系不清晰。",
+    "28.96s：墙上每条可见结果带有贴近的倍率，选择位置可归因。当前墙上无清晰倍率，仅右上小图例。",
+    "34.86s：世界终点背景仍保留，结算面板给出分数、奖励、结果与最佳纪录。当前桌面展示完成和分数，未见最佳纪录；手机只有收益揭示中间态。"
+  ],
+  "limitations": [
+    "六张实际帧提供空间/呈现比较，不能恢复逐次点击时间或证明精确奖励同步顺序。未完整连续播放0–36.49s，不复制任何表达、美术或数值。"
+  ],
+  "excluded": "manifest中的PENDING截图从未查看或用作证据",
+  "errorResolved": true,
+  "resolution": "父任务使用原生AVFoundation抽取实际帧，本QA已逐张view_image检查并重算SHA-256。",
+  "frameManifest": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/reference-frames/manifest.json",
+  "inspectedFrames": [
+    {
+      "requestedSeconds": 0,
+      "actualSeconds": 0,
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/reference-frames/reference-0.png",
+      "sha256": "7de9426895384cc60b618ae316a1c76420eaeeb550b45203c5100e4c5f1696e0"
+    },
+    {
+      "requestedSeconds": 6,
+      "actualSeconds": 5.791666666666667,
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/reference-frames/reference-6.png",
+      "sha256": "7b0fbdd46afc119e342ecc030022b405a4034e9587c0f25bd414e6358e3a6aec"
+    },
+    {
+      "requestedSeconds": 13,
+      "actualSeconds": 13.591666666666667,
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/reference-frames/reference-13.png",
+      "sha256": "4ec948a6339d5b8399647025be96ee0e9c588b2bcd4d633ccb54276ea20e546d"
+    },
+    {
+      "requestedSeconds": 21,
+      "actualSeconds": 21.258333333333333,
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/reference-frames/reference-21.png",
+      "sha256": "3d7aa03bbac7b0cb4a7fd03795d8a5b79dc469d3edd0ee83dc1e25df652fca9c"
+    },
+    {
+      "requestedSeconds": 29,
+      "actualSeconds": 28.958333333333332,
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/reference-frames/reference-29.png",
+      "sha256": "59127c28ec68e5098bf1308b018a433361530f9306b3ddcc04e36e700b8e877c"
+    },
+    {
+      "requestedSeconds": 34,
+      "actualSeconds": 34.858333333333334,
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/reference-frames/reference-34.png",
+      "sha256": "f3f22ce5786f7fcd719de162a466e22f322283ac4f517c51ee9b7858fd978eab"
+    }
+  ]
+}

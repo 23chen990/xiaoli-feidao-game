@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageExperienceChain",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "OPEN",
+  "route": "formal-fixer-candidate",
+  "routeReason": "新问题横跨默认镜头、切割反馈、收益、失败恢复和终点演出，必须先独立 QA 验证，不能按单文件直接修。",
+  "evidence": {
+    "referenceRecordings": [
+      "钉钉录屏_2026-09-05 140550.mp4",
+      "钉钉录屏_2026-09-05 140908.mp4",
+      "钉钉录屏_2026-09-05 141313.mp4"
+    ],
+    "factoryAudit": "artifacts/factory-research-audit-v1.json",
+    "deepRetro": "artifacts/factory-retro-reference-recordings-deep-v2.json",
+    "currentQaBoundary": "qa-night-independent-final-v4/qa-report.json 仅通过 web-lite mechanics candidate，不关闭本体验链问题。"
+  },
+  "reproductionMatrix": [
+    {
+      "issueId": "EXPERIENCE-CAMERA-001",
+      "objectType": "route camera / target / finish wall",
+      "lifecycleStateBranch": ["traversal", "obstacle-reveal", "finish-reward"],
+      "rendererPresentationPath": ["src/three-world-renderer.ts", "src/three-presentation.ts", "src/main.ts"],
+      "deviceViewport": ["desktop 1132x720", "mobile 390x844"],
+      "expectedObservation": "若该游戏画像判定镜头为 required，则至少出现 traversal、reveal、finish 三类可读构图；若判定 not-applicable，则固定构图仍需在三状态读清目标、风险和终点。"
+    },
+    {
+      "issueId": "EXPERIENCE-EARNINGS-002",
+      "objectType": "cuttable target / reward HUD",
+      "lifecycleStateBranch": ["intact", "cut-contact", "post-cut-settlement", "replay"],
+      "rendererPresentationPath": ["src/game-core.ts", "src/main.ts", "src/style.css"],
+      "deviceViewport": ["desktop", "mobile portrait"],
+      "expectedObservation": "若收益属于核心体验，命中附近即时收益与持久累计总额应在自然输入下形成同一因果链；否则记录为明确 not-applicable。"
+    },
+    {
+      "issueId": "EXPERIENCE-CUT-FEEL-003",
+      "objectType": "knife / cuttable / fragments",
+      "lifecycleStateBranch": ["approach", "contact", "sever", "recovery"],
+      "rendererPresentationPath": ["src/game-core.ts", "src/three-world-renderer.ts", "src/main.ts"],
+      "deviceViewport": ["desktop", "mobile portrait"],
+      "expectedObservation": "自然点击能看到接触、目标变化、冲击反馈和下一选择；fixture 或 debug 触发不能关闭该问题。"
+    },
+    {
+      "issueId": "EXPERIENCE-FAILURE-004",
+      "objectType": "hazard / failure overlay / replay",
+      "lifecycleStateBranch": ["hazard-failure", "continue-choice", "restart", "recovery"],
+      "rendererPresentationPath": ["src/game-core.ts", "src/main.ts", "index.html", "src/style.css"],
+      "deviceViewport": ["desktop", "mobile portrait"],
+      "expectedObservation": "失败原因、继续/重开选择和下一状态必须可由玩家理解；若蓝图不需要继续机会，必须证明明确终局语义。"
+    },
+    {
+      "issueId": "EXPERIENCE-FINISH-005",
+      "objectType": "multiplier wall / completion overlay",
+      "lifecycleStateBranch": ["approach", "wall-contact", "reward-read", "celebration", "completion", "replay"],
+      "rendererPresentationPath": ["src/game-core.ts", "src/three-world-renderer.ts", "src/main.ts", "src/style.css"],
+      "deviceViewport": ["desktop", "mobile portrait"],
+      "expectedObservation": "玩家先看清墙和命中区域，再看到奖励与完成状态；终止层不能提前遮挡奖励墙。"
+    }
+  ],
+  "acceptanceCriteria": [
+    "完成一次独立 deterministic QA，确认对应状态事件存在但不把它当作感知通过。",
+    "完成一次全新浏览器自然旅程：startup → core loop → terminal/settlement → replay。",
+    "对每个适用 issue 采集 exact matrix cell 的玩家可见截图；不以兄弟对象或 fixture 证据替代。",
+    "为 camera/economy/failure-recovery 先完成 applicability 判定，required 与 not-applicable 都要有理由。",
+    "任何自然或 perceptual BLOCKED 均保持 OPEN 并进入正式 FIX，不得由 Builder 自报关闭。"
+  ],
+  "nextStage": "QA",
+  "claimBoundary": "当前只主张已建立新的正式 QA 输入；尚未主张这些体验问题已修复，也未主张 WeChat、Douyin 或 TapTap 可发布。"
+}

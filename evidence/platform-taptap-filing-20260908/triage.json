@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "platform-package-triage",
+  "route": "formal-fixer",
+  "targetGame": "mobile-slice-adaptation-20260830（TapTap 名称：疯狂切割）",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "request": "制作一个可用于 TapTap 普通小游戏前置备案的开发包体，不执行后台上传或正式版本提审。",
+  "reproductionEvidence": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-independent-final-v4/qa-report.json 中 NATIVE-PLATFORM-PACKAGING-008=UNVERIFIED",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/research/threejs-platform-research-v1.json 结论为 Three.js r185 无可验证 TapTap 普通小游戏适配器",
+    "TapTap 官方前置备案页面要求选择小游戏包体，且建议包体内容与实际上线内容一致"
+    ,"/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-ac1cdf15-9886-4559-b83c-a0cf1566078c-954468d979ce.png 已验证后台名称为疯狂切割、游戏 ID 为 928932"
+  ],
+  "classification": "platform-adapter-build-and-release-configuration",
+  "scope": {
+    "included": [
+      "在目标游戏工作区内新建隔离的 platforms/taptap-minigame Cocos Creator 3.8.8 工程",
+      "保留单键起跳/翻转、锐部切割、钝部反弹、危险失败、终点结算与重玩这一默认核心旅程",
+      "安装并校验 TapTap 官方 Cocos 转换插件 1.2.2，生成或准备生成 build/TapBuild/game.zip",
+      "先测试后实现；执行目标测试、lint、typecheck、构建和包体结构检查"
+    ],
+    "excluded": [
+      "其他 run、共享工厂代码、微信与抖音平台目录",
+      "TapTap 后台上传、备案提交、版本提审以及用户账号操作",
+      "广告、内购、云存档、排行榜和与备案无关的新玩法",
+      "把 web-lite dist 压缩或伪装成 TapTap 普通小游戏包"
+    ]
+  },
+  "acceptanceCriteria": [
+    "TapTap 包由 Cocos Creator 3.8.8 的微信小游戏构建经官方插件 1.2.2 转换产生，根目录包含 game.js、game.json 和 project.config.json。",
+    "包体小于 20MB，版本号非 0，使用后台提供的真实 TapTap 小游戏 ID。",
+    "390x844 默认竖屏旅程能通过正常触摸完成启动、核心切割/反弹、可归因失败或终点结算以及重玩。",
+    "Cocos 规则测试、类型检查和构建通过，ZIP SHA-256 与文件清单写入结构化结果。",
+    "上传前必须完成 TapTap 后台扫码真机自测；未完成时只能标记 READY_FOR_INDEPENDENT_QA 或 BLOCKED，不能声称可上线。"
+  ],
+  "blockers": [
+    {
+      "id": "TAP-APP-ID-001",
+      "status": "RESOLVED",
+      "detail": "用户提供并经截图身份复核的 TapTap 游戏名称为疯狂切割，游戏 ID 为 928932。"
+    },
+    {
+      "id": "TAP-DEVICE-QA-002",
+      "status": "OPEN",
+      "detail": "需要开发者后台扫码和 iOS/Android 至少一台真机完成独立 QA。"
+    }
+  ]
+}

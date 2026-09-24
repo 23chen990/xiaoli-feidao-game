@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fix-result",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 5,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "issueId": "L1-RUNWAY-RECOVERY-RELEASE-TAP-TIME",
+  "status": "BLOCKED",
+  "model": "gpt-6-luna",
+  "why": "The test-first lifecycle implementation correctly preserved the exact separating top-tip branch, consumed one pending intent on a normal tap, used tap-time velocity with a bounded vertical corridor, expired the intent, and preserved non-runway release behavior. However, every candidate still failed the required seed-31 fixed timestamp replay. The final attempted cap ([-500,-121]) ended anchored on lift-plank at 11.3083s and x=1802.375, below 11.9s and x>2000. I reverted all game and test edits; both owned source files now match the packet hashes exactly. No natural or perceptual QA pass is claimed.",
+  "triagePath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/triage.json",
+  "taskPacketPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/task.json",
+  "taskPacketSha256": "0bc69038384bb66197f5b29a88ce1f880f6c57d3d9a1976918c1066cb57718ef",
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory modules, platform adapters, release configuration, and renderer implementation.",
+    "Full conversation, unrelated QA outputs, and unbound competitor media.",
+    "Natural-journey and perceptual completion claims; independent QA remains required."
+  ],
+  "filesChanged": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/cycle-state.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/red-targeted.log",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/red-clamp-targeted.log",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/red-clamp-240.log",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/red-clamp-180.log",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/red-clamp-130.log",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/red-clamp-125.log",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/red-clamp-100.log",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/green-targeted.log",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/replay-final.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/tests.log",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/lint.log",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/typecheck.log",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/build.log",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/fix-result.json"
+  ],
+  "gameFilesChanged": [],
+  "filesAttemptedAndReverted": [
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "restoredSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts",
+      "restoredSha256": "c25b5bd63aec7e613167824d5895cc8568b8624794fa07184e282a5ac53fa3cd"
+    }
+  ],
+  "tests": [
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts (restored production baseline)",
+      "exitCode": 1,
+      "phase": "RED",
+      "result": "The exact separating natural-pose branch anchors instead of recovering; the prior forward replay test passes under baseline.",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/red-targeted.log"
+    },
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts (candidate tap-time clamp [-500,-100])",
+      "exitCode": 1,
+      "phase": "REJECTED_CANDIDATE",
+      "result": "Lifecycle, expiry, non-runway support, and contact-branch assertions passed; the fixed replay did not reach the authored route gate.",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/green-targeted.log"
+    },
+    {
+      "command": "seed-31 timestamp replay, final tap-time clamp [-500,-121]",
+      "exitCode": 1,
+      "phase": "REJECTED_REPLAY_GATE",
+      "result": "At terminal loop state: elapsed=11.308333333333332s, status=anchored, x=1802.375088932486, y=450.13086605186174, failReason=null, anchorId=lift-plank. Required elapsed>=11.9 and x>2000 were not met.",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/replay-final.json"
+    },
+    {
+      "command": "pnpm test",
+      "exitCode": null,
+      "phase": "NOT_RUN",
+      "result": "Stopped after the required deterministic replay gate failed; see tests.log.",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/tests.log"
+    },
+    {
+      "command": "pnpm lint",
+      "exitCode": null,
+      "phase": "NOT_RUN",
+      "result": "Stopped after the required deterministic replay gate failed; see lint.log.",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/lint.log"
+    },
+    {
+      "command": "pnpm typecheck",
+      "exitCode": null,
+      "phase": "NOT_RUN",
+      "result": "Stopped after the required deterministic replay gate failed; see typecheck.log.",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/typecheck.log"
+    }
+  ],
+  "build": {
+    "command": "pnpm build",
+    "count": 0,
+    "exitCode": null,
+    "phase": "NOT_RUN",
+    "result": "No build was produced for the rejected, reverted candidate.",
+    "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/build.log",
+    "distSha256": null
+  },
+  "runtimeQa": {
+    "naturalJourneyClaimed": false,
+    "perceptualGateClaimed": false,
+    "requiredNext": [
+      "Independent fresh natural-input QA must retest portrait and desktop against the exact runway contact and normal release branch after a future candidate clears deterministic replay.",
+      "QA must observe the Level1 stack, terminal settlement, and visible replay with no fixture or state-injection evidence substituting for normal input."
+    ]
+  },
+  "remainingEvidenceGaps": [
+    "No accepted production change remains; game-core.ts and level1-recovery.test.ts match the packet's source hashes byte-for-byte.",
+    "The final deterministic candidate stopped anchored on lift-plank at 11.3083s, x=1802.375, y=450.131; failReason was null.",
+    "Full tests, lint, typecheck, and build were not run after the candidate failed its replay gate.",
+    "Natural-input and perceptual post-fix QA remain unrun."
+  ],
+  "nextHypothesis": "A fixed tap-time vertical clamp is too sensitive to the later lift-plank trajectory. A distinct next attempt should derive release motion from tap-time vertical velocity and vertical clearance to the next authored support, then exercise both the early release and the later lift-plank branch in one fixed normal-input replay before broad verification.",
+  "completedAt": "2026-09-23T07:59:10.000Z"
+}

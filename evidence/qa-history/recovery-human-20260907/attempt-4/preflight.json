@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "human-review-20260907-l1-recovery",
+  "attempt": 4,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "issueIds": [
+    "L1-FIRST-TARGET-VISIBILITY",
+    "L1-FINISH-VISIBILITY"
+  ],
+  "objectStateBranches": [
+    "opening runway support-base branch for white-bumper and white-branch",
+    "finish-wall label projection branch on portrait and desktop viewports"
+  ],
+  "rendererPaths": [
+    "src/three-world-renderer.ts",
+    "src/main.ts"
+  ],
+  "smallestCausalFileSet": [
+    "src/three-world-renderer.ts",
+    "src/main.ts",
+    "tests/opening-renderer-regression.test.ts",
+    "tests/finish-label-layout.test.ts"
+  ],
+  "redChecks": [
+    "opening renderer regression asserts the white-bumper and white-branch floor bases stay behind the first visible target and no longer obscure rune-1",
+    "finish label layout helper keeps projected finish labels inside the safe viewport bounds for edge-screen terminal states"
+  ],
+  "notes": [
+    "This preflight only covers the current attempt-4 renderer/presentation fixes and preserves the existing natural-evidence gap as QA work."
+  ]
+}

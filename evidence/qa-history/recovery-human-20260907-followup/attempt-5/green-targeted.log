@@ -1,0 +1,42 @@
+✔ L1-STACK a: actual knife contact cuts the bearing object and releases the overlapping upper object (7.79975ms)
+✔ L1-STACK-VISUAL-EVIDENCE a: same target stays visible and separates into two halves after cut (2.175333ms)
+✔ L1-STACK b: actual knife contact cuts the bearing object and releases the overlapping upper object (3.141958ms)
+✔ L1-STACK-VISUAL-EVIDENCE b: same target stays visible and separates into two halves after cut (0.485709ms)
+✔ L1-GRAVITY active airborne play does not freeze a hovering supported collectible (1.521ms)
+✔ L1-REWARD intact has zero earnings; a real cut names the separated target and replay clears earnings (2.728125ms)
+✔ L1-PLACEMENT every initial collectible has a touching support, including the late and bridge targets (0.509542ms)
+✖ L1-RUNWAY visible support stays collidable through the normal forward replay (27.572709ms)
+✔ L1-RUNWAY later sharp contact stays airborne while body contact still bounces (1.860791ms)
+✔ L1-RUNWAY early natural-range sharp contact recovers instead of anchoring (0.714917ms)
+✔ L1-RUNWAY opening keeps the authored white landing anchor before runway bounce feedback (5.275375ms)
+✔ L1-FINISH labels use viewport coordinates without a second offset (0.889167ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 390x844 (1.191125ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 1100x720 (0.197542ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 13
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 356.835125
+
+✖ failing tests:
+
+test at tests/level1-recovery.test.ts:104:1
+✖ L1-RUNWAY visible support stays collidable through the normal forward replay (27.572709ms)
+  AssertionError [ERR_ASSERTION]: replay ended before the runway branch was exercised: 4.575000000000017s
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:129:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

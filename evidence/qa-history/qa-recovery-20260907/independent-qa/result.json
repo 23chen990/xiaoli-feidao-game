@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "role": "QAAgent",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED",
+  "reportPaths": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/reproduction-matrix.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-1-natural-flow.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-2-natural-flow.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-natural-flow.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-4-natural-flow.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-natural-flow.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/qa-natural-journey-report.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/perceptual-qa-report.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/qa-report.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/source-snapshot.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/reference-observation.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/triage.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/evidence-sha256.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/methodology.json"
+  ],
+  "blockers": [
+    "L1-INPUT-390/1100：首个 intact 目标不可辨；切开碎片可见不能替代。",
+    "L1-GROUND-390/1100：开场浮薄台面分支未落地；厚 runway 通过不能关闭该分支。",
+    "L1-STACK-390/1100：精确重叠堆叠→受击→自然落地链未观察。",
+    "L1-REWARD-390/1100：局部奖励与累计同步严格时序证据不足。",
+    "L1-PRESSURE-390/1100：提前预警和空间可归因的自然决策证据不足。",
+    "L1-FINISH-390/1100：结果带裁切且倍率未清晰附着；手机完整赢结算未观察。"
+  ],
+  "sourceModified": false,
+  "summary": "独立QA已完成当前首关默认构建取证与Zod校验：桌面自然完成×1并重玩，手机自然尖刺失败可重玩；额外1次已修正提前重玩的采集逻辑，手机第4次在终点前自然尖刺失败，随后才点击重玩。手机赢结算仍缺证，不据此断言游戏无法结算。首个完整目标、浮空台面、精确堆叠受击落地、奖励时序、危险归因及终点可读性仍不满足或缺证。只修改独立QA输出目录，未修复、未重建。"
+}

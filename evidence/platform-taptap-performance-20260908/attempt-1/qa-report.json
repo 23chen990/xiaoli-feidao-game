@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "platform-qa-result",
+  "role": "QAAgent",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "testedSha256": "b224cd5470efb70e1de7d63f9361f7269835e4bf7adaa53123e76d67dfe24173",
+  "engineeringVerdict": "PASS",
+  "naturalJourneyVerdict": "BLOCKED",
+  "perceptualVerdict": "BLOCKED",
+  "filingPackageVerdict": "READY_FOR_BACKEND_SCAN",
+  "checks": [
+    {
+      "id": "TAP-PERF-A1-INPUT-SCHEMAS",
+      "passed": true,
+      "evidence": "Independent Zod parsing passed for attempt-1/qa-task.json with PlatformQaTaskSchema and attempt-1/fix-result.json with PlatformFixResultSchema. The FixerResult intentionally remains BLOCKED pending exact-SHA device performance QA; this does not negate independently verified static engineering checks."
+    },
+    {
+      "id": "TAP-PERF-A1-ZIP-IDENTITY-INTEGRITY",
+      "passed": true,
+      "evidence": "Before evaluating results, independent shasum -a 256 returned exactly b224cd5470efb70e1de7d63f9361f7269835e4bf7adaa53123e76d67dfe24173 for build/TapBuild/game.zip. The archive is 1,206,608 bytes, below 20 MB, and unzip -tq reported no compressed-data errors. It was not rebuilt, repackaged, modified or uploaded."
+    },
+    {
+      "id": "TAP-PERF-A1-PACKAGE-CONTRACT",
+      "passed": true,
+      "evidence": "The exact ZIP contains root game.js, game.json and project.config.json. game.json declares portrait and productVersion 1.0.0; project.config.json declares compileType game, appid 928932 and projectname 疯狂切割. ZIP src/settings.json declares launch scene main, designResolution 390x844, policy 4 and the project script bundle."
+    },
+    {
+      "id": "TAP-PERF-A1-PLUGIN-METADATA",
+      "passed": true,
+      "evidence": "Independent hashing of the retained official TapTap plugin 1.2.2 archive returned 6b8a9a3cc62b6c54cefab397097babb771d9d99f90442cddff06310a4c9ed73f, and installed extensions/taptap-minigame-tools/package.json identifies TapTap version 1.2.2. The earlier immutable plugin-integrity evidence records byte-for-byte equality; no plugin source change is claimed by this repair."
+    },
+    {
+      "id": "TAP-PERF-A1-STATIC-DYNAMIC-GRAPHICS",
+      "passed": true,
+      "evidence": "Independent inspection of the exact ZIP assets/main/index.js found separate staticGraphics and dynamicGraphics layers. Lifecycle start calls redrawStaticCourse once and redrawDynamicCourse once; the airborne update calls redrawDynamicCourse only, and dynamic redraw clears only the dynamic layer. performance-contract.json specifies staticCourseDrawsPerLifecycle=1, dynamicDrawsPerActiveFrame=1 and staticDrawsPerActiveFrame=0. This proves the engineering contract and packaged implementation, not device FPS."
+    },
+    {
+      "id": "TAP-PERF-A1-RUNTIME-JOURNEY-STRUCTURE",
+      "passed": true,
+      "evidence": "The exact ZIP's compiled GameBootstrap includes 390x844 FIXED_WIDTH and safe-area setup, Graphics first-frame drawing, TOUCH_END handling, launch/flip, cut, reflect, hazard/fall failure, finish settlement and terminal-touch replay. These are structural/deterministic proxies only and were not counted as natural-device or perceptual evidence."
+    },
+    {
+      "id": "TAP-PERF-A1-TESTS-LINT-TYPECHECK",
+      "passed": true,
+      "evidence": "Independent read-only execution from platforms/taptap-minigame passed: pnpm test reported 16 tests, 16 pass, 0 fail; pnpm lint exited 0; pnpm typecheck exited 0. No Cocos build or converter was invoked."
+    },
+    {
+      "id": "TAP-PERF-A1-SOURCE-WORK-PROXY",
+      "passed": true,
+      "evidence": "performance-baseline.json and performance-after.json document a deterministic source-work proxy: at a nominal 60 Hz ten-minute window, full-scene redraws decrease from 36,000 to 0 and repeated static fill/stroke operations from approximately 648,000 to 0, while dynamic redraws remain 36,000. Both artifacts explicitly set deviceFpsMeasured=false or identify the measurement as a source-work proxy; 0.02150376 remains an unconfirmed root-cause signal and no TapTap FPS threshold is invented."
+    },
+    {
+      "id": "TAP-PERF-A1-PHJ110-EXACT-SHA",
+      "passed": false,
+      "evidence": "BLOCKED: no raw PHJ110 trace bound to exact SHA b224cd5470efb70e1de7d63f9361f7269835e4bf7adaa53123e76d67dfe24173 covers cold start, rendered-frame count, elapsed time, memory, ordinary touch/core loop, terminal/replay and ten-minute stability. The prior screenshot is not bound to this package SHA and cannot distinguish rendering failure from sampler failure."
+    },
+    {
+      "id": "TAP-PERF-A1-HUAWEI-P30-EXACT-SHA",
+      "passed": false,
+      "evidence": "BLOCKED: no Huawei P30 numeric performance trace, physical viewport, natural-input trace or player-visible evidence is bound to the exact ZIP SHA. A sibling-device or aggregate report cannot close this device branch."
+    },
+    {
+      "id": "TAP-PERF-A1-XIAOMI14-EXACT-SHA",
+      "passed": false,
+      "evidence": "BLOCKED: no Xiaomi 14 numeric performance trace, physical viewport, natural-input trace or player-visible evidence is bound to the exact ZIP SHA. A sibling-device or aggregate report cannot close this device branch."
+    },
+    {
+      "id": "TAP-PERF-A1-ONEPLUS8-EEA-EXACT-SHA",
+      "passed": false,
+      "evidence": "BLOCKED: no OnePlus8_EEA numeric performance trace, physical viewport, natural-input trace or player-visible evidence is bound to the exact ZIP SHA. A sibling-device or aggregate report cannot close this device branch."
+    },
+    {
+      "id": "TAP-PERF-A1-BACKEND-ACCEPTANCE",
+      "passed": false,
+      "evidence": "BLOCKED: no TapTap backend performance scan or acceptance result is bound to this exact SHA. READY_FOR_BACKEND_SCAN means the statically valid package may proceed to upload/scan; it does not mean the performance gate or release has passed."
+    }
+  ],
+  "issues": [
+    {
+      "id": "TAP-PERF-EXACT-SHA-DEVICE-QA-001",
+      "severity": "warning",
+      "message": "Performance acceptance remains blocked on PHJ110, Huawei P30, Xiaomi 14 and OnePlus8_EEA for this exact package SHA.",
+      "evidence": "The reproduction matrix contains no exact-SHA raw frame traces or natural/perceptual reruns for the four required device branches."
+    },
+    {
+      "id": "TAP-PERF-SAMPLER-ROOT-CAUSE-UNCONFIRMED",
+      "severity": "warning",
+      "message": "The reported FPS value 0.02150376 is not accepted as a confirmed rendering root cause or threshold comparison.",
+      "evidence": "The prior PHJ110 evidence reports extremely low FPS alongside 0.0% stutter, lacks raw rendered-frame and elapsed-time data, is not bound to the new ZIP SHA, and provides no TapTap FPS threshold."
+    }
+  ],
+  "evidenceGaps": [
+    "Exact-SHA PHJ110 raw rendered-frame count, elapsed time, CPU/GPU split, memory timeline, touch trace and ten-minute stability evidence.",
+    "Exact-SHA Huawei P30, Xiaomi 14 and OnePlus8_EEA per-device numeric performance traces, physical resolutions and natural/perceptual recordings.",
+    "TapTap backend performance threshold and a new backend report cryptographically or operationally bound to SHA-256 b224cd5470efb70e1de7d63f9361f7269835e4bf7adaa53123e76d67dfe24173.",
+    "Player-visible exact-package evidence for cold start, non-empty first frame, ordinary touch core loop, failure/settlement, replay and ten-minute stability on each required device."
+  ]
+}

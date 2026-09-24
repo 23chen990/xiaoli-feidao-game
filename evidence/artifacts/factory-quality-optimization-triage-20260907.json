@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "targetGame": "小李飞刀",
+  "targetRunId": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "classification": "factory-process / reference-mechanic-fidelity / repeated-experience-rejection",
+  "scope": "Diagnose this run as a case study and optimize causally relevant shared factory workflow. No generated-game workspace repair is started by this triage.",
+  "reproduction": {
+    "report": "用户已提供完整竞品参照，最初要求核心玩法保持一致，随后进一步要求参考摆放和交互逻辑，但游戏体验仍多次不符合预期。",
+    "evidence": [
+      "Existing artifacts and reference-evidence/manifest.json in this exact run; media identity and usability must be verified before use."
+    ],
+    "newMediaProvided": false
+  },
+  "reproductionMatrix": {
+    "objectTypes": [
+      "cuttable target",
+      "hard obstacle",
+      "moving hazard",
+      "support/platform",
+      "finish/bonus"
+    ],
+    "lifecycleStateBranches": [
+      "approach",
+      "contact/cut/avoid",
+      "post-contact",
+      "failure/settlement",
+      "replay"
+    ],
+    "presentationPaths": [
+      "reference observation",
+      "approved mechanics artifact",
+      "builder handoff",
+      "default game renderer",
+      "QA acceptance evidence"
+    ],
+    "deviceViewports": [
+      "mobile portrait: exact dimensions to bind from existing evidence",
+      "desktop: supplementary evidence only"
+    ],
+    "status": "NOT_YET_REPRODUCED_IN_THIS_AUDIT"
+  },
+  "acceptanceCriteria": [
+    "Trace specific fidelity losses to the earliest unsupported or incorrect artifact and identify why downstream checks failed to detect them.",
+    "Distinguish historical report claims from verified evidence and current runtime observations.",
+    "Reuse existing contracts, gates and test infrastructure; avoid introducing an independent duplicate pipeline.",
+    "Implement only shared changes supported by diagnosis, using failing tests first and running lint, typecheck, tests and factory eval.",
+    "Do not claim this game's natural-input or perceptual acceptance has passed without exact runtime evidence.",
+    "Preserve formal repair history and the maximum five automatic attempts."
+  ],
+  "status": "OPEN",
+  "findings": [
+    {
+      "id": "F01",
+      "kind": "CONFIRMED_FACTORY_DEFECT",
+      "finding": "A hashed source alone passed preview readiness without behavioral analysis; the preserved mechanic list was dropped, and unlock rules were misused as failure/recovery rules.",
+      "sources": [
+        "src/core/reference-evidence.ts",
+        "tests/unit/reference-evidence.test.ts"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "CONFIRMED_FACTORY_DEFECT",
+      "finding": "The preview could reach COMPLETED after generic QA without an independent reference comparison. The failing integration test observed COMPLETED when QA waiting was required.",
+      "sources": [
+        "src/factory.ts",
+        "tests/integration/orchestrator.test.ts"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "CONFIRMED_FACTORY_DEFECT",
+      "finding": "Incremental evidence intake consumed bounded stage attempts and blocked a later ready research pack. Waiting is now checked before execution begins.",
+      "sources": [
+        "src/factory.ts",
+        "tests/integration/cli.test.ts"
+      ]
+    },
+    {
+      "id": "H01",
+      "kind": "HISTORICAL_RECORD",
+      "finding": "An earlier correction retracts analysis based on an unrelated recording; withdrawn claims were not used as gameplay facts in this audit.",
+      "sources": [
+        "runs/mobile-slice-adaptation-20260830/artifacts/evidence-provenance-correction-v1.json"
+      ]
+    },
+    {
+      "id": "H02",
+      "kind": "HISTORICAL_RECORD",
+      "finding": "A reward-timing correction and a contradictory earlier requirement coexist in one retrospective.",
+      "sources": [
+        "runs/mobile-slice-adaptation-20260830/artifacts/gameplay-retro-missed-topology-v2.json"
+      ]
+    },
+    {
+      "id": "H03",
+      "kind": "HISTORICAL_RECORD",
+      "finding": "The third grounded-overlap repair reports a conditional pass while retaining a mobile exact-branch evidence gap.",
+      "sources": [
+        "runs/mobile-slice-adaptation-20260830/artifacts/formal-fixer-level01-grounded-overlap-attempt3.json"
+      ]
+    },
+    {
+      "id": "L01",
+      "kind": "EVIDENCE_LIMITATION",
+      "finding": "This run currently lacks standard state, seed and pipeline-plan files. This audit does not infer a repair count or reconstruct approval history.",
+      "sources": [
+        "runs/mobile-slice-adaptation-20260830/artifacts/README.md"
+      ]
+    }
+  ],
+  "standardLedgerPresence": {
+    "state.json": false,
+    "input/seed.yaml": false,
+    "artifacts/pipeline-plan.json": false
+  },
+  "provenanceCheck": {
+    "command": "pnpm evidence:check --manifest runs/mobile-slice-adaptation-20260830/reference-evidence/manifest.json --target-game mobile-slice-adaptation-20260830 --workspace /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+    "exitCode": 0,
+    "usableDocuments": 4,
+    "usableRecordings": 1,
+    "unavailableOrPendingEvidenceNotUsed": true
+  },
+  "factoryChanges": {
+    "status": "IMPLEMENTED_AND_VERIFIED",
+    "newStages": 0,
+    "generatedWorkspaceModified": false,
+    "repairAttemptsReset": false,
+    "perceptualJudgmentAutomated": false,
+    "report": "docs/factory-reference-quality-optimization-2026-09-07.md"
+  },
+  "verification": {
+    "status": "PASS",
+    "artifact": "docs/triage/factory-reference-quality-verification-2026-09-07.json",
+    "sha256": "bd06c5e51f19d873cf02d19b8f8fadc58a3dd5ab8665c92800c710c44839cf0a",
+    "tests": 778,
+    "factoryEvalCases": 16,
+    "gameRuntimeAcceptance": "NOT_PERFORMED"
+  },
+  "auditSnapshot": [
+    {
+      "path": "src/core/reference-evidence.ts",
+      "sha256": "f7e85d86505827f557fa647105277431512abec7ed620d9a9124513446d16476"
+    },
+    {
+      "path": "src/schemas/reference-evidence.ts",
+      "sha256": "5ecf99ef653298c76be13ff1805020a344dbda8601bb90aa7351545b377b5c7b"
+    },
+    {
+      "path": "src/schemas/reference-fidelity.ts",
+      "sha256": "f3579822f31c5eb563b46c01069ac07d84934bee564119354e41a52cae4d7be1"
+    },
+    {
+      "path": "src/factory.ts",
+      "sha256": "e2dcb87a55df237ede5acaa004370c7122ab54ff64280e8ab004ecac863b4007"
+    },
+    {
+      "path": "src/core/factory-eval.ts",
+      "sha256": "bdd7188acfc09ddcf5763f9ff4ea9b8a86dcb78d5c4fba020f7452c2bb23f8ce"
+    },
+    {
+      "path": "tests/unit/reference-evidence.test.ts",
+      "sha256": "8195400a3f8160db606e545db0d6a7b73ea9dab3cba7a03a520d0073fb773f45"
+    },
+    {
+      "path": "tests/unit/reference-fidelity-qa.test.ts",
+      "sha256": "609e849db9f89c4a44fa680b5699b9b2251ffd6b575260766431bc19b423a43e"
+    },
+    {
+      "path": "tests/fixtures/reference-behavior.ts",
+      "sha256": "a398e0adcc9efd46ed7ae85cf4215318c6e10030d5fe556bbaec733e792d87c4"
+    },
+    {
+      "path": "tests/integration/orchestrator.test.ts",
+      "sha256": "131a58595bf8017b2758a0997fc82e2629870c7220f22ac639dce9105c2b5dd4"
+    },
+    {
+      "path": "tests/integration/cli.test.ts",
+      "sha256": "2325450c061089c73ffcb772f8313d7a0b4fa58e5617e37b0a6237d1e2e4d04f"
+    },
+    {
+      "path": "docs/player-acceptance-workflow.md",
+      "sha256": "f0fd0ba58f2b314ea0e6a25abd769710dc648b4651e712780c557a0adb3e25f5"
+    },
+    {
+      "path": "docs/factory-operating-model-review.md",
+      "sha256": "61e2cdbaffc620d94a3aeeb4450139c3233fc4eb25b2ee20d3be2120f2123bf6"
+    },
+    {
+      "path": ".agents/skills/game-playtest/SKILL.md",
+      "sha256": "c2d5aa4f822a0f1f8150e5a4380900acee1d4bcf8db68db6bc0f9973698f456e"
+    },
+    {
+      "path": ".agents/skills/web-lite-game-builder/SKILL.md",
+      "sha256": "a86d0b962a128402ec81048e5440d35b7b8d41c0acd199cc416a065ee17a7c12"
+    },
+    {
+      "path": "README.md",
+      "sha256": "aa74091af0207253f901afc56d16c9e21273d2a52ed543dd4c5af03dc7dc7295"
+    },
+    {
+      "path": "docs/factory-reference-quality-optimization-2026-09-07.md",
+      "sha256": "75fae4d2afb992cef643f35a96eb69a06cdc4706eae6e740e93cc60cd0ea6725"
+    }
+  ]
+}

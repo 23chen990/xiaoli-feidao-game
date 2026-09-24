@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "OpenSourceResearch",
+  "researchId": "mobile-slice-adaptation-cuttable-assets-v1",
+  "targetGame": "小李飞刀",
+  "targetWorkspace": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "candidates": [
+    {
+      "name": "Kenney Food Kit 2.0",
+      "repositoryUrl": "https://kenney.nl/assets/food-kit",
+      "immutableRevision": "2.0 release, archive downloaded 2026-09-03",
+      "directLicenseEvidence": "https://kenney.nl/assets/food-kit (Creative Commons CC0)",
+      "licenseSpdx": "CC0-1.0",
+      "archiveUrl": "https://kenney.nl/media/pages/assets/food-kit/83086fa91c-1719418518/kenney_food-kit.zip",
+      "archiveSha256": "cdad90853682499b94c9fda2f87678b24bfd8f3264e0ed323f6b6a27fd7c6f6f",
+      "targetPlatformFit": {"webLite":"APPROVED after GLB loader inspection", "wechatMiniGame":"CONDITIONAL pending adapter/device test", "douyinMiniGame":"CONDITIONAL pending adapter/device test", "tapTapMiniGame":"CONDITIONAL pending adapter/device test"},
+      "maintenanceSecurityRisk": "low static assets; retain provenance and license",
+      "attributionDuties": ["CC0 attribution not required; retain License.txt and source URL"],
+      "decision": "APPROVED_FOR_INTERACTIVE_CUTTABLE_POC",
+      "approvedScope": ["six low-poly GLB food silhouettes used as cuttable gameplay objects in isolated web-lite build; no source-game expression copied"],
+      "selectedAssets": [
+        {"id":"food-apple","archivePath":"Models/GLB format/apple.glb","sha256":"2a80ab65d5bc2cb4f2bca1e8176cbb591849a288596d4b2e76e411338761a526"},
+        {"id":"food-banana","archivePath":"Models/GLB format/banana.glb","sha256":"67c90aa8bef35b8886d6b67c0c4c3249556e28176c893d451b95cd83a156908c"},
+        {"id":"food-bread","archivePath":"Models/GLB format/bread.glb","sha256":"9bd9db117db654cf1157439d1257a8fc5915ea77a94fb876a5056522b9e49f46"},
+        {"id":"food-cheese","archivePath":"Models/GLB format/cheese.glb","sha256":"092c9326a27fc51edfaa0353c411875993ac109ee5e8923b681cc39fbb6312d1"},
+        {"id":"food-cake","archivePath":"Models/GLB format/cake.glb","sha256":"9594766d701142c4f5ab1d36cc40957667cd966281757e887de4d40557e63e09"},
+        {"id":"food-coconut","archivePath":"Models/GLB format/coconut.glb","sha256":"83b11a829c26c75068db48f4f89dd2e7143a076d00d181630975c73d5608c6c5"}
+      ]
+    }
+  ],
+  "rejected": [],
+  "status": "APPROVED_PENDING_ASSET_COPY_AND_RUNTIME_QA"
+}

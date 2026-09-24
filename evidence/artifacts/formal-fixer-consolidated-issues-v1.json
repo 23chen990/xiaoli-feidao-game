@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixIssueSet",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "issues": [
+    {"id":"THEME-DESSERT-001","source":"user screenshot + prior triage","scope":"Level 04-06 dessert sigil intact/cut/falling","acceptance":"complete and dropped pieces preserve cake/pastry/cheesecake silhouette"},
+    {"id":"THEME-CROSS-002","source":"cross-level audit","scope":"Levels 01-12 authored food styles","acceptance":"style-specific renderer branch; no blanket crystal sigil path"},
+    {"id":"MOVING-MEANING-003","source":"user screenshot + retro","scope":"all moving supports and hard blocks Levels 01-12","acceptance":"each moving object is reachable and changes a visible use/avoid/cut/recover decision, or is decorative without collider"},
+    {"id":"SPACING-OCCLUSION-004","source":"user screenshot + all-level triage","scope":"all gameplay objects and lifecycle states Levels 01-12, desktop/mobile","acceptance":"readable gaps, no accidental target/hazard overlap, next action visible before irreversible window"},
+    {"id":"QA-EVIDENCE-005","source":"prior blocked reports","scope":"default journey and exact object branches","acceptance":"independent natural + perceptual reports pass with exact object screenshots"}
+  ],
+  "contextOmitted":["unrelated platform packaging","third-party assets/expression","audio and long-term economy"],
+  "status":"OPEN"
+}

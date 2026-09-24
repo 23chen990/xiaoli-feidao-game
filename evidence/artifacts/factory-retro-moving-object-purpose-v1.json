@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FactoryProcessRetro",
+  "runId": "mobile-slice-adaptation-20260830",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "incident": {"summary":"A visibly moving slab is perceived as meaningless because its motion is not tied to a player decision.","evidence":["user screenshot codex-clipboard-8b22c7bd-3543-45b7-8441-770d97366bc7.png","artifacts/gameplay-triage-moving-platform-no-purpose-v1.json","artifacts/competitor-gap-contract-v1.json"],"classification":"core_experience/moving_object_no_decision_impact"},
+  "stageReview":[
+    {"stage":"COMPETITOR_RESEARCH","failure":"Contract captured moving-hard escalation but not a per-object proof that motion changes a reachable decision.","missedControl":"pressure entry lacked interactionId and decision delta","retroControl":"Every moving object must state what route/timing/cut/recovery decision it changes and how that change is signaled."},
+    {"stage":"BLUEPRINT","failure":"Motion amplitude/period and pathRole exist, but object-level route intersection is not enough to establish purpose.","missedControl":"No required pre/post-motion reachability and decision comparison","retroControl":"Require reachableStateWindow, interaction mode, avoid/recover branch, and decision delta for each moving object."},
+    {"stage":"BUILDER","failure":"A moving slab can be rendered and collide while remaining gameplay-irrelevant.","missedControl":"No builder gate comparing static-vs-moving traces","retroControl":"Builder preflight must demonstrate at least one changed natural trace: cut timing, bounce direction, landing window, or recovery."},
+    {"stage":"QA","failure":"Existing QA may record x-window overlap or motion metadata without exact object interaction evidence.","missedControl":"No exact objectId natural touch/avoid/recovery row","retroControl":"Natural QA must capture the named object across observe→approach→contact/avoid and reject x-overlap-only evidence."},
+    {"stage":"FIX","failure":"Prior fixes optimized dimensions and labels before proving the object’s role.","missedControl":"No stop rule for meaningless animated gameplay objects","retroControl":"If no decision delta is observed, either redesign the object into a causal obstacle/support or demote it to decorative with collider removed."}
+  ],
+  "factoryChangesRequired":["Add moving-object purpose contract to blueprint schema","Add static-vs-moving decision-delta check to Builder handoff","Add exact object natural interaction matrix to QA","Propagate BLOCKED when purpose or perceptual causality is unobserved","Route repeated meaningless-object feedback through formal fixer"],
+  "status":"RETRO_COMPLETE",
+  "productGate":"BLOCKED_PENDING_EXACT_OBJECT_RETEST"
+}

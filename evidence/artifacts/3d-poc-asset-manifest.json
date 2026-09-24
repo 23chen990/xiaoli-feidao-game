@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "ThreeCutPocAssetManifest",
+  "runId": "mobile-slice-adaptation-20260830",
+  "workspacePath": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "sourceArchive": {
+    "name": "Kenney Nature Kit 1.0",
+    "officialPage": "https://kenney.nl/assets/nature-kit",
+    "downloadUrl": "https://kenney.nl/media/pages/assets/nature-kit/37ac38a37b-1677698939/kenney_nature-kit.zip",
+    "sha256": "fa7974a0d342bfe63c38664ba9f8ec1a4aab8ea25f099bdc56870e33588c4d9d",
+    "license": "CC0-1.0",
+    "licenseLocalPath": "public/assets/kenney-nature/License.txt",
+    "licenseSha256": "cb96b75e3560ac78d7a53ce6f083f4cdb5c53faea6141b62d63458dcfe1e4b9d"
+  },
+  "weaponSource": {
+    "name": "OpenGameArt CC0 Low-Poly Swords 2022",
+    "officialPage": "https://opengameart.org/content/3d-swords-lowpol-cc0",
+    "downloadUrl": "https://opengameart.org/sites/default/files/swords_1.zip",
+    "sha256": "b02cf19d39c4d8aaf6ab20581b9f0ff77f62c5f2c9307a08c0d406bcac354cdc",
+    "license": "CC0-1.0",
+    "provenanceLocalPath": "public/assets/cc0-weapon/SOURCE.txt"
+  },
+  "assets": [
+    {
+      "id": "kenney-tree-simple",
+      "role": "decorative-background-tree",
+      "archivePath": "Models/GLTF format/tree_simple.glb",
+      "localPath": "public/assets/kenney-nature/tree_simple.glb",
+      "format": "glb",
+      "sha256": "93891ea740447634930de19c31a7c1c9f4add94122e6db03aca9f75aea32f9d6",
+      "decision": "REUSE"
+    },
+    {
+      "id": "kenney-log-stack",
+      "role": "decorative-background-logs",
+      "archivePath": "Models/GLTF format/log_stack.glb",
+      "localPath": "public/assets/kenney-nature/log_stack.glb",
+      "format": "glb",
+      "sha256": "90eaae4a01ba1f25c2f0c6d83087e4a7a8fac684f2452615245333968d118d68",
+      "decision": "REUSE"
+    },
+    {
+      "id": "open-game-art-sword-6",
+      "role": "interactive-curved-blade",
+      "archivePath": "Sword6.glb",
+      "localPath": "public/assets/cc0-weapon/sword-6.glb",
+      "format": "glb",
+      "sha256": "273c7133513bdcf619abb24ffe44e8c642b48f993d8baeb7a6de0473955d488c",
+      "decision": "REUSE"
+    }
+  ],
+  "runtimeDependencies": [
+    {
+      "id": "three-r185-draco-wasm",
+      "source": "three@0.185.0/examples/jsm/libs/draco/gltf/draco_decoder.wasm",
+      "localPath": "public/assets/draco/draco_decoder.wasm",
+      "license": "MIT",
+      "sha256": "a680d927bed9cb864ddbd63521868891af2bfbe755092761b4837487618df8ac"
+    },
+    {
+      "id": "three-r185-draco-wrapper",
+      "source": "three@0.185.0/examples/jsm/libs/draco/gltf/draco_wasm_wrapper.js",
+      "localPath": "public/assets/draco/draco_wasm_wrapper.js",
+      "license": "MIT",
+      "sha256": "8bb2952d2ba7d67e1414f8df819410cb0434a666be53f671fff75f68843d76f6"
+    }
+  ],
+  "originalRuntimeGeometry": [
+    {
+      "id": "crate-cuttable",
+      "cutCap": "layered-wood",
+      "source": "original-programmatic-geometry"
+    },
+    {
+      "id": "log-cuttable",
+      "cutCap": "growth-rings",
+      "source": "original-programmatic-geometry"
+    },
+    {
+      "id": "crystal-cuttable",
+      "cutCap": "luminous-core",
+      "source": "original-programmatic-geometry"
+    }
+  ],
+  "rejected": [
+    {
+      "format": "fbx",
+      "files": [
+        "Models/FBX format/tree_simple.fbx",
+        "Models/FBX format/log_stack.fbx"
+      ],
+      "reason": "Three.js r185 FBXLoader rejected the legacy ASCII FBX UV layout during browser QA; equivalent GLB files from the same licensed archive passed."
+    }
+  ]
+}

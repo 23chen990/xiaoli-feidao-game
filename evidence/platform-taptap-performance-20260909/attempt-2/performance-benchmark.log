@@ -1,0 +1,11 @@
+measurementKind: deterministic-source-work-proxy
+deviceFpsMeasured: false
+reportedBackendFps: 0.020356234
+reportedBackendFpsRootCause: UNCONFIRMED
+tapTapThreshold: null
+staticDynamicLayerSeparationPresent: true
+airborneUpdateCallsFullRedraw: false
+staticDrawsPerActiveFrame: 0
+dynamicDrawsPerActiveFrame: 1
+packageOwnedRemainingBottleneckDemonstrated: false
+decision: preserve current runtime; no further optimization authorized without exact-SHA raw frame or CPU/GPU trace

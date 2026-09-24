@@ -1,0 +1,121 @@
+RUNWAY_PENDING_POSE_TRACE {"contacts":[{"frame":216,"supportId":"level1-runway-main","playerX":305.2000000000005,"playerY":509.16666666666663,"playerAngle":4.986276450461116,"ageAtSet":0,"status":"airborne","anchorId":null,"maxCenterMotionPx":8.182913261451862,"maxOrientationMotionRadians":0.14292133047534783},{"frame":305,"supportId":"level1-runway-main","playerX":338.9500000000005,"playerY":447.41666666666663,"playerAngle":6.7301926589750565,"ageAtSet":0,"status":"airborne","anchorId":null,"maxCenterMotionPx":307.8448923076818,"maxOrientationMotionRadians":3.9378031445481376}],"releases":[{"age":2.0249999999999955,"positionCorrection":302.0191067586688,"angleCorrection":0.7271188090185019,"launched":1,"player":{"x":345.2000000000005,"y":435.74999999999994,"vx":150,"vy":-300,"angle":7.085355026498215,"angularVelocity":-9.5},"cooldown":0.13,"inputBuffer":0}],"final":{"elapsed":12.308333333333275,"status":"anchored","playerX":1749.6789775152486}}
+RUNWAY_RELEASE_TRACE {"tapId":"early-runway-release","selectedSupportId":"white-branch","player":{"x":332.7,"y":494.1,"vx":150,"vy":-80,"angle":-0.35,"angularVelocity":0},"candidates":[{"supportId":"white-bumper","entryTime":-0.4846666666666666,"supportTop":238,"verticalBand":{"min":201,"max":241},"predictedY":603.3438666666666,"requiredVy":null,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["not-ahead","vertical-corridor-unreachable"],"selected":false},{"supportId":"white-landing","entryTime":-0.017999999999999926,"supportTop":561,"verticalBand":{"min":524,"max":564},"predictedY":495.6372,"requiredVy":null,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["not-ahead","vertical-corridor-unreachable"],"selected":false},{"supportId":"white-branch","entryTime":0.9153333333333334,"supportTop":263,"verticalBand":{"min":226,"max":266},"predictedY":672.2238666666667,"requiredVy":-545.648798252003,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":[],"selected":true},{"supportId":"lantern-ferry","entryTime":2.848666666666667,"supportTop":540,"verticalBand":{"min":503,"max":543},"predictedY":2700.677200000001,"requiredVy":-844.4549028785398,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":[],"selected":false},{"supportId":"white-column","entryTime":6.1819999999999995,"supportTop":310,"verticalBand":{"min":273,"max":313},"predictedY":11464.677199999998,"requiredVy":-1887.1299255904237,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["vertical-corridor-unreachable"],"selected":false},{"supportId":"dual-bridge-face","entryTime":8.315333333333333,"supportTop":503,"verticalBand":{"min":466,"max":506},"predictedY":20572.303866666665,"requiredVy":-2495.5741040647795,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["vertical-corridor-unreachable"],"selected":false},{"supportId":"white-recovery-shelf","entryTime":9.515333333333333,"supportTop":567,"verticalBand":{"min":530,"max":570},"predictedY":26895.34386666666,"requiredVy":-2848.7252714916267,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["vertical-corridor-unreachable"],"selected":false},{"supportId":"lift-plank","entryTime":10.048666666666666,"supportTop":416,"verticalBand":{"min":379,"max":419},"predictedY":29982.917199999993,"requiredVy":-3024.0639421482115,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["vertical-corridor-unreachable"],"selected":false},{"supportId":"level1-reward-shelf","entryTime":11.448666666666666,"supportTop":266,"verticalBand":{"min":229,"max":269},"predictedY":38899.79719999999,"requiredVy":-3456.0086065335117,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["vertical-corridor-unreachable"],"selected":false},{"supportId":"tower-approach","entryTime":11.382,"supportTop":548,"verticalBand":{"min":511,"max":551},"predictedY":38448.5172,"requiredVy":-3411.3580390089614,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["vertical-corridor-unreachable"],"selected":false},{"supportId":"level1-runway-main","entryTime":6.115333333333333,"supportTop":473,"verticalBand":{"min":436,"max":476},"predictedY":11224.063866666665,"requiredVy":-1840.8302409244523,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["vertical-corridor-unreachable"],"selected":false},{"supportId":"opening-table-a","entryTime":-0.8513333333333333,"supportTop":360,"verticalBand":{"min":323,"max":363},"predictedY":779.6372,"requiredVy":null,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["non-collidable","not-ahead","vertical-corridor-unreachable"],"selected":false},{"supportId":"opening-table-b","entryTime":1.5153333333333334,"supportTop":471,"verticalBand":{"min":434,"max":474},"predictedY":1061.7438666666667,"requiredVy":-481.0628244610647,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["non-collidable"],"selected":false},{"supportId":"bridge-table","entryTime":7.715333333333333,"supportTop":398,"verticalBand":{"min":361,"max":401},"predictedY":17734.783866666665,"requiredVy":-2329.2591203663696,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["non-collidable","vertical-corridor-unreachable"],"selected":false},{"supportId":"lift-table","entryTime":10.048666666666666,"supportTop":374,"verticalBand":{"min":337,"max":377},"predictedY":29982.917199999993,"requiredVy":-3028.243601141113,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["non-collidable","vertical-corridor-unreachable"],"selected":false},{"supportId":"tower-table","entryTime":12.515333333333333,"supportTop":383,"verticalBand":{"min":346,"max":386},"predictedY":46482.94386666666,"requiredVy":-3764.8354445213863,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["non-collidable","vertical-corridor-unreachable"],"selected":false},{"supportId":"late-table","entryTime":15.315333333333335,"supportTop":373,"verticalBand":{"min":336,"max":376},"predictedY":69636.70386666668,"requiredVy":-4603.617107038698,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["non-collidable","vertical-corridor-unreachable"],"selected":false}],"rejectionReasons":[{"supportId":"white-bumper","rejectionReasons":["not-ahead","vertical-corridor-unreachable"]},{"supportId":"white-landing","rejectionReasons":["not-ahead","vertical-corridor-unreachable"]},{"supportId":"white-column","rejectionReasons":["vertical-corridor-unreachable"]},{"supportId":"dual-bridge-face","rejectionReasons":["vertical-corridor-unreachable"]},{"supportId":"white-recovery-shelf","rejectionReasons":["vertical-corridor-unreachable"]},{"supportId":"lift-plank","rejectionReasons":["vertical-corridor-unreachable"]},{"supportId":"level1-reward-shelf","rejectionReasons":["vertical-corridor-unreachable"]},{"supportId":"tower-approach","rejectionReasons":["vertical-corridor-unreachable"]},{"supportId":"level1-runway-main","rejectionReasons":["vertical-corridor-unreachable"]},{"supportId":"opening-table-a","rejectionReasons":["non-collidable","not-ahead","vertical-corridor-unreachable"]},{"supportId":"opening-table-b","rejectionReasons":["non-collidable"]},{"supportId":"bridge-table","rejectionReasons":["non-collidable","vertical-corridor-unreachable"]},{"supportId":"lift-table","rejectionReasons":["non-collidable","vertical-corridor-unreachable"]},{"supportId":"tower-table","rejectionReasons":["non-collidable","vertical-corridor-unreachable"]},{"supportId":"late-table","rejectionReasons":["non-collidable","vertical-corridor-unreachable"]}],"remainingCandidates":["white-branch","lantern-ferry"]}
+RUNWAY_RELEASE_TRACE {"tapId":"late-lift-plank-release","selectedSupportId":"lift-plank","player":{"x":1750,"y":450,"vx":150,"vy":0,"angle":-0.35,"angularVelocity":0},"candidates":[{"supportId":"white-bumper","entryTime":-9.933333333333334,"supportTop":238,"verticalBand":{"min":201,"max":241},"predictedY":30051.333333333336,"requiredVy":null,"upperBoundaryLimit":-832.1057625085888,"rejectionReasons":["not-ahead","vertical-corridor-unreachable"],"selected":false},{"supportId":"white-landing","entryTime":-9.466666666666667,"supportTop":561,"verticalBand":{"min":524,"max":564},"predictedY":27335.333333333332,"requiredVy":null,"upperBoundaryLimit":-832.1057625085888,"rejectionReasons":["not-ahead","vertical-corridor-unreachable"],"selected":false},{"supportId":"white-branch","entryTime":-8.533333333333333,"supportTop":263,"verticalBand":{"min":226,"max":266},"predictedY":22295.333333333332,"requiredVy":null,"upperBoundaryLimit":-832.1057625085888,"rejectionReasons":["not-ahead","vertical-corridor-unreachable"],"selected":false},{"supportId":"lantern-ferry","entryTime":-6.6,"supportTop":540,"verticalBand":{"min":503,"max":543},"predictedY":13517.999999999998,"requiredVy":null,"upperBoundaryLimit":-832.1057625085888,"rejectionReasons":["not-ahead","vertical-corridor-unreachable"],"selected":false},{"supportId":"white-column","entryTime":-3.2666666666666666,"supportTop":310,"verticalBand":{"min":273,"max":313},"predictedY":3651.3333333333335,"requiredVy":null,"upperBoundaryLimit":-832.1057625085888,"rejectionReasons":["not-ahead","vertical-corridor-unreachable"],"selected":false},{"supportId":"dual-bridge-face","entryTime":-1.1333333333333333,"supportTop":503,"verticalBand":{"min":466,"max":506},"predictedY":835.3333333333333,"requiredVy":null,"upperBoundaryLimit":-832.1057625085888,"rejectionReasons":["not-ahead","vertical-corridor-unreachable"],"selected":false},{"supportId":"white-recovery-shelf","entryTime":0.06666666666666667,"supportTop":567,"verticalBand":{"min":530,"max":570},"predictedY":451.3333333333333,"requiredVy":1480,"upperBoundaryLimit":-832.1057625085888,"rejectionReasons":["vertical-corridor-unreachable"],"selected":false},{"supportId":"lift-plank","entryTime":0.6,"supportTop":416,"verticalBand":{"min":379,"max":419},"predictedY":558,"requiredVy":-265,"upperBoundaryLimit":-832.1057625085888,"rejectionReasons":[],"selected":true},{"supportId":"level1-reward-shelf","entryTime":2,"supportTop":266,"verticalBand":{"min":229,"max":269},"predictedY":1650,"requiredVy":-700.5,"upperBoundaryLimit":-832.1057625085888,"rejectionReasons":[],"selected":false},{"supportId":"tower-approach","entryTime":1.9333333333333333,"supportTop":548,"verticalBand":{"min":511,"max":551},"predictedY":1571.3333333333333,"requiredVy":-538.103448275862,"upperBoundaryLimit":-832.1057625085888,"rejectionReasons":[],"selected":false},{"supportId":"level1-runway-main","entryTime":-3.3333333333333335,"supportTop":473,"verticalBand":{"min":436,"max":476},"predictedY":3783.333333333334,"requiredVy":null,"upperBoundaryLimit":-832.1057625085888,"rejectionReasons":["not-ahead","vertical-corridor-unreachable"],"selected":false},{"supportId":"opening-table-a","entryTime":-10.3,"supportTop":360,"verticalBand":{"min":323,"max":363},"predictedY":32277.000000000004,"requiredVy":null,"upperBoundaryLimit":-832.1057625085888,"rejectionReasons":["non-collidable","not-ahead","vertical-corridor-unreachable"],"selected":false},{"supportId":"opening-table-b","entryTime":-7.933333333333334,"supportTop":471,"verticalBand":{"min":434,"max":474},"predictedY":19331.333333333336,"requiredVy":null,"upperBoundaryLimit":-832.1057625085888,"rejectionReasons":["non-collidable","not-ahead","vertical-corridor-unreachable"],"selected":false},{"supportId":"bridge-table","entryTime":-1.7333333333333334,"supportTop":398,"verticalBand":{"min":361,"max":401},"predictedY":1351.3333333333335,"requiredVy":null,"upperBoundaryLimit":-832.1057625085888,"rejectionReasons":["non-collidable","not-ahead","vertical-corridor-unreachable"],"selected":false},{"supportId":"lift-table","entryTime":0.6,"supportTop":374,"verticalBand":{"min":337,"max":377},"predictedY":558,"requiredVy":-335,"upperBoundaryLimit":-832.1057625085888,"rejectionReasons":["non-collidable"],"selected":false},{"supportId":"tower-table","entryTime":3.066666666666667,"supportTop":383,"verticalBand":{"min":346,"max":386},"predictedY":3271.3333333333335,"requiredVy":-947.3913043478261,"upperBoundaryLimit":-832.1057625085888,"rejectionReasons":["non-collidable","vertical-corridor-unreachable"],"selected":false},{"supportId":"late-table","entryTime":5.866666666666666,"supportTop":373,"verticalBand":{"min":336,"max":376},"predictedY":10775.333333333332,"requiredVy":-1776.0227272727273,"upperBoundaryLimit":-832.1057625085888,"rejectionReasons":["non-collidable","vertical-corridor-unreachable"],"selected":false}],"rejectionReasons":[{"supportId":"white-bumper","rejectionReasons":["not-ahead","vertical-corridor-unreachable"]},{"supportId":"white-landing","rejectionReasons":["not-ahead","vertical-corridor-unreachable"]},{"supportId":"white-branch","rejectionReasons":["not-ahead","vertical-corridor-unreachable"]},{"supportId":"lantern-ferry","rejectionReasons":["not-ahead","vertical-corridor-unreachable"]},{"supportId":"white-column","rejectionReasons":["not-ahead","vertical-corridor-unreachable"]},{"supportId":"dual-bridge-face","rejectionReasons":["not-ahead","vertical-corridor-unreachable"]},{"supportId":"white-recovery-shelf","rejectionReasons":["vertical-corridor-unreachable"]},{"supportId":"level1-runway-main","rejectionReasons":["not-ahead","vertical-corridor-unreachable"]},{"supportId":"opening-table-a","rejectionReasons":["non-collidable","not-ahead","vertical-corridor-unreachable"]},{"supportId":"opening-table-b","rejectionReasons":["non-collidable","not-ahead","vertical-corridor-unreachable"]},{"supportId":"bridge-table","rejectionReasons":["non-collidable","not-ahead","vertical-corridor-unreachable"]},{"supportId":"lift-table","rejectionReasons":["non-collidable"]},{"supportId":"tower-table","rejectionReasons":["non-collidable","vertical-corridor-unreachable"]},{"supportId":"late-table","rejectionReasons":["non-collidable","vertical-corridor-unreachable"]}],"remainingCandidates":["lift-plank","tower-approach","level1-reward-shelf"]}
+✔ L1-STACK a: actual knife contact cuts the bearing object and releases the overlapping upper object (6.037333ms)
+✔ L1-STACK-VISUAL-EVIDENCE a: same target stays visible and separates into two halves after cut (3.222833ms)
+✔ L1-STACK b: actual knife contact cuts the bearing object and releases the overlapping upper object (2.230291ms)
+✔ L1-STACK-VISUAL-EVIDENCE b: same target stays visible and separates into two halves after cut (0.496875ms)
+✔ L1-GRAVITY active airborne play does not freeze a hovering supported collectible (4.187334ms)
+✔ L1-REWARD intact has zero earnings; a real cut names the separated target and replay clears earnings (2.917ms)
+✔ L1-PLACEMENT every initial collectible has a touching support, including the late and bridge targets (0.278542ms)
+✖ L1-RUNWAY visible support stays collidable through the normal forward replay (68.218125ms)
+✖ L1-RUNWAY replay captures and releases both baseline runway poses from airborne state (46.302625ms)
+✔ L1-RUNWAY test-only release trace records early and late support candidates before correction (0.96775ms)
+✔ L1-RUNWAY later sharp contact stays airborne while body contact still bounces (0.957792ms)
+✔ L1-RUNWAY early approaching top-face tip contact recovers without removing side anchors (0.559917ms)
+✖ L1-RUNWAY early separating top-face tip contact creates and consumes one airborne release pose (8.99425ms)
+✔ L1-RUNWAY recovery release snapshot does not change ordinary non-runway support launches (0.194583ms)
+✖ L1-RUNWAY pending runway pose expires at its bounded lifetime (1.710917ms)
+✔ L1-RUNWAY pending pose clears on reset, level load, terminal, inactive support, and non-runway contact (0.836458ms)
+✔ L1-RUNWAY opening keeps the authored white landing anchor before runway bounce feedback (4.790417ms)
+✔ L1-FINISH labels use viewport coordinates without a second offset (2.351166ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 390x844 (1.477916ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 1100x720 (0.188792ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 16
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 610.332708
+
+✖ failing tests:
+
+test at tests/level1-recovery.test.ts:159:1
+✖ L1-RUNWAY visible support stays collidable through the normal forward replay (68.218125ms)
+  AssertionError [ERR_ASSERTION]: runway replay did not carry the player past x=2000: 1749.6789775152486
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:186:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/level1-recovery.test.ts:189:1
+✖ L1-RUNWAY replay captures and releases both baseline runway poses from airborne state (46.302625ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      216,
+  +   305
+  -   302
+    ]
+  
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:314:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 216, 305 ],
+    expected: [ 216, 302 ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/level1-recovery.test.ts:438:1
+✖ L1-RUNWAY early separating top-face tip contact creates and consumes one airborne release pose (8.99425ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(released.events.some((event) => event.type === 'launch' && Math.abs(event.x - releasePose.playerX) < 0.001))
+  
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:492:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/level1-recovery.test.ts:517:1
+✖ L1-RUNWAY pending runway pose expires at its bounded lifetime (1.710917ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'anchored'
+  - 'airborne'
+  
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:532:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'anchored',
+    expected: 'airborne',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

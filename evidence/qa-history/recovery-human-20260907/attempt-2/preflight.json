@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "attempt": 2,
+  "sourceBuildSha256": "c8f24a360b3dc8963beccc87bc1db10e62f2dda4276afdf0ffb6074240d4636c",
+  "cells": [
+    {"issue": "REMAINING-PERCEPTUAL-CONTRACT", "object": "cut reward and cumulative HUD", "state": "contact → separation → local reward + total sync", "renderer": "main.ts consumeEvents/spawnFeedback/renderHud", "viewports": ["390x844", "1100x720"], "red": "SUPERSEDED: red-reward.log imposed an unsupported independent delay. reward-acceptance-clarification.json permits same-frame separated geometry, local reward and total. Delay queue withdrawn completely; retain intact-zero/target attachment/replay tests. No reward architecture change."},
+    {"issue": "L1-STACK-DECORATIVE-SUBSTITUTION", "object": "level1-ladder-stack-a/b and rainbow-step-a/b", "state": "intact → sharp contact → separated fragments → unsupported dependants fall → rest", "renderer": "game-core → ThreePresentationModel → CutVisualEntity", "viewports": ["390x844", "1100x720"], "red": "assert collidable, real touching parent, swept knife contact emits cut on named object and releases child; no debugCutBlock shortcut"},
+    {"issue": "REMAINING-PERCEPTUAL-CONTRACT", "object": "Level1 supported sigils and late/reward tables", "state": "ready/airborne/anchored → gravity/support loss", "renderer": "updateSupportedSigils and syncSupports", "viewports": ["390x844", "1100x720"], "red": "unsupported item falls while player airborne; every static Level1 table base reaches actual floor"},
+    {"issue": "L1-FINISH-VISIBILITY", "object": "all Level1 finish bands and label container", "state": "approach → contact → result", "renderer": "createCameraSpec → ThreeWorldRenderer → DOM HUD", "viewports": ["390x844", "1100x720"], "red": "wall corners project within safe viewport; projected labels use an origin-aligned overlay"},
+    {"issue": "L1-ENGINEERING-REGRESSIONS", "object": "first cut/combos and safe/bonus choices", "state": "normal inputs → cut → lane selection → settlement", "renderer": "deterministic simulation", "viewports": ["simulation; independent runtime retest at both viewports"], "red": "reproduce six existing failures; replace only obsolete template coordinate assumptions with relationship and reachable behavior assertions"}
+  ],
+  "causalFiles": ["src/game-levels.ts", "src/game-core.ts", "src/three-world-renderer.ts", "src/three-presentation.ts", "src/style.css", "src/main.ts", "tests/game-core.test.ts", "tests/level-catalog.test.ts", "tests/opening-renderer-regression.test.ts", "tests/level1-recovery.test.ts"],
+  "scopeNotes": ["No technical-design revision or dependency additions", "Preserve opening sphere material and opening bases", "opening-table-b isolated pixels and hazard natural evidence remain QA responsibilities; no invented change from capture gaps", "Formal route because physics, layout, renderer and validated QA span multiple modules", "Only one final build; independent QA owns acceptance"],
+  "contextIntentionallyOmitted": ["Other games and levels", "unverified media", "full conversation and unrelated factory changes"]
+}

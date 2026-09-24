@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "factory-research-audit",
+  "runId": "mobile-slice-adaptation-20260830",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "ACTIONABLE",
+  "auditConclusion": "研究阶段存在，但研究证据没有覆盖时间行为和体验因果，也没有在未知项未关闭时阻断构建；因此流程完成不等于研究结论足以指导产品体验。",
+  "evidence": {
+    "existingArtifacts": [
+      "artifacts/mechanics-research-v2.json",
+      "artifacts/competitor-gap-contract-v1.json",
+      "artifacts/factory-retro-reference-recordings-deep-v2.json"
+    ],
+    "whatWasCovered": [
+      "输入方式、碰撞部位、移动支撑、空间可切物、分段结构、终点倍率和奖励段等机制被记录。",
+      "部分未知项已经被标注为 user-observed 或 unknown，没有完全伪装成已确认事实。"
+    ],
+    "whatWasMissed": [
+      "静态页面和截图不能证明镜头状态变化、目标预告时机、切割反馈时序和收益出现时机。",
+      "失败压力契约覆盖了压力/信号/升级/归因/恢复，但没有把镜头构图、局内即时收益、持久总额和终点演出作为必填维度。",
+      "研究中已有移动硬物、可切对象语义和终点风险的观察，但没有形成研究结论到默认运行时入口的逐项追踪。",
+      "已知未知项没有触发研究补证或 BUILD 阻断，导致表面机制先落地，体验缺口由用户录屏复盘才暴露。",
+      "没有要求独立复盘者按时间码重放完整录屏并输出 beat、camera、reward、failure-recovery 四类时间线。"
+    ]
+  },
+  "rootCauses": [
+    {
+      "id": "RA-01",
+      "cause": "证据层级偏静态",
+      "impact": "能知道有哪些对象，却不知道它们何时出现、如何组合、镜头如何服务选择。",
+      "correction": "将完整视频/可操作试玩列为动态体验问题的必需证据；截图只能证明形态，不能关闭行为结论。"
+    },
+    {
+      "id": "RA-02",
+      "cause": "研究问题偏对象和物理，不足以覆盖体验因果",
+      "impact": "研究能回答‘有什么’，不能回答‘玩家为什么觉得爽、赚、紧张或愿意继续’。",
+      "correction": "每个核心动作强制记录前置预告、接触事件、可见变化、经济反馈、镜头反馈和后续选择。"
+    },
+    {
+      "id": "RA-03",
+      "cause": "未知项没有升级机制",
+      "impact": "unknown/user-observed 项继续进入实现，研究的不确定性被产品化。",
+      "correction": "给 unknown 标注 block/build-safe 两种处置；camera、economy、failure-recovery 等核心体验未知项默认 block。"
+    },
+    {
+      "id": "RA-04",
+      "cause": "缺少 research-to-runtime traceability",
+      "impact": "研究结论写进报告，但无法证明它进入 blueprint、builder handoff、默认路径和 QA。",
+      "correction": "为每条高优先级研究结论生成 requirement ID，贯穿 blueprint → implementation entrypoint → natural QA evidence。"
+    },
+    {
+      "id": "RA-05",
+      "cause": "缺少用户新证据的回灌闭环",
+      "impact": "用户补充录屏后只能临时发现新问题，不能自动升级为研究方法和门禁的改进。",
+      "correction": "把每次用户录屏复盘产物作为 factory feedback lesson，下一次同类研究必须自动执行新增检查项。"
+    }
+  ],
+  "researchProtocolChanges": [
+    {
+      "stage": "RESEARCH",
+      "change": "动态体验四轨复盘",
+      "requiredTracks": ["camera", "beat-and-pressure", "cut-feedback-and-economy", "failure-recovery-and-replay"],
+      "requiredEvidence": "每轨至少包含时间码、观察事实、玩家效果、未知项和可迁移抽象。"
+    },
+    {
+      "stage": "RESEARCH",
+      "change": "静态/动态证据分级",
+      "rule": "截图或官方描述只可关闭形态/存在性问题；镜头、时序、运动、反馈和节奏必须有视频或可操作试玩证据。"
+    },
+    {
+      "stage": "BLUEPRINT",
+      "change": "研究结论追踪表",
+      "rule": "每条 P0/P1 观察必须绑定一个原创 feature ID、默认运行时入口、自然输入触发和 QA 证据路径。"
+    },
+    {
+      "stage": "BUILD_GATE",
+      "change": "未知项阻断规则",
+      "rule": "核心循环中的 camera、经济反馈、失败恢复和终点演出若仍是 unknown，不得以‘已有对象/已有代码’通过 BUILD。"
+    },
+    {
+      "stage": "QA",
+      "change": "双重真相门",
+      "rule": "工程真相验证状态/碰撞/经济；自然体验验证新浏览器、正常输入、可见因果、镜头可读性和重玩。两者任一缺失都不得 PASS。"
+    },
+    {
+      "stage": "FEEDBACK_LOOP",
+      "change": "用户证据回灌",
+      "rule": "每次用户录屏导致的新发现都必须进入 factory feedback lesson，并在后续研究模板中成为必答项。"
+    }
+  ],
+  "applicabilityRules": {
+    "principle": "反哺工厂的是判断方法和证据门禁，不是把某个竞品表现变成所有游戏的硬需求。",
+    "capabilityProfilingBeforeResearch": [
+      "先从游戏蓝图和体验画像判断镜头、经济反馈、失败恢复、音频、震动、连续切割等能力是否属于核心体验。",
+      "每项能力标记为 required、optional、not-applicable 或 unknown；unknown 不得被默认为 required，也不得被默认为 absent。"
+    ],
+    "camera": {
+      "requiredWhen": [
+        "空间深度、障碍预告、目标显露、落点判断或终点演出依赖视线关系变化。",
+        "参考证据显示镜头变化直接改变玩家决策或风险可读性。"
+      ],
+      "notRequiredWhen": [
+        "游戏的核心决策在固定视口内完整可读，镜头移动不会增加信息或情绪价值。"
+      ],
+      "gate": "不要求所有游戏做镜头转换；required 时验收多状态镜头，not-applicable 时验收固定构图在所有核心状态下仍能表达目标、风险、反馈和终点。"
+    },
+    "economy": {
+      "requiredWhen": [
+        "收益是动作爽感、风险选择或核心循环的一部分。"
+      ],
+      "notRequiredWhen": [
+        "游戏没有即时奖励或经济反馈，且分数/进度不会承担动作因果解释。"
+      ],
+      "gate": "required 时验证局部反馈与持久总额是否有因果；not-applicable 时记录排除理由，不能只因竞品有收益就强行加入。"
+    },
+    "failureRecovery": {
+      "requiredWhen": [
+        "失败后的继续、重试、保留进度或代价选择影响留存或学习。"
+      ],
+      "notRequiredWhen": [
+        "失败本身就是一次性终局表达，且蓝图明确不提供中间恢复。"
+      ],
+      "gate": "无论 required 还是 not-applicable，都必须说明失败原因和下一状态如何被玩家理解。"
+    },
+    "generalRule": "每项能力都要有适用性判定、证据来源、排除理由（如不适用）和对应验收；工厂禁止把单个参考游戏的表达直接升级为跨品类规范。"
+  },
+  "antiOverfittingChecks": [
+    "不把竞品镜头角度、镜头次数、收益 UI 位置、音效节拍或倍率数值写成通用标准。",
+    "不因本次录屏发现镜头变化，就要求卡牌、拼图、固定棋盘等游戏加入镜头移动。",
+    "不因本次录屏存在即时收益，就要求无经济系统的游戏伪造货币反馈。",
+    "每条通用反馈都必须同时给出 required、optional 和 not-applicable 的判定路径。"
+  ],
+  "minimumResearchChecklistForActionSlice": [
+    "从首次输入到终点完整观看至少一遍，不只看截图或局部静帧。",
+    "建立带时间码的 camera 状态线和 level beat 线。",
+    "记录每次有效切割的接触、目标变化、即时收益和累计收益是否同屏可见。",
+    "记录危险的预告窗口、失败原因、继续/重开选择和恢复状态。",
+    "区分 observation、inference、unknown，并为 unknown 指定补证或阻断。",
+    "将每条 P0/P1 发现映射到原创实现能力和默认运行时证据。",
+    "完成一次独立复盘，确认研究者没有只验证自己预期的机制。"
+  ],
+  "nextRoute": {
+    "route": "factory-process-update-before-next-build",
+    "reason": "本次遗漏来自研究证据和研究到运行时的连接缺失，不应只靠目标游戏继续打补丁。",
+    "noCodeChangeInTargetGame": true,
+    "followUpArtifacts": [
+      "camera-beat-contract",
+      "action-feedback-chain",
+      "research-to-runtime-traceability-matrix",
+      "natural-journey-perceptual-gate"
+    ]
+  }
+}

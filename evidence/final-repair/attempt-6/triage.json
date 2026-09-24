@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-triage",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 6,
+  "issueId": "L1-RUNWAY-RECOVERY-RELEASE-CLEARANCE",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "classification": "natural-level1-runway-recovery-blocker",
+  "status": "VALIDATED_REPRODUCTION",
+  "priorAttempt": {
+    "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/fix-result.json",
+    "sha256": "91fcd712e14ad18c3d20bd6ed5f68ba85d9f2e6d62cdc93ec1c2ab4319755d4d",
+    "status": "BLOCKED",
+    "candidateRejected": true
+  },
+  "reproduction": {
+    "naturalContactPlayerX": [305.2, 332.7],
+    "naturalContactX": [315.47808960723034, 368.0817538698364],
+    "releaseTapSeconds": 2.327048167,
+    "candidateReplayState": {
+      "elapsedSeconds": 11.308333333333332,
+      "playerX": 1802.375088932486,
+      "playerY": 450.13086605186174,
+      "status": "anchored",
+      "anchorId": "lift-plank"
+    },
+    "evidence": [
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/fix-result.json",
+        "sha256": "91fcd712e14ad18c3d20bd6ed5f68ba85d9f2e6d62cdc93ec1c2ab4319755d4d"
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/replay-final.json",
+        "sha256": "565cd8f55bca0a4c63b17198583d36840c74ba91059d97b297d495c14c54c834"
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/green-targeted.log",
+        "sha256": "6891599f5c790b5f45fb8cd880e16cab2fd69dae7c10b4582fe7b0acc01f58e3"
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-summary.json",
+        "sha256": "d0640af40c41c1e49c38a58687c8b6f2635332d3fe02e3e7429e05a74b6307cd"
+      }
+    ]
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "runway sharp tip",
+      "lifecycleStateBranch": "airborne separating upward contact",
+      "rendererPresentationPath": "Three.js player mesh and runway collision feedback",
+      "viewport": "390x844",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/recording.json"],
+      "observation": "Natural portrait input shows the upward tip contact becoming a persistent runway anchor.",
+      "inference": "The collision fix must suppress only the separating runway anchor while preserving normal launch lifecycle.",
+      "unknowns": ["The exact support clearance available at each later route step is not visible in the recording alone."]
+    },
+    {
+      "objectType": "runway sharp tip",
+      "lifecycleStateBranch": "pending release consumed by normal tap",
+      "rendererPresentationPath": "Three.js launch event and trajectory presentation",
+      "viewport": "1100x720",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/recording.json"],
+      "observation": "Desktop natural input reaches the same tip branch and later stack/settlement pressure.",
+      "inference": "Release behavior must be route-aware without adding viewport-specific code.",
+      "unknowns": ["The post-fix visual feedback and console noise remain unverified."]
+    },
+    {
+      "objectType": "runway support",
+      "lifecycleStateBranch": "fixed normal-input release schedule",
+      "rendererPresentationPath": "SliceSimulation fixed-step act('flip')",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/replay-final.json"],
+      "observation": "The tap-time clamp candidate reaches a later lift-plank anchor at x≈1802 after 11.3083s, just short of the required route gate.",
+      "inference": "A fixed global clamp does not preserve the vertical clearance needed for the next authored support.",
+      "unknowns": ["Whether the next support should be selected by forward x, active route role, or nearest vertical corridor remains to be tested."]
+    },
+    {
+      "objectType": "lift-plank support",
+      "lifecycleStateBranch": "late authored support contact after release",
+      "rendererPresentationPath": "fixed-step support anchor and release semantics",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/replay-final.json"],
+      "observation": "The candidate is anchored on lift-plank rather than failing, but does not carry the player past x>2000 by 11.9s.",
+      "inference": "The release should be constrained against the next authored support's vertical clearance rather than a static velocity cap.",
+      "unknowns": ["The exact clearance-to-velocity mapping must be proven by a deterministic test and may expose a deeper authored replay mismatch."]
+    }
+  ],
+  "rootCauseHypothesis": {
+    "evidence": "Attempt 5 eliminated the stale contact snapshot and still reached a valid lift-plank anchor at 11.3083s but remained below the route gate; a fixed clamp is too global for the changing vertical geometry.",
+    "changeHypothesis": "Keep the one-shot pendingRunwayReleaseIntent, derive the release vertical velocity from current tap-time vy and the next authored active support's vertical clearance along the forward route, with a bounded corridor that avoids both the top boundary and undershooting lift-plank. Validate early runway release and the late lift-plank branch in the same fixed replay.",
+    "latchName": "pendingRunwayReleaseIntent",
+    "clearanceSource": "next authored active support above or at the current forward route",
+    "releaseSemantics": "derive bounded vertical release velocity from current tap-time vy and the next-support vertical clearance, without unconditional LAUNCH_VY",
+    "expirySeconds": 1.2,
+    "rejectedAlternatives": [
+      "Approach-only relative-normal guard leaves the natural separating anchor.",
+      "Broad top-normal recovery changes later scheduled taps into ordinary air flips.",
+      "Full anchored-release LAUNCH_VY exits through the top boundary and fails at 6.4583s.",
+      "Contact-time and tap-time fixed velocity clamps fail at 6.8s and 11.3083s respectively."
+    ]
+  },
+  "scope": {
+    "includedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+    ],
+    "excludedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-presentation.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/main.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/src/core",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/research"
+    ],
+    "route": "formal-fixer",
+    "expectedSourceFileLimit": 2
+  },
+  "acceptanceCriteria": [
+    "A RED test proves the exact upward/separating natural-pose contact anchors under the restored baseline.",
+    "A GREEN lifecycle test proves one pending intent is consumed once with launch feedback and no persistent runway anchor.",
+    "Release vertical motion uses tap-time velocity together with a clearly documented next-support clearance calculation, not a global magic clamp alone.",
+    "The early runway release and late lift-plank branch are both exercised by the same fixed seed-31 replay.",
+    "The pending intent expires and a later airborne tap is ordinary after cooldown is clear.",
+    "Non-runway support anchors and their release taps remain unchanged.",
+    "The approaching/downward top-normal branch, non-top sharp anchor, later x>=350 suppression, and blunt body/handle bounce remain intact.",
+    "The seed-31 fixed timestamp replay reaches at least 11.9 seconds and x>2000 without failure or an unaccepted stall.",
+    "Only game-core.ts and level1-recovery.test.ts change; no renderer, level, debug, platform, or shared factory files.",
+    "pnpm test, pnpm lint, pnpm typecheck pass and exactly one pnpm build succeeds with a recorded dist SHA-256.",
+    "Independent fresh natural QA must retest both viewports, exact runway branch, stack/settlement, visible terminal and replay; no Fixer runtime claim."
+  ],
+  "evidenceClassification": {
+    "observed": [
+      "Attempt 5's final candidate stopped anchored on lift-plank at x≈1802 and elapsed≈11.3083s.",
+      "Natural portrait and desktop evidence still shows the original separating runway anchor."
+    ],
+    "inferred": [
+      "A route-aware vertical clearance constraint may carry the player through lift-plank without the top-boundary overshoot of earlier releases.",
+      "The next-support geometry is available in SliceSimulation supports and can be tested without renderer changes."
+    ],
+    "unknown": [
+      "The correct support selection and clearance-to-velocity mapping may not be sufficient to pass the replay.",
+      "Natural/perceptual post-fix behavior remains unverified."
+    ]
+  },
+  "createdAt": "2026-09-23T08:10:00.000Z"
+}

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fix-result",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 2,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "issueId": "L1-RUNWAY-TOP-CONTACT-DIRECTION",
+  "status": "BLOCKED",
+  "why": "The packet's proposed guard fixes the newly reproduced upward/separating top-normal contact, but it breaks the required seed-31 fixed-timestamp replay. The candidate replay fails at 6.933 seconds with player x≈809.63, before the required 11.9 seconds and x>2000. The candidate was rejected and its production edit was reverted; the original production file hash matches the packet's current-source SHA-256. The new focused regression remains in the test file and is expected to fail against the unmodified production behavior.",
+  "triagePath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-2/triage.json",
+  "triageSha256": "c0db3e82f5f274657e20b383b3b625c4486be1e7dce91c3424eb591b4bb7d532",
+  "taskPacketPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-2/task.json",
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory modules, platform adapters, release configuration, and renderer implementation.",
+    "Unverified competitor tuning and unbound external media.",
+    "Fixture traces as natural or perceptual evidence; no runtime QA claim is delegated to Fixer."
+  ],
+  "filesChanged": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "implementation": {
+    "hypothesis": "Any early top-normal sharp contact on level1-runway-main can use the existing hard-surface response, including separating contacts.",
+    "decision": "REJECTED",
+    "evidence": [
+      "The added natural-pose regression was RED before production changes: attempt-1 behavior anchored the rising blade to level1-runway-main.",
+      "With the proposed guard, the focused separating-contact assertion passed, but the existing fixed timestamp replay test failed: elapsed 6.933333333333468 seconds, status failed, player x 809.6315869887716.",
+      "After rejecting and reverting the guard, src/game-core.ts SHA-256 is b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7, matching the packet's current-source evidence."
+    ],
+    "nextHypothesis": "The route failure shows that removing the early runway anchor changes the meaning of subsequent scheduled flips. The next repair hypothesis should preserve the natural separating-contact recovery while retaining the normal-input tap lifecycle: instrument which post-contact tap is consumed as an airborne flip versus an anchored release, then test a tap-aware runway recovery that provides visible recovery feedback and keeps the same fixed replay viable. This is distinct from suppressing every early top-normal anchor and requires a revised validated triage before code changes."
+  },
+  "tests": [
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "exitCode": 1,
+      "phase": "RED",
+      "result": "The new focused natural-pose regression failed as intended against attempt-1 code: actual anchored, expected airborne.",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-2/red-targeted.log"
+    },
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "exitCode": 1,
+      "phase": "REJECTED-CANDIDATE",
+      "result": "The new separating-contact assertion passed with the candidate guard. The test command still failed because the unchanged fixed replay regression failed at 6.933 seconds, proving that this guard does not satisfy the task acceptance criteria.",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-2/green-targeted.log"
+    },
+    {
+      "command": "pnpm test",
+      "phase": "NOT-RUN",
+      "result": "No candidate passed the required focused replay gate; a full-suite run would not validate a repair. The focused regression and fixed replay results are preserved above."
+    },
+    {
+      "command": "pnpm lint",
+      "phase": "NOT-RUN",
+      "result": "Stopped after rejecting the candidate; no accepted production diff remains."
+    },
+    {
+      "command": "pnpm typecheck",
+      "phase": "NOT-RUN",
+      "result": "Stopped after rejecting the candidate; no accepted production diff remains."
+    }
+  ],
+  "build": {
+    "command": "pnpm build",
+    "count": 0,
+    "phase": "NOT-RUN",
+    "result": "No build was made from rejected code or unchanged attempt-1 production code.",
+    "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-2/build.log"
+  },
+  "runtimeQa": {
+    "naturalJourneyClaimed": false,
+    "perceptualGateClaimed": false,
+    "requiredNext": [
+      "A revised triage and repair hypothesis must pass the deterministic fixed replay before independent QA.",
+      "Independent Playwright QA must retest the exact early runway top-face tip branch with normal input at 390x844 and 1100x720.",
+      "QA must capture player-visible evidence and verify startup → core loop → terminal/settlement → replay; any natural or perceptual BLOCKED result keeps the issue open."
+    ]
+  },
+  "remainingEvidenceGaps": [
+    "No accepted production change or build was produced in attempt 2.",
+    "The test file contains the exact reproducer and currently fails against attempt-1 production code.",
+    "Natural-input and perceptual post-fix QA remain unrun.",
+    "The next hypothesis depends on confirming the scheduled tap lifecycle after a non-anchoring runway contact; it requires revised validated triage."
+  ],
+  "completedAt": "2026-09-23T06:30:00.000Z"
+}

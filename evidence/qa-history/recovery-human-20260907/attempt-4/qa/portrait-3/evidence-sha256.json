@@ -1,0 +1,971 @@
+{
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "expectedBuildSha256": "10cba7632922f9fdeaa2eb33f7a05aa09bd3dbb7ca45a2db24acac282c9fd9a6",
+  "files": [
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0000.jpg",
+      "sha256": "b361691a1a490807ed132d4b3ee562c16f5f3019cfe3386f8206a27394666701"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0001.jpg",
+      "sha256": "b361691a1a490807ed132d4b3ee562c16f5f3019cfe3386f8206a27394666701"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0002.jpg",
+      "sha256": "b361691a1a490807ed132d4b3ee562c16f5f3019cfe3386f8206a27394666701"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0003.jpg",
+      "sha256": "b361691a1a490807ed132d4b3ee562c16f5f3019cfe3386f8206a27394666701"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0004.jpg",
+      "sha256": "d65d9c9d93782890a736eff29b37969c1c0b22d2228431517335514db3ac0e80"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0005.jpg",
+      "sha256": "e61c50e48e1d134854d4366ff3090fcffa1eccb0f635305de6df3ab0c070242c"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0006.jpg",
+      "sha256": "2f600c788b0323fd3ad50d5b32fd2fc2cbc5db027ab6f0cfcc2dbda2024e20ea"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0007.jpg",
+      "sha256": "c7ecb6df94edec080ab71ff39e77bc81d3e2147aace21bd4c60c4571de46a4f0"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0008.jpg",
+      "sha256": "6048ac0354e79277659a8aa8eefbc95f480f91cc72019e68be74f79da3ee004f"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0009.jpg",
+      "sha256": "d65b7394ab397d74cebea378cc0be780c751efcebf097cc351df104d4d58bd1d"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0010.jpg",
+      "sha256": "13cdb9e262cc821b2f66721fad419a2c188798a00058920af46f5f681bf78425"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0011.jpg",
+      "sha256": "5f0577cd43f93af3783a7155918e36b6925aac5679bf68474469fd2bdb25dc97"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0012.jpg",
+      "sha256": "b487652506d435a156618eaeb189ca99ee10fe3e12c42caa2b57fae13b7534bb"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0013.jpg",
+      "sha256": "408668e0fca3e0ea021aff89c84288ab90f194850c2fefef4079aec4584be436"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0014.jpg",
+      "sha256": "576e049217124351f0385ef7b139db2970f9168e3b9e0107dd8a53ecdd6f1316"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0015.jpg",
+      "sha256": "9c7328b8198ac666111384415bd6b7d151bbb7b5e6ada428b2ad70ba9b884031"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0016.jpg",
+      "sha256": "e7aaeb690041118b9215dcb2a569fab8d4c50243140089b4c5c9bded0e166e89"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0017.jpg",
+      "sha256": "5b55be69c0795fb26076ded001c48567b7f537fca34bed9ba5746e3062f30129"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0018.jpg",
+      "sha256": "3abbfd2b59d8121a14ddbac62b041238e51ca32042c08c86577a0583414dfc16"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0019.jpg",
+      "sha256": "cd76a3b86101291d82c200d5ba140e2931bc7e25c472e064ba70298f22606451"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0020.jpg",
+      "sha256": "a56888c74d5300e9d9112622dd723921f1a70e62b0489b17dd38e4be6c1b0e31"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0021.jpg",
+      "sha256": "72afcac0a03d021352bf2ffd5b0f72f0d2c08b747f2a23bad90a80a709647ed2"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0022.jpg",
+      "sha256": "8f48ae6a08067f60b160fdad6cf75f6c2a6bbd3e644a14770dca81cb1d43b71a"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0023.jpg",
+      "sha256": "3bbfad154388152e97b151a1e93f2c0859bf05e180d57e37b1d6d3b3d24f2ed9"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0024.jpg",
+      "sha256": "20bcd5c8e8131d3169b884a055a54394d2814b6a297d53bb3a9376cc0073ae4a"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0025.jpg",
+      "sha256": "48715555e1390e73880d146f72690c0a1267ed7ec85498f9af956eef961a2d38"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0026.jpg",
+      "sha256": "30d91d56448fce932382d870ad03c529aca6f4a9e167218a7a7ba270b5837ce5"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0027.jpg",
+      "sha256": "4bdf7d40520ae62e8ecaaf4978c3e710e39ae87d0f6da07803daeac30a824033"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0028.jpg",
+      "sha256": "c256f5fdaff750885ab36a110be72e2dafe007c8189bd25f1262ff4a37612316"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0029.jpg",
+      "sha256": "7f9fdbf49cba6017b1874f717f860f3d1d292151ec179e935a40ba9ac76bf0b1"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0030.jpg",
+      "sha256": "cef9ebcbaccd0e7b3a241cfb7d23a091cbd569a0d78cd0cb5795151be7b67768"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0031.jpg",
+      "sha256": "7b4a7e9a48c93d8803a3f5ad2557039369ddb032e2279fcd6c466ee291ba34d6"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0032.jpg",
+      "sha256": "74c5bf56e56044aa6a80b53f85d93e8c12bad6f05105ba0674a968c6ef7f6997"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0033.jpg",
+      "sha256": "c73db946da957ec14e0018c1e50bd58bbba50e788da5edda84fbcbe1aa3b1045"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0034.jpg",
+      "sha256": "0f4d7ab5fe08a5c9e488b075ebd5958a3af2a830092cb59e55841054d2f70cae"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0035.jpg",
+      "sha256": "a68dd49d2bb72caa4ce4c4aef965e656e8e258d0975027eb93b410d04904b23a"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0036.jpg",
+      "sha256": "b2c51f6a6b4404e35534d6fd9eccfd89d7bbdade4877d367d50033ad990ce27c"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0037.jpg",
+      "sha256": "ac57009c1d11ed9197ce76ee38d0190a4077ab8366e5be43ee31bc525f9e1732"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0038.jpg",
+      "sha256": "f626406bc02ee0af2716bf6cb23168b2bfd4ee4078096782993d28f378ebd0ca"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0039.jpg",
+      "sha256": "8b2062941ae73d6f3d18fca956523ff8598d57d23188975effa496ce1f75a8cb"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0040.jpg",
+      "sha256": "a533a1b9e2d237cedba7883d7e40cd9f008a2cabb04d239bc321aed5710d9c84"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0041.jpg",
+      "sha256": "700d95142845bc06182187e8a82463e66cff9a119d845285b78f384036cb154f"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0042.jpg",
+      "sha256": "52759a78cd63855581d69e1e4a661f2c50a891ea9cf1591046fce9a95f9eec3a"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0043.jpg",
+      "sha256": "9ba08cdff36e88c42c80db20b1a15a48ceec1deac46ab1310531412670f91f23"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0044.jpg",
+      "sha256": "84bd0a9308cdab7c2984b86edf78dbd478c0e79fd06d277ed06b340d7b2db5b8"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0045.jpg",
+      "sha256": "421f20875430c8a9ca46a4b6ff41de572120dc6cdaa85b4005ec6369362719f2"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0046.jpg",
+      "sha256": "d542689bc16d7bef92c16f1cf822db34644bb088c5520a4b023dbf51667c5155"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0047.jpg",
+      "sha256": "5a0983325645f68b71be26d351cc4c0129ed43dc6b11d69100b9193783d2f3be"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0048.jpg",
+      "sha256": "57263c9a36eecf3f72ba5f678e5ee04a2a7188f4933b9369dad6d4276dd2eb86"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0049.jpg",
+      "sha256": "56bc3812e51ee406b2d7e0e4e487ae8565e1e420d25f719e72102ab4601a8189"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0050.jpg",
+      "sha256": "b7ace4f0ce7b301a265552d091589532bfad4d09a821384c8c532db1720c3c1a"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0051.jpg",
+      "sha256": "1896da649572883a32930e4c86b2825d9f60dd8cd1b798168c2e5bbd65fcce57"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0052.jpg",
+      "sha256": "ad797f451b857a25f7ce67b2eaaa4050561f1a401121d72cf2434336f8939c19"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0053.jpg",
+      "sha256": "e363a72e12ddf486a5752aeb8067ce91f82dbddec8c57d5fac784198568569ce"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0054.jpg",
+      "sha256": "e3e261d716ca4836342b1e7693fe0e3fef980cb55d324720d49e3187ec6cfe94"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0055.jpg",
+      "sha256": "c108dbefc00052e6d941f8e30c0eafabf9ff3456434cdb22a2b4e296a30e5ffb"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0056.jpg",
+      "sha256": "29125fd1613637cb5123923952ceaf65eae31d0e665fdaae212d1ff24b867db7"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0057.jpg",
+      "sha256": "ebc93fc81bcfd617a36f7c6307fa8e365a8a06dc402339e0e4ddbb0565153d94"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0058.jpg",
+      "sha256": "e3b6d7e23804d54ae3af8c17338bb2a6412a2380a99c03e028ae6221467c1181"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0059.jpg",
+      "sha256": "041fb292ac49c50105a5b5b2eecb1eba089da0c93eca432625ac12afdeff189b"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0060.jpg",
+      "sha256": "7cfc85d7dc75eb86fa00a29b99990538e298314fcf1aa3ddb873a1cc5070b477"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0061.jpg",
+      "sha256": "3ff3a2381f74ccc1dc9d7963050fda9ab4e82a7921ba2ccf7c5810617e217d07"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0062.jpg",
+      "sha256": "48bb1aa321597b1beb665671aa0a3552a87a746d8a8ad020436d716288e5c8c4"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0063.jpg",
+      "sha256": "a10f008bc68aab2af62c678c731ee4311e802b15b47711dbc18e2d714a17cf92"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0064.jpg",
+      "sha256": "76ca9163fb24e5fb2765be691090c3a19bf44613bd2778da7768dde94e50670e"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0065.jpg",
+      "sha256": "3bac85d08267ae121165b56e3e29cda63dabc01bc04f7e1d1073cc4e5f3b5b71"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0066.jpg",
+      "sha256": "967aa53155cc64f7c0d29f3e4bf6a48a67ae73fbce73549025c849047e8eaebb"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0067.jpg",
+      "sha256": "64d3e98e8ebf433245cef46d7009cd73a4ddf664afd77e828734fa15303c66a2"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0068.jpg",
+      "sha256": "97d338c4841a382d3eaaf50c9f90330357dca664c2fadb72a93e3382a72b3df7"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0069.jpg",
+      "sha256": "fd3ff636680c43158cbf1e2371456cbfde0cf5e20652d5920fd484182c2255a7"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0070.jpg",
+      "sha256": "2cbdee8d112643dfbf4c379e4a124598fdf53e20ade5d8bf2356574c4d0abb0e"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0071.jpg",
+      "sha256": "0cde3f79cc7372ae9993a0d4aeaf49dee595517c9551c6a22d8bcabe1b975605"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0072.jpg",
+      "sha256": "f72d7bb73c8c9e11aa82dce041b3a576815b4dc85d0d34c88aa9e30a46657a7c"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0073.jpg",
+      "sha256": "e1847c71249b34c5f82e530acd6eebc6f1a0341d5e1555899582f9394aa1f3f1"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0074.jpg",
+      "sha256": "70d8bff3475f8f6cfb3a446d3f212786d2ce9b67b132c933bd83817315fd4feb"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0075.jpg",
+      "sha256": "bc6f5813af805c89260f07c35859d4c590be1512f61637f5298ea7d84e9de072"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0076.jpg",
+      "sha256": "492ce86514970899fb5e362ddcfd4a30928314a31fdaaf89eb939ba37b15351e"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0077.jpg",
+      "sha256": "751883d8442dc56d563d110965cab6761014cb298c782079ecb2bd2ce6e5ee74"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0078.jpg",
+      "sha256": "5b0b570bc3a48e5aad8f4e5ee4f2b92a12acccd993d03596a65802241da69511"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0079.jpg",
+      "sha256": "99076ed0099c686e88b8569cdc407ecc156cb7d09c14c1f3cdf627d21d25ed33"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0080.jpg",
+      "sha256": "9f79699f57ede4e863581fd782beee1e20a188e1f5b0cdf9e86ce1f59a8f3246"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0081.jpg",
+      "sha256": "e3e4e6f6dc9ff438554fa4465ff22f0ed24ff14adecbe4eccb88ad871d1cae33"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0082.jpg",
+      "sha256": "1336f8b0ba85b5998bf05212ca811b5a81e6d9ef24d8e4de7dd22f9d444d8451"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0083.jpg",
+      "sha256": "60f75c3793646078032f609de13d1b1e9b137b92e89a4d240b88ee94830ba07f"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0084.jpg",
+      "sha256": "9b1955807082a07522a5f56760b7e0c9363ae9201a35b6818b22b2c73875af1e"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0085.jpg",
+      "sha256": "87beba1c55496fbf7cff6030a040a1223d21154b1d6096db2b6506da44f7d2df"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0086.jpg",
+      "sha256": "2314a2a12619ef334aca7962385c1d5b2539e6868effa14bdcc2f2ee781b0e03"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0087.jpg",
+      "sha256": "072bb81c25ffe5a42cc2228e25b091331b5124ff97c8db574a9a2f5a623f20e1"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0088.jpg",
+      "sha256": "77c08778d10222f14e113cc60c80c1fb3eea6a566218c77aaacb739fff5c6bdd"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0089.jpg",
+      "sha256": "91022c033f4611c2e8fed23f1dd76ccfc4da03c0c2fe33733b179e1c413b8c03"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0090.jpg",
+      "sha256": "975dc69f740153937200d2a308a38e00d16447204b6ace2a5d92a51900fb7898"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0091.jpg",
+      "sha256": "d60e39cf74edc6ad062855cedd5643b74c5b6a7e32221ac397e127c1d6a0ab69"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0092.jpg",
+      "sha256": "dda391fd9bc4715dbbf8c500e74fc97f9a8ba3000f0fe049ceda0feae6459bff"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0093.jpg",
+      "sha256": "4520b9b58bbfbe06dd093605d37f5f95f90d18462d5e118cbbac3c7b644d4bd0"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0094.jpg",
+      "sha256": "f1aff6286f11298c5670653821309261bc70ffe18743e26a89a81d6563ba1572"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0095.jpg",
+      "sha256": "4e5872766464cb4d31bf8fba76912a486cbc057469aeebbbed74c760f6075b4e"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0096.jpg",
+      "sha256": "35b3f4769eeac792e696a3a621bb287473185b0057603992b1e23871d3ea3759"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0097.jpg",
+      "sha256": "60a3d1ceaaea74c6ad54c504becc10f501aad9107494e007544eec33e4ad7755"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0098.jpg",
+      "sha256": "6e0b8c9622f3cf74e158876ed8c598944bfe47f643d67a8896f9c69d1d7c55bc"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0099.jpg",
+      "sha256": "64dc5c10bb00e36189552dc2552115eb16be2211e08f1b73ff4309dfd796c280"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0100.jpg",
+      "sha256": "dda7af5406dcc2f9a149ba058d356a727070557d2ab97d571e78782da60f70e4"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0101.jpg",
+      "sha256": "23569b294cff58d5f08c578b7cc4d9d809e13d9cbc43928c90a9f0eb4319b3e1"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0102.jpg",
+      "sha256": "2357f446a633991ea2d5dee49ed4c6d8319afff20ed1d5d977b973278d3ea645"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0103.jpg",
+      "sha256": "4136a1b620295b18775f6a99c62093e3616c5af391225a37650b3eee506733fa"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0104.jpg",
+      "sha256": "032e88d3cabf075c21acb408ea882fed9fcdc575fbce95e52f3bbbbde1d0576a"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0105.jpg",
+      "sha256": "d3d3e479b04d2802c50688321b6312c0cd9b7deef0d0f62b37a5fadac38f78e0"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0106.jpg",
+      "sha256": "b579a4900d638e0a2f6cfd5093ba6ca9da4a813f4b5ccabdf3793bf4936c8e2d"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0107.jpg",
+      "sha256": "afd2ab490de794d422169eb18e039858cc267b69c46285e051b283dfa614d56e"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0108.jpg",
+      "sha256": "003e04a1ebe9a673886966b2475b4733aeeebb36339bf9b7ae72aa7cc8fbf986"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0109.jpg",
+      "sha256": "a522bd8294959b9e44c5d188e7017e41665896af349c1e55991983a816cf1eba"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0110.jpg",
+      "sha256": "f8736e928f549dd2b655f447849b3a9880da98ab6fe02bbbb574955ab294a55a"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0111.jpg",
+      "sha256": "ef50882aea9e50c0a9a4b81d956f6dd2075d42ed23db5a86e57283a33f58e3c1"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0112.jpg",
+      "sha256": "d581d09ec001307b5cd153ec6f37cdf8d0b39f696caf0cc81419cc343479725d"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0113.jpg",
+      "sha256": "b6256adcc6c30ef21947b8bf01160734a6211f2848b4a45c2ef1a26867544053"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0114.jpg",
+      "sha256": "54ffcd281762abf47a29cda7f7eba1db53dc90b4af08719bfbda18cf1ad54279"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0115.jpg",
+      "sha256": "c1b2d428084ae703b3f26d88fb1a30efd9aeddca27ee4ad2d6edb91faaf6e503"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0116.jpg",
+      "sha256": "affc3605c308a4031630d44dcbcb461522444eedd8064e3bf3f16c80fa0b464f"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0117.jpg",
+      "sha256": "cc60aad51ebe64a60789928a122a1eef6ec62333ab683ff6860a1c42e4f8e700"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0118.jpg",
+      "sha256": "17f550c83f3458cf1227d4f2ac4b9f68a8c86ddfb338c361ed62af8ced68534f"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0119.jpg",
+      "sha256": "99e62d50348ff24d46243e96af657f6d48c2a35f797eaab96c1c600ea2fb99dc"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0120.jpg",
+      "sha256": "ddeeec31ef79be5c0935321ff4dbb1984cff51090b1c864e333c7c3e782886ae"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0121.jpg",
+      "sha256": "ed0eac992e6fe57848305e5a9e3dea004e212be6829db8e9b575a6baaf14c1da"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0122.jpg",
+      "sha256": "2f9223d164f34d254f1311e5426348cf9a24c898f17d7f5f7584ca0da4740910"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0123.jpg",
+      "sha256": "1d88b1099c66b4352ac0f0c0be259a18b0e37854c6a98c164ad34a972167fe6b"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0124.jpg",
+      "sha256": "4ddd73f9a98f80e9ace8e9ff6d16a1842981a0e44a04e4da2d9e249e17e35a79"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0125.jpg",
+      "sha256": "20ddb888e34cbbd583404050d7c3d7e042bdfde5388e7c84c8d0edccc9bad113"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0126.jpg",
+      "sha256": "78098148357edd041485d390332e108aac95e7c2259f4838297c896b6fbad27c"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0127.jpg",
+      "sha256": "485734b5871854355a3a37a1670718834c2f9bc66629f4ad0700c3044eff8296"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0128.jpg",
+      "sha256": "648ce00ec8397bf52887a2b8e4e300d25a8bc2a160f38f52c4e9bff776b5c25d"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0129.jpg",
+      "sha256": "86f4f898ed643ae8abd48ec14f557d24f1e2324c0f8ad0aadd8ae4975fa1414a"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0130.jpg",
+      "sha256": "88fbcca78ce6fc9270e2c0d14171dc5f34a6de279808d6b0da24d4c5bb00e6a9"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0131.jpg",
+      "sha256": "81197beca93535fb8cf1967a8e7e7645054c9010d8401d0cb7392cd7592ec258"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0132.jpg",
+      "sha256": "dcc3a480815b2e208fea7abdc9d8b5c61d11627375a4df2e8573fada94d7deb0"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0133.jpg",
+      "sha256": "0f01e7404614fc9cef42c9057662cee7781d9f9a026a4ebd3f6212b341fcb60f"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0134.jpg",
+      "sha256": "2ef23db4b13c5cb632f20b9062bffb2f3298605045d6159b0581386b0a113cdc"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0135.jpg",
+      "sha256": "804bd643e033c309a9f51718be6a71036ae9ebde25caa4ff83da1ae1ca20f96c"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0136.jpg",
+      "sha256": "c3d518740e317815695fa4c2255e60f1c6657d0443a04531304f2973a7c34f32"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0137.jpg",
+      "sha256": "d38970d4b65d92f993a4af07ec7a56a58253878635de73479dcf8b7a7987d065"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0138.jpg",
+      "sha256": "e0165ee024486319a3da7fddcae6eb03a27c1b364595da9e816b8665e1e460e4"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0139.jpg",
+      "sha256": "81594a22fa13b002fda1d09c5b0461ca5989baa6beec44c5350f0d1c37ceffce"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0140.jpg",
+      "sha256": "4500cb7b0e87eebd2942e2f7d498aead311e20e0d949a087c66d6bac42a92969"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0141.jpg",
+      "sha256": "5653fa30a238d4b82fd1b402dc7b20086b9a091684b51330e42a2a0b34df6874"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0142.jpg",
+      "sha256": "9bcfc980164bd80f661875878a9efb59cf09fc621db6c6c0adc4da22d081d5a3"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0143.jpg",
+      "sha256": "58dc217f1ba284eda3e5f6d8a5aa0d5e8f08ea2db3d6b626767e993c594e90ff"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0144.jpg",
+      "sha256": "19a097ff12c6e9c0835f571947c4af292eaa1b2587d504263411106e412e5e50"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0145.jpg",
+      "sha256": "48aebf2cf7800200e0150feb820dc7100b2cfcbbd385d37e757b4662417931b6"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0146.jpg",
+      "sha256": "4beaaccb49feeccfecfdb0939bb03bc9d9e8d034513a72bf8f6b4c2088ed8596"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0147.jpg",
+      "sha256": "39a30a15d333b9f1863e4ae9d9f1d415d9caf0a92e335b6e7e19b1e4b5f89f21"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0148.jpg",
+      "sha256": "b019b7685bf2c7d67fc83f66dcd9e84d8b11b5426c6766a01e39ae02e28a433d"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0149.jpg",
+      "sha256": "978e3c1751f23e64da640a86e549768f3bb0d9d2ae57b9abd99f030c54f1b453"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0150.jpg",
+      "sha256": "ff18fd174010047be7306fd95be2153ddd43108c9c7fc907e744a697b8cbd658"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0151.jpg",
+      "sha256": "61f1d7687562ad2eae36fa72808c8f8f0e388ca859987c87d1493813a18db726"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0152.jpg",
+      "sha256": "e5e74dde9370d35e0f75545f4169ae6377435b869e2110a36d17775aeeac4750"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0153.jpg",
+      "sha256": "3a3563ae5def8bf87b72f6c56cda499230d5f3564b9dd72ec1f20ada24b31b3b"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0154.jpg",
+      "sha256": "de8521708aacbe55f953648d4372b27cf13758057686102b3f86f4857d11d9e0"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0155.jpg",
+      "sha256": "6ceea3936ad9c00537fb5898aa8cb9c380968dbd2895cdd1bdb5e5d8aed55b4b"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0156.jpg",
+      "sha256": "b2dafe36e1c522ff9c08c82d1c9f9863e89ce5c06768181670c3f50351053667"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0157.jpg",
+      "sha256": "7590566561b82f7d87dc4174a9d02e21aa8cb12404dcb03dfc411eecf636d967"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0158.jpg",
+      "sha256": "b6df3239b0b0bfc1b0001c02b5b18b67dae6c049896ecdd93b5da5f7fc5b3c56"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0159.jpg",
+      "sha256": "bd0535546a7665b57a8ceba51cc30594fb022209d5351c31c00f423781aff1c6"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0160.jpg",
+      "sha256": "47cecc32183239b300fa7389f7c863763e9d36a05487ffb25525765adec1487c"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0161.jpg",
+      "sha256": "4a243eb99179012413d354efa13b2a1be6953de9e6e177feda84e99554e5b7b5"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0162.jpg",
+      "sha256": "c181052afde69f8bbcdbcb5aa28b35a3ada7dda3687e59505073170c01babdd4"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0163.jpg",
+      "sha256": "85a7bbf8cf570c69a5e623243f9a47e976b2400b3f5630a796cce2eed07b5a6d"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0164.jpg",
+      "sha256": "159a3705d24a32cd243975c84e378fde0c2b657a8aae2881a058e507a7c20621"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0165.jpg",
+      "sha256": "b7c57273c35944f73fbe176f85f0513074109b8d2a512c423f03592ea3436acc"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0166.jpg",
+      "sha256": "b950fbc11fbf38caeff531d976a6de5181a758984a3a2dc62c8804271d683970"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0167.jpg",
+      "sha256": "90762262ec31c6ba5d3b604c82830fdede1f3ec89b429d2a501ec54924982dc4"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0168.jpg",
+      "sha256": "831f828d7c254dbef0ac8c82f729bfd9d472f4d2ae727771bb3556a48bca7160"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0169.jpg",
+      "sha256": "eda8bd788b27f4475340054d8046d40cb57b36fe5512ca838940b239047127f3"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0170.jpg",
+      "sha256": "d1eb940efedc09df52051620b3167d060e9db82554d2b67fd054bac7e5f2878b"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0171.jpg",
+      "sha256": "4e3a1a3ec5ebf755807e7294ee2c1e7e6fbbf3f76f8ac48adb1748f91437cdb7"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0172.jpg",
+      "sha256": "e0b0cbbff1272916b91af854a520c4c6ea45f9f2ee85748aa156ea2ad430e6b2"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0173.jpg",
+      "sha256": "49205bccd31bc110f2c5428dc18210cb4229eec5bb07473a09c2277bff575025"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0174.jpg",
+      "sha256": "0590bad3b85ef3c38766144dd97ed87dbcef2dc0290ca8bb9bf9f1a4209de6cf"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0175.jpg",
+      "sha256": "755392d65f6a2c0a32c61ce003ef1c3ee065bece84816fd61de4cb5c82d38174"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0176.jpg",
+      "sha256": "b38c5d545eae0c17be32ad2f3387061b273d696f4e52d269e681efee834024c3"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0177.jpg",
+      "sha256": "df58db4716c95f5014afaedf250c930e87c5dac938f5e52b30eaab16720b7753"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0178.jpg",
+      "sha256": "d786e8a776ebc54cdc35b2131766553ee325ba21d8556c439629b3aad99a5c8d"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0179.jpg",
+      "sha256": "42a71855cfb47df771c97d4a57a0e72824ed268390c29d9c9383e4c9e6ecb0d6"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0180.jpg",
+      "sha256": "a6cea3a6d985d3a41809d4af3a199b8c1c56f8f38db4cb36c962d6cfd107b826"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0181.jpg",
+      "sha256": "9cfa310c989e9f55edcc111943d8e5d5418afd03820cf8799beab290db27f819"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0182.jpg",
+      "sha256": "bbbb56ce57e31f8a74833b8511fae7386af820b134795f54e7a8d085268af260"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0183.jpg",
+      "sha256": "c6ccc9750c14c541aa19e9aa21569837cab85c95e4ae58587fc32e06720cf450"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0184.jpg",
+      "sha256": "1d2245602a89820182315f537a1291da5f9c72b48409eddf51d3ea1f0d139f9d"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0185.jpg",
+      "sha256": "b880ffb346946eed564d2275b17a1e7f33cb6ca45d032eb79a5b5396c873c770"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0186.jpg",
+      "sha256": "ac1e51db89ff30a7782692520927d76ab34a16366d31cd8278288fb190f196b3"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0187.jpg",
+      "sha256": "c4107eae45c59e2adda477a6d9b4f66b265bd91f8fe310710acf050e00da28a7"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0188.jpg",
+      "sha256": "2be360c08e075c2300bd88dfdcef188952330c811b3306a0efd995b090058313"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0189.jpg",
+      "sha256": "da4956cb34686d8cad67447870e2b5050d13a09d9ad5975face359bcedf237d0"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0190.jpg",
+      "sha256": "b21c8d4889c42a3fea5b250b4629dde3aa674f69a243229262e42a53b5cf110a"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0191.jpg",
+      "sha256": "146b28fd53b1fe0b60b0c437a5d7726ce8e84fa30f508c287adfb3c45f8826f3"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0192.jpg",
+      "sha256": "fa9b522cc2f1030f293957fbe668c0350c8a6b57b7fc8e8fef74820949a1cef7"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0193.jpg",
+      "sha256": "12792085a08e7b985aebe2777d495a466efa0872d0f14529ed286429d0583646"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0194.jpg",
+      "sha256": "c9aa6f7944da4d02f19e3c1c5306a44a8542886211225bcd0db67cb8032287b3"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0195.jpg",
+      "sha256": "09c579e9075de2f0a08f57f026254f0ace2649d92f981ecddb1bc159aec3840a"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0196.jpg",
+      "sha256": "aa6402809df04d0b497e3529c63fba6c1f4269340961c1503d04f6397be0d49b"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0197.jpg",
+      "sha256": "8ee7cbcd2f0c579d4e631e35f2e87844d00bc5bf07b0efb6e250503f128f845b"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0198.jpg",
+      "sha256": "dd715c32d5ca9a3370564123cc1cef9cfe3b52ee4be341dedc6eaee56366df13"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0199.jpg",
+      "sha256": "08309152dba5141cb8f6014cd8a86fafd4945fb9c321e299692838d436aae3d5"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0200.jpg",
+      "sha256": "5a97720d8f9df6617c4d06369700924e4ba97bff438bcba63f1d4b5c759eabec"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0201.jpg",
+      "sha256": "979ad264eb61f52191a466fbb90d5e217f6a8e3b96bc7ebb1881cad2ddf55151"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0202.jpg",
+      "sha256": "d0f405b5d0e8f03815607f6ba9559058a2bd9c2ce9d2ba18865a2ec1dca71a8a"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0203.jpg",
+      "sha256": "812d7138d3bd493a5a3a5e611714e8feaaf98c12572e5b355355ddf295a74a4e"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0204.jpg",
+      "sha256": "fa8eecf2367efe40a9763fec0e4aff39a6dec0d47c8345d80704566415d29092"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0205.jpg",
+      "sha256": "958071940cf453414ab7707836575eac64574028d01ee2910e88c73d364da607"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0206.jpg",
+      "sha256": "629551817ba3f6d3e518a348141e485287e118ac273cfaf73222d40939d3d97b"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0207.jpg",
+      "sha256": "e77b5e7cfbe15ddb7604e19f2c537f1654fcea4843018d1c5d2aa64c06e676d8"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0208.jpg",
+      "sha256": "8dc144dd5958676e186498bd31ba083e2b0cfffb4ac73bf6fe65d207ca36d42e"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0209.jpg",
+      "sha256": "d8d90671551d38791f350c56250582ff6e1491b24aa2e5cdb57eb7176dcaada5"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0210.jpg",
+      "sha256": "635b20bc644ca408e9e0e994081a20caf5f319fbf7f27752213d722e01375440"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0211.jpg",
+      "sha256": "103b099ed828457970c8c262fc4da46e7a5c9112be3a0f794d90c9bc09dba8bd"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0212.jpg",
+      "sha256": "58fed182a2c89f18ff6723a8b85a8d4e6e5f948b0938661244925e47dedb304f"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0213.jpg",
+      "sha256": "93d55b439e22b39ac3b9044de65c97e263f9f7d69340030b032f4059006a24b9"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0214.jpg",
+      "sha256": "caaf20bb3b05f25010338c0b7a5adbce76214d8dd2ec03dc0bac950ce0738c1e"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0215.jpg",
+      "sha256": "4d8d3ebef6a7da075ce542fbbd0542ab79ca4eda394efd2f829d0287aae3bfd5"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0216.jpg",
+      "sha256": "7e68ef355261f97373740079a565d1eaf2efd2fc4c922bd6cf714ad29be9be00"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0217.jpg",
+      "sha256": "2a235ec1af9dfec6fc3df155c641337eaa6598031f8af380887c78c8eb46676a"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0218.jpg",
+      "sha256": "d9362ef1547e54faf12e4749728dc7fabd6762a13ecb28b3b15f6cbc94250426"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0219.jpg",
+      "sha256": "77a71970bffd74de1011063226e622202c7afae3882b4259a368e12813fee838"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0220.jpg",
+      "sha256": "c8083e0f863646d07950c6ea0f698edc8f3aaa49c748dad34b2cdd81199c9543"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0221.jpg",
+      "sha256": "1ceb912202d2bc77881da77ebad1ffedb9df2ea6e604b30b42d837360d109791"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0222.jpg",
+      "sha256": "5716cb7ab5504dd45c7d85cfda8b60dc60d3c145d360e01ea34b37ddbbec75b9"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0223.jpg",
+      "sha256": "abf7cd66a9abdfa5c0c091f4ab00051d1530aba9a9573cf24972fd3e24c31353"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0224.jpg",
+      "sha256": "889d202c7c75509ae7bc970247dedc39124182f4d79a9e5d9845943ab3f4493a"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0225.jpg",
+      "sha256": "584c387e9dc9be6bc7deeb4d6b57a6f1b35c2afaa0f49282804153502b7e4e01"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/dense-0226.jpg",
+      "sha256": "8e3f18013e5ccaeffda32ef9054463161c4b377b57b5ee4d49fbf9ef26aaf210"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/end.png",
+      "sha256": "31399dbe82751d6f0736f371a0257b9219f9a0d41c8c7d396f1bd07bbdaf6036"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/frame-0000.png",
+      "sha256": "41fc89e2a5ccee5bacc2af2adf11f05b80468cdcd1ebb404f1381b8c97e35e91"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/frame-0001.png",
+      "sha256": "2e00e7c415549d659ee40f9bd9474751f0c8a531cb2f92a2e3cce7ab4481c455"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/frame-0002.png",
+      "sha256": "c75f0b5bc93b9794319ccf57146f007f23d5a4fc33b136e28e05f414745e5ba4"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/frame-0003.png",
+      "sha256": "f7f816a442624e9c426114e230e67fedab32566adc7d62934c5e818f36522da4"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/replay.png",
+      "sha256": "cdcb344e73f73ec985942041a9de7a32db8398c9b46ee90e27210e46fa2b55ce"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/startup.png",
+      "sha256": "8990cfa56fd989f55f4a6768f52aad626edceb7843ef9591e2b6c63c31e6eaec"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/frames/terminal.png",
+      "sha256": "622df18fbdc8bd823cf9054245e16751efe77cead1644b2f46f351329f129893"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/playwright-trace.zip",
+      "sha256": "0ce14bc44bb78a43f8a16c6d9289a6ef61991a9581d24444d6dc8f6bf8b2a4e2"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/policy.json",
+      "sha256": "e9bfd27dc75c3216af7ae7173748f74453279d0f9dcc40237ac4cab18dea703e"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/recording.json",
+      "sha256": "ca05c2548c0940b348875a13f98c88c2c19f44e2edffae26cb309b915bca0ac1"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/source-after.json",
+      "sha256": "5ed8f9edbed6358f24d0f651e485ef49953896ade497534a7e59888afbc5e2f7"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/source-before.json",
+      "sha256": "34bca910240f9efe33d622040b610554b0943462e0e7df68743c7d8fef4f63ff"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-3/video/page@6ce0c4966d014f413a6688f55a028a51.webm",
+      "sha256": "c99d41630ada37b6f3e01f5aaaa2027419be8b2d825fd6711d6da3f751698ed7"
+    }
+  ]
+}

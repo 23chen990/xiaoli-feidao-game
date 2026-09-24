@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "experience-complaint-triage",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "report": "TapTap 疯狂切割开发版本 196126（2026-09-08 16:58:35）整体测试未通过：Android 功能通过率 60%（5 台），iOS 100%（1 台）。设备表把 OPPO PDBM00（Android 9）和 ZTE A2022P（Android 13）标为‘小游戏 activity 启动失败’，Huawei nova 5 Pro、Redmi K80 Pro 和 vivo PD2068 通过；性能栏为空。随附 ZTE A2022P 原始目录日志重复报告找不到 com.taptap.instantgame.container.InstantGameActivity，logcat 同时记录 com.taptap 的 FATAL EXCEPTION、TapTap 崩溃对话框和进程被结束。随附 OPPO 目录实际标识为 PKB110（Android 16），不是截图中的 PDBM00；其自动化日志同样找不到 InstantGameActivity，最终截图停留在测试/系统弹窗，不能与 PDBM00 分支合并。两组报告均未提供上传 ZIP SHA-256。",
+  "classification": ["core-experience", "failure-attribution", "factory-routing"],
+  "scope": {
+    "route": "formal-fixer",
+    "rationale": "启动失败阻断 TapTap 核心入口，跨多个 Android 设备并涉及 TapTap 容器 Activity、设备系统和包体适配链路；现有证据同时指向‘Activity 监测未命中’与 TapTap 宿主自身崩溃，根因未能安全局部化，必须保留 QA→Fixer→QA，并绑定一次新构建后的精确 ZIP SHA。",
+    "generatedWorkspaceModified": false,
+    "contextIntentionallyOmitted": [
+      "其他游戏、其他 run、web-lite、微信和抖音平台",
+      "上一轮纯性能重绘优化的结论及未绑定本报告版本的旧设备性能数值",
+      "TapTap 客户端内部未提供的异常堆栈、服务端配置和未证实的 Activity 名称兼容性假设",
+      "与启动失败无因果关系的玩法、广告、内购、云存档和美术资产"
+    ]
+  },
+  "reproduction": {
+    "status": "REPRODUCED",
+    "steps": [
+      "在 TapTap 后台打开‘疯狂切割’开发版本 196126 的包体准入测试报告。",
+      "查看 Android 设备表，定位 OPPO PDBM00 和 ZTE A2022P 的‘小游戏 activity 启动失败’记录。",
+      "对 ZTE A2022P 的原始自动化日志执行相同启动流程：登录 TapTap、打开疯狂切割、等待 com.taptap.instantgame.container.InstantGameActivity。",
+      "检查 ZTE logcat 和最终截图，确认宿主崩溃、TapTap 停止运行与 Activity 未出现的先后关系；将 OPPO PKB110 日志单独作为相邻设备证据，不冒充 PDBM00。"
+    ],
+    "observed": [
+      "TapTap 后台汇总为 Android 3/5 通过、2/5 失败，失败原因均为小游戏 activity 启动失败；iOS 1/1 通过。",
+      "ZTE A2022P 自动化日志多次重试仍找不到 com.taptap.instantgame.container.InstantGameActivity，最终以 minigame_activity_not_exists 结束。",
+      "ZTE logcat 在 17:00:07 记录 Process: com.taptap 的 FATAL EXCEPTION，随后显示 TapTap 崩溃提示并 force-finish PageProxyActivity；最终截图显示‘TapTap 已停止运行’。",
+      "OPPO PKB110 自动化日志也未命中 InstantGameActivity，但其设备型号、Android 版本和最终截图与后台表中的 OPPO PDBM00 不同，无法证明同一设备分支。",
+      "新报告性能字段均为‘-’，当前证据不能把本轮失败归因于 FPS 或上一轮 Graphics 重绘。"
+    ],
+    "evidence": [
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-a018827b-a813-4ce7-8926-7280eb9ac447-6da85eca87f0.png",
+        "sha256": "6da85eca87f0d1b6f172197177ef870be18c3e0ee32c73387f43b44a105d0333",
+        "kind": "reference",
+        "provenance": "verified-reference"
+      },
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-54627493-c054-4e19-b1e8-3f17ab8caa37-e1bc9b9cdd21.png",
+        "sha256": "e1bc9b9cdd210ed4978027435b2ec5d8be16bed517382dad2e36be06d7fb9965",
+        "kind": "reference",
+        "provenance": "verified-reference"
+      },
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/logcat-e549b0be3ce9.txt",
+        "sha256": "e549b0be3ce9e082ce35c178fe6aeb5c6535a8dcbe83307bff16bd500b69d778",
+        "kind": "qa-artifact",
+        "provenance": "verified-reference"
+      },
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/test_over-b491bc1f6353.jpg",
+        "sha256": "b491bc1f63535e1ceeb6058d592dfe43ff8d13344fb884ce3959c6c1ebfb0c0a",
+        "kind": "qa-artifact",
+        "provenance": "verified-reference"
+      }
+    ]
+  },
+  "acceptanceCriteria": [
+    "对一个可追溯的新 ZIP SHA，在 OPPO PDBM00 和 ZTE A2022P 分支均能启动 TapTap 小游戏容器并出现可见首帧；不能只用三台通过设备的 sibling 结果闭合。",
+    "ZTE 分支不得再出现 com.taptap 宿主 FATAL EXCEPTION、TapTap 崩溃对话框、PageProxyActivity 被结束或 minigame_activity_not_exists；若根因证实为 TapTap 客户端/测试基础设施而非包体，必须将证据和外部阻塞明确记录，不得伪称游戏已修复。",
+    "OPPO PDBM00 的复测必须绑定精确包 SHA；PKB110 只能作为独立相邻设备证据，不能替代 PDBM00。",
+    "启动后默认旅程仍须完成首帧、触摸核心循环、失败/结算与重玩；上一轮静态/动态 Graphics 优化不能被回退。",
+    "修复尝试遵守最多五次，每次至多一次 Cocos/TapTap 构建，并通过相关测试、lint、typecheck、ZIP 完整性和独立 QA；没有精确 SHA 的 TapTap 新报告不得宣称通过。"
+  ],
+  "status": "READY_FOR_REPAIR",
+  "createdAt": "2026-09-08T12:17:11Z"
+}

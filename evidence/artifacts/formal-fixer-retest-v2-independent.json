@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixerIndependentRetest",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "attempt": 2,
+  "status": "BLOCKED",
+  "implementationEvidence": {
+    "filesChanged": ["src/game-levels.ts", "src/game-core.ts", "tests/level-pressure.test.ts"],
+    "tests": "108 passed",
+    "lint": "PASS",
+    "typecheck": "PASS",
+    "build": "PASS"
+  },
+  "naturalQa": {
+    "command": "npm run qa:levels",
+    "runnerReport": "qa-level-pack-v1/runner-report.json",
+    "status": "FAIL",
+    "failure": "Level 4 natural play failed all 4 retries with failReason=fall; maxX reached 3447–3553 against finishX=3450.",
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "decision": "Do not declare completion. FIX attempt budget is exhausted; preserve issue for explicit user-directed follow-up or a new repair cycle."
+}

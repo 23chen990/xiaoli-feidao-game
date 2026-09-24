@@ -1,0 +1,3 @@
+command: pnpm typecheck
+exitCode: 0
+result: tsc --noEmit -p tsconfig.core.json passed

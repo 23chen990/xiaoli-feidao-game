@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "role": "QAAgent",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED",
+  "reportPaths": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/qa-tools/README.md",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/qa-tools/generate-reports.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/qa-tools/policy-test.log",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/qa-tools/policy.mjs",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/qa-tools/policy.test.mjs",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/qa-tools/prepare-result.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/qa-tools/record.mjs",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/qa-tools/prepared-sha256.json"
+  ],
+  "blockers": [
+    "WAITING_FOR_COMPLETED_FIX_BUILD"
+  ],
+  "sourceModified": false,
+  "summary": "已准备独立Playwright录制器与Zod分轨报告工具：绝对时钟点击、首切逐帧、真正终态再重玩、前后构建哈希和不可覆盖输出。纯策略回归已先失败后通过。未启动游戏QA，等待根任务派发完成构建哈希与精确范围。"
+}

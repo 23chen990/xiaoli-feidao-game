@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fix-result",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 20,
+  "issueId": "L1-RUNWAY-RECOVERY-AGE-SELECTOR-CONTRACT",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "role": "FixerAgent",
+  "model": "gpt-6-luna",
+  "route": "formal-fixer",
+  "routeReason": "This Level 1 recovery lifecycle issue remains on the formal QA/Fixer/QA route. Focused GREEN failed, so no full checks or build were run. The candidate was reverted, but the exact baseline source bytes could not be recovered from available verified copies.",
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory modules, renderer/presentation code, platform adapters, level data, persistence, and release configuration.",
+    "Full conversation, unbound media, unavailable candidate source bytes, and unrelated repository history.",
+    "Natural/perceptual completion claims and fixture-only evidence as a substitute for browser QA."
+  ],
+  "attemptedFiles": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "changedFiles": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts"
+  ],
+  "candidateSummary": {
+    "prerequisiteReconstruction": "Attempted to reconstruct the Attempt19 pending capture, 8px/0.4rad envelope, and one-shot release behavior from the task packet and retained evidence. The focused candidate did not satisfy the retained acceptance assertions and was reverted.",
+    "newHypothesis": "Initialize pending runway pose age to FIXED_STEP and expose a read-only selector that matches the trace's active, collidable, ahead, reachable, earliest-entry rules.",
+    "observed": {
+      "focusedGreenLog": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-20/green-targeted.log",
+      "focusedGreenTests": 20,
+      "focusedGreenPassed": 16,
+      "focusedGreenFailed": 4,
+      "failingBranches": [
+        "normal runway replay terminated at 6.5 seconds",
+        "replay did not capture both accepted poses",
+        "early separating contact did not create and consume a pending pose",
+        "bounded-lifetime test did not create the required pending pose"
+      ]
+    }
+  },
+  "checks": {
+    "artifactValidation": {
+      "status": "passed",
+      "evidence": "REPAIR_CYCLE_ARTIFACTS_OK"
+    },
+    "focusedRed": {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "status": "expected failures observed before production edits",
+      "tests": 20,
+      "passed": 15,
+      "failed": 5,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-20/red-targeted.log"
+    },
+    "focusedGreen": {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "status": "failed; candidate reverted immediately",
+      "tests": 20,
+      "passed": 16,
+      "failed": 4,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-20/green-targeted.log"
+    },
+    "fullTests": "not run because focused GREEN failed",
+    "lint": "not run because focused GREEN failed",
+    "typecheck": "not run because focused GREEN failed",
+    "build": "not run because focused GREEN failed; no build was attempted",
+    "naturalOrPerceptualQa": "not run; no completion claim"
+  },
+  "rollback": {
+    "performed": false,
+    "note": "Attempt20 additions were removed. The authorized git restore could not resolve these ignored generated-workspace paths. Verified nearby action-a/action-b/action-c and mobile-chart source copies did not match the baseline hash, and no exact source copy was found in the searched workspace paths.",
+    "files": [
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+        "expectedBaselineSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+        "actualSha256": "fdce8678b4d5f8a15c519cdd2062ea0da34460be5a57c9856d9a97061cc3c539",
+        "matchesBaseline": false
+      },
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts",
+        "expectedBaselineSha256": "7627f8b8052adb8bd33b6b21f7c0cf935b1d23cba5b4570513ce47bd56984510",
+        "actualSha256": "7627f8b8052adb8bd33b6b21f7c0cf935b1d23cba5b4570513ce47bd56984510",
+        "matchesBaseline": true
+      }
+    ]
+  },
+  "status": "BLOCKED",
+  "qaStatus": null,
+  "remainingEvidenceGaps": [
+    "Focused GREEN failed and the candidate did not preserve the accepted Attempt19 capture/release/replay behavior.",
+    "The source rollback is incomplete: game-core.ts is not at the required baseline SHA-256. The attempted exact-hash copies were checked and did not match.",
+    "Full tests, lint, typecheck, and build were not run after the focused failure.",
+    "Independent natural-input and perceptual QA remain outstanding; no completion claim is made."
+  ],
+  "createdAt": "2026-09-23T05:36:00.000Z"
+}

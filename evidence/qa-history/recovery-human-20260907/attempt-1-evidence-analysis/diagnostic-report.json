@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "passed": false,
+  "checks": [
+    {
+      "name": "portrait: intact with blade overlap does not increase HUD",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/portrait/t-2.660.png"
+    },
+    {
+      "name": "portrait: local reward appears at already cut target; HUD updates with it",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/portrait/t-2.680.png"
+    },
+    {
+      "name": "portrait: resolve within-frame precedence between initial separation and reward",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/chronology.json"
+    },
+    {
+      "name": "desktop: intact with blade overlap does not increase HUD",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.540.png"
+    },
+    {
+      "name": "desktop: local reward appears at already cut target; HUD updates with it",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.560.png"
+    },
+    {
+      "name": "desktop: resolve within-frame precedence between initial separation and reward",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/chronology.json"
+    }
+  ],
+  "issues": [
+    {
+      "id": "REWARD-VIDEO-SAMPLING-LIMIT",
+      "severity": "warning",
+      "message": "现有25fps归档视频首次变化帧同时包含切开、局部奖励和累计更新，无法证明同帧内先后；没有观察到完整态涨收益或奖励脱离目标的新错误，不因此提出产品修复。",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/chronology.json"
+    }
+  ],
+  "screenshots": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/portrait/t-2.660.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/portrait/t-2.680.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/portrait/t-2.720.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.540.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.560.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.660.png"
+  ],
+  "consoleLog": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/analysis-log.json",
+  "testedAt": "2026-09-07T06:14:57.524Z"
+}

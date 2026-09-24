@@ -1,0 +1,5 @@
+NOT RUN: pnpm build
+Build count: 0
+Reason: No accepted production candidate; no build was made from rejected or restored code.
+Current production source SHA-256: b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7
+No dist SHA-256 is claimed for this attempt.

@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fixer-task-packet",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 21,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "model": "gpt-6-luna",
+  "triagePath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/triage.json",
+  "triageSha256": "2e4c09c7d88e57cfcb2be43c5a1d19ba734da25ec0beb5209837db20c218e509",
+  "issueId": "L1-RUNWAY-RECOVERY-ATTEMPT19-PREREQUISITE-RECONSTRUCTION",
+  "ownedFiles": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "expectedSourceFileLimit": 2,
+  "expectedHypothesis": "Attempt20 failed to reconstruct Attempt19's near-pass prerequisite: its restored baseline had no captures and replay terminated at 6.5s. Rebuild the exact Attempt19 retained source sequence (core source ordinal 197, narrow suppression ordinal 217, replaced at ordinal 287 by supportId-only suppression), with the capture branch before recoverApproaching's top-level break; putting it after the break loses capture302. Do not carry diagnostic test edits. Then make only two new corrections: initialize pending capture age to FIXED_STEP while preserving the 2.35s TTL, and implement the trace-consistent read-only runtime selector. Do not change test schedules or assertions.",
+  "testFirst": {
+    "redRequired": true,
+    "redCommand": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+    "redMustFailBeforeEdits": true,
+    "greenCommand": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+    "greenMustPassAfterMinimalEdits": true,
+    "regressionCommand": "pnpm test"
+  },
+  "acceptanceCriteria": [
+    "Run the focused test command and save RED evidence before any production edit; RED must demonstrate the targeted failures.",
+    "Reconstruct Attempt19 core source ordinal 197, apply narrow suppression ordinal 217, and replace it with supportId-only suppression at ordinal 287.",
+    "Keep the runway capture branch before recoverApproaching's top-level break; placing it afterward loses capture302.",
+    "Do not carry diagnostic-only test edits; preserve the independent trace contract and all existing assertions.",
+    "Keep all source and test changes inside the two owned files.",
+    "Initialize pending capture age to exactly FIXED_STEP and increment it once per fixed update.",
+    "Keep the pending pose TTL exactly 2.35 seconds and preserve all expiration and clear paths.",
+    "Implement a read-only runtime selector with active, collidable, ahead, reachable-corridor and earliest-entry ordering matching the independent trace.",
+    "Return white-branch for the early selector fixture and lift-plank for the late selector fixture.",
+    "Keep exact pending captures at frames216 and302 with required pose values and support-relative coordinate invariants.",
+    "Keep pending center movement measurable and within 8px and angular movement measurable and within 0.4rad.",
+    "Keep both tap position corrections at or below 10px and angle corrections at or below 0.5rad.",
+    "Consume each pose once and emit one standard launch event with stored pose restoration before launch.",
+    "Keep second release age at least 2.092 seconds without changing the test schedule or relaxing the assertion.",
+    "Preserve ordinary no-pending flight and all contact, finish, failure, reset, load, terminal, inactive and non-runway branches.",
+    "Reach at least 11.9 seconds and player x>2000 without failure in the fixed replay.",
+    "If focused GREEN fails, immediately revert only this attempt's candidate edits and record verified rollback hashes; do not run downstream checks.",
+    "Only after focused GREEN passes, run pnpm test, lint, typecheck and exactly one build, saving concise machine-verifiable evidence.",
+    "Independent natural-input and perceptual QA remains a separate required gate; Fixer evidence must not claim QA completion."
+  ],
+  "evidenceInputs": [
+    { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-20/fix-result.json", "sha256": "95cbcc9c2f6015e637d944d7c2328ed075dc194969c25e953d1ed3391fbbdf4a", "role": "prior-fix-receipt" },
+    { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-20/green-targeted.log", "sha256": "10df7c6e4bab68566b16cb1600a973d6b67c86865445b42019e09ff1339132aa", "role": "prior-experiment-rejection" },
+    { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-19/fix-result.json", "sha256": "3dbe50b62f61fb33e0af16e5604eff650c7d5d0eb7a43a8e1a348d87945637ce", "role": "prior-fix-receipt" },
+    { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-19/green-targeted.log", "sha256": "d5ca9b4e47638acd64b328f8348b87851c4c3463153be46ff2934da854361e42", "role": "prior-experiment-rejection" },
+    { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-18/green-targeted-candidate2.log", "sha256": "d59786833938f4e0938853740d67d856614557816a5bbc1ec0ec1fc02473d8d0", "role": "prior-experiment-rejection" },
+    { "path": "/Users/kker/.codex/sessions/2026/09/23/rollout-2026-09-23T21-39-31-01a0ce7e-30ee-7ba1-8dbb-ebf19e9828ad.jsonl", "sha256": "6729e3eb105d54a55f51e913ee469dfbfa5f6cef8ea8127e1c864eed9e23fb57", "role": "prior-experiment-rejection" },
+    { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/baseline-recovery.json", "sha256": "046b4d5185f50dc9054edeff7820130c434f354267ab7ab1524cccf4d1f99b30", "role": "prior-cycle-state" },
+    { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts", "sha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7", "role": "current-source" },
+    { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts", "sha256": "7627f8b8052adb8bd33b6b21f7c0cf935b1d23cba5b4570513ce47bd56984510", "role": "current-source" },
+    { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html", "sha256": "599b4c3cb8c6b345b7e18b3a4e06cae33663c0432b918d3115ee78df3bf64118", "role": "current-build" }
+  ],
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory modules, renderer/presentation source, platform adapters, level data, persistence, and release configuration.",
+    "Full conversation, unrelated repository history, and candidate source bytes outside the exact retained rollout ordinals and Attempt19 evidence listed above.",
+    "Diagnostic-only test edits from the retained rollout; the independent trace and committed assertions remain the authority.",
+    "Natural/perceptual completion claims and fixture-only evidence as a substitute for independent browser QA.",
+    "Post-capture envelope, tap schedule, TTL, and contact/latch changes outside the narrow hypothesis."
+  ],
+  "requiredOutputs": {
+    "fixResultPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/fix-result.json",
+    "redLogPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/red-targeted.log",
+    "greenLogPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/green-targeted.log",
+    "testsLogPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/tests.log",
+    "lintLogPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/lint.log",
+    "typecheckLogPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/typecheck.log",
+    "buildLogPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/build.log"
+  },
+  "independentQaRequired": true,
+  "noRuntimeQaClaim": true,
+  "createdAt": "2026-09-23T14:03:51.000Z"
+}

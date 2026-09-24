@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "QaFixRedEvidence",
+  "attempt": 2,
+  "unitCommand": "pnpm test",
+  "unitFailures": {
+    "HARD-IDENTITY-001": "SafeSupport still serialized recoil=true and recoil-wall identity.",
+    "HARD-REFLECT-002": "generic-hard scenario did not begin beside ordinary hard terrain.",
+    "HARD-SEPARATING-003": "separating overlap injected vx=-120.",
+    "SHARP-STABLE-004": "generic hard-contact scenario could not reproduce the stable bounce-then-anchor branch.",
+    "CHOKE-REACTION-005": "only 88px separated the hard wall from the next lethal region.",
+    "COURSE-NO-ORACLE-006": "three global-height policies failed at maxX 1348.6, 1349.1 and 1348.5."
+  },
+  "browserCommand": "pnpm qa:browser",
+  "browserFailures": {
+    "PLAY-DESKTOP-NATURAL-007": "three real-mouse reset runs failed on spike near maxX 1349 without finishing.",
+    "PLAY-DESKTOP-TOLERANCE-008": "zero of three real-mouse timing variants crossed x=1600.",
+    "PLAY-MOBILE-NATURAL-009": "390x844 native-touch reset run failed on spike near maxX 1348.",
+    "VISUAL-GENERIC-HARD-010": "identityIsGeneric=false and visualIsGeneric=false."
+  }
+}

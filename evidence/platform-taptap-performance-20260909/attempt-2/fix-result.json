@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "platform-fix-result",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "taptap-performance-compat-20260909",
+  "attempt": 2,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED",
+  "why": "formal-fixer was required because the repeated TapTap performance warning spans four Android device branches, affects release qualification, and still has ambiguous package-versus-sampler ownership after a prior repair. RED proved the existing contract could not record the new PHJ110H1 report as unbound to a package SHA or enforce a no-speculative-optimization decision. The deterministic source benchmark confirms the prior static/dynamic Graphics separation remains active: the airborne loop performs zero static/full-course redraws and one dynamic-layer redraw per active frame, so attempt 2 demonstrates no new package-owned rendering bottleneck and intentionally leaves GameBootstrap and gameplay unchanged. GREEN records FPS 0.020356234, stutter 0%, average/peak memory 239.28/259.50MB and cold start 2.05s with package SHA, raw rendered-frame count and raw elapsed time all null; no TapTap threshold was invented. One Cocos Creator 3.8.8 build with official plugin 1.2.2 completed its builder/converter/ZIP stages; the launcher later exited 36 on an Electron rendezvous message after completion, while independent ZIP integrity, identity and metadata checks passed. All 18 tests, lint and typecheck pass. The new ZIP is auditable but does not fix or validate the unbound backend reading; exact-SHA natural/perceptual device evidence remains missing, so status is BLOCKED. Context intentionally omitted: other games/runs, web-lite, WeChat/Douyin, shared factory code, unrelated startup-host evidence, unavailable proprietary TapTap sampler internals, unbound sibling claims and unspecified backend thresholds.",
+  "filesChanged": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tests/performance-contract.test.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/performance-contract.json"
+  ],
+  "tests": [
+    {
+      "command": "Zod validation of task.json, triage.json, reproduction-matrix.json and evidence manifest",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-performance-20260909/attempt-2/input-validation.log"
+    },
+    {
+      "command": "pnpm exec tsx --test tests/performance-contract.test.ts (RED)",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-performance-20260909/attempt-2/red-tests.log — latestUnboundReport was absent while the retained-layer source assertion already passed."
+    },
+    {
+      "command": "deterministic current-source Graphics benchmark",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-performance-20260909/attempt-2/performance-benchmark.log — zero static/full-course redraws and one dynamic redraw per active frame; no remaining package-owned bottleneck demonstrated."
+    },
+    {
+      "command": "pnpm test",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-performance-20260909/attempt-2/green-tests.log — 18/18 pass after the single build."
+    },
+    {
+      "command": "pnpm lint",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-performance-20260909/attempt-2/lint.log"
+    },
+    {
+      "command": "pnpm typecheck",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-performance-20260909/attempt-2/typecheck.log"
+    },
+    {
+      "command": "unzip integrity/root metadata/settings/runtime markers/size/SHA and official plugin checks",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-performance-20260909/attempt-2/package-check.log — valid ZIP; AppID 928932, 疯狂切割, portrait, 1.0.0, 390x844 policy 4, official plugin 1.2.2; 1206608 bytes."
+    }
+  ],
+  "build": {
+    "attempted": true,
+    "passed": true,
+    "zipPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/build/TapBuild/game.zip",
+    "sha256": "522aead7c8fe3aaa90602cd294d8629569e828f45922e9d48b9d5e08e184e455",
+    "bytes": 1206608
+  },
+  "blockers": [
+    {
+      "id": "TAP-PERF-SAMPLER-ATTRIBUTION-002",
+      "detail": "PHJ110H1 FPS 0.020356234 conflicts with 0% stutter and bounded memory, but no raw rendered-frame count, elapsed time, CPU/GPU trace, TapTap threshold or sampler diagnostics exist to distinguish physical rendering from backend sampling."
+    },
+    {
+      "id": "TAP-PERF-EXACT-SHA-DEVICE-QA-002",
+      "detail": "No PHJ110H1, Huawei P30, Xiaomi 14 or OnePlus8_EEA natural/perceptual performance run is bound to ZIP SHA 522aead7c8fe3aaa90602cd294d8629569e828f45922e9d48b9d5e08e184e455."
+    }
+  ],
+  "evidenceGaps": [
+    "TapTap backend build number, upload timestamp and uploaded ZIP SHA for the supplied screenshot are absent.",
+    "PHJ110H1 raw rendered-frame count, elapsed time, CPU/GPU frame trace and the backend FPS threshold are absent.",
+    "Huawei P30, Xiaomi 14 and OnePlus8_EEA have warning tabs but no per-device numeric FPS, memory, stutter or raw logs.",
+    "No exact-SHA natural-input, visible first-frame, cut/reflect, failure/settlement and replay trace accompanies the four-device performance run.",
+    "The deterministic source-work proxy is not physical-device FPS evidence and cannot validate TapTap sampler behavior."
+  ]
+}

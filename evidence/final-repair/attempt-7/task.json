@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fixer-task-packet",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 7,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "model": "gpt-6-luna",
+  "triagePath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-7/triage.json",
+  "triageSha256": "9c10e4b284dcce4d437d0a7c912d1874d754ce66c81b840907c609bb862199e7",
+  "issueId": "L1-RUNWAY-RECOVERY-SUPPORT-TRACE",
+  "ownedFiles": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "expectedSourceFileLimit": 2,
+  "expectedHypothesis": "Instrument every pending-release tap with selected support, forward entry, vertical band, predictedY, requiredVy, and top-boundary limit; then select only an active collidable forward support with a reachable vertical corridor, preserving lift-plank as a late-route assertion.",
+  "testFirst": {
+    "redRequired": true,
+    "redCommand": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+    "greenCommand": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+    "regressionCommand": "pnpm test"
+  },
+  "acceptanceCriteria": [
+    "A RED test proves the exact upward/separating natural-pose contact anchors under the restored baseline.",
+    "A deterministic trace test records all seven required support-selection fields for every pending-release tap before any production correction is accepted.",
+    "The selected support is active, collidable, ahead, and vertically reachable; an unreachable candidate falls back without an arbitrary new clamp.",
+    "A GREEN lifecycle test proves one pending intent is consumed once with launch feedback and no persistent runway anchor.",
+    "The trace and implementation exercise both the early runway release and the later lift-plank branch in the same fixed replay.",
+    "The pending intent expires and a later airborne tap is ordinary after cooldown is clear.",
+    "Non-runway support anchors and their release taps remain unchanged.",
+    "The approaching/downward top-normal branch, non-top sharp anchor, later x>=350 suppression, and blunt body/handle bounce remain intact.",
+    "The seed-31 fixed timestamp replay reaches at least 11.9 seconds and x>2000 without failure or an unexplained authored-support stall.",
+    "Only game-core.ts and level1-recovery.test.ts change; no renderer, level, debug, platform, or shared factory files.",
+    "pnpm test, pnpm lint, pnpm typecheck pass and exactly one pnpm build succeeds with a recorded dist SHA-256.",
+    "Independent fresh natural QA must retest both viewports, exact runway branch, stack/settlement, visible terminal and replay; no Fixer runtime claim."
+  ],
+  "evidenceInputs": [
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-6/fix-result.json",
+      "sha256": "8a6b1b6d185d996622a30a64d30c560cb40d91805744a804e97e3fe102e86db2",
+      "role": "prior-fix-receipt"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-6/green-targeted.log",
+      "sha256": "55b941b35864442bbe7c3312c53e9595e2352acdb861eac1ca93d7c6bc577680",
+      "role": "prior-experiment-rejection"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/replay-final.json",
+      "sha256": "565cd8f55bca0a4c63b17198583d36840c74ba91059d97b297d495c14c54c834",
+      "role": "prior-experiment-rejection"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-summary.json",
+      "sha256": "d0640af40c41c1e49c38a58687c8b6f2635332d3fe02e3e7429e05a74b6307cd",
+      "role": "natural-reproduction"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/recording.json",
+      "sha256": "5e4d6457955e0596707116e3c9d325880506f41c24aa5bfd37928ae5cb242717",
+      "role": "natural-reproduction"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/recording.json",
+      "sha256": "18734f878ef1f4c048f4071326e31b2dad5ee022fa14a8baf6004bd5c20f7ddd",
+      "role": "natural-reproduction"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "sha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+      "role": "current-source"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts",
+      "sha256": "c25b5bd63aec7e613167824d5895cc8568b8624794fa07184e282a5ac53fa3cd",
+      "role": "current-source"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html",
+      "sha256": "599b4c3cb8c6b345b7e18b3a4e06cae33663c0432b918d3115ee78df3bf64118",
+      "role": "current-build"
+    }
+  ],
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory modules, platform adapters, release configuration, and renderer implementation.",
+    "Full conversation, unrelated QA output, and unbound competitor media.",
+    "Natural/perceptual completion claims; Fixer must leave browser QA independent.",
+    "Any source file outside the two owned paths unless a new triage record promotes scope."
+  ],
+  "requiredOutputs": {
+    "fixResultPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-7/fix-result.json",
+    "redLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-7/red-targeted.log",
+    "greenLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-7/green-targeted.log",
+    "testsLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-7/tests.log",
+    "lintLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-7/lint.log",
+    "typecheckLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-7/typecheck.log",
+    "buildLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-7/build.log"
+  },
+  "noRuntimeQaClaim": true,
+  "createdAt": "2026-09-23T08:46:00.000Z"
+}

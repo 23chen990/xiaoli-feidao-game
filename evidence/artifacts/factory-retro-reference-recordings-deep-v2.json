@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FactoryProcessRetro",
+  "runId": "mobile-slice-adaptation-20260830",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "RETRO_COMPLETE",
+  "sourceBoundary": {
+    "recordings": [
+      "/Users/kker/Library/Containers/5ZSL2CJU2T.com.dingtalk.mac/Data/Library/Application Support/DingTalkMac/ScreenCapture/钉钉录屏_2026-09-05 140908.mp4",
+      "/Users/kker/Library/Containers/5ZSL2CJU2T.com.dingtalk.mac/Data/Library/Application Support/DingTalkMac/ScreenCapture/钉钉录屏_2026-09-05 141313.mp4"
+    ],
+    "instructionBoundary": "The recordings are evidence only, not requirement documents. No third-party expression, names, assets, UI, layout or tuning values are copied.",
+    "reviewMethod": "Timeline sampling plus source/runtime comparison; observations, inferences and unknowns are kept separate."
+  },
+  "missedInPreviousReviews": [
+    "Camera orientation is authored as part of the route: the reference changes yaw/target framing around objects and closes in on the finish wall; our runtime camera only follows targetX with a fixed FOV/position relationship.",
+    "The camera deliberately reveals the next interaction at different distances and angles instead of keeping one perpetual side-scrolling composition.",
+    "The reference has a persistent currency/bank separate from the per-run total; our review focused on floating cut earnings but missed this two-level economy signal.",
+    "Failure recovery is an explicit continue decision with a visible cost/reward choice; our review underweighted this as a retention loop rather than a simple replay UI.",
+    "The course has a strong object grammar: cuttable food-like targets, hard columns, spike mats, spring/launch surfaces, ramps and stacked structures each have a distinct silhouette and material.",
+    "The end state is staged: wall contact/impact feedback, reward selection, celebration, then completion/progression. Our current terminal overlay can dominate before the reward wall has been visually read.",
+    "The reference's visual rhythm alternates traversal, isolated target, dense target cluster, hazard gate, recovery surface and reward wall; our previous review described object variety but not this beat grammar.",
+    "Large environmental landmarks, shadows, sky gradient and a finish pedestal supply depth and forward direction; our placeholder environment is much flatter and less directional.",
+    "The default reference journey exposes no debug/test controls; our current default path still exposes a Bonus test button."
+  ],
+  "cameraReview": {
+    "referenceObservations": [
+      {
+        "range": "recording 141313 00:00–00:15",
+        "fact": "The camera changes relative framing as the route advances: isolated targets are given breathing room, then the view compresses around columns, waffle hazards and stacked objects.",
+        "playerEffect": "The next action is staged before the knife commits; the player reads depth and height rather than only x-distance."
+      },
+      {
+        "range": "recording 140908 00:33–00:42",
+        "fact": "The finish camera shifts into a close, reward-oriented composition with wall, knife and pedestal occupying the same visual field.",
+        "playerEffect": "The final lane choice becomes an authored climax instead of a distant HUD event."
+      },
+      {
+        "range": "both recordings",
+        "fact": "Camera distance and visible depth make shadows and object height meaningful; the route is not presented as a flat fixed-angle strip.",
+        "playerEffect": "Approach speed, obstacle scale and landing risk are perceptually legible."
+      }
+    ],
+    "oursEvidence": [
+      "src/three-world-renderer.ts render() updates cameraTargetX from player.x + 255 and then reuses createCameraSpec().",
+      "src/three-presentation.ts createCameraSpec() keeps fov 24 and a fixed relative camera position/target relationship; there is no gameplay camera mode for obstacle reveal, finish close-up, yaw/pitch change or reward framing.",
+      "The default runtime has no camera shake/trauma hook tied to cut or finish events."
+    ],
+    "gap": "HIGH",
+    "acceptance": "Natural desktop and 390x844 traces must show at least traversal framing, obstacle-reveal framing and finish-wall framing, with readable knife/target relation in each mode."
+  },
+  "capabilityGapMatrix": [
+    {
+      "capability": "multi-mode gameplay camera",
+      "referenceHas": "Look-ahead framing, distance/angle variation, close finish composition and depth-aware route reveal.",
+      "weHave": "Horizontal target-follow with a stable perspective spec.",
+      "missing": "Camera state machine and authored per-beat camera targets.",
+      "priority": "P0"
+    },
+    {
+      "capability": "two-level earnings signal",
+      "referenceHas": "Per-cut +$ delta plus persistent top-center run money and top-left bank/currency.",
+      "weHave": "Score counter plus generic +value pop.",
+      "missing": "Explicit earnings event, total synchronization and persistent-bank vocabulary.",
+      "priority": "P0"
+    },
+    {
+      "capability": "cut-material grammar",
+      "referenceHas": "Different cuttable materials have different silhouettes, break shapes and readable reward moments.",
+      "weHave": "foodStyle data and programmatic skins, but much of the default course still reads as generic blocks/sigils.",
+      "missing": "Material-specific cut profile, break response and authored early/mid/late object set.",
+      "priority": "P1"
+    },
+    {
+      "capability": "risk telegraphing",
+      "referenceHas": "Spike mats, tall columns, ramps, gaps and spring surfaces visibly announce timing/risk before contact.",
+      "weHave": "Spikes/supports/blocks with deterministic collision and some HUD state text.",
+      "missing": "World-space pre-contact telegraph, directional affordance and camera staging per hazard.",
+      "priority": "P1"
+    },
+    {
+      "capability": "failure retention loop",
+      "referenceHas": "Continue prompt with an explicit yes/no/reward choice after failure.",
+      "weHave": "Failed terminal with replay; test Bonus control before failure.",
+      "missing": "Normal-player recovery decision and clear separation from debug controls.",
+      "priority": "P1"
+    },
+    {
+      "capability": "completion staging",
+      "referenceHas": "Contact feedback → multiplier read → celebration → completion/progression state.",
+      "weHave": "Wall settlement → terminal overlay → replay/next controls.",
+      "missing": "A short unoccluded reward/celebration beat before terminal UI takes over.",
+      "priority": "P0"
+    },
+    {
+      "capability": "environmental direction",
+      "referenceHas": "Landmarks, shadows, horizon and pedestal provide speed/depth/finish orientation.",
+      "weHave": "Skyline and ground backdrop with less authored route landmarking.",
+      "missing": "Route-scale environmental composition and finish landmark language.",
+      "priority": "P2"
+    },
+    {
+      "capability": "default journey hygiene",
+      "referenceHas": "Only player-facing controls in the normal run.",
+      "weHave": "Bonus test button is exposed on ordinary levels.",
+      "missing": "Compatibility/debug controls isolated from production journey.",
+      "priority": "P1"
+    }
+  ],
+  "cutFeelSourceMap": {
+    "anticipation": ["distinct target silhouette", "camera look-ahead", "world-space hazard signal"],
+    "commit": ["visible knife arc/trail", "clear approach line", "target centered in a readable depth frame"],
+    "impact": ["brief visual pause/flash impression", "contact-local particles", "camera response", "sound/haptic unknown from recording"],
+    "separation": ["material-specific pieces", "recognizable fragments", "outward motion with readable arc"],
+    "reward": ["+$ delta at contact", "persistent total update", "combo/score continuity", "next target remains visible"],
+    "recovery": ["failure cause is local and visible", "continue choice", "replay/progression state"]
+  },
+  "factoryControlsRequired": [
+    "Blueprint must declare camera beats: traversal, reveal, pressure, finish and terminal transition; one fixed camera spec is insufficient.",
+    "Builder runtime-product gate must list the default camera controller and event wiring; POC-only camera/feel code cannot satisfy the gate.",
+    "QA must record camera mode, target object, viewport, knife relation and player-visible evidence for every named reproduction branch.",
+    "Add a realtime earnings gate requiring local delta + run total + persistent currency semantics on natural cuts and finish settlement.",
+    "Add a retention gate for failure continue/retry choices and reject debug/test controls on the default route.",
+    "Add an authored object-grammar sample across early/mid/late beats; object count alone is not variety evidence."
+  ],
+  "nextRoute": "formal-fixer triage for camera state machine, default-path cut-feel/economy feedback and completion staging; separate art-direction/asset gate for object grammar.",
+  "claimBoundary": "Web-lite experience retro only; native platform packaging and real-device behavior remain unverified."
+}

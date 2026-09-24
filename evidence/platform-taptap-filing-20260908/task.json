@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-task",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "taptap-filing-package-20260908",
+  "attempt": 1,
+  "targetGame": "mobile-slice-adaptation-20260830（TapTap 名称：疯狂切割）",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "platformWorkspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame",
+  "outputDirectory": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-filing-20260908/attempt-1",
+  "triagePath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-filing-20260908/triage.json",
+  "researchPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/open-source-research-taptap-cocos-v1.json",
+  "officialPlugin": {
+    "version": "1.2.2",
+    "sourceUrl": "https://app-res.tapimg.com/file/2026-04-14/67e7d94f5e586596dab061816d1c509d.zip",
+    "sha256": "6b8a9a3cc62b6c54cefab397097babb771d9d99f90442cddff06310a4c9ed73f"
+  },
+  "tapTapGame": {
+    "name": "疯狂切割",
+    "appId": "928932",
+    "identityEvidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-ac1cdf15-9886-4559-b83c-a0cf1566078c-954468d979ce.png"
+  },
+  "instructions": [
+    "You are FixerAgent and own only platforms/taptap-minigame inside the exact target workspace plus attempt-1 output evidence. You are not alone in the repository; preserve all existing user and agent changes and do not edit other games, shared factory code, or the existing web-lite source/dist.",
+    "Read triage.json, the approved research artifact, the current game-content.ts/theme.ts/game-levels.ts/game-core.ts interfaces needed for behavior parity, and the cocos-creator-v3 plus test-driven-development skills. Do not load unrelated conversation, old repair cycles, screenshots, or other games.",
+    "Implement test-first: create failing tests for package metadata, portrait configuration, deterministic one-touch state transitions, cut/reflect/failure/finish/replay journey, and real AppID rejection before production implementation. Capture RED and GREEN logs.",
+    "Create a minimal production-feasible Cocos Creator 3.8.8 project with original programmatic geometry/UI. It must be recognizably the same submitted game and core loop, not a blank shell, website wrapper, or unrelated demo. Keep the platform directory isolated.",
+    "Install the official plugin from the exact audited archive only after rechecking SHA-256. Do not add unrelated production dependencies. Preserve all required license notices.",
+    "Use the user-provided, identity-reviewed TapTap game name 疯狂切割 and game ID 928932 from tapTapGame. Do not use the internal nickname 小李飞刀 in the TapTap package metadata. Do not substitute or invent another AppID.",
+    "Run targeted tests, lint, typecheck, Cocos build at most once for this attempt, and package structure/size/hash checks if the conversion succeeds. Write PlatformFixResultSchema JSON to attempt-1/fix-result.json. Do not claim completion before independent backend scan/device QA."
+  ],
+  "acceptanceChecks": [
+    "Cocos project opens under Creator 3.8.8 and has an initial scene with touch input.",
+    "Tests prove ready→airborne/flip, sharp cut, blunt reflect, hazard/fall failure, finish settlement and replay.",
+    "TapTap platform config rejects missing or placeholder AppID.",
+    "If AppID exists, official converter produces build/TapBuild/game.zip with required root files and package size below 20MB.",
+    "Result lists route, reason, intentionally omitted context, changed files, tests, build hash and remaining device evidence gap."
+  ],
+  "contextIntentionallyOmitted": [
+    "All other factory runs and generated games",
+    "Unrelated QA history and prior Level 1 repair cycles",
+    "Reference screenshots and recordings not needed for this platform packaging task",
+    "Advertising, IAP, cloud save, ranking and non-TapTap platform work"
+  ]
+}

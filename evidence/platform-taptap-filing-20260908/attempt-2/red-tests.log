@@ -1,0 +1,39 @@
+✔ one touch deterministically launches and then flips the blade (3.19975ms)
+✔ sharp contact cuts once and blunt contact visibly reflects (0.31275ms)
+✔ hazard and fall failures are attributable and touch replays from ready (0.175542ms)
+✔ finish produces a settlement and touch starts a clean replay (0.194542ms)
+✔ declares a Cocos Creator 3.8.8 project for 疯狂切割 (2.805375ms)
+✖ uses the object-shaped Creator manifest required by the Cocos dependency scanner (1.359333ms)
+✔ locks the TapTap intermediate build to portrait and the reviewed AppID (0.950458ms)
+✔ rejects missing and placeholder AppIDs while accepting the reviewed AppID (1.954625ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 7
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 154.281084
+
+✖ failing tests:
+
+test at tests/platform-contract.test.ts:23:1
+✖ uses the object-shaped Creator manifest required by the Cocos dependency scanner (1.359333ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + '3.8.8'
+  - {
+  -   version: '3.8.8'
+  - }
+  
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tests/platform-contract.test.ts:25:10)
+      at async Test.run (node:internal/test_runner/test:1125:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '3.8.8',
+    expected: { version: '3.8.8' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

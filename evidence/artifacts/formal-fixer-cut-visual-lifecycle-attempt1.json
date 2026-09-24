@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixerAttempt",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "issueIds": ["gameplay-triage-cut-visual-lifecycle-v1", "gameplay-triage-spike-no-player-impact-v1"],
+  "attempt": 1,
+  "contextOmitted": ["unrelated factory changes", "platform packaging outputs", "historical screenshots not covering the exact lifecycle branch"],
+  "rootCauseConfirmed": {
+    "issue": "cut visual lifecycle state was retained from constructor time",
+    "evidence": "tests/three-presentation.test.ts reproduced falling after a second sync with falling=false",
+    "matrix": {
+      "objectType": "l4-entry cut sigil",
+      "stateBranch": "cut -> falling -> landed",
+      "rendererPath": "ThreePresentationModel.sync -> ThreeCutVisualManager.sync -> CutVisualEntity.facts",
+      "viewports": ["renderer-independent deterministic", "desktop 1180x720", "mobile 390x844"]
+    }
+  },
+  "filesChanged": ["src/three-cut-visuals.ts", "src/game-levels.ts", "tests/level4-spike-policy.test.ts"],
+  "change": "CutVisualEntity now stores the latest synced visual before facts are read, so landed state cannot remain stale falling state. Level 04 hazard width is constrained to a 200px decision window so the low route remains dangerous without sealing the crossing; a regression test locks that constraint.",
+  "tests": {
+    "targetedRegression": { "command": "pnpm test -- --test-name-pattern='Level 04|runtime cut facts expose skin identity and falling-to-landed lifecycle'", "passed": true, "testsPassed": 133 },
+    "lint": { "command": "pnpm lint", "passed": true },
+    "typecheck": { "command": "pnpm typecheck", "passed": true },
+    "build": { "command": "pnpm build", "passed": true, "distBytes": 2721502 },
+    "build3d": { "command": "pnpm build:3d", "passed": true }
+  },
+  "qa": {
+    "spikeImpactNatural": { "artifact": "qa-spike-impact-v1/report.json", "passed": true, "verdict": "PASS_SAFE_AVOID_AND_RISK_CONTACT", "viewports": ["1180x720", "390x844"] },
+    "browserSmoke": { "artifact": "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/report.json", "passed": false, "blocker": "waitPerformanceFrames timed out after natural desktop run; isolated preview sampling produced only 100 frames in 5s (median 45.8ms, p95 75ms) while 22 stale Chromium child processes were present; no player/page console error was reported" },
+    "levelPack": { "artifact": "qa-level-pack-v1/runner-report.json", "passed": false, "blocker": "Level 04 fresh-browser retry policies all ended before win (three spike failures and one fall); this is natural-player evidence that the hazard can affect failure, but the full sweep gate remains open" }
+  },
+  "status": "BLOCKED",
+  "remainingEvidenceGaps": ["repeatable full browser performance gate", "full natural level-pack sweep", "independent perceptual review of the exact Level 04 hazard branch"],
+  "claimBoundary": "web-lite evidence only; no WeChat, Douyin, or TapTap publishability claim"
+}

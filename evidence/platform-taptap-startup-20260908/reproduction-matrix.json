@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "experience-reproduction-matrix",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "axes": {
+    "objectTypes": [
+      "TapTap Android aggregate launch gate",
+      "OPPO PDBM00 TapTap container launch",
+      "ZTE A2022P TapTap container launch",
+      "ZTE A2022P TapTap host process",
+      "OPPO PKB110 harness launch (model mismatch branch)",
+      "Cocos package first-frame runtime"
+    ],
+    "lifecycleStateBranches": [
+      "TapTap game entry selection",
+      "InstantGameActivity resolution",
+      "host/container startup",
+      "visible first frame",
+      "ordinary touch core loop",
+      "terminal settlement and replay"
+    ],
+    "rendererPaths": [
+      "TapTap PageProxyActivity/InstantGameActivity container",
+      "TapTap host com.taptap process and plugin executor",
+      "Cocos Graphics Canvas/Camera package runtime",
+      "TapTap automation Activity watcher"
+    ],
+    "viewports": [
+      {"label": "logical package viewport", "width": 390, "height": 844},
+      {"label": "ZTE A2022P physical viewport from autotest metadata", "width": 1080, "height": 2400},
+      {"label": "OPPO PKB110 physical viewport from autotest metadata", "width": 1080, "height": 2374},
+      {"label": "OPPO PDBM00 physical viewport not reported; use logical package viewport", "width": 390, "height": 844}
+    ]
+  },
+  "cells": [
+    {
+      "id": "startup-android-aggregate-196126",
+      "objectType": "TapTap Android aggregate launch gate",
+      "lifecycleStateBranch": "TapTap game entry selection",
+      "rendererPath": "TapTap automation Activity watcher",
+      "viewport": {"label": "logical package viewport", "width": 390, "height": 844},
+      "status": "REPRODUCED",
+      "expected": "All five Android devices open the mini-game container and reach a visible first frame.",
+      "observed": "Build 196126 report shows Android functional pass rate 60%: Huawei nova 5 Pro, Redmi K80 Pro and vivo PD2068 pass; OPPO PDBM00 and ZTE A2022P fail with 小游戏 activity 启动失败.",
+      "evidence": [
+        {"path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-a018827b-a813-4ce7-8926-7280eb9ac447-6da85eca87f0.png", "sha256": "6da85eca87f0d1b6f172197177ef870be18c3e0ee32c73387f43b44a105d0333", "kind": "reference", "provenance": "verified-reference"},
+        {"path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-54627493-c054-4e19-b1e8-3f17ab8caa37-e1bc9b9cdd21.png", "sha256": "e1bc9b9cdd210ed4978027435b2ec5d8be16bed517382dad2e36be06d7fb9965", "kind": "reference", "provenance": "verified-reference"}
+      ]
+    },
+    {
+      "id": "startup-oppo-pdbm00-activity-196126",
+      "objectType": "OPPO PDBM00 TapTap container launch",
+      "lifecycleStateBranch": "InstantGameActivity resolution",
+      "rendererPath": "TapTap automation Activity watcher",
+      "viewport": {"label": "OPPO PDBM00 physical viewport not reported; use logical package viewport", "width": 390, "height": 844},
+      "status": "REPRODUCED",
+      "expected": "TapTap exposes the mini-game Activity and hands the exact package to the runtime.",
+      "observed": "The backend table marks OPPO PDBM00 / Android 9 as 未通过 with 异常类型 小游戏 activity 启动失败; no raw device log or package SHA is attached, so the failing process is unconfirmed.",
+      "evidence": [
+        {"path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-54627493-c054-4e19-b1e8-3f17ab8caa37-e1bc9b9cdd21.png", "sha256": "e1bc9b9cdd210ed4978027435b2ec5d8be16bed517382dad2e36be06d7fb9965", "kind": "reference", "provenance": "verified-reference"}
+      ]
+    },
+    {
+      "id": "startup-zte-a2022p-activity-196126",
+      "objectType": "ZTE A2022P TapTap container launch",
+      "lifecycleStateBranch": "InstantGameActivity resolution",
+      "rendererPath": "TapTap automation Activity watcher",
+      "viewport": {"label": "ZTE A2022P physical viewport from autotest metadata", "width": 1080, "height": 2400},
+      "status": "REPRODUCED",
+      "expected": "TapTap exposes the mini-game Activity and the game reaches a visible first frame.",
+      "observed": "Automation retries cannot find com.taptap.instantgame.container.InstantGameActivity and ends with minigame_activity_not_exists; the same run's final screenshot shows TapTap stopped running.",
+      "evidence": [
+        {"path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/autotest-b89fb688f6ed.json", "sha256": "b89fb688f6ed195eb61b6352991e29163157ea015acca56d34acb685858500b1", "kind": "qa-artifact", "provenance": "verified-reference"},
+        {"path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/log-c2d863c37c3b.log", "sha256": "c2d863c37c3b941b7981857ed2f9ae917a95971c2a0d8d2f87bdeadf0d8a5eba", "kind": "qa-artifact", "provenance": "verified-reference"},
+        {"path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/test_over-b491bc1f6353.jpg", "sha256": "b491bc1f63535e1ceeb6058d592dfe43ff8d13344fb884ce3959c6c1ebfb0c0a", "kind": "qa-artifact", "provenance": "verified-reference"}
+      ]
+    },
+    {
+      "id": "startup-zte-a2022p-host-crash-196126",
+      "objectType": "ZTE A2022P TapTap host process",
+      "lifecycleStateBranch": "host/container startup",
+      "rendererPath": "TapTap host com.taptap process and plugin executor",
+      "viewport": {"label": "ZTE A2022P physical viewport from autotest metadata", "width": 1080, "height": 2400},
+      "status": "REPRODUCED",
+      "expected": "TapTap host remains alive while the game container starts.",
+      "observed": "At 17:00:07 logcat records FATAL EXCEPTION in com.taptap, then shows the TapTap crash dialog, PageProxyActivity force finishing and the app process being killed. The exception stack body is absent from the supplied log, so the precise host root cause remains unknown.",
+      "evidence": [
+        {"path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/logcat-e549b0be3ce9.txt", "sha256": "e549b0be3ce9e082ce35c178fe6aeb5c6535a8dcbe83307bff16bd500b69d778", "kind": "qa-artifact", "provenance": "verified-reference"},
+        {"path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/test_over-b491bc1f6353.jpg", "sha256": "b491bc1f63535e1ceeb6058d592dfe43ff8d13344fb884ce3959c6c1ebfb0c0a", "kind": "qa-artifact", "provenance": "verified-reference"}
+      ]
+    },
+    {
+      "id": "startup-oppo-pkb110-adjacent-20260908",
+      "objectType": "OPPO PKB110 harness launch (model mismatch branch)",
+      "lifecycleStateBranch": "InstantGameActivity resolution",
+      "rendererPath": "TapTap automation Activity watcher",
+      "viewport": {"label": "OPPO PKB110 physical viewport from autotest metadata", "width": 1080, "height": 2374},
+      "status": "REPRODUCED",
+      "expected": "The supplied OPPO run should identify the same device branch as the backend report before being used as a PDBM00 result.",
+      "observed": "The directory metadata identifies OPPO PKB110 / Android 16, not OPPO PDBM00 / Android 9. Its harness also cannot find InstantGameActivity, and its final screenshot is a system/battery dialog rather than a game frame; it is adjacent evidence only.",
+      "evidence": [
+        {"path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/incoming/autotest-4bd859ee4743.json", "sha256": "4bd859ee4743a391ac18df3e8377f37dfd7d6e821c9056b01c0ee2ed532b07d6", "kind": "qa-artifact", "provenance": "verified-reference"},
+        {"path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/incoming/log-d1c510373264.log", "sha256": "d1c51037326403a270ade8670f60175e1e7a7548035b749dcc4021f9fb6d0e53", "kind": "qa-artifact", "provenance": "verified-reference"},
+        {"path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/incoming/test_over-c45e9fdf88ba.jpg", "sha256": "c45e9fdf88ba584cc8fd52f0a3845bb77eebabd365c5b35ee0b1d7136db0c847", "kind": "qa-artifact", "provenance": "verified-reference"}
+      ]
+    },
+    {
+      "id": "startup-cocos-first-frame-unknown",
+      "objectType": "Cocos package first-frame runtime",
+      "lifecycleStateBranch": "visible first frame",
+      "rendererPath": "Cocos Graphics Canvas/Camera package runtime",
+      "viewport": {"label": "logical package viewport", "width": 390, "height": 844},
+      "status": "BLOCKED",
+      "expected": "Once the host Activity is available, the exact package shows the Graphics first frame and accepts the ordinary touch core loop.",
+      "observed": "Neither supplied failed run reaches the game frame, and no package SHA is shown; the game renderer branch cannot be assigned as the cause or cleared from this evidence.",
+      "evidence": [
+        {"path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-54627493-c054-4e19-b1e8-3f17ab8caa37-e1bc9b9cdd21.png", "sha256": "e1bc9b9cdd210ed4978027435b2ec5d8be16bed517382dad2e36be06d7fb9965", "kind": "reference", "provenance": "verified-reference"}
+      ]
+    }
+  ],
+  "confirmedFindings": [
+    "TapTap build 196126 reports two Android startup failures and no performance metrics for this report.",
+    "ZTE A2022P exact supplied logs reproduce a TapTap host crash and missing InstantGameActivity before a game frame is observed.",
+    "OPPO PDBM00 is a backend-table branch without raw logs; the supplied OPPO raw directory is PKB110 and must not be substituted.",
+    "The current evidence does not establish whether the package, TapTap client/plugin, or device-specific host environment owns the crash."
+  ],
+  "remainingGaps": [
+    "No ZIP SHA-256 is shown in the TapTap report or device directories, so the failed report cannot be bound to the current package b224cd5470efb70e1de7d63f9361f7269835e4bf7adaa53123e76d67dfe24173.",
+    "ZTE logcat omits the exception stack body after FATAL EXCEPTION, preventing a precise host root-cause classification.",
+    "OPPO PDBM00 needs a matching raw logcat/autotest run; PKB110 is not an acceptable substitute.",
+    "No exact-package natural first-frame, touch, terminal or replay evidence exists for either failed device."
+  ],
+  "createdAt": "2026-09-08T12:17:11Z"
+}

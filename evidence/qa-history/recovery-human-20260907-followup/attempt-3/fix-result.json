@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "human-review-20260907-l1-followup",
+  "attempt": 3,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "storedThreadId": "01a079dc-538d-75c2-b612-37e1bdecd7e4",
+  "status": "BLOCKED",
+  "why": "针对性 RED 测试确认 Level1 runway 标志与支持碰撞不一致；将整段 runway 设为可碰撞可使该回放通过，但会回归既有 opening、bonus、碎片阻尼和高速度切割分支。数据-only 局部 recovery support 又会在 x≈1138 anchor，不能满足前进验收。为保留既有行为，已恢复目标源码；没有可在 approved Level1 数据范围内同时满足完整 tests 和该自然回放的最小安全修复。",
+  "contextIntentionallyOmitted": [
+    "Unrelated levels and shared factory",
+    "Unverified competitor tuning",
+    "Fixture-only or state-injected acceptance claims",
+    "Temporary game-core experiment that was not applied to the target workspace"
+  ],
+  "rootCauses": [
+    {
+      "issueId": "L1-RUNWAY-COLLISION-MISMATCH",
+      "objectType": "level1-runway-main and early runway-supported sigils",
+      "stateBranch": "visible runway -> support collision -> forward recovery",
+      "renderer": "game-core support collision -> ThreeWorldRenderer",
+      "evidence": [
+        "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-2-runway-red-evidence.json",
+        "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-3/red-evidence.json",
+        "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-3/experiment-rejection.json"
+      ]
+    }
+  ],
+  "filesChanged": [
+    "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "tests": [
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts (before source experiment)",
+      "exitCode": 1,
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-3/red-test.log",
+      "phase": "RED"
+    },
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts (temporary full-runway data experiment)",
+      "exitCode": 0,
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-3/green-test.log",
+      "phase": "GREEN"
+    },
+    {
+      "command": "pnpm lint (temporary full-runway data experiment)",
+      "exitCode": 0,
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-3/lint.log",
+      "phase": "LINT"
+    },
+    {
+      "command": "pnpm typecheck (temporary full-runway data experiment)",
+      "exitCode": 0,
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-3/typecheck.log",
+      "phase": "TYPECHECK"
+    }
+  ],
+  "build": null,
+  "remainingEvidenceGaps": [
+    "No source change was retained because the full-length collidable runway regressed five existing branches.",
+    "No new dist build was produced for this blocked attempt.",
+    "Independent portrait and desktop natural QA must remain blocked until a distinct causal hypothesis preserves the existing teaching and finish branches.",
+    "The targeted regression test remains RED against the restored source and documents the unresolved mismatch."
+  ],
+  "completedAt": "2026-09-23T04:23:00.000Z"
+}

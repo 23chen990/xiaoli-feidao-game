@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-triage",
+  "cycleId": "human-review-20260907-l1-followup",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "trigger": "用户明确要求按照流程开启新的修复周期；上一周期达到5次上限且保留了两个未关闭的体验门。",
+  "previousCycle": {
+    "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/cycle-state.json",
+    "status": "BLOCKED_MAX_ATTEMPTS",
+    "sha256": "456f0cf80dd806fb3eb0263313cd1c328e0ae4902f381dab49ce48155695b2e9"
+  },
+  "currentBuild": {
+    "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html",
+    "sha256": "10cba7632922f9fdeaa2eb33f7a05aa09bd3dbb7ca45a2db24acac282c9fd9a6"
+  },
+  "issues": [
+    {
+      "id": "L1-STACK-NATURAL-CHAIN",
+      "severity": "error",
+      "classification": "unresolved-product-or-evidence",
+      "objectType": "same visible stack-a/b and support",
+      "stateBranch": "intact support → blade contact → cut/separate → unsupported upper falls/rests",
+      "renderer": "game-core → ThreePresentationModel → ThreeWorldRenderer/CutVisualEntity",
+      "scope": "Level1 only; both 390x844 and 1100x720; no other levels or factory code",
+      "reproduction": {
+        "steps": [
+          "从新的浏览器上下文进入首关",
+          "用正常点击/触摸沿可见轨迹接近 stack-a 或 stack-b",
+          "记录同一对象的完整态、接触、切面、上层失去承托、下落和落地画面"
+        ],
+        "observed": [
+          "工程测试已证明对象可碰撞、存在真实 supportedBy 关系并释放上层对象",
+          "上一周期多次自然录制没有同时捕获完整可见链，无法区分纯取证缺口和呈现/交互缺陷"
+        ],
+        "status": "UNRESOLVED"
+      },
+      "acceptance": [
+        "两个视口各有自然输入录制，连续显示同一 ID 对象由承托到切开、上层掉落并落地",
+        "录制中不使用 debug、状态注入或内部状态决定点击",
+        "若实现已正确，仅补证据并保持源码不变；若画面显示同一对象未掉落/落地，只修改因果实现"
+      ],
+      "evidence": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/qa/reproduction-matrix.json",
+          "sha256": "722ab5c2e2aa3b48441a095c7fadd097ca26f129e91879533aa9a744f7ea62f4",
+          "provenance": "verified-run-artifact"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/desktop-1/recording.json",
+          "sha256": "7c1c4a892fa9b9d554a7897d5e958b72ee160c942869be072301d9459389d7ee",
+          "provenance": "verified-run-artifact"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/fix-result.json",
+          "sha256": "f81f07c8ea893c40c5a743748d617486ed6bf82742a86608cad2d31b26812ea1",
+          "provenance": "verified-run-artifact"
+        }
+      ]
+    },
+    {
+      "id": "L1-FINISH-PHONE-ROUTE",
+      "severity": "error",
+      "classification": "unresolved-product-or-evidence",
+      "objectType": "finish outcome lanes, settlement and replay",
+      "stateBranch": "portrait 390x844 approach → choice/contact → world result → settlement → replay",
+      "renderer": "createCameraSpec → ThreeWorldRenderer → finish-label-layout → DOM HUD",
+      "scope": "Level1 phone route only, with desktop comparison; no new finish mechanics",
+      "reproduction": {
+        "steps": [
+          "从新的 390x844 浏览器上下文进入首关",
+          "只用正常触摸和可见反馈调整节奏，进入终点结果区",
+          "观察选择、世界结果、结算面板和重玩入口"
+        ],
+        "observed": [
+          "上一周期第4次桌面录制曾自然通关并重玩",
+          "最后一次手机录制在前段跌出路线，无法证明手机终点不可达，也没有完成最终手机门禁"
+        ],
+        "status": "UNRESOLVED"
+      },
+      "acceptance": [
+        "390x844 fresh natural-input trace reaches a visible finish choice, settlement and replay",
+        "结果栏在选择前可辨，接触结果先于结算，重玩后回到首关 ready",
+        "若只是输入覆盖不足，保留构建并补取证；不得因脚本失败擅自改动核心节奏"
+      ],
+      "evidence": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-5/qa/portrait-1/recording.json",
+          "sha256": "6d0f6de13fcc7a163a518157c7e15bb65dd5fc3066332a8d44d32d35545d6902",
+          "provenance": "verified-run-artifact"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/desktop-1/frames/terminal.png",
+          "sha256": "8b39695a3309bcac2187548bb1e3eb07e894ecd2e57960915380446fd3bcda05",
+          "provenance": "verified-run-artifact"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/cycle-final-report.md",
+          "sha256": "f10f7a1eac49c594dc27c7694c5ac355411454e3b2f2dcbd7a0a4bf4baab5e35",
+          "provenance": "verified-run-artifact"
+        }
+      ]
+    }
+  ],
+  "sourcePrecedence": [
+    "当前用户授权与纠正",
+    "已验证且绑定本 run 的自然录制与 QA 回执",
+    "当前 active-slice-contract 及其哈希",
+    "历史 Agent 假设；未验证媒体不使用"
+  ],
+  "createdAt": "2026-09-07T09:12:45.398Z"
+}

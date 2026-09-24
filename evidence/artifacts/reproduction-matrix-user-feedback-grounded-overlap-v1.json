@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "ReproductionMatrix",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "sourceEvidence": "reference-evidence/incoming/_2026-09-06-135548-3781e4dcd3d2.mp4",
+  "cells": [
+    {"objectType":"intact tabletop collectible","lifecycle":"startup/intact","renderer":"Three.js presentation","viewport":"desktop 1100x720","acceptance":"bottom of item rests on a support top; no unexplained air gap","status":"PENDING"},
+    {"objectType":"overlapping tabletop pair","lifecycle":"startup/intact","renderer":"Three.js presentation","viewport":"desktop 1100x720","acceptance":"horizontal bounds overlap intentionally while both items remain supported/readable","status":"PENDING"},
+    {"objectType":"supported cuttable object","lifecycle":"intact → cut → support loss","renderer":"simulation + Three.js presentation","viewport":"desktop 1100x720","acceptance":"object remains supported before cut and begins gravity fall after support loss","status":"PENDING"},
+    {"objectType":"supported cuttable object","lifecycle":"intact → support loss","renderer":"simulation + Three.js presentation","viewport":"mobile 390x844 portrait","acceptance":"no persistent floating item after support removal","status":"PENDING"}
+  ],
+  "gate": "Fixture placement alone cannot close this issue; each affected branch needs natural player-visible evidence."
+}

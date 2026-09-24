@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "platform-qa-task",
+  "role": "QAAgent",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "zipPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/build/TapBuild/game.zip",
+  "expectedSha256": "b224cd5470efb70e1de7d63f9361f7269835e4bf7adaa53123e76d67dfe24173",
+  "fixerResultPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-performance-20260908/attempt-1/fix-result.json",
+  "checks": [
+    "Recompute SHA-256 and verify the ZIP is exactly b224cd5470efb70e1de7d63f9361f7269835e4bf7adaa53123e76d67dfe24173 before reading any result.",
+    "Read-only audit of ZIP integrity, TapTap AppID 928932, game name 疯狂切割, portrait orientation, 390x844/policy4 settings, required runtime markers and official plugin metadata.",
+    "Read-only verify static/dynamic Graphics separation and performance-contract evidence; confirm one lifecycle static draw and dynamic-only active-frame redraw without claiming physical-device FPS.",
+    "Run the existing platform tests and inspect recorded lint/typecheck/build/package evidence without modifying source or rebuilding.",
+    "Assess cold start, visible first frame, ordinary touch/core loop, terminal settlement, replay, and ten-minute stability evidence; distinguish exact-SHA device/backend observations from deterministic source proxies.",
+    "Report independent engineering, natural-journey, perceptual and filing-package verdicts, preserving evidence gaps for PHJ110, Huawei P30, Xiaomi 14 and OnePlus8_EEA if exact-SHA traces are unavailable."
+  ],
+  "prohibitedActions": [
+    "Do not modify the generated game workspace, tests, build outputs or source files.",
+    "Do not rebuild, repackage, upload to TapTap, or substitute another ZIP/SHA.",
+    "Do not invent a TapTap FPS threshold or treat the reported 0.02150376 as a confirmed root cause.",
+    "Do not claim natural or perceptual device pass without exact-SHA raw traces and player-visible evidence."
+  ],
+  "outputPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-performance-20260908/attempt-1/qa-report.json"
+}

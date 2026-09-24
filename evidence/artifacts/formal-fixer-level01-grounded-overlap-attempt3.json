@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixAttempt",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "attempt": 3,
+  "sourceTriage": "artifacts/gameplay-triage-user-feedback-grounded-tabletops-v1.json",
+  "exactMatrix": "artifacts/reproduction-matrix-user-feedback-grounded-tabletops-v1.json",
+  "contextOmitted": ["other levels", "other prototype workspaces", "third-party expressive assets and audio"],
+  "filesChanged": [
+    "src/game-levels.ts",
+    "src/game-core.ts",
+    "src/three-world-renderer.ts",
+    "tests/game-core.test.ts",
+    "tests/level-catalog.test.ts"
+  ],
+  "changes": [
+    "Bound Level 1 sigils to authored tabletop surfaces with intentional horizontal overlap and corrected the recorded opening cadence.",
+    "Added supported-sigil settling and gravity release after a support surface or dual-role bridge is cut.",
+    "Kept layout-only visual stacks non-colliding and isolated the dual-role regression fixture from incidental collectibles.",
+    "Preserved the ordinary and bonus finish branches while preventing a second bonus-chain gate from trapping the natural route.",
+    "Added presentation-only grounded plinths beneath the authored Level 1 tabletop surfaces so the visible bases meet the terrain/floor instead of reading as floating cards."
+  ],
+  "tests": {
+    "red": "TABLETOP-GRAVITY-001 and LEVEL-CATALOG-RED-008 failed before grounded support implementation.",
+    "green": "pnpm test passed 170/170",
+    "lint": "PASS",
+    "typecheck": "PASS",
+    "build": "PASS",
+    "qaBrowser": {"status": "PASS", "evidence": "BrowserQaRunnerResult passed=true, previewClosed=true"},
+    "qa3d": {"status": "PASS", "evidence": "ThreeCutPocBrowserQaRunnerResult passed=true"}
+  },
+  "status": "PASS_WITH_EVIDENCE_BOUNDARY",
+  "remainingEvidenceGaps": [
+    "The reference's third-party visual/audio expression remains intentionally original.",
+    "A fresh 390x844 portrait recording still needs to verify the same grounded-base spacing under mobile framing.",
+    "Exact tap timestamps are observational only until a side-by-side replay capture is available."
+  ],
+  "nextStep": "Review the first-level build against the supplied recording before changing Level 2."
+}

@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fix-result",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 19,
+  "issueId": "L1-RUNWAY-RECOVERY-KINEMATIC-ENVELOPE",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "role": "FixerAgent",
+  "model": "gpt-6-luna",
+  "route": "formal-fixer",
+  "routeReason": "The issue affects Level 1 recovery lifecycle and the natural replay, so it remains on the formal QA/Fixer/QA route. Focused GREEN failed and both owned files were immediately restored to their task-packet baseline hashes.",
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory modules, renderer/presentation code, platform adapters, level data, persistence, and release configuration.",
+    "Full conversation, unbound media, unavailable candidate source bytes, and unrelated repository history.",
+    "Natural/perceptual completion claims and fixture-only evidence as a substitute for browser QA."
+  ],
+  "attemptedFiles": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "changedFiles": [],
+  "candidateSummary": {
+    "prerequisiteReconstruction": "Reconstructed the previously observed Attempt18 candidate2 pose capture and one-shot release path from its structured evidence because the restored task-packet baseline contained no pending pose implementation. This was a prerequisite experiment, not an accepted fix.",
+    "newHypothesis": "Applied a deterministic post-integration 8px center / 0.4rad angle envelope only while an airborne pending runway pose existed, retaining normal no-pending integration.",
+    "observed": {
+      "captures": [216, 302],
+      "capturePoses": [
+        { "playerX": 305.2000000000005, "playerY": 514.1666666666666, "playerAngle": 4.986276450461116 },
+        { "playerX": 332.7000000000005, "playerY": 469.7083333333333, "playerAngle": 6.656567983114545 }
+      ],
+      "maxPendingCenterMotionPixels": [8.000000000000034, 8.000000000000036],
+      "maxPendingAngleMotionRadians": [0.40000000000000036, 0.40000000000000036],
+      "tapPositionCorrectionPixels": [7.999999999999993, 7.999999999999991],
+      "tapAngleCorrectionRadians": [0.13493226667096803, 0.4000000000000003],
+      "standardLaunchEvents": [1, 1],
+      "replayElapsedSeconds": 14.616666666666477,
+      "replayStatus": "airborne",
+      "replayPlayerX": 2132.708548404947
+    },
+    "remainingFocusedFailures": [
+      "Release age for the second pose was 2.091666666666662 seconds, below the unchanged 2.092-second assertion.",
+      "The release-selector fixture expected white-branch, while the runtime selector method was undefined."
+    ]
+  },
+  "focusedGreenCandidates": [
+    {
+      "candidate": 1,
+      "status": "failed",
+      "tests": 21,
+      "passed": 16,
+      "failed": 5,
+      "observed": {
+        "captures": [216, 302],
+        "capturePoses": [
+          { "playerX": 305.2000000000005, "playerY": 514.1666666666666, "playerAngle": 4.986276450461116 },
+          { "playerX": 339.55066814280315, "playerY": 473.83971881488657, "playerAngle": 6.256567983114545 }
+        ],
+        "releases": [],
+        "replayElapsedSeconds": 9.8,
+        "replayStatus": "anchored",
+        "replayPlayerX": 1254.4506681428039
+      },
+      "logDisposition": "intermediate output was superseded by the final green-targeted.log; its observations were recorded during this attempt"
+    },
+    {
+      "candidate": 2,
+      "status": "failed; immediate rollback followed",
+      "tests": 21,
+      "passed": 19,
+      "failed": 2,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-19/green-targeted.log",
+      "sha256": "d5ca9b4e47638acd64b328f8348b87851c4c3463153be46ff2934da854361e42",
+      "remainingFailures": [
+        "Second pose age assertion: observed 2.091666666666662, expected at least 2.092.",
+        "Runtime selector fixture: expected white-branch, got undefined."
+      ]
+    }
+  ],
+  "checks": {
+    "artifactValidation": {
+      "status": "passed",
+      "evidence": "REPAIR_CYCLE_ARTIFACTS_OK",
+      "amendedTaskSha256": "b7c3bd74deec3f000ab97ff2978a8c8d32a99789d708725028d3877e53038dad",
+      "triageSha256": "fbb2574a1021d143d26049a55174b8328096b9166271365a2f8e1375b8ed6323"
+    },
+    "focusedRed": {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "status": "expected failures observed before production edits",
+      "tests": 21,
+      "passed": 15,
+      "failed": 6,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-19/red-targeted.log",
+      "sha256": "db8a5fcec14cab013f16a421dc5a8614fdae5387919fd61d9d0bf9895136d42f"
+    },
+    "focusedGreen": {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "status": "failed; rollback completed immediately",
+      "tests": 21,
+      "passed": 19,
+      "failed": 2,
+      "logPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-19/green-targeted.log",
+      "sha256": "d5ca9b4e47638acd64b328f8348b87851c4c3463153be46ff2934da854361e42"
+    },
+    "fullTests": "not run because focused GREEN failed",
+    "lint": "not run because focused GREEN failed",
+    "typecheck": "not run because focused GREEN failed",
+    "build": "not run because focused GREEN failed; no build was attempted",
+    "naturalOrPerceptualQa": "not run; no completion claim"
+  },
+  "rollback": {
+    "performed": true,
+    "files": [
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+        "expectedBaselineSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+        "actualSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+        "matchesBaseline": true
+      },
+      {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts",
+        "expectedBaselineSha256": "7627f8b8052adb8bd33b6b21f7c0cf935b1d23cba5b4570513ce47bd56984510",
+        "actualSha256": "7627f8b8052adb8bd33b6b21f7c0cf935b1d23cba5b4570513ce47bd56984510",
+        "matchesBaseline": true
+      }
+    ]
+  },
+  "status": "BLOCKED",
+  "qaStatus": null,
+  "remainingEvidenceGaps": [
+    "The focused GREEN still failed the unchanged minimum release-age assertion and runtime selector fixture; the selector prerequisite was not reconstructed in this candidate.",
+    "The attempted candidate was rolled back; no source change remains applied.",
+    "Full tests, lint, typecheck, and build were not run after the focused failure.",
+    "Independent natural-input and perceptual QA remain outstanding; deterministic focused evidence does not close the release blocker."
+  ],
+  "createdAt": "2026-09-23T05:16:00.000Z"
+}

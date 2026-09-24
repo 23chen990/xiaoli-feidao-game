@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "perceptual-qa-report",
+  "game": "mobile-slice-adaptation-20260830",
+  "passed": false,
+  "features": [
+    {
+      "featureId": "L1-INPUT-390",
+      "playerVisible": false,
+      "naturalTriggerVerified": false,
+      "screenshotEvidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-startup.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-tap-01.png"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-trace.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-startup.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-tap-01.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/reproduction-matrix.json"
+      ],
+      "notes": [
+        "FAIL: 首个承托台面在开场可见，rune-1 初始 intact 未切状态已由只读状态确认，但台面上没有可辨的完整目标；首次输入后才出现带贴图碎片。分支为 sigil/intact，不可用后续 block 可见或 cut 碎片替代。"
+      ]
+    },
+    {
+      "featureId": "L1-GROUND-390",
+      "playerVisible": false,
+      "naturalTriggerVerified": false,
+      "screenshotEvidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-startup.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-tap-01.png"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-trace.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-startup.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-tap-01.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/reproduction-matrix.json"
+      ],
+      "notes": [
+        "FAIL: 开场 opening-table-a 为薄浮板，底部未接地；white-landing/runway 的厚基座不能关闭这个不同 ID 分支。后续部分高台有柱体，但截图没有明确接触阴影。"
+      ]
+    },
+    {
+      "featureId": "L1-STACK-390",
+      "playerVisible": false,
+      "naturalTriggerVerified": false,
+      "screenshotEvidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-tap-10.png"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-trace.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-tap-10.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/reproduction-matrix.json"
+      ],
+      "notes": [
+        "BLOCKED: 可见上方绿色砖块与下方白台之间有明显空隙；没有取得同一个水平重叠堆叠 intact→接触→切开→失去承托下落→落地的完整像素链。自然轨迹中的单个目标/砖块切割不能关闭此分支。"
+      ]
+    },
+    {
+      "featureId": "L1-REWARD-390",
+      "playerVisible": false,
+      "naturalTriggerVerified": false,
+      "screenshotEvidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-2-tap-01.png"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-trace.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-2-tap-01.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/reproduction-matrix.json"
+      ],
+      "notes": [
+        "BLOCKED: 截帧可见碎片、局部 +1 和 HUD 收益，但最低 550–800ms 采样和截图开销不足以确认切割完成→分离→局部奖励→累计同步的严格次序；未以事件计数推断感知通过。"
+      ]
+    },
+    {
+      "featureId": "L1-PRESSURE-390",
+      "playerVisible": false,
+      "naturalTriggerVerified": false,
+      "screenshotEvidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-tap-10.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-4-tap-13.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-4-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-4-replay.png"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-trace.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-tap-10.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-4-tap-13.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-4-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-4-replay.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-4-trace.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/reproduction-matrix.json"
+      ],
+      "notes": [
+        "BLOCKED: 正常输入确实出现红色尖刺；portrait-2 发生 spike 失败并通过可见重玩按钮恢复。固定节奏没有证明玩家看到预警后改变节奏；失败截图中刀与致死尖刺空间关系不清晰，不能把内部 failReason 当作玩家可归因证据。 追加portrait-4-tap-13截图已明确显示刀尖接近红尖刺，随后真实危险失败面板并重玩，改善了接近→后果链证据。固定节奏仍未证明基于提前预警的有意回避决策。"
+      ]
+    },
+    {
+      "featureId": "L1-FINISH-390",
+      "playerVisible": false,
+      "naturalTriggerVerified": false,
+      "screenshotEvidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-tap-25.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-4-end.png"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-trace.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-tap-25.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-4-trace.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-4-end.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/reproduction-matrix.json"
+      ],
+      "notes": [
+        "FAIL: 终点墙上方结果带被视口裁切，倍率只显示在右上极小图例，没有清楚绑定到墙的对应结果带。桌面已自然出现关卡完成 ×1 分数23并重玩；手机第4次采用已修正采集器，第4次在x≈1484自然撞尖刺失败，已确认真实失败面板后才重玩；未到终点，30秒等待结算条件未触发。手机完整赢结算仍缺证，不等同于游戏无法结算。"
+      ]
+    },
+    {
+      "featureId": "L1-INPUT-1100",
+      "playerVisible": false,
+      "naturalTriggerVerified": false,
+      "screenshotEvidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-startup.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-tap-01.png"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-trace.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-startup.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-tap-01.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/reproduction-matrix.json"
+      ],
+      "notes": [
+        "FAIL: 首个承托台面在开场可见，rune-1 初始 intact 未切状态已由只读状态确认，但台面上没有可辨的完整目标；首次输入后才出现带贴图碎片。分支为 sigil/intact，不可用后续 block 可见或 cut 碎片替代。"
+      ]
+    },
+    {
+      "featureId": "L1-GROUND-1100",
+      "playerVisible": false,
+      "naturalTriggerVerified": false,
+      "screenshotEvidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-startup.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-tap-01.png"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-trace.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-startup.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-tap-01.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/reproduction-matrix.json"
+      ],
+      "notes": [
+        "FAIL: 开场 opening-table-a 为薄浮板，底部未接地；white-landing/runway 的厚基座不能关闭这个不同 ID 分支。后续部分高台有柱体，但截图没有明确接触阴影。"
+      ]
+    },
+    {
+      "featureId": "L1-STACK-1100",
+      "playerVisible": false,
+      "naturalTriggerVerified": false,
+      "screenshotEvidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-tap-07.png"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-trace.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-tap-07.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/reproduction-matrix.json"
+      ],
+      "notes": [
+        "BLOCKED: 可见上方绿色砖块与下方白台之间有明显空隙；没有取得同一个水平重叠堆叠 intact→接触→切开→失去承托下落→落地的完整像素链。自然轨迹中的单个目标/砖块切割不能关闭此分支。"
+      ]
+    },
+    {
+      "featureId": "L1-REWARD-1100",
+      "playerVisible": false,
+      "naturalTriggerVerified": false,
+      "screenshotEvidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-tap-04.png"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-trace.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-tap-04.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/reproduction-matrix.json"
+      ],
+      "notes": [
+        "BLOCKED: 截帧可见碎片、局部 +1 和 HUD 收益，但最低 550–800ms 采样和截图开销不足以确认切割完成→分离→局部奖励→累计同步的严格次序；未以事件计数推断感知通过。"
+      ]
+    },
+    {
+      "featureId": "L1-PRESSURE-1100",
+      "playerVisible": false,
+      "naturalTriggerVerified": false,
+      "screenshotEvidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-tap-07.png"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-trace.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-tap-07.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/reproduction-matrix.json"
+      ],
+      "notes": [
+        "BLOCKED: 正常输入确实出现红色尖刺；portrait-2 发生 spike 失败并通过可见重玩按钮恢复。固定节奏没有证明玩家看到预警后改变节奏；失败截图中刀与致死尖刺空间关系不清晰，不能把内部 failReason 当作玩家可归因证据。"
+      ]
+    },
+    {
+      "featureId": "L1-FINISH-1100",
+      "playerVisible": false,
+      "naturalTriggerVerified": false,
+      "screenshotEvidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-tap-16.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-4-end.png"
+      ],
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-trace.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-tap-16.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-4-trace.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-4-end.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/reproduction-matrix.json"
+      ],
+      "notes": [
+        "FAIL: 终点墙上方结果带被视口裁切，倍率只显示在右上极小图例，没有清楚绑定到墙的对应结果带。桌面已自然出现关卡完成 ×1 分数23并重玩；手机第4次采用已修正采集器，第4次在x≈1484自然撞尖刺失败，已确认真实失败面板后才重玩；未到终点，30秒等待结算条件未触发。手机完整赢结算仍缺证，不等同于游戏无法结算。"
+      ]
+    }
+  ],
+  "checkedAt": "2026-09-07T05:42:16.088Z"
+}

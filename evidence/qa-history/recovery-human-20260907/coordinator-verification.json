@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "scope": "cycle coordination only; no generated game changes",
+  "checks": [
+    {
+      "command": "pnpm exec tsx --test /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/final-checks.test.ts",
+      "exitCode": 0,
+      "tests": 4
+    },
+    {
+      "command": "pnpm lint",
+      "exitCode": 0
+    },
+    {
+      "command": "pnpm typecheck",
+      "exitCode": 0
+    }
+  ],
+  "results": [
+    {
+      "attempt": 1,
+      "finalChecksPassed": false,
+      "resultPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/fix-result.json",
+      "resultSha256": "0857f9f5421d862436b5670f80381d7316ea895f27780f2b4ffe377b5f02c5b5"
+    },
+    {
+      "attempt": 2,
+      "finalChecksPassed": true,
+      "resultPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/fix-result.json",
+      "resultSha256": "a7fd6a015505b95735e79ed28a33a22faf9d031bca5aae60bd849ac057f35e93"
+    }
+  ],
+  "rule": "Preserve intermediate failures; final full suite supersedes prior suite executions. Missing/failed final full suite, lint or typecheck blocks engineering. Natural/perceptual gates remain independent.",
+  "verifiedAt": "2026-09-07T06:33:53.735Z"
+}

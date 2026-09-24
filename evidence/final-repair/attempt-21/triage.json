@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-triage",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 21,
+  "issueId": "L1-RUNWAY-RECOVERY-ATTEMPT19-PREREQUISITE-RECONSTRUCTION",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "classification": "natural-level1-runway-recovery-blocker",
+  "status": "VALIDATED_REPRODUCTION",
+  "priorAttempt": {
+    "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-20/fix-result.json",
+    "sha256": "95cbcc9c2f6015e637d944d7c2328ed075dc194969c25e953d1ed3391fbbdf4a",
+    "status": "BLOCKED",
+    "candidateRejected": true
+  },
+  "reproduction": {
+    "attempt20Divergence": {
+      "focusedTests": { "total": 20, "passed": 16, "failed": 4 },
+      "prerequisite": {
+        "sourceMatchesBaseline": true,
+        "sourceSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+        "testSha256": "7627f8b8052adb8bd33b6b21f7c0cf935b1d23cba5b4570513ce47bd56984510",
+        "replayTerminalSeconds": 6.5,
+        "captures": [],
+        "cause": "Attempt19 pending-pose capture/envelope/release prerequisite was not reconstructed after baseline restore"
+      },
+      "attempt19NearPass": {
+        "focusedTests": { "total": 21, "passed": 19, "failed": 2 },
+        "captures": [216, 302],
+        "envelope": { "centerPixels": [8, 8], "angleRadians": [0.4, 0.4] },
+        "replay": { "elapsedSeconds": 14.6167, "playerX": 2132.7, "status": "airborne" },
+        "remainingFailures": [
+          "second capture release age 2.091666666666662 < 2.092",
+          "runtime selector returned undefined for white-branch and lift-plank fixtures"
+        ]
+      },
+      "evidence": [
+        { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-20/fix-result.json", "sha256": "95cbcc9c2f6015e637d944d7c2328ed075dc194969c25e953d1ed3391fbbdf4a", "role": "prior-fix-receipt" },
+        { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-20/green-targeted.log", "sha256": "10df7c6e4bab68566b16cb1600a973d6b67c86865445b42019e09ff1339132aa", "role": "prior-experiment-rejection" },
+        { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-19/fix-result.json", "sha256": "3dbe50b62f61fb33e0af16e5604eff650c7d5d0eb7a43a8e1a348d87945637ce", "role": "prior-fix-receipt" },
+        { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-19/green-targeted.log", "sha256": "d5ca9b4e47638acd64b328f8348b87851c4c3463153be46ff2934da854361e42", "role": "prior-experiment-rejection" },
+        { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-18/green-targeted-candidate2.log", "sha256": "d59786833938f4e0938853740d67d856614557816a5bbc1ec0ec1fc02473d8d0", "role": "prior-experiment-rejection" },
+        { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/baseline-recovery.json", "sha256": "046b4d5185f50dc9054edeff7820130c434f354267ab7ab1524cccf4d1f99b30", "role": "prior-cycle-state" },
+        { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts", "sha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7", "role": "current-source" },
+        { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts", "sha256": "7627f8b8052adb8bd33b6b21f7c0cf935b1d23cba5b4570513ce47bd56984510", "role": "current-source" },
+        { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html", "sha256": "599b4c3cb8c6b345b7e18b3a4e06cae33663c0432b918d3115ee78df3bf64118", "role": "current-build" },
+        { "path": "/Users/kker/.codex/sessions/2026/09/23/rollout-2026-09-23T21-39-31-01a0ce7e-30ee-7ba1-8dbb-ebf19e9828ad.jsonl", "sha256": "6729e3eb105d54a55f51e913ee469dfbfa5f6cef8ea8127e1c864eed9e23fb57", "role": "prior-experiment-rejection" }
+      ]
+    },
+    "scopeOfHypothesis": "Reconstruct Attempt19 from retained rollout source ordinals: core source ord197, narrow suppression at ord217, then replace it at ord287 with supportId-only suppression. Keep the runway capture branch before recoverApproaching's top-level break. Then make only the FIXED_STEP capture-age and read-only selector corrections; do not carry diagnostic test edits."
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "runway pending pose",
+      "lifecycleStateBranch": "runway capture frame216 → pending airborne state → scheduled first tap",
+      "rendererPresentationPath": "SliceSimulation deterministic state → browser game renderer → visible player/support",
+      "viewport": "deterministic-fixed-step",
+      "evidence": [
+        { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-19/green-targeted.log", "sha256": "d5ca9b4e47638acd64b328f8348b87851c4c3463153be46ff2934da854361e42", "role": "prior-experiment-rejection" }
+      ],
+      "observed": "The near-pass retained capture pose, support-relative values, envelope, tap correction, one-shot launch and replay assertions; only age and selector checks failed overall.",
+      "inferred": "Reconstruct the retained pending-pose prerequisite before applying the single-step age correction.",
+      "unknowns": ["Whether age initialized to FIXED_STEP preserves the unchanged TTL expiry boundary."]
+    },
+    {
+      "objectType": "runway pending pose",
+      "lifecycleStateBranch": "runway capture frame302 → pending pose age → scheduled second tap release",
+      "rendererPresentationPath": "SliceSimulation age/release state → launch event → browser game renderer feedback",
+      "viewport": "deterministic-fixed-step",
+      "evidence": [
+        { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-19/green-targeted.log", "sha256": "d5ca9b4e47638acd64b328f8348b87851c4c3463153be46ff2934da854361e42", "role": "prior-experiment-rejection" }
+      ],
+      "observed": "The second release age measured 2.091666666666662 seconds against the fixed 2.092-second minimum.",
+      "inferred": "The capture step was omitted from age initialization; count it by initializing at one FIXED_STEP without changing tap time or assertion.",
+      "unknowns": ["Whether the correction alters expiration, reset, load, or terminal clearing branches."]
+    },
+    {
+      "objectType": "authored runway release support selector",
+      "lifecycleStateBranch": "early selector query → white-branch; later query → lift-plank",
+      "rendererPresentationPath": "read-only runtime support selection → existing player/support presentation; independent trace remains diagnostic",
+      "viewport": "deterministic-fixed-step",
+      "evidence": [
+        { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-19/green-targeted.log", "sha256": "d5ca9b4e47638acd64b328f8348b87851c4c3463153be46ff2934da854361e42", "role": "prior-experiment-rejection" },
+        { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-18/green-targeted-candidate2.log", "sha256": "d59786833938f4e0938853740d67d856614557816a5bbc1ec0ec1fc02473d8d0", "role": "prior-experiment-rejection" }
+      ],
+      "observed": "The runtime selector method was undefined in Attempt19; retained trace expectations distinguish early white-branch from late lift-plank.",
+      "inferred": "Implement the same deterministic candidate filtering and reachability ordering as the trace, while keeping the selector read-only.",
+      "unknowns": ["Whether normal runtime recovery selects exactly the same support under all browser frame schedules."]
+    },
+    {
+      "objectType": "player and support presentation",
+      "lifecycleStateBranch": "ordinary no-pending flight; reset/load/terminal/inactive/non-runway clear paths",
+      "rendererPresentationPath": "SliceSimulation update and lifecycle branches → browser renderer at portrait and desktop viewports",
+      "viewport": "390x844",
+      "evidence": [
+        { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts", "sha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7", "role": "current-source" },
+        { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html", "sha256": "599b4c3cb8c6b345b7e18b3a4e06cae33663c0432b918d3115ee78df3bf64118", "role": "current-build" }
+      ],
+      "observed": "Attempt20 restored the exact baseline source and the existing build remains at its recorded hash; no new build or natural-input QA is evidence for this attempt yet.",
+      "inferred": "The minimal corrections should leave ordinary flight and lifecycle clearing unchanged.",
+      "unknowns": ["Natural-input mobile and perceptual behavior remain unobserved and require independent QA after a build."]
+    }
+  ],
+  "rootCauseHypothesis": {
+    "evidence": "Attempt20's 16/20 focused result ended at 6.5 seconds without either capture because the Attempt19 prerequisite was absent after baseline restore. Attempt19's retained candidate passed 19/21 with both captures at 216/302, 8px/0.4rad envelope limits, and a 14.6167s / x=2132.7 airborne replay; only age (2.091666666666662 < 2.092) and undefined runtime selector assertions remained.",
+    "changeHypothesis": "Reconstruct Attempt19's candidate in source order from retained rollout ordinals: core source ord197, narrow suppression ord217, then replace it at ord287 with supportId-only suppression. Place the capture branch before recoverApproaching's top-level break; Attempt20 put it after that break and lost capture302. Do not carry diagnostic test edits. Then change only capture age initialization to FIXED_STEP (keep TTL at 2.35s) and implement the matching read-only runtime selector. Keep test timing, independent trace and assertions unchanged.",
+    "stateName": "pendingRunwayReleasePose",
+    "ageRule": "initialize capture age to exactly FIXED_STEP, increment once per fixed update, keep TTL at 2.35 seconds",
+    "selectorRule": "implement a read-only runtime selector with the same active, collidable, ahead, reachable-corridor and earliest-entry ordering as the independent diagnostic trace",
+    "falsifier": "reject if Attempt19 capture/envelope/release/replay assertions regress, second release age remains below 2.092, selector fixtures do not return white-branch and lift-plank, or TTL/ordinary branches change",
+    "preservedBranches": [
+      "exact captures at frames216 and302 with retained pose coordinates",
+      "support-relative coordinate invariants",
+      "measurable pending center and orientation movement within 8px and 0.4rad",
+      "tap corrections at or below 10px and 0.5rad",
+      "one-time pending pose consumption and one standard launch event",
+      "2.35-second TTL and reset/load/terminal/inactive/non-runway clear paths",
+      "ordinary no-pending flight and support launches",
+      "contact, finish, failure, approaching, side-sharp, body-bounce and opening branches",
+      "fixed replay reaches at least 11.9 seconds and x>2000 without failure",
+      "capture branch ordering remains before recoverApproaching's top-level break"
+    ],
+    "rejectedAlternatives": [
+      "moving the scheduled taps or weakening the 2.092-second assertion",
+      "changing the 2.35-second TTL to mask the age boundary",
+      "changing capture frames, pose coordinates or support-relative rules",
+      "changing the already bounded 8px/0.4rad envelope",
+      "making the runtime selector mutate state or replacing the independent trace",
+      "hardcoding selector IDs without candidate reachability/order evaluation",
+      "placing the capture branch after recoverApproaching's top-level break, which loses capture302",
+      "carrying diagnostic-only test edits from the retained rollout",
+      "changing renderer, level data, adapters, package/build configuration or unrelated branches"
+    ]
+  },
+  "scope": {
+    "includedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+    ],
+    "excludedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-renderer.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-levels.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/package.json",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html"
+    ],
+    "route": "formal-fixer",
+    "expectedSourceFileLimit": 2
+  },
+  "acceptanceCriteria": [
+    "Run the focused test command and save RED evidence before any production edit; RED must demonstrate the targeted failures.",
+    "Reconstruct Attempt19 source ordinal 197, apply the narrow suppression at ordinal 217, and replace it with supportId-only suppression at ordinal 287; keep the capture branch before recoverApproaching's top-level break.",
+    "Do not carry diagnostic test edits; preserve the test schedule, independent trace contract and assertions.",
+    "Do not change tap schedules, test timing, or assertion thresholds.",
+    "Initialize pending capture age to exactly FIXED_STEP and increment it exactly once per fixed update.",
+    "Keep pending pose TTL exactly 2.35 seconds and preserve all expiration/clear paths.",
+    "Implement a read-only runtime selector using active, collidable, ahead, reachable-corridor and earliest-entry rules matching the independent diagnostic trace.",
+    "Return white-branch for the early selector fixture and lift-plank for the late selector fixture.",
+    "Keep exact pending captures at frames216 and302 with the required pose values and support-relative coordinate invariants.",
+    "Keep pending center motion measurable and within 8px and pending angular motion measurable and within 0.4rad.",
+    "Keep both tap position corrections at or below 10px and angle corrections at or below 0.5rad.",
+    "Consume each pose once and emit one standard launch event with stored pose restoration before launch.",
+    "Keep second release age at least 2.092 seconds without changing the schedule or relaxing the assertion.",
+    "Preserve ordinary no-pending flight and all contact, finish, failure, reset, load, terminal, inactive and non-runway branches.",
+    "Reach at least 11.9 seconds and player x>2000 without failure in the fixed replay.",
+    "If focused GREEN fails, immediately revert only the candidate edits and record verified rollback hashes; do not run downstream checks.",
+    "Only after focused GREEN passes, run pnpm test, lint, typecheck and exactly one build; save concise machine-verifiable evidence.",
+    "Independent natural-input and perceptual QA remain a separate required gate; Fixer evidence must not claim QA completion."
+  ],
+  "evidenceClassification": {
+    "observed": [
+      "Attempt20 Fixer receipt records 16/20 focused assertions and a 6.5-second replay with no required captures because the Attempt19 prerequisite was missing.",
+      "Attempt19 retained green log records 19/21 passing assertions, captures 216/302, the bounded envelope and an airborne replay at 14.6167 seconds and x=2132.7.",
+      "Attempt19's two failures were release age 2.091666666666662 versus 2.092 and undefined runtime selector results.",
+      "Retained rollout extraction identifies Attempt19 final candidate ordering as core source ord197, narrow suppression ord217, replaced by supportId-only suppression ord287; moving capture after recoverApproaching's top-level break loses capture302.",
+      "Current game-core.ts and level1-recovery.test.ts match the supplied baseline SHA-256 values."
+    ],
+    "inferred": [
+      "The age deficit is a one fixed-step initialization offset and can be corrected without changing schedule or TTL.",
+      "A runtime selector matching the trace's candidate rules should resolve both undefined selector fixtures while remaining read-only.",
+      "Reconstructing the Attempt19 prerequisite is necessary to make the new narrow corrections testable against the near-pass behavior.",
+      "The exact retained source ordering and suppression replacement are required to recreate the known near-pass capture sequence."
+    ],
+    "unknown": [
+      "Whether age=FIXED_STEP preserves the exact 2.35-second expiry edge and all lifecycle clear paths.",
+      "Whether the read-only selector matches both fixtures and real runtime support choices beyond the retained traces.",
+      "Whether full checks, the single build, and independent natural/perceptual QA pass after focused GREEN."
+    ]
+  },
+  "createdAt": "2026-09-23T14:03:51.000Z"
+}

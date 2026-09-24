@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "dispatch-rejection",
+  "cycleId": "human-review-20260907-l1-followup",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "action": "dispatch distinct evidence-backed Level1 runway-collision hypothesis to stored Fixer for the next repair attempt",
+  "status": "REJECTED_BY_AUTOMATIC_APPROVAL_REVIEW",
+  "reason": "Automatic approval review classified the dispatch as allowing an external Fixer to modify the generated game workspace and rebuild artifacts; policy forbids the action even after explicit user authorization.",
+  "taskPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-2/task.json",
+  "triagePath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/triage.json",
+  "sourceModified": false,
+  "recordedAt": "2026-09-22T05:03:51Z"
+}

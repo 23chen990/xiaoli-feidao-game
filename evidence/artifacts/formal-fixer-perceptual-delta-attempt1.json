@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixerPerceptualDeltaEvidence",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "attempt": 1,
+  "filesChanged": [
+    "workspace/prototype-a/index.html",
+    "workspace/prototype-a/src/main.ts",
+    "workspace/prototype-a/src/style.css",
+    "workspace/prototype-a/src/three-world-renderer.ts",
+    "workspace/prototype-a/tests/perceptual-level-pressure.test.ts",
+    "workspace/prototype-a/tests/browser-smoke.ts"
+  ],
+  "changes": {
+    "routeDelta": "Inactive source-block supports now leave a visible dark route-opening marker while active support meshes are removed.",
+    "earningsHierarchy": "Added a prominent animated earnings banner showing per-cut gain and cumulative total, in addition to the persistent HUD total.",
+    "finishDelta": "Selected finish lane is highlighted and slightly emphasized during contact/reward/celebration/terminal phases; phase text remains visible before terminal controls.",
+    "originality": "Uses original color/material/animation treatment; no competitor names, assets, UI, or tuning copied."
+  },
+  "tests": {
+    "red": "Added perceptual source/runtime gate test for earnings-banner, routeOpenings, and finishPhase hooks; it initially failed because all hooks were absent.",
+    "green": [
+      "pnpm lint",
+      "pnpm typecheck",
+      "pnpm test",
+      "pnpm build"
+    ],
+    "result": "159 tests passed"
+  },
+  "naturalQa": {
+    "previousEvidence": {
+      "status": "PASS",
+      "report": "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/report.json",
+      "observed": [
+        "desktop/mobile natural cut and finish journeys",
+        "finish phases contact -> reward -> celebration -> terminal",
+        "totalEarnings > 0",
+        "desktop/mobile failure -> explicit replay"
+      ]
+    },
+    "latestRun": {
+      "status": "PASS",
+      "reason": "Fresh pnpm qa:browser completed successfully after the perceptual changes; desktop and mobile natural runs reported routeOpeningCount=1, finishHighlightedCount=1, totalEarnings>0, and full finish phases.",
+      "runner": "pnpm qa:browser"
+    }
+  },
+  "perceptualQa": {
+    "status": "PASS",
+    "evidenceGap": null,
+    "report": "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/report.json",
+    "observed": {
+      "desktop": { "routeOpeningCount": 1, "finishHighlightedCount": 1, "totalEarnings": 21 },
+      "mobile": { "routeOpeningCount": 1, "finishHighlightedCount": 1, "totalEarnings": 21 }
+    }
+  },
+  "remainingEvidenceGaps": [
+    "Native WeChat/Douyin/TapTap packages remain outside this web-lite evidence."
+  ],
+  "status": "PASS_WITH_WEB_LITE_SCOPE"
+}

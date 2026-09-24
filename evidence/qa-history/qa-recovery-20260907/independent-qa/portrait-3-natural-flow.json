@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "startedFromReset": true,
+  "actions": [
+    "新 Chromium 上下文，未注入任何存储；fixed 800ms interval normal touch; no state used to decide taps; terminal replay uses visible DOM button",
+    "按预先声明固定等待间隔点击；只读状态用于事后断言，不用于决定点击",
+    "原始操作及截图：/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-playwright-trace.zip"
+  ],
+  "transitions": [
+    {
+      "name": "portrait-3:startup-to-core",
+      "changed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-trace.json"
+    },
+    {
+      "name": "portrait-3:terminal",
+      "changed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-terminal.png"
+    },
+    {
+      "name": "portrait-3:visible-replay-to-ready",
+      "changed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-replay.png"
+    }
+  ],
+  "completion": "none",
+  "replayObserved": true,
+  "forbiddenOperations": [],
+  "screenshots": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-end.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-replay.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-startup.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-tap-01.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-tap-04.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-tap-07.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-tap-10.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-tap-13.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-tap-16.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-tap-19.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-tap-22.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-tap-25.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-terminal.png"
+  ],
+  "passed": false,
+  "blockers": [
+    "手机在 finishPhase=reward 时提前重玩；没有完整赢结算截图。"
+  ],
+  "runner": "independent-QAAgent-fixed-cadence",
+  "buildHash": "3df30043de31cdd9d943370dd70c3301600e16b4d691400c6e5b0f8902101197",
+  "runtime": "Chromium / existing default dist/index.html; no rebuild",
+  "device": {
+    "width": 390,
+    "height": 844,
+    "label": "portrait-3"
+  },
+  "observedAt": "2026-09-07T05:42:16.088Z"
+}

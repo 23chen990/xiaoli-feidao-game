@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "role": "QAAgent",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "PASS",
+  "reportPaths": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa/reproduction-matrix.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa/qa-natural-journey-report.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa/perceptual-qa-report.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa/qa-report.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa/console.log"
+  ],
+  "blockers": [],
+  "sourceModified": false,
+  "summary": "独立自然输入 QA 通过：两视口均观察到同一 runway 支撑的恢复分支，不再停在原始 tip 锚定死点；桌面白色教学支点与完成结算可见，失败/完成终端均可通过可见重玩控件回到 ready。无 pageerror 或 console-error；捕获期间的 WebGL 警告已记录为非致命后续清理项。"
+}

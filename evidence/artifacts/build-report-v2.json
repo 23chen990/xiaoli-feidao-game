@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "BuildReport",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "command": "pnpm build",
+  "passed": true,
+  "entrypoint": "workspace/prototype-a/dist/index.html",
+  "bytes": 2719462,
+  "sha256": "cd693bf4f8faf98a9e2c66ccc370518aa13ed1c9d31fa58284613d690d3740a8",
+  "runtimeWiredEntrypoints": ["src/main.ts", "src/game-core.ts", "src/game-levels.ts", "src/three-presentation.ts", "src/three-cut-visuals.ts", "src/three-world-renderer.ts"],
+  "platformClaimBoundary": "web-lite development and QA only; WeChat/Douyin/TapTap adapters unverified"
+}

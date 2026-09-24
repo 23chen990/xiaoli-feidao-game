@@ -1,0 +1,217 @@
+{
+  "desktopRuns": [
+    {
+      "label": "desktop-natural-1",
+      "platform": "desktop-real-mouse",
+      "seed": 31,
+      "inputPolicy": "global-height=530; vertical-threshold=-128; wait-bias=0; no obstacle-coordinate oracle",
+      "inputCount": 37,
+      "maxX": 1226.499999999997,
+      "status": "airborne",
+      "failReason": null,
+      "elapsed": 35.8,
+      "finishGateId": null,
+      "cuts": 4,
+      "maxNoProgressBounceStreak": 29,
+      "stageIdsVisited": [
+        "stage-1-read-and-cut",
+        "stage-2-recover-and-choose"
+      ],
+      "seedChanged": false,
+      "whiteColumnBounceCount": 30,
+      "whiteColumnAnchorCount": 1,
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-1-stage-1-read-and-cut.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-1-stage-2-recover-and-choose.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-1-timeout-or-reset.png"
+      ]
+    },
+    {
+      "label": "desktop-natural-2",
+      "platform": "desktop-real-mouse",
+      "seed": 31,
+      "inputPolicy": "global-height=540; vertical-threshold=-124; wait-bias=1; no obstacle-coordinate oracle",
+      "inputCount": 24,
+      "maxX": 3001.133333333305,
+      "status": "won",
+      "failReason": null,
+      "elapsed": 21.067,
+      "finishGateId": "calm-moon",
+      "cuts": 5,
+      "maxNoProgressBounceStreak": 1,
+      "stageIdsVisited": [
+        "stage-1-read-and-cut",
+        "stage-2-recover-and-choose",
+        "stage-3-structure-and-finish"
+      ],
+      "seedChanged": false,
+      "whiteColumnBounceCount": 0,
+      "whiteColumnAnchorCount": 3,
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-2-stage-1-read-and-cut.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-2-stage-2-recover-and-choose.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-2-stage-3-structure-and-finish.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-2-won.png"
+      ]
+    },
+    {
+      "label": "desktop-natural-3",
+      "platform": "desktop-real-mouse",
+      "seed": 31,
+      "inputPolicy": "global-height=550; vertical-threshold=-120; wait-bias=2; no obstacle-coordinate oracle",
+      "inputCount": 24,
+      "maxX": 3000.3999999999724,
+      "status": "won",
+      "failReason": null,
+      "elapsed": 21.1,
+      "finishGateId": "calm-moon",
+      "cuts": 4,
+      "maxNoProgressBounceStreak": 1,
+      "stageIdsVisited": [
+        "stage-1-read-and-cut",
+        "stage-2-recover-and-choose",
+        "stage-3-structure-and-finish"
+      ],
+      "seedChanged": false,
+      "whiteColumnBounceCount": 0,
+      "whiteColumnAnchorCount": 2,
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-3-stage-1-read-and-cut.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-3-stage-2-recover-and-choose.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-3-stage-3-structure-and-finish.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-3-won.png"
+      ]
+    },
+    {
+      "label": "desktop-natural-4",
+      "platform": "desktop-real-mouse",
+      "seed": 31,
+      "inputPolicy": "global-height=560; vertical-threshold=-116; wait-bias=3; no obstacle-coordinate oracle",
+      "inputCount": 23,
+      "maxX": 3000.0333333332956,
+      "status": "won",
+      "failReason": null,
+      "elapsed": 21.558,
+      "finishGateId": "calm-moon",
+      "cuts": 5,
+      "maxNoProgressBounceStreak": 1,
+      "stageIdsVisited": [
+        "stage-1-read-and-cut",
+        "stage-2-recover-and-choose",
+        "stage-3-structure-and-finish"
+      ],
+      "seedChanged": false,
+      "whiteColumnBounceCount": 1,
+      "whiteColumnAnchorCount": 3,
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-4-stage-1-read-and-cut.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-4-stage-2-recover-and-choose.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-4-stage-3-structure-and-finish.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-4-won.png"
+      ]
+    },
+    {
+      "label": "desktop-natural-5",
+      "platform": "desktop-real-mouse",
+      "seed": 31,
+      "inputPolicy": "global-height=570; vertical-threshold=-112; wait-bias=4; no obstacle-coordinate oracle",
+      "inputCount": 27,
+      "maxX": 3001.5807397395597,
+      "status": "won",
+      "failReason": null,
+      "elapsed": 24.05,
+      "finishGateId": "calm-moon",
+      "cuts": 6,
+      "maxNoProgressBounceStreak": 1,
+      "stageIdsVisited": [
+        "stage-1-read-and-cut",
+        "stage-2-recover-and-choose",
+        "stage-3-structure-and-finish"
+      ],
+      "seedChanged": false,
+      "whiteColumnBounceCount": 1,
+      "whiteColumnAnchorCount": 4,
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-5-stage-1-read-and-cut.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-5-stage-2-recover-and-choose.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-5-stage-3-structure-and-finish.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/desktop-natural-5-won.png"
+      ]
+    }
+  ],
+  "mobileRuns": [
+    {
+      "label": "mobile-natural-1",
+      "platform": "390x844-native-touch",
+      "seed": 31,
+      "inputPolicy": "global-height=535; vertical-threshold=-124; wait-bias=1; no obstacle-coordinate oracle",
+      "inputCount": 30,
+      "maxX": 3000.6326666666814,
+      "status": "won",
+      "failReason": null,
+      "elapsed": 25.033,
+      "finishGateId": "calm-moon",
+      "cuts": 9,
+      "maxNoProgressBounceStreak": 1,
+      "stageIdsVisited": [
+        "stage-1-read-and-cut",
+        "stage-2-recover-and-choose",
+        "stage-3-structure-and-finish"
+      ],
+      "seedChanged": false,
+      "whiteColumnBounceCount": 1,
+      "whiteColumnAnchorCount": 3,
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-1-stage-1-read-and-cut.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-1-stage-2-recover-and-choose.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-1-stage-3-structure-and-finish.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-1-won.png"
+      ],
+      "layout": {
+        "innerWidth": 390,
+        "innerHeight": 844,
+        "scrollWidth": 390,
+        "scrollHeight": 844,
+        "touchAction": "none",
+        "canvasCount": 1
+      }
+    },
+    {
+      "label": "mobile-natural-2",
+      "platform": "390x844-native-touch",
+      "seed": 31,
+      "inputPolicy": "global-height=555; vertical-threshold=-116; wait-bias=3; no obstacle-coordinate oracle",
+      "inputCount": 32,
+      "maxX": 3000.1534400000114,
+      "status": "won",
+      "failReason": null,
+      "elapsed": 28.758,
+      "finishGateId": "calm-moon",
+      "cuts": 5,
+      "maxNoProgressBounceStreak": 2,
+      "stageIdsVisited": [
+        "stage-1-read-and-cut",
+        "stage-2-recover-and-choose",
+        "stage-3-structure-and-finish"
+      ],
+      "seedChanged": false,
+      "whiteColumnBounceCount": 0,
+      "whiteColumnAnchorCount": 2,
+      "screenshots": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-2-stage-1-read-and-cut.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-2-stage-2-recover-and-choose.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-2-stage-3-structure-and-finish.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-night-post-builder-v2/mobile-natural-2-won.png"
+      ],
+      "layout": {
+        "innerWidth": 390,
+        "innerHeight": 844,
+        "scrollWidth": 390,
+        "scrollHeight": 844,
+        "touchAction": "none",
+        "canvasCount": 1
+      }
+    }
+  ],
+  "errors": []
+}

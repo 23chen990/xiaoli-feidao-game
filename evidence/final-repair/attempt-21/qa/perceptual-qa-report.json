@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 2,
+  "artifactType": "perceptual-qa-report",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "targetRunId": "mobile-slice-adaptation-20260830",
+  "targetWorkspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "runtimeEntrypoints": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/index.html",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/main.ts"
+  ],
+  "contractHash": "0513fec6b10a2ad2cd778f6fb537a58fd5bbca2510da4d850e3059beccb9f9b2",
+  "buildHash": "c8af615408163862a487ee12fa8061d2662d44011c1d0bbe50e582503061dab2",
+  "runtime": "web-lite",
+  "reviewer": "QAAgent",
+  "authorIndependent": true,
+  "passed": true,
+  "blockers": [],
+  "cases": [
+    {
+      "featureId": "level1-runway-early-sharp-contact",
+      "sourceCheckIds": [
+        "L1-RUNWAY-EARLY-SHARP-390"
+      ],
+      "objectType": "level1-runway-main sharp tip",
+      "stateBranch": "fresh start → first cut → airborne → early contact → recovery",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "label": "portrait-390x844"
+      },
+      "playerVisible": true,
+      "naturalTriggerVerified": true,
+      "eventOrderVerified": true,
+      "negativeAssertionsPassed": true,
+      "perceptualPassed": true,
+      "observedSignal": "The same runway object emits bounce at x=478.9500000000005; it remains airborne and does not anchor in the reproduced dead-end.",
+      "observedEventOrder": [
+        "visible input",
+        "runway contact",
+        "airborne forward continuation"
+      ],
+      "screenshots": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/portrait-390x844/static-spaced/frames/journey-03s.png",
+          "sha256": "33489de3c2379d5584f278fe796f27b61b5137b680a3916d0c8220bc73f30b7b"
+        }
+      ],
+      "trace": {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/portrait-390x844/static-spaced/recording.json",
+        "sha256": "a29699c213a6cf63e468ee5531763dc42b1ea9b671236ade406da1d7460b32c7"
+      },
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/portrait-390x844/static-spaced/recording.json"
+      ],
+      "notes": [
+        "Exact branch pixel frame and read-only projection agree."
+      ]
+    },
+    {
+      "featureId": "white-landing-opening-teaching-anchor",
+      "sourceCheckIds": [
+        "L1-WHITE-LANDING-OPENING-1100"
+      ],
+      "objectType": "white-landing teaching support",
+      "stateBranch": "fresh start → opening anchor → later route → settlement",
+      "viewport": {
+        "width": 1100,
+        "height": 720,
+        "label": "desktop-1100x720"
+      },
+      "playerVisible": true,
+      "naturalTriggerVerified": true,
+      "eventOrderVerified": true,
+      "negativeAssertionsPassed": true,
+      "perceptualPassed": true,
+      "observedSignal": "White landing anchor is visible at x=273.9500000000005; later terminal is visibly won.",
+      "observedEventOrder": [
+        "visible opening support",
+        "normal input",
+        "visible terminal settlement"
+      ],
+      "screenshots": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/desktop-1100x720/desktop-white-opening/frames/journey-03s.png",
+          "sha256": "deafc46d78da98c403b303ed59a71b09629db6f20e29077f71fffb071c934002"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/desktop-1100x720/desktop-white-opening/frames/terminal.png",
+          "sha256": "1a817c7b7d857ab3aeb3d13fa5094653bc657cfab07d2693bd13678e9873f7fd"
+        }
+      ],
+      "trace": {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/desktop-1100x720/desktop-white-opening/recording.json",
+        "sha256": "7bf71e3365a705ec066d583cde330c84321399e35d7abcfbc89d8af14467c437"
+      },
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/desktop-1100x720/desktop-white-opening/recording.json"
+      ],
+      "notes": [
+        "Desktop control branch is separate from runway recovery and is visibly readable."
+      ]
+    },
+    {
+      "featureId": "natural-terminal-replay",
+      "sourceCheckIds": [
+        "L1-TERMINAL-REPLAY-BOTH"
+      ],
+      "objectType": "terminal and replay control",
+      "stateBranch": "natural input → terminal → replay → ready",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "label": "portrait-390x844"
+      },
+      "playerVisible": true,
+      "naturalTriggerVerified": true,
+      "eventOrderVerified": true,
+      "negativeAssertionsPassed": true,
+      "perceptualPassed": true,
+      "observedSignal": "跌出路线\n分数 5\n再次轻触 · 重新开始; replay=ready.",
+      "observedEventOrder": [
+        "visible terminal",
+        "visible replay click",
+        "ready state"
+      ],
+      "screenshots": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/portrait-390x844/static-spaced/frames/terminal.png",
+          "sha256": "55dbe387f1ee1f5ec24b7379a9c14bf1c678ced9a65a08bbe93af35311131b6f"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/portrait-390x844/static-spaced/frames/replay.png",
+          "sha256": "d9bb8fde4c1eddcab75482330aefeb91b4fe16d0784cd43729e0d3930948c5d4"
+        }
+      ],
+      "trace": {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/portrait-390x844/static-spaced/recording.json",
+        "sha256": "a29699c213a6cf63e468ee5531763dc42b1ea9b671236ade406da1d7460b32c7"
+      },
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/portrait-390x844/static-spaced/recording.json"
+      ],
+      "notes": [
+        "Terminal and replay affordance are visible at portrait size."
+      ]
+    },
+    {
+      "featureId": "natural-terminal-replay-desktop",
+      "sourceCheckIds": [
+        "L1-TERMINAL-REPLAY-BOTH"
+      ],
+      "objectType": "terminal and replay control",
+      "stateBranch": "natural input → terminal → replay → ready",
+      "viewport": {
+        "width": 1100,
+        "height": 720,
+        "label": "desktop-1100x720"
+      },
+      "playerVisible": true,
+      "naturalTriggerVerified": true,
+      "eventOrderVerified": true,
+      "negativeAssertionsPassed": true,
+      "perceptualPassed": true,
+      "observedSignal": "关卡完成\n×2\n分数 46\n再次轻触 · 重新开始; replay=ready.",
+      "observedEventOrder": [
+        "visible completion terminal",
+        "visible replay click",
+        "ready state"
+      ],
+      "screenshots": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/desktop-1100x720/desktop-white-opening/frames/terminal.png",
+          "sha256": "1a817c7b7d857ab3aeb3d13fa5094653bc657cfab07d2693bd13678e9873f7fd"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/desktop-1100x720/static-spaced/frames/replay.png",
+          "sha256": "c8837bf1ccd609be155a0adf60a3869a94440c5c8a14b0092ce3a8a45b55ac7e"
+        }
+      ],
+      "trace": {
+        "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/desktop-1100x720/desktop-white-opening/recording.json",
+        "sha256": "7bf71e3365a705ec066d583cde330c84321399e35d7abcfbc89d8af14467c437"
+      },
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-21/qa-natural/desktop-1100x720/desktop-white-opening/recording.json"
+      ],
+      "notes": [
+        "Desktop completion and replay are visibly readable."
+      ]
+    }
+  ],
+  "checkedAt": "2026-09-23T14:38:46.838Z"
+}

@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "issueId": "L1-RUNWAY-EARLY-SHARP-ANCHOR",
+  "cycleId": "human-review-20260907-l1-followup",
+  "attempt": 5,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "classification": "natural-level1-runway-recovery-blocker",
+  "status": "VALIDATED_REPRODUCTION",
+  "reproduction": {
+    "freshContext": true,
+    "inputMode": "visible normal touch/mouse; no fixture, debug API, or state injection",
+    "result": "Portrait natural input cuts rune-1 and then anchors on level1-runway-main before the Level1 stack branch. Desktop natural input cuts rune-1 and ends anchored on the separate white-landing teaching support. Neither viewport reaches terminal, settlement, or replay.",
+    "portrait": {
+      "viewport": "390x844",
+      "evidence": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-4/qa-natural/portrait-390x844/recording.json",
+      "observedAnchor": "level1-runway-main",
+      "observedPlayerX": 329.4500000000005,
+      "elapsedSeconds": 1.5583333333333302,
+      "cuts": 1,
+      "terminal": null,
+      "replay": null
+    },
+    "desktop": {
+      "viewport": "1100x720",
+      "evidence": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-4/qa-natural/desktop-1100x720/recording.json",
+      "observedAnchor": "white-landing",
+      "observedPlayerX": 273.9500000000005,
+      "elapsedSeconds": 1.3749999999999976,
+      "cuts": 1,
+      "terminal": null,
+      "replay": null
+    }
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "Level1 runway support, sharp blade tip/edge",
+      "lifecycleState": "fresh start -> rune-1 cut -> airborne opening -> runway sharp contact -> anchored dead-end",
+      "rendererPath": "SliceSimulation.processContacts support sharp-hit branch -> ThreeWorldRenderer visible knife/support sync -> natural-input recorder",
+      "viewport": "portrait 390x844",
+      "evidence": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-4/qa-natural/portrait-390x844/recording.json",
+      "observed": "First runway anchor transition at x=301.95; final repeated anchored state at x=329.45, elapsed=1.558s, cuts=1; terminal/replay absent"
+    },
+    {
+      "objectType": "white-landing teaching support, sharp blade tip/edge",
+      "lifecycleState": "fresh start -> rune-1 cut -> first opening landing -> anchored teaching pause",
+      "rendererPath": "SliceSimulation.processContacts support sharp-hit branch -> ThreeWorldRenderer visible knife/support sync -> natural-input recorder",
+      "viewport": "desktop 1100x720",
+      "evidence": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-4/qa-natural/desktop-1100x720/recording.json",
+      "observed": "Anchor at x=273.95, elapsed=1.375s, cuts=1; runway sharp-contact hypothesis is not proven by this desktop trace"
+    },
+    {
+      "objectType": "white-landing teaching support, sharp blade tip/edge",
+      "lifecycleState": "fresh start -> rune-1 cut -> first opening landing -> anchored teaching pause",
+      "rendererPath": "SliceSimulation.processContacts support sharp-hit branch -> ThreeWorldRenderer visible knife/support sync -> natural-input recorder",
+      "viewport": "portrait 390x844",
+      "evidence": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-4/qa-natural/portrait-390x844/recording.json",
+      "observed": "Opening white landing is a separate support and precedes the runway branch; preserve its authored teaching behavior"
+    },
+    {
+      "objectType": "white-landing teaching support, sharp blade tip/edge",
+      "lifecycleState": "fresh start -> rune-1 cut -> first opening landing -> anchored teaching pause",
+      "rendererPath": "SliceSimulation.processContacts support sharp-hit branch -> ThreeWorldRenderer visible knife/support sync -> natural-input recorder",
+      "viewport": "desktop 1100x720",
+      "evidence": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-4/qa-natural/desktop-1100x720/recording.json",
+      "observed": "Opening white landing is a separate support and precedes the runway branch; preserve its authored teaching behavior"
+    }
+  ],
+  "rootCauseHypothesis": {
+    "evidence": "Attempt 4 added runway sharp-contact suppression only when player.x >= 350. In portrait, the runway sharp contact anchors at x=301.95, before that threshold. The desktop trace instead stops on white-landing and is not evidence for this runway branch.",
+    "changeHypothesis": "Lower only the Level1 runway sharp-contact suppression threshold to 250 world units; retain the support-specific guard, body/handle bounce path, opening white-landing anchor, and all other contact handling.",
+    "classification": "localized collision-branch threshold defect",
+    "scope": ["src/game-core.ts", "tests/level1-recovery.test.ts"]
+  },
+  "acceptanceCriteria": [
+    "A focused natural-path collision test at the observed early runway x range proves the runway sharp tip/edge no longer anchors while retaining body/handle bounce.",
+    "The opening white-landing anchor remains reachable and the existing normal runway replay continues past x=2000.",
+    "Independent QA on fresh portrait 390x844 and desktop 1100x720 normal inputs reaches beyond x>1000 and observes the Level1 stack branch; terminal/visible replay is preferred on both viewports.",
+    "Full pnpm test, pnpm lint, pnpm typecheck pass and exactly one pnpm build succeeds with a recorded dist/index.html SHA-256.",
+    "No fixer self-report or fixture-only trace is treated as natural/perceptual QA evidence."
+  ],
+  "evidenceClassification": {
+    "observed": ["Portrait attempt 4 first anchors on level1-runway-main at x=301.95 and remains anchored at final x=329.45; desktop final state is anchored on white-landing at x=273.95; terminal and replay are null."],
+    "inferred": ["The x>=350 cutoff lets the portrait contact at x=301.95 anchor; lowering the cutoff to 250 should let the existing body/handle recovery branch keep the player moving."],
+    "unknown": ["Whether the threshold-only change carries ordinary input through the Level1 stack and to settlement/replay on both viewports; independent natural and perceptual QA must determine this."]
+  }
+  ,"experiment": {
+    "candidateThresholds": [250, 290],
+    "result": "REJECTED",
+    "evidence": [
+      "Threshold 250 passed the focused x=300 sharp-contact assertion but failed the pre-existing normal forward replay, which terminated at elapsed=4.575s before the expected runway traversal.",
+      "Threshold 290 also failed the same forward replay; a follow-up deterministic trace terminated by falling above the course at elapsed=5.392s, x=967.47, before the stack branch.",
+      "The implementation and added test were reverted."
+    ],
+    "nextHypothesis": "Do not skip the runway sharp contact solely by x. Preserve the contact and test a narrow, contact-normal-aware controlled recovery response for the exact early natural tip/edge branch, while retaining the existing anchor behavior for other runway contacts."
+  }
+}

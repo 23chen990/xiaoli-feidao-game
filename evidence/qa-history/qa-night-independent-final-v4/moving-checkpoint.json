@@ -1,0 +1,52 @@
+{
+  "found": {
+    "provenance": "TARGETED_DIAGNOSTIC",
+    "scenario": "moving-horizontal",
+    "supportId": "lantern-ferry",
+    "holdSteps": 180,
+    "followupStep": 15,
+    "contactPart": "handle",
+    "normalX": 0,
+    "normalY": -1,
+    "surfaceVelocityBefore": {
+      "vx": -155.31880587926418,
+      "vy": 0
+    },
+    "playerVelocityBefore": {
+      "vx": 23.061076066916,
+      "vy": 760
+    },
+    "incomingRelativeVelocity": {
+      "vx": 178.37988194618018,
+      "vy": 760,
+      "normal": -760
+    },
+    "surfaceVelocityAfter": {
+      "vx": -153.46810711093372,
+      "vy": 0
+    },
+    "playerVelocityAfter": {
+      "vx": 23.061076066916,
+      "vy": -547.2
+    },
+    "outgoingRelativeVelocity": {
+      "vx": 176.52918317784972,
+      "vy": -547.2,
+      "normal": 547.2
+    },
+    "impulseCountDuringLockout": 1,
+    "reflected": true
+  },
+  "attempts": [
+    {
+      "scenario": "moving-horizontal",
+      "holdSteps": 180,
+      "followupStep": 15,
+      "releaseSurfaceVelocity": {
+        "vx": -138.938923933084,
+        "vy": 0
+      },
+      "found": true
+    }
+  ]
+}

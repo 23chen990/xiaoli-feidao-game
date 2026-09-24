@@ -1,0 +1,41 @@
+✔ L1-STACK a: actual knife contact cuts the bearing object and releases the overlapping upper object (5.581ms)
+✔ L1-STACK b: actual knife contact cuts the bearing object and releases the overlapping upper object (1.830833ms)
+✔ L1-GRAVITY active airborne play does not freeze a hovering supported collectible (2.199333ms)
+✖ L1-REWARD separation precedes local feedback, which precedes cumulative display; replay clears pending rewards (0.803625ms)
+✔ L1-PLACEMENT every initial collectible has a touching support, including the late and bridge targets (0.275ms)
+✔ L1-FINISH labels use viewport coordinates without a second offset (0.835375ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 390x844 (1.087167ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 1100x720 (0.218917ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 7
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 328.962584
+
+✖ failing tests:
+
+test at tests/level1-recovery.test.ts:51:1
+✖ L1-REWARD separation precedes local feedback, which precedes cumulative display; replay clears pending rewards (0.803625ms)
+  AssertionError [ERR_ASSERTION]: cut rewards currently update the HUD in the contact frame
+  + actual - expected
+  
+  + 'undefined'
+  - 'function'
+  
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:52:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'undefined',
+    expected: 'function',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

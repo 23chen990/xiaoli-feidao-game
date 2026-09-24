@@ -1,0 +1,38 @@
+No errors detected in compressed data of build/TapBuild/game.zip.
+ROOT
+application.js
+check-version.js
+engine-adapter.js
+first-screen.js
+game.js
+game.json
+logo.png
+project.config.json
+slogan.png
+web-adapter.js
+PROJECT
+{"description":"项目配置文件。","miniprogramRoot":"./","setting":{"urlCheck":true,"postcss":true,"minified":true,"newFeature":false,"enhance":true,"useIsolateContext":true},"compileType":"game","libVersion":"widelyUsed","appid":"928932","projectname":"疯狂切割","condition":{"search":{"current":-1,"list":[]},"conversation":{"current":-1,"list":[]},"game":{"currentL":-1,"list":[],"current":-1},"miniprogram":{"current":-1,"list":[]}}}
+GAME
+{
+  "deviceOrientation": "portrait",
+  "networkTimeout": {
+    "request": 5000,
+    "connectSocket": 5000,
+    "uploadFile": 5000,
+    "downloadFile": 500000
+  },
+  "productVersion": "1.0.0",
+  "convertScriptVersion": "2.0.4-ts"
+}
+SETTINGS
+{"exactFitScreen":true,"designResolution":{"width":390,"height":844,"policy":4}}
+FACTS
+1206521
+5c087808f6835f90b31e162ffd48402b898476bd35f74d482cd0972d6615430b  build/TapBuild/game.zip
+RUNTIME
+   2 390
+   1 844
+   1 Graphics runtime ready
+PLUGIN
+4:  "version": "1.2.2",
+6b8a9a3cc62b6c54cefab397097babb771d9d99f90442cddff06310a4c9ed73f  /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-filing-20260908/attempt-1/taptap-cocos-plugin-1.2.2.zip

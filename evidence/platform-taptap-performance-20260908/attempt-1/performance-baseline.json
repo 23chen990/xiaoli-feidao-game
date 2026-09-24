@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "taptap-render-work-baseline",
+  "zipSha256": "5c087808f6835f90b31e162ffd48402b898476bd35f74d482cd0972d6615430b",
+  "measurementKind": "deterministic-source-work-proxy",
+  "deviceFpsMeasured": false,
+  "reportedBackendFps": 0.02150376,
+  "reportedBackendFpsRootCause": "UNCONFIRMED",
+  "tapTapThreshold": null,
+  "observations": {
+    "airborneUpdateCallsFullRedraw": true,
+    "nominalObservationFramesAt60HzFor10Minutes": 36000,
+    "fullSceneClearAndRedraws": 36000,
+    "estimatedRepeatedStaticFillOrStrokeOperations": 648000
+  },
+  "interpretation": "The production source deterministically repeats static background/course drawing every airborne frame. This confirms avoidable main-loop Graphics work, but does not establish physical-device FPS or explain the contradictory TapTap 0.02150376 sample."
+}

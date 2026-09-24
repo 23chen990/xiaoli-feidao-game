@@ -1,0 +1,68 @@
+Slice Master 复刻版 GDD（程序执行版）
+一、产品目标
+复刻目标：
+还原 Slice Master 的核心体验：
+单按钮控制 + 可预测运动 + 连续切割反馈 + 风险选择 + 快速重试。
+核心循环：
+观察 -> 点击 -> 刀运动 -> 碰撞 -> 反馈 -> 奖励/失败 -> 再挑战。
+二、核心状态机
+GAME_START
+进入关卡
+AUTO_MOVE
+刀持续运动
+WAIT_INPUT
+等待玩家点击
+ROTATE
+改变刀运动状态
+CHECK_COLLISION
+CUT_SUCCESS
+切割反馈
+SPIKE_HIT
+失败流程
+FINISH
+进入倍率结算
+三、核心对象
+Knife:
+- rotation
+- velocity
+- clickResponse
+- collisionArea
+CutObject:
+- type
+- reward
+- size
+- effect
+Obstacle:
+- dangerType
+- collisionRule
+FinishMultiplier:
+- multiplierList
+- animationSpeed
+四、运动规则
+不要使用完全真实物理。
+推荐：
+动画曲线控制 + 碰撞检测。
+重点参数：
+- 旋转速度
+- 点击影响幅度
+- 空中停留时间
+- 落点窗口
+- 宽容碰撞范围
+五、反馈优先级
+P0：
+刀运动手感
+P0：
+切割反馈
+P1：
+关卡节奏
+P1：
+UI数字反馈
+P2：
+皮肤系统
+六、IAA节点
+失败：
+复活广告
+结算：
+奖励翻倍广告
+长期：
+皮肤收集

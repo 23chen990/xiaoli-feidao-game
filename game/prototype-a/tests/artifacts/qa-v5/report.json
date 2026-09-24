@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "BrowserQaReport",
+  "passed": true,
+  "url": "http://127.0.0.1:63146/",
+  "smokeExitCode": 0,
+  "previewClosed": true,
+  "evidence": [
+    "desktop-complete-gameplay.png",
+    "desktop-moving-support.png",
+    "desktop-recoil.png",
+    "desktop-below-cut.png",
+    "desktop-tower-collapse.png",
+    "mobile-native-touch-opening.png",
+    "console.log"
+  ],
+  "error": null
+}

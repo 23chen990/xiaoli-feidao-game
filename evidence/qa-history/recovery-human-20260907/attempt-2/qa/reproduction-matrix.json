@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "cells": [
+    {
+      "id": "L1-INPUT-390",
+      "objectType": "blade + first cuttable",
+      "stateBranch": "active Level1 branch",
+      "renderer": "Three.js runtime",
+      "viewport": "390x844",
+      "acceptance": "active-slice-contract.json",
+      "status": "PASS",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/frame-0000.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/recording.json"
+      ],
+      "notes": "开场目标和刀均可见；正常触摸后切割与 HUD 变化可见。"
+    },
+    {
+      "id": "L1-GROUND-390",
+      "objectType": "visible tabletop base",
+      "stateBranch": "active Level1 branch",
+      "renderer": "Three.js runtime",
+      "viewport": "390x844",
+      "acceptance": "active-slice-contract.json",
+      "status": "PASS",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/frame-0000.png"
+      ],
+      "notes": "首个球体台面有可见厚度并接到下方地面。"
+    },
+    {
+      "id": "L1-STACK-390",
+      "objectType": "overlapping cuttable stack and support",
+      "stateBranch": "active Level1 branch",
+      "renderer": "Three.js runtime",
+      "viewport": "390x844",
+      "acceptance": "active-slice-contract.json",
+      "status": "BLOCKED",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/recording.json"
+      ],
+      "notes": "录制走到同一关卡的后段，但没有足够清晰的逐对象画面证据确认指定 stack-b 的承托、散开和落地。"
+    },
+    {
+      "id": "L1-REWARD-390",
+      "objectType": "cut object + local reward + cumulative HUD",
+      "stateBranch": "active Level1 branch",
+      "renderer": "Three.js runtime",
+      "viewport": "390x844",
+      "acceptance": "active-slice-contract.json",
+      "status": "PASS",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/frame-0000.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/frame-0010.png"
+      ],
+      "notes": "完整态 HUD 为 0；切面/分离后目标附近出现 +4，累计值同步。"
+    },
+    {
+      "id": "L1-PRESSURE-390",
+      "objectType": "spike hazard + failure/recovery affordance",
+      "stateBranch": "active Level1 branch",
+      "renderer": "Three.js runtime",
+      "viewport": "390x844",
+      "acceptance": "active-slice-contract.json",
+      "status": "PASS",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/frame-0006.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-1/frames/terminal.png"
+      ],
+      "notes": "尖刺在接近前可见；失败路线显示“跌出路线”和重试入口。"
+    },
+    {
+      "id": "L1-FINISH-390",
+      "objectType": "finish outcome lanes + settlement + replay",
+      "stateBranch": "active Level1 branch",
+      "renderer": "Three.js runtime",
+      "viewport": "390x844",
+      "acceptance": "active-slice-contract.json",
+      "status": "PASS",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/frame-0015.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/portrait-2/frames/replay.png"
+      ],
+      "notes": "终点倍率栏在手机视口可见；正常通关进入结算并重玩回到 ready。"
+    },
+    {
+      "id": "L1-INPUT-1100",
+      "objectType": "blade + first cuttable",
+      "stateBranch": "active Level1 branch",
+      "renderer": "Three.js runtime",
+      "viewport": "1100x720",
+      "acceptance": "active-slice-contract.json",
+      "status": "PASS",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/frame-0000.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/recording.json"
+      ],
+      "notes": "开场目标和刀均可见；正常鼠标输入后切割与 HUD 变化可见。"
+    },
+    {
+      "id": "L1-GROUND-1100",
+      "objectType": "visible tabletop base",
+      "stateBranch": "active Level1 branch",
+      "renderer": "Three.js runtime",
+      "viewport": "1100x720",
+      "acceptance": "active-slice-contract.json",
+      "status": "PASS",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/frame-0000.png"
+      ],
+      "notes": "首个球体台面有可见厚度并接到下方地面。"
+    },
+    {
+      "id": "L1-STACK-1100",
+      "objectType": "overlapping cuttable stack and support",
+      "stateBranch": "active Level1 branch",
+      "renderer": "Three.js runtime",
+      "viewport": "1100x720",
+      "acceptance": "active-slice-contract.json",
+      "status": "BLOCKED",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/recording.json"
+      ],
+      "notes": "录制走到同一关卡的后段，但没有足够清晰的逐对象画面证据确认指定 stack-b 的承托、散开和落地。"
+    },
+    {
+      "id": "L1-REWARD-1100",
+      "objectType": "cut object + local reward + cumulative HUD",
+      "stateBranch": "active Level1 branch",
+      "renderer": "Three.js runtime",
+      "viewport": "1100x720",
+      "acceptance": "active-slice-contract.json",
+      "status": "PASS",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/frame-0000.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/frame-0010.png"
+      ],
+      "notes": "完整态 HUD 为 0；切面/分离后目标附近出现局部奖励，累计值同步。"
+    },
+    {
+      "id": "L1-PRESSURE-1100",
+      "objectType": "spike hazard + failure/recovery affordance",
+      "stateBranch": "active Level1 branch",
+      "renderer": "Three.js runtime",
+      "viewport": "1100x720",
+      "acceptance": "active-slice-contract.json",
+      "status": "PASS",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/frame-0006.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-1/frames/terminal.png"
+      ],
+      "notes": "尖刺在接近前可见；失败路线显示“跌出路线”和重试入口。"
+    },
+    {
+      "id": "L1-FINISH-1100",
+      "objectType": "finish outcome lanes + settlement + replay",
+      "stateBranch": "active Level1 branch",
+      "renderer": "Three.js runtime",
+      "viewport": "1100x720",
+      "acceptance": "active-slice-contract.json",
+      "status": "PASS",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/frame-0015.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/desktop-2/frames/replay.png"
+      ],
+      "notes": "终点倍率栏在桌面视口可见；正常通关进入结算并重玩回到 ready。"
+    }
+  ]
+}

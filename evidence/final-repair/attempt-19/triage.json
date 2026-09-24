@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-triage",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 19,
+  "issueId": "L1-RUNWAY-RECOVERY-KINEMATIC-ENVELOPE",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "classification": "natural-level1-runway-recovery-blocker",
+  "status": "VALIDATED_REPRODUCTION",
+  "priorAttempt": {
+    "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-18/fix-result.json",
+    "sha256": "5d3542e0270b84dddec5de75dc7bc051a14cd117ee76936cc15d476d7a8a09c5",
+    "status": "BLOCKED",
+    "candidateRejected": true
+  },
+  "reproduction": {
+    "attempt18Divergence": {
+      "expectedCaptureFrames": [216, 302],
+      "observedCaptureFrames": [216, 302],
+      "capturePoses": [
+        { "playerX": 305.2000000000005, "playerY": 514.1666666666666, "playerAngle": 4.986276450461116 },
+        { "playerX": 332.7000000000005, "playerY": 469.7083333333333, "playerAngle": 6.656567983114545 }
+      ],
+      "pendingPositionDriftPixels": [74.0199, 311.1601092086761],
+      "pendingAngleDriftRadians": [1.709, 4.154],
+      "tapPositionCorrectionsPixels": [73.61509159887643, 311.1601092086761],
+      "tapAngleCorrectionsRadians": [0.06021232855722136, 1.0699390045934694],
+      "focusedResult": { "passed": 19, "failed": 1, "replayElapsedSeconds": 14.616666666666477, "replayStatus": "airborne" },
+      "evidence": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-18/green-targeted-candidate2.log",
+          "sha256": "d59786833938f4e0938853740d67d856614557816a5bbc1ec0ec1fc02473d8d0"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-18/fix-result.json",
+          "sha256": "5d3542e0270b84dddec5de75dc7bc051a14cd117ee76936cc15d476d7a8a09c5"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/green-targeted.log",
+          "sha256": "d0d64f4227589d2edd4aff8ca1939209b75e933d1df89ed0ee51725c61f48ab6"
+        }
+      ]
+    },
+    "driftContract": {
+      "targetPositionEnvelopePixels": 8,
+      "targetAngleEnvelopeRadians": 0.4,
+      "appliesWhen": "airborne with pendingRunwayReleasePose after capture and before one-time tap consumption",
+      "mechanism": "post-integration projection into a pose-relative displacement envelope; no follow gain or support recapture"
+    }
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "runway sharp top contact",
+      "lifecycleStateBranch": "airborne → pendingRunwayReleasePose → scheduled tap",
+      "rendererPresentationPath": "deterministic SliceSimulation state consumed by browser renderer",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-18/green-targeted-candidate2.log"],
+      "observation": "Both qualifying captures are exact, but the player translates far from each stored pose before consumption.",
+      "inference": "The capture and coordinate contract is working; pending mode still owns unconstrained ordinary integration.",
+      "unknowns": ["Whether projection should occur before or after contact evaluation without changing later contacts."]
+    },
+    {
+      "objectType": "runway sharp top contact",
+      "lifecycleStateBranch": "first pending pose at frame216",
+      "rendererPresentationPath": "airborne player transform and feedback events",
+      "viewport": "390x844",
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-18/green-targeted-candidate2.log"],
+      "observation": "First tap correction is 73.615px while capture and reconstruction fields match.",
+      "inference": "Free horizontal travel during the pending interval, not snapshot basis, dominates the position error.",
+      "unknowns": ["Whether a hard envelope changes natural visual motion or collision pressure."]
+    },
+    {
+      "objectType": "runway sharp top contact",
+      "lifecycleStateBranch": "second pending pose at frame302",
+      "rendererPresentationPath": "airborne player transform and feedback events",
+      "viewport": "1100x720",
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-18/green-targeted-candidate2.log"],
+      "observation": "Second tap correction is 311.160px and angular correction is 1.06994rad after a 14.6167s replay.",
+      "inference": "The pending pose is metadata while the normal integrator continues for about 2.09s.",
+      "unknowns": ["Whether the player can retain measurable movement and rotation inside a small envelope."]
+    },
+    {
+      "objectType": "ordinary airborne player",
+      "lifecycleStateBranch": "no pending pose",
+      "rendererPresentationPath": "normal integration, collision, finish and failure paths",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts"],
+      "observation": "Baseline integrates x, y and angle every fixed step and handles contacts after integration.",
+      "inference": "The envelope must be gated to pendingRunwayReleasePose so ordinary movement remains unchanged.",
+      "unknowns": ["Whether the envelope needs an explicit clear on every terminal/reset branch."]
+    },
+    {
+      "objectType": "renderer-visible player",
+      "lifecycleStateBranch": "pending pose before tap",
+      "rendererPresentationPath": "game-core state → canvas/web renderer",
+      "viewport": "390x844",
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-summary.json"],
+      "observation": "The earlier QA gate requires visible normal-input feedback and replay; fixture traces are not player-experience evidence.",
+      "inference": "Deterministic envelope acceptance cannot close natural/perceptual QA by itself.",
+      "unknowns": ["How the constrained pending motion reads on target mobile sizes."]
+    }
+  ],
+  "rootCauseHypothesis": {
+    "evidence": "Attempt18 candidate2 matched both integrated capture poses, support-relative invariants, selector checks and replay completion, while only tap correction bounds failed; drift reached 74.02px/311.16px and angular drift 1.709/4.154rad.",
+    "changeHypothesis": "The restored baseline lacks the pending-pose machinery because Attempt18 candidate2 was rolled back. First reconstruct only the previously observed exact capture, selector, lifecycle and one-shot release contract from Attempt18 candidate2 evidence; then test the new deterministic post-capture kinematic envelope: project the airborne player center no farther than 8px and angle no farther than 0.4rad from the immutable captured pose until tap consumption, without recapture, support following, or changes to normal no-pending flight.",
+    "stateName": "pendingRunwayReleasePose",
+    "envelopeRule": "after each fixed-step integration while pending, project player center to <=8px and angle to <=0.4rad from the immutable captured pose; preserve normal airborne state and do not recapture or follow the support",
+    "stageRule": "apply only after the capture step and before contact/failure evaluation; leave capture coordinates and support-relative reconstruction unchanged",
+    "falsifier": "if exact captures change, either tap exceeds <=10px or <=0.5rad, replay misses 11.9s/x>2000, or preserved lifecycle/contact selectors regress, reject the kinematic envelope",
+    "preservedBranches": [
+      "ordinary airborne integration without a pending pose",
+      "one-time pending pose consumption and standard launch event",
+      "2.35-second pending expiry",
+      "reset/load/terminal/inactive-support/non-runway clear paths",
+      "white-branch and late lift-plank selector fixtures",
+      "approaching runway, side sharp and later x>=350 suppression",
+      "body bounce, opening, non-runway and anchored branches"
+    ],
+    "rejectedAlternatives": [
+      "changing the previously validated capture-stage contract while reconstructing its prerequisite implementation",
+      "global lifecycle re-arm latch, which did not restore frame302",
+      "per-edge contact latch, which did not restore frame302 or complete pose fields",
+      "bounded-follow gain tuning, which changed the second capture to frame296 and failed replay",
+      "clearing pending pose on unrelated cuttable-object contacts",
+      "changing selector reachability or level/platform configuration",
+      "changing tap scheduling or renderer presentation"
+    ]
+  },
+  "scope": {
+    "includedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+    ],
+    "excludedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-renderer.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-levels.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/package.json",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html"
+    ],
+    "route": "formal-fixer",
+    "expectedSourceFileLimit": 2
+  },
+  "acceptanceCriteria": [
+    "Run and save focused RED evidence before production edits.",
+    "Reconstruct the Attempt18 candidate2 capture/selector/lifecycle prerequisite because the restored baseline has no pending pose; preserve its exact observable contract and do not call it an accepted prior fix.",
+    "Keep exact pending captures at frames 216 and 302.",
+    "Keep frame216 pose at (305.2, 514.1666666666666, 4.986276450461116).",
+    "Keep frame302 pose at (332.7, 469.7083333333333, 6.656567983114545).",
+    "Preserve support-relative coordinate invariants at both captures.",
+    "Apply the envelope only after capture while pending and airborne.",
+    "Keep pending position movement measurable above 2px without exceeding the envelope.",
+    "Keep pending angular movement measurable above 0.05rad without exceeding the envelope.",
+    "Consume each pending pose exactly once at its scheduled tap.",
+    "Emit one standard launch event with the stored pose restored before launch.",
+    "Keep tap position correction <=10px at both taps.",
+    "Keep tap angle correction <=0.5rad at both taps.",
+    "Preserve selector assertions for white-branch and late lift-plank fixtures.",
+    "Preserve ordinary no-pending flight, contact, finish and failure behavior.",
+    "Preserve 2.35-second expiry and reset/load/terminal/inactive/non-runway clear paths.",
+    "Reach >=11.9 seconds and player x>2000 without failure in the fixed replay.",
+    "Only after focused GREEN passes, run full tests, lint, typecheck and exactly one build; do not claim natural QA."
+  ],
+  "evidenceClassification": {
+    "observed": [
+      "Attempt18 candidate2 captured and reconstructed both required poses.",
+      "Attempt18 candidate2 passed 19 of 20 focused assertions and reached 14.6167s airborne at x=2132.7085.",
+      "Tap corrections were 73.6151px and 311.1601px, with angular corrections 0.0602rad and 1.06994rad."
+    ],
+    "inferred": [
+      "The pending state currently permits ordinary free-flight translation to own the player transform.",
+      "A post-capture pose-relative envelope can reduce correction without changing capture-stage semantics."
+    ],
+    "unknown": [
+      "Whether the envelope preserves natural readable airborne motion.",
+      "Whether contact evaluation must occur before or after projection to preserve later branch outcomes.",
+      "Whether the target replay remains perceptually valid on both mobile orientations."
+    ]
+  },
+  "createdAt": "2026-09-23T05:15:00.000Z"
+}

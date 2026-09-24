@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-triage",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 7,
+  "issueId": "L1-RUNWAY-RECOVERY-SUPPORT-TRACE",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "classification": "natural-level1-runway-recovery-blocker",
+  "status": "VALIDATED_REPRODUCTION",
+  "priorAttempt": {
+    "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-6/fix-result.json",
+    "sha256": "8a6b1b6d185d996622a30a64d30c560cb40d91805744a804e97e3fe102e86db2",
+    "status": "BLOCKED",
+    "candidateRejected": true
+  },
+  "reproduction": {
+    "naturalContactPlayerX": [305.2, 332.7],
+    "naturalContactX": [315.47808960723034, 368.0817538698364],
+    "candidateReplaySeconds": 5.466666666666728,
+    "candidateFailureEvidence": {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-6/green-targeted.log",
+      "sha256": "55b941b35864442bbe7c3312c53e9595e2352acdb861eac1ca93d7c6bc577680"
+    },
+    "priorLateSupportEvidence": {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/replay-final.json",
+      "sha256": "565cd8f55bca0a4c63b17198583d36840c74ba91059d97b297d495c14c54c834"
+    },
+    "evidence": [
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-6/fix-result.json",
+        "sha256": "8a6b1b6d185d996622a30a64d30c560cb40d91805744a804e97e3fe102e86db2"
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-6/green-targeted.log",
+        "sha256": "55b941b35864442bbe7c3312c53e9595e2352acdb861eac1ca93d7c6bc577680"
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/replay-final.json",
+        "sha256": "565cd8f55bca0a4c63b17198583d36840c74ba91059d97b297d495c14c54c834"
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-summary.json",
+        "sha256": "d0640af40c41c1e49c38a58687c8b6f2635332d3fe02e3e7429e05a74b6307cd"
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/recording.json",
+        "sha256": "5e4d6457955e0596707116e3c9d325880506f41c24aa5bfd37928ae5cb242717"
+      }
+    ]
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "runway sharp tip",
+      "lifecycleStateBranch": "airborne separating upward contact",
+      "rendererPresentationPath": "Three.js player mesh and runway collision feedback",
+      "viewport": "390x844",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/recording.json"],
+      "observation": "The natural portrait trace visibly promotes the separating tip contact to a persistent runway anchor.",
+      "inference": "The recovery must suppress that anchor while preserving the later tap lifecycle.",
+      "unknowns": ["The support selection that a future release would use is not observable in the current recording artifact."]
+    },
+    {
+      "objectType": "runway sharp tip",
+      "lifecycleStateBranch": "pending release consumed by normal tap",
+      "rendererPresentationPath": "Three.js launch event and trajectory presentation",
+      "viewport": "1100x720",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/recording.json"],
+      "observation": "The desktop trace repeats the exact branch and later stack pressure.",
+      "inference": "A deterministic trace is needed before another route-aware production correction.",
+      "unknowns": ["The browser-to-fixed-step phase and support choice remain unknown."]
+    },
+    {
+      "objectType": "authored support candidate",
+      "lifecycleStateBranch": "release support-selection calculation",
+      "rendererPresentationPath": "SliceSimulation fixed-step support geometry",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-6/green-targeted.log"],
+      "observation": "The nearest-horizontal clearance formula ends the replay at 5.4667s before the route gate.",
+      "inference": "The chosen support or its requested vertical corridor can be unreachable early in the route.",
+      "unknowns": ["The selected support id, entry time, predictedY, and top-boundary limit were not recorded before rollback."]
+    },
+    {
+      "objectType": "lift-plank support",
+      "lifecycleStateBranch": "late authored support contact after release",
+      "rendererPresentationPath": "fixed-step support anchor and release semantics",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-5/replay-final.json"],
+      "observation": "A different fixed clamp reached and anchored on lift-plank at 11.3083s and x≈1802.",
+      "inference": "The trace must retain lift-plank as an explicit late-route assertion while avoiding an unreachable early support target.",
+      "unknowns": ["The support route may have multiple active candidates at each release tap."]
+    }
+  ],
+  "rootCauseHypothesis": {
+    "evidence": "Attempt 6 failed at 5.4667s without recording which support was selected, while attempt 5 reached lift-plank late but stalled; the missing support-selection trace is the direct evidence gap between these outcomes.",
+    "changeHypothesis": "First add a test-only deterministic pending-release trace containing selectedSupportId, entryTime, supportTop, verticalBand, predictedY, requiredVy, and upperBoundaryLimit. Then select only an active collidable authored support ahead of the player whose predicted vertical corridor is reachable; preserve lift-plank as an explicit late-route assertion and leave tap-time velocity unchanged when no candidate is reachable.",
+    "traceName": "pendingRunwayReleaseSupportTrace",
+    "traceFields": ["selectedSupportId", "entryTime", "supportTop", "verticalBand", "predictedY", "requiredVy", "upperBoundaryLimit"],
+    "selectionRule": "select only an active collidable authored support ahead of the player whose predicted vertical corridor is reachable; preserve lift-plank as an explicit late-route assertion",
+    "rejectedAlternatives": [
+      "Approach-only relative-normal guard does not recover the natural separating branch.",
+      "Broad top-normal recovery changes fixed replay release taps into ordinary air flips.",
+      "Full launch and contact/tap-time fixed velocity policies fail at distinct replay points.",
+      "Nearest-horizontal clearance without a trace can target an unreachable early support and fails at 5.4667s."
+    ]
+  },
+  "scope": {
+    "includedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+    ],
+    "excludedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-presentation.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/main.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/src/core",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/research"
+    ],
+    "route": "formal-fixer",
+    "expectedSourceFileLimit": 2
+  },
+  "acceptanceCriteria": [
+    "A RED test proves the exact upward/separating natural-pose contact anchors under the restored baseline.",
+    "A deterministic trace test records all seven required support-selection fields for every pending-release tap before any production correction is accepted.",
+    "The selected support is active, collidable, ahead, and vertically reachable; an unreachable candidate falls back without an arbitrary new clamp.",
+    "A GREEN lifecycle test proves one pending intent is consumed once with launch feedback and no persistent runway anchor.",
+    "The trace and implementation exercise both the early runway release and the later lift-plank branch in the same fixed replay.",
+    "The pending intent expires and a later airborne tap is ordinary after cooldown is clear.",
+    "Non-runway support anchors and their release taps remain unchanged.",
+    "The approaching/downward top-normal branch, non-top sharp anchor, later x>=350 suppression, and blunt body/handle bounce remain intact.",
+    "The seed-31 fixed timestamp replay reaches at least 11.9 seconds and x>2000 without failure or an unexplained authored-support stall.",
+    "Only game-core.ts and level1-recovery.test.ts change; no renderer, level, debug, platform, or shared factory files.",
+    "pnpm test, pnpm lint, pnpm typecheck pass and exactly one pnpm build succeeds with a recorded dist SHA-256.",
+    "Independent fresh natural QA must retest both viewports, exact runway branch, stack/settlement, visible terminal and replay; no Fixer runtime claim."
+  ],
+  "evidenceClassification": {
+    "observed": [
+      "Attempt 6 failed before the route gate at 5.4667s, while attempt 5 stalled on lift-plank at 11.3083s.",
+      "Natural portrait and desktop traces visibly exhibit the original separating runway anchor."
+    ],
+    "inferred": [
+      "Missing support-selection telemetry is the evidence gap preventing causal choice between early and late supports.",
+      "Reachability filtering is a distinct, testable correction from fixed velocity tuning."
+    ],
+    "unknown": [
+      "The trace may reveal no reachable support and invalidate the proposed route-aware correction.",
+      "Natural/perceptual post-fix behavior remains unverified."
+    ]
+  },
+  "createdAt": "2026-09-23T08:45:00.000Z"
+}

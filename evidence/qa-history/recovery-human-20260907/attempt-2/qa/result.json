@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "role": "QAAgent",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED",
+  "reportPaths": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/reproduction-matrix.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/qa-natural-journey-report.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/perceptual-qa-report.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-2/qa/qa-report.json"
+  ],
+  "blockers": [
+    "L1-STACK-390: 录制走到同一关卡的后段，但没有足够清晰的逐对象画面证据确认指定 stack-b 的承托、散开和落地。",
+    "L1-STACK-1100: 录制走到同一关卡的后段，但没有足够清晰的逐对象画面证据确认指定 stack-b 的承托、散开和落地。",
+    "所有录制在 unchanged build 上完成；独立感知门因 stack 分支和高处台面承托证据未通过而保持 BLOCKED。"
+  ],
+  "sourceModified": false,
+  "summary": "第2次构建的独立正常输入复核：手机与桌面各有自然通关、结算和重玩；开场/奖励/危险/终点可见检查通过。指定堆叠的逐对象散落证据与高处白台面承托仍阻塞，保留进入下一次最小修复。"
+}

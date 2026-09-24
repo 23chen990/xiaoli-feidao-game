@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-task",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "taptap-performance-compat-20260908",
+  "attempt": 1,
+  "targetGame": "mobile-slice-adaptation-20260830（TapTap 名称：疯狂切割）",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "platformWorkspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame",
+  "outputDirectory": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-performance-20260908/attempt-1",
+  "triagePath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-performance-20260908/triage.json",
+  "researchPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/open-source-research-taptap-cocos-v1.json",
+  "officialPlugin": {
+    "version": "1.2.2",
+    "sourceUrl": "https://app-res.tapimg.com/file/2026-04-14/67e7d94f5e586596dab061816d1c509d.zip",
+    "sha256": "6b8a9a3cc62b6c54cefab397097babb771d9d99f90442cddff06310a4c9ed73f"
+  },
+  "tapTapGame": {
+    "name": "疯狂切割",
+    "appId": "928932",
+    "identityEvidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-9092aa3c-19d5-40f6-bb78-b1aebb0f68fa-dd3ada4efe62.png"
+  },
+  "instructions": [
+    "你是 taptap-performance-compat-20260908 的 formal-fixer attempt 1；保留此前 TapTap runtime cycle 的代码、包体和证据，只拥有目标平台目录及本 attempt-1 evidence 目录。",
+    "先读取并 Zod 校验 triage.json、reproduction-matrix.json、cycle-state.json 和本 task；再为性能报告建立 RED 基准/采集契约，区分真实 Cocos 渲染低帧、Graphics 每帧重绘、主循环负载和 TapTap FPS 采集异常。不能把截图中的 0.0215 直接当作已确认根因，也不能发明 TapTap FPS 阈值。",
+    "测试先行：先保存 RED；测试必须覆盖冷启动、首帧 Graphics、10 分钟稳定循环、普通触摸/失败/重玩分支的可测帧计数或等价机器证据。无 OPPO/Huawei/Xiaomi/OnePlus 物理设备时，明确记录 exact-SHA 设备证据缺口，不用 web-lite 或 sibling 通过替代。",
+    "若根因明确且只涉及目标平台 GameBootstrap/性能相关文件，做最小因果修复（例如把静态 Graphics 几何与动态 blade/反馈分离，避免每帧清空并重画整场；仅在基准证明该路径为瓶颈时实施）。不得删除首帧可见性、安全区、触摸核心循环或为了达标降低功能。",
+    "最多执行一次 Cocos Creator 3.8.8 + 官方 TapTap plugin 1.2.2 构建；构建后运行全量规则/兼容性测试、性能基准、lint/typecheck、ZIP integrity/root metadata/hash。不要改官方插件源码、web-lite、其他平台或共享工厂代码。",
+    "FixerResult 必须说明 route、根因是否确认、文件、测试、一次构建和设备证据缺口；没有精确 SHA 设备结果不能声称 TapTap 性能准入通过。"
+  ],
+  "acceptanceChecks": [
+    "RED 证据在任何实现修改或 Cocos build 之前生成，并能复现/标记当前性能采集契约缺口。",
+    "默认启动→Graphics 首帧→触摸起跳/翻转→切割/反弹→失败/结算→重玩不回归；规则、lint、typecheck 通过。",
+    "若实现修复，目标是减少已证实的 Cocos Graphics/主循环工作，不改变玩法表达；提供机器可验证的前后基准差异。",
+    "新 ZIP 仍是 AppID 928932、疯狂切割、portrait、版本 1.0.0、根入口完整且小于 20MB；记录 SHA-256。",
+    "PHJ110、Huawei P30、Xiaomi 14、OnePlus8_EEA 的性能自然复测必须绑定新 ZIP SHA；没有设备/后台复测时状态保持 BLOCKED。"
+  ],
+  "contextIntentionallyOmitted": [
+    "旧 TapTap runtime cycle 的尝试细节（仅引用其最终可用包和相关测试）",
+    "其他游戏、其他 run、web-lite、微信/抖音平台、共享工厂代码",
+    "广告、内购、云存档、排行榜以及第三方游戏表达/资产/数值",
+    "截图未提供的具体设备分辨率、TapTap FPS 阈值和未绑定 SHA 的旧日志"
+  ]
+}

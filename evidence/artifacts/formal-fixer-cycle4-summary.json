@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixerCycleSummary",
+  "cycle": 4,
+  "attempt": 1,
+  "route": "formal-fixer",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "filesChanged": ["src/game-levels.ts", "src/game-core.ts", "src/three-presentation.ts", "src/three-cut-visuals.ts", "src/main.ts", "src/style.css", "tests/food-theme.test.ts", "tests/asset-manifest.test.ts", "tests/orphan-object-reachability.test.ts", "tests/perceptual-level-pressure.test.ts", "tests/level-pressure.test.ts", "scripts/qa-all-levels.ts", "public/assets/kenney-food-kit/*"],
+  "fixes": ["Added fruit/dessert/savory/mystic theme lock for levels 1-3/4-6/7-9/10-12 with three styles per level", "Propagated foodStyle into runtime cuttables and tinted/scaled distinct 3D presentations", "Copied six hash-pinned Kenney Food Kit 2.0 CC0 GLBs and License.txt", "Added broad Level 1 mid-course recovery shelf and moved out-of-corridor hard objects", "Added authored route roles/decision metadata and visual food-theme HUD badge"],
+  "tests": {"lint":"PASS","typecheck":"PASS","full":"120 passed"},
+  "build": {"status":"PASS","artifact":"artifacts/build-report-v2.json"},
+  "qa": {"standardSampled":"PASS","allLevelsNatural":"BLOCKED","artifact":"qa-all-levels-v1/report.json","perceptual":"BLOCKED","artifactPerceptual":"artifacts/perceptual-qa-report-v2.json"},
+  "remainingEvidenceGaps": ["Some all-level natural traces did not reach terminal under every viewport/tempo", "WeChat/Douyin/TapTap adapters and device packages unverified", "Style lock remains placeholder status"],
+  "contextOmitted": ["Unrelated prior QA screenshots/logs", "Platform packaging code outside target workspace", "Legacy FIX cycles beyond causal files"]
+}

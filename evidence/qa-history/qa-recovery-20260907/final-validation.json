@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "recovery-final-validation",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "passed": true,
+  "meaning": "Artifact/schema/hash integrity only. Game product gate remains BLOCKED.",
+  "checkedAt": "2026-09-07T05:44:53.371Z",
+  "schemas": [
+    "QaReportSchema",
+    "PerceptualQaReportSchema",
+    "NaturalFlowEvidenceSchema (5 traces)",
+    "MatrixSchema (12 cases)",
+    "ResultSchema",
+    "ReferenceBehaviorCheckSchema (12 cases)",
+    "HandoffSchema"
+  ],
+  "sourceFilesUnchanged": 26,
+  "evidenceHashesVerified": 84,
+  "naturalFlowCount": 5,
+  "aggregateNaturalSchema": "NaturalFlowEvidenceSchema",
+  "matrixCounts": {
+    "FAIL": 6,
+    "BLOCKED": 6
+  },
+  "productPassed": false,
+  "executionAllowed": false,
+  "gameSourceModified": false,
+  "buildsRun": 0,
+  "automaticRepairAttemptsStarted": 0,
+  "artifacts": [
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/fixer-handoff.json",
+      "sha256": "8217cb836d36e2e14745f724ec0c54c867d22deafb2b1e21a682380ade8085b1"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/README.md",
+      "sha256": "c25d89bc42e581df0381adebd198e2b7aaff848959eaf6fa1ba85b5d63b01053"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/result.json",
+      "sha256": "df9dddfd8d60f469cc6250e729f4917df5ac666da2dd2fa1102a0b9871a14409"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/qa-report.json",
+      "sha256": "d577dea853403c048a5780ed9df1b371c3953b02c417fda134ed2672790a5a8c"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/perceptual-qa-report.json",
+      "sha256": "65e476bb3863f4ff50f387c97cacf5acb38bf3eb2ad9391f793363524afe0887"
+    }
+  ]
+}

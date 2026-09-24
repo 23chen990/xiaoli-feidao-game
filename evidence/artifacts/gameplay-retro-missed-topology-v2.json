@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayRetroMissedPresentationTopology",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "OPEN_REVIEW",
+  "corrections": [
+    {
+      "id": "REWARD-TIMING-001",
+      "previousInterpretation": "Reward grows during the cut/contact.",
+      "correctedInterpretation": "The cut completes first; the separated item then plays a local reward animation at the cut object's position, and the cumulative total updates with that post-cut reward.",
+      "source": "user correction in current review",
+      "implementationImplication": "Do not animate currency growth continuously while the blade is inside the object; sequence cut completion, separation, local reward animation, then HUD total sync."
+    }
+  ],
+  "evidenceBoundary": {
+    "reliable": [
+      "Target-workspace natural QA screenshot: workspace/prototype-a/tests/artifacts/qa-3d-main-v1/mobile-natural-zero-won.png",
+      "Target-workspace browser-result.json and formal fixer artifacts"
+    ],
+    "unavailable": [
+      "User recordings 140550, 140908 and 141313 are not currently accessible and must not be replaced by another recording."
+    ]
+  },
+  "rootMistakes": [
+    {
+      "id": "TOPOLOGY-001",
+      "mistake": "Validated that a reward signal existed, not where the player reads it.",
+      "current": "A HUD/banner reports cumulative earnings near the top-left.",
+      "requiredReview": "Reward must be anchored to the cut object or its world-space reward brick and grow during the cut event."
+    },
+    {
+      "id": "TOPOLOGY-002",
+      "mistake": "Implemented multiplier labels as a persistent screen-right column instead of world-space reward bricks on the finish wall.",
+      "current": "The screenshot shows ×4, ×2, ÷3, ×0.5, BONUS and ×1 as fixed right-side labels while the terminal panel dominates the center.",
+      "requiredReview": "Each multiplier must be a physical wall brick with depth, lane position, contact highlight and value reveal attached to the brick."
+    },
+    {
+      "id": "TOPOLOGY-003",
+      "mistake": "Treated camera variation as polish rather than as a mechanic-readability system.",
+      "current": "The target runtime still uses a mostly fixed oblique composition.",
+      "requiredReview": "Camera beats must stage the next cut, reveal route changes and close around the reward wall; not every game needs modes, but this game does based on the locked reference contract."
+    },
+    {
+      "id": "TOPOLOGY-004",
+      "mistake": "Used count-based QA assertions as a proxy for perceptual fidelity.",
+      "current": "routeOpeningCount and finishHighlightedCount can pass while the visual relationship remains wrong.",
+      "requiredReview": "QA must assert screen/world attachment, target-local reward growth, brick-local multiplier reveal, and unobscured reward staging with screenshots."
+    },
+    {
+      "id": "TOPOLOGY-005",
+      "mistake": "Conflated terminal UI with the world reward climax.",
+      "current": "The center terminal panel is the largest element at the moment the player should read the wall and earned value.",
+      "requiredReview": "World reward first, overlay second: contact, brick reveal, value growth, celebration, then replay/next controls."
+    }
+  ],
+  "factoryFeedback": [
+    "Competitor research must capture presentation topology: world-space vs screen-space, attachment object, timing of value growth, and occlusion order.",
+    "A UI feature is not accepted merely because a DOM node, state field or count exists; QA must prove the signal is attached to the correct object and visible at the causal moment.",
+    "The design contract must distinguish persistent HUD economy from per-cut world reward and finish-wall brick rewards.",
+    "Reference media identity verification must happen before any timeline sampling or competitor inference."
+  ],
+  "nextDecision": "Do not make further visual patches until the correct target recording is reattached or the human-approved reference contract explicitly locks the world-space reward topology."
+}

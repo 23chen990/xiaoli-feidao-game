@@ -1,0 +1,119 @@
+RUNWAY_SETTER_GATE_TRACE {"frame":216,"preContactPlayerX":303.9500000000005,"contactPointX":315.47808960723034,"normalY":-1,"relativeNormalVelocity":180,"recoveryAge":0.19999999999999998,"pendingAge":null,"candidateSetterBranch":"separating runway top-tip","baselineSetterDecision":"skip: restored baseline has no pending pose setter; separating top-tip falls through to anchor","contactPointGateDecision":"set: top-tip and contact-point x < 350","playerCenterGateDecision":"set: top-tip and player-center x < 350","statusAfter":"anchored"}
+RUNWAY_SETTER_GATE_TRACE {"frame":302,"preContactPlayerX":331.4500000000005,"contactPointX":368.0817538698364,"normalY":-1,"relativeNormalVelocity":195,"recoveryAge":0.175,"pendingAge":null,"candidateSetterBranch":"separating runway top-tip","baselineSetterDecision":"skip: restored baseline has no pending pose setter; separating top-tip falls through to anchor","contactPointGateDecision":"skip: contact-point gate does not admit contact","playerCenterGateDecision":"set: top-tip and player-center x < 350","statusAfter":"anchored"}
+RUNWAY_RELEASE_TRACE {"tapId":"early-runway-release","selectedSupportId":"white-branch","player":{"x":332.7,"y":494.1,"vx":150,"vy":-80,"angle":-0.35,"angularVelocity":0},"candidates":[{"supportId":"white-bumper","entryTime":-0.4846666666666666,"supportTop":238,"verticalBand":{"min":201,"max":241},"predictedY":603.3438666666666,"requiredVy":null,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["not-ahead","vertical-corridor-unreachable"],"selected":false},{"supportId":"white-landing","entryTime":-0.017999999999999926,"supportTop":561,"verticalBand":{"min":524,"max":564},"predictedY":495.6372,"requiredVy":null,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["not-ahead","vertical-corridor-unreachable"],"selected":false},{"supportId":"white-branch","entryTime":0.9153333333333334,"supportTop":263,"verticalBand":{"min":226,"max":266},"predictedY":672.2238666666667,"requiredVy":-545.648798252003,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":[],"selected":true},{"supportId":"lantern-ferry","entryTime":2.848666666666667,"supportTop":540,"verticalBand":{"min":503,"max":543},"predictedY":2700.677200000001,"requiredVy":-844.4549028785398,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":[],"selected":false},{"supportId":"white-column","entryTime":6.1819999999999995,"supportTop":310,"verticalBand":{"min":273,"max":313},"predictedY":11464.677199999998,"requiredVy":-1887.1299255904237,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["vertical-corridor-unreachable"],"selected":false},{"supportId":"dual-bridge-face","entryTime":8.315333333333333,"supportTop":503,"verticalBand":{"min":466,"max":506},"predictedY":20572.303866666665,"requiredVy":-2495.5741040647795,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["vertical-corridor-unreachable"],"selected":false},{"supportId":"white-recovery-shelf","entryTime":9.515333333333333,"supportTop":567,"verticalBand":{"min":530,"max":570},"predictedY":26895.34386666666,"requiredVy":-2848.7252714916267,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["vertical-corridor-unreachable"],"selected":false},{"supportId":"lift-plank","entryTime":10.048666666666666,"supportTop":416,"verticalBand":{"min":379,"max":419},"predictedY":29982.917199999993,"requiredVy":-3024.0639421482115,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["vertical-corridor-unreachable"],"selected":false},{"supportId":"level1-reward-shelf","entryTime":11.448666666666666,"supportTop":266,"verticalBand":{"min":229,"max":269},"predictedY":38899.79719999999,"requiredVy":-3456.0086065335117,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["vertical-corridor-unreachable"],"selected":false},{"supportId":"tower-approach","entryTime":11.382,"supportTop":548,"verticalBand":{"min":511,"max":551},"predictedY":38448.5172,"requiredVy":-3411.3580390089614,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["vertical-corridor-unreachable"],"selected":false},{"supportId":"level1-runway-main","entryTime":6.115333333333333,"supportTop":473,"verticalBand":{"min":436,"max":476},"predictedY":11224.063866666665,"requiredVy":-1840.8302409244523,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["vertical-corridor-unreachable"],"selected":false},{"supportId":"opening-table-a","entryTime":-0.8513333333333333,"supportTop":360,"verticalBand":{"min":323,"max":363},"predictedY":779.6372,"requiredVy":null,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["non-collidable","not-ahead","vertical-corridor-unreachable"],"selected":false},{"supportId":"opening-table-b","entryTime":1.5153333333333334,"supportTop":471,"verticalBand":{"min":434,"max":474},"predictedY":1061.7438666666667,"requiredVy":-481.0628244610647,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["non-collidable"],"selected":false},{"supportId":"bridge-table","entryTime":7.715333333333333,"supportTop":398,"verticalBand":{"min":361,"max":401},"predictedY":17734.783866666665,"requiredVy":-2329.2591203663696,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["non-collidable","vertical-corridor-unreachable"],"selected":false},{"supportId":"lift-table","entryTime":10.048666666666666,"supportTop":374,"verticalBand":{"min":337,"max":377},"predictedY":29982.917199999993,"requiredVy":-3028.243601141113,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["non-collidable","vertical-corridor-unreachable"],"selected":false},{"supportId":"tower-table","entryTime":12.515333333333333,"supportTop":383,"verticalBand":{"min":346,"max":386},"predictedY":46482.94386666666,"requiredVy":-3764.8354445213863,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["non-collidable","vertical-corridor-unreachable"],"selected":false},{"supportId":"late-table","entryTime":15.315333333333335,"supportTop":373,"verticalBand":{"min":336,"max":376},"predictedY":69636.70386666668,"requiredVy":-4603.617107038698,"upperBoundaryLimit":-863.3191762031005,"rejectionReasons":["non-collidable","vertical-corridor-unreachable"],"selected":false}],"rejectionReasons":[{"supportId":"white-bumper","rejectionReasons":["not-ahead","vertical-corridor-unreachable"]},{"supportId":"white-landing","rejectionReasons":["not-ahead","vertical-corridor-unreachable"]},{"supportId":"white-column","rejectionReasons":["vertical-corridor-unreachable"]},{"supportId":"dual-bridge-face","rejectionReasons":["vertical-corridor-unreachable"]},{"supportId":"white-recovery-shelf","rejectionReasons":["vertical-corridor-unreachable"]},{"supportId":"lift-plank","rejectionReasons":["vertical-corridor-unreachable"]},{"supportId":"level1-reward-shelf","rejectionReasons":["vertical-corridor-unreachable"]},{"supportId":"tower-approach","rejectionReasons":["vertical-corridor-unreachable"]},{"supportId":"level1-runway-main","rejectionReasons":["vertical-corridor-unreachable"]},{"supportId":"opening-table-a","rejectionReasons":["non-collidable","not-ahead","vertical-corridor-unreachable"]},{"supportId":"opening-table-b","rejectionReasons":["non-collidable"]},{"supportId":"bridge-table","rejectionReasons":["non-collidable","vertical-corridor-unreachable"]},{"supportId":"lift-table","rejectionReasons":["non-collidable","vertical-corridor-unreachable"]},{"supportId":"tower-table","rejectionReasons":["non-collidable","vertical-corridor-unreachable"]},{"supportId":"late-table","rejectionReasons":["non-collidable","vertical-corridor-unreachable"]}],"remainingCandidates":["white-branch","lantern-ferry"]}
+✔ L1-STACK a: actual knife contact cuts the bearing object and releases the overlapping upper object (9.857375ms)
+✔ L1-STACK-VISUAL-EVIDENCE a: same target stays visible and separates into two halves after cut (1.75825ms)
+✔ L1-STACK b: actual knife contact cuts the bearing object and releases the overlapping upper object (2.530584ms)
+✔ L1-STACK-VISUAL-EVIDENCE b: same target stays visible and separates into two halves after cut (0.821333ms)
+✔ L1-GRAVITY active airborne play does not freeze a hovering supported collectible (2.095709ms)
+✔ L1-REWARD intact has zero earnings; a real cut names the separated target and replay clears earnings (2.46875ms)
+✔ L1-PLACEMENT every initial collectible has a touching support, including the late and bridge targets (0.1665ms)
+✔ L1-RUNWAY visible support stays collidable through the normal forward replay (50.262959ms)
+✖ L1-RUNWAY RED fixed-step trace compares setter gates at both natural separating tip contacts (7.235041ms)
+✖ L1-RUNWAY test-only release trace records early and late support candidates before correction (0.749916ms)
+✔ L1-RUNWAY later sharp contact stays airborne while body contact still bounces (0.647875ms)
+✔ L1-RUNWAY early approaching top-face tip contact recovers without removing side anchors (0.438375ms)
+✖ L1-RUNWAY early separating top-face tip contact recovers without anchor and consumes its release intent once (0.409667ms)
+✔ L1-RUNWAY recovery release snapshot does not change ordinary non-runway support launches (0.10875ms)
+✖ L1-RUNWAY expired recovery intent does not reinterpret a later airborne tap as release (1.037541ms)
+✔ L1-RUNWAY opening keeps the authored white landing anchor before runway bounce feedback (3.124666ms)
+✔ L1-FINISH labels use viewport coordinates without a second offset (1.191667ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 390x844 (1.01975ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 1100x720 (0.192084ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 15
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 515.203375
+
+✖ failing tests:
+
+test at tests/level1-recovery.test.ts:194:1
+✖ L1-RUNWAY RED fixed-step trace compares setter gates at both natural separating tip contacts (7.235041ms)
+  AssertionError [ERR_ASSERTION]: RED: separating top-tip setter should accept both contacts; baseline trace was [{"frame":216,"preContactPlayerX":303.9500000000005,"contactPointX":315.47808960723034,"normalY":-1,"relativeNormalVelocity":180,"recoveryAge":0.19999999999999998,"pendingAge":null,"candidateSetterBranch":"separating runway top-tip","baselineSetterDecision":"skip: restored baseline has no pending pose setter; separating top-tip falls through to anchor","contactPointGateDecision":"set: top-tip and contact-point x < 350","playerCenterGateDecision":"set: top-tip and player-center x < 350","statusAfter":"anchored"},{"frame":302,"preContactPlayerX":331.4500000000005,"contactPointX":368.0817538698364,"normalY":-1,"relativeNormalVelocity":195,"recoveryAge":0.175,"pendingAge":null,"candidateSetterBranch":"separating runway top-tip","baselineSetterDecision":"skip: restored baseline has no pending pose setter; separating top-tip falls through to anchor","contactPointGateDecision":"skip: contact-point gate does not admit contact","playerCenterGateDecision":"set: top-tip and player-center x < 350","statusAfter":"anchored"}]
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:280:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/level1-recovery.test.ts:285:1
+✖ L1-RUNWAY test-only release trace records early and late support candidates before correction (0.749916ms)
+  AssertionError [ERR_ASSERTION]: runtime selector must agree with the recorded early trace
+  + actual - expected
+  
+  + undefined
+  - 'white-branch'
+  
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:296:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'white-branch',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/level1-recovery.test.ts:368:1
+✖ L1-RUNWAY early separating top-face tip contact recovers without anchor and consumes its release intent once (0.409667ms)
+  AssertionError [ERR_ASSERTION]: an upward top-face contact must not become an authored anchor
+  + actual - expected
+  
+  + 'anchored'
+  - 'airborne'
+  
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:392:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'anchored',
+    expected: 'airborne',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/level1-recovery.test.ts:432:1
+✖ L1-RUNWAY expired recovery intent does not reinterpret a later airborne tap as release (1.037541ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'anchored'
+  - 'airborne'
+  
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:446:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'anchored',
+    expected: 'airborne',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

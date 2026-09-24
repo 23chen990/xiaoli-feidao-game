@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixAttempt",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "attempt": 1,
+  "sourceTriage": "artifacts/gameplay-triage-user-recording-level01-v1.json",
+  "exactMatrix": "artifacts/reproduction-matrix-user-recording-level01-v1.json",
+  "contextOmitted": ["other levels", "other prototype workspaces", "third-party model/audio/UI copying", "platform packaging"],
+  "filesChanged": [
+    "src/game-levels.ts",
+    "src/level-one-guidance.ts",
+    "src/main.ts",
+    "tests/level-catalog.test.ts",
+    "tests/level-ui.test.ts"
+  ],
+  "changes": [
+    "Added an original Level 1 side reward shelf and aligned collectible to make the post-cut route choice visible.",
+    "Added staged Level 1 prompts for startup, cadence, route choice, hazard warning and finish choice; prompts do not copy the recording's wording.",
+    "Recorded the six-beat Level 1 experience contract and exact viewport matrix from the user recording."
+  ],
+  "tests": {
+    "red": "LEVEL-CATALOG-RED-006 and LEVEL-UI-RED-002 failed before their production changes.",
+    "green": "pnpm test passed 165/165",
+    "lint": "PASS",
+    "typecheck": "PASS",
+    "build": "PASS",
+    "qaBrowser": {"status":"PASS","runner":"scripts/qa-browser.ts","evidence":"BrowserQaRunnerResult passed=true, previewClosed=true"},
+    "qa3d": {"status":"PASS","runner":"scripts/qa-browser-3d.ts","evidence":"ThreeCutPocBrowserQaRunnerResult passed=true"}
+  },
+  "status": "PASS_WITH_EVIDENCE_BOUNDARY",
+  "remainingEvidenceGaps": [
+    "The exact reference's third-party expressive layer is intentionally not copied.",
+    "The supplied recording is 1100x720; fresh 390x844 natural-input screenshots for each matrix cell still need independent capture.",
+    "The user recording shows completion, but its exact input timestamps are not machine-readable; timing parity remains observational until a fresh replay comparison is captured."
+  ],
+  "nextStep": "Capture a fresh Level 1 desktop and portrait natural run, compare the six beat order against the recording, then accept or refine before ingesting Level 2."
+}

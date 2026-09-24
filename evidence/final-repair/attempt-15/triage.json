@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-triage",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 15,
+  "issueId": "L1-RUNWAY-RECOVERY-POSE-FOLLOW-AND-CLEAR-TRACE",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "classification": "natural-level1-runway-recovery-blocker",
+  "status": "VALIDATED_REPRODUCTION",
+  "priorAttempt": {
+    "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-14/fix-result.json",
+    "sha256": "8829e9fb7206c1cbe22ae6ce39fb7ae51469025d2aad0fab0057f2015a84c6e7",
+    "status": "BLOCKED",
+    "candidateRejected": true
+  },
+  "reproduction": {
+    "validatedPoseReference": {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/green-targeted.log",
+      "sha256": "d0d64f4227589d2edd4aff8ca1939209b75e933d1df89ed0ee51725c61f48ab6",
+      "firstTapCorrectionPixels": 1.777,
+      "secondTapCorrectionPixels": 0.000103,
+      "firstMaxMotionPixels": 12.43,
+      "secondMaxMotionPixels": 12.96,
+      "firstMaxRotationRadians": 0.34,
+      "secondMaxRotationRadians": 0.34
+    },
+    "attempt14Divergence": {
+      "firstTapCorrectionPixels": 73.61509159887643,
+      "secondPoseFrame": 302,
+      "secondPoseClearFrame": 528,
+      "scheduledSecondTapFrame": 553,
+      "clearLeadFrames": 25,
+      "clearReason": "UNKNOWN_UNINSTRUMENTED",
+      "evidence": [
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-14/green-targeted.log",
+          "sha256": "5ae2a78e94abc580d09b071509e54a2c6da78b506cb05643648ee1134ab20753"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-14/fix-result.json",
+          "sha256": "8829e9fb7206c1cbe22ae6ce39fb7ae51469025d2aad0fab0057f2015a84c6e7"
+        },
+        {
+          "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/green-targeted.log",
+          "sha256": "d0d64f4227589d2edd4aff8ca1939209b75e933d1df89ed0ee51725c61f48ab6"
+        }
+      ]
+    },
+    "traceRequirement": {
+      "reasonEnum": ["tap-consumed", "ttl-expired", "reset", "load-level", "terminal", "inactive-support", "non-runway-contact", "unknown"],
+      "fields": ["frame", "elapsed", "poseAge", "ttl", "status", "anchorId", "supportActive", "supportCollidable", "playerX", "playerY", "playerVx", "playerVy", "playerAngle", "angularVelocity", "targetId", "contactPart", "normalY", "relativeNormalVelocity"]
+    }
+  },
+  "reproductionMatrix": [
+    {"objectType":"pending runway pose","lifecycleStateBranch":"capture → visible airborne follow → first tap","rendererPresentationPath":"ThreePresentationModel airborne player","viewport":"deterministic-fixed-step","evidence":["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-14/green-targeted.log"],"observation":"Re-arm captured both poses but first tap correction was 73.615 px.","inference":"A bounded follow is needed to keep the visible player near the support-relative target while retaining motion.","unknowns":["The exact frame528 clear reason is not recorded."]},
+    {"objectType":"pending runway pose","lifecycleStateBranch":"second capture → frame520–560 hold → second tap","rendererPresentationPath":"airborne motion and launch feedback","viewport":"deterministic-fixed-step","evidence":["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-14/green-targeted.log"],"observation":"Pose2 was observed at frame302 and absent by frame528, before the scheduled frame553 tap.","inference":"Instrument clear reasons before changing TTL or collision behavior.","unknowns":["Whether clear was TTL, collision, terminal, inactive support, or an implementation-specific branch."]},
+    {"objectType":"runway side/body and approaching contacts","lifecycleStateBranch":"non-qualifying hard-surface paths","rendererPresentationPath":"bounce/anchor feedback","viewport":"deterministic-fixed-step","evidence":["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-13/task.json"],"observation":"Existing branches must remain unchanged.","inference":"Follow must be limited to pending pose and not alter ordinary collision response.","unknowns":["Natural side/body perceptual evidence remains outstanding."]},
+    {"objectType":"default browser journey","lifecycleStateBranch":"startup → runway → terminal → replay","rendererPresentationPath":"web-lite Three.js presentation","viewport":"390x844","evidence":["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-summary.json"],"observation":"Prior independent natural QA remains blocked.","inference":"Focused follow/trace pass still requires fresh natural QA.","unknowns":["No Attempt15 natural trace exists."]}
+  ],
+  "rootCauseHypothesis": {
+    "evidence":"Attempt14 captured frames216/302 but required 73.615 px correction at the first tap; Attempt11's validated reference showed 1.777 px and 0.000103 px corrections with 12–13 px bounded motion. Attempt14's frame528 clear has no reason instrumentation.",
+    "changeHypothesis":"While a pending pose is live, preserve normal airborne motion but apply a bounded follow toward the current support-relative pose, and instrument every clear with a reason and complete state snapshot. Do not infer or change the frame528 clear cause until the trace identifies it.",
+    "stateName":"pendingRunwayReleasePose",
+    "followRule":"while pending, preserve normal airborne motion but apply a bounded follow toward the current support-relative pose so the visible player remains within the tap correction budget",
+    "diagnosticRule":"every clear records an explicit reason, frame, elapsed, age, status, anchorId, support activity, and player pose",
+    "preservedBranches":["Setter null/re-arm gate from Attempt14.","Pre-correction capture ordering from Attempt13.","Approaching/side/body/x>=350/non-runway/opening ordinary behavior.","2.35 second TTL and explicit lifecycle clears.","Standard one-shot launch and feedback."],
+    "rejectedAlternatives":["Do not call the unknown frame528 clear TTL without a trace.","Do not widen geometry or alter contact timing.","Do not snap directly to the stored pose each frame.","Do not change launch velocities or tap schedule.","Do not edit renderer, platform, level, persistence, or release files."]
+  },
+  "scope":{"includedFiles":["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts","/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"],"excludedFiles":["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-presentation.ts","/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/style.css","/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms","/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist"],"route":"formal-fixer","expectedSourceFileLimit":2},
+  "acceptanceCriteria":["Run and save RED focused evidence before edits.","Instrument pose set/update/clear/consume reasons and state fields.","Hold pose2 through frame553 unless trace proves a different explicit terminal/clear reason.","Verify pose age at frame553 is about 2.092 and below 2.35 TTL.","Track per-frame positional/angular error and visible motion.","Keep tap corrections within 10 px and 0.5 rad; use Attempt11 measurements as reference.","Preserve setter frames216/302 and null/re-arm gate.","Preserve pre-correction capture ordering.","Preserve all explicit clear paths and test TTL independently at 2.35.","Pass focused tests and pnpm test.","Pass pnpm lint and pnpm typecheck.","Run exactly one pnpm build and record hash.","Limit files to the packet-owned source/test files.","Rollback immediately if focused acceptance fails.","Do not claim natural/perceptual completion from Fixer evidence."],
+  "evidenceClassification":{"observed":["Attempt14 setter captures [216,302].","Attempt14 first tap correction is 73.615 px.","Attempt14 pose2 absent by frame528, 25 frames before tap, but reason is not recorded."],"inferred":["Bounded follow is supported by Attempt11's measured motion/correction reference.","Reason instrumentation must precede any TTL or clear-rule change."],"unknown":["Exact frame528 clear cause.","Final follow coefficients and natural presentation after focused pass."]},
+  "createdAt":"2026-09-23T11:45:00.000Z"
+}

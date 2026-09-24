@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixUserDirectedCycle",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer-follow-up",
+  "sourceIssues": ["REVIEW-STREAM-008", "REVIEW-STREAM-011"],
+  "reproductionMatrix": {
+    "objectType": "finish multiplier wall + terminal settlement overlay",
+    "lifecycle": ["approach", "contact", "reward", "celebration", "terminal", "replay"],
+    "renderer": "ThreeWorldRenderer plus DOM HUD presentation",
+    "viewports": ["1180x720 desktop", "390x844 portrait mobile"]
+  },
+  "change": {
+    "files": ["workspace/prototype-a/src/main.ts", "workspace/prototype-a/src/style.css", "workspace/prototype-a/tests/perceptual-level-pressure.test.ts"],
+    "summary": [
+      "Project multiplier labels from each finish gate world position instead of a detached fixed right rail.",
+      "Anchor terminal settlement panel to the upper-left safe area so it does not cover the finish wall.",
+      "Preserve selected-label centering while applying emphasis scale."
+    ]
+  },
+  "verification": {
+    "targetedTests": "PASS",
+    "unitTests": "PASS (163)",
+    "lint": "PASS",
+    "typecheck": "PASS",
+    "build": "PASS",
+    "browserQa": "PASS (desktop/mobile natural journey, cut, terminal, replay)",
+    "levelPackQa": "INCOMPLETE; runner exceeded local wait window and was terminated; no PASS claim"
+  },
+  "status": "BLOCKED_RELEASE",
+  "remainingEvidenceGaps": [
+    "Independent perceptual screenshots for all finish-wall levels and both orientations are still required.",
+    "Original recording remains unavailable and quarantined.",
+    "WeChat, Douyin and TapTap adapter/build/real-device evidence is absent.",
+    "qa:levels must be rerun to completion before release packaging."
+  ]
+}

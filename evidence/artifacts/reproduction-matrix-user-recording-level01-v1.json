@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "ReproductionMatrix",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "sourceEvidence": "reference-evidence/incoming/_2026-09-06-135548-3781e4dcd3d2.mp4",
+  "cells": [
+    {"objectType":"tutorial prompt","lifecycle":"startup → first input","renderer":"HUD + Three.js world","viewport":"desktop 1100x720","acceptance":"prompt is visible before first tap and does not cover the first target","status":"PENDING"},
+    {"objectType":"collectible target","lifecycle":"intact → cut/collected","renderer":"Three.js presentation","viewport":"desktop 1100x720","acceptance":"targets form a readable first route and produce player-visible reward feedback","status":"PENDING"},
+    {"objectType":"rung/stack obstacle","lifecycle":"approach → route choice → pass","renderer":"Three.js presentation","viewport":"desktop 1100x720","acceptance":"two-lane decision is visible early enough for normal input","status":"PENDING"},
+    {"objectType":"spike warning + spike pad","lifecycle":"warning → active hazard → recover/fail","renderer":"HUD + Three.js presentation","viewport":"desktop 1100x720","acceptance":"warning precedes the hazard and failure cause is attributable","status":"PENDING"},
+    {"objectType":"multiplier finish wall","lifecycle":"approach → contact → lane settlement","renderer":"Three.js + HUD presentation","viewport":"desktop 1100x720","acceptance":"stacked outcome lanes remain visible until selection settles","status":"PENDING"},
+    {"objectType":"settlement overlay","lifecycle":"won → claim/continue → replay","renderer":"HUD presentation","viewport":"desktop 1100x720 and mobile 390x844 portrait","acceptance":"result, best, primary action and replay path are player-visible","status":"PENDING"}
+  ],
+  "gate": "Every cell must be checked with normal player input; debug scenario loading cannot close a cell."
+}

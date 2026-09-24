@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixerSummary",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "filesChanged": ["src/game-levels.ts", "tests/orphan-object-reachability.test.ts"],
+  "fix": "Added pathRole and decisionImpact metadata; Level 3 ramp, rebound, recovery pad and low spike are explicitly main/branch/recovery objects with readable decision impact.",
+  "tests": {"targeted": "pass", "full": "111 pass", "lint": "pass", "typecheck": "pass", "build": "pass"},
+  "qa": {"levelPack": "pass", "report": "runs/mobile-slice-adaptation-20260830/qa-level-pack-v1/runner-report.json"},
+  "remainingEvidenceGaps": ["Dedicated Level 3-only desktop and 390x844 natural replay should capture object touch/avoidance and failure attribution; existing level-pack natural sweep covers neighboring levels but not Level 3."],
+  "status": "PASS_WITH_EVIDENCE_GAP"
+}

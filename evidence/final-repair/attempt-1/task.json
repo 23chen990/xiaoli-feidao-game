@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fixer-task-packet",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "model": "gpt-6-luna",
+  "triagePath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/triage.json",
+  "triageSha256": "0356b1cfa41a091fa21107462f62ea26ca0193063e4945719ef9b7bd8804b41e",
+  "issueId": "L1-RUNWAY-EARLY-SHARP-ANCHOR",
+  "ownedFiles": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "expectedSourceFileLimit": 2,
+  "expectedHypothesis": "For level1-runway-main only, an approaching sharp tip/edge contact on the top face (normalY <= -0.9 and velocity into the surface) uses the existing hard-surface recovery response instead of anchoring. Keep the existing x>=350 suppression, opening white-landing anchor, blunt body/handle bounce, and debug fixture bypass unchanged.",
+  "testFirst": {
+    "redRequired": true,
+    "redCommand": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+    "greenCommand": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+    "regressionCommand": "pnpm test"
+  },
+  "acceptanceCriteria": [
+    "A focused regression test reproduces an approaching early top-face runway tip contact and proves it does not enter an anchored dead-end.",
+    "The focused test proves the response remains forward-moving or upward-recovering with anchorId null after the early contact.",
+    "An early sharp runway contact with a non-top normal retains its authored anchor behavior.",
+    "The later x>=350 sharp runway behavior remains airborne and the runway body/handle contact still emits a controlled bounce.",
+    "The opening white-landing teaching anchor remains the first authored opening anchor.",
+    "The seed-31 fixed timestamp replay reaches at least 11.9 seconds and player x>2000 without failing.",
+    "Only the two owned source/test files change; no debug fixture or renderer path is altered.",
+    "pnpm test, pnpm lint, pnpm typecheck pass and exactly one pnpm build succeeds with a recorded dist hash.",
+    "The Fixer receipt makes no natural or perceptual QA claim; independent Playwright QA must retest portrait and desktop normal input."
+  ],
+  "evidenceInputs": [
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-4/qa-natural/portrait-390x844/recording.json",
+      "sha256": "4cdfa07fe1e596ecdd70a15b16ae91b9949f3d1ad950c235bf78fb6c924dc007",
+      "role": "natural-reproduction"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-4/qa-natural/desktop-1100x720/recording.json",
+      "sha256": "730d8af87a3a15830d0450f438ec3197a43701c32dcc3b1389ecf8a1fa5e5159",
+      "role": "natural-reproduction"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/experiment-rejection.json",
+      "sha256": "8f953f27d8b06aae517c4be7e32d899cd61447a28e1ec0f3cfaa6d029ed5af5f",
+      "role": "prior-experiment-rejection"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/fix-result.json",
+      "sha256": "a16f412c0ae480af79472f86b1cdcaa4f0a6037f07a9778e7cd0a13c64f58a56",
+      "role": "prior-fix-receipt"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/cycle-state.json",
+      "sha256": "d54f4026ee30b6d0ac21eef7ffab9215ac621ddce5e2628da7a966200e3756a8",
+      "role": "prior-cycle-state"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html",
+      "sha256": "5b2e1604b93d66614229f6481e71f82dfd2864e099cbd3c3af5ed34371ca30e5",
+      "role": "current-build"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "sha256": "eb319bf2701abc3658b408b245abea3f24f2bbd9fba6b2d81ac504f645e540f3",
+      "role": "current-source"
+    }
+  ],
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory modules, platform adapters, release configuration, and renderer implementation.",
+    "Unverified competitor tuning and unbound external media.",
+    "Fixture traces as natural evidence; no natural or perceptual QA claim is delegated to Fixer.",
+    "Any source file outside the two owned paths unless a new triage record explicitly promotes scope."
+  ],
+  "requiredOutputs": {
+    "fixResultPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/fix-result.json",
+    "redLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/red-targeted.log",
+    "greenLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/green-targeted.log",
+    "testsLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/tests.log",
+    "lintLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/lint.log",
+    "typecheckLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/typecheck.log",
+    "buildLogPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/build.log"
+  },
+  "noRuntimeQaClaim": true,
+  "createdAt": "2026-09-23T05:34:51.300Z"
+}

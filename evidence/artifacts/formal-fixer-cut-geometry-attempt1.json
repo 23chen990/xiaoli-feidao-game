@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixerReport",
+  "route": "formal-fixer",
+  "attempt": 1,
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "issue": "cut-geometry-shape",
+  "rootCause": "log and crate halves reused full unitLog/unitBox geometry and only scaled or translated it; dessert halves retained a full-cylinder icing accent and dessert caps were not aligned to the X-axis split plane, so cut/falling/landed pieces could read as intact objects.",
+  "contextOmitted": [
+    "Unrelated factory/shared code, other games, finish-gate repairs, spike/recovery repairs, and prior food-theme/asset changes were intentionally omitted."
+  ],
+  "filesChanged": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-cut-visuals.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/three-presentation.test.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/scripts/qa-cut-geometry.ts"
+  ],
+  "tests": {
+    "red": {
+      "command": "pnpm test -- tests/three-presentation.test.ts",
+      "result": "130 passed, 1 failed",
+      "failure": "new one-sided-half regression observed full geometry (halfA max.x=1)"
+    },
+    "green": {
+      "targetedCommand": "pnpm test -- tests/three-presentation.test.ts",
+      "targetedResult": "131 passed, 0 failed",
+      "lint": "pnpm lint (passed)",
+      "typecheck": "pnpm typecheck (passed)",
+      "full": "pnpm test (131 passed, 0 failed)"
+    }
+  },
+  "build": {
+    "command": "pnpm build",
+    "result": "passed",
+    "output": "dist/index.html (2721378 bytes)"
+  },
+  "naturalEvidence": {
+    "command": "pnpm exec tsx scripts/qa-cut-geometry.ts",
+    "report": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-cut-geometry-v1/report.json",
+    "result": "passed=true",
+    "matrix": [
+      { "viewport": "desktop", "size": "1180x720", "levels": [1, 4, 7], "input": "normal mouse", "screenshots": ["desktop-level-01-cut.png", "desktop-level-01-settled.png", "desktop-level-04-cut.png", "desktop-level-04-settled.png", "desktop-level-07-cut.png", "desktop-level-07-settled.png"] },
+      { "viewport": "mobile", "size": "390x844", "levels": [1, 4, 7], "input": "normal touch", "screenshots": ["mobile-level-01-cut.png", "mobile-level-01-settled.png", "mobile-level-04-cut.png", "mobile-level-04-settled.png", "mobile-level-07-cut.png", "mobile-level-07-settled.png"] }
+    ],
+    "observed": "Each viewport produced normal-input cut traces with visibleHalves=2 and distinct cap mesh identities; dessert wedges are visibly non-circular in Level04 screenshots."
+  },
+  "remainingGaps": [
+    "Natural report does not serialize per-object skinKind, so log/crate branch identity relies on the Level01/07 screenshots plus branch-specific geometry tests rather than a machine-labelled perceptual record.",
+    "Settled screenshots are captured after a fixed delay and do not expose an explicit landed phase field; the runtime keeps cut halves visible through falling/settling by design."
+  ],
+  "status": "BLOCKED"
+}

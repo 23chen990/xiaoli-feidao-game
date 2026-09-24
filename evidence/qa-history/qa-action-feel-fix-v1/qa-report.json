@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "ActionFeelFixQaReport",
+  "targetWorkspace": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "fixAttempt": 1,
+  "passed": true,
+  "scope": [
+    "directional cut separation and contact-driven angular velocity",
+    "fragment platform/ground contact damping and sleep",
+    "presentation landing tolerance synchronized with fixed-step motion"
+  ],
+  "evidence": {
+    "unitTests": { "command": "pnpm test", "passed": 100 },
+    "lint": { "command": "pnpm lint", "passed": true },
+    "typecheck": { "command": "pnpm typecheck", "passed": true },
+    "build": { "command": "pnpm build && pnpm build:3d", "passed": true },
+    "desktopMobileBrowser": { "command": "pnpm qa:browser", "passed": true, "artifact": "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/report.json" },
+    "threeCutBrowser": { "command": "pnpm qa:3d", "passed": true, "artifact": "workspace/prototype-a/tests/artifacts/qa-3d-cut-poc/report.json" }
+  },
+  "naturalPlayBoundary": "Browser smoke starts from reset and uses real button pointer input; isolated debug scenarios remain diagnostic only.",
+  "residualRisks": [
+    "The generated workspace remains ignored by the factory repository and is intentionally not committed.",
+    "3D browser smoke still validates the existing cut POC flow; full-course natural-play evidence remains in historical run reports."
+  ]
+}

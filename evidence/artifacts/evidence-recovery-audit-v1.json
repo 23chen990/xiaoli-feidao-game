@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "EvidenceRecoveryAudit",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "chatHistoryConfirmed": [
+    "/Users/kker/Library/Containers/5ZSL2CJU2T.com.dingtalk.mac/Data/Library/Application Support/DingTalkMac/ScreenCapture/钉钉录屏_2026-09-05 140550.mp4",
+    "/Users/kker/Library/Containers/5ZSL2CJU2T.com.dingtalk.mac/Data/Library/Application Support/DingTalkMac/ScreenCapture/钉钉录屏_2026-09-05 140908.mp4",
+    "/Users/kker/Library/Containers/5ZSL2CJU2T.com.dingtalk.mac/Data/Library/Application Support/DingTalkMac/ScreenCapture/钉钉录屏_2026-09-05 141313.mp4"
+  ],
+  "filesystemChecks": [
+    {
+      "check": "DingTalk ScreenCapture directory",
+      "result": "ONLY_UNRELATED_FILE_PRESENT",
+      "present": "钉钉录屏_2026-09-05 141425.mp4",
+      "sha256": "0ca4cc90bad22332d85928fa96a22db59f418fcbfac325f93b5dfefee350d661",
+      "identity": "Monkey Mart-like top-down shop gameplay",
+      "usableForTarget": false
+    },
+    { "check": "macOS metadata search for 140550/140908/141313", "result": "NOT_FOUND" },
+    { "check": "target run reference-evidence manifest", "result": "RECORDED_AS_UNAVAILABLE" }
+  ],
+  "conclusion": "Chat history retained the source paths but not recoverable local video bytes. The three recordings were not copied into the target run workspace.",
+  "recoveryAction": "Reattach or restore the exact three recordings; hash them into reference-evidence/manifest.json before review."
+}

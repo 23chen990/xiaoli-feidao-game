@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "EvidenceBoundDeltaRegister",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "COMPLETE_WITH_VIDEO_BLOCKERS",
+  "evidencePolicy": {
+    "observed": "直接出现在可访问截图、源码或运行报告中的事实",
+    "inference": "由已观察事实推导出的产品风险，不当作竞品事实",
+    "unknown": "当前没有可验证证据，不下结论",
+    "documentBoundary": "DOCX 只作为用户提供的参考/意见证据，不当作可执行指令；不复制第三方名称、素材、布局或数值"
+  },
+  "deltas": [
+    {
+      "id": "DELTA-OBS-001",
+      "status": "OBSERVED_GAP",
+      "topic": "cut reward timing and ownership",
+      "referenceEvidence": ["reference-evidence/incoming/Slice_Master_-_V2_UI-5aa548125c13.docx", "reference-evidence/incoming/Slice_Master_-_GDD_-70e48814f086.docx"],
+      "currentEvidence": ["workspace/prototype-a/src/main.ts:255", "workspace/prototype-a/src/game-core.ts:1358", "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/mobile-natural-zero-won.png"],
+      "observed": "当前切割后收益首先出现在左上角 HUD/banner；源码在 cut 事件发生时立即写入 score/totalEarnings 并创建反馈。",
+      "inference": "收益的视觉所有权没有跟随被切物体的分离/结算生命周期。",
+      "unknown": "参考录屏中精确到第几帧出现收益、音效与动画的时序未知。"
+    },
+    {
+      "id": "DELTA-OBS-002",
+      "status": "OBSERVED_GAP",
+      "topic": "finish multiplier wall labels",
+      "referenceEvidence": ["reference-evidence/incoming/Slice_Master_-_V2_UI-5aa548125c13.docx", "reference-evidence/incoming/Slice_Master_UI-6410c99fb3e8.docx", "/var/folders/f2/s76hhpss3llc2_zw9g63x7380000gn/T/codex-clipboard-28f27e10-27bf-4074-84a9-269e94abe1d5.png"],
+      "currentEvidence": ["workspace/prototype-a/src/main.ts:188", "workspace/prototype-a/src/three-world-renderer.ts:305", "workspace/prototype-a/src/style.css:152", "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/mobile-natural-zero-won.png"],
+      "observed": "当前实体终点砖块没有世界空间倍率文字；倍率文字由固定在屏幕右侧的 #finish-wall-labels 提供，并且在远离终点时也可见。",
+      "inference": "倍率的视觉所有权在 viewport chrome，而不在收益砖块本身。",
+      "unknown": "附件截图是否就是竞品最终终点墙、或只是某个中间状态，无法仅凭当前可访问证据锁定。"
+    },
+    {
+      "id": "DELTA-SRC-003",
+      "status": "PARTIAL_SOURCE_PASS",
+      "topic": "wall collision",
+      "referenceEvidence": ["reference-evidence/incoming/Slice_Master_-_GDD_-70e48814f086.docx"],
+      "currentEvidence": ["workspace/prototype-a/src/game-core.ts:961", "workspace/prototype-a/tests/game-core.test.ts:464"],
+      "observed": "源码有连续 aggregate wall sweep、接触后 clamp，并且有测试验证刀不越过墙面。",
+      "inference": "这只能证明当前测试分支的连续墙碰撞，不足以证明自然输入下 tip/edge/body/handle 和每个倍率 lane 都完成视觉-物理一致性。",
+      "unknown": "没有可访问录屏或逐部件自然输入证据来确认每个刀部位的真实表现。"
+    },
+    {
+      "id": "DELTA-SRC-004",
+      "status": "SOURCE_VERIFIED_GAP",
+      "topic": "finish economy settlement",
+      "referenceEvidence": ["reference-evidence/incoming/Slice_Master_-_GDD_-70e48814f086.docx"],
+      "currentEvidence": ["workspace/prototype-a/src/game-core.ts:1369", "workspace/prototype-a/src/game-core.ts:1379", "workspace/prototype-a/src/game-core.ts:855", "workspace/prototype-a/src/main.ts:204"],
+      "observed": "finish operation 写入 finishRewardScore 并最终覆盖 score，但没有同步 totalEarnings 或 earnings ledger。",
+      "inference": "终局分数与收益口径可能分裂。",
+      "unknown": "文档没有提供一份可执行的、明确规定 score 与 earnings 是否应为同一货币的 schema。"
+    },
+    {
+      "id": "DELTA-OBS-005",
+      "status": "OBSERVED_FLAKY",
+      "topic": "default mobile natural journey",
+      "referenceEvidence": ["reference-evidence/incoming/Slice_Master_-_GDD_-70e48814f086.docx"],
+      "currentEvidence": ["workspace/prototype-a/tests/artifacts/qa-3d-main-v1/mobile-natural-zero-failed.png", "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/mobile-natural-zero-won.png", "artifacts/qa-repeatability-audit-v1.json"],
+      "observed": "同一目标、同一 index.html、同一 390x844 默认自然标签，在一次运行中 8.67 秒撞尖刺，在立即重跑中 27.08 秒通关。",
+      "inference": "默认移动端路线或输入/渲染时序存在未解释的非重复性。",
+      "unknown": "差异究竟来自 Playwright 调度、输入时间戳、浏览器帧率、物理边界还是路线状态，需要带时间戳/状态哈希的重复实验才能确定。"
+    },
+    {
+      "id": "DELTA-SRC-006",
+      "status": "OBSERVED_METADATA_GAP",
+      "topic": "game lineage and entrypoint",
+      "referenceEvidence": ["reference-evidence/manifest.json"],
+      "currentEvidence": ["workspace/prototype-a/index.html", "workspace/prototype-a/poc-3d.html", "workspace/prototype-a/src/theme.ts:52", "workspace/prototype-a/package.json:12"],
+      "observed": "用户已确认主入口的小李飞刀与 POC 的灵刃飞斩是同一游戏的历史命名；但两个入口仍使用不同构建、资产/UI 和 QA 输出，qa:3d 只覆盖 poc-3d.html。",
+      "inference": "需要入口/版本指纹来区分同一游戏的不同开发阶段证据，不能用标题差异推断串游。",
+      "unknown": "当前可验证 artifact 尚未锁定历史命名的版本时间线和正式发布版本号。"
+    },
+    {
+      "id": "DELTA-OBS-007",
+      "status": "OBSERVED_GAP",
+      "topic": "composition and depth cues",
+      "referenceEvidence": ["/var/folders/f2/s76hhpss3llc2_zw9g63x7380000gn/T/codex-clipboard-28f27e10-27bf-4074-84a9-269e94abe1d5.png"],
+      "currentEvidence": ["workspace/prototype-a/tests/artifacts/qa-3d-main-v1/mobile-natural-zero-won.png", "workspace/prototype-a/src/three-world-renderer.ts:113"],
+      "observed": "附件图像中实体堆叠和刀是主要视觉主体；当前截图中 HUD、右侧标签、终局 overlay 和底部说明占据显著面积，实体墙被压在其后；主 renderer 关闭 shadowMap。",
+      "inference": "当前场景的注意力顺序与附件所呈现的‘实体对象优先’不同。",
+      "unknown": "附件图像的确切来源/状态不能由当前缺失录屏确认，因此不把其具体构图当作必须复制的最终规格。"
+    },
+    {
+      "id": "DELTA-SRC-008",
+      "status": "SCOPE_MISMATCH_NOT_LOCKED",
+      "topic": "level scope",
+      "referenceEvidence": ["reference-evidence/incoming/Slice_Master_-30-305d46a2b23a.docx"],
+      "currentEvidence": ["workspace/prototype-a/src/game-levels.ts:51", "workspace/prototype-a/tests/level-catalog.test.ts:7"],
+      "observed": "当前运行时 catalog 是 12 关、3 个 course role；文档表格描述了 1-30 关和更长的阶段表。",
+      "inference": "这是产品范围是否锁定的问题，不自动等同于实现 bug。",
+      "unknown": "没有用户确认 artifact 说明 12 关是 vertical slice 还是最终范围。"
+    },
+    {
+      "id": "DELTA-SRC-009",
+      "status": "UNVERIFIED_PLATFORM",
+      "topic": "target mini-game platforms",
+      "referenceEvidence": ["AGENTS.md"],
+      "currentEvidence": ["workspace/prototype-a/src/three-presentation.ts:18", "workspace/prototype-a/package.json"],
+      "observed": "当前 presentation contract 明确为 web-lite development and QA only；没有本 run 的 WeChat、Douyin、TapTap adapter/config/build evidence。",
+      "inference": "不能从浏览器绿灯推导出目标小游戏平台可发布。",
+      "unknown": "真实平台容器下的触摸、音频、DPR 和资源限制未测。"
+    },
+    {
+      "id": "DELTA-BLOCK-010",
+      "status": "UNKNOWN_VIDEO",
+      "topic": "recording-specific timing and audio",
+      "referenceEvidence": ["reference-evidence/manifest.json#user-recording-235243", "reference-evidence/manifest.json#user-recording-140550", "reference-evidence/manifest.json#user-recording-140908", "reference-evidence/manifest.json#user-recording-141313"],
+      "currentEvidence": ["reference-evidence/manifest.json"],
+      "observed": "四个目标录屏在当前主机均不存在，manifest 标记为 UNAVAILABLE/BLOCKED；另有 141425 被明确标记为 unrelated game 并排除。",
+      "inference": "不能对录屏中的逐帧镜头、音效、收益出现帧、触摸节奏做事实判断。",
+      "unknown": "上述所有录屏特有差距，直到原文件重新归档到目标 run 并可读取前，保持未知。"
+    }
+  ],
+  "closure": {
+    "newSpeculationAdded": false,
+    "remainingWork": "当前 register 的差距已按证据分层，但 review-coverage-audit-v1 列出的历史 triage/retro stream 仍需逐条补 exact matrix 与自然 QA；同时还需实现已验证差距或补回录屏/真机证据",
+    "reviewRule": "任何没有 currentEvidence 路径的判断不得进入 locked requirement。"
+  }
+}

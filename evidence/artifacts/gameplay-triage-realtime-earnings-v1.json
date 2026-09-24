@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "OPEN",
+  "classification": "core_experience/realtime-earnings-feedback-gap",
+  "route": "formal-fixer",
+  "routeReason": "The feedback changes the core cut-reward loop and must be proven on the default natural journey, not only through score state assertions.",
+  "evidence": {
+    "recordings": [
+      "/Users/kker/Library/Containers/5ZSL2CJU2T.com.dingtalk.mac/Data/Library/Application Support/DingTalkMac/ScreenCapture/钉钉录屏_2026-09-05 140908.mp4",
+      "/Users/kker/Library/Containers/5ZSL2CJU2T.com.dingtalk.mac/Data/Library/Application Support/DingTalkMac/ScreenCapture/钉钉录屏_2026-09-05 141313.mp4"
+    ],
+    "referenceObservation": "Each successful cut shows an immediate floating money delta near the hit while the persistent total at the top updates continuously; the player can read per-cut earnings before the next action.",
+    "currentRuntimeObservation": "The default path updates a score counter and emits a generic +value feedback pop, but it does not present an authored earnings event with consistent currency semantics and a clearly paired total update."
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "cuttable target",
+      "lifecycleState": "uncut → contact → split/fall → next target",
+      "rendererPresentationPath": "game-core cut event → main.ts spawnFeedback → HUD counterText",
+      "deviceViewport": "desktop and 390x844 mobile",
+      "naturalInput": "normal tap/flip cutting without debug placement",
+      "result": "score changes are present, but per-cut earnings, total balance and impact location are not consistently presented as one readable reward beat"
+    },
+    {
+      "objectType": "finish multiplier wall",
+      "lifecycleState": "approach → wall contact → reward settlement",
+      "rendererPresentationPath": "finish event → terminal reward label → score counter",
+      "deviceViewport": "desktop and 390x844 mobile",
+      "naturalInput": "normal approach into a visible reward lane",
+      "result": "final multiplier is shown after settlement, but the immediate earned amount is not shown as a real-time currency delta at the wall contact"
+    }
+  ],
+  "acceptanceCriteria": [
+    "Every natural cut produces a player-visible per-cut earnings delta at the contact location or a clearly anchored nearby position.",
+    "The persistent total updates in the same feedback window and uses one consistent currency/score vocabulary.",
+    "The feedback remains readable at desktop and 390x844 mobile without relying on helper text alone.",
+    "Finish multiplier settlement shows the multiplier effect and resulting earnings as a visible event before the terminal overlay obscures the wall."
+  ],
+  "claimBoundary": "Reference behavior is abstracted as feedback timing and attribution only; reference economy values are not copied."
+}

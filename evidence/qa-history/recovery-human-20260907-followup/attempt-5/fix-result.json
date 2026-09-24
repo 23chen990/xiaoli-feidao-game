@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "human-review-20260907-l1-followup",
+  "attempt": 5,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED",
+  "why": "Attempt 4's portrait recording reproduces a runway sharp-tip anchor at x≈301.95 (final anchored state x≈329.45). The requested x-threshold suppression was tested at 250 and 290: the focused sharp-contact assertion passed, but the existing standard forward replay failed before the Level1 stack. The threshold experiment was rejected and its source/test edits were reverted. The next viable hypothesis is a contact-normal-aware controlled recovery response that preserves the runway contact while avoiding the exact natural dead-end.",
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory modules, platform adapters, release configuration, and renderer implementation.",
+    "Unverified competitor tuning and unbound external media.",
+    "Fixture traces as evidence of natural gameplay; no natural or perceptual QA pass is claimed."
+  ],
+  "triagePath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/triage.json",
+  "experimentRejectionPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/experiment-rejection.json",
+  "filesChanged": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/cycle-state.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/triage.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/task.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/experiment-rejection.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/fix-result.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/red-targeted.log",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/green-targeted.log",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/tests.log",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/lint.log",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/typecheck.log",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/build.log"
+  ],
+  "gameFilesChanged": [],
+  "filesAttemptedAndReverted": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "tests": [
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "exitCode": 1,
+      "phase": "RED",
+      "result": "New x=300 runway contact assertion failed as expected: actual status was anchored.",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/red-targeted.log"
+    },
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts (candidate cutoff x>=250)",
+      "exitCode": 1,
+      "phase": "EXPERIMENT_REJECTED",
+      "result": "The new sharp-contact assertion passed, but the existing normal forward replay ended at elapsed=4.575s before its expected runway traversal.",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/green-targeted.log"
+    },
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts (candidate cutoff x>=290)",
+      "exitCode": 1,
+      "phase": "EXPERIMENT_REJECTED",
+      "result": "Focused assertion passed; existing normal forward replay failed by falling at elapsed=5.3917s, x=967.468, before the stack. Console result was captured in the experiment-rejection artifact; no separate log was written."
+    },
+    {
+      "command": "pnpm test (after experiment revert)",
+      "exitCode": 0,
+      "phase": "BASELINE_REGRESSION_CHECK",
+      "result": "195 passed, 0 failed.",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/tests.log"
+    },
+    {
+      "command": "pnpm lint (after experiment revert)",
+      "exitCode": 0,
+      "phase": "LINT",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/lint.log"
+    },
+    {
+      "command": "pnpm typecheck (after experiment revert)",
+      "exitCode": 0,
+      "phase": "TYPECHECK",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/typecheck.log"
+    },
+    {
+      "command": "pnpm exec tsx -e [strict Zod schemas for triage, task, experiment rejection, fix receipt, and cycle attempt summary]",
+      "exitCode": 0,
+      "phase": "ARTIFACT_SCHEMA_VALIDATION",
+      "result": "All five structured artifacts parsed under strict Zod object schemas."
+    }
+  ],
+  "build": {
+    "command": "pnpm build (after experiment revert)",
+    "exitCode": 0,
+    "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-5/build.log",
+    "count": 1,
+    "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html",
+    "sha256": "5b2e1604b93d66614229f6481e71f82dfd2864e099cbd3c3af5ed34371ca30e"
+  },
+  "remainingEvidenceGaps": [
+    "The attempted threshold-only fix was rejected; game-core.ts and level1-recovery.test.ts have no attempt-5 diff.",
+    "Independent natural QA remains BLOCKED: portrait must pass the reproduced runway sharp-contact branch; desktop must leave the separate white-landing branch; both must reach beyond x>1000 and observe Level1 stack under normal input.",
+    "Terminal/settlement, visible replay, exact-branch natural trace, and perceptual QA remain unverified by this fixer.",
+    "Next distinct repair hypothesis must preserve runway sharp contact and test a narrowly scoped, contact-normal-aware recovery response."
+  ],
+  "completedAt": "2026-09-23T05:09:54.000Z"
+}

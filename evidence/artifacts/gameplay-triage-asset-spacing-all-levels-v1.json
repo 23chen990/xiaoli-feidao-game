@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "OPEN",
+  "classification": "cross-level/readability/asset-spacing-and-occlusion",
+  "scope": {"levels":"01-12 inclusive","viewports":["desktop 1180x720","mobile 390x844 portrait","mobile landscape"],"lifecycle":["spawned","approach","contact","cut/falling","settled","terminal"]},
+  "evidence": ["User screenshot codex-clipboard-43113ec6-5f19-46da-a43a-4b9dc24e4bf1.png","artifacts/mechanics-research-v2.json","artifacts/competitor-gap-contract-v1.json"],
+  "reproductionMatrix": [
+    {"levelRange":"01-03","expected":"teaching spacing: one readable target/decision at a time","checks":["minimum screen gap","no target-hazard occlusion","next actionable object enters view before irreversible window"]},
+    {"levelRange":"04-06","expected":"moving-support spacing with a recoverable observation window","checks":["moving platform has readable sweep","moving object does not overlap target and hazard without causal choice","safe recovery remains visible"]},
+    {"levelRange":"07-09","expected":"dense chain spacing only after teaching, with clear cut order","checks":["chain density escalates by authored beat","adjacent targets remain separable","hard objects do not mask cuttable silhouettes"]},
+    {"levelRange":"10-12","expected":"structure/finish synthesis with separated risk choices","checks":["tower segments remain individually readable","falling fragments do not create accidental visual pileups","finish lanes and hazards retain distinct silhouettes"]}
+  ],
+  "rootCauseHypothesis":"The factory validates object existence, collision, and level completion, but has no all-level projected-spacing/occlusion gate; the previous review incorrectly narrowed scope to levels containing moving objects.",
+  "acceptanceCriteria":["Every level 01-12 receives a spacing and occlusion report for desktop and both mobile orientations.","Every gameplay object is classified as target, hazard, support, recovery, structure, or decoration with no ambiguous visual overlap.","Dense beats are preceded by a teach/read beat and preserve a visible next-action window.","Any level failing spacing, occlusion, or causal readability remains BLOCKED and routes to Blueprint/Builder before release."],
+  "route":"formal-fixer"
+}

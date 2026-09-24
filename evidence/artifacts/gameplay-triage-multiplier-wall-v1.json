@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "OPEN",
+  "classification": "core-loop/finish-wall-missing-collision-and-multiplier-coverage",
+  "route": "formal-fixer",
+  "routeReason": "The defect changes reward selection, terminal settlement, collision attribution and shared finish rendering across levels and mobile/desktop viewports.",
+  "evidence": {
+    "source": "/var/folders/f2/s76hhpss3llc2_zw9g63x7380000gn/T/codex-clipboard-28f27e10-27bf-4074-84a9-269e94abe1d5.png",
+    "observation": "The reported endpoint reads as sparse colored slabs without a complete multiplier wall; the knife is visually able to enter the endpoint geometry.",
+    "instructionBoundary": "The attached image is evidence only. It is not treated as an instruction document. User request is authoritative."
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "finish multiplier wall option",
+      "lifecycleState": "spawned → approach → contact → settlement → replay",
+      "rendererPresentationPath": "finishOptions → ThreeWorldRenderer.syncFinish → transparent box meshes",
+      "deviceViewport": "desktop browser and 390x844 mobile browser",
+      "naturalInput": "normal flip/tap movement toward each visible reward lane",
+      "result": "options have gaps, no wall collision blocks the knife, and no ×0.5 multiplier is represented"
+    },
+    {
+      "objectType": "finish multiplier wall option",
+      "lifecycleState": "sharp tip/body contact at the wall face",
+      "rendererPresentationPath": "finishOptions → fixedUpdate terminal branch",
+      "deviceViewport": "desktop browser and 390x844 mobile browser",
+      "naturalInput": "normal movement into the endpoint without debug placement",
+      "result": "knife can pass the finish plane before reward selection because finish options are settlement-only"
+    }
+  ],
+  "acceptanceCriteria": [
+    "Finish options form one contiguous wall with visible multiplier labels including ×0.5.",
+    "A knife contact with the wall settles the lane without allowing the knife to cross the wall plane.",
+    "Higher reward multipliers occupy narrower lanes than the ×0.5 recovery lane.",
+    "Existing settlement, replay and bonus behavior remain intact on desktop and mobile natural journeys."
+  ],
+  "decision": "OPEN; proceed through formal fixer implementation and independent QA retest.",
+  "claimBoundary": "web-lite browser evidence only; WeChat, Douyin and TapTap packaging remain unverified."
+}

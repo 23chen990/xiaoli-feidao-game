@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "ExhaustiveReproductionMatrix",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "COMPLETE_LOCAL_MATRIX_VIDEO_PENDING",
+  "claimBoundary": "The matrix separates source-observed runtime evidence from inferences and unavailable recording claims. It does not authorize copying competitor expression.",
+  "dimensions": ["objectType", "lifecycleState", "rendererPresentationPath", "deviceViewport"],
+  "rows": [
+    {
+      "objectType": "cuttable sigil / block",
+      "lifecycleState": "intact → sharp contact → cut → halves separate → fall/settle",
+      "rendererPresentationPath": "SliceSimulation.recordCut → ThreePresentationModel.sync → ThreeWorldRenderer.cutVisuals → main.spawnFeedback",
+      "deviceViewport": ["desktop 1180x720", "mobile 390x844"],
+      "evidence": ["src/game-core.ts:1358", "src/three-presentation.ts:236", "src/main.ts:255", "tests/artifacts/qa-3d-main-v1/mobile-natural-zero-cut-halves.png"],
+      "observed": "two cut halves and cap facts are present, but the +value and earnings banner are emitted on the cut event before the visible separation/settle lifecycle completes",
+      "inference": "reward ownership is screen-space/event-first instead of object-local/post-settle",
+      "acceptance": "cut, separation, settle, local reward and cumulative sync are independently observable in both viewports"
+    },
+    {
+      "objectType": "hard support / branch platform",
+      "lifecycleState": "airborne → blunt contact → bounce/recovery or sharp contact → anchored",
+      "rendererPresentationPath": "game-core.firstPartContact/respondToHardSurface → ThreeWorldRenderer.syncSupports → HUD state text",
+      "deviceViewport": ["desktop 1180x720", "mobile 390x844"],
+      "evidence": ["src/game-core.ts:941", "src/game-core.ts:1274", "src/three-world-renderer.ts:244"],
+      "observed": "collision taxonomy exists in state and tests, while supports render as a largely shared box language with no strong route-role/value affordance",
+      "inference": "the player must recall metadata or HUD text to distinguish main, branch and recovery surfaces",
+      "acceptance": "contact result, route role and recovery affordance are visible at natural play distance without relying on helper copy"
+    },
+    {
+      "objectType": "spike hazard",
+      "lifecycleState": "spawned → approach window → contact → failed → replay",
+      "rendererPresentationPath": "game-core.updateSpikes/fail → ThreeWorldRenderer.syncSpikes → renderHud terminal overlay",
+      "deviceViewport": ["mobile 390x844 default timing", "mobile 390x844 perturbed timing", "desktop 1180x720"],
+      "evidence": ["src/game-core.ts:1029", "src/three-world-renderer.ts:270", "tests/artifacts/qa-3d-main-v1/browser-result.json", "tests/artifacts/qa-3d-main-v1/mobile-natural-zero-failed.png"],
+      "observed": "mobile-natural-zero fails on a spike at 8.67s after four cuts before reaching the finish wall; sibling timing can win",
+      "inference": "hazard readability and default-route fairness are not closed by a sibling natural pass",
+      "acceptance": "default mobile natural run exposes a pre-warning/escape and reaches the declared terminal or remains an explicit blocked QA case"
+    },
+    {
+      "objectType": "finish multiplier wall lane",
+      "lifecycleState": "approach → aggregate wall contact → contact reveal → reward reveal → celebration → terminal",
+      "rendererPresentationPath": "game-core.finishOptions/selectFinishGate/settleFinishGate → ThreeWorldRenderer.syncFinish → fixed #finish-wall-labels → terminal UI",
+      "deviceViewport": ["desktop 1180x720 natural win", "mobile 390x844 default fail", "mobile 390x844 sibling win"],
+      "evidence": ["src/game-core.ts:961", "src/game-core.ts:1345", "src/game-core.ts:1369", "src/three-world-renderer.ts:305", "src/style.css:152", "tests/artifacts/qa-3d-main-v1/browser-result.json"],
+      "observed": "aggregate collision/clamp and staged phases exist; labels are fixed to the viewport, terminal overlay can cover the wall, and the x4/x2/x0.5 operation is applied to score rather than totalEarnings",
+      "inference": "the wall is implemented as a collision/settlement system but not yet as a single world-owned decision/reward object",
+      "acceptance": "continuous wall, world-local labels, no knife penetration for every knife part, lane-specific risk, selected-brick reveal, and one authoritative final reward"
+    },
+    {
+      "objectType": "terminal state / replay affordance",
+      "lifecycleState": "failed or won → terminal overlay → replay/next action",
+      "rendererPresentationPath": "renderHud hidden flags + #terminal-text/#terminal-actions + main.onPointerDown/replayLevel",
+      "deviceViewport": ["desktop 1180x720", "mobile 390x844"],
+      "evidence": ["src/main.ts:213", "src/main.ts:334", "src/main.ts:390", "tests/artifacts/qa-3d-main-v1/mobile-natural-zero-failed.png"],
+      "observed": "terminal copy says a light tap restarts, but onPointerDown ignores failed/won and only the small replay button restarts; overlay obscures arena context",
+      "inference": "copy, input affordance and recovery hierarchy disagree",
+      "acceptance": "one explicit, visible replay action matches copy, preserves cause context, and does not hide an unread finish reveal"
+    },
+    {
+      "objectType": "runtime entrypoint identity",
+      "lifecycleState": "startup → build → QA screenshot/report",
+      "rendererPresentationPath": "index.html/src/main.ts vs poc-3d.html/src/poc-3d.ts; build.ts vs build-3d.ts; qa:browser vs qa:3d",
+      "deviceViewport": ["desktop", "mobile"],
+      "evidence": ["index.html", "poc-3d.html", "package.json", "scripts/build.ts", "scripts/build-3d.ts", "tests/browser-smoke.ts", "tests/browser-smoke-3d.ts"],
+      "observed": "the two entrypoints are confirmed historical variants of the same game, but still have different assets, UI, build outputs and QA coverage; qa:3d success is not proof of the default game journey",
+      "inference": "without targetGame/entrypoint/version fingerprints, evidence from different development stages can be mixed even when the display title lineage is valid",
+      "acceptance": "all reports and screenshots include targetGame, workspace, entrypoint and build-output/version fingerprints; POC evidence remains explicitly non-release for the main journey"
+    },
+    {
+      "objectType": "input and simulation lifecycle",
+      "lifecycleState": "pointer down → held/released; visible → hidden → resumed; active → terminal",
+      "rendererPresentationPath": "shell pointer handlers + ActionInput + fixed-step accumulator + requestAnimationFrame loop",
+      "deviceViewport": ["mobile touch", "desktop mouse/keyboard"],
+      "evidence": ["src/main.ts:379", "src/main.ts:441", "src/game-core.ts:581", "src/game-core.ts:702"],
+      "observed": "release is shell-scoped, no visibility/blur lifecycle is wired, finish reveal still leaves status ready for act(), and RAF keeps rendering after terminal",
+      "inference": "app-switch, drag-out or reveal-time taps can create non-player-authored state changes and extra work",
+      "acceptance": "pointer capture/cancel, hidden-tab pause, finish-phase input lock and terminal render throttle are covered by natural tests"
+    }
+  ],
+  "unresolved": [
+    "The 235243 recording is unavailable, so frame-level/audio claims about the reference remain blocked.",
+    "Local headless Chromium is not real-device certification for WeChat, Douyin or TapTap mini-game adapters.",
+    "The DOCX sources are secondary AI-generated analysis; exact competitor timing/layout/value claims are not locked."
+  ],
+  "closure": {
+    "localMatrixComplete": true,
+    "remainingWorkType": "implementation and independent QA, not more local discovery",
+    "noMoreLocallyVerifiableFindings": true
+  }
+}

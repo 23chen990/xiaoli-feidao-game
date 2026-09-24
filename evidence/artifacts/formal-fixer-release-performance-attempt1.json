@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixAttempt",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "attempt": 1,
+  "attemptBudget": { "maxAutomaticAttempts": 2, "used": 1, "exhausted": false },
+  "issueIds": ["RELEASE-PERF-001"],
+  "sourceTriage": "artifacts/gameplay-triage-release-performance-v1.json",
+  "contextOmitted": ["unavailable recordings", "quarantined mismatched evidence", "unrelated platform packaging"],
+  "change": {
+    "files": ["src/three-world-renderer.ts", "src/three-presentation.ts", "tests/three-presentation.test.ts"],
+    "reason": "Disable MSAA in the low-poly main renderer and snap the first camera target to the actual player with a tighter portrait lead; this preserves the existing mobile DPR cap and geometry budget while addressing startup containment.",
+    "scopeCheck": "No gameplay, schema, persistence, platform adapter, or alternate POC entrypoint changed."
+  },
+  "testsRequired": [
+    "pnpm lint",
+    "pnpm typecheck",
+    "pnpm test",
+    "pnpm qa:browser",
+    "pnpm qa:levels"
+  ],
+  "status": "BLOCKED_QA_RETEST",
+  "qaRetest": {
+    "command": "pnpm qa:browser",
+    "attempts": [
+      {
+        "ordinal": 1,
+        "status": "BLOCKED",
+        "failure": "mobile startup knife projection containment assertion",
+        "evidence": "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/console.log"
+      },
+      {
+        "ordinal": 2,
+        "status": "BLOCKED",
+        "failure": "mobile startup knife projection containment assertion",
+        "evidence": "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/console.log"
+      },
+      {
+        "ordinal": 3,
+        "status": "BLOCKED",
+        "failure": "desktop natural route did not expose cut-open support/bridge",
+        "evidence": "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/console.log"
+      }
+    ],
+    "interpretation": "The performance assertion was not reached on the final rerun because the default natural journey remains flaky/blocked on player-visible route evidence. No release pass is claimable.",
+    "levelSweep": {
+      "command": "pnpm qa:levels",
+      "status": "PASS_DETERMINISTIC_LEVEL_PACK_ONLY",
+      "evidence": "../../qa-level-pack-v1/qa-report.json",
+      "claimBoundary": "This does not close the default browser natural/perceptual gate or unavailable-recording/platform gaps."
+    }
+  },
+  "remainingEvidenceGaps": [
+    "Natural and perceptual gates must be rerun after rebuild.",
+    "Local headless performance is not real-device certification.",
+    "Review-coverage-audit-v2 unresolved streams remain open independently of this attempt."
+  ],
+  "nextStep": "Keep release BLOCKED; diagnose the deterministic natural-route/camera timing divergence in a fresh exact-matrix QA run before any second formal attempt. Do not promote qa:levels or BrowserSmokeResult to a product PASS."
+}

@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "passed": false,
+  "checks": [
+    {
+      "name": "exact build/source unchanged during QA",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-1/recording.json"
+    },
+    {
+      "name": "opening target visible in both viewports",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/reproduction-matrix.json"
+    },
+    {
+      "name": "desktop natural terminal settlement replay",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/desktop-1/frames/terminal.png"
+    },
+    {
+      "name": "all contract cells independently player-visible",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/reproduction-matrix.json"
+    }
+  ],
+  "issues": [
+    {
+      "id": "L1-STACK-NATURAL-EVIDENCE-GAP",
+      "severity": "error",
+      "message": "第4次构建仍未取得同一 stack-a/b 的自然承托、切开、散开、下落、落地连续画面。",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/reproduction-matrix.json"
+    },
+    {
+      "id": "L1-FINISH-PHONE-EVIDENCE-GAP",
+      "severity": "error",
+      "message": "第4次构建手机路线在前段失败，终点结算与重玩分支未覆盖；桌面同构建已通关。",
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-1/recording.json"
+    }
+  ],
+  "screenshots": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-1/frames/frame-0000.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-1/frames/frame-0000.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-1/frames/frame-0001.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-1/frames/terminal.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/desktop-1/frames/frame-0000.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/desktop-1/frames/frame-0004.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/desktop-1/frames/frame-0014.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/desktop-1/frames/terminal.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/desktop-1/frames/replay.png"
+  ],
+  "consoleLog": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-1/recording.json",
+  "testedAt": "2026-09-07T08:41:09.102Z",
+  "naturalFlow": {
+    "schemaVersion": 1,
+    "startedFromReset": true,
+    "actions": [
+      "手机与桌面均从新浏览器上下文使用正常 touch/mouse 输入；时间戳见 recording.json。",
+      "未注入状态、存储、debug 或 fixture。"
+    ],
+    "transitions": [
+      {
+        "name": "startup-to-core",
+        "changed": true,
+        "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-1/recording.json"
+      },
+      {
+        "name": "visible-failure-phone",
+        "changed": true,
+        "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-1/frames/terminal.png"
+      },
+      {
+        "name": "visible-settlement-desktop",
+        "changed": true,
+        "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/desktop-1/frames/terminal.png"
+      },
+      {
+        "name": "replay-to-ready-desktop",
+        "changed": true,
+        "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/desktop-1/frames/replay.png"
+      }
+    ],
+    "completion": "settlement",
+    "replayObserved": true,
+    "forbiddenOperations": [],
+    "screenshots": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-1/frames/frame-0000.png",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-1/frames/frame-0000.png",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-1/frames/frame-0001.png",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/portrait-1/frames/terminal.png",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/desktop-1/frames/frame-0000.png",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/desktop-1/frames/frame-0004.png",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/desktop-1/frames/frame-0014.png",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/desktop-1/frames/terminal.png",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-4/qa/desktop-1/frames/replay.png"
+    ],
+    "passed": false,
+    "blockers": [
+      "手机本轮在前段失败，终点结算/重玩未在此构建观察到。",
+      "stack-a/b 的逐对象承托→切开→掉落→落地链仍缺自然像素覆盖。"
+    ],
+    "runner": "independent-QA-normal-input-recorder",
+    "buildHash": "10cba7632922f9fdeaa2eb33f7a05aa09bd3dbb7ca45a2db24acac282c9fd9a6",
+    "runtime": "Chromium against unchanged dist/index.html; no rebuild during QA",
+    "device": {
+      "width": 390,
+      "height": 844,
+      "label": "390x844 and 1100x720 sequential captures"
+    },
+    "observedAt": "2026-09-07T08:41:09.102Z"
+  }
+}

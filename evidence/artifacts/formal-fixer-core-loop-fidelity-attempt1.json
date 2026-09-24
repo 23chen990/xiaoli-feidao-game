@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixerCoreLoopFidelity",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "attempt": 1,
+  "status": "PASS_WITH_NATURAL_QA",
+  "issue": "CORE-DECISION-001 / CORE-CUT-ROUTE-002 / CORE-PRESSURE-003 / CORE-FINISH-004",
+  "files": [
+    "src/game-levels.ts",
+    "src/game-core.ts",
+    "tests/core-loop-fidelity.test.ts"
+  ],
+  "changes": [
+    "Added authored structural cut routes to Levels 2 and 3, each backed by a support with sourceBlockId so cutting removes a real landing/route surface.",
+    "Added routeBias and routeChanges to runtime state; structural cuts now record route changes and prepare a finish-lane preference without overriding an overlapping lane.",
+    "Added finish selection helper that preserves physical lane overlap and gives a small preference to prepared route lanes; bonus remains selectable near its authored lane.",
+    "Added regression tests for three early decision objects, two cut-controlled supports, route-change state, and route preparation."
+  ],
+  "tests": {
+    "red": "CORE-CUT-ROUTE-002 initially failed because early levels had fewer than two source-linked supports.",
+    "green": [
+      "pnpm test -- --test-name-pattern='CORE-|visible-state policy finishes|visible-state policy can choose|small late timing|orphan-object|all authored white supports' (158 passed)",
+      "pnpm lint (passed)",
+      "pnpm typecheck (passed)",
+      "pnpm build (passed)"
+    ]
+  },
+  "naturalQa": {
+    "status": "PASS",
+    "required": [
+      "desktop 1180x720 real mouse: Level 1-3 early/mid/late evidence",
+      "mobile 390x844 real touch: Level 1-3 early/mid/late evidence",
+      "naturally cut l2-cut-bridge and l3-cut-ramp, verify support deactivation and altered reachable route",
+      "verify finish route preparation changes lane outcome without debug/state injection"
+    ],
+    "reason": "Independent natural-input Level 1-3 QA completed on rebuilt web-lite using desktop mouse and 390x844 native touch; no debug placement or state injection during play."
+  },
+  "remainingGaps": [
+    "The general qa:browser and qa:levels scripts were previously interrupted by a long-running runner; this targeted natural QA is the authoritative evidence for Level 1-3 core-loop scope.",
+    "Web-lite only; WeChat/Douyin/TapTap native packages remain unverified.",
+    "Broader reference-game fidelity beyond Level 1-3 route cuts, pressure and finish preparation remains outside this attempt."
+  ],
+  "naturalEvidence": {
+    "artifact": "workspace/prototype-a/qa-core-loop-v1/qa-report.json",
+    "desktop": { "viewport": "1180x720", "levels": { "1": { "status": "won", "routeChanges": 1 }, "2": { "status": "won", "routeChanges": 1 }, "3": { "status": "won", "routeChanges": 1 } } },
+    "mobile": { "viewport": "390x844", "levels": { "1": { "status": "won", "routeChanges": 1 }, "2": { "status": "won", "routeChanges": 1 }, "3": { "status": "won", "routeChanges": 1 } } },
+    "errors": []
+  }
+}

@@ -1,0 +1,21 @@
+✔ L1-STACK a: actual knife contact cuts the bearing object and releases the overlapping upper object (9.461458ms)
+✔ L1-STACK-VISUAL-EVIDENCE a: same target stays visible and separates into two halves after cut (1.488459ms)
+✔ L1-STACK b: actual knife contact cuts the bearing object and releases the overlapping upper object (3.8065ms)
+✔ L1-STACK-VISUAL-EVIDENCE b: same target stays visible and separates into two halves after cut (5.156417ms)
+✔ L1-GRAVITY active airborne play does not freeze a hovering supported collectible (3.327916ms)
+✔ L1-REWARD intact has zero earnings; a real cut names the separated target and replay clears earnings (2.619542ms)
+✔ L1-PLACEMENT every initial collectible has a touching support, including the late and bridge targets (0.179667ms)
+✔ L1-RUNWAY visible support stays collidable through the normal forward replay (148.889625ms)
+✔ L1-RUNWAY later sharp contact stays airborne while body contact still bounces (1.635167ms)
+✔ L1-RUNWAY opening keeps the authored white landing anchor before runway bounce feedback (6.620875ms)
+✔ L1-FINISH labels use viewport coordinates without a second offset (0.965708ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 390x844 (2.760959ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 1100x720 (0.253042ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 753.501541

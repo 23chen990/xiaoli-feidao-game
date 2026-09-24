@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "human-review-20260907-l1-followup",
+  "attempt": 4,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "storedThreadId": "01a079dc-538d-75c2-b612-37e1bdecd7e4",
+  "status": "READY_FOR_INDEPENDENT_QA",
+  "why": "Level1's authored runway is now collidable so the normal forward route has visible support. The Level1-only collision branch suppresses sharp tip/edge anchoring after x=350 while retaining controlled body/handle bounce and recovery, suppresses only duplicate early runway bounce feedback, and transiently skips the broad runway for debug fixtures so existing deterministic fixtures remain representative of their authored contacts. Targeted RED/GREEN, the complete 195-test suite, lint, typecheck, and one build all pass; independent natural-input QA is still required.",
+  "contextIntentionallyOmitted": [
+    "Unrelated levels, shared factories, platform adapters, release configuration, and renderer code.",
+    "Unverified competitor tuning and any external recordings not bound to this run.",
+    "Natural-journey and perceptual QA claims; fixture/state-injection traces are implementation evidence only."
+  ],
+  "rootCauses": [
+    {
+      "issueId": "L1-RUNWAY-COLLISION-MISMATCH",
+      "objectType": "level1-runway-main support and blade support contact manifold",
+      "stateBranch": "opening teaching -> forward runway sharp contact -> controlled body bounce recovery",
+      "renderer": "game-core support collision and hard-surface event emission consumed by ThreeWorldRenderer",
+      "evidence": [
+        "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-3/experiment-rejection.json",
+        "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-4/red-evidence.json",
+        "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-4/tests-rerun-3.log"
+      ]
+    }
+  ],
+  "filesChanged": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-levels.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "tests": [
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "exitCode": 1,
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-4/red-test-baseline.log",
+      "phase": "RED"
+    },
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "exitCode": 0,
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-4/green-targeted.log",
+      "phase": "GREEN"
+    },
+    {
+      "command": "pnpm test",
+      "exitCode": 0,
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-4/tests-rerun-3.log",
+      "phase": "GREEN"
+    },
+    {
+      "command": "pnpm lint",
+      "exitCode": 0,
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-4/lint-rerun-2.log",
+      "phase": "LINT"
+    },
+    {
+      "command": "pnpm typecheck",
+      "exitCode": 0,
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-4/typecheck-rerun-2.log",
+      "phase": "TYPECHECK"
+    }
+  ],
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0,
+    "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-4/build.log",
+    "count": 1,
+    "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html",
+    "sha256": "5b2e1604b93d66614229f6481e71f82dfd2864e099cbd3c3af5ed34371ca30e5"
+  },
+  "remainingEvidenceGaps": [
+    "Independent natural-input replay must verify portrait 390x844 and desktop 1100x720 with activeMs>=45000.",
+    "QA must capture player-visible evidence for the exact Level1 runway branch and verify startup -> core loop -> terminal/settlement -> replay.",
+    "No natural or perceptual QA pass is claimed by this fixer receipt."
+  ],
+  "completedAt": "2026-09-23T04:39:32.000Z"
+}

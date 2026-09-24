@@ -1,0 +1,48 @@
+✔ L1-STACK a: actual knife contact cuts the bearing object and releases the overlapping upper object (8.188208ms)
+✔ L1-STACK-VISUAL-EVIDENCE a: same target stays visible and separates into two halves after cut (1.916041ms)
+✔ L1-STACK b: actual knife contact cuts the bearing object and releases the overlapping upper object (3.78425ms)
+✔ L1-STACK-VISUAL-EVIDENCE b: same target stays visible and separates into two halves after cut (1.549833ms)
+✔ L1-GRAVITY active airborne play does not freeze a hovering supported collectible (2.21975ms)
+✔ L1-REWARD intact has zero earnings; a real cut names the separated target and replay clears earnings (2.50575ms)
+✔ L1-PLACEMENT every initial collectible has a touching support, including the late and bridge targets (0.171834ms)
+✔ L1-RUNWAY visible support stays collidable through the normal forward replay (63.552583ms)
+✔ L1-RUNWAY later sharp contact stays airborne while body contact still bounces (0.788625ms)
+✔ L1-RUNWAY early approaching top-face tip contact recovers without removing side anchors (0.589583ms)
+✖ L1-RUNWAY early separating top-face tip contact does not anchor or immediately recontact (1.074583ms)
+✔ L1-RUNWAY opening keeps the authored white landing anchor before runway bounce feedback (5.377042ms)
+✔ L1-FINISH labels use viewport coordinates without a second offset (0.860084ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 390x844 (1.117666ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 1100x720 (0.181083ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 14
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 587.653167
+
+✖ failing tests:
+
+test at tests/level1-recovery.test.ts:191:1
+✖ L1-RUNWAY early separating top-face tip contact does not anchor or immediately recontact (1.074583ms)
+  AssertionError [ERR_ASSERTION]: an upward top-face contact must not become an authored anchor
+  + actual - expected
+  
+  + 'anchored'
+  - 'airborne'
+  
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:207:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'anchored',
+    expected: 'airborne',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

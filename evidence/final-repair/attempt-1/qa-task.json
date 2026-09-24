@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "independent-qa-task",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "role": "QAAgent",
+  "model": "gpt-6-luna",
+  "fixReceiptPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/fix-result.json",
+  "fixReceiptSha256": "d980c1dbb5d1a565add4a9b71852e9b5d530304640b63faac3cea216ed393efa",
+  "expectedBuildSha256": "599b4c3cb8c6b345b7e18b3a4e06cae33663c0432b918d3115ee78df3bf64118",
+  "viewports": [
+    {
+      "label": "portrait-390x844",
+      "width": 390,
+      "height": 844,
+      "input": "touch",
+      "outputDirectory": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844"
+    },
+    {
+      "label": "desktop-1100x720",
+      "width": 1100,
+      "height": 720,
+      "input": "mouse",
+      "outputDirectory": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720"
+    }
+  ],
+  "naturalInputRules": {
+    "freshContextPerViewport": true,
+    "stateInjectionForbidden": true,
+    "debugApiForbidden": true,
+    "adaptiveStateSchedulingForbidden": true,
+    "visibleInputOnly": true
+  },
+  "requiredEvidence": [
+    "source-before and source-after manifests with unchanged hashes for each viewport",
+    "build hash checked before browser launch and after capture",
+    "natural input schedule and every dispatched input with no fixture or debug call",
+    "same-object Level1 runway branch projection around the early sharp contact",
+    "portrait screenshot/video/trace showing whether the runway trap is recovered",
+    "desktop screenshot/video/trace showing the separate white-landing opening branch",
+    "player-visible terminal/settlement screenshot with exact completed or failed copy and matching read-only status",
+    "visible replay-button click followed by screenshot and read-only ready status",
+    "perceptual inspection result for exact branch pixels at mobile and desktop sizes"
+  ],
+  "exactBranchChecks": [
+    "Portrait must explicitly observe the level1-runway-main sharp contact branch, not only a sibling support.",
+    "The portrait branch must not remain anchored at the reproduced early x≈301.95 to x≈329.45 dead-end after the natural contact.",
+    "The contact projection must retain support id, part, normal, lifecycle state, player position, and event delta for the same object.",
+    "Desktop must record the separate white-landing teaching anchor and must not mislabel it as runway evidence.",
+    "Both viewports must reach beyond x>1000 or record a concrete terminal failure cause with matching visible pixels.",
+    "A sibling fixture-only pass cannot close the exact natural branch."
+  ],
+  "terminalChecks": [
+    "Terminal copy must be exact visible completed/failed copy, not a reward reveal or startup action container.",
+    "Terminal visibility must account for effective CSS visibility and nonzero visible pixels.",
+    "Read-only game state status must match the terminal classification.",
+    "Replay is proven only by clicking the visible replay control after terminal and observing ready state plus screenshot."
+  ],
+  "perceptualChecks": [
+    "Inspect startup and runway-contact frames at 390x844 for visible knife/support relationship and no blank/occluded canvas.",
+    "Inspect desktop white-landing and later-route frames at 1100x720 for visible causal feedback.",
+    "Inspect terminal and replay frames if reached; text and action affordance must be legible.",
+    "Any natural-journey or perceptual BLOCKED result remains a release blocker and keeps the cycle QA_PENDING/BLOCKED."
+  ],
+  "statusPolicy": "PASS_ONLY_IF_ALL_VIEWPORTS_AND_GATES_PASS",
+  "createdAt": "2026-09-23T05:55:00.000Z"
+}

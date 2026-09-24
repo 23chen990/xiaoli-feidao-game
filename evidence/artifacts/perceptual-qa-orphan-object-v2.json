@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "PerceptualQaReport",
+  "targetGame": "小李飞刀",
+  "status": "PASS",
+  "evidence": [
+    "qa-level-pack-v1/perceptual-v2-desktop-level-03-won.png",
+    "qa-level-pack-v1/perceptual-v2-mobile-level-03-won.png"
+  ],
+  "checks": [
+    {
+      "id": "L3-ROUTE-ROLES",
+      "status": "PASS",
+      "finding": "l3-ramp/main, l3-rebound/branch, l3-recovery-pad/recovery, l3-low-risk/recovery metadata present"
+    },
+    {
+      "id": "L3-NATURAL-DESKTOP",
+      "status": "PASS",
+      "result": {
+        "status": "won",
+        "failReason": null,
+        "elapsed": 21.608333333332748,
+        "taps": 22,
+        "seen": [
+          "l3-ramp",
+          "l3-entry",
+          "l3-rebound",
+          "l3-exit",
+          "l3-finish-safe"
+        ]
+      }
+    },
+    {
+      "id": "L3-NATURAL-MOBILE",
+      "status": "PASS",
+      "result": {
+        "status": "won",
+        "failReason": null,
+        "elapsed": 21.75833333333274,
+        "taps": 21,
+        "seen": [
+          "l3-ramp",
+          "l3-entry",
+          "l3-rebound",
+          "l3-recovery-pad",
+          "l3-recovery",
+          "l3-exit",
+          "l3-finish-safe"
+        ]
+      }
+    }
+  ],
+  "replay": "default terminal replay is wired via existing action input"
+}

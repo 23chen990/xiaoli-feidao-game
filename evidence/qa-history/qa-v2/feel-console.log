@@ -1,0 +1,3415 @@
+{
+  "events": [
+    {
+      "name": "initial",
+      "state": {
+        "seed": 31,
+        "phase": "ordinary",
+        "status": "ready",
+        "failReason": null,
+        "elapsed": 0,
+        "phaseElapsed": 0,
+        "player": {
+          "x": 120,
+          "y": 420,
+          "vx": 0,
+          "vy": 0,
+          "angle": -0.35,
+          "angularVelocity": 0
+        },
+        "sigils": [
+          {
+            "id": "rune-1",
+            "kind": "cuttable",
+            "x": 348,
+            "y": 326,
+            "radius": 34,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-2",
+            "kind": "cuttable",
+            "x": 696,
+            "y": 358,
+            "radius": 28,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-3",
+            "kind": "cuttable",
+            "x": 1236,
+            "y": 328,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-4",
+            "kind": "cuttable",
+            "x": 1287,
+            "y": 343,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-5",
+            "kind": "cuttable",
+            "x": 1328,
+            "y": 369,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-6",
+            "kind": "cuttable",
+            "x": 1378,
+            "y": 353,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-7",
+            "kind": "cuttable",
+            "x": 1423,
+            "y": 324,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-8",
+            "kind": "cuttable",
+            "x": 1897,
+            "y": 355,
+            "radius": 29,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-9",
+            "kind": "cuttable",
+            "x": 2300,
+            "y": 333,
+            "radius": 29,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-10",
+            "kind": "cuttable",
+            "x": 3101,
+            "y": 356,
+            "radius": 30,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-11",
+            "kind": "cuttable",
+            "x": 3704,
+            "y": 345,
+            "radius": 30,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          }
+        ],
+        "supports": [
+          {
+            "id": "white-pillar",
+            "x": 1700,
+            "y": 560,
+            "width": 100,
+            "height": 180
+          },
+          {
+            "id": "white-beam",
+            "x": 2440,
+            "y": 145,
+            "width": 180,
+            "height": 54
+          }
+        ],
+        "spikes": [
+          {
+            "id": "spike-high",
+            "x": 2750,
+            "y": 125,
+            "width": 130,
+            "height": 250
+          },
+          {
+            "id": "spike-low",
+            "x": 3400,
+            "y": 610,
+            "width": 150,
+            "height": 180
+          }
+        ],
+        "finishOptions": [
+          {
+            "id": "calm-moon",
+            "kind": "safe",
+            "x": 4200,
+            "y": 405,
+            "width": 86,
+            "height": 210,
+            "value": 3
+          },
+          {
+            "id": "wild-moon",
+            "kind": "bonus",
+            "x": 4200,
+            "y": 205,
+            "width": 64,
+            "height": 108,
+            "value": 7
+          }
+        ],
+        "cuts": 0,
+        "totalCuts": 11,
+        "score": 0,
+        "finishX": 4200,
+        "finishSelection": null,
+        "worldBottom": 700,
+        "anchorId": null,
+        "recoveryAge": 1,
+        "combo": 0,
+        "events": []
+      }
+    },
+    {
+      "name": "unassisted",
+      "wallMs": 8207,
+      "firstFeedback": null,
+      "firstSettled": {
+        "seed": 31,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "elapsed": 1.4499999999999973,
+        "phaseElapsed": 1.4499999999999973,
+        "player": {
+          "x": 337.5,
+          "y": 619.375,
+          "vx": 150,
+          "vy": 570,
+          "angle": 9.581661253556392,
+          "angularVelocity": 4.723229874148123
+        },
+        "sigils": [
+          {
+            "id": "rune-1",
+            "kind": "cuttable",
+            "x": 348,
+            "y": 326,
+            "radius": 34,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-2",
+            "kind": "cuttable",
+            "x": 696,
+            "y": 358,
+            "radius": 28,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-3",
+            "kind": "cuttable",
+            "x": 1236,
+            "y": 328,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-4",
+            "kind": "cuttable",
+            "x": 1287,
+            "y": 343,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-5",
+            "kind": "cuttable",
+            "x": 1328,
+            "y": 369,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-6",
+            "kind": "cuttable",
+            "x": 1378,
+            "y": 353,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-7",
+            "kind": "cuttable",
+            "x": 1423,
+            "y": 324,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-8",
+            "kind": "cuttable",
+            "x": 1897,
+            "y": 355,
+            "radius": 29,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-9",
+            "kind": "cuttable",
+            "x": 2300,
+            "y": 333,
+            "radius": 29,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-10",
+            "kind": "cuttable",
+            "x": 3101,
+            "y": 356,
+            "radius": 30,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-11",
+            "kind": "cuttable",
+            "x": 3704,
+            "y": 345,
+            "radius": 30,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          }
+        ],
+        "supports": [
+          {
+            "id": "white-pillar",
+            "x": 1700,
+            "y": 560,
+            "width": 100,
+            "height": 180
+          },
+          {
+            "id": "white-beam",
+            "x": 2440,
+            "y": 145,
+            "width": 180,
+            "height": 54
+          }
+        ],
+        "spikes": [
+          {
+            "id": "spike-high",
+            "x": 2750,
+            "y": 125,
+            "width": 130,
+            "height": 250
+          },
+          {
+            "id": "spike-low",
+            "x": 3400,
+            "y": 610,
+            "width": 150,
+            "height": 180
+          }
+        ],
+        "finishOptions": [
+          {
+            "id": "calm-moon",
+            "kind": "safe",
+            "x": 4200,
+            "y": 405,
+            "width": 86,
+            "height": 210,
+            "value": 3
+          },
+          {
+            "id": "wild-moon",
+            "kind": "bonus",
+            "x": 4200,
+            "y": 205,
+            "width": 64,
+            "height": 108,
+            "value": 7
+          }
+        ],
+        "cuts": 0,
+        "totalCuts": 11,
+        "score": 0,
+        "finishX": 4200,
+        "finishSelection": null,
+        "worldBottom": 700,
+        "anchorId": null,
+        "recoveryAge": 2.449999999999995,
+        "combo": 0,
+        "events": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          }
+        ]
+      },
+      "history": [
+        {
+          "action": 1,
+          "beforeStatus": "ready",
+          "earlyStatus": "airborne",
+          "x": 125,
+          "y": 410.4166666666667,
+          "angle": -0.0352320666717741,
+          "cuts": 0
+        },
+        {
+          "action": 2,
+          "beforeStatus": "airborne",
+          "earlyStatus": "ready",
+          "x": 120,
+          "y": 420,
+          "angle": -0.35,
+          "cuts": 0
+        },
+        {
+          "action": 3,
+          "beforeStatus": "ready",
+          "earlyStatus": "airborne",
+          "x": 157.5,
+          "y": 364.375,
+          "angle": 1.8919999065124482,
+          "cuts": 0
+        }
+      ],
+      "final": {
+        "seed": 32,
+        "phase": "ordinary",
+        "status": "failed",
+        "failReason": "fall",
+        "elapsed": 1.60833333333333,
+        "phaseElapsed": 1.60833333333333,
+        "player": {
+          "x": 361.25,
+          "y": 717.5416666666666,
+          "vx": 0,
+          "vy": 0,
+          "angle": 10.30313250081912,
+          "angularVelocity": 4.376228278684767
+        },
+        "sigils": [
+          {
+            "id": "rune-1",
+            "kind": "cuttable",
+            "x": 348,
+            "y": 327,
+            "radius": 34,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-2",
+            "kind": "cuttable",
+            "x": 702,
+            "y": 359,
+            "radius": 28,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-3",
+            "kind": "cuttable",
+            "x": 1242,
+            "y": 325,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-4",
+            "kind": "cuttable",
+            "x": 1282,
+            "y": 353,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-5",
+            "kind": "cuttable",
+            "x": 1332,
+            "y": 369,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-6",
+            "kind": "cuttable",
+            "x": 1374,
+            "y": 350,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-7",
+            "kind": "cuttable",
+            "x": 1423,
+            "y": 323,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-8",
+            "kind": "cuttable",
+            "x": 1899,
+            "y": 349,
+            "radius": 29,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-9",
+            "kind": "cuttable",
+            "x": 2301,
+            "y": 333,
+            "radius": 29,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-10",
+            "kind": "cuttable",
+            "x": 3104,
+            "y": 355,
+            "radius": 30,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-11",
+            "kind": "cuttable",
+            "x": 3701,
+            "y": 341,
+            "radius": 30,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          }
+        ],
+        "supports": [
+          {
+            "id": "white-pillar",
+            "x": 1700,
+            "y": 560,
+            "width": 100,
+            "height": 180
+          },
+          {
+            "id": "white-beam",
+            "x": 2440,
+            "y": 145,
+            "width": 180,
+            "height": 54
+          }
+        ],
+        "spikes": [
+          {
+            "id": "spike-high",
+            "x": 2750,
+            "y": 125,
+            "width": 130,
+            "height": 250
+          },
+          {
+            "id": "spike-low",
+            "x": 3400,
+            "y": 610,
+            "width": 150,
+            "height": 180
+          }
+        ],
+        "finishOptions": [
+          {
+            "id": "calm-moon",
+            "kind": "safe",
+            "x": 4200,
+            "y": 405,
+            "width": 86,
+            "height": 210,
+            "value": 3
+          },
+          {
+            "id": "wild-moon",
+            "kind": "bonus",
+            "x": 4200,
+            "y": 205,
+            "width": 64,
+            "height": 108,
+            "value": 7
+          }
+        ],
+        "cuts": 0,
+        "totalCuts": 11,
+        "score": 0,
+        "finishX": 4200,
+        "finishSelection": null,
+        "worldBottom": 700,
+        "anchorId": null,
+        "recoveryAge": 2.6083333333333276,
+        "combo": 0,
+        "events": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          },
+          {
+            "id": 2,
+            "type": "fall",
+            "x": 361.25,
+            "y": 717.5416666666666,
+            "value": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "space",
+      "state": {
+        "seed": 32,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "elapsed": 0.19999999999999998,
+        "phaseElapsed": 0.19999999999999998,
+        "player": {
+          "x": 150,
+          "y": 372.5,
+          "vx": 150,
+          "vy": -180,
+          "angle": 1.4649452311794648,
+          "angularVelocity": 8.627076937178973
+        },
+        "sigils": [
+          {
+            "id": "rune-1",
+            "kind": "cuttable",
+            "x": 348,
+            "y": 327,
+            "radius": 34,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-2",
+            "kind": "cuttable",
+            "x": 702,
+            "y": 359,
+            "radius": 28,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-3",
+            "kind": "cuttable",
+            "x": 1242,
+            "y": 325,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-4",
+            "kind": "cuttable",
+            "x": 1282,
+            "y": 353,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-5",
+            "kind": "cuttable",
+            "x": 1332,
+            "y": 369,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-6",
+            "kind": "cuttable",
+            "x": 1374,
+            "y": 350,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-7",
+            "kind": "cuttable",
+            "x": 1423,
+            "y": 323,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-8",
+            "kind": "cuttable",
+            "x": 1899,
+            "y": 349,
+            "radius": 29,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-9",
+            "kind": "cuttable",
+            "x": 2301,
+            "y": 333,
+            "radius": 29,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-10",
+            "kind": "cuttable",
+            "x": 3104,
+            "y": 355,
+            "radius": 30,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-11",
+            "kind": "cuttable",
+            "x": 3701,
+            "y": 341,
+            "radius": 30,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          }
+        ],
+        "supports": [
+          {
+            "id": "white-pillar",
+            "x": 1700,
+            "y": 560,
+            "width": 100,
+            "height": 180
+          },
+          {
+            "id": "white-beam",
+            "x": 2440,
+            "y": 145,
+            "width": 180,
+            "height": 54
+          }
+        ],
+        "spikes": [
+          {
+            "id": "spike-high",
+            "x": 2750,
+            "y": 125,
+            "width": 130,
+            "height": 250
+          },
+          {
+            "id": "spike-low",
+            "x": 3400,
+            "y": 610,
+            "width": 150,
+            "height": 180
+          }
+        ],
+        "finishOptions": [
+          {
+            "id": "calm-moon",
+            "kind": "safe",
+            "x": 4200,
+            "y": 405,
+            "width": 86,
+            "height": 210,
+            "value": 3
+          },
+          {
+            "id": "wild-moon",
+            "kind": "bonus",
+            "x": 4200,
+            "y": 205,
+            "width": 64,
+            "height": 108,
+            "value": 7
+          }
+        ],
+        "cuts": 0,
+        "totalCuts": 11,
+        "score": 0,
+        "finishX": 4200,
+        "finishSelection": null,
+        "worldBottom": 700,
+        "anchorId": null,
+        "recoveryAge": 1.1999999999999993,
+        "combo": 0,
+        "events": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "variation",
+      "variation": [
+        {
+          "delay": 0,
+          "status": "airborne",
+          "x": 190.5499999999999,
+          "y": 268.6666666666667,
+          "angle": 0.8549243929725947,
+          "cuts": 0
+        },
+        {
+          "delay": 120,
+          "status": "airborne",
+          "x": 250.94999999999973,
+          "y": 178.45833333333331,
+          "angle": -0.2542760294864898,
+          "cuts": 0
+        },
+        {
+          "delay": 240,
+          "status": "airborne",
+          "x": 250.7999999999998,
+          "y": 240.875,
+          "angle": 1.7207815629690937,
+          "cuts": 0
+        },
+        {
+          "delay": 400,
+          "status": "airborne",
+          "x": 273.2500000000001,
+          "y": 225,
+          "angle": 1.1187515882182772,
+          "cuts": 0
+        },
+        {
+          "delay": 650,
+          "status": "airborne",
+          "x": 312.0000000000009,
+          "y": 320,
+          "angle": 2.836476508006689,
+          "cuts": 0
+        }
+      ]
+    },
+    {
+      "name": "scenarios",
+      "scenarios": [
+        {
+          "seed": 51,
+          "history": [
+            {
+              "action": 1,
+              "status": "airborne",
+              "x": 138.75,
+              "y": 387.5,
+              "cuts": 0
+            },
+            {
+              "action": 2,
+              "status": "airborne",
+              "x": 225.04999999999993,
+              "y": 301.4166666666667,
+              "cuts": 0
+            },
+            {
+              "action": 3,
+              "status": "airborne",
+              "x": 329.3500000000004,
+              "y": 93.16666666666669,
+              "cuts": 0
+            },
+            {
+              "action": 4,
+              "status": "failed",
+              "x": 425.34999999999974,
+              "y": -127.45833333333331,
+              "cuts": 0
+            }
+          ],
+          "final": {
+            "seed": 51,
+            "phase": "ordinary",
+            "status": "failed",
+            "failReason": "fall",
+            "elapsed": 1.8749999999999958,
+            "phaseElapsed": 1.8749999999999958,
+            "player": {
+              "x": 425.34999999999974,
+              "y": -127.45833333333331,
+              "vx": 0,
+              "vy": 0,
+              "angle": 4.746041437276743,
+              "angularVelocity": -10.374252337012052
+            },
+            "sigils": [
+              {
+                "id": "rune-1",
+                "kind": "cuttable",
+                "x": 348,
+                "y": 334,
+                "radius": 34,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-2",
+                "kind": "cuttable",
+                "x": 702,
+                "y": 356,
+                "radius": 28,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-3",
+                "kind": "cuttable",
+                "x": 1239,
+                "y": 328,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-4",
+                "kind": "cuttable",
+                "x": 1284,
+                "y": 347,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-5",
+                "kind": "cuttable",
+                "x": 1330,
+                "y": 370,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-6",
+                "kind": "cuttable",
+                "x": 1378,
+                "y": 350,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-7",
+                "kind": "cuttable",
+                "x": 1419,
+                "y": 324,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-8",
+                "kind": "cuttable",
+                "x": 1901,
+                "y": 348,
+                "radius": 29,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-9",
+                "kind": "cuttable",
+                "x": 2300,
+                "y": 326,
+                "radius": 29,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-10",
+                "kind": "cuttable",
+                "x": 3101,
+                "y": 364,
+                "radius": 30,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-11",
+                "kind": "cuttable",
+                "x": 3702,
+                "y": 337,
+                "radius": 30,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              }
+            ],
+            "supports": [
+              {
+                "id": "white-pillar",
+                "x": 1700,
+                "y": 560,
+                "width": 100,
+                "height": 180
+              },
+              {
+                "id": "white-beam",
+                "x": 2440,
+                "y": 145,
+                "width": 180,
+                "height": 54
+              }
+            ],
+            "spikes": [
+              {
+                "id": "spike-high",
+                "x": 2750,
+                "y": 125,
+                "width": 130,
+                "height": 250
+              },
+              {
+                "id": "spike-low",
+                "x": 3400,
+                "y": 610,
+                "width": 150,
+                "height": 180
+              }
+            ],
+            "finishOptions": [
+              {
+                "id": "calm-moon",
+                "kind": "safe",
+                "x": 4200,
+                "y": 405,
+                "width": 86,
+                "height": 210,
+                "value": 3
+              },
+              {
+                "id": "wild-moon",
+                "kind": "bonus",
+                "x": 4200,
+                "y": 205,
+                "width": 64,
+                "height": 108,
+                "value": 7
+              }
+            ],
+            "cuts": 0,
+            "totalCuts": 11,
+            "score": 0,
+            "finishX": 4200,
+            "finishSelection": null,
+            "worldBottom": 700,
+            "anchorId": null,
+            "recoveryAge": 2.8749999999999933,
+            "combo": 0,
+            "events": [
+              {
+                "id": 1,
+                "type": "launch",
+                "x": 120,
+                "y": 420,
+                "value": 1
+              },
+              {
+                "id": 2,
+                "type": "flip",
+                "x": 207.5,
+                "y": 348.5416666666667,
+                "value": 1
+              },
+              {
+                "id": 3,
+                "type": "flip",
+                "x": 304.7000000000006,
+                "y": 176.04166666666669,
+                "value": 1
+              },
+              {
+                "id": 4,
+                "type": "flip",
+                "x": 420.6999999999997,
+                "y": -108.95833333333331,
+                "value": 1
+              },
+              {
+                "id": 5,
+                "type": "fall",
+                "x": 425.34999999999974,
+                "y": -127.45833333333331,
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "seed": 52,
+          "history": [
+            {
+              "action": 1,
+              "status": "airborne",
+              "x": 138.75,
+              "y": 387.5,
+              "cuts": 0
+            },
+            {
+              "action": 2,
+              "status": "airborne",
+              "x": 224.94999999999993,
+              "y": 305.75,
+              "cuts": 0
+            },
+            {
+              "action": 3,
+              "status": "airborne",
+              "x": 326.3500000000004,
+              "y": 106.62500000000001,
+              "cuts": 0
+            },
+            {
+              "action": 4,
+              "status": "failed",
+              "x": 419.84999999999985,
+              "y": -133.04166666666666,
+              "cuts": 0
+            }
+          ],
+          "final": {
+            "seed": 52,
+            "phase": "ordinary",
+            "status": "failed",
+            "failReason": "fall",
+            "elapsed": 1.8416666666666626,
+            "phaseElapsed": 1.8416666666666626,
+            "player": {
+              "x": 419.84999999999985,
+              "y": -133.04166666666666,
+              "vx": 0,
+              "vy": 0,
+              "angle": 4.010933562601462,
+              "angularVelocity": -10.20892825176943
+            },
+            "sigils": [
+              {
+                "id": "rune-1",
+                "kind": "cuttable",
+                "x": 348,
+                "y": 335,
+                "radius": 34,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-2",
+                "kind": "cuttable",
+                "x": 699,
+                "y": 356,
+                "radius": 28,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-3",
+                "kind": "cuttable",
+                "x": 1236,
+                "y": 325,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-4",
+                "kind": "cuttable",
+                "x": 1287,
+                "y": 346,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-5",
+                "kind": "cuttable",
+                "x": 1334,
+                "y": 371,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-6",
+                "kind": "cuttable",
+                "x": 1374,
+                "y": 346,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-7",
+                "kind": "cuttable",
+                "x": 1419,
+                "y": 324,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-8",
+                "kind": "cuttable",
+                "x": 1903,
+                "y": 353,
+                "radius": 29,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-9",
+                "kind": "cuttable",
+                "x": 2301,
+                "y": 326,
+                "radius": 29,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-10",
+                "kind": "cuttable",
+                "x": 3103,
+                "y": 363,
+                "radius": 30,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-11",
+                "kind": "cuttable",
+                "x": 3700,
+                "y": 343,
+                "radius": 30,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              }
+            ],
+            "supports": [
+              {
+                "id": "white-pillar",
+                "x": 1700,
+                "y": 560,
+                "width": 100,
+                "height": 180
+              },
+              {
+                "id": "white-beam",
+                "x": 2440,
+                "y": 145,
+                "width": 180,
+                "height": 54
+              }
+            ],
+            "spikes": [
+              {
+                "id": "spike-high",
+                "x": 2750,
+                "y": 125,
+                "width": 130,
+                "height": 250
+              },
+              {
+                "id": "spike-low",
+                "x": 3400,
+                "y": 610,
+                "width": 150,
+                "height": 180
+              }
+            ],
+            "finishOptions": [
+              {
+                "id": "calm-moon",
+                "kind": "safe",
+                "x": 4200,
+                "y": 405,
+                "width": 86,
+                "height": 210,
+                "value": 3
+              },
+              {
+                "id": "wild-moon",
+                "kind": "bonus",
+                "x": 4200,
+                "y": 205,
+                "width": 64,
+                "height": 108,
+                "value": 7
+              }
+            ],
+            "cuts": 0,
+            "totalCuts": 11,
+            "score": 0,
+            "finishX": 4200,
+            "finishSelection": null,
+            "worldBottom": 700,
+            "anchorId": null,
+            "recoveryAge": 2.84166666666666,
+            "combo": 0,
+            "events": [
+              {
+                "id": 1,
+                "type": "launch",
+                "x": 120,
+                "y": 420,
+                "value": 1
+              },
+              {
+                "id": 2,
+                "type": "flip",
+                "x": 208.75,
+                "y": 349,
+                "value": 1
+              },
+              {
+                "id": 3,
+                "type": "flip",
+                "x": 304.6000000000006,
+                "y": 180.37500000000003,
+                "value": 1
+              },
+              {
+                "id": 4,
+                "type": "flip",
+                "x": 408.9999999999998,
+                "y": -88.12499999999999,
+                "value": 1
+              },
+              {
+                "id": 5,
+                "type": "fall",
+                "x": 419.84999999999985,
+                "y": -133.04166666666666,
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "seed": 53,
+          "history": [
+            {
+              "action": 1,
+              "status": "airborne",
+              "x": 137.5,
+              "y": 389.375,
+              "cuts": 0
+            },
+            {
+              "action": 2,
+              "status": "airborne",
+              "x": 227.74999999999991,
+              "y": 294.7916666666667,
+              "cuts": 0
+            },
+            {
+              "action": 3,
+              "status": "airborne",
+              "x": 323.65000000000043,
+              "y": 107.25000000000001,
+              "cuts": 0
+            },
+            {
+              "action": 4,
+              "status": "failed",
+              "x": 412.6999999999999,
+              "y": -127.16666666666666,
+              "cuts": 0
+            }
+          ],
+          "final": {
+            "seed": 53,
+            "phase": "ordinary",
+            "status": "failed",
+            "failReason": "fall",
+            "elapsed": 1.799999999999996,
+            "phaseElapsed": 1.799999999999996,
+            "player": {
+              "x": 412.6999999999999,
+              "y": -127.16666666666666,
+              "vx": 0,
+              "vy": 0,
+              "angle": 3.8384137421013005,
+              "angularVelocity": -10.250010624000003
+            },
+            "sigils": [
+              {
+                "id": "rune-1",
+                "kind": "cuttable",
+                "x": 348,
+                "y": 326,
+                "radius": 34,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-2",
+                "kind": "cuttable",
+                "x": 697,
+                "y": 356,
+                "radius": 28,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-3",
+                "kind": "cuttable",
+                "x": 1242,
+                "y": 323,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-4",
+                "kind": "cuttable",
+                "x": 1283,
+                "y": 345,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-5",
+                "kind": "cuttable",
+                "x": 1330,
+                "y": 371,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-6",
+                "kind": "cuttable",
+                "x": 1378,
+                "y": 343,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-7",
+                "kind": "cuttable",
+                "x": 1419,
+                "y": 323,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-8",
+                "kind": "cuttable",
+                "x": 1897,
+                "y": 347,
+                "radius": 29,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-9",
+                "kind": "cuttable",
+                "x": 2303,
+                "y": 326,
+                "radius": 29,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-10",
+                "kind": "cuttable",
+                "x": 3098,
+                "y": 361,
+                "radius": 30,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-11",
+                "kind": "cuttable",
+                "x": 3697,
+                "y": 339,
+                "radius": 30,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              }
+            ],
+            "supports": [
+              {
+                "id": "white-pillar",
+                "x": 1700,
+                "y": 560,
+                "width": 100,
+                "height": 180
+              },
+              {
+                "id": "white-beam",
+                "x": 2440,
+                "y": 145,
+                "width": 180,
+                "height": 54
+              }
+            ],
+            "spikes": [
+              {
+                "id": "spike-high",
+                "x": 2750,
+                "y": 125,
+                "width": 130,
+                "height": 250
+              },
+              {
+                "id": "spike-low",
+                "x": 3400,
+                "y": 610,
+                "width": 150,
+                "height": 180
+              }
+            ],
+            "finishOptions": [
+              {
+                "id": "calm-moon",
+                "kind": "safe",
+                "x": 4200,
+                "y": 405,
+                "width": 86,
+                "height": 210,
+                "value": 3
+              },
+              {
+                "id": "wild-moon",
+                "kind": "bonus",
+                "x": 4200,
+                "y": 205,
+                "width": 64,
+                "height": 108,
+                "value": 7
+              }
+            ],
+            "cuts": 0,
+            "totalCuts": 11,
+            "score": 0,
+            "finishX": 4200,
+            "finishSelection": null,
+            "worldBottom": 700,
+            "anchorId": null,
+            "recoveryAge": 2.7999999999999936,
+            "combo": 0,
+            "events": [
+              {
+                "id": 1,
+                "type": "launch",
+                "x": 120,
+                "y": 420,
+                "value": 1
+              },
+              {
+                "id": 2,
+                "type": "flip",
+                "x": 207.5,
+                "y": 348.5416666666667,
+                "value": 1
+              },
+              {
+                "id": 3,
+                "type": "flip",
+                "x": 303.3500000000006,
+                "y": 176.95833333333334,
+                "value": 1
+              },
+              {
+                "id": 4,
+                "type": "flip",
+                "x": 403.3999999999998,
+                "y": -87.54166666666666,
+                "value": 1
+              },
+              {
+                "id": 5,
+                "type": "fall",
+                "x": 412.6999999999999,
+                "y": -127.16666666666666,
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "seed": 54,
+          "history": [
+            {
+              "action": 1,
+              "status": "airborne",
+              "x": 137.5,
+              "y": 389.375,
+              "cuts": 0
+            },
+            {
+              "action": 2,
+              "status": "airborne",
+              "x": 227.64999999999992,
+              "y": 299.125,
+              "cuts": 0
+            },
+            {
+              "action": 3,
+              "status": "airborne",
+              "x": 329.05000000000047,
+              "y": 106.16666666666669,
+              "cuts": 0
+            },
+            {
+              "action": 4,
+              "status": "failed",
+              "x": 425.4499999999999,
+              "y": -131.79166666666663,
+              "cuts": 0
+            }
+          ],
+          "final": {
+            "seed": 54,
+            "phase": "ordinary",
+            "status": "failed",
+            "failReason": "fall",
+            "elapsed": 1.8749999999999958,
+            "phaseElapsed": 1.8749999999999958,
+            "player": {
+              "x": 425.4499999999999,
+              "y": -131.79166666666663,
+              "vx": 0,
+              "vy": 0,
+              "angle": 4.010407227418482,
+              "angularVelocity": -10.20892825176943
+            },
+            "sigils": [
+              {
+                "id": "rune-1",
+                "kind": "cuttable",
+                "x": 348,
+                "y": 327,
+                "radius": 34,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-2",
+                "kind": "cuttable",
+                "x": 702,
+                "y": 357,
+                "radius": 28,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-3",
+                "kind": "cuttable",
+                "x": 1239,
+                "y": 330,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-4",
+                "kind": "cuttable",
+                "x": 1286,
+                "y": 344,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-5",
+                "kind": "cuttable",
+                "x": 1334,
+                "y": 372,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-6",
+                "kind": "cuttable",
+                "x": 1373,
+                "y": 350,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-7",
+                "kind": "cuttable",
+                "x": 1419,
+                "y": 323,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-8",
+                "kind": "cuttable",
+                "x": 1899,
+                "y": 352,
+                "radius": 29,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-9",
+                "kind": "cuttable",
+                "x": 2304,
+                "y": 326,
+                "radius": 29,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-10",
+                "kind": "cuttable",
+                "x": 3100,
+                "y": 360,
+                "radius": 30,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-11",
+                "kind": "cuttable",
+                "x": 3703,
+                "y": 344,
+                "radius": 30,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              }
+            ],
+            "supports": [
+              {
+                "id": "white-pillar",
+                "x": 1700,
+                "y": 560,
+                "width": 100,
+                "height": 180
+              },
+              {
+                "id": "white-beam",
+                "x": 2440,
+                "y": 145,
+                "width": 180,
+                "height": 54
+              }
+            ],
+            "spikes": [
+              {
+                "id": "spike-high",
+                "x": 2750,
+                "y": 125,
+                "width": 130,
+                "height": 250
+              },
+              {
+                "id": "spike-low",
+                "x": 3400,
+                "y": 610,
+                "width": 150,
+                "height": 180
+              }
+            ],
+            "finishOptions": [
+              {
+                "id": "calm-moon",
+                "kind": "safe",
+                "x": 4200,
+                "y": 405,
+                "width": 86,
+                "height": 210,
+                "value": 3
+              },
+              {
+                "id": "wild-moon",
+                "kind": "bonus",
+                "x": 4200,
+                "y": 205,
+                "width": 64,
+                "height": 108,
+                "value": 7
+              }
+            ],
+            "cuts": 0,
+            "totalCuts": 11,
+            "score": 0,
+            "finishX": 4200,
+            "finishSelection": null,
+            "worldBottom": 700,
+            "anchorId": null,
+            "recoveryAge": 2.8749999999999933,
+            "combo": 0,
+            "events": [
+              {
+                "id": 1,
+                "type": "launch",
+                "x": 120,
+                "y": 420,
+                "value": 1
+              },
+              {
+                "id": 2,
+                "type": "flip",
+                "x": 208.75,
+                "y": 349,
+                "value": 1
+              },
+              {
+                "id": 3,
+                "type": "flip",
+                "x": 307.30000000000064,
+                "y": 178.66666666666669,
+                "value": 1
+              },
+              {
+                "id": 4,
+                "type": "flip",
+                "x": 414.5999999999998,
+                "y": -88.04166666666664,
+                "value": 1
+              },
+              {
+                "id": 5,
+                "type": "fall",
+                "x": 425.4499999999999,
+                "y": -131.79166666666663,
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "seed": 55,
+          "history": [
+            {
+              "action": 1,
+              "status": "airborne",
+              "x": 133.75,
+              "y": 395.25,
+              "cuts": 0
+            },
+            {
+              "action": 2,
+              "status": "airborne",
+              "x": 226.39999999999992,
+              "y": 298.08333333333337,
+              "cuts": 0
+            },
+            {
+              "action": 3,
+              "status": "airborne",
+              "x": 326.45000000000044,
+              "y": 102.29166666666669,
+              "cuts": 0
+            },
+            {
+              "action": 4,
+              "status": "failed",
+              "x": 425.44999999999976,
+              "y": -131.79166666666663,
+              "cuts": 0
+            }
+          ],
+          "final": {
+            "seed": 55,
+            "phase": "ordinary",
+            "status": "failed",
+            "failReason": "fall",
+            "elapsed": 1.8749999999999958,
+            "phaseElapsed": 1.8749999999999958,
+            "player": {
+              "x": 425.44999999999976,
+              "y": -131.79166666666663,
+              "vx": 0,
+              "vy": 0,
+              "angle": 4.595877647711419,
+              "angularVelocity": -10.332672000000002
+            },
+            "sigils": [
+              {
+                "id": "rune-1",
+                "kind": "cuttable",
+                "x": 348,
+                "y": 328,
+                "radius": 34,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-2",
+                "kind": "cuttable",
+                "x": 700,
+                "y": 357,
+                "radius": 28,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-3",
+                "kind": "cuttable",
+                "x": 1236,
+                "y": 327,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-4",
+                "kind": "cuttable",
+                "x": 1281,
+                "y": 343,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-5",
+                "kind": "cuttable",
+                "x": 1330,
+                "y": 372,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-6",
+                "kind": "cuttable",
+                "x": 1377,
+                "y": 347,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-7",
+                "kind": "cuttable",
+                "x": 1419,
+                "y": 322,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-8",
+                "kind": "cuttable",
+                "x": 1901,
+                "y": 346,
+                "radius": 29,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-9",
+                "kind": "cuttable",
+                "x": 2297,
+                "y": 326,
+                "radius": 29,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-10",
+                "kind": "cuttable",
+                "x": 3102,
+                "y": 359,
+                "radius": 30,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-11",
+                "kind": "cuttable",
+                "x": 3700,
+                "y": 340,
+                "radius": 30,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              }
+            ],
+            "supports": [
+              {
+                "id": "white-pillar",
+                "x": 1700,
+                "y": 560,
+                "width": 100,
+                "height": 180
+              },
+              {
+                "id": "white-beam",
+                "x": 2440,
+                "y": 145,
+                "width": 180,
+                "height": 54
+              }
+            ],
+            "spikes": [
+              {
+                "id": "spike-high",
+                "x": 2750,
+                "y": 125,
+                "width": 130,
+                "height": 250
+              },
+              {
+                "id": "spike-low",
+                "x": 3400,
+                "y": 610,
+                "width": 150,
+                "height": 180
+              }
+            ],
+            "finishOptions": [
+              {
+                "id": "calm-moon",
+                "kind": "safe",
+                "x": 4200,
+                "y": 405,
+                "width": 86,
+                "height": 210,
+                "value": 3
+              },
+              {
+                "id": "wild-moon",
+                "kind": "bonus",
+                "x": 4200,
+                "y": 205,
+                "width": 64,
+                "height": 108,
+                "value": 7
+              }
+            ],
+            "cuts": 0,
+            "totalCuts": 11,
+            "score": 0,
+            "finishX": 4200,
+            "finishSelection": null,
+            "worldBottom": 700,
+            "anchorId": null,
+            "recoveryAge": 2.8749999999999933,
+            "combo": 0,
+            "events": [
+              {
+                "id": 1,
+                "type": "launch",
+                "x": 120,
+                "y": 420,
+                "value": 1
+              },
+              {
+                "id": 2,
+                "type": "flip",
+                "x": 207.5,
+                "y": 348.5416666666667,
+                "value": 1
+              },
+              {
+                "id": 3,
+                "type": "flip",
+                "x": 304.7000000000006,
+                "y": 176.04166666666669,
+                "value": 1
+              },
+              {
+                "id": 4,
+                "type": "flip",
+                "x": 419.2499999999997,
+                "y": -107.04166666666664,
+                "value": 1
+              },
+              {
+                "id": 5,
+                "type": "fall",
+                "x": 425.44999999999976,
+                "y": -131.79166666666663,
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "seed": 56,
+          "history": [
+            {
+              "action": 1,
+              "status": "airborne",
+              "x": 133.75,
+              "y": 395.25,
+              "cuts": 0
+            },
+            {
+              "action": 2,
+              "status": "airborne",
+              "x": 216.84999999999997,
+              "y": 326.625,
+              "cuts": 0
+            },
+            {
+              "action": 3,
+              "status": "airborne",
+              "x": 298.4500000000003,
+              "y": 159.37500000000003,
+              "cuts": 0
+            },
+            {
+              "action": 4,
+              "status": "failed",
+              "x": 393.19999999999965,
+              "y": -127.70833333333329,
+              "cuts": 0
+            }
+          ],
+          "final": {
+            "seed": 56,
+            "phase": "ordinary",
+            "status": "failed",
+            "failReason": "fall",
+            "elapsed": 1.6833333333333298,
+            "phaseElapsed": 1.6833333333333298,
+            "player": {
+              "x": 393.19999999999965,
+              "y": -127.70833333333329,
+              "vx": 0,
+              "vy": 0,
+              "angle": 4.524788066968926,
+              "angularVelocity": -10.291258318315958
+            },
+            "sigils": [
+              {
+                "id": "rune-1",
+                "kind": "cuttable",
+                "x": 348,
+                "y": 329,
+                "radius": 34,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-2",
+                "kind": "cuttable",
+                "x": 697,
+                "y": 357,
+                "radius": 28,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-3",
+                "kind": "cuttable",
+                "x": 1242,
+                "y": 325,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-4",
+                "kind": "cuttable",
+                "x": 1285,
+                "y": 352,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-5",
+                "kind": "cuttable",
+                "x": 1334,
+                "y": 373,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-6",
+                "kind": "cuttable",
+                "x": 1373,
+                "y": 344,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-7",
+                "kind": "cuttable",
+                "x": 1419,
+                "y": 322,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-8",
+                "kind": "cuttable",
+                "x": 1902,
+                "y": 351,
+                "radius": 29,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-9",
+                "kind": "cuttable",
+                "x": 2298,
+                "y": 327,
+                "radius": 29,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-10",
+                "kind": "cuttable",
+                "x": 3097,
+                "y": 358,
+                "radius": 30,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-11",
+                "kind": "cuttable",
+                "x": 3698,
+                "y": 336,
+                "radius": 30,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              }
+            ],
+            "supports": [
+              {
+                "id": "white-pillar",
+                "x": 1700,
+                "y": 560,
+                "width": 100,
+                "height": 180
+              },
+              {
+                "id": "white-beam",
+                "x": 2440,
+                "y": 145,
+                "width": 180,
+                "height": 54
+              }
+            ],
+            "spikes": [
+              {
+                "id": "spike-high",
+                "x": 2750,
+                "y": 125,
+                "width": 130,
+                "height": 250
+              },
+              {
+                "id": "spike-low",
+                "x": 3400,
+                "y": 610,
+                "width": 150,
+                "height": 180
+              }
+            ],
+            "finishOptions": [
+              {
+                "id": "calm-moon",
+                "kind": "safe",
+                "x": 4200,
+                "y": 405,
+                "width": 86,
+                "height": 210,
+                "value": 3
+              },
+              {
+                "id": "wild-moon",
+                "kind": "bonus",
+                "x": 4200,
+                "y": 205,
+                "width": 64,
+                "height": 108,
+                "value": 7
+              }
+            ],
+            "cuts": 0,
+            "totalCuts": 11,
+            "score": 0,
+            "finishX": 4200,
+            "finishSelection": null,
+            "worldBottom": 700,
+            "anchorId": null,
+            "recoveryAge": 2.6833333333333274,
+            "combo": 0,
+            "events": [
+              {
+                "id": 1,
+                "type": "launch",
+                "x": 120,
+                "y": 420,
+                "value": 1
+              },
+              {
+                "id": 2,
+                "type": "flip",
+                "x": 208.75,
+                "y": 349,
+                "value": 1
+              },
+              {
+                "id": 3,
+                "type": "flip",
+                "x": 289.75000000000034,
+                "y": 192.75000000000003,
+                "value": 1
+              },
+              {
+                "id": 4,
+                "type": "flip",
+                "x": 385.4499999999996,
+                "y": -91.87499999999996,
+                "value": 1
+              },
+              {
+                "id": 5,
+                "type": "fall",
+                "x": 393.19999999999965,
+                "y": -127.70833333333329,
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "seed": 57,
+          "history": [
+            {
+              "action": 1,
+              "status": "airborne",
+              "x": 127.5,
+              "y": 405.875,
+              "cuts": 0
+            },
+            {
+              "action": 2,
+              "status": "airborne",
+              "x": 203.09999999999997,
+              "y": 321.125,
+              "cuts": 0
+            },
+            {
+              "action": 3,
+              "status": "airborne",
+              "x": 284.7,
+              "y": 126.37499999999996,
+              "cuts": 0
+            },
+            {
+              "action": 4,
+              "status": "ready",
+              "x": 120,
+              "y": 420,
+              "cuts": 0
+            },
+            {
+              "action": 5,
+              "status": "airborne",
+              "x": 127.5,
+              "y": 405.875,
+              "cuts": 0
+            },
+            {
+              "action": 6,
+              "status": "airborne",
+              "x": 210.59999999999997,
+              "y": 323.5,
+              "cuts": 0
+            },
+            {
+              "action": 7,
+              "status": "airborne",
+              "x": 309.0000000000002,
+              "y": 104.99999999999997,
+              "cuts": 0
+            },
+            {
+              "action": 8,
+              "status": "ready",
+              "x": 120,
+              "y": 420,
+              "cuts": 0
+            },
+            {
+              "action": 9,
+              "status": "airborne",
+              "x": 135,
+              "y": 393.25,
+              "cuts": 0
+            },
+            {
+              "action": 10,
+              "status": "airborne",
+              "x": 241.19999999999993,
+              "y": 322,
+              "cuts": 0
+            },
+            {
+              "action": 11,
+              "status": "airborne",
+              "x": 330.90000000000094,
+              "y": 201.125,
+              "cuts": 0
+            },
+            {
+              "action": 12,
+              "status": "failed",
+              "x": 456.65000000000055,
+              "y": -130.33333333333334,
+              "cuts": 0
+            }
+          ],
+          "final": {
+            "seed": 59,
+            "phase": "ordinary",
+            "status": "failed",
+            "failReason": "fall",
+            "elapsed": 2.0583333333333287,
+            "phaseElapsed": 2.0583333333333287,
+            "player": {
+              "x": 456.65000000000055,
+              "y": -130.33333333333334,
+              "vx": 0,
+              "vy": 0,
+              "angle": 2.8216291667895215,
+              "angularVelocity": -9.49697294960863
+            },
+            "sigils": [
+              {
+                "id": "rune-1",
+                "kind": "cuttable",
+                "x": 348,
+                "y": 331,
+                "radius": 34,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-2",
+                "kind": "cuttable",
+                "x": 698,
+                "y": 359,
+                "radius": 28,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-3",
+                "kind": "cuttable",
+                "x": 1242,
+                "y": 327,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-4",
+                "kind": "cuttable",
+                "x": 1287,
+                "y": 350,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-5",
+                "kind": "cuttable",
+                "x": 1330,
+                "y": 375,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-6",
+                "kind": "cuttable",
+                "x": 1376,
+                "y": 344,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-7",
+                "kind": "cuttable",
+                "x": 1418,
+                "y": 320,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-8",
+                "kind": "cuttable",
+                "x": 1900,
+                "y": 345,
+                "radius": 29,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-9",
+                "kind": "cuttable",
+                "x": 2302,
+                "y": 327,
+                "radius": 29,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-10",
+                "kind": "cuttable",
+                "x": 3096,
+                "y": 365,
+                "radius": 30,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-11",
+                "kind": "cuttable",
+                "x": 3698,
+                "y": 342,
+                "radius": 30,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              }
+            ],
+            "supports": [
+              {
+                "id": "white-pillar",
+                "x": 1700,
+                "y": 560,
+                "width": 100,
+                "height": 180
+              },
+              {
+                "id": "white-beam",
+                "x": 2440,
+                "y": 145,
+                "width": 180,
+                "height": 54
+              }
+            ],
+            "spikes": [
+              {
+                "id": "spike-high",
+                "x": 2750,
+                "y": 125,
+                "width": 130,
+                "height": 250
+              },
+              {
+                "id": "spike-low",
+                "x": 3400,
+                "y": 610,
+                "width": 150,
+                "height": 180
+              }
+            ],
+            "finishOptions": [
+              {
+                "id": "calm-moon",
+                "kind": "safe",
+                "x": 4200,
+                "y": 405,
+                "width": 86,
+                "height": 210,
+                "value": 3
+              },
+              {
+                "id": "wild-moon",
+                "kind": "bonus",
+                "x": 4200,
+                "y": 205,
+                "width": 64,
+                "height": 108,
+                "value": 7
+              }
+            ],
+            "cuts": 0,
+            "totalCuts": 11,
+            "score": 0,
+            "finishX": 4200,
+            "finishSelection": null,
+            "worldBottom": 700,
+            "anchorId": null,
+            "recoveryAge": 3.058333333333326,
+            "combo": 0,
+            "events": [
+              {
+                "id": 1,
+                "type": "launch",
+                "x": 120,
+                "y": 420,
+                "value": 1
+              },
+              {
+                "id": 2,
+                "type": "flip",
+                "x": 225,
+                "y": 358.75,
+                "value": 1
+              },
+              {
+                "id": 3,
+                "type": "flip",
+                "x": 322.200000000001,
+                "y": 228.25,
+                "value": 1
+              },
+              {
+                "id": 4,
+                "type": "flip",
+                "x": 417.90000000000026,
+                "y": 12.375000000000004,
+                "value": 1
+              },
+              {
+                "id": 5,
+                "type": "fall",
+                "x": 456.65000000000055,
+                "y": -130.33333333333334,
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "seed": 58,
+          "history": [
+            {
+              "action": 1,
+              "status": "airborne",
+              "x": 135,
+              "y": 393.25,
+              "cuts": 0
+            },
+            {
+              "action": 2,
+              "status": "airborne",
+              "x": 246.19999999999993,
+              "y": 328.4166666666667,
+              "cuts": 0
+            },
+            {
+              "action": 3,
+              "status": "airborne",
+              "x": 352.70000000000107,
+              "y": 196.79166666666669,
+              "cuts": 0
+            },
+            {
+              "action": 4,
+              "status": "failed",
+              "x": 507.30000000000075,
+              "y": -130.37499999999997,
+              "cuts": 0
+            }
+          ],
+          "final": {
+            "seed": 58,
+            "phase": "ordinary",
+            "status": "failed",
+            "failReason": "fall",
+            "elapsed": 2.3499999999999943,
+            "phaseElapsed": 2.3499999999999943,
+            "player": {
+              "x": 507.30000000000075,
+              "y": -130.37499999999997,
+              "vx": 0,
+              "vy": 0,
+              "angle": 2.4405529725957984,
+              "angularVelocity": -9.01386542781661
+            },
+            "sigils": [
+              {
+                "id": "rune-1",
+                "kind": "cuttable",
+                "x": 348,
+                "y": 330,
+                "radius": 34,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-2",
+                "kind": "cuttable",
+                "x": 700,
+                "y": 358,
+                "radius": 28,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-3",
+                "kind": "cuttable",
+                "x": 1236,
+                "y": 330,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-4",
+                "kind": "cuttable",
+                "x": 1284,
+                "y": 351,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-5",
+                "kind": "cuttable",
+                "x": 1326,
+                "y": 374,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-6",
+                "kind": "cuttable",
+                "x": 1372,
+                "y": 348,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-7",
+                "kind": "cuttable",
+                "x": 1418,
+                "y": 321,
+                "radius": 28,
+                "value": 2,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-8",
+                "kind": "cuttable",
+                "x": 1898,
+                "y": 350,
+                "radius": 29,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-9",
+                "kind": "cuttable",
+                "x": 2301,
+                "y": 327,
+                "radius": 29,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-10",
+                "kind": "cuttable",
+                "x": 3102,
+                "y": 356,
+                "radius": 30,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              },
+              {
+                "id": "rune-11",
+                "kind": "cuttable",
+                "x": 3701,
+                "y": 337,
+                "radius": 30,
+                "value": 1,
+                "cut": false,
+                "splitAge": 0
+              }
+            ],
+            "supports": [
+              {
+                "id": "white-pillar",
+                "x": 1700,
+                "y": 560,
+                "width": 100,
+                "height": 180
+              },
+              {
+                "id": "white-beam",
+                "x": 2440,
+                "y": 145,
+                "width": 180,
+                "height": 54
+              }
+            ],
+            "spikes": [
+              {
+                "id": "spike-high",
+                "x": 2750,
+                "y": 125,
+                "width": 130,
+                "height": 250
+              },
+              {
+                "id": "spike-low",
+                "x": 3400,
+                "y": 610,
+                "width": 150,
+                "height": 180
+              }
+            ],
+            "finishOptions": [
+              {
+                "id": "calm-moon",
+                "kind": "safe",
+                "x": 4200,
+                "y": 405,
+                "width": 86,
+                "height": 210,
+                "value": 3
+              },
+              {
+                "id": "wild-moon",
+                "kind": "bonus",
+                "x": 4200,
+                "y": 205,
+                "width": 64,
+                "height": 108,
+                "value": 7
+              }
+            ],
+            "cuts": 0,
+            "totalCuts": 11,
+            "score": 0,
+            "finishX": 4200,
+            "finishSelection": null,
+            "worldBottom": 700,
+            "anchorId": null,
+            "recoveryAge": 3.3499999999999917,
+            "combo": 0,
+            "events": [
+              {
+                "id": 1,
+                "type": "launch",
+                "x": 120,
+                "y": 420,
+                "value": 1
+              },
+              {
+                "id": 2,
+                "type": "flip",
+                "x": 230,
+                "y": 363.1666666666667,
+                "value": 1
+              },
+              {
+                "id": 3,
+                "type": "flip",
+                "x": 335.3000000000012,
+                "y": 244.54166666666669,
+                "value": 1
+              },
+              {
+                "id": 4,
+                "type": "flip",
+                "x": 448.4000000000003,
+                "y": 41.41666666666669,
+                "value": 1
+              },
+              {
+                "id": 5,
+                "type": "fall",
+                "x": 507.30000000000075,
+                "y": -130.37499999999997,
+                "value": 0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "mobile",
+      "before": {
+        "seed": 61,
+        "phase": "ordinary",
+        "status": "ready",
+        "failReason": null,
+        "elapsed": 0,
+        "phaseElapsed": 0,
+        "player": {
+          "x": 120,
+          "y": 420,
+          "vx": 0,
+          "vy": 0,
+          "angle": -0.35,
+          "angularVelocity": 0
+        },
+        "sigils": [
+          {
+            "id": "rune-1",
+            "kind": "cuttable",
+            "x": 348,
+            "y": 333,
+            "radius": 34,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-2",
+            "kind": "cuttable",
+            "x": 701,
+            "y": 359,
+            "radius": 28,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-3",
+            "kind": "cuttable",
+            "x": 1236,
+            "y": 322,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-4",
+            "kind": "cuttable",
+            "x": 1286,
+            "y": 348,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-5",
+            "kind": "cuttable",
+            "x": 1330,
+            "y": 366,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-6",
+            "kind": "cuttable",
+            "x": 1375,
+            "y": 348,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-7",
+            "kind": "cuttable",
+            "x": 1418,
+            "y": 329,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-8",
+            "kind": "cuttable",
+            "x": 1903,
+            "y": 354,
+            "radius": 29,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-9",
+            "kind": "cuttable",
+            "x": 2296,
+            "y": 327,
+            "radius": 29,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-10",
+            "kind": "cuttable",
+            "x": 3101,
+            "y": 362,
+            "radius": 30,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-11",
+            "kind": "cuttable",
+            "x": 3701,
+            "y": 344,
+            "radius": 30,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          }
+        ],
+        "supports": [
+          {
+            "id": "white-pillar",
+            "x": 1700,
+            "y": 560,
+            "width": 100,
+            "height": 180
+          },
+          {
+            "id": "white-beam",
+            "x": 2440,
+            "y": 145,
+            "width": 180,
+            "height": 54
+          }
+        ],
+        "spikes": [
+          {
+            "id": "spike-high",
+            "x": 2750,
+            "y": 125,
+            "width": 130,
+            "height": 250
+          },
+          {
+            "id": "spike-low",
+            "x": 3400,
+            "y": 610,
+            "width": 150,
+            "height": 180
+          }
+        ],
+        "finishOptions": [
+          {
+            "id": "calm-moon",
+            "kind": "safe",
+            "x": 4200,
+            "y": 405,
+            "width": 86,
+            "height": 210,
+            "value": 3
+          },
+          {
+            "id": "wild-moon",
+            "kind": "bonus",
+            "x": 4200,
+            "y": 205,
+            "width": 64,
+            "height": 108,
+            "value": 7
+          }
+        ],
+        "cuts": 0,
+        "totalCuts": 11,
+        "score": 0,
+        "finishX": 4200,
+        "finishSelection": null,
+        "worldBottom": 700,
+        "anchorId": null,
+        "recoveryAge": 1,
+        "combo": 0,
+        "events": []
+      },
+      "after": {
+        "seed": 61,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "elapsed": 0.09999999999999999,
+        "phaseElapsed": 0.09999999999999999,
+        "player": {
+          "x": 135,
+          "y": 393.25,
+          "vx": 150,
+          "vy": -240,
+          "angle": 0.5793353118636161,
+          "angularVelocity": 9.053023301814719
+        },
+        "sigils": [
+          {
+            "id": "rune-1",
+            "kind": "cuttable",
+            "x": 348,
+            "y": 333,
+            "radius": 34,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-2",
+            "kind": "cuttable",
+            "x": 701,
+            "y": 359,
+            "radius": 28,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-3",
+            "kind": "cuttable",
+            "x": 1236,
+            "y": 322,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-4",
+            "kind": "cuttable",
+            "x": 1286,
+            "y": 348,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-5",
+            "kind": "cuttable",
+            "x": 1330,
+            "y": 366,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-6",
+            "kind": "cuttable",
+            "x": 1375,
+            "y": 348,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-7",
+            "kind": "cuttable",
+            "x": 1418,
+            "y": 329,
+            "radius": 28,
+            "value": 2,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-8",
+            "kind": "cuttable",
+            "x": 1903,
+            "y": 354,
+            "radius": 29,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-9",
+            "kind": "cuttable",
+            "x": 2296,
+            "y": 327,
+            "radius": 29,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-10",
+            "kind": "cuttable",
+            "x": 3101,
+            "y": 362,
+            "radius": 30,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          },
+          {
+            "id": "rune-11",
+            "kind": "cuttable",
+            "x": 3701,
+            "y": 344,
+            "radius": 30,
+            "value": 1,
+            "cut": false,
+            "splitAge": 0
+          }
+        ],
+        "supports": [
+          {
+            "id": "white-pillar",
+            "x": 1700,
+            "y": 560,
+            "width": 100,
+            "height": 180
+          },
+          {
+            "id": "white-beam",
+            "x": 2440,
+            "y": 145,
+            "width": 180,
+            "height": 54
+          }
+        ],
+        "spikes": [
+          {
+            "id": "spike-high",
+            "x": 2750,
+            "y": 125,
+            "width": 130,
+            "height": 250
+          },
+          {
+            "id": "spike-low",
+            "x": 3400,
+            "y": 610,
+            "width": 150,
+            "height": 180
+          }
+        ],
+        "finishOptions": [
+          {
+            "id": "calm-moon",
+            "kind": "safe",
+            "x": 4200,
+            "y": 405,
+            "width": 86,
+            "height": 210,
+            "value": 3
+          },
+          {
+            "id": "wild-moon",
+            "kind": "bonus",
+            "x": 4200,
+            "y": 205,
+            "width": 64,
+            "height": 108,
+            "value": 7
+          }
+        ],
+        "cuts": 0,
+        "totalCuts": 11,
+        "score": 0,
+        "finishX": 4200,
+        "finishSelection": null,
+        "worldBottom": 700,
+        "anchorId": null,
+        "recoveryAge": 1.0999999999999996,
+        "combo": 0,
+        "events": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          }
+        ]
+      },
+      "layout": {
+        "innerWidth": 390,
+        "innerHeight": 844,
+        "scrollX": 0,
+        "scrollY": 0,
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "touchAction": "none"
+      }
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": []
+}

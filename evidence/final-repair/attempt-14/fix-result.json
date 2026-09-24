@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fix-result",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 14,
+  "issueId": "L1-RUNWAY-RECOVERY-POSE-REARM-GATE",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "model": "gpt-6-luna",
+  "routeReason": "The validated issue affects the Level 1 recovery state path and remains subject to formal QA and retest obligations. The attempt-14 candidate was limited to the two packet-owned files and rejected when the focused release-position and replay acceptance checks failed.",
+  "status": "BLOCKED",
+  "candidateRejected": true,
+  "rejectionReason": "The setter trace confirmed one capture at frame 216, no overwrite through frames 217–232, consumption at frame 281, and re-arm capture at frame 302. However, the first release was 73.615 simulation pixels from the stored pose before the tap, exceeding the 10-pixel acceptance limit. The replay failed at 5.7167 seconds and did not reach the second release. The packet required immediate rollback on focused acceptance failure, so no tuning, broader checks, or rebuild followed.",
+  "rollback": {
+    "requested": true,
+    "performed": true,
+    "sourceChanged": true,
+    "testChanged": true,
+    "files": [
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+        "candidateSha256": "f3a429e3d76b622b416c787f0b55d38a0501c43e97b94e686073ca22ee99c7d3",
+        "expectedBaselineSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+        "actualSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+        "matchesBaseline": true
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts",
+        "candidateSha256": "090881a9642550042e52beffa3f565f0a422d9b3c814d10fdbb396f1cb1f93f0",
+        "expectedBaselineSha256": "7627f8b8052adb8bd33b6b21f7c0cf935b1d23cba5b4570513ce47bd56984510",
+        "actualSha256": "7627f8b8052adb8bd33b6b21f7c0cf935b1d23cba5b4570513ce47bd56984510",
+        "matchesBaseline": true
+      }
+    ]
+  },
+  "evidence": {
+    "focusedRed": {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "status": "EXPECTED_FAIL",
+      "exitCode": 1,
+      "summary": "15 passed, 5 failed. The new trace recorded no setter calls instead of the expected [216, 302]; baseline also lacked the runway release selector and pending-pose lifecycle.",
+      "log": "red-targeted.log",
+      "sha256": "b1f08dae21c5bce6f87b3fffd1e0ec0aaaf57f9f2c18736a4123f578da55083f"
+    },
+    "focusedGreen": {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "status": "FAIL",
+      "exitCode": 1,
+      "summary": "18 passed, 2 failed. The trace captured at frames 216 and 302 and showed the first pose cleared before the second capture. First-release position correction was 73.615 pixels, above the 10-pixel bound; the normal replay ended failed at 5.7167 seconds after one release.",
+      "log": "green-targeted.log",
+      "sha256": "5ae2a78e94abc580d09b071509e54a2c6da78b506cb05643648ee1134ab20753"
+    },
+    "fullTests": {
+      "command": "pnpm test",
+      "status": "NOT_RUN",
+      "exitCode": null,
+      "summary": null,
+      "log": null,
+      "reason": "Focused acceptance failed; the packet required immediate rollback without further checks."
+    },
+    "lint": {
+      "command": "pnpm lint",
+      "status": "NOT_RUN",
+      "exitCode": null,
+      "log": null,
+      "reason": "Focused acceptance failed; the packet required immediate rollback without further checks."
+    },
+    "typecheck": {
+      "command": "pnpm typecheck",
+      "status": "NOT_RUN",
+      "exitCode": null,
+      "log": null,
+      "reason": "Focused acceptance failed; the packet required immediate rollback without further checks."
+    },
+    "build": {
+      "command": "pnpm build",
+      "status": "NOT_RUN",
+      "reason": "Focused acceptance failed; the packet required immediate rollback without rebuild.",
+      "buildCount": 0,
+      "log": null,
+      "distSha256": null
+    },
+    "naturalQa": {
+      "status": "NOT_RUN",
+      "claim": false,
+      "reason": "Natural-input and perceptual QA remain the independent QA retest responsibility."
+    }
+  },
+  "changedFiles": [],
+  "attemptedFiles": [
+    "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+    "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory modules, renderers, platform adapters, level data, persistence, and release configuration.",
+    "Full conversation and unbound media.",
+    "Natural or perceptual completion claims."
+  ],
+  "remainingEvidenceGaps": [
+    "The first pending pose was captured once and the second pose was captured after re-arm, but the first release exceeded the allowed position correction and the replay did not reach the second release.",
+    "Full tests, lint, typecheck, and build were not run because the focused acceptance failure required immediate rollback.",
+    "Independent natural-input and perceptual QA remain outstanding."
+  ],
+  "runtimeQaClaim": false,
+  "naturalQaClaim": false,
+  "perceptualQaClaim": false,
+  "buildCount": 0,
+  "createdAt": "2026-09-23T11:37:47Z"
+}

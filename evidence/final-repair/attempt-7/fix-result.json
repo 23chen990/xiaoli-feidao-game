@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fix-result",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 7,
+  "issueId": "L1-RUNWAY-RECOVERY-SUPPORT-TRACE",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "routeReason": "The validated reproduction affects the Level 1 recovery state path and the required seed-31 route replay; it remains under formal QA/Fixer retest obligations.",
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory modules, renderers, platform adapters, release configuration, and unrelated QA evidence.",
+    "Full conversation and unbound competitor media."
+  ],
+  "status": "BLOCKED",
+  "hypothesis": "A separating upward runway tip contact can be separated and retain a one-shot release intent; on the release tap, select only active, collidable, forward supports whose ballistic required vertical speed remains within the top-boundary and speed limits, while preserving the captured release velocity.",
+  "filesChanged": [
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts",
+      "role": "test-only trace and runtime-selector assertions",
+      "sha256": "be57c4dbd2d3f0e0790b9637d992082a104887ecac80b2f61a3d7ee49fc1dfcd"
+    }
+  ],
+  "productionPatch": {
+    "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+    "candidateTried": true,
+    "candidateReverted": true,
+    "currentSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+    "reason": "The focused seed-31 replay ended at 5.4667 seconds, below 11.9 seconds and x>2000. The packet requires immediate reversion on this failure; no candidate tuning followed."
+  },
+  "trace": {
+    "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-7/trace-analysis.json",
+    "phase": "test-only-before-production-correction",
+    "conclusion": "The test-only theoretical-corridor selector reports white-branch as the earliest feasible early candidate and retains lift-plank as the earliest feasible late candidate. It rejects the broad runway early and non-collidable lift-table. However, early white-branch predictedY is 672.22, outside its vertical band 226–266, while requiredVy is -545.65 and the snapshotted current vy is -80. That distinction shows the solver must use the preserved release snapshot when deciding whether the actual path reaches a candidate; the rejected production candidate did not establish this correctly."
+  },
+  "evidenceSha256": {
+    "red-targeted.log": "9f6d701ec5be0d9c90c8f242207edb89a695debef02cdf4b638383c6c7c3d594",
+    "green-targeted.log": "c51d8a42ea168a0ad6e5c2e905008727da0bc13cec07b5342de81a6e6a7e0f55",
+    "trace-analysis.json": "19696c78f7b235cd7a3eb93f62844e5768a826d54e991b5c4ca25bb4f02e8ee1"
+  },
+  "commands": [
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "phase": "RED baseline",
+      "exitCode": 1,
+      "log": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-7/red-targeted.log",
+      "result": "15 passed, 3 failed. The exact separating contact anchored; runtime selector assertions were also absent on baseline."
+    },
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+      "phase": "reverted candidate focused replay",
+      "exitCode": 1,
+      "log": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-7/green-targeted.log",
+      "result": "16 passed, 2 failed. The replay ended at 5.4667 seconds, and the exact release snapshot assertion failed. Candidate production changes were immediately reverted."
+    }
+  ],
+  "buildCount": 0,
+  "distSha256": null,
+  "lint": { "run": false, "exitCode": null },
+  "typecheck": { "run": false, "exitCode": null },
+  "tests": { "fullSuiteRun": false, "exitCode": null },
+  "naturalQaClaim": false,
+  "perceptualQaClaim": false,
+  "remainingEvidenceGaps": [
+    "No production correction passed the focused seed-31 route replay; pnpm test, lint, typecheck, and build were not run after the required immediate reversion.",
+    "The test-only candidate traces use deterministic fixture poses and do not prove natural-input behavior or player-visible recovery.",
+    "Independent fresh natural QA and perceptual QA remain required for both viewports, the exact runway branch, stack/settlement, terminal, and replay."
+  ],
+  "distinctNextHypothesis": "Use the preserved release snapshot to predict the actual trajectory and accept a support only when predictedY intersects its verticalBand at the support entry time; when no candidate intersects, follow an explicit no-support fallback without changing the snapshot. Add a regression showing how that fallback can preserve the seed-31 route before attempting production code again.",
+  "createdAt": "2026-09-23T09:00:00.000Z"
+}

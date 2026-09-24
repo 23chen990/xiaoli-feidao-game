@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fix-result",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 8,
+  "issueId": "L1-RUNWAY-RECOVERY-VIRTUAL-POSE",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "routeReason": "The issue is a repeated core-loop natural reproduction with multiple failed repair attempts and an explicit QA retest obligation.",
+  "status": "BLOCKED",
+  "candidateRejected": true,
+  "rootCauseHypothesis": "Attempts 3-7 did not preserve the baseline support-relative release pose. Attempt 8 tested whether a bounded virtual runway pose could preserve the baseline release lifecycle while the visible player remained airborne.",
+  "baselineRed": {
+    "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+    "exitCode": 1,
+    "result": "The restored baseline reproduced the reported runway anchor instead of retaining a pending airborne pose. The focused replay failed at the first baseline release tap because no pending pose existed.",
+    "log": "red-targeted.log",
+    "sha256": "20123c85b82bf1c99b163c1e889215fdc58f79ff92c8f1139365bae6e840e1e2"
+  },
+  "candidateRetest": {
+    "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+    "exitCode": 1,
+    "result": "The first stored pose matched its baseline release coordinates, but the second scheduled release tap had no pending pose. The fixed seed-31 replay stopped at 10.858 seconds, below 11.9 seconds; the candidate failed the route gate.",
+    "log": "green-targeted.log",
+    "sha256": "155fcfad4d7b3613086eb8f954bb53c3a66fddfd8ba805bb2a883342d479c46e"
+  },
+  "rollback": {
+    "performed": true,
+    "files": [
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+        "sha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+        "matchesTaskPacketBaseline": true
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts",
+        "sha256": "be57c4dbd2d3f0e0790b9637d992082a104887ecac80b2f61a3d7ee49fc1dfcd",
+        "matchesTaskPacketBaseline": true
+      }
+    ]
+  },
+  "changedFiles": [],
+  "filesChangedDuringCandidate": [
+    "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+    "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "fullChecks": {
+    "pnpmTest": { "status": "NOT_RUN", "log": "tests.log" },
+    "pnpmLint": { "status": "NOT_RUN", "log": "lint.log" },
+    "pnpmTypecheck": { "status": "NOT_RUN", "log": "typecheck.log" },
+    "pnpmBuild": { "status": "NOT_RUN", "buildCount": 0, "log": "build.log", "distSha256": null }
+  },
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory code, platform adapters, renderer, release configuration, and unrelated QA records.",
+    "Full conversation, unrelated logs, unbound media, and repository history."
+  ],
+  "remainingEvidenceGaps": [
+    "The second pose/release does not occur in the candidate fixed replay; the replay route gate remains failed.",
+    "No fresh natural-input or perceptual QA was run. Both viewports, exact runway branch presentation, terminal/settlement, and replay require independent QA retest.",
+    "Tap-time visual correction was not accepted by independent perceptual review."
+  ],
+  "nextDistinctHypothesis": "Instrument the second replay interval to establish whether the pending pose is lost to expiry, support deactivation, a non-runway contact, or because the second exact separating runway tip branch is never reached. Preserve the already matched first baseline release pose and make no further behavior change until the missing second-intent cause is identified.",
+  "runtimeQaClaim": false,
+  "naturalQaClaim": false,
+  "perceptualQaClaim": false,
+  "buildCount": 0,
+  "createdAt": "2026-09-23T09:16:00.000Z"
+}

@@ -1,0 +1,5 @@
+Command: pnpm build
+Exit code: NOT RUN.
+Build count: 0.
+Reason: The mandatory focused replay gate failed; no build is permitted for a rejected candidate.
+Current dist/index.html remains the pre-attempt build; no dist SHA is attributed to attempt-6.

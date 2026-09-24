@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "inputPolicy": "preplanned normal touch/mouse taps derived before the run from the authored visible route; no debug, fixture, state injection, or state-driven scheduling",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "tapScheduleMs": [
+    0,
+    1208,
+    2258,
+    3267,
+    4258,
+    5350,
+    6367,
+    6650,
+    6833,
+    7742,
+    8175,
+    9050,
+    10092,
+    11092,
+    12092,
+    13083,
+    14067,
+    15058,
+    16050,
+    17042,
+    17992,
+    18233,
+    18392,
+    19358,
+    19775,
+    19958,
+    23117,
+    24200,
+    25217,
+    25550
+  ],
+  "activeMs": 30000,
+  "terminalPolicy": "visible terminal copy first; read-only state cross-check after observation",
+  "stackCaptureWindowMs": [
+    7900,
+    9400
+  ],
+  "finishCaptureWindowMs": [
+    22500,
+    27000
+  ]
+}

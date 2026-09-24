@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "classification": "progression-and-test-entry",
+  "scope": "ordinary terminal transition and explicit bonus test control",
+  "reproduction": {
+    "steps": ["Complete an ordinary level", "Use the normal terminal tap", "Observe selected level"],
+    "expected": "The next unlocked level starts; the current level is not replayed.",
+    "reported": "The current level restarts instead of advancing."
+  },
+  "matrix": [
+    { "objectType": "ordinary terminal", "lifecycle": "won", "rendererPath": "main.ts perform(pointer flip)", "viewport": "desktop and mobile" },
+    { "objectType": "bonus test button", "lifecycle": "ordinary ready/won", "rendererPath": "DOM button -> main.ts -> game-core", "viewport": "desktop and mobile" }
+  ],
+  "acceptance": [
+    "A terminal normal tap advances to level N+1 when one exists.",
+    "Replay remains available through its dedicated button.",
+    "A visibly labeled test button enters the bonus course once without changing the real gameplay route.",
+    "Normal player actions remain the only route to the production bonus gate."
+  ],
+  "route": "formal-fixer",
+  "attempt": 1
+}

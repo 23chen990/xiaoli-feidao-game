@@ -1,0 +1,16 @@
+No errors detected in compressed data of build/TapBuild/game.zip.
+PASS root entry game.js
+PASS root entry game.json
+PASS root entry project.config.json
+{
+  "appid": "928932",
+  "projectname": "疯狂切割"
+}
+{
+  "deviceOrientation": "portrait",
+  "productVersion": "1.0.0",
+  "convertScriptVersion": "2.0.4-ts"
+}
+bytes=1206619
+b98066570390b384c3471d3cf7fff17d22e176fc23fdf542162cfe53d0b24e96  build/TapBuild/game.zip
+PASS bytes 1206619 < 20971520 (20MB)

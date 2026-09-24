@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "role": "QAAgent",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED",
+  "reportPaths": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-3/qa/reproduction-matrix.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-3/qa/qa-natural-journey-report.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-3/qa/perceptual-qa-report.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-3/qa/qa-report.json"
+  ],
+  "blockers": [
+    "L1-INPUT-390: 完整首个目标被高白色结构遮去大半，刀与目标不能同时清楚辨认。",
+    "L1-STACK-390: 本轮自然路线在危险前结束，未取得指定 stack-a/b 同一对象的散开、掉落、落地像素链。",
+    "L1-REWARD-390: 本轮虽观察到一次切割分数变化，但未取得足够清晰的局部奖励附着与分离连续画面。",
+    "L1-FINISH-390: 固定节奏在危险处失败，未取得本构建的终点结算与重玩像素证据。",
+    "L1-INPUT-1100: 完整首个目标被高白色结构遮去大半，刀与目标不能同时清楚辨认。",
+    "L1-STACK-1100: 本轮自然路线在前段结束，未取得指定 stack-a/b 同一对象的散开、掉落、落地像素链。",
+    "L1-REWARD-1100: 本轮没有足够清晰的局部奖励附着与分离连续画面。",
+    "L1-FINISH-1100: 固定节奏在前段失败，未取得本构建的终点结算与重玩像素证据。"
+  ],
+  "sourceModified": false,
+  "summary": "第3次构建的独立正常输入复核在两个视口均观察到可归因失败；首个目标被高白色结构遮挡，堆叠/奖励/终点自然画面未覆盖。保留所有证据缺口，不能宣称通过。"
+}

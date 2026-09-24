@@ -1,0 +1,18 @@
+2026-08-30T15:35:41Z independent Chromium review
+buildSha256=ac856b2dc221c666ec8ab25874a9cfd43df8b949a7b382b291f7229fbba092ac
+naturalDesktopAttempts=3 naturalMobileAttempts=1 naturalFirstCut=true understoodWithin10Seconds=true
+recoilInitial=handle bounce normalX=-1 vx=-201.6
+recoilNoInputAt2.8s=status:anchored anchorId:recoil-wall failReason:null
+recoilRealClickAt0.12s=vx:8.4 vy:-335 events:flip,cut:rune-7
+movingHorizontalPhase0=supportVx:163.683 playerLaunchVx:305.319
+movingHorizontalPhase900ms=supportVx:-145.698 playerLaunchVx:-7.281
+movingVerticalCarryOffset=(0,-52) launchVy=-273.423 supportVy=-154.395
+spikeRestart=status:ready score:0 cuts:0 fragments:0
+fallRestart=status:ready score:0 cuts:0 fragments:0
+finishMultiply=12x4=48 finishDivide=12/3=4 operationEventCount=1 each
+bonusSeeds=31:false,32:true,33:false,34:true,35:false,36:true; bonus failure returns to ordinary ready
+runtime30/60/120/longFrame=eventOrder:[launch,cut:tower-middle], outcome:airborne, middleCut:true, fragments:2, topFalling:true
+runtimeStall=wallElapsed:1.558 worldDelta:2.083 anchorPreserved:true
+mobileLayout=390x844 scrollWidth:390 scrollHeight:844 scrollX:0 scrollY:0
+consoleErrors=0 pageErrors=0 (Phaser banner and Chromium WebGL readback performance warnings ignored as non-errors)
+preview4186Closed=true

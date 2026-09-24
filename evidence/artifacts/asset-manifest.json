@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "AssetManifest",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "sourceResearch": "artifacts/open-source-cuttable-research-v1.json",
+  "sourceLicense": "CC0-1.0",
+  "assets": [
+    {"id":"food-apple","path":"public/assets/kenney-food-kit/apple.glb","sha256":"2a80ab65d5bc2cb4f2bca1e8176cbb591849a288596d4b2e76e411338761a526","status":"generated","theme":"fruit"},
+    {"id":"food-banana","path":"public/assets/kenney-food-kit/banana.glb","sha256":"67c90aa8bef35b8886d6b67c0c4c3249556e28176c893d451b95cd83a156908c","status":"generated","theme":"fruit"},
+    {"id":"food-coconut","path":"public/assets/kenney-food-kit/coconut.glb","sha256":"83b11a829c26c75068db48f4f89dd2e7143a076d00d181630975c73d5608c6c5","status":"generated","theme":"fruit"},
+    {"id":"food-cake","path":"public/assets/kenney-food-kit/cake.glb","sha256":"9594766d701142c4f5ab1d36cc40957667cd966281757e887de4d40557e63e09","status":"generated","theme":"dessert"},
+    {"id":"food-bread","path":"public/assets/kenney-food-kit/bread.glb","sha256":"9bd9db117db654cf1157439d1257a8fc5915ea77a94fb876a5056522b9e49f46","status":"generated","theme":"savory"},
+    {"id":"food-cheese","path":"public/assets/kenney-food-kit/cheese.glb","sha256":"092c9326a27fc51edfaa0353c411875993ac109ee5e8923b681cc39fbb6312d1","status":"generated","theme":"dessert"}
+  ],
+  "licenseEvidence": {"path":"public/assets/kenney-food-kit/License.txt","sha256":"32a081c2035dd4db47d850c83244da048165f0e53d71c076b76c1afc0590bc7f"},
+  "runtimePolicy": "GLB files are bundled provenance assets for isolated web-lite QA; gameplay renderer uses original procedural cut geometry tinted and shaped per foodStyle.",
+  "status": "APPROVED_AND_COPIED"
+}

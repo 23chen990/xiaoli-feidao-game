@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRetest",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "sourceIssue": "gameplay-triage-spike-no-player-impact-v1",
+  "route": "formal-fixer",
+  "status": "TARGETED_PASS_FULL_SWEEP_BLOCKED",
+  "branch": {
+    "level": 4,
+    "object": "l4-gap-risk",
+    "rendererPath": "SliceSimulation.spikes -> ThreeWorldRenderer.syncSpikes -> spike group mesh",
+    "viewports": ["1180x720", "390x844"]
+  },
+  "naturalInput": "fresh browser, visible level picker, mouse/touch only; safe and risk height policies are timing choices rather than state injection",
+  "evidence": {
+    "artifact": "qa-spike-impact-v1/report.json",
+    "verdict": "PASS_SAFE_AVOID_AND_RISK_CONTACT",
+    "safePolicy": { "desktop": "won", "mobile": "won" },
+    "riskPolicy": { "desktop": "spike contact observed", "mobile": "spike contact observed" },
+    "structural": { "spikeCenterY": 565, "completionPathY": 435, "verticalDistance": 130, "reachableWindow": [1160, 1440] }
+  },
+  "acceptance": {
+    "causalFailurePressure": true,
+    "safeChoiceRecovery": true,
+    "playerVisibleScreenshots": ["qa-spike-impact-v1/desktop-level-04-attempt-1-failed.png", "qa-spike-impact-v1/mobile-level-04-attempt-1-failed.png"],
+    "fullLevelPack": false
+  },
+  "remainingBlocker": "qa-level-pack-v1 currently fails Level 04 natural retries before a win (three spike failures and one fall); this preserves the release BLOCKED decision until the full sweep is repeatable.",
+  "claimBoundary": "web-lite evidence only; no WeChat, Douyin, or TapTap publishability claim"
+}

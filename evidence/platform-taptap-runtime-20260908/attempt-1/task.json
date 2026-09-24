@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-task",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "taptap-runtime-compat-20260908",
+  "attempt": 1,
+  "targetGame": "mobile-slice-adaptation-20260830（TapTap 名称：疯狂切割）",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "platformWorkspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame",
+  "outputDirectory": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-runtime-20260908/attempt-1",
+  "triagePath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-runtime-20260908/triage.json",
+  "researchPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/open-source-research-taptap-cocos-v1.json",
+  "officialPlugin": {
+    "version": "1.2.2",
+    "sourceUrl": "https://app-res.tapimg.com/file/2026-04-14/67e7d94f5e586596dab061816d1c509d.zip",
+    "sha256": "6b8a9a3cc62b6c54cefab397097babb771d9d99f90442cddff06310a4c9ed73f"
+  },
+  "tapTapGame": {
+    "name": "疯狂切割",
+    "appId": "928932",
+    "identityEvidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/reference-evidence/verified/codex-clipboard-ac1cdf15-9886-4559-b83c-a0cf1566078c-954468d979ce.png"
+  },
+  "instructions": [
+    "你是本轮正式 FixerAgent；你不孤立于仓库，必须保留其他已有改动。只拥有目标 workspace/prototype-a/platforms/taptap-minigame 及本 attempt-1 证据目录，不得修改其他游戏、共享工厂代码、web-lite 或其他平台。",
+    "先阅读 triage.json 与 reproduction-matrix-taptap-qa-20260908.json，再检查用户日志指出的 GameBootstrap 动态 MeshRenderer/场景创建路径、Cocos 3.8.8 配置和 TapTap 官方适配器。不要把通过的 Huawei/Redmi/OnePlus 或 iOS sibling 当作 OPPO/vivo 覆盖。",
+    "严格测试先行：先为 OPPO Activity 分支、vivo 场景创建异常和首帧非黑白屏可验证条件写失败测试，保存 RED；再实现最小因果修复并保存 GREEN。不得用日志字符串、测试 API 或黑屏截图绕过真实渲染。",
+    "保持原有触摸核心旅程和原创程序化内容；只修与两个设备失败分支直接相关的运行时/适配配置。重新使用并校验官方 taptap-minigame-tools 1.2.2，不添加无关生产依赖。",
+    "本 attempt 最多执行一次 Cocos Creator 3.8.8 构建；成功后检查 game.zip 根文件、AppID 928932、portrait、版本和大小，写入结构化 FixerResult。没有真机时必须明确保留设备证据缺口。"
+  ],
+  "acceptanceChecks": [
+    "OPPO 分支的 activity/package launch contract test 通过，且没有通过改名或伪造测试输出绕过。",
+    "vivo 分支的 Cocos scene construction contract test 通过；生成的运行时路径对 unsupported/null renderer state 有可见、可诊断的处理，而不是未捕获异常后静默黑屏。",
+    "目标平台规则测试、lint、typecheck 通过；默认触摸旅程的启动、切割/反弹、失败/结算、重玩行为不回归。",
+    "如构建成功，官方 ZIP 重新哈希并记录在 FixerResult；不得宣称已通过 TapTap 后台或物理设备测试。",
+    "FixerResult 必须列出 formal-fixer 路由、为何选择、刻意省略的上下文、修改文件、测试、构建状态和剩余证据缺口。"
+  ],
+  "contextIntentionallyOmitted": [
+    "其他工厂 run 和生成游戏",
+    "旧的 taptap-filing-package-20260908 尝试细节（仅复用已审核插件和包身份）",
+    "web-lite、微信/抖音平台实现和与本轮两个 Android 分支无关的 QA 证据",
+    "广告、内购、云存档、排行榜以及第三方游戏表达/资产/数值"
+  ]
+}

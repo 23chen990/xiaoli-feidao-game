@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "gameplay-triage",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "reportedAt": "2026-09-06T00:00:00+08:00",
+  "route": "formal-fixer",
+  "classification": "core_experience/reference_level_topology_and_expression_gap",
+  "requestInterpretation": {
+    "userRequest": "Use the supplied screenshot to make the target level feel like the reference level.",
+    "documentInstructions": false,
+    "evidencePolicy": "The screenshot is observational evidence only; do not copy third-party assets, names, UI, exact geometry, or tuning values.",
+    "allowedAdaptation": "Recreate transferable gameplay relationships with original food-themed geometry, colors, labels, and authored spacing."
+  },
+  "evidence": [
+    {
+      "path": "reference-evidence/incoming/codex-clipboard-36b515d4-bdb6-4494-9731-3358edb479ba-c0598bf7e993.png",
+      "sha256": "c0598bf7e99357e4db386617a8ab60edac8d664bc305daabb1f2acfa87632a6f",
+      "identityStatus": "PENDING",
+      "usableAs": ["visual_topology", "pressure_signal", "finish_choice_observation"]
+    },
+    {
+      "path": "artifacts/human-feedback-technical-audit-v8.json",
+      "usableAs": ["validated_root_cause", "prior_acceptance_contract"]
+    },
+    {
+      "path": "artifacts/human-qa-v8.json",
+      "usableAs": ["validated_issue_set", "formal_route_reason"]
+    }
+  ],
+  "observations": [
+    "A tall segmented cuttable stack dominates the readable play space.",
+    "The player blade approaches from the lower-left and must choose cut height while fragments fall.",
+    "A distinct side platform carries a bright reward object and a separate terminal wall offers outcome choice.",
+    "The environment uses high-contrast cool background space to keep the obstacle silhouette legible."
+  ],
+  "inferences": [
+    "The important transferable contract is a vertical cut-chain followed by a visible recovery/choice beat, not the screenshot's exact art or coordinates.",
+    "The current target must keep generic hard-surface reflection and natural route readability; a dedicated rebound wall would be a regression."
+  ],
+  "scope": {
+    "include": ["level topology and beat order", "cuttable stacked object readability", "reward/finish choice visibility", "desktop and 390x844 natural reachability"],
+    "exclude": ["third-party asset tracing", "copying names or UI", "audio", "platform packaging", "shared factory code"]
+  },
+  "acceptance": [
+    "The default browser journey presents an original vertical cut-chain with a visible recovery and terminal choice.",
+    "A natural player can reach the cut-chain, make at least one readable cut, recover, settle at a finish, and replay.",
+    "The exact screenshot-reported branch has natural player-visible evidence on desktop and 390x844 mobile.",
+    "No recoil-wall identity, pink rebound arrow, or copied third-party expression is introduced."
+  ],
+  "contextOmitted": ["unrelated prototype workspaces", "shared factory refactors", "audio research", "historical QA claims not tied to this screenshot"]
+}

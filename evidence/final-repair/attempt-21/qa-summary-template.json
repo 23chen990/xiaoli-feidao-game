@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "independent-qa-result",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED",
+  "fixReceiptSha256": "d980c1dbb5d1a565add4a9b71852e9b5d530304640b63faac3cea216ed393efa",
+  "expectedBuildSha256": "599b4c3cb8c6b345b7e18b3a4e06cae33663c0432b918d3115ee78df3bf64118",
+  "sourceBuildLock": {
+    "portraitUnchanged": true,
+    "desktopUnchanged": true,
+    "buildUnchanged": true
+  },
+  "runs": [
+    {
+      "viewport": "portrait-390x844",
+      "schedule": "550ms",
+      "recordingPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/recording.json",
+      "recordingSha256": "f373be3758590f28a3c28fbc1ed78a9fb922743435b5983506934098ff6ff7bb",
+      "terminal": {
+        "outcome": "failed",
+        "exactCopy": "跌出路线\\n分数 1\\n再次轻触 · 重新开始",
+        "stateStatus": "failed",
+        "visiblePixels": true
+      },
+      "replay": { "clickedVisibleControl": true, "returnedReady": true },
+      "maxPlayerX": 553.0500000000027,
+      "consoleErrorCount": 19
+    },
+    {
+      "viewport": "desktop-1100x720",
+      "schedule": "550ms",
+      "recordingPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/recording.json",
+      "recordingSha256": "41dbe93c13f2a915b16f9cd19e8918a086c6fcd05f37d89a798908d0c24e51f7",
+      "terminal": {
+        "outcome": "failed",
+        "exactCopy": "跌出路线\\n分数 1\\n再次轻触 · 重新开始",
+        "stateStatus": "failed",
+        "visiblePixels": true
+      },
+      "replay": { "clickedVisibleControl": true, "returnedReady": true },
+      "maxPlayerX": 514.950000000001,
+      "consoleErrorCount": 22
+    },
+    {
+      "viewport": "portrait-390x844",
+      "schedule": "950ms",
+      "recordingPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-950ms/recording.json",
+      "recordingSha256": "c58b9e37280a0faa549ed9c35878fc2319f1752f3f3bb1c7b69955d57410acaa",
+      "terminal": {
+        "outcome": "failed",
+        "exactCopy": "碰到危险物\\n分数 1\\n再次轻触 · 重新开始",
+        "stateStatus": "failed",
+        "visiblePixels": true
+      },
+      "replay": { "clickedVisibleControl": true, "returnedReady": true },
+      "maxPlayerX": 1484.4166666666522,
+      "consoleErrorCount": 19
+    },
+    {
+      "viewport": "desktop-1100x720",
+      "schedule": "static-spaced",
+      "recordingPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/recording.json",
+      "recordingSha256": "18734f878ef1f4c048f4071326e31b2dad5ee022fa14a8baf6004bd5c20f7ddd",
+      "terminal": {
+        "outcome": "failed",
+        "exactCopy": "跌出路线\\n分数 12\\n再次轻触 · 重新开始",
+        "stateStatus": "failed",
+        "visiblePixels": true
+      },
+      "replay": { "clickedVisibleControl": true, "returnedReady": true },
+      "maxPlayerX": 1426.0941862703844,
+      "consoleErrorCount": 22
+    },
+    {
+      "viewport": "portrait-390x844",
+      "schedule": "static-spaced",
+      "recordingPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/recording.json",
+      "recordingSha256": "5e4d6457955e0596707116e3c9d325880506f41c24aa5bfd37928ae5cb242717",
+      "terminal": {
+        "outcome": "failed",
+        "exactCopy": "跌出路线\\n分数 5\\n再次轻触 · 重新开始",
+        "stateStatus": "failed",
+        "visiblePixels": true
+      },
+      "replay": { "clickedVisibleControl": true, "returnedReady": true },
+      "maxPlayerX": 1242.6393030528507,
+      "consoleErrorCount": 19
+    }
+  ],
+  "exactBranch": {
+    "portrait": {
+      "status": "BLOCKED",
+      "observedRunwaySharpAnchors": [
+        { "playerX": 305.2000000000005, "contactX": 315.47808960723034, "normalY": -1, "contactPart": "tip" },
+        { "playerX": 332.7000000000005, "contactX": 368.0817538698364, "normalY": -1, "contactPart": "tip" }
+      ],
+      "laterMaxPlayerX": 1242.6393030528507,
+      "stackObserved": false
+    },
+    "desktop": {
+      "status": "BLOCKED",
+      "observedRunwaySharpAnchors": [
+        { "playerX": 305.2000000000005, "contactX": 315.47808960723034, "normalY": -1, "contactPart": "tip" },
+        { "playerX": 332.7000000000005, "contactX": 368.0817538698364, "normalY": -1, "contactPart": "tip" }
+      ],
+      "laterMaxPlayerX": 1426.0941862703844,
+      "stackObserved": true,
+      "stackEvidence": [
+        "Desktop static-spaced recording contains same-object cut events for level1-ladder-stack-a and level1-rainbow-step-a after the runway anchors, but it later fails before terminal settlement."
+      ]
+    }
+  },
+  "perceptualGate": {
+    "status": "BLOCKED",
+    "inspectedFrames": [
+      "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/frames/journey-03s.png",
+      "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/frames/terminal.png",
+      "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/frames/journey-03s.png",
+      "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/frames/terminal.png",
+      "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/frames/replay.png"
+    ],
+    "blockers": [
+      "The exact early runway top-face branch still visibly anchors at the reproduced contact range in both viewports.",
+      "Natural sessions emit repeated Three.js texture/update and GPU-stall console errors; the perceptual gate is not clean.",
+      "Terminal/replay are visibly proven for failure recovery, but not for successful settlement or a complete Level1 journey."
+    ]
+  },
+  "blockers": [
+    "The normal-aware guard only handles relative velocity into the top face; the observed natural contact approaches from below with normalY=-1 and still anchors.",
+    "Portrait and desktop exact natural runs still record level1-runway-main sharp tip anchors near player x=305.2/332.7.",
+    "Neither viewport completes startup -> Level1 stack -> settlement; portrait does not observe the stack, desktop fails after a partial stack branch.",
+    "The perceptual gate is BLOCKED by exact-branch anchoring and runtime console errors, despite visible failure terminal and replay controls."
+  ],
+  "evidence": [
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/recording.json",
+      "sha256": "5e4d6457955e0596707116e3c9d325880506f41c24aa5bfd37928ae5cb242717",
+      "role": "natural-reproduction"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/recording.json",
+      "sha256": "18734f878ef1f4c048f4071326e31b2dad5ee022fa14a8baf6004bd5c20f7ddd",
+      "role": "natural-reproduction"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/frames/terminal.png",
+      "sha256": "804af48973f9d7621b81f55c26fabd324f782e2f5c54129fb483331e76f91e5e",
+      "role": "natural-reproduction"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/frames/terminal.png",
+      "sha256": "a3528ceb64ebebd09d6f5e48873c21b3798938d388b0634d03a10b49f4673453",
+      "role": "natural-reproduction"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/portrait-390x844/static-spaced/frames/replay.png",
+      "sha256": "6beb4cb9fc312998ceb10ff9f5788f4efcd50cd2a1cec2983047be33ffa20820",
+      "role": "natural-reproduction"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-natural/desktop-1100x720/static-spaced/frames/replay.png",
+      "sha256": "1ad0c6ad96bac0da528ac5c5e63efc5200e677c407aa18165a53813fc807bd2b",
+      "role": "natural-reproduction"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist/index.html",
+      "sha256": "599b4c3cb8c6b345b7e18b3a4e06cae33663c0432b918d3115ee78df3bf64118",
+      "role": "current-build"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/fix-result.json",
+      "sha256": "d980c1dbb5d1a565add4a9b71852e9b5d530304640b63faac3cea216ed393efa",
+      "role": "prior-fix-receipt"
+    }
+  ],
+  "completedAt": "2026-09-23T06:20:00.000Z"
+}

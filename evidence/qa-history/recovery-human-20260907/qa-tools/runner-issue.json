@@ -1,0 +1,6 @@
+{
+  "id": "QA-CAPTURE-FALL-LABEL",
+  "severity": "error",
+  "message": "当前自然录屏的真实失败面板是“跌出路线\\n分数4...”，policy classifyTerminal未覆盖“跌出路线”，导致真实failed状态被采集器漏掉并等到超时。修正QA工具标签匹配并添加测试，再执行剩余已允许策略；保留先前轨迹，不能把采集器漏判算为游戏不能终结。denseMaxGapMs约212ms，奖励严格时序仍不能单靠稀疏图片关闭；可从已有video提取真实帧补证。只改QA工具，不改游戏、不增修复次数。",
+  "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/portrait-1/recording.json observations[-1].terminalCopy is 跌出路线, state.status=failed, terminalVisible=true, terminal=null; /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/qa-tools/policy.mjs excludes that visible label."
+}

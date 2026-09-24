@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "ReviewTriageExactMatrix",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "EXACT_RUNTIME_CELLS_PASS_RELEASE_BLOCKED",
+  "attempt": 2,
+  "cells": [
+    {
+      "issueId": "MOBILE-CAMERA-PROJECTION-001",
+      "objectType": "knife projection",
+      "lifecycleStateBranch": "fresh reset -> ready -> replayed ready",
+      "rendererPresentationPath": ["src/three-world-renderer.ts", "src/three-presentation.ts"],
+      "deviceViewport": "390x844 native touch",
+      "observed": "Final attempt passed fresh natural desktop/mobile browser smoke; projection remained contained through startup and replay.",
+      "acceptance": "knifeProjection is wholly inside viewport after fresh startup and after replay, with no fixture/state injection"
+    },
+    {
+      "issueId": "CORE-CUT-ROUTE-002",
+      "objectType": "cuttable support / route opening",
+      "lifecycleStateBranch": "intact -> sharp contact -> cut -> post-cut route -> terminal",
+      "rendererPresentationPath": ["src/game-core.ts", "src/three-world-renderer.ts", "tests/browser-smoke.ts"],
+      "deviceViewport": ["1180x720 real mouse", "390x844 native touch"],
+      "observed": "Final attempt passed with routeOpeningCount=1 on both desktop and mobile natural runs; evidence is now cumulative per active run while transient meshes still clean up.",
+      "acceptance": "A natural cut visibly opens the route and the evidence records that event before terminal cleanup; deterministic level-pack evidence cannot substitute."
+    }
+  ],
+  "rootCauseHypotheses": {
+    "camera": "Initial render uses delta=0 and may begin from a stale target; portrait lead is too far right for the replayed ready branch.",
+    "routeEvidence": "routeOpeningCount reports only currently-live opening meshes, so a valid transient opening can be deleted before the terminal snapshot; natural route timing may also miss the authored cut branch."
+  },
+  "nextChecks": ["fresh browser natural desktop", "fresh browser native-touch mobile", "terminal evidence after exact cut event", "perceptual review of opening and replay"],
+  "claimBoundary": "No release or platform pass until both cells pass with player-visible evidence."
+}

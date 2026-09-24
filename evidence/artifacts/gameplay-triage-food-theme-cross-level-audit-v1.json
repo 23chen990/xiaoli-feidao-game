@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "REPAIRED_PENDING_QA",
+  "classification": "cross-level-visual-theme-expression-mismatch",
+  "scope": "Levels 01-12; sigil/cuttable intact, cut, falling, landed branches; desktop and 390x844 mobile",
+  "auditFinding": "The same forced-crystal branch affected non-dessert sigils: banana/roast/skewer and dumpling/jade-bun styles did not reach their authored log/crate presentation.",
+  "reproductionMatrix": [
+    {"themeFamily":"fruit","styles":["apple","banana","coconut"],"expectedRenderer":"crystal/log/crate","status":"patched"},
+    {"themeFamily":"dessert","styles":["cake","pastry","cheesecake"],"expectedRenderer":"dessert slice","status":"patched"},
+    {"themeFamily":"savory","styles":["dumpling","roast","skewer"],"expectedRenderer":"crate/log/log","status":"patched"},
+    {"themeFamily":"mystic","styles":["moon-fruit","jade-bun","spirit-orb"],"expectedRenderer":"crystal/crate/crystal","status":"patched"}
+  ],
+  "filesChanged":["src/three-presentation.ts","tests/three-presentation.test.ts","src/three-cut-visuals.ts","tests/food-theme.test.ts"],
+  "acceptanceCriteria":["Every authored style reaches a non-default renderer silhouette in intact and cut lifecycle states.","No cross-family style is forced through crystal solely because object kind is sigil.","All 135 tests, typecheck, lint and build pass.","Independent natural QA must still capture each family on desktop and mobile before product gate can turn green."],
+  "route":"formal-fixer"
+}

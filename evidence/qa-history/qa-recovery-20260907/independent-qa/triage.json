@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "items": [
+    {
+      "id": "L1-INPUT-390",
+      "classification": "player-visible-acceptance-failure",
+      "scope": [
+        "Level 1",
+        "blade + first cuttable",
+        "390x844"
+      ],
+      "reproduction": "默认 index.html，新浏览器上下文；固定间隔普通输入。首个承托台面在开场可见，rune-1 初始 intact 未切状态已由只读状态确认，但台面上没有可辨的完整目标；首次输入后才出现带贴图碎片。分支为 sigil/intact，不可用后续 block 可见或 cut 碎片替代。",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-trace.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-startup.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-tap-01.png"
+      ],
+      "acceptance": "点击引起可见的起跳/翻转；碰到可切物时发生切割；刀、首个目标与承托面同时可辨；引导不遮住目标",
+      "rootCauseStatus": "NOT_ACCEPTED"
+    },
+    {
+      "id": "L1-GROUND-390",
+      "classification": "player-visible-acceptance-failure",
+      "scope": [
+        "Level 1",
+        "visible tabletop base",
+        "390x844"
+      ],
+      "reproduction": "默认 index.html，新浏览器上下文；固定间隔普通输入。开场 opening-table-a 为薄浮板，底部未接地；white-landing/runway 的厚基座不能关闭这个不同 ID 分支。后续部分高台有柱体，但截图没有明确接触阴影。",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-trace.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-startup.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-tap-01.png"
+      ],
+      "acceptance": "可见台面具有厚度、底部接到地面；物品底部贴合可见承托；同一物体的可见顶面与其承托/接触逻辑一致；不能用看不见的支撑解释悬空",
+      "rootCauseStatus": "NOT_ACCEPTED"
+    },
+    {
+      "id": "L1-FINISH-390",
+      "classification": "player-visible-acceptance-failure",
+      "scope": [
+        "Level 1",
+        "finish outcome lanes + settlement + replay",
+        "390x844"
+      ],
+      "reproduction": "默认 index.html，新浏览器上下文；固定间隔普通输入。终点墙上方结果带被视口裁切，倍率只显示在右上极小图例，没有清楚绑定到墙的对应结果带。桌面已自然出现关卡完成 ×1 分数23并重玩；手机第4次采用已修正采集器，第4次在x≈1484自然撞尖刺失败，已确认真实失败面板后才重玩；未到终点，30秒等待结算条件未触发。手机完整赢结算仍缺证，不等同于游戏无法结算。",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-trace.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-3-tap-25.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-4-trace.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-4-end.png"
+      ],
+      "acceptance": "终点结果区在选择前可见；接触结果先呈现，再结算；重玩恢复可操作首关；结果区处于场景中并与刀的接触一致；覆盖层不提前遮住选择",
+      "rootCauseStatus": "NOT_ACCEPTED"
+    },
+    {
+      "id": "L1-INPUT-1100",
+      "classification": "player-visible-acceptance-failure",
+      "scope": [
+        "Level 1",
+        "blade + first cuttable",
+        "1100x720"
+      ],
+      "reproduction": "默认 index.html，新浏览器上下文；固定间隔普通输入。首个承托台面在开场可见，rune-1 初始 intact 未切状态已由只读状态确认，但台面上没有可辨的完整目标；首次输入后才出现带贴图碎片。分支为 sigil/intact，不可用后续 block 可见或 cut 碎片替代。",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-trace.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-startup.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-tap-01.png"
+      ],
+      "acceptance": "点击引起可见的起跳/翻转；碰到可切物时发生切割；刀、首个目标与承托面同时可辨；引导不遮住目标",
+      "rootCauseStatus": "NOT_ACCEPTED"
+    },
+    {
+      "id": "L1-GROUND-1100",
+      "classification": "player-visible-acceptance-failure",
+      "scope": [
+        "Level 1",
+        "visible tabletop base",
+        "1100x720"
+      ],
+      "reproduction": "默认 index.html，新浏览器上下文；固定间隔普通输入。开场 opening-table-a 为薄浮板，底部未接地；white-landing/runway 的厚基座不能关闭这个不同 ID 分支。后续部分高台有柱体，但截图没有明确接触阴影。",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-trace.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-startup.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-tap-01.png"
+      ],
+      "acceptance": "可见台面具有厚度、底部接到地面；物品底部贴合可见承托；同一物体的可见顶面与其承托/接触逻辑一致；不能用看不见的支撑解释悬空",
+      "rootCauseStatus": "NOT_ACCEPTED"
+    },
+    {
+      "id": "L1-FINISH-1100",
+      "classification": "player-visible-acceptance-failure",
+      "scope": [
+        "Level 1",
+        "finish outcome lanes + settlement + replay",
+        "1100x720"
+      ],
+      "reproduction": "默认 index.html，新浏览器上下文；固定间隔普通输入。终点墙上方结果带被视口裁切，倍率只显示在右上极小图例，没有清楚绑定到墙的对应结果带。桌面已自然出现关卡完成 ×1 分数23并重玩；手机第4次采用已修正采集器，第4次在x≈1484自然撞尖刺失败，已确认真实失败面板后才重玩；未到终点，30秒等待结算条件未触发。手机完整赢结算仍缺证，不等同于游戏无法结算。",
+      "evidence": [
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-trace.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-terminal.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/desktop-1-tap-16.png",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-4-trace.json",
+        "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-recovery-20260907/independent-qa/portrait-4-end.png"
+      ],
+      "acceptance": "终点结果区在选择前可见；接触结果先呈现，再结算；重玩恢复可操作首关；结果区处于场景中并与刀的接触一致；覆盖层不提前遮住选择",
+      "rootCauseStatus": "NOT_ACCEPTED"
+    }
+  ],
+  "contextOmitted": [
+    "其他关卡和游戏",
+    "PENDING截图的像素",
+    "平台包装",
+    "历史通过结论",
+    "未执行修复和重建；未推定剩余修复次数"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "role": "QAAgent",
+  "skill": ".agents/skills/game-playtest/SKILL.md",
+  "sourceModified": false,
+  "rebuilds": 0,
+  "route": "independent-qa-only",
+  "sourceUnchanged": true,
+  "defaultEntrypoints": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/index.html",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/main.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-presentation.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-world-renderer.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-cut-visuals.ts"
+  ],
+  "attempts": {
+    "portrait": 4,
+    "desktop": 1,
+    "portraitCorrection": 1
+  },
+  "knownRunnerLimitations": [
+    "portrait-1 premature replay during airborne; never counted terminal",
+    "portrait-3 premature replay during reward reveal preserved; recorder detection corrected in portrait-4, which naturally failed on spike before reaching finish",
+    "Screenshots may add wall time to fixed minimum cadence; no exact cadence or human adaptability claim",
+    "Fresh context startup, normal input only; getState observation only; no isolated deterministic state injection track because task forbids it"
+  ],
+  "pixelInspection": [
+    "portrait-1-startup",
+    "portrait-2-tap-01",
+    "portrait-2-tap-07",
+    "portrait-2-terminal",
+    "portrait-3-tap-10",
+    "portrait-3-tap-25",
+    "portrait-3-terminal",
+    "portrait-3-replay",
+    "portrait-4-tap-13",
+    "portrait-4-terminal",
+    "portrait-4-replay",
+    "desktop-1-startup",
+    "desktop-1-tap-01",
+    "desktop-1-tap-04",
+    "desktop-1-tap-07",
+    "desktop-1-tap-10",
+    "desktop-1-tap-16",
+    "desktop-1-terminal",
+    "verified recording Quick Look thumbnail"
+  ],
+  "remainingEvidenceGaps": [
+    "L1-INPUT-390/1100：首个 intact 目标不可辨；切开碎片可见不能替代。",
+    "L1-GROUND-390/1100：开场浮薄台面分支未落地；厚 runway 通过不能关闭该分支。",
+    "L1-STACK-390/1100：精确重叠堆叠→受击→自然落地链未观察。",
+    "L1-REWARD-390/1100：局部奖励与累计同步严格时序证据不足。",
+    "L1-PRESSURE-390/1100：提前预警和空间可归因的自然决策证据不足。",
+    "L1-FINISH-390/1100：结果带裁切且倍率未清晰附着；手机完整赢结算未观察。"
+  ],
+  "cleanup": "all Chromium contexts and localhost servers closed in finally"
+}

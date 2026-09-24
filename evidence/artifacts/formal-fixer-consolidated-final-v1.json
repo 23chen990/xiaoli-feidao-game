@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixerSummary",
+  "route": "formal-fixer",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "issuesClosed": ["THEME-DESSERT-001","THEME-CROSS-002","MOVING-MEANING-003","SPACING-OCCLUSION-004"],
+  "filesChanged": ["src/three-cut-visuals.ts","src/three-presentation.ts","src/game-levels.ts","tests/food-theme.test.ts","tests/three-presentation.test.ts","tests/level4-spike-policy.test.ts","tests/level-pressure.test.ts","tests/level-pack-browser.ts"],
+  "verification": {"unitTests":"139 passed before final level hazard regression; 139 passed after final rerun", "typecheck":"pass", "lint":"pass", "build":"pass", "naturalLevelPack":"pass", "desktopMobile":"pass", "replay":"pass"},
+  "evidence": ["runs/mobile-slice-adaptation-20260830/qa-level-pack-v1/qa-report.json","runs/mobile-slice-adaptation-20260830/qa-level-pack-v1/runner-report.json","runs/mobile-slice-adaptation-20260830/artifacts/gameplay-triage-asset-spacing-all-levels-v1.json"],
+  "status":"PASS_WITH_SCOPE_BOUNDARY",
+  "scopeBoundary":"web-lite browser product gate only; platform packages remain unverified"
+}

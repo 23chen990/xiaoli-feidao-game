@@ -1,0 +1,41 @@
+import {readFileSync,writeFileSync,mkdirSync,existsSync,readdirSync,statSync} from 'node:fs';
+import {resolve,dirname} from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {createHash} from 'node:crypto';
+import {QaReportSchema} from '../../../../src/schemas/index.ts';
+import {NaturalFlowEvidenceSchema} from '../../../../src/schemas/natural-flow.ts';
+import {PerceptualQaReportSchema} from '../../../../src/schemas/product-experience.ts';
+import {MatrixSchema,ResultSchema} from '../../qa-recovery-20260907/recovery-schemas.ts';
+const tools=dirname(fileURLToPath(import.meta.url)),run=resolve(tools,'../..');
+if(process.argv.includes('--help')){console.log('pnpm exec tsx generate-reports.ts ABSOLUTE_CAPTURE_DIRECTORY [REVIEWED_MATRIX_JSON]');process.exit(0);}
+const out=resolve(process.argv[2]||'');
+if(!out.startsWith(`${run}/recovery-human-20260907/`)||out.startsWith(tools))throw new Error('Requires isolated capture directory');
+const read=(path:string)=>JSON.parse(readFileSync(path,'utf8'));
+const recording=read(`${out}/recording.json`);
+if(recording.workspace!==`${run}/workspace/prototype-a`||recording.outputDirectory!==out)throw new Error('Recording identity mismatch');
+const reports=`${out}/${process.argv[3]?'reports-reviewed':'reports'}`;
+if(existsSync(reports))throw new Error('Reports are immutable; choose new review output via separate reviewed artifact rather than overwrite');
+mkdirSync(reports);
+const save=(name:string,value:unknown)=>{const path=`${reports}/${name}`;writeFileSync(path,JSON.stringify(value,null,2)+'\n');return path;};
+const matrix=process.argv[3]?MatrixSchema.parse(read(resolve(process.argv[3]))):MatrixSchema.parse(read(`${run}/qa-recovery-20260907/reproduction-matrix.json`));
+if(matrix.workspace!==recording.workspace||matrix.targetGame!==recording.targetGame)throw new Error('Review matrix identity mismatch');
+if(!process.argv[3])for(const c of matrix.cells){c.status='BLOCKED';c.notes='待独立像素审阅；采集成功或只读状态不构成感知通过。';c.evidence=[`${out}/recording.json`];}
+for(const c of matrix.cells)for(const evidence of c.evidence)if(!existsSync(evidence))throw new Error(`Missing review evidence: ${evidence}`);
+const matrixPath=save('reproduction-matrix.json',MatrixSchema.parse(matrix));
+const screenshotPaths=recording.frames.map((f:{path:string})=>f.path);
+const issues=recording.errors.filter((e:{kind:string})=>e.kind!=='warning');
+const core=recording.observations.some((o:any)=>(o.state?.cuts||0)>0);
+const replay=recording.replay?.state?.status==='ready';
+const naturalBlockers=[...(!core?['声明的切割核心动作未观察。']:[]),...(!recording.terminal?['终点未观察：不得把采集超时或采集器缺口表述为游戏无法结算。']:[]),...(!replay?['重玩恢复未观察。']:[]),...(!recording.unchanged?['构建或源码在采集期间变化，证据隔离失败。']:[]),...(issues.length?['浏览器或采集器存在错误，需分别分类。']:[])];
+const natural=NaturalFlowEvidenceSchema.parse({schemaVersion:1,startedFromReset:recording.startedFromFreshContext,actions:[`独立绝对时间开环普通输入；实际输入时间与截图时间见 ${out}/recording.json`,'未注入存储、状态、内部事件、debug URL或fixture；只读状态不决定点击时间'],transitions:[{name:'startup-to-core',changed:core,evidence:`${out}/recording.json`},{name:'visible-true-terminal',changed:!!recording.terminal,evidence:recording.terminal?`${out}/frames/terminal.png`:`${out}/recording.json`},{name:'replay-to-ready',changed:replay,evidence:replay?`${out}/frames/replay.png`:`${out}/recording.json`}],completion:recording.terminal?.outcome==='won'?'settlement':recording.terminal?.outcome==='failed'?'terminal':'none',replayObserved:replay,forbiddenOperations:[],screenshots:screenshotPaths,passed:naturalBlockers.length===0,blockers:naturalBlockers,runner:'independent-QAAgent-decoupled-recorder',buildHash:recording.expectedBuildSha256,runtime:'Chromium, existing dist/index.html, no rebuild',device:{...recording.viewport,label:`${recording.viewport.width}x${recording.viewport.height}`},observedAt:recording.observedAt});
+const naturalPath=save('qa-natural-journey-report.json',natural);
+const perceptual=PerceptualQaReportSchema.parse({schemaVersion:1,artifactType:'perceptual-qa-report',game:recording.targetGame,passed:matrix.cells.every(c=>c.status==='PASS'),checkedAt:new Date().toISOString(),features:matrix.cells.map(c=>({featureId:c.id,playerVisible:c.status==='PASS',naturalTriggerVerified:c.status==='PASS',screenshotEvidence:c.evidence.filter(p=>/\.(png|jpg|jpeg)$/u.test(p)),evidence:c.evidence.length?c.evidence:[`${out}/recording.json`],notes:[`${c.status}: ${c.notes}`]}))});
+const perceptualPath=save('perceptual-qa-report.json',perceptual);
+const engineering=QaReportSchema.parse({schemaVersion:1,passed:recording.unchanged&&issues.length===0&&core,checks:[{name:'exact build/source unchanged',passed:recording.unchanged,evidence:`${out}/source-after.json`},{name:'read-only engineering: normal input reaches cuts',passed:core,evidence:`${out}/recording.json`},{name:'browser and recorder no errors',passed:issues.length===0,evidence:`${out}/recording.json`}],issues:issues.map((e:any,i:number)=>({id:`CAPTURE-${i}`,severity:'error',message:`${e.kind}: ${e.text}`,evidence:`${out}/recording.json`})),screenshots:screenshotPaths,consoleLog:`${out}/recording.json`,testedAt:recording.observedAt});
+const qaPath=save('qa-report.json',engineering);
+const blockers=[...naturalBlockers,...matrix.cells.filter(c=>c.status!=='PASS').map(c=>`${c.id}: ${c.status} ${c.notes}`)];
+const result=ResultSchema.parse({schemaVersion:1,role:'QAAgent',targetGame:recording.targetGame,workspace:recording.workspace,status:blockers.length?'BLOCKED':'PASS',reportPaths:[matrixPath,naturalPath,perceptualPath,qaPath],blockers,sourceModified:false,summary:process.argv[3]?'已使用独立审阅矩阵生成分轨报告；机器状态不覆盖像素结论。':'采集报告已生成，所有未审阅感知项保持BLOCKED，待独立逐帧查看。'});
+save('result.json',result);
+function files(path:string):string[]{return readdirSync(path).sort().flatMap(n=>statSync(`${path}/${n}`).isDirectory()?files(`${path}/${n}`):[`${path}/${n}`]);}
+save('evidence-sha256.json',{targetGame:recording.targetGame,workspace:recording.workspace,expectedBuildSha256:recording.expectedBuildSha256,files:files(out).filter(p=>!p.endsWith('/reports/evidence-sha256.json')).map(path=>({path,sha256:createHash('sha256').update(readFileSync(path)).digest('hex')}))});
+console.log(JSON.stringify(result));

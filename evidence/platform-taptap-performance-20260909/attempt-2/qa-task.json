@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "platform-qa-task",
+  "role": "QAAgent",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "zipPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/build/TapBuild/game.zip",
+  "expectedSha256": "522aead7c8fe3aaa90602cd294d8629569e828f45922e9d48b9d5e08e184e455",
+  "fixerResultPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-performance-20260909/attempt-2/fix-result.json",
+  "checks": [
+    "Recompute SHA-256 and verify the ZIP is exactly 522aead7c8fe3aaa90602cd294d8629569e828f45922e9d48b9d5e08e184e455 before reading any result.",
+    "Read-only audit ZIP integrity, TapTap AppID 928932, game name 疯狂切割, portrait orientation, 390x844/policy4 settings, required runtime markers and official plugin metadata.",
+    "Read-only verify the retained static/dynamic Graphics separation and the new performance-contract no-optimization/unbound-report evidence; do not claim a deterministic source proxy is physical-device FPS.",
+    "Run existing platform tests and inspect the recorded lint, typecheck, one-build and package evidence without modifying source, tests or build output.",
+    "Assess cold start, visible first frame, ordinary touch/core loop, terminal settlement, replay and ten-minute stability evidence; distinguish exact-SHA device/backend observations from deterministic source proxies.",
+    "Report independent engineering, natural-journey, perceptual and filing-package verdicts, preserving sampler-attribution and exact-SHA evidence gaps for PHJ110H1, Huawei P30, Xiaomi 14 and OnePlus8_EEA."
+  ],
+  "prohibitedActions": [
+    "Do not modify the generated game workspace, tests, build outputs or source files.",
+    "Do not rebuild, repackage, upload to TapTap, or substitute another ZIP/SHA.",
+    "Do not invent a TapTap FPS threshold or treat 0.020356234 as confirmed physical FPS when the screenshot has no raw frame count, elapsed time or backend diagnostics.",
+    "Do not claim natural or perceptual device pass without exact-SHA raw traces and player-visible evidence."
+  ],
+  "outputPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-performance-20260909/attempt-2/qa-report.json"
+}

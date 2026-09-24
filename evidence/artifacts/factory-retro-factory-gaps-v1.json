@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "factory-retro-factory-gaps",
+  "runId": "mobile-slice-adaptation-20260830",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "ACTIONABLE",
+  "sourceBoundary": {
+    "sources": [
+      "钉钉录屏_2026-09-05 140550.mp4",
+      "钉钉录屏_2026-09-05 140908.mp4",
+      "钉钉录屏_2026-09-05 141313.mp4",
+      "factory-retro-reference-recordings-deep-v2.json",
+      "workspace/prototype-a/src/three-world-renderer.ts",
+      "workspace/prototype-a/src/three-presentation.ts"
+    ],
+    "recordingsAreEvidenceOnly": true,
+    "copyBoundary": "提取可迁移的行为结构，不复制第三方表达、素材、名称、UI或调参值"
+  },
+  "factoryGaps": [
+    {
+      "id": "FG-01",
+      "area": "experience-contract",
+      "severity": "P0",
+      "gap": "工厂锁定了玩法和对象，却没有把镜头、节拍、收益、冲击、恢复和终点演出作为同一条体验链锁定。",
+      "evidence": ["录屏复盘发现镜头段落变化、即时收益和终点分阶段演出未进入既有复盘清单"],
+      "factoryChange": "在 BLUEPRINT/EXPERIENCE_CONTRACT 增加 action-to-feedback 链：预告→承诺→接触→变化→收益→冲击→下一选择，并要求每个节点有默认运行入口。",
+      "acceptance": "产物能逐事件列出玩家动作、镜头状态、世界反馈、UI反馈、经济变化和恢复分支；缺一项不得锁定。"
+    },
+    {
+      "id": "FG-02",
+      "area": "camera-design",
+      "severity": "P0",
+      "gap": "镜头被当成渲染实现细节，而不是关卡设计和风险预告系统。",
+      "evidence": ["当前默认运行只跟随 targetX；参考录屏在 traversal、obstacle-reveal、finish 三类段落改变构图"],
+      "factoryChange": "新增 camera-beat contract，至少声明 traversal、reveal、commit、finish、failure/recovery 状态及进入/退出条件。",
+      "acceptance": "自然输入在桌面和390x844视口都能观察到至少三种镜头状态，并能读清刀、目标、危险和终点墙关系。"
+    },
+    {
+      "id": "FG-03",
+      "area": "economy-feedback",
+      "severity": "P0",
+      "gap": "工厂验证了数值变化，却没有验证收益是否在切割发生的同一时刻、同一因果链上被看见。",
+      "evidence": ["参考录屏有命中附近即时 +$X 与持久累计总额；当前默认路径只有分数和泛化 +value 证据"],
+      "factoryChange": "在体验契约和 QA 中加入 local-earnings 与 persistent-total 两层信号，并绑定到具体 hit event。",
+      "acceptance": "每次有效切割都能在自然运行中看到即时收益、累计总额更新和失败/重试后的正确结算；不得只用 fixture 注入证明。"
+    },
+    {
+      "id": "FG-04",
+      "area": "cut-feel",
+      "severity": "P1",
+      "gap": "工厂有单项特效或 POC 能力，但没有默认产品路径的完整切割反馈门。",
+      "evidence": ["轨迹、停顿、冲击、粒子等能力存在于兼容/POC路径，未形成默认链路的独立验收"],
+      "factoryChange": "将 cut-feel 拆为 anticipation、contact、sever、reward、recovery 五个可观察断言，QA 必须录自然触发证据。",
+      "acceptance": "玩家无需调试按钮即可触发完整反馈链；每个断言都有屏幕证据和运行日志锚点。"
+    },
+    {
+      "id": "FG-05",
+      "area": "level-rhythm",
+      "severity": "P1",
+      "gap": "工厂检查对象覆盖率，却没有检查对象如何组成压力—释放—再承诺的节拍。",
+      "evidence": ["参考段落呈现 traversal→isolated target→dense cluster→hazard gate→recovery→reward wall 的 beat grammar"],
+      "factoryChange": "新增 level-beat matrix，将每段的目标、危险、恢复面、镜头状态和预期情绪绑定。",
+      "acceptance": "每个关卡至少有一条可审计的节拍链；QA 能指出每个压力点的来源、信号、升级和恢复。"
+    },
+    {
+      "id": "FG-06",
+      "area": "failure-recovery",
+      "severity": "P1",
+      "gap": "失败被当成终局/重开状态，没有作为留存和学习的可读决策节点。",
+      "evidence": ["参考录屏存在继续机会与明确选择；当前默认路径仍有测试入口，恢复分支未形成同等产品证据"],
+      "factoryChange": "在 failure-pressure contract 中强制声明失败原因、继续成本/收益、拒绝后路径和再挑战入口。",
+      "acceptance": "自然失败后玩家能看懂原因、选择继续或重开，并在两种选择后都进入可验证的合法状态。"
+    },
+    {
+      "id": "FG-07",
+      "area": "presentation-and-art-direction",
+      "severity": "P1",
+      "gap": "工厂有资产清单和风格锁，但缺少可切目标、硬障碍、恢复面、地标之间的视觉语法契约。",
+      "evidence": ["参考录屏用轮廓、材质、阴影和地标区分行为；当前默认环境和盒体表达较平"],
+      "factoryChange": "在 art direction 与 asset manifest 中增加 gameplay-readable silhouette/material/landmark 字段，并要求跨视距检查。",
+      "acceptance": "目标与危险在移动端视口、不同距离和不同镜头状态下仍可仅凭视觉区分。"
+    },
+    {
+      "id": "FG-08",
+      "area": "qa-oracle",
+      "severity": "P0",
+      "gap": "QA 过度依赖状态、截图和单次通过，缺少对默认旅程的感知性断言。",
+      "evidence": ["前轮结构测试通过，但镜头模式、收益因果链、终点分阶段演出仍在复盘后才暴露"],
+      "factoryChange": "将 natural journey/perceptual gate 扩展为镜头可读性、即时收益、切割因果、失败恢复和终点演出五组必测项；POC/fixture 只能作为工程证据。",
+      "acceptance": "任何一组缺少自然输入和玩家可见证据都保持 BLOCKED，不得用 Builder/Fixer 自报关闭。"
+    },
+    {
+      "id": "FG-09",
+      "area": "default-path-hygiene",
+      "severity": "P1",
+      "gap": "默认运行链路和调试/验证链路边界不够干净，导致我们误以为功能存在就等于玩家体验存在。",
+      "evidence": ["默认路径仍暴露 Bonus test 等测试入口；兼容/POC能力容易被误当成默认产品证据"],
+      "factoryChange": "建立 runtime-wired manifest，逐项标记 default、compatibility、debug-only；发布前默认路径必须不含调试控件。",
+      "acceptance": "QA 从全新浏览器、正常输入启动，完成核心循环、终局、结算和 replay，不依赖测试控件。"
+    }
+  ],
+  "processChanges": [
+    "在研究复盘阶段输出 failure-pressure contract 与 camera/beat/economy 观察，而不是只输出市场总结。",
+    "在蓝图锁定前增加体验链和镜头节拍锁；没有这些字段不能进入 BUILD。",
+    "在 BUILD handoff 中列出 runtime-wired entrypoint，并区分默认、兼容、调试代码。",
+    "在 QA 中把即时收益、镜头状态、切割反馈和终点演出作为自然输入断言。",
+    "在 FIX 阶段按体验链定位问题，若涉及核心循环或多个模块，自动走 formal-fixer 而不是窄修。",
+    "把本次复盘作为 factory feedback lesson，后续同类游戏在首次录屏复盘时直接检查这些维度。"
+  ],
+  "nextRoute": {
+    "route": "formal-fixer-candidate",
+    "reason": "问题横跨镜头、核心反馈、经济、失败恢复、终点演出和 QA 预言机，已超出单文件直接修复范围。",
+    "intentionallyOmitted": ["第三方表达复刻", "无法从录屏证明的音频/震动/平台差异", "未验证的具体调参值"],
+    "firstThreeFactoryDeliverables": ["camera-beat-contract", "action-feedback-chain", "natural-journey-perceptual-gate"]
+  }
+}

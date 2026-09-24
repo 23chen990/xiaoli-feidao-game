@@ -1,0 +1,51 @@
+{
+  "freshContextPerViewport": true,
+  "viewport": {
+    "label": "desktop-1100x720",
+    "width": 1100,
+    "height": 720,
+    "input": "mouse"
+  },
+  "cadenceMs": 550,
+  "trial": "desktop-white-opening",
+  "activeWindowMs": 45000,
+  "terminalObservationAllowanceMs": 30000,
+  "plannedInputOffsetsMs": [
+    400,
+    6000,
+    7600,
+    9200,
+    10800,
+    12400,
+    14000,
+    15600,
+    17200,
+    18800,
+    20400,
+    22000,
+    23600,
+    25200,
+    26800,
+    28400,
+    30000,
+    31600,
+    33200,
+    34800,
+    36400,
+    38000,
+    39600,
+    41200,
+    42800,
+    44400
+  ],
+  "inputRule": "Fixed absolute schedule with one opening tap at 400ms, a no-input observation interval through 6000ms, then taps every 1600ms.",
+  "terminalRule": "Only exact visible completed/failed copy plus matching read-only status can stop inputs and qualify as terminal.",
+  "prohibited": [
+    "state injection",
+    "debug API",
+    "storage injection",
+    "fixture or scenario loading",
+    "adaptive state scheduling",
+    "internal event dispatch"
+  ]
+}

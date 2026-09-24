@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "scope": "shared factory plus run-bound diagnosis/evidence; generated game workspace unchanged",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "checkedAt": "2026-09-08T06:39:57.000Z",
+  "testFirstEvidence": [
+    "Reference behavior analysis tests initially failed because no analyzer or pipeline wiring existed.",
+    "Stage-contract and permission tests initially failed because REFERENCE_DEEP_RESEARCH did not require the five-dimension output and could not read run-local reference-evidence.",
+    "Evidence-purpose tests initially failed because platform/package material was not isolated from gameplay-reference inputs.",
+    "Replica-preview integration initially remained at REFERENCE_DEEP_RESEARCH because no agent converted bound sources into behavior checks.",
+    "Reference quality audit tests initially failed because historical runs had no machine-readable resume or migration disposition.",
+    "Evidence ingestion regression initially failed because its default workspace was prototype-a while canonical generated games build in workspace/game."
+  ],
+  "verification": {
+    "lint": { "command": "pnpm lint", "exitCode": 0 },
+    "typecheck": { "command": "pnpm typecheck", "exitCode": 0 },
+    "fullTests": { "command": "pnpm vitest run --reporter=dot", "exitCode": 0, "passedFiles": 152, "passedTests": 807 },
+    "finalTargetedTests": { "command": "pnpm vitest run tests/unit/reference-quality-audit.test.ts tests/unit/evidence-provenance.test.ts tests/unit/reference-fidelity-qa.test.ts tests/unit/product-experience-verification.test.ts tests/integration/cli.test.ts", "exitCode": 0, "passedFiles": 5, "passedTests": 45 },
+    "factoryEval": { "command": "pnpm factory eval", "exitCode": 0, "passed": true, "cases": 16, "suiteVersion": "factory-eval-v3", "report": "/Users/kker/Documents/ChatGPT/妖怪夜市/factory-eval/latest.json", "sha256": "e284a1a4766068d7dd03538dc8f3c21bc66f2a3ae98adb325a9f4910ad3486d6", "boundary": "routing and control-plane regression only" },
+    "evidenceProvenance": { "command": "pnpm evidence:check -- --manifest runs/mobile-slice-adaptation-20260830/reference-evidence/manifest.json --target-game mobile-slice-adaptation-20260830 --workspace /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a", "exitCode": 0, "passed": true, "entries": 27, "usableEntries": 22, "runLocalUsableCopies": 22, "purposeCounts": { "design-document": 4, "gameplay-reference": 1, "platform-qa": 16, "package-identity": 1, "other": 5 }, "analysisSidecars": 8 },
+    "referenceQualityAudit": { "command": "pnpm factory audit-reference mobile-slice-adaptation-20260830 --workspace /Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a", "exitCode": 0, "schemaValidated": true, "disposition": "REQUIRES_NEW_RUN_MIGRATION", "verifiedRelevantEntries": 5, "bootstrapStatus": "INCOMPLETE", "permissionManifestStatus": "MISSING", "completionClaimAllowed": false, "generatedWorkspaceModified": false, "report": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/reference-quality-audit.json", "sha256": "b3b8089fb3cfde1de7b370939455c2387ba28028fa8011400ffa212bab241c3e" },
+    "complaintArtifacts": { "schemaValidated": true, "matrixCells": 9, "reproducedCells": 5, "blockedCells": 4, "targetAndWorkspaceMatch": true }
+  },
+  "sourceSnapshot": [
+    { "path": "src/schemas/product-experience.ts", "sha256": "50d2ab67a47cc29ccf48ab3cd7a022e885b50852aedd4aa5e480d9f2f9c23f68" },
+    { "path": "src/core/product-experience.ts", "sha256": "d68b6f3688e5e0db3c37931e24fe192c6649257ce72045c9d8eb19f1bccea92c" },
+    { "path": "src/core/product-experience-qa.ts", "sha256": "e1adbd00f4c9615bde4e8fdaa2b1ecf4077986314662080338920c7f5cb0d429" },
+    { "path": "src/providers/runtime-qa.ts", "sha256": "94f0e141700653adc431617b593156830b2def4ed3e916351334987b4c349924" },
+    { "path": "src/schemas/reference-evidence.ts", "sha256": "8d9803bb7dfa1aa2ae78184834366daa49d16be144025b2af92d3dae4f2b4b0f" },
+    { "path": "src/core/reference-evidence.ts", "sha256": "a69722fcadadc2d6567d1be48e7e5cdd3c05b0b5c9599f4c8c0bcaadb26c3e73" },
+    { "path": "src/schemas/evidence-provenance.ts", "sha256": "9cc6febf2c030ccc5796d0749489750847502dd63f461d1c8787f21e82e32a92" },
+    { "path": "src/core/evidence-provenance.ts", "sha256": "a575aabf060fb3a57c72ec6ee993dfc561ed4d9567261ed346c86fd79a740fab" },
+    { "path": "src/schemas/experience-complaint.ts", "sha256": "857d237a57a933dab83c8a96fe395e8c867a447de6fcb297c983d3227c5da82a" },
+    { "path": "src/schemas/reference-quality-audit.ts", "sha256": "03c079c53b88ce14df22bce2e09a75d3f9137009acfdee3ad55697a5bfcd44c2" },
+    { "path": "src/core/reference-quality-audit.ts", "sha256": "fa0c3b23fd65390ecf174dcb9126f0155cfdd37b6e0b27e6f9acb719ee374a05" },
+    { "path": "src/factory.ts", "sha256": "01d157178dd002c5e5c183ba3fc6fa84a7e4877e4e1f614f68de93a979736a71" },
+    { "path": "src/cli/factory.ts", "sha256": "09d92570a4360a5204c5557529c584ea0d46c14b4f8f3a068efa5fa32922e16f" },
+    { "path": "src/core/stage-contracts.ts", "sha256": "a2747558cf3ee65f4578f5a551089334f7f7dfcd0019d674f8b9a172791e7648" },
+    { "path": "src/core/permission-manifest.ts", "sha256": "ff4b666588a0710be1222eb7a99ecccaf32ddf037f947c3e3d30f50f995eb6f4" },
+    { "path": "docs/factory-reference-quality-optimization-2026-09-08.md", "sha256": "cbe0c785502613e2558c844cfd6a9d811e6baea597de76fa54ce1cb1d4e773a8" },
+    { "path": "runs/mobile-slice-adaptation-20260830/reference-evidence/manifest.json", "sha256": "daff127754ee0596897c0cb326992b95764c3018a40dd042be2a698b8befaf73" },
+    { "path": "runs/mobile-slice-adaptation-20260830/artifacts/factory-quality-regression-triage-20260908.json", "sha256": "6e7d9ff7617cccd1438cb17570555ddea968e25c82a791158f61e39bbbeb62ad" },
+    { "path": "runs/mobile-slice-adaptation-20260830/artifacts/factory-quality-regression-reproduction-matrix-20260908.json", "sha256": "f3061c2480e0c3233f87c68e913065416d1df9f6bb91512f429a5c188f825458" },
+    { "path": "runs/mobile-slice-adaptation-20260830/artifacts/reference-quality-audit.json", "sha256": "b3b8089fb3cfde1de7b370939455c2387ba28028fa8011400ffa212bab241c3e" }
+  ],
+  "outcome": {
+    "factoryRegressionClosed": true,
+    "generatedWorkspaceModified": false,
+    "gameComplaintClosed": false,
+    "remainingGameBlockers": [
+      "No 430x932 natural-input evidence exists for the current build.",
+      "Successful finish, settlement and replay are unobserved.",
+      "The same-object cut/support/fall/rest visible chain is unobserved.",
+      "A formal Fixer repair and independent QA retest are still required for the generated game."
+    ]
+  }
+}

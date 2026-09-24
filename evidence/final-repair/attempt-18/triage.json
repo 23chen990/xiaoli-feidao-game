@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "repair-triage",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 18,
+  "issueId": "L1-RUNWAY-RECOVERY-CAPTURE-STAGE",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "classification": "natural-level1-runway-recovery-blocker",
+  "status": "VALIDATED_REPRODUCTION",
+  "priorAttempt": {
+    "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-17/fix-result.json",
+    "sha256": "cd32f18f823aeab5f3c754034c08cf958d27e03da44bda00f666283f5d36cb5f",
+    "status": "BLOCKED",
+    "candidateRejected": true
+  },
+  "reproduction": {
+    "attempt17Divergence": {
+      "expectedCaptureFrames": [216, 302],
+      "observedCaptureFrames": [216],
+      "expectedFirstPose": { "playerX": 305.2, "playerY": 514.1666666666666, "playerAngle": 4.986276450461116 },
+      "observedFirstRelease": { "playerX": 316.4500000000005, "playerY": 502.9166666666667, "playerAngle": 4.352074660119913 },
+      "firstTapPositionCorrectionPixels": 12.302890355973728,
+      "selectorStatus": "passed",
+      "replayStatus": "failed",
+      "replayElapsedSeconds": 5.908333333333417,
+      "evidence": [
+        { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-17/green-targeted.log", "sha256": "5854db2046fe8e051c5639ef342005778ce4a794d7bdf25af3e2ceadaf851cda" },
+        { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-17/fix-result.json", "sha256": "cd32f18f823aeab5f3c754034c08cf958d27e03da44bda00f666283f5d36cb5f" },
+        { "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/green-targeted.log", "sha256": "d0d64f4227589d2edd4aff8ca1939209b75e933d1df89ed0ee51725c61f48ab6" }
+      ]
+    },
+    "captureContract": {
+      "requiredStage": "post-integration pre-response/pre-anchor player transform",
+      "forbiddenStages": ["sweep-impact interpolation", "post-separation correction", "contact-point coordinates"],
+      "retainedFields": ["supportId", "anchorOffsetX", "anchorOffsetY", "playerX", "playerY", "playerAngle", "age"],
+      "coordinateInvariant": "support.x + anchorOffsetX == playerX and support.y + anchorOffsetY == playerY at capture"
+    }
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "runway sharp tip",
+      "lifecycleStateBranch": "first separating top contact → pose capture → first tap",
+      "rendererPresentationPath": "ThreePresentationModel airborne player",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-17/green-targeted.log"],
+      "observation": "Attempt17 released at x=316.45/y=502.92/angle=4.352 rather than the validated x=305.2/y=514.17/angle=4.986 pose and omitted retained pose fields.",
+      "inference": "The candidate likely sampled a wrong coordinate stage or basis before the first tap.",
+      "unknowns": ["The rolled-back candidate bytes do not reveal whether the error came from sweep interpolation, correction, or support-relative conversion."]
+    },
+    {
+      "objectType": "runway sharp tip",
+      "lifecycleStateBranch": "second separating top contact after first launch",
+      "rendererPresentationPath": "fixedUpdate support collision path",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/green-targeted.log"],
+      "observation": "The accepted reference captures frame302 at x=332.7/y=469.7083/angle=6.656568, while Attempt17 never reaches a second capture.",
+      "inference": "The wrong first release trajectory can prevent the second qualifying contact from occurring.",
+      "unknowns": ["If an exact frame216 snapshot still misses frame302, collision/latch ordering remains a separate unresolved cause."]
+    },
+    {
+      "objectType": "runway release pose",
+      "lifecycleStateBranch": "pose consume and support-relative reconstruction",
+      "rendererPresentationPath": "SliceSimulation.act('flip')",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-11/tests.log"],
+      "observation": "The accepted release corrections are 1.7773px and 0.0001px with all absolute pose fields retained.",
+      "inference": "Both absolute fields and support-relative offsets must describe the same post-integration snapshot before standard launch semantics are applied.",
+      "unknowns": ["The exact candidate coordinate transform is unknown because rejected source bytes were not preserved."]
+    },
+    {
+      "objectType": "runtime selector",
+      "lifecycleStateBranch": "early white branch and late lift-plank candidate selection",
+      "rendererPresentationPath": "SliceSimulation.selectRunwayReleaseSupport",
+      "viewport": "deterministic-fixed-step",
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-17/green-targeted.log"],
+      "observation": "Attempt17's selector assertions passed for the early white branch and late lift-plank fixture.",
+      "inference": "Selector absence is no longer the leading cause; the capture-stage contract can be tested without broad selector changes.",
+      "unknowns": ["No natural browser selector trace exists; independent QA remains outstanding."]
+    },
+    {
+      "objectType": "default browser journey",
+      "lifecycleStateBranch": "startup → recovery → terminal/settlement → replay",
+      "rendererPresentationPath": "web-lite Three.js presentation",
+      "viewport": "1100x720",
+      "evidence": ["/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-1/qa-summary.json"],
+      "observation": "Natural/perceptual QA remains blocked and cannot be replaced by deterministic fixtures.",
+      "inference": "A deterministic capture-stage fix still requires fresh normal-input QA in both target viewports.",
+      "unknowns": ["No Attempt18 natural or perceptual evidence exists yet."]
+    }
+  ],
+  "rootCauseHypothesis": {
+    "evidence": "Attempt17's selector passed but its first release was 12.3029px from the validated pose, the pending object omitted playerX/playerY/playerAngle, and the replay never reached frame302. The current collision loop integrates the player before sweep detection and then anchors using the integrated player transform, while Attempt11 proves the desired coordinates and near-zero tap corrections.",
+    "changeHypothesis": "On a qualifying early separating runway top sharp contact, snapshot the integrated player transform at the pre-response/pre-anchor branch. Retain supportId, support-relative offsets, absolute playerX/playerY/playerAngle, and age together; do not substitute sweep-impact or contact-point coordinates. On tap, resolve the active support plus offsets, restore the stored angle and absolute pose, then apply unchanged standard anchored-release launch semantics. Keep the existing per-edge/lifecycle behavior narrow and do not add follow gain or TTL changes.",
+    "stateName": "pendingRunwayReleasePose",
+    "captureRule": "on a qualifying early separating runway top sharp contact, snapshot the integrated player transform before any separation response or ordinary anchor and retain both absolute pose fields and support-relative offsets",
+    "releaseRule": "consume the immutable support-relative pose once, resolve the active support transform, restore the stored player angle, and emit standard anchored-release launch semantics",
+    "falsifier": "if the pre-anchor snapshot at frame216 equals the validated pose and exact release still misses frame302, capture-stage semantics are rejected in favor of collision/latch diagnosis",
+    "preservedBranches": [
+      "selector early white-branch and late lift-plank results",
+      "standard anchored and ordinary airborne release semantics",
+      "approaching runway top hard-surface recovery",
+      "side sharp runway anchor and later x>=350 suppression",
+      "body/handle bounce and no-progress escape",
+      "reset/load/terminal/inactive/non-runway pending clears"
+    ],
+    "rejectedAlternatives": [
+      "another bounded-follow gain adjustment",
+      "another global or per-edge latch rewrite",
+      "using contact-point x in place of player-center x",
+      "using sweep-impact interpolation as the stored pose",
+      "changing TTL or release velocity before proving capture coordinates",
+      "claiming natural QA from fixture-only focused output"
+    ]
+  },
+  "scope": {
+    "includedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+    ],
+    "excludedFiles": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/three-presentation.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/style.css",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/dist"
+    ],
+    "route": "formal-fixer",
+    "expectedSourceFileLimit": 2
+  },
+  "acceptanceCriteria": [
+    "Run and save RED focused evidence before edits.",
+    "Instrument the runway contact branch to distinguish integrated pre-response, sweep-impact, separation-corrected, and ordinary-anchor transforms.",
+    "Capture exactly frames216 and302 with a qualifying separating top sharp contact and player center x<350.",
+    "Retain supportId, anchorOffsetX, anchorOffsetY, playerX, playerY, playerAngle, and bounded age as finite fields.",
+    "Prove the support-relative coordinate invariant at both captures.",
+    "Match frame216 pose x≈305.2, y≈514.1667, angle≈4.986276 and frame302 pose x≈332.7, y≈469.7083, angle≈6.656568.",
+    "Keep the visible player airborne with measurable normal movement and rotation while each pose is pending.",
+    "Consume each saved pose exactly once at the scheduled tap and emit one standard launch event.",
+    "Keep each tap-time position correction <=10 simulation pixels and angle correction <=0.5 radians.",
+    "Preserve selector results for the early white branch and late lift-plank fixture.",
+    "Preserve approaching top recovery, side sharp anchors, later x>=350 suppression, body bounce, opening white landing, and ordinary non-runway launches.",
+    "Preserve bounded 2.35-second expiry and reset/load/terminal/inactive/non-runway clear paths.",
+    "Reach >=11.9 seconds and player x>2000 in the fixed replay without failure or support stall.",
+    "Run focused tests and pnpm test only after focused GREEN passes; then lint, typecheck, and exactly one build.",
+    "Rollback the owned files immediately on focused GREEN failure and make no natural/perceptual completion claim."
+  ],
+  "evidenceClassification": {
+    "observed": [
+      "Attempt17 selector assertions passed but only frame216 was captured.",
+      "Attempt17 first release was 12.3029px from the retained baseline pose and the pending fields were incomplete.",
+      "Attempt11 retained both absolute and support-relative pose data and completed the fixed replay."
+    ],
+    "inferred": [
+      "The first release coordinate basis or sampling stage altered the trajectory before frame302.",
+      "A pre-anchor integrated snapshot is the narrowest next hypothesis consistent with the current fixedUpdate order."
+    ],
+    "unknown": [
+      "Whether exact pre-anchor capture alone restores frame302 or a separate collision/latch issue remains.",
+      "The exact rejected candidate implementation is unavailable, so no line-level fault is asserted.",
+      "Natural-input and perceptual behavior remain unverified."
+    ]
+  },
+  "createdAt": "2026-09-23T12:48:00.000Z"
+}

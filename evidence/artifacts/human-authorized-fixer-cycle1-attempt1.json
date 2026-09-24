@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "HumanAuthorizedFormalFixerAttempt",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "cycle": 1,
+  "attempt": 1,
+  "status": "BLOCKED",
+  "why": "Human-authorized continuation to repair two validated blockers: Level 04 spike pressure/fairness and Level 04 dessert visual mismatch. The previously fixed separated BONUS/SAFE gate was intentionally not changed.",
+  "issues": [
+    {
+      "id": "level04-spike-pressure-fairness",
+      "resolution": "Kept the spike collidable, projected later-level spikes into the authored route pressure band at ±130 simulation units, and constrained moving spike amplitude to 18 units so the hazard remains visible and causal without unpredictable drift.",
+      "files": ["src/game-levels.ts", "tests/spike-finish-pressure.test.ts"]
+    },
+    {
+      "id": "level04-dessert-visual-mismatch",
+      "resolution": "Added a dedicated dessert presentation skin with warm pastry materials, layered icing/cream accents, and matching cut-half treatment; cake/pastry/cheesecake styles no longer use crystal or wooden skin paths.",
+      "files": ["src/three-presentation.ts", "src/three-cut-visuals.ts", "tests/three-presentation.test.ts"]
+    }
+  ],
+  "contextIntentionallyOmitted": [
+    "Completed food-theme metadata propagation and Kenney asset manifest work",
+    "Completed Level 1 recovery shelf fix",
+    "Previously fixed BONUS/SAFE finish-gate separation",
+    "Unrelated factory/shared code, other games, and platform packaging"
+  ],
+  "redEvidence": [
+    "New dessert intact/cut test failed before production changes because Level 04 dessert sigils were reported as crystal.",
+    "New moving-spike timing-band test failed before production changes because authored moving amplitudes exceeded the readable band."
+  ],
+  "greenEvidence": {
+    "targetedTests": { "command": "pnpm exec tsx --test tests/three-presentation.test.ts tests/spike-finish-pressure.test.ts", "passed": 16 },
+    "lint": { "command": "pnpm lint", "passed": true },
+    "typecheck": { "command": "pnpm typecheck", "passed": true },
+    "fullTests": { "command": "pnpm test", "passed": true, "tests": 126 },
+    "build": { "command": "pnpm build", "passed": true, "distBytes": 2720768, "sha256": null, "hashCaptured": false }
+  },
+  "naturalQa": {
+    "command": "pnpm exec tsx scripts/qa-spike-impact.ts",
+    "report": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-spike-impact-v1/report.json",
+    "verdict": "CONTACT_OBSERVED_BUT_DECISION_QUALITY_UNPROVEN",
+    "passed": false,
+    "observed": "Level 04 desktop and mobile fresh-browser normal-input runs produced terminal wins/falls and a mobile spike failure with minDyInWindow=11.44px; no console errors were recorded.",
+    "dessertScreenshots": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-spike-impact-v1/desktop-level-04-safe-dessert-intact.png",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-spike-impact-v1/desktop-level-04-safe-dessert-cut.png",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-food-theme-v1/mobile-level-04-dessert-intact.png",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-food-theme-v1/mobile-level-04-dessert-cut.png"
+    ]
+  },
+  "remainingEvidenceGaps": [
+    "The natural QA report does not prove a stable deliberate safe-avoid versus risk-contact policy; therefore the product gate remains BLOCKED.",
+    "Mobile dessert cut screenshot captured a terminal state rather than a clear intact-to-cut object close-up; perceptual QA must recapture the exact cut branch.",
+    "The full multi-level natural sweep and platform adapters were not rerun in this human-authorized attempt.",
+    "The final build byte count was recorded, but the post-accent SHA256 was not captured."
+  ],
+  "claimBoundary": "Do not declare the fixes complete; this is a formal-fixer implementation handoff awaiting QA natural/perceptual retest.",
+  "followUp": {
+    "route": "formal-fixer",
+    "attempt": 2,
+    "scope": "Level 04 spike branch only; separated finish gates and dessert implementation were not changed.",
+    "filesChanged": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-levels.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level4-spike-policy.test.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/scripts/qa-spike-impact.ts"
+    ],
+    "redGreen": {
+      "red": "Risk-height policy test initially observed Level 04 winning instead of contacting l4-gap-risk.",
+      "green": "After widening l4-gap-risk to a 220x70 collision band, safe-height (430) wins and risk-height (580) fails with failReason=spike in deterministic simulation."
+    },
+    "checks": {
+      "lint": true,
+      "typecheck": true,
+      "fullTests": { "passed": true, "tests": 128 },
+      "build": { "passed": true, "distBytes": 2720846, "sha256": null, "hashCaptured": false }
+    },
+    "naturalQa": {
+      "command": "pnpm exec tsx scripts/qa-spike-impact.ts",
+      "report": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-spike-impact-v1/report.json",
+      "verdict": "CONTACT_OBSERVED_BUT_DECISION_QUALITY_UNPROVEN",
+      "passed": false,
+      "observed": "12 Level 04 normal-input runs completed across desktop and mobile with zero console errors; the report still does not satisfy the deliberate safe-vs-risk policy gate on both viewports.",
+      "dessertEvidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-food-theme-v1/",
+      "claimBoundary": "web-lite targeted evidence only; no platform packaging claim"
+    },
+    "remainingEvidenceGaps": [
+      "The QA report verdict remains BLOCKED because safe-win and risk-contact are not both proven per viewport under the script's retry traces.",
+      "Perceptual QA must verify the desktop and mobile dessert cut branch at gameplay distance.",
+      "Full multi-level natural sweep and WeChat/Douyin/TapTap adapters remain unverified.",
+      "Post-follow-up build SHA256 was not captured."
+    ]
+  },
+  "followUpAttempt3": {
+    "route": "formal-fixer",
+    "attempt": 3,
+    "scope": "Level 04 safe recovery support only; finish gates and dessert skin untouched.",
+    "filesChanged": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-levels.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level4-spike-policy.test.ts"
+    ],
+    "redGreen": {
+      "red": "Recovery-support test initially failed because l4-safe-recovery was absent.",
+      "green": "Added l4-safe-recovery support at x=1080, y=510, width=180, height=32; deterministic safe policy and risk policy tests pass."
+    },
+    "checks": {
+      "lint": true,
+      "typecheck": true,
+      "fullTests": { "passed": true, "tests": 129 },
+      "build": { "passed": true, "distBytes": 2720884, "sha256": null, "hashCaptured": false }
+    },
+    "naturalQa": {
+      "command": "pnpm exec tsx scripts/qa-spike-impact.ts",
+      "report": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-spike-impact-v1/report.json",
+      "verdict": "CONTACT_OBSERVED_BUT_DECISION_QUALITY_UNPROVEN",
+      "passed": false,
+      "observed": "9 fresh-browser Level 04 desktop/mobile runs completed with zero console errors; strict policy gate still lacks per-viewport safe-win plus risk-contact proof.",
+      "claimBoundary": "web-lite targeted evidence only"
+    },
+    "status": "BLOCKED",
+    "remainingEvidenceGaps": [
+      "Mobile safe policy still has no reliable terminal/win trace under the strict normal-touch script.",
+      "Perceptual QA must confirm the recovery support and dessert intact/cut branch at target viewports.",
+      "No platform packaging evidence."
+    ]
+  },
+  "followUpAttempt4": {
+    "route": "formal-fixer",
+    "attempt": 4,
+    "scope": "Level 04 early safe recovery only; l4-gap-risk, finish gates, and dessert skin untouched.",
+    "filesChanged": [
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-levels.ts",
+      "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level4-spike-policy.test.ts"
+    ],
+    "redGreen": {
+      "red": "Early recovery shelf test failed because l4-early-recovery was absent.",
+      "green": "Added l4-early-recovery at x=520, y=600, width=360, height=32 and explicitly classified it as recovery support."
+    },
+    "checks": {
+      "lint": true,
+      "typecheck": true,
+      "fullTests": { "passed": true, "tests": 130 },
+      "build": { "passed": true, "distBytes": 2720987, "sha256": null, "hashCaptured": false }
+    },
+    "naturalQa": {
+      "command": "pnpm exec tsx scripts/qa-spike-impact.ts",
+      "report": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-spike-impact-v1/report.json",
+      "verdict": "CONTACT_OBSERVED_BUT_DECISION_QUALITY_UNPROVEN",
+      "passed": false,
+      "observed": "9 fresh-browser Level 04 desktop/mobile runs completed with zero console errors; strict report still does not establish both safe-win and risk-contact per viewport.",
+      "claimBoundary": "web-lite targeted evidence only"
+    },
+    "status": "BLOCKED",
+    "remainingEvidenceGaps": [
+      "Mobile safe route still lacks a reliable terminal/win trace under strict natural touch policy.",
+      "Perceptual QA must confirm early shelf, spike, and dessert cut presentation at target viewports.",
+      "Full multi-level natural sweep and platform adapters remain unverified."
+    ]
+  }
+}

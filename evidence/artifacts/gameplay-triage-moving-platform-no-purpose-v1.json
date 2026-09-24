@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED",
+  "classification": "core_experience/moving_object_no_decision_impact",
+  "reproduction": {
+    "evidence": ["User screenshot: a long orange slab is visibly placed in the route while the user reports its left-right motion has no gameplay meaning."],
+    "steps": ["Open the affected level from a fresh browser", "Observe the slab for one full motion cycle", "Attempt the default route with normal taps", "Compare motion, collision, cut opportunity, and recovery choices"]
+  },
+  "reproductionMatrix": [
+    {"objectType":"moving hard platform/block","lifecycleState":"spawned→moving","rendererPath":"game-levels motion → game-core block motion → ThreePresentationModel/ThreeWorldRenderer","deviceViewport":"desktop 1180x720"},
+    {"objectType":"moving hard platform/block","lifecycleState":"approach→contact/avoid/cut","rendererPath":"game-core collision branch → visible bounce/cut/failure feedback","deviceViewport":"desktop 1180x720"},
+    {"objectType":"moving hard platform/block","lifecycleState":"spawned→moving→approach","rendererPath":"same renderer branch","deviceViewport":"mobile 390x844"}
+  ],
+  "rootCauseHypothesis":"The level pack adds motion metadata and a moving slab, but does not prove that its sweep intersects the authored decision corridor or changes a reachable landing/cut/recovery choice. Motion is therefore perceived as decorative animation.",
+  "acceptanceCriteria":["The exact slab object has a reachable normal-input interaction or an explicit decorative role with no gameplay collider.","If gameplay, its motion changes at least one visible route, timing, cut, bounce, or recovery decision and produces attributable feedback.","The motion is legible before contact on desktop and 390x844 mobile.","Natural QA records touch, intentional avoidance, or recovery for the exact object id; x-overlap alone is not evidence."],
+  "route":"formal-fixer",
+  "decision":"Promote to formal QA→Fixer→QA flow; do not treat motion metadata or a passing sibling object as proof of gameplay meaning."
+}

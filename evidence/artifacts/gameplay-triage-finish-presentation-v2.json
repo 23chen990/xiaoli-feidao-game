@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "OPEN",
+  "classification": "perceptual-finish-presentation-occlusion",
+  "route": "formal-fixer-new-user-authorized-cycle",
+  "routeReason": "The issue affects terminal settlement readability across the shared finish renderer and responsive presentation; the previous automatic FIX budget is preserved and exhausted.",
+  "evidence": {
+    "source": "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/desktop-natural-zero-won.png",
+    "observation": "The terminal summary is centered over the finish wall, obscuring the selected wall lane and weakening action-to-reward attribution. Fixed right-side multiplier labels remain visually detached from the world wall.",
+    "identityBoundary": "Only current targetGame artifacts are used; mismatched historical perceptual reports are quarantined."
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "finish multiplier wall + terminal overlay",
+      "lifecycleStateBranch": ["finish approach", "contact", "reward", "celebration", "terminal", "replay"],
+      "rendererPresentationPath": ["src/three-world-renderer.ts", "src/main.ts", "src/style.css"],
+      "deviceViewport": ["desktop 1180x720", "mobile portrait 390x844"],
+      "naturalInput": "normal mouse/touch route to terminal settlement",
+      "expected": "Selected wall lane remains visible beside the terminal settlement and replay action."
+    }
+  ],
+  "acceptanceCriteria": [
+    "Terminal summary does not cover the selected finish wall lane on desktop or 390x844 mobile.",
+    "The selected multiplier remains readable during reward/celebration/terminal phases.",
+    "Replay remains visible and usable without changing settlement semantics.",
+    "Fresh natural browser evidence captures the exact terminal branch on both viewports.",
+    "No platform packaging or competitor-expression claim is made from this web-lite fix."
+  ],
+  "nextStage": "USER_AUTHORIZED_FIX_THEN_FULL_QA_RETEST"
+}

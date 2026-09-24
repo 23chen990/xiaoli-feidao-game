@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fix-result",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 6,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "issueId": "L1-RUNWAY-RECOVERY-RELEASE-CLEARANCE",
+  "status": "BLOCKED",
+  "model": "gpt-6-luna",
+  "why": "A validated natural runway anchor plus the attempt-5 lift-plank stall makes this a formal-fixer issue affecting the Level 1 recovery path and fixed replay. The attempt-6 clearance candidate failed the required focused seed-31 replay at 5.4667 seconds, before its route gate. Per the packet, the candidate was immediately reverted and no tuning retry was made.",
+  "triagePath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-6/triage.json",
+  "taskPacketPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-6/task.json",
+  "taskPacketSha256": "93a73dc753bf26695f75f7b2efb154649e6d4fcc41ef119450b5e2edc75cbb26",
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory modules, platform adapters, release configuration, renderer implementation, and research.",
+    "Full conversation, unrelated QA output, and unbound competitor media.",
+    "Natural-journey and perceptual completion claims; independent QA remains required."
+  ],
+  "filesChanged": [
+    "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-6/red-targeted.log",
+    "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-6/green-targeted.log",
+    "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-6/tests.log",
+    "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-6/lint.log",
+    "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-6/typecheck.log",
+    "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-6/build.log",
+    "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-6/fix-result.json"
+  ],
+  "gameFilesChanged": [],
+  "filesAttemptedAndReverted": [
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "restoredSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7"
+    },
+    {
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts",
+      "restoredSha256": "c25b5bd63aec7e613167824d5895cc8568b8624794fa07184e282a5ac53fa3cd"
+    }
+  ],
+  "tests": [
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts (restored baseline RED)",
+      "exitCode": 1,
+      "phase": "RED",
+      "result": "The exact separating runway top-tip contact anchors instead of recovering; 15 passed and 2 failed.",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-6/red-targeted.log"
+    },
+    {
+      "command": "pnpm exec tsx --test tests/level1-recovery.test.ts (clearance candidate)",
+      "exitCode": 1,
+      "phase": "REJECTED_REPLAY_GATE",
+      "result": "The seed-31 timestamp replay terminated at 5.466666666666728 seconds, before the required elapsed>=11.9 and x>2000. The candidate was reverted immediately.",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-6/green-targeted.log"
+    },
+    {
+      "command": "pnpm test",
+      "exitCode": null,
+      "phase": "NOT_RUN",
+      "result": "Stopped after the focused replay gate failed, as required by attempt-6 instructions.",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-6/tests.log"
+    },
+    {
+      "command": "pnpm lint",
+      "exitCode": null,
+      "phase": "NOT_RUN",
+      "result": "Stopped after the focused replay gate failed.",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-6/lint.log"
+    },
+    {
+      "command": "pnpm typecheck",
+      "exitCode": null,
+      "phase": "NOT_RUN",
+      "result": "Stopped after the focused replay gate failed.",
+      "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-6/typecheck.log"
+    }
+  ],
+  "build": {
+    "command": "pnpm build",
+    "count": 0,
+    "exitCode": null,
+    "phase": "NOT_RUN",
+    "result": "No build was produced for the rejected and reverted candidate.",
+    "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260923-continue/attempt-6/build.log",
+    "distSha256": null
+  },
+  "runtimeQa": {
+    "naturalJourneyClaimed": false,
+    "perceptualGateClaimed": false,
+    "requiredNext": [
+      "Independent fresh natural-input QA must retest portrait and desktop against the exact runway contact and release branch after a future candidate clears deterministic replay.",
+      "QA must observe the Level 1 stack, terminal settlement, visible replay, and perceptual gate with normal input."
+    ]
+  },
+  "remainingEvidenceGaps": [
+    "The formula-based clearance candidate failed the replay early at 5.4667 seconds; its selected support and terminal failure cause were not isolated before the required immediate rollback.",
+    "Full tests, lint, typecheck, and build were not run; build count is zero and no dist SHA is attributed to attempt-6.",
+    "Natural-input and perceptual post-fix QA remain unrun.",
+    "No accepted source change remains; both owned game files match their task-packet hashes."
+  ],
+  "nextHypothesis": "A clearance correction based on the nearest horizontally entered support can demand an unreachable vertical lane early in the route. The next distinct attempt should first add a test-only deterministic trace for each pending-release tap that reports the selected active/collidable support, horizontal entry time, vertical band, predictedY, requiredVy, and top-boundary limit; then select only a support whose reachable vertical corridor can be cleared, keeping lift-plank as the explicit late-route assertion. Do not tune from the aggregate replay alone.",
+  "completedAt": "2026-09-23T08:17:32.000Z"
+}

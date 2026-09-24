@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "acceptance-interpretation-clarification",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "checkIds": [
+    "L1-REWARD-390",
+    "L1-REWARD-1100"
+  ],
+  "source": {
+    "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/artifacts/gameplay-retro-missed-topology-v2.json",
+    "sha256": "5b09ebcb5d6c90155273b54403034cf387cc43059cd783ccc9f4e6e4642cdc20",
+    "locator": "corrections[0] supersedes conflicting rootMistakes wording",
+    "exactCorrection": "The cut completes first; the separated item then plays a local reward animation at the cut object's position, and the cumulative total updates with that post-cut reward."
+  },
+  "interpretation": [
+    "完整物体/刀仍接触完整态阶段不得连续增加收益。",
+    "首次出现局部奖励时，应已能辨认切开/分离，局部奖励位于同一被切物体附近。",
+    "累计值随该次切完后的奖励更新；同一可见帧中已有切面/分离且同时显示局部奖励与累计值，不等于切割前涨分。",
+    "合同的eventOrder表达可见因果次序；不能额外强制每个事件占用独立渲染帧。"
+  ],
+  "notRequired": [
+    "局部奖励动画必须全部结束后HUD才能开始变化。",
+    "动画阶段不得重叠。",
+    "视频必须分辨同一渲染帧内部的函数调用先后或人为增加一帧延迟。"
+  ],
+  "evidence": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/diagnostic-report.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/chronology.json"
+  ],
+  "effect": "Clarifies the original explicit correction, not a claim that the current build passes. Old reports remain sealed. Independent QA must apply this source-grounded meaning to fresh build-bound pixels and engineering evidence; any actual intact-state gain, missing local feedback or wrong target attachment remains blocking.",
+  "createdAt": "2026-09-07T06:16:53.540Z"
+}

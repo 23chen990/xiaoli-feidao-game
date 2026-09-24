@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "platform-fix-result",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "cycleId": "taptap-runtime-compat-20260908",
+  "attempt": 2,
+  "targetGame": "mobile-slice-adaptation-20260830（TapTap 名称：疯狂切割）",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "BLOCKED",
+  "why": "formal-fixer remains required because this is attempt 2/5 of a validated TapTap runtime/release issue. A read-only RED test first proved the frozen attempt-1 ZIP had 1280x720, policy 4 and exactFitScreen=true instead of the required 390x844 fixed-width startup contract. The single permitted Cocos Creator 3.8.8 build used the unchanged official TapTap plugin 1.2.2 and produced a new structurally valid ZIP with 390x844 and policy 4, but exactFitScreen remained true, so the ZIP contract still fails. The direct configuration omission is that exactFitScreen=false was not explicitly passed to the Cocos build; it is now explicit in cocos-build-config.json, while project general.designResolution is also synchronized to 390x844, fitWidth=true, fitHeight=false. Cocos CLI acceptance of that option remains unverified until the next permitted build. No second build is allowed in this attempt, so the current ZIP is stale relative to the final fix and the result is BLOCKED. The attempt-1 Graphics runtime and all 12 non-ZIP gameplay/platform tests remain passing; lint and typecheck pass. Context intentionally omitted: earlier packaging history beyond the stale ZIP, other runs, web-lite, WeChat/Douyin, shared factory code, advertising, IAP, cloud saves, rankings, and non-SHA-bound screenshots as passing evidence.",
+  "filesChanged": [
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/cocos-build-config.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/settings/v2/packages/project.json",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tests/runtime-compat.test.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/tests/zip-settings-contract.test.ts",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/build/TapBuild/game/",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/build/TapBuild/game.zip"
+  ],
+  "tests": [
+    {
+      "command": "PlatformRepairTaskSchema.parse(attempt-2/task.json)",
+      "passed": true,
+      "evidence": "Task was Zod-validated before the RED test or build was run."
+    },
+    {
+      "command": "pnpm exec tsx --test tests/zip-settings-contract.test.ts (pre-build RED)",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-runtime-20260908/attempt-2/red-tests.log — frozen ZIP was 1280x720, policy 4, exactFitScreen=true."
+    },
+    {
+      "command": "pnpm test (post-build)",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-runtime-20260908/attempt-2/post-build-tests.log — 12/13 passed; all gameplay/Graphics/config tests pass, while the real ZIP test correctly remains RED because exactFitScreen=true."
+    },
+    {
+      "command": "pnpm exec tsx --test tests/runtime-compat.test.ts (post-fix static contract; no rebuild)",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-runtime-20260908/attempt-2/config-contract.log — 4/4 pass, including explicit exactFitScreen=false and project/build 390x844 fixed-width configuration."
+    },
+    {
+      "command": "pnpm lint",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-runtime-20260908/attempt-2/lint.log"
+    },
+    {
+      "command": "pnpm typecheck",
+      "passed": true,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-runtime-20260908/attempt-2/typecheck.log"
+    },
+    {
+      "command": "unzip integrity/root metadata/settings/size/SHA and official plugin checks",
+      "passed": false,
+      "evidence": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/platform-taptap-runtime-20260908/attempt-2/package-check.log — archive/root/AppID/name/portrait/version/size/plugin pass; src/settings.json exactFitScreen=true fails the complete startup contract."
+    }
+  ],
+  "build": {
+    "attempted": true,
+    "passed": true,
+    "zipPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/platforms/taptap-minigame/build/TapBuild/game.zip",
+    "sha256": "2a782b08b0ae52301e7bb441f827cfdf75cef0fb33132a478e3b9c4c88aaf932",
+    "bytes": 1206521
+  },
+  "blockers": [
+    {
+      "id": "TAP-RUNTIME-STARTUP-SETTINGS-004",
+      "detail": "The only permitted build still emitted exactFitScreen=true. exactFitScreen=false is now explicit in cocos-build-config.json and project general.designResolution is fixed-width, but CLI support/effect is unverified. Attempt 3 must rebuild once and require the ZIP contract test to pass before independent QA."
+    }
+  ],
+  "evidenceGaps": [
+    "No exact-SHA-bound OPPO PKB110 Android 16 rerun exists, so native InstantGameActivity availability and package launch remain unverified.",
+    "No exact-SHA-bound vivo V2001A/PD2001 OriginOS 3 natural-input rerun exists, so absence of scene-construction TypeError and non-black/white first-frame rendering remain unverified.",
+    "No TapTap developer-backend upload or scan was performed or claimed.",
+    "The SHA-256 identifies the only attempt-2 build, but that ZIP predates the final explicit exactFitScreen=false and project general.designResolution fixes and must not be treated as the repaired release candidate."
+  ]
+}

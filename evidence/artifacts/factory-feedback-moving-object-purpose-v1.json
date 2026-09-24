@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FactoryProcessFeedback",
+  "sourceRun": "mobile-slice-adaptation-20260830",
+  "incident": "玩家指出左右移动平台没有意义；运动存在，但没有可感知的决策影响。",
+  "generalizedFailure": "工厂把实现属性（motion、collider、pathRole）误当成体验结果（玩家必须利用/避开/恢复）。",
+  "controls": {
+    "research": [
+      "failure-pressure contract 为每个动态对象增加 interactionId、pressureAction、signal、escalation、failureAttribution、recoveryReplay。",
+      "研究观察、推断、未知分栏；未知不得由 Builder 自行补齐为玩法。"
+    ],
+    "blueprint": [
+      "动态对象必须声明 decisionImpact、reachableStateWindow、interactionMode（use/avoid/cut/recover）、visualSemantic。",
+      "增加 staticVsMovingDelta：说明运动相比静态版本改变的路线、时机、接触或奖励结果。",
+      "若 interactionMode=decorative，禁止生成 gameplay collider。"
+    ],
+    "builder": [
+      "构建前置检查：对每个动态对象跑静态基线与动态 trace，要求至少一个可重复的玩家决策差异。",
+      "要求生成 exact-object evidence manifest，不接受仅有元数据、x 区间重叠或 sibling object 截图。",
+      "动态对象若无决策差异，必须在交接前降级为装饰或改造其路径/碰撞/反馈。"
+    ],
+    "qa": [
+      "自然 QA 矩阵固定覆盖 observe→approach→contact/avoid→recovery/replay，并记录 exact objectId。",
+      "新增 perceptual gate：运动方向、周期、接触后果和恢复窗口必须在桌面与 390x844 移动端可读。",
+      "x-window 经过不算交互；fixture/debug/state injection 只能作为工程证据。",
+      "任何 exact-object BLOCKED 强制顶层产品门 BLOCKED。"
+    ],
+    "release": [
+      "发布前汇总动态对象覆盖率：use/avoid/cut/recover 至少命中一种，且每个对象有自然截图或明确 decorative 证据。",
+      "web-lite 通过不代表微信/抖音/TapTap 可发布；平台适配证据继续隔离。"
+    ]
+  },
+  "sharedRegressionCases": [
+    "moving-object-no-decision-impact",
+    "moving-object-x-overlap-only",
+    "decorative-object-with-gameplay-collider",
+    "blocked-child-pass-aggregation"
+  ],
+  "acceptance": "将上述字段、Builder preflight、自然 QA 矩阵和聚合规则落入共享工厂 schema/tests，并在下一次 run 中实际执行。",
+  "status": "PROPOSED_FACTORY_CHANGE",
+  "productGateImpact": "本 run 继续 BLOCKED，直到 exact moving-object retest 通过。"
+}

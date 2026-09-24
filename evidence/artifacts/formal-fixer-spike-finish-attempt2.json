@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixerAttemptSummary",
+  "targetGame": "小李飞刀",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "route": "formal-fixer",
+  "attempt": 2,
+  "status": "BLOCKED",
+  "issues": [
+    {
+      "id": "spike-pack-orphan-no-impact",
+      "resolution": "Later-level spikes are projected onto the authored completion route with a 130px high/low offset; moving spikes are constrained to an 18px timing band. Levels 1–2 teaching geometry is preserved.",
+      "filesChanged": ["src/game-levels.ts", "tests/spike-finish-pressure.test.ts"]
+    },
+    {
+      "id": "finish-gate-transparent-overlap",
+      "resolution": "Bonus gate bounds are separated from the safe gate in levels 4–12 (y=420, height=48); reward semantics and replay are unchanged.",
+      "filesChanged": ["src/game-levels.ts", "tests/spike-finish-pressure.test.ts"]
+    }
+  ],
+  "contextIntentionallyOmitted": [
+    "Previously completed food-theme propagation and Kenney asset manifest work",
+    "Previously completed Level 1 recovery shelf fix",
+    "Unrelated factory/shared code and other game workspaces",
+    "Platform packaging claims"
+  ],
+  "tests": {
+    "targeted": { "command": "pnpm exec tsx --test tests/spike-finish-pressure.test.ts", "passed": 4 },
+    "lint": { "command": "pnpm lint", "passed": true },
+    "typecheck": { "command": "pnpm typecheck", "passed": true },
+    "full": { "command": "pnpm test", "passed": true, "tests": 125 },
+    "build": { "command": "pnpm build", "passed": true, "distBytes": 2719802, "distSha256": "8883513081cc36944ed0dfe572d4b7d7710dbeffe863b50b1129e6902dc53f82" }
+  },
+  "qa": {
+    "command": "pnpm exec tsx scripts/qa-spike-impact.ts",
+    "passed": false,
+    "verdict": "CONTACT_OBSERVED_BUT_DECISION_QUALITY_UNPROVEN",
+    "report": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-spike-impact-v1/report.json",
+    "observed": "Level 04 mobile attempt 4 failed with failReason=spike and minDyInWindow=11.44; desktop and mobile also produced natural won/fall runs with the spike window observed.",
+    "screenshots": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-spike-impact-v1/",
+    "errors": 0
+  },
+  "remainingEvidenceGaps": [
+    "The targeted script observes causal spike failure but does not yet prove a deliberate avoid-versus-contact decision branch.",
+    "The full multi-level natural sweep was not rerun in this attempt; platform adapters remain unverified.",
+    "Perceptual QA must confirm the separated bonus/safe gate render at desktop and mobile viewports."
+  ],
+  "claimBoundary": "Do not declare FIX complete; QA retest and perceptual decision-quality evidence remain required."
+}

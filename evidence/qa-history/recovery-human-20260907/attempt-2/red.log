@@ -1,0 +1,214 @@
+✖ L1-STACK a: actual knife contact cuts the bearing object and releases the overlapping upper object (1.523167ms)
+✖ L1-STACK b: actual knife contact cuts the bearing object and releases the overlapping upper object (0.208125ms)
+✖ L1-GRAVITY active airborne play does not freeze a hovering supported collectible (3.553917ms)
+✖ L1-FINISH labels use viewport coordinates without a second offset (1.5095ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 390x844 (1.281333ms)
+✖ L1-FINISH all band corners fit the safe viewport on approach at 1100x720 (0.260125ms)
+✔ L1-OPENING-TABLE-BRANCH opening-table-a joins its underside to the actual floor (3.203959ms)
+✔ L1-OPENING-TABLE-BRANCH opening-table-b joins its underside to the actual floor (0.891333ms)
+✖ L1-OPENING-TABLE-BRANCH level1-reward-shelf joins its underside to the actual floor (1.124417ms)
+✖ L1-OPENING-TABLE-BRANCH bridge-table joins its underside to the actual floor (0.482708ms)
+✖ L1-OPENING-TABLE-BRANCH lift-table joins its underside to the actual floor (0.31875ms)
+✖ L1-OPENING-TABLE-BRANCH tower-table joins its underside to the actual floor (0.433792ms)
+✖ L1-OPENING-TABLE-BRANCH late-table joins its underside to the actual floor (0.377708ms)
+✔ L1-FIRST-TARGET-VISIBILITY rune-1 intact submits triangles at 390x844 (11.618625ms)
+✔ L1-FIRST-TARGET-VISIBILITY rune-1 intact submits triangles at 1100x720 (3.301958ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 5
+ℹ fail 10
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 419.725833
+
+✖ failing tests:
+
+test at tests/level1-recovery.test.ts:9:3
+✖ L1-STACK a: actual knife contact cuts the bearing object and releases the overlapping upper object (1.523167ms)
+  AssertionError [ERR_ASSERTION]: Expected "actual" to be strictly unequal to: false
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:14:12)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.start (node:internal/test_runner/test:1015:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: false,
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/level1-recovery.test.ts:9:3
+✖ L1-STACK b: actual knife contact cuts the bearing object and releases the overlapping upper object (0.208125ms)
+  AssertionError [ERR_ASSERTION]: Expected "actual" to be strictly unequal to: false
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:14:12)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: false,
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/level1-recovery.test.ts:37:1
+✖ L1-GRAVITY active airborne play does not freeze a hovering supported collectible (3.553917ms)
+  AssertionError [ERR_ASSERTION]: airborne knife must not freeze item above its table
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:44:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/level1-recovery.test.ts:47:1
+✖ L1-FINISH labels use viewport coordinates without a second offset (1.5095ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /inset:\s*0/. Input:
+  
+  '\n' +
+    '  position: fixed;\n' +
+    '  right: max(14px, env(safe-area-inset-right));\n' +
+    '  top: 50%;\n' +
+    '  z-index: 4;\n' +
+    '  display: grid;\n' +
+    '  gap: 4px;\n' +
+    '  transform: translateY(-50%);\n' +
+    '  pointer-events: none;\n'
+  
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:50:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '\n  position: fixed;\n  right: max(14px, env(safe-area-inset-right));\n  top: 50%;\n  z-index: 4;\n  display: grid;\n  gap: 4px;\n  transform: translateY(-50%);\n  pointer-events: none;\n',
+    expected: /inset:\s*0/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests/level1-recovery.test.ts:55:3
+✖ L1-FINISH all band corners fit the safe viewport on approach at 1100x720 (0.260125ms)
+  AssertionError [ERR_ASSERTION]: ember-four clipped at 692.3039974898516,1.4654785264462333
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts:68:18)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/opening-renderer-regression.test.ts:35:3
+✖ L1-OPENING-TABLE-BRANCH level1-reward-shelf joins its underside to the actual floor (1.124417ms)
+  AssertionError [ERR_ASSERTION]: level1-reward-shelf never entered the runtime grounded-base branch
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/opening-renderer-regression.test.ts:42:14)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/opening-renderer-regression.test.ts:35:3
+✖ L1-OPENING-TABLE-BRANCH bridge-table joins its underside to the actual floor (0.482708ms)
+  AssertionError [ERR_ASSERTION]: base bottom must touch rendered floor
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/opening-renderer-regression.test.ts:44:14)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/opening-renderer-regression.test.ts:35:3
+✖ L1-OPENING-TABLE-BRANCH lift-table joins its underside to the actual floor (0.31875ms)
+  AssertionError [ERR_ASSERTION]: base bottom must touch rendered floor
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/opening-renderer-regression.test.ts:44:14)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/opening-renderer-regression.test.ts:35:3
+✖ L1-OPENING-TABLE-BRANCH tower-table joins its underside to the actual floor (0.433792ms)
+  AssertionError [ERR_ASSERTION]: base bottom must touch rendered floor
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/opening-renderer-regression.test.ts:44:14)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/opening-renderer-regression.test.ts:35:3
+✖ L1-OPENING-TABLE-BRANCH late-table joins its underside to the actual floor (0.377708ms)
+  AssertionError [ERR_ASSERTION]: base bottom must touch rendered floor
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/opening-renderer-regression.test.ts:44:14)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

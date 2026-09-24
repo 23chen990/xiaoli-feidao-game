@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixerSummary",
+  "route": "formal-fixer",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "attempt": 1,
+  "issueIds": ["MOBILE-CAMERA-PROJECTION-001"],
+  "threadContinuity": {
+    "storedBuilderThreadId": null,
+    "replacement": "local workspace-scoped formal-fixer execution",
+    "reason": "No active stored Builder thread was exposed for this run."
+  },
+  "routeReason": "Fresh 390x844 startup failed the natural browser projection containment assertion in the 3D presentation path; the defect is localized to the game's responsive initial camera lead.",
+  "contextOmitted": [
+    "multi-mode camera invention",
+    "level geometry and gameplay tuning",
+    "realtime earnings and finish演出 gaps",
+    "native mini-game packaging",
+    "unrelated prior QA screenshots and logs"
+  ],
+  "reproductionMatrix": [
+    {
+      "objectType": "knife projection",
+      "lifecycleStateBranch": "startup initial render",
+      "rendererPresentationPath": ["src/three-world-renderer.ts", "src/three-presentation.ts", "src/main.ts"],
+      "deviceViewport": "390x844 mobile portrait",
+      "before": "camera target lead advanced from player.x + 255 simulation units, placing the knife partially outside the left viewport edge",
+      "after": "portrait lead is player.x + 200 simulation units; knife projection is fully contained"
+    },
+    {
+      "objectType": "knife projection",
+      "lifecycleStateBranch": "startup initial render",
+      "rendererPresentationPath": ["src/three-world-renderer.ts", "src/three-presentation.ts", "src/main.ts"],
+      "deviceViewport": "1180x720 desktop",
+      "before": "desktop baseline not failing",
+      "after": "desktop lead remains player.x + 255 simulation units"
+    }
+  ],
+  "filesChanged": [
+    "src/three-presentation.ts",
+    "src/three-world-renderer.ts",
+    "tests/three-presentation.test.ts"
+  ],
+  "fix": {
+    "cameraLeadSimulation": "Added a game-specific portrait framing helper: 200 simulation units for aspect ratio below 0.75, 255 otherwise.",
+    "rendererWiring": "ThreeWorldRenderer now uses the responsive lead when updating the existing camera target; no camera modes, level geometry, or gameplay state were changed.",
+    "applicability": "This is required only for this game's mobile initial framing contract; it is not a factory-wide multi-mode camera rule."
+  },
+  "tests": {
+    "red": "Added 3D-MAIN-CAMERA-003 before exporting cameraLeadSimulation; targeted test failed at module import because the production export was absent.",
+    "green": "Targeted three-presentation suite passed (15 tests); full pnpm test passed (153 tests).",
+    "lint": "PASS",
+    "typecheck": "PASS",
+    "build": "PASS; dist/index.html emitted"
+  },
+  "qa": {
+    "command": "pnpm qa:browser",
+    "status": "PASS",
+    "mobile": {
+      "viewport": "390x844",
+      "naturalInput": "native touch; fresh browser launch; no debug/state injection",
+      "knifeProjection": {"x": 29.259166546889205, "width": 94.79244814882813, "right": 124.05161508577834},
+      "criticalHudRectsInsideViewport": true,
+      "documentOverflow": false,
+      "naturalJourney": "passed startup, sigil drop, real cut, terminal win and replay coverage"
+    },
+    "desktop": {
+      "viewport": "1180x720",
+      "naturalInput": "real mouse",
+      "naturalJourney": "passed startup, real cut, terminal win and replay coverage"
+    },
+    "evidence": [
+      "tests/artifacts/qa-3d-main-v1/browser-result.json",
+      "tests/artifacts/qa-3d-main-v1/report.json",
+      "tests/artifacts/qa-3d-main-v1/mobile-three-main.png",
+      "tests/artifacts/qa-3d-main-v1/mobile-natural-zero-won.png",
+      "tests/artifacts/qa-3d-main-v1/desktop-three-main.png"
+    ]
+  },
+  "status": "PASS",
+  "remainingEvidenceGaps": [
+    "web-lite evidence only; native WeChat/Douyin/TapTap packaging remains unverified",
+    "this repair does not claim multi-mode camera, realtime earnings, or finish演出 parity"
+  ],
+  "claimBoundary": "Only the validated mobile startup knife projection issue is repaired; no generalized camera behavior is claimed."
+}

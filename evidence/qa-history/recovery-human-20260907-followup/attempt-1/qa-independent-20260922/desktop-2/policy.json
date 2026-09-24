@@ -1,0 +1,30 @@
+{
+  "outputDirectory": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-1/qa-independent-20260922/desktop-2",
+  "expectedBuildSha256": "10cba7632922f9fdeaa2eb33f7a05aa09bd3dbb7ca45a2db24acac282c9fd9a6",
+  "viewport": "desktop",
+  "cadenceMs": 800,
+  "activeMs": 10000,
+  "settlingAllowanceMs": 30000,
+  "denseFrameIntervalMs": 75,
+  "denseWindowMs": 2400,
+  "observationsIntervalMs": 100,
+  "inputPolicy": "screenshot pixels only: red handle below screen threshold triggers normal tap with 650ms minimum cooldown; offscreen/ambiguous cue waits; first startup tap; screenshots and every decision retained; internal observations never schedule inputs",
+  "visibleThreshold": 0.53,
+  "terminalPolicy": "visible exact completed/failed copy, then read-only status cross-check; reward reveal and replay button never terminal",
+  "plannedInputOffsetsMs": [
+    0,
+    800,
+    1600,
+    2400,
+    3200,
+    4000,
+    4800,
+    5600,
+    6400,
+    7200,
+    8000,
+    8800,
+    9600
+  ],
+  "forbiddenOperations": []
+}

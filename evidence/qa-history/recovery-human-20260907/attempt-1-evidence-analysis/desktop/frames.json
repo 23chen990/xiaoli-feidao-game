@@ -1,0 +1,316 @@
+{
+  "schemaVersion": 1,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "buildSha256": "c8f24a360b3dc8963beccc87bc1db10e62f2dda4276afdf0ffb6074240d4636c",
+  "videoPath": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-1/video/page@2758be98ea43614a25edd88cd4a8643f.webm",
+  "videoSha256": "d8a5cfb4e3131ade1d92393dabbaf36392bfbde3456617ad3dd8d81f0fd0df68",
+  "originalManifest": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-1/evidence-sha256.json",
+  "historicalRecording": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1/qa/desktop-1/recording.json",
+  "historicalRecordingSha256": "2a66638afd20bf3b8aba116e9e9196ad6226932e96e4294c3cbb131a6cb2085e",
+  "method": "Chromium video-only localhost page; paused seek + requestVideoFrameCallback mediaTime; screenshot of actual decoded frame; no gameplay page served",
+  "metadata": {
+    "duration": 89.44,
+    "width": 1100,
+    "height": 720
+  },
+  "frames": [
+    {
+      "requestedSeconds": 0.6,
+      "actual": {
+        "mediaTime": 0.6,
+        "presentedFrames": 2,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-0.600.png",
+      "sha256": "80257e3b921b735e118ab0cc320e235d2fce23f04d796b9430af53528997ebe2"
+    },
+    {
+      "requestedSeconds": 1,
+      "actual": {
+        "mediaTime": 1,
+        "presentedFrames": 3,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-1.000.png",
+      "sha256": "a92aed95cabcc22d6d7d392b2290042822d09efa1bbb4bf087ec37b75ec5e78a"
+    },
+    {
+      "requestedSeconds": 1.4,
+      "actual": {
+        "mediaTime": 1.4,
+        "presentedFrames": 4,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-1.400.png",
+      "sha256": "94b5cf15535674f9356555bbcb039a33407909e0df5df5ac4fba04ca06e652c5"
+    },
+    {
+      "requestedSeconds": 1.8,
+      "actual": {
+        "mediaTime": 1.8,
+        "presentedFrames": 5,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-1.800.png",
+      "sha256": "94b5cf15535674f9356555bbcb039a33407909e0df5df5ac4fba04ca06e652c5"
+    },
+    {
+      "requestedSeconds": 2.2,
+      "actual": {
+        "mediaTime": 2.2,
+        "presentedFrames": 6,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.200.png",
+      "sha256": "94b5cf15535674f9356555bbcb039a33407909e0df5df5ac4fba04ca06e652c5"
+    },
+    {
+      "requestedSeconds": 2.24,
+      "actual": {
+        "mediaTime": 2.24,
+        "presentedFrames": 2,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.240.png",
+      "sha256": "2005c1ed38b6590d3700e9e06f974f594195a39a58d6b6cd582a4cb3e91b8fbd"
+    },
+    {
+      "requestedSeconds": 2.3,
+      "actual": {
+        "mediaTime": 2.28,
+        "presentedFrames": 3,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.300.png",
+      "sha256": "a672edaa7a7c3fce5277adedbd12d24b6917152e6a38aca229c9a7eea24bd1b8"
+    },
+    {
+      "requestedSeconds": 2.36,
+      "actual": {
+        "mediaTime": 2.36,
+        "presentedFrames": 4,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.360.png",
+      "sha256": "c132fbe7748ff4459d705e66b82a6fe37e680bf79afaa5e1b87ad2ee9fc5461c"
+    },
+    {
+      "requestedSeconds": 2.42,
+      "actual": {
+        "mediaTime": 2.4,
+        "presentedFrames": 5,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.420.png",
+      "sha256": "af91b3183663d44d80fb39e50d7f87e3ecbfaf9fb1558b2ff35a9d720e54ed31"
+    },
+    {
+      "requestedSeconds": 2.48,
+      "actual": {
+        "mediaTime": 2.48,
+        "presentedFrames": 6,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.480.png",
+      "sha256": "8d667e4f6c79f4c6aed3b7340c748643da7718b449d70a749994f11ed5655b8d"
+    },
+    {
+      "requestedSeconds": 2.54,
+      "actual": {
+        "mediaTime": 2.52,
+        "presentedFrames": 7,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.540.png",
+      "sha256": "1f8b02a4007572391297418861ba726921ddc708cbc74e0ee1f7b57757fcfb54"
+    },
+    {
+      "requestedSeconds": 2.56,
+      "actual": {
+        "mediaTime": 2.56,
+        "presentedFrames": 2,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.560.png",
+      "sha256": "5ad69477250add41bc01d2bb88ecc3aac6f75848df12b8bf20102afca792669d"
+    },
+    {
+      "requestedSeconds": 2.6,
+      "actual": {
+        "mediaTime": 2.6,
+        "presentedFrames": 8,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.600.png",
+      "sha256": "6e749116ed8153329b895c673eaa5fbc9d3b8dcb7e4d41f03e4806d5aeb9cca7"
+    },
+    {
+      "requestedSeconds": 2.66,
+      "actual": {
+        "mediaTime": 2.64,
+        "presentedFrames": 9,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.660.png",
+      "sha256": "e6faccf89ef8e6ddb4801fb66fa4cab053f999f746c8610bb3714f2a23784cbf"
+    },
+    {
+      "requestedSeconds": 2.72,
+      "actual": {
+        "mediaTime": 2.72,
+        "presentedFrames": 10,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.720.png",
+      "sha256": "ccb1818f7bbd8bdea3b1eb074f9d5fbe857ab091ac592893a588e8b60ac33321"
+    },
+    {
+      "requestedSeconds": 2.78,
+      "actual": {
+        "mediaTime": 2.76,
+        "presentedFrames": 11,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.780.png",
+      "sha256": "9479e9109bf4e95e694f62b776c39f2687bb8f2a7fcf3db47fb90be5e03a35e2"
+    },
+    {
+      "requestedSeconds": 2.84,
+      "actual": {
+        "mediaTime": 2.84,
+        "presentedFrames": 12,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.840.png",
+      "sha256": "fffd9fdcd76c66ba68dc03d96cd1947bb9379d1a1afd361de439c8d2c70679a8"
+    },
+    {
+      "requestedSeconds": 2.9,
+      "actual": {
+        "mediaTime": 2.88,
+        "presentedFrames": 13,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.900.png",
+      "sha256": "476955a027e52654ebf1f4025c564839020046adb39265d2b4c4e571e40f48e2"
+    },
+    {
+      "requestedSeconds": 2.96,
+      "actual": {
+        "mediaTime": 2.96,
+        "presentedFrames": 14,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-2.960.png",
+      "sha256": "feb7ff8518833a5b9d710a4de39ae075ad6f34f1e152a03dae25a1be15bf094b"
+    },
+    {
+      "requestedSeconds": 3,
+      "actual": {
+        "mediaTime": 3,
+        "presentedFrames": 2,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-3.000.png",
+      "sha256": "187eeb28fdb5a362e2abd17944e50294b10a5ca812fb811714d5451165f70743"
+    },
+    {
+      "requestedSeconds": 3.02,
+      "actual": {
+        "mediaTime": 3,
+        "presentedFrames": 15,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-3.020.png",
+      "sha256": "187eeb28fdb5a362e2abd17944e50294b10a5ca812fb811714d5451165f70743"
+    },
+    {
+      "requestedSeconds": 4,
+      "actual": {
+        "mediaTime": 4,
+        "presentedFrames": 3,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-4.000.png",
+      "sha256": "f61cd0495ea1579105994cbbd6cd72ff016ff653882f369106c776b7895fd00d"
+    },
+    {
+      "requestedSeconds": 5,
+      "actual": {
+        "mediaTime": 5,
+        "presentedFrames": 4,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-5.000.png",
+      "sha256": "2491f09ac5105cff386bb3f09aae7f0cb153057d087483d8e774d16255e6b7d6"
+    },
+    {
+      "requestedSeconds": 6,
+      "actual": {
+        "mediaTime": 6,
+        "presentedFrames": 5,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-6.000.png",
+      "sha256": "746cc38de2eb63c33f4208f97a7a2ca50f0d5f789d780d35bd57ca0aaa882b6b"
+    },
+    {
+      "requestedSeconds": 8,
+      "actual": {
+        "mediaTime": 8,
+        "presentedFrames": 6,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-8.000.png",
+      "sha256": "1043daef272ef20b36c308f44f036a241deca6770c5039a6286ef41b139b1f07"
+    },
+    {
+      "requestedSeconds": 10,
+      "actual": {
+        "mediaTime": 10,
+        "presentedFrames": 7,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-10.000.png",
+      "sha256": "6ad483bb8725777228241bbb9752b2ae057e61045007427221cc6315772ae544"
+    },
+    {
+      "requestedSeconds": 12,
+      "actual": {
+        "mediaTime": 12,
+        "presentedFrames": 8,
+        "width": 1100,
+        "height": 720
+      },
+      "path": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/recovery-human-20260907/attempt-1-evidence-analysis/desktop/t-12.000.png",
+      "sha256": "f5fbc5c372904083ea9576006d87e3a1ea4b8e0db1fe8958d8b203f1b30e2695"
+    }
+  ]
+}

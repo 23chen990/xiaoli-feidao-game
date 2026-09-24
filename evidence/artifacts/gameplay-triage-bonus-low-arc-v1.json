@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriageRecord",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "classification": "bonus-playability-low-arc",
+  "scope": "bonus wave target launch height and player reachability",
+  "evidence": "Attached screenshot shows Bonus active near the lower route with no reachable flying cuttable visible before failure.",
+  "reproductionMatrix": [
+    { "objectType": "bonus target", "lifecycle": "spawned uncut", "rendererPath": "game-core updateBonusFlight -> Three renderer", "viewport": "desktop 1984x1271 screenshot" },
+    { "objectType": "bonus target", "lifecycle": "ascending and descending", "rendererPath": "fixed-step ballistic integration", "viewport": "desktop and mobile" }
+  ],
+  "acceptance": ["Targets reach the mid/upper playable area", "A normal tap can intersect an ascending or descending target", "Arc remains ballistic and varied", "Targets do not accumulate on the ground"],
+  "route": "formal-fixer",
+  "attempt": 1
+}

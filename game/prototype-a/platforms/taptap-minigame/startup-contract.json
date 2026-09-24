@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "platform": "taptap-minigame",
+  "gameName": "疯狂切割",
+  "appId": "928932",
+  "failureReportBuild": "196126",
+  "packageShaBoundToFailureReport": null,
+  "classification": "EXTERNAL_HOST_CRASH_UNRESOLVED",
+  "ownership": {
+    "host": ["com.taptap process", "PageProxyActivity", "InstantGameActivity availability"],
+    "package": ["game.js", "game.json", "project.config.json", "Cocos Graphics first frame"]
+  },
+  "deviceBranches": [
+    { "model": "OPPO PDBM00", "os": "Android 9", "evidence": "backend-only", "rawTrace": false },
+    { "model": "ZTE A2022P", "os": "Android 13", "evidence": "host-fatal-exception", "rawTrace": true },
+    { "model": "OPPO PKB110", "os": "Android 16", "evidence": "adjacent-model-mismatch", "rawTrace": true }
+  ],
+  "packageFirstFrameContract": {
+    "renderer": "Cocos Graphics static/dynamic layers",
+    "orientation": "portrait",
+    "designResolution": { "width": 390, "height": 844, "policy": 4 },
+    "safeAreaSource": "screen.safeArea"
+  },
+  "requiresExactShaNaturalRetest": true
+}

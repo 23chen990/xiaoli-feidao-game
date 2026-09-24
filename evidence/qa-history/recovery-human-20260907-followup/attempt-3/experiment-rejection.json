@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fix-experiment-rejection",
+  "cycleId": "human-review-20260907-l1-followup",
+  "attempt": 3,
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "targetWorkspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "issueId": "L1-RUNWAY-COLLISION-MISMATCH",
+  "experiment": {
+    "dataChange": "src/game-levels.ts changed level1-runway-main from collidable=false to the default collidable state",
+    "coreVariant": "A temporary copy retained the physics bounce but suppressed only the level1-runway-main bounce event while elapsed<1.5s; this was not applied to the target workspace.",
+    "reason": "The full-length collidable runway is required for the provided replay to continue past x=2000, but its collision also changes Level1 teaching and fixture branches. A narrow data-only recovery support anchors the same replay at x≈1138 and does not satisfy the acceptance route."
+  },
+  "targetWorkspaceResult": {
+    "sourceRestored": true,
+    "srcGameLevelsSha256": "c6e7ef7fa8cc37709b037d18bf600e832807926a3158d7e3522a3b3fa14dd3e0",
+    "newRegressionTestRemains": true,
+    "newRegressionTestHash": "24430622b4e495246b9ffef29842d7a23db88ff5af6be34bcf59ae3d7adb3b28"
+  },
+  "targetedExperimentalResult": {
+    "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+    "exitCode": 0,
+    "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-3/green-test.log",
+    "logSha256": "e0d84ca15948bd4a5098fa8d9562cc72607e59731cc46b243bfc9715e150c50a"
+  },
+  "fullSuiteAfterDataExperiment": {
+    "command": "pnpm test",
+    "exitCode": 1,
+    "logPath": "runs/mobile-slice-adaptation-20260830/recovery-human-20260907-followup/attempt-3/tests.log",
+    "logSha256": "237135c97d4d48cbad1f733007f2d6766a223a168f4e60d858b337fc38d69892",
+    "summary": "188 passed, 5 failed; existing opening/bonus/fragment/high-speed-cut branches regressed under the full-length collidable runway."
+  },
+  "failedBranches": [
+    "first white support teaching anchor versus blunt bounce",
+    "visible-state rich finish enters bonus",
+    "late safe/bonus lane outcomes",
+    "ACTION-FEEL fragment damping",
+    "CUT-003 high-speed sharp sweep at 30 and 120 Hz"
+  ],
+  "createdAt": "2026-09-23T04:22:00.000Z"
+}

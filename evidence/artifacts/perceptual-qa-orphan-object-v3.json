@@ -1,0 +1,13 @@
+{
+  "schemaVersion":1,
+  "artifactType":"PerceptualQaReport",
+  "targetGame":"小李飞刀",
+  "status":"PASS",
+  "evidence":["qa-level-pack-v1/perceptual-v2-desktop-level-03-won.png","qa-level-pack-v1/perceptual-v2-mobile-level-03-won.png"],
+  "checks":[
+    {"id":"L3-DECORATIVE-HAZARD","status":"PASS","finding":"l3-low-risk removed from Level 3 spikes entirely; no misleading pink hazard is rendered."},
+    {"id":"L3-ROUTE-OBJECTS","status":"PASS","finding":"ramp, rebound and recovery pad remain explicit gameplay supports with path roles."},
+    {"id":"L3-NATURAL-REPLAY","status":"PASS","finding":"Level 3 natural desktop/mobile completion and replay remain covered by fresh level3 evidence."}
+  ],
+  "runtime":"Debug spike scenario uses an explicit synthetic collidable spike, preserving failure-test coverage."
+}

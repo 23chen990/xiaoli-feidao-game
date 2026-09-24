@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "fix-result",
+  "cycleId": "human-review-20260923-continue",
+  "attempt": 10,
+  "issueId": "L1-RUNWAY-RECOVERY-SECOND-SETTER-GATE",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "routeReason": "The validated issue affects the core loop, has failed prior repair attempts, and requires QA retest. Attempt 10 was scoped to an evidence-gated setter correction.",
+  "status": "BLOCKED",
+  "candidateRejected": false,
+  "rootCauseHypothesis": "The fixed replay confirms that the second separating runway top-tip contact has player-center x below the authored suppression boundary while its sharp contact point is beyond that boundary. This supports a possible coordinate-basis mismatch, but the restored baseline contains no pending pose setter and the rejected attempt 8 setter predicate is not preserved. The actual candidate branch cannot be inspected or confirmed from the available source.",
+  "baselineHashesVerified": [
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+      "expectedSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+      "actualSha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7"
+    },
+    {
+      "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts",
+      "expectedSha256": "be57c4dbd2d3f0e0790b9637d992082a104887ecac80b2f61a3d7ee49fc1dfcd",
+      "actualSha256": "be57c4dbd2d3f0e0790b9637d992082a104887ecac80b2f61a3d7ee49fc1dfcd"
+    }
+  ],
+  "baselineRed": {
+    "command": "pnpm exec tsx --test tests/level1-recovery.test.ts",
+    "exitCode": 1,
+    "result": "The fixed-step normal-input trace reproduced runway anchors at frames 216 and 302. The RED expectation that both separating top-tip contacts remain airborne failed on the restored baseline. The trace also showed the counterfactual contact-point x<350 gate rejects contact 2 while the player-center x<350 gate admits it.",
+    "log": "red-targeted.log",
+    "sha256": "0bc481cb81b831b3b06947f425420326b02ba00c2ae69bcb0502978ad9ab60c5",
+    "summary": {
+      "tests": 19,
+      "passed": 15,
+      "failed": 4,
+      "newTraceFailure": "expected airborne setter acceptance; actual restored-baseline status is anchored"
+    }
+  },
+  "setterGateTrace": {
+    "authoredPlayerCenterSuppressionBoundaryX": 350,
+    "candidatePredicateObserved": false,
+    "baselineSetterExists": false,
+    "contacts": [
+      {
+        "frame": 216,
+        "preContactPlayerX": 303.9500000000005,
+        "sharpContactPointX": 315.47808960723034,
+        "normalY": -1,
+        "relativeNormalVelocity": 180,
+        "recoveryAge": 0.19999999999999998,
+        "pendingAge": null,
+        "candidateSetterBranch": "separating runway top-tip",
+        "baselineSetterDecision": "no pending pose setter exists; ordinary anchor path",
+        "contactPointGateCounterfactual": "set: contact x is below 350",
+        "playerCenterGateCounterfactual": "set: player center x is below 350",
+        "actualStatus": "anchored"
+      },
+      {
+        "frame": 302,
+        "preContactPlayerX": 331.4500000000005,
+        "sharpContactPointX": 368.0817538698364,
+        "normalY": -1,
+        "relativeNormalVelocity": 195,
+        "recoveryAge": 0.175,
+        "pendingAge": null,
+        "candidateSetterBranch": "separating runway top-tip",
+        "baselineSetterDecision": "no pending pose setter exists; ordinary anchor path",
+        "contactPointGateCounterfactual": "skip: contact x is at or beyond 350",
+        "playerCenterGateCounterfactual": "set: player center x is below 350",
+        "actualStatus": "anchored"
+      }
+    ],
+    "interpretation": "The frame-302 center/contact coordinate disagreement is measured. It does not show which predicate the missing rejected candidate used, so applying a setter-gate correction would be an unsupported implementation guess."
+  },
+  "rollback": {
+    "performed": true,
+    "sourceChanged": false,
+    "testInstrumentationRemoved": true,
+    "files": [
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/src/game-core.ts",
+        "sha256": "b6955d173525ff9c9aca753fa5f90fd42303c1ac41106614fdeb4fa25442d3c7",
+        "matchesTaskPacketBaseline": true
+      },
+      {
+        "path": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts",
+        "sha256": "be57c4dbd2d3f0e0790b9637d992082a104887ecac80b2f61a3d7ee49fc1dfcd",
+        "matchesTaskPacketBaseline": true
+      }
+    ]
+  },
+  "changedFiles": [],
+  "filesTemporarilyInstrumented": [
+    "runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/level1-recovery.test.ts"
+  ],
+  "fullChecks": {
+    "pnpmTest": { "status": "NOT_RUN", "log": "tests.log" },
+    "pnpmLint": { "status": "NOT_RUN", "log": "lint.log" },
+    "pnpmTypecheck": { "status": "NOT_RUN", "log": "typecheck.log" },
+    "pnpmBuild": { "status": "NOT_RUN", "buildCount": 0, "log": "build.log", "distSha256": null }
+  },
+  "contextIntentionallyOmitted": [
+    "Unrelated games, shared factory code, platform adapters, renderer, release configuration, and unrelated QA records.",
+    "Full conversation, unbound media, and source bytes for the rejected attempt 8 candidate.",
+    "Natural and perceptual completion claims; independent browser QA remains required."
+  ],
+  "remainingEvidenceGaps": [
+    "The rejected candidate's actual setter predicate and per-branch telemetry are not preserved.",
+    "No setter-only candidate or fixed replay was run; its second pose, route duration, and x>2000 outcome remain unknown.",
+    "No fresh natural-input or perceptual QA was run."
+  ],
+  "nextDistinctHypothesis": "Preserve or reconstruct the pending-pose setter with explicit set/skip telemetry, then establish its actual frame-302 predicate before changing the gate coordinate basis. Keep the exact separating top-tip branch and player-center suppression boundary in the next test packet.",
+  "runtimeQaClaim": false,
+  "naturalQaClaim": false,
+  "perceptualQaClaim": false,
+  "buildCount": 0,
+  "createdAt": "2026-09-23T09:56:49.000Z"
+}

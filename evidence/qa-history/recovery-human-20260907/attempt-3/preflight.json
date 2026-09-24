@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "role": "FixerAgent",
+  "route": "formal-fixer",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "attempt": 3,
+  "sourceBuildSha256": "b234fd16adb1bf70e7bc021fd33a4703de03e59657bd21fb82419bda712747a6",
+  "cells": [
+    {
+      "issue": "L1-STACK-DECORATIVE-SUBSTITUTION",
+      "object": "level1-rainbow-step-a/b + level1-ladder-stack-a/b",
+      "state": "intact→sharp contact→cut→unsupported fall",
+      "renderer": "catalog→game-core→ThreePresentationModel→ThreeWorldRenderer",
+      "viewports": [
+        "390x844",
+        "1100x720"
+      ],
+      "red": "assert each visible stack body is collidable, parent-linked, overlapping, and a real cut event yields released falling dependant with two rendered halves"
+    },
+    {
+      "issue": "L1-STACK-VISUAL-EVIDENCE-GAP",
+      "object": "stack-a/b same visible cuttable IDs",
+      "state": "before/after contact",
+      "renderer": "ThreePresentationModel/CutVisualEntity",
+      "viewports": [
+        "390x844",
+        "1100x720"
+      ],
+      "red": "assert pre-cut intact presentation occupies support contact and post-cut presentation keeps target ID with two separated halves and falling state"
+    },
+    {
+      "issue": "L1-GROUND-HIGH-SLAB",
+      "object": "white-bumper and white-branch high slabs",
+      "state": "startup/intact",
+      "renderer": "ThreeWorldRenderer.syncSupports",
+      "viewports": [
+        "390x844",
+        "1100x720"
+      ],
+      "red": "assert each visible high slab creates a floor-reaching support-base whose bottom is GROUND_VISUAL_TOP_Y"
+    }
+  ],
+  "causalFiles": [
+    "src/game-levels.ts",
+    "src/game-core.ts",
+    "src/three-presentation.ts",
+    "src/three-world-renderer.ts",
+    "tests/level1-recovery.test.ts",
+    "tests/opening-renderer-regression.test.ts"
+  ],
+  "scopeNotes": [
+    "No other levels or factory code",
+    "Preserve prior opening/render fixes",
+    "Natural/perceptual QA remains independent",
+    "One build only"
+  ],
+  "contextIntentionallyOmitted": [
+    "Unverified media",
+    "Other games",
+    "full conversation",
+    "release/platform work"
+  ]
+}

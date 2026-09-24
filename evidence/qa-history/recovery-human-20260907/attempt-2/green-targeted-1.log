@@ -1,0 +1,23 @@
+✔ L1-STACK a: actual knife contact cuts the bearing object and releases the overlapping upper object (5.632917ms)
+✔ L1-STACK b: actual knife contact cuts the bearing object and releases the overlapping upper object (3.771792ms)
+✔ L1-GRAVITY active airborne play does not freeze a hovering supported collectible (0.942708ms)
+✔ L1-FINISH labels use viewport coordinates without a second offset (0.698416ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 390x844 (1.060125ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 1100x720 (0.198125ms)
+✔ L1-OPENING-TABLE-BRANCH opening-table-a joins its underside to the actual floor (2.856583ms)
+✔ L1-OPENING-TABLE-BRANCH opening-table-b joins its underside to the actual floor (2.197334ms)
+✔ L1-OPENING-TABLE-BRANCH level1-reward-shelf joins its underside to the actual floor (0.340167ms)
+✔ L1-OPENING-TABLE-BRANCH bridge-table joins its underside to the actual floor (0.303167ms)
+✔ L1-OPENING-TABLE-BRANCH lift-table joins its underside to the actual floor (0.270791ms)
+✔ L1-OPENING-TABLE-BRANCH tower-table joins its underside to the actual floor (0.27825ms)
+✔ L1-OPENING-TABLE-BRANCH late-table joins its underside to the actual floor (0.359875ms)
+✔ L1-FIRST-TARGET-VISIBILITY rune-1 intact submits triangles at 390x844 (9.523333ms)
+✔ L1-FIRST-TARGET-VISIBILITY rune-1 intact submits triangles at 1100x720 (2.087291ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 381.093209

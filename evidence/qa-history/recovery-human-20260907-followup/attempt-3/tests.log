@@ -1,0 +1,311 @@
+$ tsx --test tests/*.test.ts
+✔ A-BASECOLOR-001 four original A-direction PNG atlases are square, mobile-budgeted and unique (51.725041ms)
+✔ A-BASECOLOR-002 strict production manifest maps the four atlases to real UV quadrants (137.70925ms)
+✔ ASSET-MANIFEST-001 validates and hashes every approved local Kenney Food Kit asset (10.505084ms)
+✔ build is a self-contained single-canvas Three.js playable page (174.073166ms)
+✔ 3D-MAIN-RELEASE-008 emits one parseable literal inline module without HTML injected into JavaScript (57.884917ms)
+✔ CORE-DECISION-001 early levels expose three distinct authored decision beats (0.488417ms)
+✔ CORE-CUT-ROUTE-002 cutting authored route blocks changes support reachability (0.9695ms)
+✔ CORE-FINISH-004 route preparation is carried into finish selection (0.184583ms)
+✔ 3D POC build contains the local scene, renderer bridge and pinned GLB assets (53.167042ms)
+✔ diorama skin is original, mobile-budgeted and covers every visible surface family (0.950875ms)
+✔ A-BASECOLOR-POC-004 the UV cut POC consumes the same formal bitmap atlases instead of procedural target textures (49.405667ms)
+✔ selected curved blade and feedback profile read as a fast sharp cut (4.250458ms)
+✔ quantizes arbitrary cuts into eight stable directions (0.151458ms)
+✔ every supported target creates two capped pieces that separate in depth (0.265875ms)
+✔ cut halves launch outward, leave the platform edges and settle on the ground (24.128ms)
+✔ cut direction and contact point shape each half trajectory and spin (0.215166ms)
+✔ falling-piece presentation preserves the authored cut twist at impact (0.1125ms)
+✔ cut halves have a readable weighted arc instead of an explosive sideways launch (0.095042ms)
+✔ falling-piece integration is fixed-step and matches explicit 60 Hz stepping (0.241125ms)
+✔ oblique orthographic camera exposes thickness and the cut cap (0.093666ms)
+✔ online Kenney GLB assets and bundled license remain hash pinned (15.81825ms)
+✔ selected online sword and local Three.js Draco decoder remain hash pinned (22.262042ms)
+✔ 3D POC page declares the isolated cut-cross-section entrypoint (25.837916ms)
+✔ one action cuts and the next action advances through all three targets (0.291042ms)
+✔ finish labels clamp back inside the safe viewport without drifting off their target wall (0.46425ms)
+✔ FOOD-THEME-RED-001 locks level families to one food theme without cross-theme mixing (2.12975ms)
+✔ FOOD-THEME-RED-002 runtime course carries authored style ids to every cuttable object (0.669708ms)
+✔ FOOD-THEME-RED-003 authored lengths increase world distance, not only timer labels (0.102667ms)
+✔ FOOD-THEME-RED-004 dessert presentation uses a cake-slice profile, not circular sigil geometry (19.795458ms)
+✔ bonus hard surfaces occupy reachable mid-lane windows (85.145375ms)
+✔ ordinary hard surfaces register a deliberate near-edge body contact (49.869125ms)
+✔ COURSE-STAGE-001 three original stages are contiguous and rise from teach to test (5.717792ms)
+✔ COURSE-STAGE-002 runtime course segments are derived from the independent blueprint (0.534625ms)
+✔ TRACE-001 every locked mechanic points to executable regression evidence (96.912584ms)
+✔ FEEDBACK-TIMING-001 timing baseline is responsive and ordered for one-touch play (0.204459ms)
+✔ same seed creates the same paced original course and a different seed varies targets (2.932333ms)
+✔ ready waits safely and one flip immediately launches upward forward and rotating (8.845083ms)
+✔ seed 31 one real opening edge cuts before danger and reaches a recoverable contact inside three seconds (146.745375ms)
+✖ the first white support teaches sharp anchor and blunt bounce through two simple timing branches (13.96875ms)
+✔ the opening blunt-bounce branch tolerates a broad second-tap window (18.534291ms)
+✔ INPUT-EDGE-001 input emits one flip edge for a long or repeated press (0.256458ms)
+✔ INPUT-BUFFER-002 a slightly early airborne tap executes when flip cooldown ends (1.856667ms)
+✔ different mid-air flip timing produces a visibly different predicted landing path (23.360791ms)
+✔ only sharp-edge sweep cuts and blunt-side overlap never counts (2.433542ms)
+✔ sigil body-only overlap never cuts and sharp contact is separated at the hit plane (1.299292ms)
+✔ blunt-side collision with a neutral support bounces and a subsequent flip saves it (0.9065ms)
+✔ hard-surface recovery never launches the knife beyond the readable course speed budget (14.691166ms)
+✔ released structural blocks fall with gravity, collide with the floor, and settle instead of tunneling through it (14.388791ms)
+✔ sharp-edge support contact anchors and one tap deliberately relaunches (0.362333ms)
+✔ magenta spike and abyss emit distinct fatal reasons and events (4.396458ms)
+✔ terminal one tap immediately replays the same deterministic ordinary level (0.1695ms)
+✔ Level 1 teaches supported cuts before interactive stacks, hazard pressure and original finish choice (0.169875ms)
+✔ CHOKE-REACTION-005 hard-column exit leaves a reaction cycle and two visible routes (0.102875ms)
+✔ COURSE-NO-ORACLE-006 global-height policies pass the choke without obstacle coordinates (635.100375ms)
+✔ NATURAL-CHOKE-007 low global input escapes a vertical surface without repeated no-progress rebounds (68.962125ms)
+✔ NATURAL-CHOKE-008 independent input cadence does not repeat three no-progress impacts on one body (26.823ms)
+✔ a deliberately extreme high-line rhythm still reaches visible magenta pressure before ten seconds (11.804291ms)
+✔ visible-state play produces its first self-attributed cut inside five seconds (0.645917ms)
+✔ successive actual collectible contacts multiply each target value by the live combo (0.282042ms)
+✔ TABLETOP-GRAVITY-001 supported Level 1 items rest on their surface and fall after support loss (0.446166ms)
+✔ a visible-state policy finishes the ordinary route through the wider safe gate in 12-25 seconds (42.234792ms)
+✖ a visible-state policy can choose the narrow rich gate and enter dense one-chance bonus (35.038625ms)
+✔ finish wall contact settles a lane before the knife crosses the wall plane (0.242375ms)
+✖ late inputs aimed at the current safe/bonus lanes preserve both complete outcomes (64.2ms)
+✔ bonus failure returns to the same deterministic ordinary level (1.340333ms)
+✔ bonus success returns to terminal summary then replays the same ordinary level (0.269417ms)
+✔ 30 60 and 120 Hz render cadence converge on the same fixed-step state (8.065416ms)
+✔ a 420ms low frame preserves elapsed time and converges with split frames (2.418166ms)
+✔ a 1.394s main-thread stall catches up without losing simulation time (12.35675ms)
+✖ ACTION-FEEL fragments inherit cut contact and settle with damping (10.632459ms)
+✔ CUT-SIGIL-FALL-011 cut sigil halves descend to the simulation floor and settle (3.481916ms)
+✔ experience chain records cut earnings in a persistent run ledger (0.241125ms)
+✔ finish reward reveal precedes terminal win and settles the selected wall lane (0.314333ms)
+✔ LEVEL-CATALOG-RED-001 catalog strictly validates twelve sequential original levels (120.515166ms)
+✔ LEVEL-CATALOG-RED-002 every level has a distinct authored relationship and a completable structural path (0.464833ms)
+✔ LEVEL-CATALOG-RED-003 recommended progression maps teach, movement, chains and synthesis to 1-3, 4-6, 7-9 and 10-12 (0.22075ms)
+✔ LEVEL-CATALOG-RED-004 courses are deterministic per seed and level while Level 1 preserves the accepted demo fixtures (0.777834ms)
+✔ LEVEL-CATALOG-RED-006 Level 1 presents an original vertical cut-chain with a readable side reward beat (0.146458ms)
+✔ LEVEL-CATALOG-RED-007 Level 1 preserves teaching targets then real stacked support interactions (0.445958ms)
+✔ LEVEL-CATALOG-RED-008 Level 1 tabletop items are supported and include intentional overlap (0.297667ms)
+✔ LEVEL-CATALOG-RED-009 Level 1 presentation contract has a bright runway and fruit-like target cadence (0.10025ms)
+✔ LEVEL-CATALOG-RED-010 Level 1 tabletop bases terminate at the shared ground plane (0.105917ms)
+✔ LEVEL-CATALOG-RED-005 same seed and input produce the same core trace across theme replacement (28.862125ms)
+✔ later levels make hazards move while early levels keep a readable fixed hazard (0.115834ms)
+✔ later levels expose moving hard blocks with increasing density (1.510667ms)
+✔ every moving object has an authored interaction meaning and reachable route role (0.85425ms)
+✔ course beats and finish rewards vary across archetypes (0.280917ms)
+✔ bonus availability is deterministic for the same level and seed (0.628167ms)
+✔ finish rewards form a contiguous multiplier wall with a broad x0.5 recovery lane (0.155459ms)
+✔ level 4 keeps a recoverable finish landing window after moving-hard pressure (0.084125ms)
+✔ level 1 keeps a broad mid-course recovery shelf for the default natural route (0.066917ms)
+✔ LEVEL-PROGRESS-RED-001 completion unlocks only the next level and records neutral best results (1.6355ms)
+✔ LEVEL-PROGRESS-RED-002 locked selection is refused, next level is ordered, and replay keeps the same level (2.337958ms)
+✔ LEVEL-PROGRESS-RED-003 version 1 save migrates, clamps bounds and rejects corrupt or future data (2.827417ms)
+✔ LEVEL-PROGRESS-RED-004 refresh restores highest unlocked level without cross-level failure leakage (4.226041ms)
+✔ LEVEL-PROGRESS-005 all twelve levels enter, complete, replay deterministically and unlock in order (52.807542ms)
+✔ LEVEL-PROGRESS-006 bonus entry is an explicit one-shot transition (31.698833ms)
+✔ LEVEL-PROGRESS-007 bonus course has multiplier settlement and a capped chain gate (0.347625ms)
+✔ LEVEL-PROGRESS-008 bonus high columns are active reachable hard supports (0.246125ms)
+✔ LEVEL-UI-RED-001 placeholder shell exposes numbered selector, replay and next controls without final art decisions (10.131625ms)
+✔ LEVEL-UI-RED-002 Level 1 guidance stages the observed tutorial beats without copying reference wording (0.245792ms)
+✔ L1-STACK a: actual knife contact cuts the bearing object and releases the overlapping upper object (12.603209ms)
+✔ L1-STACK-VISUAL-EVIDENCE a: same target stays visible and separates into two halves after cut (1.923875ms)
+✔ L1-STACK b: actual knife contact cuts the bearing object and releases the overlapping upper object (3.218916ms)
+✔ L1-STACK-VISUAL-EVIDENCE b: same target stays visible and separates into two halves after cut (0.925417ms)
+✔ L1-GRAVITY active airborne play does not freeze a hovering supported collectible (1.964959ms)
+✔ L1-REWARD intact has zero earnings; a real cut names the separated target and replay clears earnings (74.334666ms)
+✔ L1-PLACEMENT every initial collectible has a touching support, including the late and bridge targets (0.195875ms)
+✔ L1-RUNWAY visible support stays collidable through the normal forward replay (171.583167ms)
+✔ L1-FINISH labels use viewport coordinates without a second offset (0.423209ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 390x844 (3.359542ms)
+✔ L1-FINISH all band corners fit the safe viewport on approach at 1100x720 (0.255542ms)
+✔ Level 10 falling-risk spike stays on the low route and leaves the high line readable (0.408375ms)
+✔ Level 12 floor-risk spike stays below the main route and leaves a readable upper escape (0.424833ms)
+✔ Level 12 authors a final recovery shelf before the finish gate (0.099291ms)
+✔ Level 04 authors a safe recovery support before l4-gap-risk (0.56425ms)
+✔ Level 04 keeps the spike window narrow enough to leave a visible high-line escape (0.079875ms)
+✔ Level 04 authors an early recovery shelf before the moving ferry (0.07475ms)
+✔ Level 10 falling-risk spike starts after the tower exit decision window (0.064666ms)
+✔ Level 04 keeps a final recovery shelf under the finish approach (0.065834ms)
+✔ Level 04 finish recovery keeps a late low miss from failing before gate settlement (2.26425ms)
+✔ Level 04 safe-height policy avoids l4-gap-risk and reaches terminal win (258.193208ms)
+✔ Level 04 risk-height policy keeps l4-gap-risk as a readable avoidable hazard (83.8585ms)
+✔ CONTACT-001 classifies tip, edge, body and handle as four deterministic knife parts (0.674458ms)
+✔ CONTACT-002 only tip or edge contact cuts a rectangular target and it scores once (112.466667ms)
+✔ MOV-001 moving support positions are seeded, bounded and frame-split deterministic (4.123791ms)
+✔ MOV-002 MOV-003 an anchored knife rides a moving support and inherits its velocity at launch (0.552875ms)
+✔ HARD-IDENTITY-001 course has no dedicated rebound identity (0.165834ms)
+✔ HARD-REFLECT-002 ordinary static, vertical, moving and block surfaces share incident reflection (1.360125ms)
+✔ HARD-SEPARATING-003 separating overlap only depenetrates without minimum-speed injection (0.295917ms)
+✔ SHARP-STABLE-004 sharp semantics stay stable after a generic hard-surface bounce (12.82825ms)
+✔ CUT-001 CUT-002 course exposes above, side and below rectangular cuts with no invisible post-cut collider (4.887834ms)
+✖ CUT-003 a high-speed sharp sweep cuts the same block at 30 and 120 Hz (4.632417ms)
+✔ STRUCT-001 STRUCT-002 cutting the middle tower segment opens a gap, drops dependants and separates two fragments (2.2145ms)
+✔ DUAL-001 DUAL-002 a dual-role block supports before cutting and its landing face disappears after cutting (0.241541ms)
+✔ DUAL-001-PRECUT-SUPPORT-NOT-REPRODUCIBLE real input has stable support and cut branches (46.804958ms)
+✔ FINISH-001 FINISH-002 math operations are integer-safe and deterministic (0.095292ms)
+✔ FINISH-003 course has two original multipliers and one divisor, and a gate settles only once (0.247334ms)
+✔ BONUS-001 BONUS-002 bonus availability is seeded and one-chance terminal restart preserves the level seed (0.846417ms)
+✔ COURSE-001 COURSE-002 COURSE-003 route data covers three spatial cuts, both moving axes, hard terrain, collapse, spike and gaps (0.511584ms)
+✔ FAIL-001 FAIL-002 fall and spike are distinct and restart restores motion phase, structure, fragments and score (2.200417ms)
+✔ FIXED-001 moving supports, collision events, fragments and collapse converge across frame cadences and a long frame (64.144834ms)
+✔ L1-OPENING-TABLE-BRANCH opening-table-a joins its underside to the actual floor (2.920709ms)
+✔ L1-OPENING-TABLE-BRANCH opening-table-b joins its underside to the actual floor (0.57075ms)
+✔ L1-OPENING-TABLE-BRANCH level1-reward-shelf joins its underside to the actual floor (0.411708ms)
+✔ L1-OPENING-TABLE-BRANCH bridge-table joins its underside to the actual floor (0.41675ms)
+✔ L1-OPENING-TABLE-BRANCH lift-table joins its underside to the actual floor (0.347625ms)
+✔ L1-OPENING-TABLE-BRANCH tower-table joins its underside to the actual floor (0.341875ms)
+✔ L1-OPENING-TABLE-BRANCH late-table joins its underside to the actual floor (0.377958ms)
+✔ L1-OPENING-TABLE-BRANCH white-bumper joins its underside to the actual floor (0.3215ms)
+✔ L1-OPENING-TABLE-BRANCH white-branch joins its underside to the actual floor (0.370333ms)
+✔ L1-FIRST-TARGET-VISIBILITY rune-1 intact submits triangles at 390x844 (16.655916ms)
+✔ L1-FIRST-TARGET-VISIBILITY rune-1 intact submits triangles at 1100x720 (5.422417ms)
+✔ level 3 interactive objects declare reachable route roles and decision impact (0.48575ms)
+✔ level 3 low-risk spike is explicit decorative art when not a fair hazard (0.08025ms)
+✔ level 3 has no decorative spike rendered as a gameplay hazard (0.057708ms)
+✔ all authored spikes carry explicit pressure semantics (0.080125ms)
+✔ all twelve levels place hard objects inside a declared reachable decision corridor (0.190792ms)
+✔ all authored white supports are floor-valid, route-reachable, and player-effective (2.468625ms)
+✔ perceptual pressure HUD exposes authored family, moving-hard warning and finish reward (1.451875ms)
+✔ perceptual delta requires a distinct earnings hierarchy and finish-phase presentation hooks (1.291167ms)
+✔ competitive feel keeps five cut feedback layers and finish wall as visual lead (0.109916ms)
+✔ terminal settlement keeps the selected finish wall visible beside the overlay (0.187334ms)
+✔ finish wall labels are projected onto the world wall instead of detached HUD rail (0.168708ms)
+✔ cut rewards fly from the world object before global settlement (0.065583ms)
+✔ food theme is player-visible and follows the current level (0.179292ms)
+✔ A-KNIFE-UV-006 a single-material blade GLB routes its declared long-axis end to the handle atlas (0.419834ms)
+✔ later authored spikes sit in the declared route pressure corridor (0.560667ms)
+✔ fundamentals spikes retain their accepted teaching semantics (0.104167ms)
+✔ bonus and safe finish gates do not overlap in the bonus-enabled levels (0.111625ms)
+✔ finish recovery shelves stay below the selectable reward lanes (0.096209ms)
+✔ grounded supports terminate at the simulation floor instead of intersecting it (0.089ms)
+✔ moving route spikes keep their motion inside a readable timing band (0.066958ms)
+✔ THEME-BOUNDARY-001 mechanics demo theme is explicitly temporary and contains no gameplay rules (0.673042ms)
+✔ THEME-ASSET-002 placeholder asset manifest is original, local and externally swappable (0.45875ms)
+✔ THEME-ZOD-004 production schemas strictly parse the theme and asset manifest (0.993208ms)
+✔ THEME-INTEGRATION-003 UI and Three.js presentation consume the single theme entrypoint (21.173458ms)
+✔ A-STYLE-WORLD-005 presentation tokens provide a bright sky and green outdoor ground behind the A atlases (0.399875ms)
+✔ 3D-MAIN-RESOURCE-001 declares only original programmatic runtime resources (1.181042ms)
+✔ 3D-MAIN-CAMERA-002 uses a low-FOV oblique perspective while gameplay stays on one plane (0.20525ms)
+✔ 3D-MAIN-CAMERA-003 reduces portrait camera lead so the startup knife remains inside the viewport (0.068333ms)
+✔ 3D-CUT-FALL-010 simulation floor and rendered ground share the same top plane (0.058958ms)
+✔ 3D-MAIN-KNIFE-003 maps the deterministic player pose to a thick 3D rig transform (5.745583ms)
+✔ A-BASECOLOR-003 presentation deterministically covers crate, log and crystal skins without changing collision kinds (0.616333ms)
+✔ dessert level cuttables use a dessert skin in intact and cut phases (0.524584ms)
+✔ cut half meshes use one-sided silhouettes and cropped dessert icing for each authored skin (9.490875ms)
+✔ runtime cut facts expose skin identity and falling-to-landed lifecycle (4.919958ms)
+✔ A-CUT-FEEL-007 sigil halves ease apart, arc briefly, then settle below the cut line (0.147083ms)
+✔ 3D-MAIN-CUT-004 creates one idempotent capped half pair for a real cut event (1.320875ms)
+✔ 3D-MAIN-CAP-005 both cap normals remain visible from the oblique camera (0.235833ms)
+✔ 3D-MAIN-STRUCTURE-006 preserves per-segment identity and maps fragment separation into depth (1.248208ms)
+✔ 3D-MAIN-CAP-NORMAL-009 reports each cap actual transformed world normal (5.214541ms)
+✔ 3D-MAIN-PERF-007 reports release-frame thresholds without hiding long frames (0.313333ms)
+ℹ tests 193
+ℹ suites 0
+ℹ pass 188
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1938.175042
+
+✖ failing tests:
+
+test at tests/game-core.test.ts:165:1
+✖ the first white support teaches sharp anchor and blunt bounce through two simple timing branches (13.96875ms)
+  AssertionError [ERR_ASSERTION]: one opening branch should visibly anchor
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/game-core.test.ts:169:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/game-core.test.ts:478:1
+✖ a visible-state policy can choose the narrow rich gate and enter dense one-chance bonus (35.038625ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'ordinary'
+  - 'bonus'
+  
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/game-core.test.ts:481:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'ordinary',
+    expected: 'bonus',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/game-core.test.ts:498:1
+✖ late inputs aimed at the current safe/bonus lanes preserve both complete outcomes (64.2ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'ordinary'
+  - 'bonus'
+  
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/game-core.test.ts:505:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'ordinary',
+    expected: 'bonus',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/game-core.test.ts:589:1
+✖ ACTION-FEEL fragments inherit cut contact and settle with damping (10.632459ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(left.getState().fragments.every((piece) => Math.abs(piece.vy) < 0.01 && Math.abs(piece.angularVelocity) < 0.08))
+  
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/game-core.test.ts:607:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/mechanics-v2.test.ts:188:1
+✖ CUT-003 a high-speed sharp sweep cuts the same block at 30 and 120 Hz (4.632417ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a/tests/mechanics-v2.test.ts:198:10)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+[ELIFECYCLE] Test failed. See above for more details.

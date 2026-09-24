@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "BuilderCheckpoint",
+  "targetWorkspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "gameplay-rc-ready",
+  "completed": [
+    "deterministic one-touch launch, airborne rotation and early-input buffering",
+    "sharp tip/edge versus blunt body/handle contact taxonomy",
+    "one-shot cuts with two sealed 3D halves and natural outward falling fragments",
+    "incident-normal reflection, anchor recovery, hazard/fall failure and one-tap restart",
+    "three contiguous original stages with teach, develop and test roles",
+    "ordinary finish, optional one-chance bonus and terminal restart loop",
+    "desktop mouse and mobile native-touch browser gameplay",
+    "single replaceable theme token and programmatic asset-manifest boundary"
+  ],
+  "styleState": {
+    "themeId": "mechanics-demo-placeholder-v1",
+    "themeStatus": "placeholder",
+    "finalStyleLock": false,
+    "userArtDecisionPending": true,
+    "crystalPocApprovedAsFinal": false
+  },
+  "verification": {
+    "lint": "passed",
+    "typecheck": "passed",
+    "tests": { "passed": true, "count": 75 },
+    "build": { "passed": true, "output": "workspace/prototype-a/dist/index.html", "bytes": 602899 },
+    "browserQa": {
+      "passed": true,
+      "desktopViewport": "1180x720",
+      "desktopNaturalRun": "won",
+      "mobileViewport": "390x844",
+      "mobileNativeTouchRun": "won",
+      "consoleErrors": 0,
+      "performance": { "sampledFrames": 600, "medianMs": 16.6, "p95Ms": 18.2, "drawCalls": 23, "triangles": 488, "withinTargets": true }
+    },
+    "threePocQa": { "passed": true, "crossSectionEvidence": ["crate", "log", "crystal"], "mobileCutEvidence": true },
+    "repairRoundsUsed": 1
+  },
+  "evidence": [
+    "artifacts/mechanics-trace-matrix-v3.json",
+    "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/report.json",
+    "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/browser-result.json",
+    "workspace/prototype-a/tests/artifacts/qa-3d-cut-poc/report.json"
+  ],
+  "platformScope": {
+    "verified": "web-lite development and QA",
+    "wechatMiniGamePublishable": false,
+    "douyinMiniGamePublishable": false,
+    "taptapMiniGamePublishable": false
+  },
+  "resumeNext": [
+    "obtain user choice for final UI, theme and crystal art direction",
+    "replace only src/theme.ts tokens and its asset manifest or approved presentation adapters",
+    "keep src/game-content.ts and src/game-core.ts unchanged unless new gameplay feedback is requested",
+    "rerun the same regression and browser QA gates after visual replacement"
+  ]
+}

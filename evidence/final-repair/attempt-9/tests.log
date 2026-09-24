@@ -1,0 +1,2 @@
+NOT RUN
+Reason: The focused RED trace identified a different unproven lifecycle branch before any production change. The attempt was blocked and the temporary test was restored to the packet baseline. Full regression testing is deferred until a distinct candidate hypothesis is supported.

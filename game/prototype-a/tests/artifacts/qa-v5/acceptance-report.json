@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "MechanicsAcceptanceReport",
+  "targetGame": "符刃夜行",
+  "passed": true,
+  "acceptance": [
+    { "ids": ["CONTACT-001", "CONTACT-002"], "passed": true, "evidence": "tests/mechanics-v2.test.ts + desktop-complete-gameplay.png" },
+    { "ids": ["RECOIL-001", "RECOIL-002", "RECOIL-003"], "passed": true, "evidence": "tests/mechanics-v2.test.ts + desktop-recoil.png + console.log" },
+    { "ids": ["MOV-001", "MOV-002", "MOV-003"], "passed": true, "evidence": "tests/mechanics-v2.test.ts + desktop-moving-support.png + console.log" },
+    { "ids": ["CUT-001", "CUT-002", "CUT-003"], "passed": true, "evidence": "tests/mechanics-v2.test.ts + desktop-below-cut.png + console.log" },
+    { "ids": ["STRUCT-001", "STRUCT-002"], "passed": true, "evidence": "tests/mechanics-v2.test.ts + desktop-tower-collapse.png" },
+    { "ids": ["DUAL-001", "DUAL-002"], "passed": true, "evidence": "tests/mechanics-v2.test.ts + src/game-core.ts" },
+    { "ids": ["COURSE-001", "COURSE-002", "COURSE-003"], "passed": true, "evidence": "tests/mechanics-v2.test.ts + desktop-complete-gameplay.png" },
+    { "ids": ["FAIL-001", "FAIL-002"], "passed": true, "evidence": "tests/mechanics-v2.test.ts + mobile-native-touch-opening.png + console.log" },
+    { "ids": ["FINISH-001", "FINISH-002", "FINISH-003"], "passed": true, "evidence": "tests/mechanics-v2.test.ts + console.log" },
+    { "ids": ["BONUS-001", "BONUS-002"], "passed": true, "evidence": "tests/mechanics-v2.test.ts + console.log" },
+    { "ids": ["FIXED-001"], "passed": true, "evidence": "tests/mechanics-v2.test.ts + tests/game-core.test.ts" },
+    { "ids": ["PLAY-001", "PLAY-002", "RENDER-001"], "passed": true, "evidence": "tests/browser-smoke.ts + report.json + screenshots" },
+    { "ids": ["BUILD-001", "QA-SCRIPT-001"], "passed": true, "evidence": "tests/build.test.ts + report.json" }
+  ],
+  "consoleErrors": 0,
+  "platformScope": "web-lite development and QA evidence only"
+}

@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "platform-qa-result",
+  "role": "QAAgent",
+  "targetGame": "mobile-slice-adaptation-20260830（TapTap 名称：疯狂切割）",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "testedSha256": "5c087808f6835f90b31e162ffd48402b898476bd35f74d482cd0972d6615430b",
+  "engineeringVerdict": "PASS",
+  "naturalJourneyVerdict": "BLOCKED",
+  "perceptualVerdict": "BLOCKED",
+  "filingPackageVerdict": "READY_FOR_BACKEND_SCAN",
+  "checks": [
+    {
+      "id": "TAP-A4-TASK-AND-FIXER-STATE",
+      "passed": true,
+      "evidence": "Independent PlatformQaTaskSchema parsing passed for attempt-4/qa-task.json. attempt-4/fix-result.json declares schemaVersion 1, role FixerAgent, route formal-fixer, attempt 4 and status READY_FOR_INDEPENDENT_QA; its existing schema-validation.log records PlatformFixResultSchema PASS."
+    },
+    {
+      "id": "TAP-A4-ZIP-IDENTITY-INTEGRITY",
+      "passed": true,
+      "evidence": "Independent shasum -a 256 on build/TapBuild/game.zip returned exactly 5c087808f6835f90b31e162ffd48402b898476bd35f74d482cd0972d6615430b. stat reported 1,206,521 bytes, below 20 MB, and unzip -t reported no errors. The ZIP was not rebuilt, modified or uploaded."
+    },
+    {
+      "id": "TAP-A4-ROOT-METADATA",
+      "passed": true,
+      "evidence": "Independent inspection of the exact ZIP confirmed root game.js, game.json and project.config.json. game.json declares deviceOrientation portrait and productVersion 1.0.0; project.config.json declares compileType game, appid 928932 and projectname 疯狂切割."
+    },
+    {
+      "id": "TAP-A4-SCREEN-RUNTIME-CONTRACT",
+      "passed": true,
+      "evidence": "The exact ZIP src/settings.json contains designResolution width 390, height 844, policy 4 and exactFitScreen true. runtime-contract.json binds this to fixed-width, ResolutionPolicy.FIXED_WIDTH and screen.safeArea, and explicitly scopes exactFitScreen to Web-only with packagedNonWebDefault true and blocksTapTapMiniGame false. The exact ZIP assets/main/index.js independently contains setDesignResolutionSize(390,844,ResolutionPolicy.FIXED_WIDTH) and screen.safeArea access. Device-visible correctness remains a separate blocked check."
+    },
+    {
+      "id": "TAP-A4-STATIC-RUNTIME-JOURNEY",
+      "passed": true,
+      "evidence": "The exact ZIP launches db://assets/scenes/main.scene, preloads bundle main and registers GameBootstrap. Its compiled assets/main/index.js contains Graphics first-frame construction, TOUCH_END input, launch/flip, sharp cut, blunt reflect, hazard/fall failure, finish settlement and terminal-touch reset/replay branches. This is structural engineering evidence only and was not used as natural player evidence."
+    },
+    {
+      "id": "TAP-A4-TESTS-LINT-TYPECHECK",
+      "passed": true,
+      "evidence": "Independent read-only runs from platforms/taptap-minigame all exited 0: pnpm test reported 14 tests, 14 pass, 0 fail; pnpm lint passed; pnpm typecheck passed. No Cocos build or TapTap converter was invoked."
+    },
+    {
+      "id": "TAP-A4-OFFICIAL-PLUGIN",
+      "passed": true,
+      "evidence": "Independent hashing of the retained official TapTap plugin 1.2.2 archive returned 6b8a9a3cc62b6c54cefab397097babb771d9d99f90442cddff06310a4c9ed73f, matching attempt-4/task.json; installed extensions/taptap-minigame-tools/package.json identifies TapTap version 1.2.2. The earlier immutable plugin-integrity.log records a byte-for-byte match. A fresh complete per-file comparison was not retained in this QA run and is disclosed as an evidence gap."
+    },
+    {
+      "id": "TAP-A4-OPPO-NATURAL-JOURNEY",
+      "passed": false,
+      "evidence": "BLOCKED: no natural-input run bound to exact SHA-256 5c087808f6835f90b31e162ffd48402b898476bd35f74d482cd0972d6615430b on OPPO PKB110 Android 16 was available. Static entrypoints, tests, old ZIPs and sibling devices cannot prove InstantGameActivity launch or the full player journey."
+    },
+    {
+      "id": "TAP-A4-VIVO-NATURAL-PERCEPTUAL",
+      "passed": false,
+      "evidence": "BLOCKED: no natural-input and player-visible run bound to the exact SHA on vivo V2001A/PD2001 OriginOS 3 was available. Therefore absence of the prior scene-construction TypeError, non-black/non-white first frame, portrait framing, safe-area behavior, feedback readability and replay discoverability were not observed on the required branch."
+    },
+    {
+      "id": "TAP-A4-BACKEND-SCAN",
+      "passed": false,
+      "evidence": "BLOCKED: no TapTap developer-backend upload or scan result bound to the exact ZIP SHA was provided or performed. READY_FOR_BACKEND_SCAN means the static package may proceed to that next step; it does not mean backend or device approval."
+    }
+  ],
+  "issues": [
+    {
+      "id": "TAP-A4-EXACT-SHA-DEVICE-QA-PENDING",
+      "severity": "warning",
+      "message": "OPPO PKB110 Android 16 and vivo V2001A/PD2001 OriginOS 3 exact-SHA natural and perceptual reruns remain required.",
+      "evidence": "No device trace, log, screenshot or video cryptographically bound to SHA-256 5c087808f6835f90b31e162ffd48402b898476bd35f74d482cd0972d6615430b was present in attempt-4 evidence."
+    },
+    {
+      "id": "TAP-A4-BACKEND-SCAN-PENDING",
+      "severity": "warning",
+      "message": "The package is statically ready for backend scanning but has not been uploaded or accepted by TapTap.",
+      "evidence": "The QA task prohibits upload and no exact-SHA TapTap backend scan result exists."
+    }
+  ],
+  "evidenceGaps": [
+    "Exact-SHA OPPO PKB110 Android 16 cold-start and natural-input evidence covering startup, Graphics first frame, touch core loop, failure/settlement and replay.",
+    "Exact-SHA vivo V2001A/PD2001 OriginOS 3 device evidence confirming no scene-construction TypeError and player-visible non-monochrome portrait rendering with correct safe-area behavior.",
+    "TapTap developer-backend upload and automated scan result for SHA-256 5c087808f6835f90b31e162ffd48402b898476bd35f74d482cd0972d6615430b.",
+    "A fresh complete independent per-file comparison of the installed official plugin against the retained 1.2.2 archive was not retained; archive SHA, installed version, and prior byte-for-byte integrity evidence passed."
+  ]
+}

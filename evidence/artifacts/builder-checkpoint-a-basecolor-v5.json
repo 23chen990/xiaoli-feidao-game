@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "BuilderCheckpoint",
+  "checkpointId": "a-basecolor-v5",
+  "targetWorkspace": "runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "PASS_WITH_NOTES",
+  "scope": "A-direction formal Base Color bitmap integration for crate, log, knife and crystal",
+  "assets": {
+    "style": "A",
+    "provenance": "ai-generated-original",
+    "uvLayout": "quadrant-2x2",
+    "entries": [
+      { "id": "a-crate-basecolor", "path": "workspace/prototype-a/src/assets/a-style/crate-basecolor.png", "sha256": "36284f8d5c5092dbb73c08877ea22855cc844614514a036736c86e985d2788da" },
+      { "id": "a-log-basecolor", "path": "workspace/prototype-a/src/assets/a-style/log-basecolor.png", "sha256": "bca83ae3309698385d0e79611430d18dbd324d2ffbe7706ef2c73c3521ee588a" },
+      { "id": "a-knife-basecolor", "path": "workspace/prototype-a/src/assets/a-style/knife-basecolor.png", "sha256": "c85a3f77a9e7c40eee3c5530788261bcd86baca4adf9125e56f4d0a73fef7287" },
+      { "id": "a-crystal-basecolor", "path": "workspace/prototype-a/src/assets/a-style/crystal-basecolor.png", "sha256": "02c811c9de4601b24b59deee3fcbcaf2ea3f190f3c88bf3b8572a25416490603" }
+    ]
+  },
+  "redGreen": {
+    "red": ["A-BASECOLOR-POC-004", "A-KNIFE-UV-006", "A-STYLE-WORLD-005"],
+    "green": ["tests/a-style-basecolor.test.ts", "tests/cut-poc-3d.test.ts", "tests/poc-3d-texture-routing.test.ts", "tests/three-presentation.test.ts", "tests/theme.test.ts", "A-CUT-FEEL-007"]
+  },
+  "validation": {
+    "lint": "PASS",
+    "typecheck": "PASS",
+    "tests": "PASS (98/98)",
+    "build": { "status": "PASS", "distIndexBytes": 2711047, "sha256": "cc11cd56b1c06514f20888b6500d772065e904c527c4807b77c4a1f5eb1fdf4b" },
+    "qaBrowser": "PASS; desktop/mobile natural input, consoleErrors=[]",
+    "qa3d": "PASS; desktop/mobile cut POC, consoleErrors=[], pageErrors=[]; weighted landing state asserted",
+    "visualReview": "PASS_WITH_NOTES; A bitmap materials visible, oblique caps and falling halves visible"
+  },
+  "remaining": [
+    "Final UI/theme remains mechanics-demo placeholder pending user approval.",
+    "Web-lite evidence is not a WeChat, Douyin or TapTap package certification.",
+    "Minor visual notes: log cut half has a visible atlas seam; crystal cap distinction is subtle."
+  ],
+  "nextCommand": "pnpm lint && pnpm typecheck && pnpm test && pnpm build && pnpm qa:browser && pnpm qa:3d"
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "GameplayTriagePerceptualDelta",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "status": "PASS_AFTER_RETEST",
+  "classification": "perceptual-experience-gap",
+  "evidence": {
+    "userReport": "用户反馈：改动后视觉上感觉没什么区别。",
+    "currentScreenshot": "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/mobile-natural-zero-won.png",
+    "priorReferenceReview": "artifacts/factory-retro-reference-recordings-deep-v2.json",
+    "observedCurrent": [
+      "主体仍以蓝色盒体和固定斜视构图为主。",
+      "收益只是 HUD 末尾追加文字和已有的局部 +value，缺少视觉层级明显的收益卡/累计反馈。",
+      "终点阶段虽然有状态字段和文案，但终结面板仍然快速占据中心，墙本体、命中区域和奖励关系不够突出。",
+      "镜头 lead 的移动端修正是适配性修复，肉眼不应期待它带来镜头语言变化。"
+    ]
+  },
+  "reproductionMatrix": [
+    {
+      "objectType": "cuttable target and earnings",
+      "lifecycleStateBranch": ["approach", "contact", "cut", "post-cut"],
+      "rendererPresentationPath": ["src/game-core.ts", "src/main.ts", "src/three-world-renderer.ts", "src/style.css"],
+      "deviceViewport": ["desktop 1180x720", "mobile 390x844"],
+      "expected": "玩家能明显看到命中、目标变化、即时收益和累计收益属于同一个动作反馈。"
+    },
+    {
+      "objectType": "multiplier wall and reward overlay",
+      "lifecycleStateBranch": ["wall approach", "wall contact", "reward reveal", "celebration", "terminal"],
+      "rendererPresentationPath": ["src/game-core.ts", "src/main.ts", "src/three-world-renderer.ts", "src/style.css"],
+      "deviceViewport": ["desktop 1180x720", "mobile 390x844"],
+      "expected": "墙、命中倍率、奖励数值和阶段转场有清晰视觉优先级，终结层不提前遮住高潮。"
+    },
+    {
+      "objectType": "hazard failure and replay",
+      "lifecycleStateBranch": ["failure", "failure explanation", "replay choice", "restart"],
+      "rendererPresentationPath": ["src/game-core.ts", "src/main.ts", "index.html", "src/style.css"],
+      "deviceViewport": ["desktop", "mobile portrait"],
+      "expected": "失败原因与重玩动作明显可读，不依赖隐式点击或调试入口。"
+    }
+  ],
+  "acceptanceCriteria": [
+    "对比基线截图，玩家可在 2 秒内指出即时收益、累计收益和命中对象。",
+    "终点墙接触后，墙与命中倍率在 reward reveal 阶段仍是视觉主角，terminal overlay 延后出现。",
+    "切割反馈至少有目标变化、收益跳字、累计总额更新和短促冲击四层可见反馈；不以代码字段存在替代画面证据。",
+    "失败画面明确展示原因与 Replay，且移动端安全区内可操作。",
+    "不引入竞品素材、名称、UI布局或调参值；镜头是否多模式继续按本游戏适用性判定。"
+  ],
+  "route": "formal-fixer",
+  "retestEvidence": {
+    "artifact": "artifacts/formal-fixer-perceptual-delta-attempt1.json",
+    "qaReport": "workspace/prototype-a/tests/artifacts/qa-3d-main-v1/report.json",
+    "desktop": { "routeOpeningCount": 1, "finishHighlightedCount": 1, "totalEarnings": 21 },
+    "mobile": { "routeOpeningCount": 1, "finishHighlightedCount": 1, "totalEarnings": 21 }
+  },
+  "claimBoundary": "感知差异已由最新 web-lite 桌面/移动自然 Playwright 重测关闭；原生微信、抖音、TapTap 包仍不在本轮证据范围。"
+}

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "HumanQaIssueArtifact",
+  "targetGame": "符刃夜行",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "reportedAt": "2026-08-31T00:00:00+08:00",
+  "evidence": [
+    "/var/folders/f2/s76hhpss3llc2_zw9g63x7380000gn/T/codex-clipboard-3c9fe6ae-729b-42c4-9e97-d6c1bc789769.png",
+    "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/qa-v7/qa-report.json"
+  ],
+  "issues": [
+    {
+      "id": "HUMAN-COURSE-CHOKE-001",
+      "severity": "P1",
+      "summary": "The photographed wall-and-spike segment is not reliably passable by the human player.",
+      "expected": "The main route visibly offers a comfortable path with time for one observation and corrective tap, and a real player can pass it without knowing hidden coordinates.",
+      "actual": "A tall wall and floating spike leave a narrow, misleading passage; the user repeatedly cannot pass.",
+      "acceptanceIds": ["CHOKE-REACTION-005", "COURSE-NO-ORACLE-006", "PLAY-DESKTOP-NATURAL-007", "PLAY-DESKTOP-TOLERANCE-008", "PLAY-MOBILE-NATURAL-009"]
+    },
+    {
+      "id": "HUMAN-PHYSICS-REBOUND-002",
+      "severity": "P1",
+      "summary": "Rebound is incorrectly expressed as a dedicated pink recoil object instead of ordinary rigid-body back-side contact.",
+      "expected": "Any ordinary hard surface reflects body or handle contact from relative incident velocity and contact normal, like a thrown object hitting terrain; no dedicated rebound object exists.",
+      "actual": "The course contains a recoil-identified pink wall with an arrow and special collision behavior.",
+      "acceptanceIds": ["HARD-IDENTITY-001", "HARD-REFLECT-002", "HARD-SEPARATING-003", "SHARP-STABLE-004", "VISUAL-GENERIC-HARD-010"]
+    }
+  ],
+  "scope": {
+    "include": ["generic hard-surface rebound", "wall-and-spike route geometry", "full-course desktop and mobile reachability"],
+    "exclude": ["audio", "formal art", "IAA", "new mechanics", "growth systems"]
+  },
+  "completionRule": "Both issues require red-first tests, a passing build, and an independent Reviewer completing the full course with real mouse and native touch without loadScenario or debug mutation."
+}

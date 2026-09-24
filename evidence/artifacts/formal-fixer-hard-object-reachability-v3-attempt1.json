@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "FormalFixerSummary",
+  "route": "formal-fixer",
+  "targetGame": "mobile-slice-adaptation-20260830",
+  "workspace": "/Users/kker/Documents/ChatGPT/妖怪夜市/runs/mobile-slice-adaptation-20260830/workspace/prototype-a",
+  "attempt": 1,
+  "issues": ["BONUS-HARD-REACHABILITY-003", "ORDINARY-HARD-CONTACT-004"],
+  "filesChanged": ["src/game-core.ts", "tests/formal-fix-hard-object-reachability.test.ts"],
+  "changes": [
+    "Moved the two Bonus spikes into reachable mid-lane windows (700,285) and (1160,555) with readable dimensions.",
+    "Restored Bonus spike colliders as real gameplay hazards.",
+    "Expanded hard block sharp/blunt contact padding to 8px and added regression coverage for near-edge body contact."
+  ],
+  "verification": {
+    "targetedTests": "PASS",
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "build": "PASS",
+    "browserSmoke": "BLOCKED: independent smoke failed existing release performance gate (p95 41.7ms; 3.5% frames over 50ms)",
+    "naturalLevelPack": "BLOCKED: runner exited 1; existing report retained and requires QA rerun"
+  },
+  "remainingEvidenceGaps": [
+    "Independent fresh desktop/mobile natural traces for the exact Bonus spike cells are still required.",
+    "Full natural/perceptual product gate remains BLOCKED until QA reruns without performance/infrastructure failure.",
+    "WeChat/Douyin/TapTap package publishability remains unverified."
+  ],
+  "contextOmitted": ["Unrelated prior QA screenshots/logs", "Platform packaging code", "Legacy FIX cycles outside the causal collision and Bonus files"],
+  "status": "PASS_WITH_QA_RETEST_REQUIRED"
+}

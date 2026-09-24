@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "platform": "taptap-minigame",
+  "phases": ["cold-start", "first-frame", "steady-10-minute", "ordinary-touch", "terminal-replay"],
+  "backendFpsThreshold": null,
+  "reportedFpsRootCause": "UNCONFIRMED",
+  "frameEvidence": ["rendered-frame-count", "elapsed-time-ms", "static-redraw-count", "dynamic-redraw-count"],
+  "renderWorkContract": {
+    "staticCourseDrawsPerLifecycle": 1,
+    "dynamicDrawsPerActiveFrame": 1,
+    "dynamicDrawsPerIdleFrame": 1,
+    "staticDrawsPerActiveFrame": 0
+  },
+  "latestUnboundReport": {
+    "device": "PHJ110H1",
+    "reportedFps": 0.020356234,
+    "stutterRatePercent": 0,
+    "averageMemoryMb": 239.28,
+    "peakMemoryMb": 259.5,
+    "coldStartSeconds": 2.05,
+    "packageSha256": null,
+    "rawRenderedFrameCount": null,
+    "rawElapsedTimeMs": null
+  },
+  "decision": {
+    "remainingPackageBottleneck": "NOT_DEMONSTRATED",
+    "optimizationAuthorized": true,
+    "reason": "owner-authorized 2026-09-09: wait screen was fully static so change-based samplers report ~0 FPS; dynamic layer now animates every frame (ambient bob) while the static course keeps 1 draw per lifecycle"
+  }
+}
