@@ -1,0 +1,44 @@
+{
+  "artifactType": "B01BonusAttemptLedger",
+  "scope": "1100x720 only; all three browser attempts retained",
+  "attempts": [
+    {
+      "name": "initial",
+      "report": "r2-bonus-1100-formal-v01.json",
+      "scriptVersion": "B01-R2-acceptance-v2.4",
+      "scriptSha256": "09f9a751a780dd74bee04660c86917b4c972caad32b97ee2bdf0315e58197645",
+      "runId": "122f9c0d-d5ce-4e42-9c5a-76d5854d3a7c",
+      "contextId": "fc7c786e-32d4-42b2-9774-4990ca87bf48",
+      "schedule": [0,1033,2017,3017,4017,5000,5983,6983,7967,8967,9733,9917,10317,11633,12633,13667,18267,19267,20250,20783,21450,22733,23733,24717,25717,26700,27700,27767],
+      "timingStart": "before ready screenshot (script defect)",
+      "result": "NOT_RUN",
+      "newInformation": "The first browser route fell before the white-column segment; ready screenshot time was included in the fixed schedule origin."
+    },
+    {
+      "name": "corrected",
+      "report": "r2-bonus-1100-formal-v01-corrected.json",
+      "scriptVersion": "B01-R2-acceptance-v2.4",
+      "scriptSha256": "c7614d40634b288b095119bf1e2218b2032ecb5874fa1d10921a462f085aaa54",
+      "runId": "969ce9e6-f0d0-4882-8663-d6a6915e2855",
+      "contextId": "0ff24dfa-e44e-4133-a945-6a0240c14958",
+      "schedule": [0,1033,2017,3017,4017,5000,5983,6983,7967,8967,9733,9917,10317,11633,12633,13667,18267,19267,20250,20783,21450,22733,23733,24717,25717,26700,27700,27767],
+      "timingStart": "after ready screenshot",
+      "result": "NOT_RUN",
+      "newInformation": "Removing the screenshot-origin offset avoided the first defect but the route still fell before BONUS."
+    },
+    {
+      "name": "final",
+      "report": "r2-bonus-1100-formal-v01-final.json",
+      "scriptVersion": "B01-R2-acceptance-v2.4",
+      "scriptSha256": "c7614d40634b288b095119bf1e2218b2032ecb5874fa1d10921a462f085aaa54",
+      "runId": "0927d888-fbc0-438e-b4f3-8886b30fadca",
+      "contextId": "fae36ce8-7cdf-45f2-8b50-f348fe871f24",
+      "schedule": [75,1108,2092,3092,4092,5075,6058,7058,8042,9042,9808,9992,10392,11708,12708,13742,18342,19342,20325,20858,21525,22808,23808,24792,25792,26775,27775,27842],
+      "timingStart": "after ready screenshot",
+      "offsetBasis": "offline SliceSimulation schedule comparison with uniform +75ms offset; intervals unchanged",
+      "result": "NOT_RUN",
+      "newInformation": "At the white-column segment browser input 10 was already in a different anchor/airborne phase than the candidate; input 13 then reached the recorded upper-bound fall."
+    }
+  ],
+  "stopReason": "No new browser attempt is justified without a new causal observation; independent QA was not started."
+}

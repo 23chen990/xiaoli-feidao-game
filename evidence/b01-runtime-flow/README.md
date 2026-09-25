@@ -275,3 +275,13 @@ buffered 标志仍未通过源码 hook 暴露，未发生可见状态转移时�
 真实 SliceSimulation seed 31 的可见状态诊断找到过 BONUS 候选，但转换后的正式浏览器节奏在普通关约 9.19 秒因 `fall` 失败，未执行 BONUS 检查点。正式记录 `r2-bonus-1100-formal-v01-final.json` 分类为 `NOT_RUN / ordinary-terminal-failed-before-target`；console/pageerror 为空。根据停止条件未执行独立 QA，未把未进入 BONUS 记为产品 FAIL。首次脚本计时偏差的原始记录 `r2-bonus-1100-formal-v01.json` 也保留。
 
 本轮仅增加 BONUS 输入响应检查与反例：因果证据必须匹配同一 `inputId`；自动 cut 或缺 receipt/handler 不得冒充 BONUS 输入响应。验收脚本版本为 `B01-R2-acceptance-v2.4`。390×844 BONUS、切后台、BFCache、存储故障注入继续 `NOT_RUN`。
+
+## B01-BONUS-01 补交：白柱对齐与汇总修复
+
+基于 `ee991e08dce20ec88be9bb72c4f2f021f208c007`，本轮没有新的浏览器运行。三次历史尝试由 `r2-bonus-attempt-ledger-v01.json` 完整保留：初次计时起点含 ready 截图；corrected 将起点移到截图后；final 使用离线候选比较得到的统一 +75ms 偏移。三次均未到 BONUS，未删除或重命名为成功。
+
+新增 `r2-bonus-diagnostic-seed31-v01.ts/json` 保存默认 seed 31、level 1 的实际 SliceSimulation 合法动作轨迹。该诊断轨迹以 ready/anchored、可见中线高度和 BONUS 窄入口高度触发 flip，实际得到 `phase=bonus,status=won,finishSelection=bonus`；不使用调试入口或状态注入。
+
+`r2-bonus-white-column-alignment-v01.json` 将候选与 final 浏览器输入 10–14 并排：最早必要差异在输入 10 的 pre-input 阶段已出现；候选输入 12 仍 anchored 并 launch，浏览器输入 12 已 airborne 并 flip。浏览器输入 13 的 `y=-57.81899387273773, vy=-940` 向前 10 个 120Hz 步到达记录的 fall 位置。该证据没有把差异归因于截图、hit-stop 或物理缺陷；输入 1–13 未安装 causal probe，前置 handler 边界仍未观测。
+
+BONUS 汇总现在要求响应分项参与最终 `result/rawOutcome/allAssertionsPass`，并删除跨 inputId 的 causal `at(-1)` 兜底。离线反例完整经过记录选择、响应检查和汇总链路，结果见 `r2-bonus-recheck-v01.json`：缺 handler=`NOT_RUN`、上一 inputId 记录不能用于当前输入=`NOT_RUN`、产品 FAIL 后工具异常=`FAIL`、自动 cut=`FAIL`。本轮未重新执行自然 BONUS，独立 QA 保持 `NOT_RUN`。

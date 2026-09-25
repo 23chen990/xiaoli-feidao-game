@@ -25,7 +25,7 @@ const consoleReportPath = new URL(process.env.R2_CONSOLE_REPORT_PATH ?? './r2-na
 await mkdir(new URL(`./${evidenceDirName}/`, root), { recursive: true });
 
 const { ACTION_EVENT_TYPES, newEvents, actionEvents, classify, rawOutcome, makeCheck, responseEvidence, buildOrdinaryChecks, summarizeOrdinary } = await import('./r2-acceptance-checks-v23.mjs');
-const { bonusResponseCheck } = await import('./r2-bonus-acceptance-v01.mjs');
+const { bonusResponseCheck, summarizeBonus } = await import('./r2-bonus-acceptance-v01.mjs');
 function brief(state) { return { phase: state.phase, status: state.status, failReason: state.failReason, finishPhase: state.finishPhase, finishGateId: state.finishGateId, finishSelection: state.finishSelection, levelNumber: state.levelNumber, elapsed: state.elapsed, worldTime: state.worldTime, cuts: state.cuts, bonusConsumed: state.bonusConsumed, player: { x: state.player.x, y: state.player.y, vx: state.player.vx, vy: state.player.vy, angle: state.player.angle, angularVelocity: state.player.angularVelocity }, events: state.events.slice(-8), eventCount: state.events.length }; }
 function serializeError(error) { return { name: error?.name ?? 'Error', message: error?.message ?? String(error), stack: error?.stack ?? null }; }
 function isEnvironmentError(error) { return /network|browser|Target closed|timeout|connection|protocol|context/i.test(error?.message ?? String(error)); }
@@ -65,6 +65,9 @@ if (process.env.R2_SCRIPT_SELF_CHECK === '1') {
   const missingObservationSummary = summarizeOrdinary({ ...missingObservationFixture, checks: buildOrdinaryChecks(missingObservationFixture), targetReached: true });
   const bonusMissing = bonusResponseCheck({ entered: true, input: { inputId: 'bonus-1', inputReceiptObserved: false, response: null, after: { phase: 'bonus' } } });
   const bonusAutomaticCut = bonusResponseCheck({ entered: true, input: { inputId: 'bonus-1', inputReceiptObserved: true, response: { causalEvidence: { inputId: 'bonus-1', before: {}, after: {} }, directCausalEvents: [], automaticCutOnly: true }, after: { phase: 'bonus' } } });
+  const bonusMissingSummary = summarizeBonus({ entered: true, responseCheck: bonusMissing });
+  const bonusStale = bonusResponseCheck({ entered: true, input: { inputId: 'bonus-2', inputReceiptObserved: true, response: { causalEvidence: { inputId: 'bonus-1', before: {}, after: {} }, directCausalEvents: [] }, after: { phase: 'bonus' } } });
+  const bonusFailThenToolError = summarizeBonus({ entered: true, responseCheck: bonusAutomaticCut, environmentFailure: 'later context close' });
   const checks = [
     [classify({ targetReached: false, validObservation: false, assertionFailure: null, assertionFailureObserved: false, environmentFailure: null, unknownFailure: null }), 'NOT_RUN'],
     [classify({ targetReached: false, validObservation: true, assertionFailure: 'transition controls visible', assertionFailureObserved: true, environmentFailure: null, unknownFailure: null }), 'FAIL'],
@@ -91,6 +94,10 @@ if (process.env.R2_SCRIPT_SELF_CHECK === '1') {
     [missingObservationSummary.result, 'NOT_RUN'],
     [bonusMissing.result, 'NOT_RUN'],
     [bonusAutomaticCut.result, 'FAIL'],
+    [bonusMissingSummary.result, 'NOT_RUN'],
+    [bonusMissingSummary.rawOutcome, 'bonus-input-observation-invalid'],
+    [bonusStale.result, 'NOT_RUN'],
+    [bonusFailThenToolError.result, 'FAIL'],
   ];
   for (const [actual, expected] of checks) if (actual !== expected) throw new Error(`R2 script self-check expected ${expected}, got ${actual}`);
   console.log(JSON.stringify({ artifactType: 'B01R2AcceptanceScriptSelfCheck', status: 'PASS', checks: checks.length }));
@@ -228,7 +235,7 @@ async function dispatchTap(input, spec, targetMs, startedAt, inputId, options = 
   const after = await input.page.evaluate(() => window.__GAME_TEST__.getState());
   const inputReceiptObserved = received.length === 2 && received.every((event) => event.inputId === inputId) && received.map((event) => event.type).sort().join(',') === 'pointerdown,pointerup';
   const causalResults = options.requireCausal ? await input.page.evaluate(() => window.__R2_CAUSAL_RESULTS__) : [];
-  const causalRaw = options.requireCausal ? causalResults.findLast((item) => item.inputId === inputId) ?? causalResults.at(-1) ?? null : null;
+  const causalRaw = options.requireCausal ? causalResults.findLast((item) => item.inputId === inputId) ?? null : null;
   if (options.requireCausal) await input.page.evaluate(() => { window.__R2_CAUSAL_ARMED__ = null; });
   const causalEvidence = causalRaw ? { inputId, receiptEpochMs: causalRaw.receiptEpochMs, handlerEpochMs: causalRaw.handlerEpochMs, before: causalRaw.before, after: { ...causalRaw.after, eventsAfterInput: newEvents(causalRaw.before, causalRaw.after) } } : null;
   const response = responseEvidence({ before, after, received, causalEvidence, requireCausal: Boolean(options.requireCausal), inputId });
@@ -334,11 +341,11 @@ async function bonusCase(id, width, height, mobile, tapsMs) {
     if (isEnvironmentError(error)) environmentFailure = rawError.message; else unknownFailure = rawError.message;
   } finally { await input.context.close(); await input.browser.close(); }
   const targetReached = Boolean(entered);
-  const validObservation = dispatches.length > 0 && dispatches.every((item) => item.inputReceiptObserved) && (targetReached || dispatches.length === tapsMs.length || dispatches.at(-1)?.after.status === 'failed' || dispatches.at(-1)?.after.status === 'won');
-  const result = classify({ targetReached, validObservation, assertionFailure, assertionFailureObserved, environmentFailure, unknownFailure });
-  const allAssertionsPass = !assertionFailure && Boolean(!targetReached || responsive?.responded);
-  const raw = rawOutcome({ targetReached, validObservation, allAssertionsPass, terminal: dispatches.at(-1)?.after, assertionFailure, assertionFailureObserved, environmentFailure, unknownFailure });
-  return { id, runId: process.env.R2_RUN_ID ?? randomUUID(), contextId: input.contextId, viewport: `${width}x${height}`, inputMode: mobile ? 'fixed visible canvas touch events; no per-input screenshots' : 'fixed visible canvas mouse events; no per-input screenshots', fixedScheduleMs: tapsMs, targetReached, result, rawOutcome: raw, validObservation, allAssertionsPass, requiredCheckpoint: 'ready→natural phase=bonus entry→normal input received→phase remains bonus with new causal launch/flip response', failureStage: assertionFailure ? 'bonus-post-entry-input-response' : environmentFailure ? 'browser-or-tool' : unknownFailure ? 'unknown-execution-error' : targetReached ? 'complete' : dispatches.at(-1)?.after.status === 'failed' ? 'ordinary-play-before-bonus' : 'bonus-schedule-before-entry', entered, responsive, dispatches, documentResponses: input.documentResponses, assertionFailure, assertionFailureObserved, environmentFailure, unknownFailure, rawError, consoleErrors: input.errors, evidence: [`${evidenceDirName}/${id}-ready.png`, ...(entered ? [`${evidenceDirName}/${id}-bonus-entered.png`] : [])] };
+  const receiptObservation = dispatches.length > 0 && dispatches.every((item) => item.inputReceiptObserved) && (targetReached || dispatches.length === tapsMs.length || dispatches.at(-1)?.after.status === 'failed' || dispatches.at(-1)?.after.status === 'won');
+  const responseCheck = responsive?.responseCheck ?? null;
+  const summary = summarizeBonus({ entered: targetReached, responseCheck, assertionFailure, assertionFailureObserved, environmentFailure, unknownFailure, terminal: dispatches.at(-1)?.after });
+  const { result, rawOutcome: raw, validObservation, allAssertionsPass } = summary;
+  return { id, runId: process.env.R2_RUN_ID ?? randomUUID(), contextId: input.contextId, viewport: `${width}x${height}`, inputMode: mobile ? 'fixed visible canvas touch events; no per-input screenshots' : 'fixed visible canvas mouse events; no per-input screenshots', fixedScheduleMs: tapsMs, targetReached, result, rawOutcome: raw, validObservation, allAssertionsPass, requiredCheckpoint: 'ready→natural phase=bonus entry→normal input received→phase remains bonus with new causal launch/flip response', failureStage: summary.assertionFailure ? 'bonus-post-entry-input-response' : environmentFailure ? 'browser-or-tool' : unknownFailure ? 'unknown-execution-error' : targetReached ? 'complete' : dispatches.at(-1)?.after.status === 'failed' ? 'ordinary-play-before-bonus' : 'bonus-schedule-before-entry', entered, responsive, dispatches, documentResponses: input.documentResponses, assertionFailure: summary.assertionFailure, assertionFailureObserved: summary.assertionFailureObserved, environmentFailure, unknownFailure, rawError, consoleErrors: input.errors, evidence: [`${evidenceDirName}/${id}-ready.png`, ...(entered ? [`${evidenceDirName}/${id}-bonus-entered.png`] : [])] };
 }
 
 const served = await servedBuildHash();

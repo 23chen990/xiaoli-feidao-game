@@ -149,3 +149,7 @@ observer 在第一条正常玩家输入前安装，实际记录 `startedAtMs/sta
 ## B01-BONUS-01 1100×720（未到检查点）
 
 在默认 seed 31、既有构建和 fresh context 下执行一次修正后的正式自然路线。浏览器主文档响应和构建 hash 均为 `8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d`；路线在约 9.19 秒以 `fall` 失败，未进入 `phase=bonus`，所以分类为 NOT_RUN，独立 QA 按停止条件未执行。诊断中的 SliceSimulation BONUS 候选仅作机制线索，不计自然 PASS。
+
+## B01-BONUS-01 补交 v02
+
+离线补交修复了 BONUS 汇总未纳入响应分项和 causal 跨 inputId 兜底。新增 seed31 诊断轨迹、白柱输入10–14 对齐表、三次尝试台账及完整反例复核；没有新的自然浏览器运行，也没有修改游戏源码。

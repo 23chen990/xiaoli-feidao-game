@@ -1,0 +1,1123 @@
+{
+  "artifactType": "B01BonusDiagnosticTrajectory",
+  "diagnosticOnly": true,
+  "seed": 31,
+  "levelNumber": 1,
+  "bonusLaneOffset": 56,
+  "script": "r2-bonus-diagnostic-seed31-v01.ts",
+  "scriptSha256": "c8b50faa0232b3eaa95c8fc1eb0fd20e3d4764a0b2c956a943d3b239353006e8",
+  "inputPolicy": "ready/anchored release; ordinary mid-lane y=430; finish approach y=bonus.y+56; bonus y=380",
+  "actions": [
+    {
+      "inputIndex": 1,
+      "trigger": "visible ready/anchored release cue",
+      "inputStep": 0,
+      "inputBefore": {
+        "step": 0,
+        "elapsed": 0,
+        "phase": "ordinary",
+        "status": "ready",
+        "player": {
+          "x": 120,
+          "y": 420,
+          "vx": 0,
+          "vy": 0
+        },
+        "anchorId": null,
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 120,
+          "y": 420,
+          "vx": 150,
+          "vy": -300
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 1,
+          "type": "launch",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 2,
+      "trigger": "visible lane height above 430",
+      "inputStep": 62,
+      "inputBefore": {
+        "step": 62,
+        "elapsed": 1.033333333333332,
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 275,
+          "y": 432.9166666666667,
+          "vx": 150,
+          "vy": 320
+        },
+        "anchorId": null,
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 275,
+          "y": 432.9166666666667,
+          "vx": 162,
+          "vy": -300
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 3,
+          "type": "flip",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 3,
+      "trigger": "visible lane height above 430",
+      "inputStep": 121,
+      "inputBefore": {
+        "step": 121,
+        "elapsed": 2.016666666666662,
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 434.3000000000027,
+          "y": 430.45833333333337,
+          "vx": 162,
+          "vy": 290
+        },
+        "anchorId": null,
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 434.3000000000027,
+          "y": 430.45833333333337,
+          "vx": 174,
+          "vy": -300
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 4,
+          "type": "flip",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 4,
+      "trigger": "visible lane height above 430",
+      "inputStep": 181,
+      "inputBefore": {
+        "step": 181,
+        "elapsed": 3.0166666666666586,
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 603.9286983706049,
+          "y": 430.0540274232389,
+          "vx": 174,
+          "vy": 300
+        },
+        "anchorId": null,
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 603.9286983706049,
+          "y": 430.0540274232389,
+          "vx": 186,
+          "vy": -300
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 7,
+          "type": "flip",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 5,
+      "trigger": "visible lane height above 430",
+      "inputStep": 241,
+      "inputBefore": {
+        "step": 241,
+        "elapsed": 4.016666666666656,
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 789.9286983705995,
+          "y": 432.5540274232389,
+          "vx": 186,
+          "vy": 300
+        },
+        "anchorId": null,
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 789.9286983705995,
+          "y": 432.5540274232389,
+          "vx": 190,
+          "vy": -300
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 8,
+          "type": "flip",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 6,
+      "trigger": "visible lane height above 430",
+      "inputStep": 300,
+      "inputBefore": {
+        "step": 300,
+        "elapsed": 5.000000000000038,
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 973.7114675023388,
+          "y": 431.61624753958756,
+          "vx": 190,
+          "vy": 290
+        },
+        "anchorId": null,
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 973.7114675023388,
+          "y": 431.61624753958756,
+          "vx": 190,
+          "vy": -300
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 10,
+          "type": "flip",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 7,
+      "trigger": "visible lane height above 430",
+      "inputStep": 359,
+      "inputBefore": {
+        "step": 359,
+        "elapsed": 5.98333333333342,
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1157.5256380660971,
+          "y": 430.5257379233085,
+          "vx": 190,
+          "vy": 290
+        },
+        "anchorId": null,
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1157.5256380660971,
+          "y": 430.5257379233085,
+          "vx": 190,
+          "vy": -300
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 12,
+          "type": "flip",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 8,
+      "trigger": "visible lane height above 430",
+      "inputStep": 419,
+      "inputBefore": {
+        "step": 419,
+        "elapsed": 6.98333333333347,
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1119.2123047327527,
+          "y": 433.0257379233085,
+          "vx": -136.8,
+          "vy": 300
+        },
+        "anchorId": null,
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1119.2123047327527,
+          "y": 433.0257379233085,
+          "vx": 73.19999999999999,
+          "vy": -300
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 14,
+          "type": "flip",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 9,
+      "trigger": "visible lane height above 430",
+      "inputStep": 478,
+      "inputBefore": {
+        "step": 478,
+        "elapsed": 7.966666666666852,
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1191.192304732741,
+          "y": 430.5674045899752,
+          "vx": 73.19999999999999,
+          "vy": 290
+        },
+        "anchorId": null,
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1191.192304732741,
+          "y": 430.5674045899752,
+          "vx": 85.19999999999999,
+          "vy": -300
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 15,
+          "type": "flip",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 10,
+      "trigger": "visible lane height above 430",
+      "inputStep": 538,
+      "inputBefore": {
+        "step": 538,
+        "elapsed": 8.966666666666798,
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1140.7239047327503,
+          "y": 433.0674045899752,
+          "vx": -61.343999999999994,
+          "vy": 300
+        },
+        "anchorId": null,
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1140.7239047327503,
+          "y": 433.0674045899752,
+          "vx": 148.656,
+          "vy": -300
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 17,
+          "type": "flip",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 11,
+      "trigger": "visible ready/anchored release cue",
+      "inputStep": 584,
+      "inputBefore": {
+        "step": 584,
+        "elapsed": 9.733333333333421,
+        "phase": "ordinary",
+        "status": "anchored",
+        "player": {
+          "x": 1218.857245246197,
+          "y": 427.05325380768085,
+          "vx": 0,
+          "vy": 0
+        },
+        "anchorId": "white-column",
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1218.857245246197,
+          "y": 427.05325380768085,
+          "vx": 150,
+          "vy": -300
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 19,
+          "type": "anchor",
+          "targetId": "white-column"
+        },
+        {
+          "id": 20,
+          "type": "launch",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 12,
+      "trigger": "visible ready/anchored release cue",
+      "inputStep": 595,
+      "inputBefore": {
+        "step": 595,
+        "elapsed": 9.916666666666744,
+        "phase": "ordinary",
+        "status": "anchored",
+        "player": {
+          "x": 1246.357245246197,
+          "y": 382.59492047434753,
+          "vx": 0,
+          "vy": 0
+        },
+        "anchorId": "white-column",
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1246.357245246197,
+          "y": 382.59492047434753,
+          "vx": 150,
+          "vy": -300
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 21,
+          "type": "anchor",
+          "targetId": "white-column"
+        },
+        {
+          "id": 22,
+          "type": "launch",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 13,
+      "trigger": "visible ready/anchored release cue",
+      "inputStep": 619,
+      "inputBefore": {
+        "step": 619,
+        "elapsed": 10.308333333333389,
+        "phase": "ordinary",
+        "status": "anchored",
+        "player": {
+          "x": 1267.807245246195,
+          "y": 312.09492047434753,
+          "vx": 0,
+          "vy": 0
+        },
+        "anchorId": "white-column",
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1267.807245246195,
+          "y": 312.09492047434753,
+          "vx": 150,
+          "vy": -300
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 24,
+          "type": "anchor",
+          "targetId": "white-column"
+        },
+        {
+          "id": 25,
+          "type": "launch",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 14,
+      "trigger": "visible lane height above 430",
+      "inputStep": 698,
+      "inputBefore": {
+        "step": 698,
+        "elapsed": 11.62499999999998,
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1463.3631918562996,
+          "y": 430.90298613282766,
+          "vx": 150,
+          "vy": 490
+        },
+        "anchorId": null,
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1463.3631918562996,
+          "y": 430.90298613282766,
+          "vx": 162,
+          "vy": -300
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 28,
+          "type": "flip",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 15,
+      "trigger": "visible lane height above 430",
+      "inputStep": 758,
+      "inputBefore": {
+        "step": 758,
+        "elapsed": 12.624999999999924,
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1625.3631918562887,
+          "y": 433.40298613282766,
+          "vx": 162,
+          "vy": 300
+        },
+        "anchorId": null,
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1625.3631918562887,
+          "y": 433.40298613282766,
+          "vx": 174,
+          "vy": -300
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 29,
+          "type": "flip",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 16,
+      "trigger": "visible ready/anchored release cue",
+      "inputStep": 820,
+      "inputBefore": {
+        "step": 820,
+        "elapsed": 13.658333333333198,
+        "phase": "ordinary",
+        "status": "anchored",
+        "player": {
+          "x": 1799.007999144723,
+          "y": 321.77384249195563,
+          "vx": 0,
+          "vy": 0
+        },
+        "anchorId": "lift-plank",
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1799.007999144723,
+          "y": 321.77384249195563,
+          "vx": 150,
+          "vy": -444.5682490986073
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 33,
+          "type": "anchor",
+          "targetId": "lift-plank"
+        },
+        {
+          "id": 34,
+          "type": "launch",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 17,
+      "trigger": "visible lane height above 494",
+      "inputStep": 1097,
+      "inputBefore": {
+        "step": 1097,
+        "elapsed": 18.274999999999604,
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 2490.877042091637,
+          "y": 495.15957430165923,
+          "vx": 150,
+          "vy": 533.136917715519
+        },
+        "anchorId": null,
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 2490.877042091637,
+          "y": 495.15957430165923,
+          "vx": 162,
+          "vy": -300
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 40,
+          "type": "flip",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 18,
+      "trigger": "visible lane height above 494",
+      "inputStep": 1157,
+      "inputBefore": {
+        "step": 1157,
+        "elapsed": 19.274999999999547,
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 2652.877042091626,
+          "y": 497.65957430165923,
+          "vx": 162,
+          "vy": 300
+        },
+        "anchorId": null,
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 2652.877042091626,
+          "y": 497.65957430165923,
+          "vx": 174,
+          "vy": -300
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 41,
+          "type": "flip",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 19,
+      "trigger": "visible lane height above 494",
+      "inputStep": 1216,
+      "inputBefore": {
+        "step": 1216,
+        "elapsed": 20.258333333332825,
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 2823.9770420916047,
+          "y": 495.2012409683259,
+          "vx": 174,
+          "vy": 290
+        },
+        "anchorId": null,
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 2823.9770420916047,
+          "y": 495.2012409683259,
+          "vx": 186,
+          "vy": -300
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 42,
+          "type": "flip",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 20,
+      "trigger": "visible lane height above 380",
+      "inputStep": 1287,
+      "inputBefore": {
+        "step": 1287,
+        "elapsed": 21.44166666666609,
+        "phase": "bonus",
+        "status": "airborne",
+        "player": {
+          "x": 238.5,
+          "y": 380.5,
+          "vx": 180,
+          "vy": 135
+        },
+        "anchorId": null,
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "bonus",
+        "status": "airborne",
+        "player": {
+          "x": 238.5,
+          "y": 380.5,
+          "vx": 192,
+          "vy": -385
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 44,
+          "type": "flip",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 21,
+      "trigger": "visible lane height above 380",
+      "inputStep": 1364,
+      "inputBefore": {
+        "step": 1364,
+        "elapsed": 22.72499999999935,
+        "phase": "bonus",
+        "status": "airborne",
+        "player": {
+          "x": 480.2799538662318,
+          "y": 381.1416367030894,
+          "vx": 192,
+          "vy": 385
+        },
+        "anchorId": null,
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "bonus",
+        "status": "airborne",
+        "player": {
+          "x": 480.2799538662318,
+          "y": 381.1416367030894,
+          "vx": 204,
+          "vy": -300
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 48,
+          "type": "flip",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 22,
+      "trigger": "visible lane height above 380",
+      "inputStep": 1424,
+      "inputBefore": {
+        "step": 1424,
+        "elapsed": 23.724999999999294,
+        "phase": "bonus",
+        "status": "airborne",
+        "player": {
+          "x": 681.483402941733,
+          "y": 382.86070442416474,
+          "vx": 204,
+          "vy": 300
+        },
+        "anchorId": null,
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "bonus",
+        "status": "airborne",
+        "player": {
+          "x": 681.483402941733,
+          "y": 382.86070442416474,
+          "vx": 216,
+          "vy": -300
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 51,
+          "type": "flip",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 23,
+      "trigger": "visible lane height above 380",
+      "inputStep": 1483,
+      "inputBefore": {
+        "step": 1483,
+        "elapsed": 24.708333333332572,
+        "phase": "bonus",
+        "status": "airborne",
+        "player": {
+          "x": 893.8834029417276,
+          "y": 380.4023710908314,
+          "vx": 216,
+          "vy": 290
+        },
+        "anchorId": null,
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "bonus",
+        "status": "airborne",
+        "player": {
+          "x": 893.8834029417276,
+          "y": 380.4023710908314,
+          "vx": 228,
+          "vy": -300
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 52,
+          "type": "flip",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 24,
+      "trigger": "visible lane height above 380",
+      "inputStep": 1543,
+      "inputBefore": {
+        "step": 1543,
+        "elapsed": 25.708333333332515,
+        "phase": "bonus",
+        "status": "airborne",
+        "player": {
+          "x": 1121.8834029417308,
+          "y": 382.9023710908314,
+          "vx": 228,
+          "vy": 300
+        },
+        "anchorId": null,
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "bonus",
+        "status": "airborne",
+        "player": {
+          "x": 1121.8834029417308,
+          "y": 382.9023710908314,
+          "vx": 230,
+          "vy": -300
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 53,
+          "type": "flip",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 25,
+      "trigger": "visible lane height above 380",
+      "inputStep": 1602,
+      "inputBefore": {
+        "step": 1602,
+        "elapsed": 26.691666666665792,
+        "phase": "bonus",
+        "status": "airborne",
+        "player": {
+          "x": 1348.0500696084064,
+          "y": 380.4440377574981,
+          "vx": 230,
+          "vy": 290
+        },
+        "anchorId": null,
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "bonus",
+        "status": "airborne",
+        "player": {
+          "x": 1348.0500696084064,
+          "y": 380.4440377574981,
+          "vx": 230,
+          "vy": -300
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 54,
+          "type": "flip",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 26,
+      "trigger": "visible lane height above 380",
+      "inputStep": 1662,
+      "inputBefore": {
+        "step": 1662,
+        "elapsed": 27.691666666665736,
+        "phase": "bonus",
+        "status": "airborne",
+        "player": {
+          "x": 1573.3772213676375,
+          "y": 383.3877832327236,
+          "vx": 230,
+          "vy": 300
+        },
+        "anchorId": null,
+        "finishPhase": "idle"
+      },
+      "inputAfter": {
+        "phase": "bonus",
+        "status": "airborne",
+        "player": {
+          "x": 1573.3772213676375,
+          "y": 383.3877832327236,
+          "vx": 230,
+          "vy": -300
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 57,
+          "type": "flip",
+          "targetId": null
+        }
+      ]
+    },
+    {
+      "inputIndex": 27,
+      "trigger": "visible ready/anchored release cue",
+      "inputStep": 1666,
+      "inputBefore": {
+        "step": 1666,
+        "elapsed": 27.7583333333324,
+        "phase": "bonus",
+        "status": "ready",
+        "player": {
+          "x": 1588.7105547009714,
+          "y": 364.8877832327236,
+          "vx": 0,
+          "vy": 0
+        },
+        "anchorId": null,
+        "finishPhase": "contact"
+      },
+      "inputAfter": {
+        "phase": "bonus",
+        "status": "airborne",
+        "player": {
+          "x": 1588.7105547009714,
+          "y": 364.8877832327236,
+          "vx": 180,
+          "vy": -300
+        },
+        "anchorId": null
+      },
+      "newEvents": [
+        {
+          "id": 58,
+          "type": "launch",
+          "targetId": null
+        }
+      ]
+    }
+  ],
+  "fixedScheduleMs": [
+    0,
+    1033,
+    2017,
+    3017,
+    4017,
+    5000,
+    5983,
+    6983,
+    7967,
+    8967,
+    9733,
+    9917,
+    10317,
+    11633,
+    12633,
+    13667,
+    18283,
+    19283,
+    20267,
+    21450,
+    22733,
+    23733,
+    24717,
+    25717,
+    26700,
+    27700,
+    27767
+  ],
+  "final": {
+    "phase": "bonus",
+    "status": "won",
+    "finishSelection": "bonus",
+    "finishGateId": "bonus-finish-mid",
+    "failReason": null,
+    "elapsed": 27.7583333333324,
+    "player": {
+      "x": 1588.7105547009714,
+      "y": 364.8877832327236,
+      "vx": 180,
+      "vy": -300
+    },
+    "events": [
+      {
+        "id": 54,
+        "type": "flip",
+        "x": 1348.0500696084064,
+        "y": 380.4440377574981,
+        "value": 1
+      },
+      {
+        "id": 55,
+        "type": "cut",
+        "x": 1388.4687257478531,
+        "y": 350.37015169631553,
+        "value": 4,
+        "targetId": "bonus-rune-1",
+        "contactPart": "edge"
+      },
+      {
+        "id": 56,
+        "type": "cut",
+        "x": 1440.4406752442712,
+        "y": 313.30425277081827,
+        "value": 8,
+        "targetId": "bonus-rune-6",
+        "contactPart": "edge"
+      },
+      {
+        "id": 57,
+        "type": "flip",
+        "x": 1573.3772213676375,
+        "y": 383.3877832327236,
+        "value": 1
+      },
+      {
+        "id": 58,
+        "type": "launch",
+        "x": 1588.7105547009714,
+        "y": 364.8877832327236,
+        "value": 1
+      },
+      {
+        "id": 59,
+        "type": "finish",
+        "x": 1700,
+        "y": 365,
+        "value": 2,
+        "targetId": "bonus-finish-mid"
+      }
+    ]
+  }
+}
