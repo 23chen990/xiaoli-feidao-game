@@ -29,7 +29,7 @@
       "result": "NOT_RUN",
       "explorationAttempts": 6,
       "successes": 0,
-      "independentQAAttempts": "pending",
+      "independentQAAttempts": 2,
       "requiredCheckpoint": "phase=ordinary,status=won,terminal settlement,blank tap unchanged,next level ready,reload level 2 ready",
       "formalReport": "r1-ordinary-report.json",
       "reason": "All bounded attempts ended before ordinary won; formal attempt reached phase=ordinary,status=failed,failReason=fall. No product terminal assertion was reached.",
