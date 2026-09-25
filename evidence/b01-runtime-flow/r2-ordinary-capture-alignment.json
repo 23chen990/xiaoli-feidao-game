@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01R2OrdinaryCaptureAlignment",
+  "targetGame": "Slice Master / 小李飞刀",
+  "workspace": "game/prototype-a",
+  "sourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "buildSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+  "servedBuildCheck": {
+    "url": "http://127.0.0.1:4175/",
+    "servedIndexSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+    "distIndexSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+    "matchesRecordedBuild": true
+  },
+  "repositoryCheck": {
+    "remoteHead": "04bea373c2598549c8cf497061c0a8299527948c",
+    "workingTree": "clean",
+    "sourceDiff3715502To04bea373": [],
+    "gameSourceChangedBetweenR1AndR2": false
+  },
+  "inputPlan": {
+    "viewport": "1100x720",
+    "coordinate": { "x": 550, "y": 518.4 },
+    "tapsMs": [800, 1859, 2032, 3068, 4140, 5118, 6155, 7157, 8215, 9199],
+    "fixedStepHz": 120,
+    "scheduleMode": "original wall-time schedule; no state polling drives input",
+    "resetForDiagnosis": "existing resetGame() called after optional ready screenshot; diagnostic only"
+  },
+  "startupAlignment": {
+    "note": "Before reset, browser startup simulation progress was not identical. This is a confounder in the original comparison. The paired runs reset to the same default seed/level/ready/progress before the schedule.",
+    "withFirst": {
+      "report": "r2-ordinary-capture-align-with-first.json",
+      "startupWorldTime": { "withScreenshots": 1.1416666666666659, "withoutScreenshots": 0.7249999999999999 },
+      "reset": { "seed": 31, "levelNumber": 1, "phase": "ordinary", "status": "ready", "worldTime": 0, "progressHighestUnlocked": 1 }
+    },
+    "withoutFirst": {
+      "report": "r2-ordinary-capture-align-without-first.json",
+      "startupWorldTime": { "withoutScreenshots": 0.7249999999999999, "withScreenshots": 0.7166666666666666 },
+      "reset": { "seed": 31, "levelNumber": 1, "phase": "ordinary", "status": "ready", "worldTime": 0, "progressHighestUnlocked": 1 }
+    }
+  },
+  "observationBoundary": {
+    "primary": "window capture listener records state before the native shell pointerdown handler; window bubble listener records state after the handler returns, before a later frame snapshot.",
+    "fields": ["physicalStep", "worldTime", "status", "anchorId", "x", "y", "vx", "vy", "eventCount", "event order", "pointer receipt epoch/delay"],
+    "inputDisposition": "All first-four inputs produced an immediate launch/flip transition at the handler boundary. No buffered-only or ignored input was observed in this paired window; inputBuffer is not asserted when no visible transition occurs.",
+    "reports": ["r2-ordinary-capture-align-with-first.json", "r2-ordinary-capture-align-without-first.json"]
+  },
+  "firstDivergenceWindow": {
+    "withScreenshotsFirst": {
+      "lastConfirmedInput": 3,
+      "firstMaterialInput": 4,
+      "samePhysicalStepAtFirstMaterialInput": false,
+      "screenshotPhysicalStep": 385,
+      "noScreenshotPhysicalStep": 383,
+      "screenshotBefore": { "x": 410.2, "y": 404.125, "vx": 150, "vy": 205, "eventTail": ["launch", "cut", "flip", "anchor", "launch"] },
+      "noScreenshotBefore": { "x": 435.2, "y": 446.75, "vx": 150, "vy": 310, "eventTail": ["launch", "cut", "flip", "anchor", "launch"] },
+      "afterInput": "Both native handlers immediately emitted flip at their own pointerdown boundary."
+    },
+    "withoutScreenshotsFirst": {
+      "lastConfirmedInput": 3,
+      "firstMaterialInput": 4,
+      "samePhysicalStepAtFirstMaterialInput": true,
+      "sharedPhysicalStep": 383,
+      "withoutScreenshotBefore": { "x": 435.2, "y": 446.75, "vx": 150, "vy": 310, "eventTail": ["launch", "cut", "flip", "anchor", "launch"] },
+      "withScreenshotBefore": { "x": 418.95, "y": 416.4166666666667, "vx": 150, "vy": 245, "eventTail": ["launch", "cut", "flip", "anchor", "launch"] },
+      "afterInput": "Both native handlers immediately emitted flip at the same physical step; only the pre-input pose/velocity differed."
+    }
+  },
+  "minimalReverification": {
+    "orderSwapExecuted": true,
+    "withScreenshotsFirstReportGeneratedAt": "2026-09-25T11:40:54.510Z",
+    "withoutScreenshotsFirstReportGeneratedAt": "2026-09-25T11:41:16.749Z",
+    "result": "The stable explanation is scheduling/path history before input 4: screenshot capture changes the elapsed wall-time between inputs, so inputs land in different physical steps and the pre-input pose diverges. In the swapped run, input 4 lands in the same physical step and still has different pre-input pose, while the pointerdown handler emits the same immediate flip. This rules out a screenshot-specific input-handler semantic change at input 4, but does not claim screenshot overhead is harmless; it remains the cause of timing/path divergence in these runs.",
+    "remainingBoundary": "The exact RAF-to-native-pointer dispatch latency is recorded only at the browser receipt boundary; no source hook exposes the private ActionInput accepted/buffered flag. A no-transition input would therefore remain classified as buffered-or-ignored unless a later event can be causally matched."
+  },
+  "diagnosisOnly": true,
+  "naturalAcceptance": "NOT_RUN",
+  "sourceChanged": false
+}

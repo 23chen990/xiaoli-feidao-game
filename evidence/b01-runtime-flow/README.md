@@ -134,7 +134,9 @@ R1 的所有原始文件保留。R2 只新增验收脚本和证据，没有修�
 结算后验证空白点击不变、下一关 ready、刷新后第二关 ready 且可由可见输入开始游玩。
 BONUS 用例在自然进入 `phase=bonus` 后再发送正常输入，要求 phase 保持并出现响应。
 目标未达到是 `NOT_RUN`，到达目标后断言失败才是 `FAIL`，浏览器/工具故障才是
-`BLOCKED`。R1 的分类映射和修订理由见 `r2-revision-notes.md`。
+`BLOCKED`；到达目标且所有断言满足才是 `PASS`。分类逻辑自检命令
+`R2_SCRIPT_SELF_CHECK=1 node evidence/b01-runtime-flow/qa-natural-r2.mjs` 返回 6/6 PASS，
+记录在 `r2-acceptance-script-self-check.json`。R1 的分类映射和修订理由见 `r2-revision-notes.md`。
 
 ### R2 诊断结果
 
@@ -155,3 +157,77 @@ console/pageerror 汇总格式：`r2-natural-console-errors.json`（正式自然
 
 R2 工程回归见 `r2-regression.json`：lint 和 typecheck 通过；测试保持 212 pass、1 fail，
 唯一失败仍是仓库根目录缺失 `artifacts/asset-manifest.json`，与 R1 基线相同。
+
+## B01-R2 补交 · 首次分歧对齐
+
+远端 HEAD 和本地 HEAD 均为 `04bea373c2598549c8cf497061c0a8299527948c`，工作树干净。
+`git diff 3715502..04bea373 -- game/prototype-a` 为空，确认 R1→R2 没有游戏源码变化。
+4175 服务返回的 `dist/index.html` SHA-256 与记录的
+`8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d` 一致。
+
+原对照的启动状态存在混杂：页面刚加载时两个 context 的 `worldTime` 不同。本次对照在可选
+ready 截图后调用已有 `resetGame()`，统一到 seed 31、level 1、ordinary/ready、worldTime 0、
+相同进度，再沿用原始 wall-time 输入表；BONUS 没有重跑。
+
+新增 `r2-ordinary-capture-align.mjs`，默认关闭周期轮询。每个 pointerdown 由浏览器 capture
+监听器记录原生处理前状态，由 bubble 监听器记录游戏 shell handler 返回后的状态，均带 120Hz
+物理步、姿态、速度、anchor、事件顺序和 receipt 时间；另保留输入后的固定物理步检查点。
+这避免把截图结束时间误当成两组共同检查点。两种执行顺序都跑过：
+
+- 截图先执行：输入 1–3 是最后确认的事件窗口，输入 4 首次出现实质状态差；此时物理步为
+  385 vs 383，说明输入已落在不同步。
+- 无截图先执行：输入 4 两组都在物理步 383，且 pointerdown handler 都立即产生同一个
+  `flip`；差异已存在于输入前的 x/y/vy（435.2/446.75/310 对 418.95/416.42/245）。
+
+因此可复验解释是：截图取证改变了输入之间的 wall-clock 路径，导致后续物理步和输入前姿态
+分叉；交换执行顺序没有显示输入 handler 的截图特异语义变化。私有 `ActionInput` accepted/
+buffered 标志仍未通过源码 hook 暴露，未发生可见状态转移时只能保留为
+`buffered-or-ignored`，不会伪造 accepted=true。
+
+对齐汇总：`r2-ordinary-capture-alignment.json`；原始顺序报告：
+`r2-ordinary-capture-align-with-first.json`、`r2-ordinary-capture-align-without-first.json`。
+该结果仍是 diagnosis-only，普通通关和 BONUS 自然验收状态不变。
+
+## B01-R2 补交：普通首关路径已建立
+
+本节是 R2 补交后的当前结果；上面的 R1 和 R2 中间诊断段落保留为历史记录，不覆盖原始证据。
+
+### 版本与构建核对
+
+`r2-version-check.json` 记录了版本核对：本地和远端 `codex/b01-runtime-flow` 都是
+`04bea373c2598549c8cf497061c0a8299527948c`；`git diff 3715502..04bea373 -- game/prototype-a`
+为空；`dist/index.html` 与 4175 服务实际返回内容的 SHA-256 都是
+`8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d`。本补交只改
+`evidence/b01-runtime-flow/`，没有改游戏源码，也没有重建游戏。
+
+### 普通首关正式路径
+
+诊断搜索得到的合法动作轨迹先记录在 `r2-ordinary-candidate.json`，不直接当作 PASS。
+随后正式浏览器脚本 `qa-natural-r2.mjs` 使用同一构建、全新 context 和预先写明的可见策略：
+
+- 视口 `1100×720`，鼠标点击画布可见位置 `(550,518.4)`；
+- ready 后固定等待 `400ms`，再在 `150ms + 975ms*n` 发送点击；
+- 不读取隐藏状态决定下一次输入，不调用 debug 入口、状态注入或模拟 step；取证只保留 ready、结算、下一关 ready、刷新后 ready 四个关键截图。
+
+正式记录 `r2-ordinary-formal.json` 为 `PASS`：终点同时满足
+`phase=ordinary,status=won,finishPhase=terminal`，结算前终局操作隐藏；结算后空白点击状态不变；
+点击下一关进入 level 2 ready；刷新后仍是 level 2 ready；刷新后的可见输入产生实际状态/事件响应。
+
+独立 QA 在两个新的 browser context 中分别用同一策略复现，记录为
+`r2-ordinary-independent-qa-1.json` 和 `r2-ordinary-independent-qa-2.json`，结果均为 `PASS`；
+三份报告的输入 receipt 完整且 console/pageerror 均为空。截图和连续输入记录分别在
+`r2-natural/formal-ordinary/`、`r2-natural/independent-qa-1/`、
+`r2-natural/independent-qa-2/`。正式 ordinary 共 3 次，成功 3 次；诊断阶段原有 6 次失败
+仍保留在旧报告中，不被覆盖成“全绿”。
+
+### 当前分类
+
+- `A-ordinary-1100x720`: **PASS**（正式 1 次 + 独立 QA 2 次均通过）。
+- `B-bonus-390x844`: **NOT_RUN**，按本补交范围保留，不重复失败前置路径。
+- `B-bonus-1100x720`: **NOT_RUN**，按本补交范围保留，不重复失败前置路径。
+- 真实切后台、真实 BFCache、浏览器存储故障注入：继续明确为未覆盖。
+
+分类脚本的自动化自检仍由
+`R2_SCRIPT_SELF_CHECK=1 node evidence/b01-runtime-flow/qa-natural-r2.mjs` 完成，结果见
+`r2-acceptance-script-self-check.json`；目标未达到仍为 `NOT_RUN`，到达目标后断言失败才为
+`FAIL`，浏览器/工具障碍才为 `BLOCKED`。

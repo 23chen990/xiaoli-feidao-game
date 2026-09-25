@@ -142,69 +142,117 @@
   "r2": {
     "route": "evidence-only-diagnosis",
     "sourceChanged": false,
-    "sourceReview": "The R2 trace explains the observed upper fall boundary and confirms input receipts, but the capture-mode comparison does not prove a source root cause. No game source change was authorized or made.",
+    "sourceReview": "No B01 game source change was needed. The aligned capture comparison produced a reproducible scheduling/path-history explanation; the ordinary visible path now passes on the unchanged build.",
     "browserReport": "evidence/b01-runtime-flow/r2-browser-report.json",
     "revisionNotes": "evidence/b01-runtime-flow/r2-revision-notes.md",
     "scripts": [
       "evidence/b01-runtime-flow/qa-natural-r2.mjs",
       "evidence/b01-runtime-flow/r2-ordinary-capture-compare.mjs",
-      "evidence/b01-runtime-flow/r2-ordinary-exploration.mjs"
+      "evidence/b01-runtime-flow/r2-ordinary-exploration.mjs",
+      "evidence/b01-runtime-flow/r2-ordinary-candidate.mjs"
     ],
     "classificationMapping": {
       "targetCheckpointMissing": "NOT_RUN",
       "reachedCheckpointAssertionViolation": "FAIL",
+      "reachedCheckpointAllAssertionsPass": "PASS",
       "browserOrToolFailure": "BLOCKED",
       "singleTrajectoryFailure": "not sufficient for product FAIL"
     },
     "diagnosis": {
       "attempts": 6,
       "successes": 0,
-      "captureModes": ["with-screenshots", "without-screenshots"],
+      "captureModes": [
+        "with-screenshots",
+        "without-screenshots"
+      ],
       "sameBuild": true,
       "sameViewport": true,
       "sameInputPlan": true,
-      "conclusion": "The paired contexts diverged in wall-clock trajectory timing; screenshot overhead remains an unproven hypothesis. No root cause is assigned.",
+      "conclusion": "The aligned order-swapped comparison locates the first material divergence at input 4: screenshot overhead changes the physical-step history and pre-input pose. In the swapped run input 4 shares physical step 383 and the same immediate flip handler result, so no screenshot-specific handler semantic change is observed.",
       "evidencePaths": [
         "evidence/b01-runtime-flow/r2-ordinary-capture-compare.json",
-        "evidence/b01-runtime-flow/r2-ordinary-exploration.json"
-      ]
+        "evidence/b01-runtime-flow/r2-ordinary-exploration.json",
+        "evidence/b01-runtime-flow/r2-ordinary-capture-alignment.json",
+        "evidence/b01-runtime-flow/r2-ordinary-capture-align-with-first.json",
+        "evidence/b01-runtime-flow/r2-ordinary-capture-align-without-first.json"
+      ],
+      "naturalSupplement": "ordinary visible path formal PASS plus two independent fresh-context PASS results; BONUS deliberately deferred"
     },
     "items": [
       {
         "id": "B01-R2-A",
         "classification": "natural-flow-evidence-gap",
-        "status": "NOT_RUN",
-        "scope": ["game/prototype-a", "evidence/b01-runtime-flow"],
-        "reproduction": "Six bounded diagnosis attempts at 1100x720 recorded visible mouse input receipt, send timing, before/after state, velocity, event tail and terminal condition. None reached phase=ordinary,status=won.",
+        "status": "PASS",
+        "scope": [
+          "game/prototype-a",
+          "evidence/b01-runtime-flow"
+        ],
+        "reproduction": "Formal 1100x720 fresh context used visible canvas mouse at (550,518.4), fixed 400ms ready wait and taps at 150ms + 975ms*n. It reached ordinary terminal and completed blank/next/reload/post-reload input checks; two independent fresh contexts repeated the same checks.",
         "acceptance": "ordinary won; pre-settlement controls hidden; blank tap unchanged; next level ready; reload level 2 ready and playable",
         "evidencePaths": [
-          "evidence/b01-runtime-flow/r2-ordinary-capture-compare.json",
-          "evidence/b01-runtime-flow/r2-ordinary-exploration.json"
+          "evidence/b01-runtime-flow/r2-ordinary-formal.json",
+          "evidence/b01-runtime-flow/r2-ordinary-independent-qa-1.json",
+          "evidence/b01-runtime-flow/r2-ordinary-independent-qa-2.json",
+          "evidence/b01-runtime-flow/r2-natural/formal-ordinary/",
+          "evidence/b01-runtime-flow/r2-natural/independent-qa-1/",
+          "evidence/b01-runtime-flow/r2-natural/independent-qa-2/"
         ],
-        "remainingGap": "No visible fixed strategy reached the target checkpoint; formal natural and independent replay remain NOT_RUN."
+        "remainingGap": "BONUS natural entry remains NOT_RUN in both requested viewports by explicit scope deferral."
       },
       {
         "id": "B01-R2-B",
         "classification": "natural-bonus-entry-evidence-gap",
         "status": "NOT_RUN",
-        "scope": ["game/prototype-a", "evidence/b01-runtime-flow"],
+        "scope": [
+          "game/prototype-a",
+          "evidence/b01-runtime-flow"
+        ],
         "reproduction": "No R2 strategy reached the natural phase=bonus entry at either requested viewport.",
         "acceptance": "natural gate hit; phase=bonus; subsequent normal input is received and changes the reward state",
-        "evidencePaths": ["evidence/b01-runtime-flow/r2-browser-report.json", "evidence/b01-runtime-flow/qa-natural-r2.mjs"],
-        "remainingGap": "No natural BONUS entry or post-entry response was observed."
+        "evidencePaths": [
+          "evidence/b01-runtime-flow/r2-browser-report.json",
+          "evidence/b01-runtime-flow/qa-natural-r2.mjs"
+        ],
+        "remainingGap": "BONUS natural entry and post-entry response remain NOT_RUN by explicit supplement scope; no repeated failed precondition was counted."
       },
       {
         "id": "B01-R2-C",
         "classification": "diagnostic-capture-timing-hypothesis",
-        "status": "UNRESOLVED",
-        "scope": ["game/prototype-a", "evidence/b01-runtime-flow"],
+        "status": "DIAGNOSIS_COMPLETE_WITH_BOUNDARY_GAP",
+        "scope": [
+          "game/prototype-a",
+          "evidence/b01-runtime-flow"
+        ],
         "reproduction": "Same build, viewport and frozen input prefix; only screenshot capture mode changed. Both contexts received all pointerdown/pointerup pairs, but their wall-clock trajectories diverged.",
         "acceptance": "A timing-normalized follow-up must separate capture overhead from game scheduling before assigning a root cause.",
-        "evidencePaths": ["evidence/b01-runtime-flow/r2-ordinary-capture-compare.json", "evidence/b01-runtime-flow/r2-revision-notes.md"],
-        "remainingGap": "No causality proof and no source change."
+        "evidencePaths": [
+          "evidence/b01-runtime-flow/r2-ordinary-capture-compare.json",
+          "evidence/b01-runtime-flow/r2-revision-notes.md"
+        ],
+        "remainingGap": "The comparison is repeatable at the physical-step/pre-input boundary; only the private accepted/buffered flag is unexposed, so no source root cause is claimed."
+      },
+      {
+        "id": "B01-R2-D",
+        "classification": "capture-comparison-aligned",
+        "status": "DIAGNOSIS_COMPLETE",
+        "scope": [
+          "game/prototype-a",
+          "evidence/b01-runtime-flow"
+        ],
+        "reproduction": "Both orderings used the original wall-time input plan after a common reset; native pointerdown capture/bubble boundaries recorded physical step and event order.",
+        "acceptance": "Identify whether the same physical step and input-processing stage are shared at the first material divergence.",
+        "evidencePaths": [
+          "evidence/b01-runtime-flow/r2-ordinary-capture-alignment.json",
+          "evidence/b01-runtime-flow/r2-ordinary-capture-align-with-first.json",
+          "evidence/b01-runtime-flow/r2-ordinary-capture-align-without-first.json"
+        ],
+        "conclusion": "Input 4 is the first material state divergence in both orderings. The swapped ordering places both handlers at physical step 383 with the same immediate flip, while their pre-input pose/velocity already differ. The missing boundary is only the private accepted/buffered flag for a no-transition input.",
+        "remainingGap": "No source hook was added; this is sufficient for the current comparison but not a formal natural acceptance result."
       }
     ],
-    "independentQA": "evidence/b01-runtime-flow/r2-independent-review.json",
-    "independentQAResult": "SCRIPT_REVIEW_COMPLETE_NATURAL_REPLAY_PENDING"
+    "independentQA": "evidence/b01-runtime-flow/r2-ordinary-independent-qa-1.json; evidence/b01-runtime-flow/r2-ordinary-independent-qa-2.json",
+    "independentQAResult": "ORDINARY_PASS_TWO_FRESH_CONTEXTS_BONUS_NOT_RUN",
+    "versionCheck": "evidence/b01-runtime-flow/r2-version-check.json",
+    "ordinaryFormal": "evidence/b01-runtime-flow/r2-ordinary-formal.json"
   }
 }

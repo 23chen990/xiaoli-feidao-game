@@ -46,3 +46,60 @@ R1 terminal 的边界观测保留为 `y≈-127.6`，满足源码中的上方掉�
 - 尚未确定：截图等待是否通过 wall-clock 漂移改变了物理轨迹；需要 timing-normalized 的后续对照或可见稳定操作策略才能继续自然验收。
 
 R1 文件、历史 browser report、回归日志和历史截图均保留；本轮新增文件仅追加在 `evidence/b01-runtime-flow/`，没有覆盖成“全绿”。真实切后台、真实 BFCache、浏览器存储故障注入仍按未覆盖处理。
+
+## R2 补交：首次分歧对齐
+
+### 版本和混杂因素
+
+远端和本地 HEAD 都是 `04bea373c2598549c8cf497061c0a8299527948c`；
+`git diff 3715502..04bea373 -- game/prototype-a` 为空。4175 服务实际返回的
+`dist/index.html` SHA-256 是 `8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d`，
+与记录的构建一致。
+
+原 R2 对照在页面加载后直接开始，两个 context 的 ready `worldTime` 不同，构成启动进度混杂。
+新脚本在 ready 截图之后调用已有 `resetGame()`，两组都记录并确认 seed=31、level=1、
+ordinary/ready、worldTime=0、highestUnlockedLevel=1，再沿用原始输入计划。原始 R2 JSON
+仍保留为历史快照，新对齐结果在 `r2-ordinary-capture-alignment.json` 及两个顺序报告中。
+
+### 输入处理边界
+
+新脚本没有周期状态轮询。window capture listener 在游戏 shell 的 native pointerdown handler
+之前记录状态，window bubble listener 在 handler 返回后记录状态；两者都带 120Hz 物理步、
+player pose/velocity、anchor、事件顺序和 pointer receipt 时间。每个输入另有固定物理步检查点，
+但比较首个分歧优先使用 handler boundary，而不是截图结束时间。
+
+两种执行顺序均完成：
+
+1. 截图先：输入 1–3 是最后确认的事件窗口；输入 4 首次出现实质状态差，截图组在步 385、
+   无截图组在步 383。两边 pointerdown 都立即产生 `flip`。
+2. 无截图先：输入 4 两边都在步 383；输入前状态已经不同（435.2/446.75/310 对
+   418.95/416.42/245），pointerdown handler 仍都立即产生 `flip`。
+
+结论是一个可复验的边界解释：截图造成的 wall-clock 取证开销改变了输入之间的物理步历史，
+差异在输入 4 前已经进入 pre-input pose；交换顺序没有显示截图特异的输入 handler 语义。
+这撤回了旧报告把“截图/无截图轨迹差异”直接写成未定位 wall-clock 假设的表述，改为已定位到
+“输入步历史→pre-input 状态”的混杂链路。私有 `ActionInput` accepted/buffered 字段仍未暴露；
+没有立即可见转移的输入不会被伪造为 accepted=true，只保留 `buffered-or-ignored` 边界。
+
+这份对齐仍是 diagnosis-only，不构成普通通关或 BONUS 自然 PASS；两个 BONUS 视口继续
+`NOT_RUN`，没有重复其失败前置路径。
+
+## R2 补交：普通首关路径与历史分类修订
+
+本文件前面的“当前结论”段落是 6 次诊断完成时的中间快照，保留用于解释 R1/R2 原始分类；它不再代表本补交后的 ordinary 当前结果。补交没有改写那些失败记录，也没有把失败局数计为产品 FAIL。
+
+版本核对和实际服务哈希见 `r2-version-check.json`：本地/远端 HEAD 均为
+`04bea373c2598549c8cf497061c0a8299527948c`，`3715502..04bea373` 的
+`game/prototype-a` diff 为空，dist 与 4175 服务内容均为
+`8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d`。
+
+诊断搜索得到的合法 flip 轨迹保留在 `r2-ordinary-candidate.json`，它标为
+`DIAGNOSTIC_NATURAL_CANDIDATE_WON`，不替代浏览器验收。正式可见策略固定为
+`1100×720`、画布 `(550,518.4)`、ready 后等待 `400ms`、随后从 `150ms` 起每 `975ms` 点击。
+`r2-ordinary-formal.json` 已完成普通结算、结算前控件隐藏、空白点击不变、下一关 ready、
+刷新后 level 2 ready 和刷新后的实际输入响应，结果为 `PASS`。两个新 context 的独立 QA
+`r2-ordinary-independent-qa-1.json`、`r2-ordinary-independent-qa-2.json` 也均为 `PASS`。
+
+因此当前普通结果是正式 1 次 + 独立 2 次共 3 次、成功 3 次；旧的 6 次诊断失败仍按
+`NOT_RUN` 的前置未达分类保存。两个 BONUS 视口在本补交中保持 `NOT_RUN`，没有重复相同失败
+前置路径。游戏源码未改，Draft PR 保持不合并。

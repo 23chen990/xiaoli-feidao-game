@@ -18,53 +18,66 @@
   },
   "scope": {
     "sourceModified": false,
-    "diagnosticOnly": true,
-    "naturalAcceptanceExecuted": false,
-    "reasonNaturalAcceptanceNotExecuted": "No visible fixed strategy reached the ordinary won checkpoint or natural BONUS entry within the bounded R2 diagnosis; running the same failed schedules as formal acceptance would not create the required target evidence.",
+    "diagnosticOnly": false,
+    "naturalAcceptanceExecuted": true,
+    "reasonNaturalAcceptanceNotExecuted": null,
     "maxCompleteExplorations": 6,
     "totalDiagnosticExplorations": 6,
-    "independentBrowserReplay": "NOT_RUN"
+    "independentBrowserReplay": "PASS_2_FRESH_CONTEXTS"
   },
   "classificationPolicy": {
     "targetCheckpointMissing": "NOT_RUN",
     "targetCheckpointReachedProductAssertionViolation": "FAIL",
+    "targetCheckpointReachedAllAssertionsPass": "PASS",
     "browserOrToolFailure": "BLOCKED",
     "singleFailedAttempt": "does not by itself classify the product as FAIL"
   },
   "results": {
     "A-ordinary-1100x720": {
-      "result": "NOT_RUN",
+      "result": "PASS",
       "requiredCheckpoint": "phase=ordinary,status=won,finishPhase=terminal; pre-settlement controls hidden; blank tap unchanged; next level ready; reload level 2 ready; reload input responds",
-      "attempts": 6,
-      "successes": 0,
-      "failureRecords": "all diagnostic attempts retained in r2-ordinary-capture-compare.json and r2-ordinary-exploration.json",
-      "reason": "The ordinary won checkpoint was not reached. The R1 first-failure trace and the R2 paired capture run record receipt, input timing, input-before/after state, speed and event stream; they do not prove a product assertion failure at the missing checkpoint.",
+      "attempts": 3,
+      "successes": 3,
+      "failureRecords": "No failures in the formal ordinary run or either independent QA context; diagnostic failures remain in r2-ordinary-capture-compare.json and r2-ordinary-exploration.json.",
+      "reason": "The formal visible strategy reached ordinary phase/status/terminal and passed blank-tap, next-level, reload and post-reload input checks. Two independent fresh contexts reproduced the same checkpoint.",
       "formalNaturalScript": "qa-natural-r2.mjs",
-      "formalNaturalReport": "NOT_RUN",
+      "formalNaturalReport": "r2-ordinary-formal.json",
       "evidencePaths": [
+        "r2-ordinary-candidate.json",
+        "r2-ordinary-formal.json",
+        "r2-ordinary-independent-qa-1.json",
+        "r2-ordinary-independent-qa-2.json",
+        "r2-natural/formal-ordinary/",
+        "r2-natural/independent-qa-1/",
+        "r2-natural/independent-qa-2/",
         "r2-ordinary-capture-compare.json",
-        "r2-ordinary-capture-compare.mjs",
-        "r2-ordinary-exploration.json",
-        "r2-ordinary-exploration.mjs",
-        "r2-ordinary-with-screenshots/",
-        "r2-exploration/"
-      ]
+        "r2-ordinary-capture-alignment.json"
+      ],
+      "independentQAReports": [
+        "r2-ordinary-independent-qa-1.json",
+        "r2-ordinary-independent-qa-2.json"
+      ],
+      "strategy": "1100x720 fresh context; visible canvas mouse at (550,518.4); fixed 400ms ready wait, then taps at 150ms + 975ms*n; no per-input screenshots, state injection or debug entry."
     },
     "B-bonus-390x844": {
       "result": "NOT_RUN",
       "requiredCheckpoint": "ready→natural phase=bonus entry→normal input received→phase remains bonus with observable response",
       "attempts": 0,
-      "reason": "No visible ordinary strategy reached the natural BONUS entry; no post-entry claim was made.",
+      "reason": "Per B01-R2 supplement scope, BONUS natural entry was intentionally deferred after ordinary path work; no failed BONUS prerequisite was repeated.",
       "formalNaturalScript": "qa-natural-r2.mjs",
-      "formalNaturalReport": "NOT_RUN"
+      "formalNaturalReport": "NOT_RUN",
+      "successes": 0,
+      "strategy": "NOT_RUN in this supplement; preserve original R1/R2 NOT_RUN evidence."
     },
     "B-bonus-1100x720": {
       "result": "NOT_RUN",
       "requiredCheckpoint": "ready→natural phase=bonus entry→normal input received→phase remains bonus with observable response",
       "attempts": 0,
-      "reason": "No visible ordinary strategy reached the natural BONUS entry; no post-entry claim was made.",
+      "reason": "Per B01-R2 supplement scope, BONUS natural entry was intentionally deferred after ordinary path work; no failed BONUS prerequisite was repeated.",
       "formalNaturalScript": "qa-natural-r2.mjs",
-      "formalNaturalReport": "NOT_RUN"
+      "formalNaturalReport": "NOT_RUN",
+      "successes": 0,
+      "strategy": "NOT_RUN in this supplement; preserve original R1/R2 NOT_RUN evidence."
     }
   },
   "failureTrace": {
@@ -86,32 +99,62 @@
       "event count and event tail",
       "console/pageerror errors"
     ],
-    "observedR2Terminal": "In the regenerated capture comparison, with-screenshots reached failed/spike at input 10 while the no-screenshot run remained anchored after input 10; this is a paired diagnostic observation, not a root-cause determination."
+    "observedR2Terminal": "The aligned reruns remain diagnostic: the exact terminal outcome varies by schedule history, while input receipt and immediate event processing remain observable."
   },
   "captureComparison": {
-    "report": "r2-ordinary-capture-compare.json",
-    "generatedAt": "2026-09-25T11:02:04.850Z",
+    "report": "r2-ordinary-capture-alignment.json",
+    "rawReports": [
+      "r2-ordinary-capture-align-with-first.json",
+      "r2-ordinary-capture-align-without-first.json"
+    ],
+    "script": "r2-ordinary-capture-align.mjs",
+    "generatedAt": "2026-09-25T11:41:16.749Z",
     "sameBuild": true,
     "sameViewport": true,
     "sameInputPlan": true,
     "onlyCaptureModeChanged": true,
-    "firstEventStreamDivergence": null,
-    "firstTrajectoryDivergenceInput": 4,
-    "firstTrajectoryPositionDistance": 41.912938866708544,
-    "firstTrajectorySpeedDistance": 0,
-    "conclusion": "The capture and no-capture runs diverged in wall-clock trajectory timing before terminal; screenshot overhead remains a hypothesis. The comparison does not establish that screenshots caused the game failure and does not assign a source root cause."
+    "startupProgressConfounderConfirmed": true,
+    "resetAligned": true,
+    "handlerBoundaryObserved": true,
+    "firstMaterialInputBothOrders": 4,
+    "lastConfirmedInputBothOrders": 3,
+    "swappedOrderResult": "In with-screenshots-first, input 4 landed at physical steps 385 versus 383. In without-screenshots-first, input 4 landed at the same physical step 383 but entered with different pre-input pose/velocity; both handlers emitted the same immediate flip.",
+    "conclusion": "The earliest reproducible explanation is schedule/path history before input 4: screenshots change elapsed wall time between inputs, so physical-step alignment and pre-input pose diverge. The swapped run shows no screenshot-specific input-handler semantic difference at input 4; the exact remaining boundary is RAF-to-native-pointer latency, which is recorded at receipt but not exposed as the private accepted/buffered flag."
   },
   "r1ToR2Mapping": "r2-independent-review.json",
   "consolePageerror": {
     "diagnosticComparison": "Both paired contexts retained consoleErrors arrays; no console/pageerror entries were observed.",
-    "formalNatural": "No formal natural run was executed because the target strategy was not found."
+    "formalNatural": "r2-ordinary-formal-console-errors.json has no console/pageerror entries; BONUS contexts were intentionally not created.",
+    "independentQA": "r2-ordinary-independent-qa-1-console-errors.json and r2-ordinary-independent-qa-2-console-errors.json have no console/pageerror entries."
   },
   "regression": "No source changed and no rebuild was required; R1 build and regression evidence remain valid. The existing pnpm test missing asset-manifest failure remains recorded in r1-regression.json.",
   "limitations": [
-    "Natural ordinary win→blank tap→next→reload was not reached at 1100×720.",
-    "Natural BONUS entry and post-entry response were not reached at 390×844 or 1100×720.",
-    "Independent browser replay was not started because there was no visible strategy to replay.",
-    "The paired capture experiment is diagnosis-only and has not been timing-normalized.",
+    "Natural BONUS entry and post-entry response remain NOT_RUN at 390x844 and 1100x720 by deliberate scope deferral.",
+    "The ordinary path was validated with a fixed visible mouse strategy; the diagnostic candidate trace remains separate from formal PASS.",
+    "The aligned capture experiment leaves only the private accepted/buffered flag unexposed; same-step handler behavior and pre-input divergence are recorded.",
     "Real OS backgrounding, real BFCache navigation and browser storage fault injection remain unexecuted."
-  ]
+  ],
+  "ordinarySupplement": {
+    "formal": "r2-ordinary-formal.json",
+    "independentQA": [
+      "r2-ordinary-independent-qa-1.json",
+      "r2-ordinary-independent-qa-2.json"
+    ],
+    "formalResult": "PASS",
+    "independentResults": [
+      "PASS",
+      "PASS"
+    ],
+    "ordinaryAttempts": 3,
+    "ordinarySuccesses": 3,
+    "bonus390": "NOT_RUN",
+    "bonus1100": "NOT_RUN",
+    "diagnosticCandidate": "r2-ordinary-candidate.json"
+  },
+  "versionCheck": "r2-version-check.json",
+  "history": {
+    "r1Report": "r1-browser-report.json",
+    "r2InterimSnapshot": "r2-ordinary-capture-compare.json",
+    "r2Supplement": "ordinarySupplement"
+  }
 }
