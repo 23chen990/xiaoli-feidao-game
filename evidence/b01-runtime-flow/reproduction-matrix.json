@@ -14,7 +14,10 @@
       "viewport": "390x844",
       "status": "PASS_LOGIC_AND_VISIBLE",
       "acceptance": "odd seed has the same BONUS option as even seed when level config allows it",
-      "evidencePaths": ["game/prototype-a/tests/runtime-flow.test.ts", "evidence/b01-runtime-flow/screenshots/390x844-ordinary-terminal.png"]
+      "evidencePaths": [
+        "game/prototype-a/tests/runtime-flow.test.ts",
+        "evidence/b01-runtime-flow/screenshots/390x844-ordinary-terminal.png"
+      ]
     },
     {
       "id": "bonus-definition-even-1100",
@@ -25,7 +28,10 @@
       "viewport": "1100x720",
       "status": "PASS_LOGIC_NATURAL_NOT_RUN",
       "acceptance": "even seed has the same BONUS option as odd seed; disallowed levels have no BONUS option",
-      "evidencePaths": ["game/prototype-a/tests/runtime-flow.test.ts", "evidence/b01-runtime-flow/browser-report.json"],
+      "evidencePaths": [
+        "game/prototype-a/tests/runtime-flow.test.ts",
+        "evidence/b01-runtime-flow/browser-report.json"
+      ],
       "remainingGap": "No natural 1100x720 completion reached the ordinary terminal."
     },
     {
@@ -37,7 +43,11 @@
       "viewport": "390x844",
       "status": "PASS",
       "acceptance": "blank scene input leaves failed state; retry button returns ready",
-      "evidencePaths": ["evidence/b01-runtime-flow/browser-report.json", "evidence/b01-runtime-flow/screenshots/390x844-terminal.png", "evidence/b01-runtime-flow/screenshots/390x844-replay.png"]
+      "evidencePaths": [
+        "evidence/b01-runtime-flow/browser-report.json",
+        "evidence/b01-runtime-flow/screenshots/390x844-terminal.png",
+        "evidence/b01-runtime-flow/screenshots/390x844-replay.png"
+      ]
     },
     {
       "id": "terminal-win-1100",
@@ -48,7 +58,9 @@
       "viewport": "1100x720",
       "status": "NOT_RUN",
       "acceptance": "retry and available next buttons are explicit and single-fire",
-      "evidencePaths": ["evidence/b01-runtime-flow/browser-report.json"],
+      "evidencePaths": [
+        "evidence/b01-runtime-flow/browser-report.json"
+      ],
       "remainingGap": "Predeclared 950ms/450ms and 950ms/550ms mouse schedules both failed before ordinary settlement."
     },
     {
@@ -60,7 +72,11 @@
       "viewport": "390x844",
       "status": "PASS_SYNTHETIC",
       "acceptance": "elapsed and pose do not advance during background gap; held input is released; continue does not flip",
-      "evidencePaths": ["game/prototype-a/src/runtime-lifecycle.ts", "evidence/b01-runtime-flow/browser-report.json", "evidence/b01-runtime-flow/screenshots/390x844-paused-continue.png"]
+      "evidencePaths": [
+        "game/prototype-a/src/runtime-lifecycle.ts",
+        "evidence/b01-runtime-flow/browser-report.json",
+        "evidence/b01-runtime-flow/screenshots/390x844-paused-continue.png"
+      ]
     },
     {
       "id": "active-bfcache-1100",
@@ -71,7 +87,11 @@
       "viewport": "1100x720",
       "status": "PASS_SYNTHETIC",
       "acceptance": "renderer is not disposed and only one frame loop resumes",
-      "evidencePaths": ["game/prototype-a/src/runtime-lifecycle.ts", "evidence/b01-runtime-flow/browser-report.json", "evidence/b01-runtime-flow/screenshots/1100x720-pageshow-resumed.png"]
+      "evidencePaths": [
+        "game/prototype-a/src/runtime-lifecycle.ts",
+        "evidence/b01-runtime-flow/browser-report.json",
+        "evidence/b01-runtime-flow/screenshots/1100x720-pageshow-resumed.png"
+      ]
     },
     {
       "id": "storage-corrupt-390",
@@ -82,7 +102,10 @@
       "viewport": "390x844",
       "status": "PASS_LOGIC",
       "acceptance": "defaults to level 1 without unlocking all levels and remains playable",
-      "evidencePaths": ["game/prototype-a/tests/runtime-flow.test.ts", "evidence/b01-runtime-flow/logs/runtime-flow.log"]
+      "evidencePaths": [
+        "game/prototype-a/tests/runtime-flow.test.ts",
+        "evidence/b01-runtime-flow/logs/runtime-flow.log"
+      ]
     },
     {
       "id": "storage-throws-1100",
@@ -93,7 +116,71 @@
       "viewport": "1100x720",
       "status": "PASS_LOGIC",
       "acceptance": "session memory retains unlocks and a non-blocking warning is visible",
-      "evidencePaths": ["game/prototype-a/tests/runtime-flow.test.ts", "evidence/b01-runtime-flow/logs/runtime-flow.log"]
+      "evidencePaths": [
+        "game/prototype-a/tests/runtime-flow.test.ts",
+        "evidence/b01-runtime-flow/logs/runtime-flow.log"
+      ]
+    },
+    {
+      "id": "r1-ordinary-win-next-reload-1100",
+      "objectType": "ordinary terminal controls and level progression",
+      "lifecycle": "ready → natural play → settlement → next → reload",
+      "stateBranch": "phase=ordinary,status=won",
+      "renderer": "SliceSimulation → DOM terminal actions + level selector",
+      "viewport": "1100x720",
+      "status": "NOT_RUN",
+      "acceptance": "ordinary won; pre-settlement controls hidden; blank tap unchanged; next level ready; reload level 2 playable",
+      "evidencePaths": [
+        "evidence/b01-runtime-flow/r1-ordinary-report.json",
+        "evidence/b01-runtime-flow/r1-exploration-log.json"
+      ],
+      "remainingGap": "All six bounded explorations and the frozen formal schedule ended before the required won checkpoint."
+    },
+    {
+      "id": "r1-natural-bonus-390",
+      "objectType": "BONUS finish branch",
+      "lifecycle": "ready → natural gate contact → bonus play",
+      "stateBranch": "configured bonusAvailable true",
+      "renderer": "SliceSimulation → reward-phase DOM/HUD",
+      "viewport": "390x844",
+      "status": "NOT_RUN",
+      "acceptance": "natural gate hit changes phase to bonus and subsequent normal input changes reward state",
+      "evidencePaths": [
+        "evidence/b01-runtime-flow/r1-bonus-report.json",
+        "evidence/b01-runtime-flow/screenshots/bonus-390x844-ready.png"
+      ],
+      "remainingGap": "Ordinary branch failed before phase=bonus."
+    },
+    {
+      "id": "r1-natural-bonus-1100",
+      "objectType": "BONUS finish branch",
+      "lifecycle": "ready → natural gate contact → bonus play",
+      "stateBranch": "configured bonusAvailable true",
+      "renderer": "SliceSimulation → reward-phase DOM/HUD",
+      "viewport": "1100x720",
+      "status": "NOT_RUN",
+      "acceptance": "natural gate hit changes phase to bonus and subsequent normal input changes reward state",
+      "evidencePaths": [
+        "evidence/b01-runtime-flow/r1-bonus-report.json",
+        "evidence/b01-runtime-flow/screenshots/bonus-1100x720-ready.png"
+      ],
+      "remainingGap": "Schedule ended ordinary airborne before phase=bonus."
+    },
+    {
+      "id": "r1-regression-full-suite",
+      "objectType": "full test/lint/typecheck suite",
+      "lifecycle": "source checkout → command execution",
+      "stateBranch": "current source versus base SHA",
+      "renderer": "N/A",
+      "viewport": "N/A",
+      "status": "PASS_WITH_KNOWN_BASELINE_FAILURE",
+      "acceptance": "current lint/typecheck pass; full test retains only pre-existing missing asset-manifest failure",
+      "evidencePaths": [
+        "evidence/b01-runtime-flow/r1-regression.json",
+        "evidence/b01-runtime-flow/logs/r1-current-test.log",
+        "evidence/b01-runtime-flow/logs/r1-baseline-test.log"
+      ]
     }
-  ]
+  ],
+  "r1SourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126"
 }

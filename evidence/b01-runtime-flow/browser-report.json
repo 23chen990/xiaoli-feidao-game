@@ -1822,5 +1822,13 @@
   "consoleErrors": [],
   "limitations": [
     "Bonus entry was not claimed from a natural level 1 completion in this run; visible BONUS label and logic tests are recorded separately."
+  ],
+  "historyLabel": "Historical B01 evidence before R1; preserved unchanged in viewports.",
+  "r1Report": "evidence/b01-runtime-flow/r1-browser-report.json",
+  "r1Status": "NOT_RUN_TARGET_CHECKPOINTS",
+  "r1Limitations": [
+    "R1 desktop ordinary target checkpoint phase=ordinary,status=won was not reached.",
+    "R1 natural BONUS entry was not reached at either viewport.",
+    "True OS backgrounding, real BFCache, and storage fault injection remain unexecuted."
   ]
 }

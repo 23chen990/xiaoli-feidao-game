@@ -79,3 +79,44 @@
 - `dist/index.html`：本批最终构建产物。
 
 证据文件只使用仓库相对路径。当前交付应以 Draft PR 供负责人复核；不合并，不开始 B02，不宣称平台包或真机验收。
+
+## B01-R1 · 负责人批准的自然流程补验
+
+本轮继续使用 `codex/b01-runtime-flow`，目标构建源码为
+`de6f11d2231398f6c655abbddd40c548d1524126`，被测 `dist/index.html`
+SHA-256 为 `8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d`。
+源码审阅没有发现可复现的 B01 缺陷，因此没有修改 `game/prototype-a`。
+
+正式脚本先固定输入时间表，再从新 browser context 执行；仅向可见画布发送鼠标或触控输入。
+本轮没有调用 `selectLevel`、`debugPlacePlayer`、`debugEnterFinishGate`、
+`enterBonusChallenge`、模拟 `step`，也没有修改存储。探索期的诊断轨迹与正式证据分开，
+见 `r1-exploration-log.json`。
+
+### A · 1100×720 普通完成→下一关→刷新
+
+- 完整探索次数：6；成功次数：0。
+- 六次探索均在 `phase=ordinary,status=won` 之前掉落；正式固定尝试记录
+  `phase=ordinary,status=failed,failReason=fall`，所以该目标分类为 `NOT_RUN`，
+  不是产品终局断言 `FAIL`。
+- 由于没有到达普通结算检查点，没有声称空白点击、下一关或刷新后的第二关通过；
+  对应脚本、连续步骤截图、console/pageerror 记录在
+  `r1-formal-ordinary-fixed.mjs`、`r1-ordinary-report.json` 和 `r1-ordinary/`。
+
+### B · 自然进入 BONUS
+
+- `390×844`：1 次冻结正式尝试，在普通分支掉落；未观察到 `phase=bonus`，分类 `NOT_RUN`。
+- `1100×720`：1 次冻结正式尝试结束于普通分支 airborne；未观察到 `phase=bonus`，分类 `NOT_RUN`。
+- 没有把 BONUS 标签、配置值或调试诊断当作自然进入 PASS；也没有声称奖励玩法响应。
+- 证据在 `r1-formal-bonus-fixed.mjs`、`r1-bonus-report.json`、
+  `r1-bonus/` 和两张 ready 截图中。
+
+独立 QA 的新 context 复现与审查单独记录在 `r1-independent-review.json`。
+真实切后台、真实 BFCache 往返和浏览器存储故障注入本轮未执行，继续保持未覆盖。
+历史 `browser-report.json` 的旧结果保留，R1 汇总见 `r1-browser-report.json`。
+
+### R1 工程回归
+
+同环境回归见 `r1-regression.json`：当前 `lint` 和 `typecheck` 通过；`pnpm test`
+为 212 pass、1 fail。用 base SHA 的可复现归档运行同一命令得到 201 pass、1 fail，
+两次唯一失败都是仓库根目录缺失 `artifacts/asset-manifest.json` 的既有
+`ASSET-MANIFEST-001`，没有删测试、跳过测试或伪造资源清单。

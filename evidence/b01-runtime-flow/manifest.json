@@ -21,23 +21,63 @@
     "browser": "Playwright Chromium headless"
   },
   "checks": {
-    "pnpm test": {"exitCode": 1, "pass": 212, "fail": 1, "failure": "missing repository-root artifacts/asset-manifest.json in existing ASSET-MANIFEST-001"},
-    "runtime-flow": {"command": "pnpm exec tsx --test tests/runtime-flow.test.ts", "exitCode": 0, "pass": 11},
-    "pnpm typecheck": {"exitCode": 0},
-    "pnpm lint": {"exitCode": 0},
-    "pnpm build": {"exitCode": 0}
+    "pnpm test": {
+      "exitCode": 1,
+      "pass": 212,
+      "fail": 1,
+      "failure": "missing repository-root artifacts/asset-manifest.json in existing ASSET-MANIFEST-001"
+    },
+    "runtime-flow": {
+      "command": "pnpm exec tsx --test tests/runtime-flow.test.ts",
+      "exitCode": 0,
+      "pass": 11
+    },
+    "pnpm typecheck": {
+      "exitCode": 0
+    },
+    "pnpm lint": {
+      "exitCode": 0
+    },
+    "pnpm build": {
+      "exitCode": 0
+    }
   },
   "viewports": [
-    {"name": "portrait390x844", "width": 390, "height": 844, "evidence": "evidence/b01-runtime-flow/browser-report.json"},
-    {"name": "desktop1100x720", "width": 1100, "height": 720, "evidence": "evidence/b01-runtime-flow/browser-report.json"}
+    {
+      "name": "portrait390x844",
+      "width": 390,
+      "height": 844,
+      "evidence": "evidence/b01-runtime-flow/browser-report.json"
+    },
+    {
+      "name": "desktop1100x720",
+      "width": 1100,
+      "height": 720,
+      "evidence": "evidence/b01-runtime-flow/browser-report.json"
+    }
   ],
-  "browserReport": "evidence/b01-runtime-flow/browser-report.json",
+  "browserReport": "evidence/b01-runtime-flow/r1-browser-report.json",
   "inputRecord": "evidence/b01-runtime-flow/qa-natural.mjs",
   "triage": "evidence/b01-runtime-flow/triage.json",
   "reproductionMatrix": "evidence/b01-runtime-flow/reproduction-matrix.json",
   "knownGaps": [
     "Natural BONUS entry was not verified.",
     "1100x720 ordinary win to next/reload was not reached by the fixed predeclared schedules.",
-    "Lifecycle browser checks use synthetic events; actual OS backgrounding and BFCache navigation were not claimed."
-  ]
+    "Lifecycle browser checks use synthetic events; actual OS backgrounding and BFCache navigation were not claimed.",
+    "B01-R1 desktop ordinary natural win→blank-tap→next→reload did not reach phase=ordinary,status=won within six bounded explorations; target checkpoint remains NOT_RUN.",
+    "B01-R1 natural BONUS entry was not observed at 390x844 or 1100x720; no post-entry responsiveness claim was made.",
+    "Formal R1 browser reports record console/pageerror arrays; no console or page errors were observed in the fixed attempts.",
+    "R1 same-environment regression keeps the existing asset-manifest missing-file test failure; see r1-regression.json and baseline/current logs.",
+    "Independent QA completed two fresh 1100x720 blocked-path contexts; no target ordinary win was observed."
+  ],
+  "browserReportHistory": "evidence/b01-runtime-flow/browser-report.json",
+  "r1BrowserReport": "evidence/b01-runtime-flow/r1-browser-report.json",
+  "r1ExplorationLog": "evidence/b01-runtime-flow/r1-exploration-log.json",
+  "r1Reports": [
+    "evidence/b01-runtime-flow/r1-ordinary-report.json",
+    "evidence/b01-runtime-flow/r1-bonus-report.json"
+  ],
+  "independentQA": "evidence/b01-runtime-flow/r1-independent-review.json",
+  "r1Status": "NOT_RUN_TARGET_CHECKPOINTS",
+  "r1Regression": "evidence/b01-runtime-flow/r1-regression.json"
 }

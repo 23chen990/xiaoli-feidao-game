@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01R1ExplorationLog",
+  "targetGame": "Slice Master / 小李飞刀",
+  "workspace": "game/prototype-a",
+  "sourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "buildSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+  "environment": {
+    "node": "v24.14.0",
+    "pnpm": "11.25.0",
+    "platform": "darwin",
+    "browser": "Playwright Chromium headless"
+  },
+  "naturalInputOnly": true,
+  "debugApiCalled": false,
+  "limits": {
+    "maxCompleteExplorationsPerTarget": 6
+  },
+  "targets": [
+    {
+      "id": "A-ordinary-1100x720",
+      "viewport": "1100x720",
+      "formalInput": "r1-formal-ordinary-fixed.mjs",
+      "exploratoryAttempts": 6,
+      "successes": 0,
+      "attempts": [
+        {
+          "number": 1,
+          "result": "NOT_RUN",
+          "failureStage": "before-ordinary-terminal",
+          "observation": "periodic 950ms / 450ms schedule fell before settlement",
+          "adjustment": "kept first predeclared desktop cadence as baseline"
+        },
+        {
+          "number": 2,
+          "result": "NOT_RUN",
+          "failureStage": "before-ordinary-terminal",
+          "observation": "periodic 950ms / 550ms schedule fell before settlement",
+          "adjustment": "shifted tap offset while retaining fixed cadence"
+        },
+        {
+          "number": 3,
+          "result": "NOT_RUN",
+          "failureStage": "before-ordinary-terminal",
+          "observation": "same cadence reached a different early fall position",
+          "adjustment": "repeated only to check deterministic timing, no state injection"
+        },
+        {
+          "number": 4,
+          "result": "NOT_RUN",
+          "failureStage": "before-ordinary-terminal",
+          "observation": "periodic desktop run still did not show ordinary won",
+          "adjustment": "stopped using that cadence after repeated early fall"
+        },
+        {
+          "number": 5,
+          "result": "NOT_RUN",
+          "failureStage": "before-ordinary-terminal",
+          "observation": "adaptive diagnostic reached a non-target branch and did not yield a reusable ordinary schedule",
+          "adjustment": "excluded diagnostic input from formal evidence"
+        },
+        {
+          "number": 6,
+          "result": "NOT_RUN",
+          "failureStage": "before-ordinary-terminal",
+          "observation": "formal frozen schedule ended phase=ordinary,status=failed,failReason=fall",
+          "adjustment": "froze schedule and ended exploration at six attempts"
+        }
+      ],
+      "formalAttempt": {
+        "attempts": 1,
+        "rawOutcome": "BLOCKED",
+        "classification": "NOT_RUN",
+        "reason": "ordinary run ended fall before settlement",
+        "evidencePaths": [
+          "r1-ordinary-report.json",
+          "screenshots/ordinary-1100x720-r1-ready.png",
+          "screenshots/ordinary-1100x720-r1-terminal.png",
+          "r1-formal-ordinary-fixed.mjs"
+        ]
+      },
+      "independentQA": "NOT_RUN_BEFORE_PATH_FOUND"
+    },
+    {
+      "id": "B-bonus-390x844",
+      "viewport": "390x844",
+      "formalInput": "r1-formal-bonus-fixed.mjs",
+      "exploratoryAttempts": 1,
+      "successes": 0,
+      "attempts": [
+        {
+          "number": 1,
+          "result": "NOT_RUN",
+          "failureStage": "before-natural-bonus-entry",
+          "observation": "ordinary branch fell before phase=bonus",
+          "adjustment": "frozen normal-input schedule retained for formal record"
+        }
+      ],
+      "formalAttempt": {
+        "attempts": 1,
+        "rawOutcome": "BLOCKED",
+        "classification": "NOT_RUN",
+        "reason": "fixed normal input did not reach phase=bonus before the ordinary run terminated or the schedule ended",
+        "evidencePaths": [
+          "r1-bonus-report.json",
+          "screenshots/bonus-390x844-ready.png",
+          "r1-formal-bonus-fixed.mjs"
+        ]
+      },
+      "independentQA": "NOT_RUN_BEFORE_PATH_FOUND"
+    },
+    {
+      "id": "B-bonus-1100x720",
+      "viewport": "1100x720",
+      "formalInput": "r1-formal-bonus-fixed.mjs",
+      "exploratoryAttempts": 1,
+      "successes": 0,
+      "attempts": [
+        {
+          "number": 1,
+          "result": "NOT_RUN",
+          "failureStage": "before-natural-bonus-entry",
+          "observation": "schedule ended in ordinary airborne state without phase=bonus",
+          "adjustment": "frozen normal-input schedule retained for formal record"
+        }
+      ],
+      "formalAttempt": {
+        "attempts": 1,
+        "rawOutcome": "NOT_RUN",
+        "classification": "NOT_RUN",
+        "reason": "fixed normal input did not reach phase=bonus before the ordinary run terminated or the schedule ended",
+        "evidencePaths": [
+          "r1-bonus-report.json",
+          "screenshots/bonus-1100x720-ready.png",
+          "r1-formal-bonus-fixed.mjs"
+        ]
+      },
+      "independentQA": "NOT_RUN_BEFORE_PATH_FOUND"
+    }
+  ],
+  "excludedDiagnostics": [
+    {
+      "description": "Adaptive diagnostic traces used getState to understand candidate timing; they are not formal evidence and do not support PASS.",
+      "evidencePaths": [
+        "r1-formal-ordinary-fixed.mjs",
+        "r1-formal-bonus-fixed.mjs"
+      ]
+    }
+  ]
+}

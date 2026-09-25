@@ -104,7 +104,7 @@ async function runSuccessCandidate(spec, candidate, index) {
     const terminalState = await readState(input.page);
     const terminalCopy = await input.page.locator('#terminal-text').textContent();
     const replayText = await input.page.locator('#replay-button').textContent();
-    if (terminalState.status !== 'won') {
+    if (terminalState.phase !== 'ordinary' || terminalState.status !== 'won') {
       return { candidate, index, outcome: 'FAILED', state: stateSummary(terminalState), terminalCopy, replayText };
     }
     await input.page.screenshot({ path: new URL(`./screenshots/${spec.width}x${spec.height}-ordinary-terminal.png`, root).pathname });
@@ -141,13 +141,14 @@ async function runSuccessCandidate(spec, candidate, index) {
 
 async function runSuccessSweep(spec) {
   const candidates = successCandidatesByViewport[spec.width === 390 ? 'portrait390x844' : 'desktop1100x720'];
-  const attempts = await Promise.all(candidates.map(async (candidate, index) => {
+  const attempts = [];
+  for (const [index, candidate] of candidates.entries()) {
     try {
-      return await runSuccessCandidate(spec, candidate, index);
+      attempts.push(await runSuccessCandidate(spec, candidate, index));
     } catch (error) {
-      return { candidate, index, outcome: 'BLOCKED', reason: error instanceof Error ? error.message : String(error) };
+      attempts.push({ candidate, index, outcome: 'BLOCKED', reason: error instanceof Error ? error.message : String(error) });
     }
-  }));
+  }
   const pass = attempts.find((attempt) => attempt.outcome === 'PASS');
   return { attempts, pass: pass ?? null };
 }
@@ -167,7 +168,8 @@ async function runFailureRetry(spec) {
       const failed = await readState(input.page);
       const terminalCopy = await input.page.locator('#terminal-text').textContent();
       const replayText = await input.page.locator('#replay-button').textContent();
-      assert.ok(failed.status === 'failed' || failed.status === 'won');
+      assert.equal(failed.phase, 'ordinary');
+      assert.equal(failed.status, 'failed');
       assert.equal(replayText, '重试本关');
       const beforeBlank = stateSummary(failed);
       await tap(input, Math.round(spec.width * 0.9), Math.round(spec.height * 0.9));

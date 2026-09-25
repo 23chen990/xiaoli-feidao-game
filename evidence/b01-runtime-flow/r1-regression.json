@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01R1RegressionQA",
+  "role": "RegressionQA",
+  "task": "B01-R1 same-environment baseline verification",
+  "targetGame": "Slice Master / 小李飞刀",
+  "repository": "/Users/kker/Documents/ChatGPT/xiaoli-feidao-game-b01",
+  "workspace": "game/prototype-a",
+  "baseSha": "b7e4b4b2ea7cab16c2dd27a91126fc29cde3c2ee",
+  "testedSourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "environment": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "node": "v24.14.0",
+    "pnpm": "11.25.0",
+    "nodePath": "/usr/local/bin/node",
+    "pnpmPath": "/usr/local/bin/pnpm",
+    "dependencyTree": "The current game/prototype-a/node_modules directory was reused by symlink from the baseline archive; no dependency installation or rebuild was performed.",
+    "dependencyVerification": "pnpm_config_verify_deps_before_run=warn",
+    "dependencyVerificationReason": "pnpm 11 detected the existing allowBuilds state and would otherwise auto-install; warn mode kept the dependency check read-only."
+  },
+  "current": {
+    "commit": "72b6ef86bc4fb2204f7960f4a5015d6017e3e4a4",
+    "testedSourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+    "commands": [
+      {
+        "name": "lint",
+        "command": "pnpm lint",
+        "exitCode": 0,
+        "result": "PASS",
+        "logPath": "evidence/b01-runtime-flow/logs/r1-current-lint.log"
+      },
+      {
+        "name": "typecheck",
+        "command": "pnpm typecheck",
+        "exitCode": 0,
+        "result": "PASS",
+        "logPath": "evidence/b01-runtime-flow/logs/r1-current-typecheck.log"
+      },
+      {
+        "name": "test",
+        "command": "pnpm test",
+        "exitCode": 1,
+        "result": "KNOWN_BASELINE_FAILURE_RETAINED",
+        "tests": { "total": 213, "passed": 212, "failed": 1 },
+        "failure": "ASSET-MANIFEST-001: ENOENT for repository-root artifacts/asset-manifest.json",
+        "logPath": "evidence/b01-runtime-flow/logs/r1-current-test.log"
+      }
+    ],
+    "missingAssetManifestFailureRetained": true
+  },
+  "baseline": {
+    "archiveDir": "/private/tmp/b01-r1-baseline.jWYxUk",
+    "archiveCommand": "git archive --format=tar b7e4b4b2ea7cab16c2dd27a91126fc29cde3c2ee | tar -xf - -C /private/tmp/b01-r1-baseline.jWYxUk",
+    "sourceSha": "b7e4b4b2ea7cab16c2dd27a91126fc29cde3c2ee",
+    "nodeModules": "symlink to /Users/kker/Documents/ChatGPT/xiaoli-feidao-game-b01/game/prototype-a/node_modules",
+    "command": "pnpm test",
+    "exitCode": 1,
+    "result": "KNOWN_BASELINE_FAILURE",
+    "tests": { "total": 202, "passed": 201, "failed": 1 },
+    "failure": "ASSET-MANIFEST-001: ENOENT for repository-root artifacts/asset-manifest.json",
+    "logPath": "evidence/b01-runtime-flow/logs/r1-baseline-test.log"
+  },
+  "conclusion": {
+    "status": "PASS",
+    "sameEnvironment": true,
+    "regressionDetected": false,
+    "summary": "Current lint and typecheck pass. Current full test has the same single missing asset-manifest failure as the real base-SHA test; the additional 11 current tests pass.",
+    "testDelta": { "currentTotal": 213, "baselineTotal": 202, "currentPassed": 212, "baselinePassed": 201, "currentFailed": 1, "baselineFailed": 1 }
+  },
+  "limitations": [
+    "No browser runs were performed, per task scope.",
+    "The baseline archive is disposable under /private/tmp and depends on the current installed node_modules through a symlink; Node, pnpm, dependency tree, and dependency verification mode are recorded above.",
+    "The missing repository-root asset-manifest file remains absent in both trees, so pnpm test is not fully green and this known failure remains a release limitation."
+  ],
+  "logPaths": [
+    "evidence/b01-runtime-flow/logs/r1-current-lint.log",
+    "evidence/b01-runtime-flow/logs/r1-current-typecheck.log",
+    "evidence/b01-runtime-flow/logs/r1-current-test.log",
+    "evidence/b01-runtime-flow/logs/r1-baseline-test.log"
+  ]
+}

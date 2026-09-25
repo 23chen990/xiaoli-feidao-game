@@ -7,47 +7,136 @@
   "sourceBaseSha": "b7e4b4b2ea7cab16c2dd27a91126fc29cde3c2ee",
   "testedSourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
   "route": "formal-fixer",
-  "overallStatus": "PARTIAL_WITH_NATURAL_FLOW_GAPS",
+  "overallStatus": "PARTIAL_WITH_R1_NATURAL_FLOW_GAPS",
   "items": [
     {
       "id": "B01-01",
       "classification": "logic-bug",
-      "scope": ["src/game-core.ts", "src/game-levels.ts", "tests"],
+      "scope": [
+        "src/game-core.ts",
+        "src/game-levels.ts",
+        "tests"
+      ],
       "status": "PASS_LOGIC",
       "evidence": "createCourse now takes bonusAvailable only from the authored level definition; runtime-flow.test.ts checks every catalog level with odd and even seeds and verifies bonus finish options.",
       "acceptance": "Bonus availability and the generated BONUS finish option are determined only by the level definition; ordinary and safe gates remain distinct; same level is stable across odd/even seeds and reloads.",
-      "evidencePaths": ["game/prototype-a/tests/runtime-flow.test.ts", "evidence/b01-runtime-flow/logs/runtime-flow.log", "evidence/b01-runtime-flow/screenshots/390x844-ordinary-terminal.png"],
+      "evidencePaths": [
+        "game/prototype-a/tests/runtime-flow.test.ts",
+        "evidence/b01-runtime-flow/logs/runtime-flow.log",
+        "evidence/b01-runtime-flow/screenshots/390x844-ordinary-terminal.png"
+      ],
       "remainingGap": "Natural input did not verify entry into the BONUS branch; the browser report records this as NOT_RUN."
     },
     {
       "id": "B01-02",
       "classification": "interaction-state-bug",
-      "scope": ["src/game-core.ts", "src/main.ts", "src/theme.ts", "index.html", "tests"],
+      "scope": [
+        "src/game-core.ts",
+        "src/main.ts",
+        "src/theme.ts",
+        "index.html",
+        "tests"
+      ],
       "status": "PASS_PORTRAIT_PARTIAL_DESKTOP",
       "evidence": "Terminal simulation flip is inert; explicit retry copy/buttons are rendered; terminal actions use one-shot availability checks; browser failure/retry passed for both viewports and ordinary completion/next/reload passed at 390x844.",
       "acceptance": "Failure and ordinary completion show an explicit retry button; next level is shown only when available; blank scene input never restarts; replay starts a clean ready state and a completion record is written once per completed run.",
-      "evidencePaths": ["game/prototype-a/src/main.ts", "game/prototype-a/tests/runtime-flow.test.ts", "evidence/b01-runtime-flow/browser-report.json", "evidence/b01-runtime-flow/screenshots/390x844-terminal.png", "evidence/b01-runtime-flow/screenshots/390x844-replay.png", "evidence/b01-runtime-flow/screenshots/390x844-next-level.png", "evidence/b01-runtime-flow/screenshots/390x844-reload-level-2.png"],
+      "evidencePaths": [
+        "game/prototype-a/src/main.ts",
+        "game/prototype-a/tests/runtime-flow.test.ts",
+        "evidence/b01-runtime-flow/browser-report.json",
+        "evidence/b01-runtime-flow/screenshots/390x844-terminal.png",
+        "evidence/b01-runtime-flow/screenshots/390x844-replay.png",
+        "evidence/b01-runtime-flow/screenshots/390x844-next-level.png",
+        "evidence/b01-runtime-flow/screenshots/390x844-reload-level-2.png"
+      ],
       "remainingGap": "1100x720 ordinary win→next→reload is NOT_RUN because both predeclared fixed schedules ended in failure."
     },
     {
       "id": "B01-03",
       "classification": "runtime-lifecycle-bug",
-      "scope": ["src/main.ts", "src/runtime-lifecycle.ts", "index.html", "src/style.css", "tests"],
+      "scope": [
+        "src/main.ts",
+        "src/runtime-lifecycle.ts",
+        "index.html",
+        "src/style.css",
+        "tests"
+      ],
       "status": "PASS_SYNTHETIC_LIFECYCLE",
       "evidence": "RuntimeLifecycle tests cover pause, input release, wall-time reset, Continue-only resume, BFCache versus real teardown; browser synthetic visibility/blur/pagehide checks passed in both viewports.",
       "acceptance": "Background/blur pauses active simulation, resets held input and frame time, BFCache return reuses a live renderer, resume requires a visible Continue control without an extra flip, and listeners/animation loops are not duplicated.",
-      "evidencePaths": ["game/prototype-a/src/runtime-lifecycle.ts", "game/prototype-a/tests/runtime-flow.test.ts", "evidence/b01-runtime-flow/browser-report.json", "evidence/b01-runtime-flow/screenshots/390x844-paused-continue.png", "evidence/b01-runtime-flow/screenshots/390x844-pageshow-resumed.png"],
+      "evidencePaths": [
+        "game/prototype-a/src/runtime-lifecycle.ts",
+        "game/prototype-a/tests/runtime-flow.test.ts",
+        "evidence/b01-runtime-flow/browser-report.json",
+        "evidence/b01-runtime-flow/screenshots/390x844-paused-continue.png",
+        "evidence/b01-runtime-flow/screenshots/390x844-pageshow-resumed.png"
+      ],
       "remainingGap": "Browser lifecycle evidence uses synthetic events; actual OS/browser backgrounding and BFCache navigation remain unverified."
     },
     {
       "id": "B01-04",
       "classification": "persistence-degradation-bug",
-      "scope": ["src/level-progress.ts", "src/main.ts", "index.html", "src/style.css", "tests"],
+      "scope": [
+        "src/level-progress.ts",
+        "src/main.ts",
+        "index.html",
+        "src/style.css",
+        "tests"
+      ],
       "status": "PASS_LOGIC",
       "evidence": "LevelProgressStore guards unavailable, read-throwing, corrupt, and write-throwing storage; scoped session fallback retains the latest unlock and exposes a non-blocking warning.",
       "acceptance": "Corrupt or unavailable storage falls back to session memory with no accidental unlocks; gameplay and unlocked-level selection continue; failed writes retain in-memory progress and show a non-blocking warning.",
-      "evidencePaths": ["game/prototype-a/src/level-progress.ts", "game/prototype-a/tests/runtime-flow.test.ts", "evidence/b01-runtime-flow/logs/runtime-flow.log"],
+      "evidencePaths": [
+        "game/prototype-a/src/level-progress.ts",
+        "game/prototype-a/tests/runtime-flow.test.ts",
+        "evidence/b01-runtime-flow/logs/runtime-flow.log"
+      ],
       "remainingGap": "Storage failure branches are logic-tested; no browser fixture replaces window.localStorage in this natural-input run."
     }
-  ]
+  ],
+  "r1": {
+    "route": "formal-fixer",
+    "sourceChanged": false,
+    "sourceReview": "No reproducible B01 source defect was found; R1 remained evidence-only.",
+    "browserReport": "evidence/b01-runtime-flow/r1-browser-report.json",
+    "explorationLog": "evidence/b01-runtime-flow/r1-exploration-log.json",
+    "items": [
+      {
+        "id": "B01-R1-A",
+        "classification": "natural-flow-evidence-gap",
+        "status": "NOT_RUN",
+        "scope": [
+          "game/prototype-a",
+          "evidence/b01-runtime-flow"
+        ],
+        "reproduction": "Fresh 1100x720 context, visible canvas mouse taps from frozen schedule. Attempts ended phase=ordinary,status=failed,failReason=fall before settlement.",
+        "acceptance": "phase=ordinary,status=won; pre-settlement controls hidden; blank tap unchanged; next level ready; reload remains level 2 and playable.",
+        "evidencePaths": [
+          "evidence/b01-runtime-flow/r1-ordinary-report.json",
+          "evidence/b01-runtime-flow/r1-exploration-log.json"
+        ],
+        "remainingGap": "No target terminal checkpoint; no independent post-success replay was applicable."
+      },
+      {
+        "id": "B01-R1-B",
+        "classification": "natural-bonus-entry-evidence-gap",
+        "status": "NOT_RUN",
+        "scope": [
+          "game/prototype-a",
+          "evidence/b01-runtime-flow"
+        ],
+        "reproduction": "Fresh 390x844 and 1100x720 contexts, fixed visible canvas touch/mouse schedules. Neither reached phase=bonus.",
+        "acceptance": "ready→natural gate hit→phase=bonus→normal input changes reward state; labels/config/debug alone do not count.",
+        "evidencePaths": [
+          "evidence/b01-runtime-flow/r1-bonus-report.json",
+          "evidence/b01-runtime-flow/r1-exploration-log.json"
+        ],
+        "remainingGap": "No natural BONUS entry or responsive post-entry evidence."
+      }
+    ],
+    "regressionQA": "evidence/b01-runtime-flow/r1-regression.json",
+    "knownTestFailure": "ASSET-MANIFEST-001 missing repository-root artifacts/asset-manifest.json; same failure reproduced at base SHA and current source.",
+    "independentQA": "evidence/b01-runtime-flow/r1-independent-review.json",
+    "independentQAResult": "NOT_RUN_TARGET_CHECKPOINTS"
+  }
 }
