@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01R2AcceptanceScriptSelfCheck",
+  "generatedAt": "2026-09-25T13:27:12.440589+00:00",
+  "command": "R2_SCRIPT_SELF_CHECK=1 node evidence/b01-runtime-flow/qa-natural-r2.mjs",
+  "status": "PASS",
+  "checks": 19,
+  "verified": [
+    "formal buildOrdinaryChecks and summarizeOrdinary are used by the self-check",
+    "ready-only or late observer has no normal-running coverage and remains NOT_RUN",
+    "contact without reward/celebration remains NOT_RUN",
+    "receipt plus automatic cut without causal launch/flip is not an input response",
+    "target reached with invalid observation yields result NOT_RUN and rawOutcome target-checkpoint-observation-invalid",
+    "observed product FAIL remains FAIL after a later tool error",
+    "product/source/build and deferred BONUS boundaries remain unchanged"
+  ]
+}

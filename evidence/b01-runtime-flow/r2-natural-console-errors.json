@@ -50,5 +50,17 @@
     "r2-ordinary-formal-r2patch-v5-console-errors.json",
     "r2-ordinary-formal-r2patch-v6-console-errors.json",
     "r2-ordinary-formal-r2patch-v7-console-errors.json"
-  ]
+  ],
+  "patchFormalV22": {
+    "report": "r2-ordinary-formal-r2patch-v22-console-errors.json",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "result": "PASS"
+  },
+  "patchIndependentV22": {
+    "report": "r2-ordinary-independent-qa-r2patch-v22-console-errors.json",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "result": "PASS"
+  }
 }

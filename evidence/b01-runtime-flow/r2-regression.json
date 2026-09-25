@@ -64,5 +64,18 @@
     ],
     "gameSourceChanged": false,
     "buildReused": true
+  },
+  "patchVerificationV22": {
+    "scriptVersion": "B01-R2-acceptance-v2.2",
+    "scriptSha256": "45ee87a91f9c3baae7a3b3674953fc1a7fc6308d73ef127182c50f8411647ae4",
+    "acceptanceScriptSelfCheck": {
+      "command": "R2_SCRIPT_SELF_CHECK=1 node evidence/b01-runtime-flow/qa-natural-r2.mjs",
+      "exitCode": 0,
+      "checks": 19,
+      "report": "evidence/b01-runtime-flow/r2-acceptance-script-self-check-r2patch-v22.json"
+    },
+    "formalReport": "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v22.json",
+    "independentReport": "evidence/b01-runtime-flow/r2-ordinary-independent-qa-r2patch-v22.json",
+    "gameSourceChanged": false
   }
 }

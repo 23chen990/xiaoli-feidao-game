@@ -267,6 +267,24 @@
         ],
         "result": "The initial instrumentation variants remain NOT_RUN with recorded reasons; repaired v2.1 formal and independent runs both PASS.",
         "remainingGap": "BONUS natural entry, real OS backgrounding, real BFCache and storage fault injection remain NOT_RUN."
+      },
+      {
+        "id": "B01-R2-F",
+        "classification": "acceptance-observation-closeout",
+        "status": "PASS",
+        "scope": [
+          "evidence/b01-runtime-flow"
+        ],
+        "reproduction": "One fresh 1100x720 formal run and one independent fresh context used the unchanged visible strategy after the v2.2 self-check.",
+        "acceptance": "Observer starts before the first player input; normal-running and contact/reward/celebration samples are separately executed, valid and passing; reload response has causal launch evidence and post-response visible evidence; browser navigation main-document hashes are recorded.",
+        "evidencePaths": [
+          "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v22.json",
+          "evidence/b01-runtime-flow/r2-ordinary-independent-qa-r2patch-v22.json",
+          "evidence/b01-runtime-flow/r2-acceptance-closeout-review-v22.json",
+          "evidence/b01-runtime-flow/r2-acceptance-script-self-check-r2patch-v22.json"
+        ],
+        "result": "Both current runs PASS; v8 reports remain preserved as historical evidence.",
+        "remainingGap": "BONUS, real OS backgrounding, real BFCache and storage fault injection remain NOT_RUN."
       }
     ],
     "independentQA": "evidence/b01-runtime-flow/r2-ordinary-independent-qa-1.json; evidence/b01-runtime-flow/r2-ordinary-independent-qa-2.json",
@@ -274,6 +292,7 @@
     "versionCheck": "evidence/b01-runtime-flow/r2-version-check.json",
     "ordinaryFormal": "evidence/b01-runtime-flow/r2-ordinary-formal.json",
     "versionCheckPostPush": "evidence/b01-runtime-flow/r2-version-check-post-push.json",
-    "patchReview": "evidence/b01-runtime-flow/r2-acceptance-patch-review.json"
+    "patchReview": "evidence/b01-runtime-flow/r2-acceptance-patch-review.json",
+    "currentCloseout": "evidence/b01-runtime-flow/r2-acceptance-closeout-review-v22.json"
   }
 }

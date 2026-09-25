@@ -85,7 +85,7 @@
   "r2BrowserReport": "evidence/b01-runtime-flow/r2-browser-report.json",
   "r2RevisionNotes": "evidence/b01-runtime-flow/r2-revision-notes.md",
   "r2NaturalAcceptanceScript": "evidence/b01-runtime-flow/qa-natural-r2.mjs",
-  "r2AcceptanceScriptSelfCheck": "evidence/b01-runtime-flow/r2-acceptance-script-self-check-r2patch.json",
+  "r2AcceptanceScriptSelfCheck": "evidence/b01-runtime-flow/r2-acceptance-script-self-check-r2patch-v22.json",
   "r2NaturalConsoleErrors": "evidence/b01-runtime-flow/r2-natural-console-errors.json",
   "r2IndependentQA": "evidence/b01-runtime-flow/r2-independent-review.json",
   "r2CaptureComparison": "evidence/b01-runtime-flow/r2-ordinary-capture-compare.json",
@@ -138,5 +138,12 @@
   "r2CaptureAlignmentReview": "evidence/b01-runtime-flow/r2-ordinary-capture-align-r2-review.json",
   "r2CaptureAlignmentReviewScript": "evidence/b01-runtime-flow/r2-ordinary-capture-align-review.mjs",
   "r2VersionCheckPatch": "evidence/b01-runtime-flow/r2-version-check-patch.json",
-  "r2VersionCheckPostPushPatch": "evidence/b01-runtime-flow/r2-version-check-post-push-r2patch.json"
+  "r2VersionCheckPostPushPatch": "evidence/b01-runtime-flow/r2-version-check-post-push-r2patch.json",
+  "r2AcceptanceCloseoutReview": "evidence/b01-runtime-flow/r2-acceptance-closeout-review-v22.json",
+  "r2OrdinaryFormalCurrent": "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v22.json",
+  "r2OrdinaryIndependentCurrent": "evidence/b01-runtime-flow/r2-ordinary-independent-qa-r2patch-v22.json",
+  "r2OrdinaryCurrentEvidenceDirs": [
+    "evidence/b01-runtime-flow/r2-natural/patch-v22-formal-ordinary/",
+    "evidence/b01-runtime-flow/r2-natural/patch-v22-independent-ordinary/"
+  ]
 }

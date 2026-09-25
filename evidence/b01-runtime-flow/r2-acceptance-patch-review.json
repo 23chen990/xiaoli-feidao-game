@@ -239,5 +239,541 @@
   },
   "versionCheck": "r2-version-check-patch.json",
   "evidenceCommitBeforePostPushCheck": "9a5ed9f",
-  "postPushVersionCheck": "r2-version-check-post-push-r2patch.json"
+  "postPushVersionCheck": "r2-version-check-post-push-r2patch.json",
+  "currentVerification": {
+    "schemaVersion": 1,
+    "artifactType": "B01R2AcceptanceCloseoutReview",
+    "generatedAt": "2026-09-25T13:27:12.440589+00:00",
+    "repositoryHeadAtStart": "603ecc42ba2f6aa0a1cf93cd9450e60c910959b2",
+    "branch": "codex/b01-runtime-flow",
+    "pullRequest": {
+      "number": 1,
+      "state": "OPEN",
+      "draft": true
+    },
+    "script": {
+      "path": "qa-natural-r2.mjs",
+      "version": "B01-R2-acceptance-v2.2",
+      "sha256": "45ee87a91f9c3baae7a3b3674953fc1a7fc6308d73ef127182c50f8411647ae4"
+    },
+    "sourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+    "buildSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+    "ordinaryFormal": {
+      "report": "r2-ordinary-formal-r2patch-v22.json",
+      "evidenceDirectory": "r2-natural/patch-v22-formal-ordinary/",
+      "runId": "r2-patch-v22-formal-ordinary-1100x720",
+      "contextId": "e1024670-0c55-4cd1-8dab-25a140b3e371",
+      "result": "PASS",
+      "rawOutcome": "target-checkpoint-passed",
+      "validObservation": true,
+      "allAssertionsPass": true,
+      "checks": [
+        {
+          "id": "ready-state",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "ordinary-target",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "normal-running-controls-hidden",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "contact-controls-hidden",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "reward-controls-hidden",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "celebration-controls-hidden",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "terminal-controls-visible-after-settlement",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "blank-click-does-not-restart",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "next-level-ready",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "reload-level2-ready",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "reload-input-response",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        }
+      ],
+      "observerWindow": {
+        "startedAtMs": 1326.6000003814697,
+        "startedEpochMs": 1790342635405.8,
+        "endedAtMs": 20564.300000190735,
+        "endedEpochMs": 1790342654643.5,
+        "interrupted": false
+      },
+      "coverage": [
+        {
+          "reason": "initial",
+          "coverage": "ready",
+          "finishPhase": "idle",
+          "status": "ready",
+          "hidden": true,
+          "visible": false
+        },
+        {
+          "reason": "normal-running-start",
+          "coverage": "normal-running",
+          "finishPhase": "idle",
+          "status": "airborne",
+          "hidden": true,
+          "visible": false
+        },
+        {
+          "reason": "mutation",
+          "coverage": "transition",
+          "finishPhase": "contact",
+          "status": "ready",
+          "hidden": true,
+          "visible": false
+        },
+        {
+          "reason": "mutation",
+          "coverage": "transition",
+          "finishPhase": "reward",
+          "status": "ready",
+          "hidden": true,
+          "visible": false
+        },
+        {
+          "reason": "mutation",
+          "coverage": "transition",
+          "finishPhase": "celebration",
+          "status": "ready",
+          "hidden": true,
+          "visible": false
+        },
+        {
+          "reason": "mutation",
+          "coverage": "transition",
+          "finishPhase": "terminal",
+          "status": "won",
+          "hidden": false,
+          "visible": true
+        }
+      ],
+      "documentResponses": [
+        {
+          "available": true,
+          "url": "http://127.0.0.1:4175/",
+          "status": 200,
+          "sha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+          "navigation": "initial-navigation"
+        },
+        {
+          "available": true,
+          "url": "http://127.0.0.1:4175/",
+          "status": 200,
+          "sha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+          "navigation": "level-2-reload"
+        }
+      ],
+      "causalResponse": {
+        "newEvents": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          }
+        ],
+        "newActionEvents": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          }
+        ],
+        "actionTypes": [
+          "launch"
+        ],
+        "directCausalEvents": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          }
+        ],
+        "hasCausalAction": true,
+        "automaticCutOnly": false,
+        "hasAction": true,
+        "motionOnly": false,
+        "causalEvidence": {
+          "inputId": "reload-input-1",
+          "receiptEpochMs": 1790342656597.6,
+          "handlerEpochMs": 1790342656599.6,
+          "before": {
+            "phase": "ordinary",
+            "status": "ready",
+            "finishPhase": "idle",
+            "worldTime": 0.8749999999999993,
+            "player": {
+              "x": 120,
+              "y": 420,
+              "vx": 0,
+              "vy": 0,
+              "angle": -0.35,
+              "angularVelocity": 0
+            },
+            "events": [],
+            "eventCount": 0
+          },
+          "after": {
+            "phase": "ordinary",
+            "status": "airborne",
+            "finishPhase": "idle",
+            "worldTime": 0.8749999999999993,
+            "player": {
+              "x": 120,
+              "y": 420,
+              "vx": 150,
+              "vy": -300,
+              "angle": -0.35,
+              "angularVelocity": 9.5
+            },
+            "events": [
+              {
+                "id": 1,
+                "type": "launch",
+                "x": 120,
+                "y": 420,
+                "value": 1
+              }
+            ],
+            "eventCount": 1,
+            "eventsAfterInput": [
+              {
+                "id": 1,
+                "type": "launch",
+                "x": 120,
+                "y": 420,
+                "value": 1
+              }
+            ]
+          }
+        },
+        "inputId": "reload-input-1"
+      },
+      "visibleGameplayEvidence": "ordinary-1100-reload-after-input.png"
+    },
+    "independentQA": {
+      "report": "r2-ordinary-independent-qa-r2patch-v22.json",
+      "evidenceDirectory": "r2-natural/patch-v22-independent-ordinary/",
+      "runId": "r2-patch-v22-independent-ordinary-1100x720",
+      "contextId": "3b698399-fc66-4753-8c44-688edb0e1521",
+      "result": "PASS",
+      "rawOutcome": "target-checkpoint-passed",
+      "validObservation": true,
+      "allAssertionsPass": true,
+      "checks": [
+        {
+          "id": "ready-state",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "ordinary-target",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "normal-running-controls-hidden",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "contact-controls-hidden",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "reward-controls-hidden",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "celebration-controls-hidden",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "terminal-controls-visible-after-settlement",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "blank-click-does-not-restart",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "next-level-ready",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "reload-level2-ready",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "reload-input-response",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        }
+      ],
+      "observerWindow": {
+        "startedAtMs": 1311,
+        "startedEpochMs": 1790342684127.8,
+        "endedAtMs": 20526.5,
+        "endedEpochMs": 1790342703343.3,
+        "interrupted": false
+      },
+      "coverage": [
+        {
+          "reason": "initial",
+          "coverage": "ready",
+          "finishPhase": "idle",
+          "status": "ready",
+          "hidden": true,
+          "visible": false
+        },
+        {
+          "reason": "normal-running-start",
+          "coverage": "normal-running",
+          "finishPhase": "idle",
+          "status": "airborne",
+          "hidden": true,
+          "visible": false
+        },
+        {
+          "reason": "mutation",
+          "coverage": "transition",
+          "finishPhase": "contact",
+          "status": "ready",
+          "hidden": true,
+          "visible": false
+        },
+        {
+          "reason": "mutation",
+          "coverage": "transition",
+          "finishPhase": "reward",
+          "status": "airborne",
+          "hidden": true,
+          "visible": false
+        },
+        {
+          "reason": "mutation",
+          "coverage": "transition",
+          "finishPhase": "celebration",
+          "status": "airborne",
+          "hidden": true,
+          "visible": false
+        },
+        {
+          "reason": "mutation",
+          "coverage": "transition",
+          "finishPhase": "terminal",
+          "status": "won",
+          "hidden": false,
+          "visible": true
+        }
+      ],
+      "documentResponses": [
+        {
+          "available": true,
+          "url": "http://127.0.0.1:4175/",
+          "status": 200,
+          "sha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+          "navigation": "initial-navigation"
+        },
+        {
+          "available": true,
+          "url": "http://127.0.0.1:4175/",
+          "status": 200,
+          "sha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+          "navigation": "level-2-reload"
+        }
+      ],
+      "causalResponse": {
+        "newEvents": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          }
+        ],
+        "newActionEvents": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          }
+        ],
+        "actionTypes": [
+          "launch"
+        ],
+        "directCausalEvents": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          }
+        ],
+        "hasCausalAction": true,
+        "automaticCutOnly": false,
+        "hasAction": true,
+        "motionOnly": false,
+        "causalEvidence": {
+          "inputId": "reload-input-1",
+          "receiptEpochMs": 1790342704994.3,
+          "handlerEpochMs": 1790342704996.3,
+          "before": {
+            "phase": "ordinary",
+            "status": "ready",
+            "finishPhase": "idle",
+            "worldTime": 0.8499999999999994,
+            "player": {
+              "x": 120,
+              "y": 420,
+              "vx": 0,
+              "vy": 0,
+              "angle": -0.35,
+              "angularVelocity": 0
+            },
+            "events": [],
+            "eventCount": 0
+          },
+          "after": {
+            "phase": "ordinary",
+            "status": "airborne",
+            "finishPhase": "idle",
+            "worldTime": 0.8499999999999994,
+            "player": {
+              "x": 120,
+              "y": 420,
+              "vx": 150,
+              "vy": -300,
+              "angle": -0.35,
+              "angularVelocity": 9.5
+            },
+            "events": [
+              {
+                "id": 1,
+                "type": "launch",
+                "x": 120,
+                "y": 420,
+                "value": 1
+              }
+            ],
+            "eventCount": 1,
+            "eventsAfterInput": [
+              {
+                "id": 1,
+                "type": "launch",
+                "x": 120,
+                "y": 420,
+                "value": 1
+              }
+            ]
+          }
+        },
+        "inputId": "reload-input-1"
+      },
+      "visibleGameplayEvidence": "ordinary-1100-reload-after-input.png"
+    },
+    "classificationConsistency": {
+      "targetReachedWithInvalidObservation": {
+        "result": "NOT_RUN",
+        "rawOutcome": "target-checkpoint-observation-invalid"
+      },
+      "productFailThenToolError": {
+        "result": "FAIL",
+        "rawOutcome": "target-checkpoint-assertion-failure"
+      },
+      "missingNormalOrTransitionPhase": "NOT_RUN",
+      "automaticCutOnly": "not an input response when causal evidence has no launch/flip"
+    },
+    "scriptSelfCheck": {
+      "command": "R2_SCRIPT_SELF_CHECK=1 node evidence/b01-runtime-flow/qa-natural-r2.mjs",
+      "result": "PASS",
+      "checks": 19,
+      "report": "r2-acceptance-script-self-check-r2patch-v22.json"
+    },
+    "historicalReview": {
+      "v8OrdinaryAndIndependentResultsPreserved": true,
+      "previouslySupportedSubchecks": "retained as historical evidence",
+      "previousFrontCoverageGap": "closed by v2.2 fresh formal and independent runs"
+    },
+    "scope": {
+      "bonus390": "NOT_RUN",
+      "bonus1100": "NOT_RUN",
+      "osBackgrounding": "NOT_RUN",
+      "realBFCache": "NOT_RUN",
+      "storageFaultInjection": "NOT_RUN",
+      "gameSourceChanged": false
+    }
+  }
 }

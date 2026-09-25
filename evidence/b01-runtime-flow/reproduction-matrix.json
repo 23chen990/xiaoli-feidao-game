@@ -264,6 +264,21 @@
         "evidence/b01-runtime-flow/r2-acceptance-script-self-check-r2patch.json"
       ],
       "remainingGap": "BONUS natural entry is intentionally NOT_RUN."
+    },
+    {
+      "id": "r2-acceptance-closeout-v22-ordinary-1100",
+      "objectType": "ordinary controls and causal reload response",
+      "lifecycle": "ready → first input → ordinary running → contact/reward/celebration → terminal → next → reload → input",
+      "stateBranch": "ordinary phase/status won with all required observation phases",
+      "renderer": "qa-natural-r2.mjs → browser DOM + SliceSimulation state/events",
+      "viewport": "1100x720",
+      "status": "PASS",
+      "acceptance": "Observer starts before first input; ready is separate from normal-running; contact/reward/celebration are separately valid and hidden; causal launch evidence and post-response screenshot are present; browser navigation document hashes match build.",
+      "evidencePaths": [
+        "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v22.json",
+        "evidence/b01-runtime-flow/r2-ordinary-independent-qa-r2patch-v22.json"
+      ],
+      "remainingGap": "BONUS natural entry remains NOT_RUN."
     }
   ],
   "r1SourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",

@@ -245,3 +245,17 @@ buffered 标志仍未通过源码 hook 暴露，未发生可见状态转移时�
 正式小修补验使用新的 `1100×720` context、默认首关和玩家可读策略：ready 后等待 400ms，只点击可见画布 `(550,518.4)`，从 150ms 起每 975ms 一次；以可见 pointer receipt 和新增动作事件确认操作，等待期间不暂停、不手动 step、不按隐藏状态改节奏。正式报告 `r2-ordinary-formal-r2patch-v8.json` 与独立 QA 新 context `r2-ordinary-independent-qa-r2patch-v8.json` 都通过 ordinary/won、结算前控件隐藏、结算后控件可见、空白点击不重开、下一关 level 2 ready、刷新后仍为 level 2 ready、刷新后新增动作响应等检查。
 
 两个 BONUS 视口、真实切后台、真实 BFCache、浏览器存储故障注入仍为 `NOT_RUN`/未覆盖。历史三份 ordinary PASS、R1 原始证据和已知 asset-manifest 缺失失败均保留。
+
+## B01-R2 验收收口 · v2.2 观测区间与响应归因
+
+在基线 `603ecc42ba2f6aa0a1cf93cd9450e60c910959b2` 上，验收脚本升级为 `B01-R2-acceptance-v2.2`。没有重跑截图/无截图对照，也没有修改游戏源码。
+
+- 控件 observer 在第一条正常玩家输入前启动；ready 样本与 normal-running 样本分开。formal 与 independent 两次运行都记录了 `normal-running-start`、`contact`、`reward`、`celebration` 和 terminal 样本。observer 起止时间、是否中断以及 style 属性变化均被记录。
+- contact、reward、celebration 现在是三个独立检查点；缺少任一阶段都会使该检查点 `NOT_RUN`，不会由其它过渡样本代替。
+- 刷新后的关键输入使用原生 pointer receipt、发送前后事件边界和 causal launch 证据；只有自动碰撞产生的 cut 而没有 causal launch/flip 时，不再算作输入响应。响应后的画面保存为 `ordinary-1100-reload-after-input.png`。
+- 初始导航和 level 2 reload 都记录了浏览器实际主文档响应的状态与 SHA-256，均与被测构建一致。
+- 反例自检现在直接调用正式的 `buildOrdinaryChecks` 与 `summarizeOrdinary`，19 项全部通过，包含 ready-only、observer 晚启动、单独 contact、自动 cut、终局观测无效以及 FAIL 后工具异常等情况。终局已到达但观测无效时，`result=NOT_RUN` 且 `rawOutcome=target-checkpoint-observation-invalid`，两者一致。
+
+当前新增正式运行与独立复现均为 PASS，v8 报告及其已支持子检查点继续保留为历史证据。BONUS 两个视口、真实切后台、真实 BFCache 和浏览器存储故障注入继续 `NOT_RUN`。
+
+玩家说明的反馈来源仅是可见画面：刀具在画布上开始运动、路线/碰撞反馈和结算界面变化。pointer receipt、handler 边界和 launch 事件只属于 QA 取证，不能作为玩家决定下一次操作的依据。

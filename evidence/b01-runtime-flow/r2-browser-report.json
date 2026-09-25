@@ -174,11 +174,12 @@
     "bonus390": "NOT_RUN",
     "bonus1100": "NOT_RUN",
     "diagnosticCandidate": "r2-ordinary-candidate.json",
-    "patchFormal": "r2-ordinary-formal-r2patch-v8.json",
-    "patchIndependentQA": "r2-ordinary-independent-qa-r2patch-v8.json",
+    "patchFormal": "r2-ordinary-formal-r2patch-v22.json",
+    "patchIndependentQA": "r2-ordinary-independent-qa-r2patch-v22.json",
     "patchFormalResult": "PASS",
     "patchIndependentResult": "PASS",
-    "patchRunScope": "one formal run and one independent fresh-context reproduction after script repair"
+    "patchRunScope": "one formal run and one independent fresh-context reproduction after script repair",
+    "frontCoverageConfirmed": true
   },
   "versionCheck": "r2-version-check.json",
   "history": {
@@ -408,6 +409,10 @@
       "number": 1,
       "state": "OPEN",
       "draft": true
-    }
+    },
+    "currentVerification": "r2-acceptance-closeout-review-v22.json",
+    "currentFormal": "r2-ordinary-formal-r2patch-v22.json",
+    "currentIndependentQA": "r2-ordinary-independent-qa-r2patch-v22.json",
+    "scriptSelfCheckChecks": 19
   }
 }

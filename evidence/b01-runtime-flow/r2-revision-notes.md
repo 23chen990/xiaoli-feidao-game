@@ -129,3 +129,15 @@ without-first 记录显示：第一次输入无截图 109 步、截图 108 步�
 玩家可读策略固定为：默认首关 ready 后等待 400ms，只点击可见画布 `(550,518.4)`，从 150ms 起每 975ms 一次；通过 pointer receipt 和新增动作事件确认输入，等待期间不暂停、不手动 step、不按隐藏状态改节奏。正式 `r2-ordinary-formal-r2patch-v8.json` 和独立 QA `r2-ordinary-independent-qa-r2patch-v8.json` 各在新的 `1100×720` context 执行一次，均为 PASS，并完成 ordinary/won/terminal、结算前控件隐藏、结算后控件显示、空白点击、下一关、刷新和刷新后实际输入响应。
 
 这次小修补仍不执行 BONUS 自然入口；390×844、1100×720 BONUS、真实 OS 切后台、真实 BFCache 和浏览器存储故障注入均保持 NOT_RUN/未覆盖。游戏源码、物理、关卡、难度、hit stop、存储和 BONUS 判定未修改。
+
+## R2 验收收口：v2.2 观测区间与响应归因
+
+基于 `603ecc42ba2f6aa0a1cf93cd9450e60c910959b2`，没有重跑截图对照，也没有修改游戏源码。`qa-natural-r2.mjs` 升级为 `B01-R2-acceptance-v2.2`。
+
+observer 在第一条正常玩家输入前安装，实际记录 `startedAtMs/startedEpochMs`、结束时间和中断标记。ready 样本不再充当 normal-running 覆盖；第一条输入后另记 `normal-running-start` 样本。DOM 去重键加入终局控件和 terminal text 的 `style` 属性，并保留属性/文本变化的轻量 MutationObserver。contact、reward、celebration 各自建立独立的 executed/validObservation/passed 检查。
+
+刷新后的关键输入启用一次性 causal probe：capture boundary 记录 handler 前状态，bubble boundary 记录 handler 后状态，并以本次 receipt 的 `inputId` 关联新增动作。响应要求 causal launch/flip；只有自动 cut 的情况被标记为 `automaticCutOnly`，不会被当作输入响应。刷新后的实际画面保存在 `ordinary-1100-reload-after-input.png`。浏览器初始导航与 level 2 reload 的主文档响应均单独保存状态、URL 和 SHA-256。
+
+结果汇总逻辑已统一：targetReached=true 但 `validObservation=false` 时，`result=NOT_RUN`、`rawOutcome=target-checkpoint-observation-invalid`；观察到的产品断言失败仍优先为 FAIL，即使之后发生工具异常。19 项脚本反例自检直接调用正式检查点构造和汇总函数，全部通过。
+
+正式报告 `r2-ordinary-formal-r2patch-v22.json` 与独立 QA `r2-ordinary-independent-qa-r2patch-v22.json` 均为 PASS。v8 的普通结算、过渡、下一关、刷新和 launch 证据保留；v2.2 补齐了前段覆盖与 causal response 缺口。BONUS、真实 OS backgrounding、真实 BFCache、存储故障注入仍为 NOT_RUN。
