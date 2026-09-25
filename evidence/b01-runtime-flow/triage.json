@@ -248,12 +248,32 @@
         ],
         "conclusion": "Input 4 is the first material state divergence in both orderings. The swapped ordering places both handlers at physical step 383 with the same immediate flip, while their pre-input pose/velocity already differ. The missing boundary is only the private accepted/buffered flag for a no-transition input.",
         "remainingGap": "No source hook was added; this is sufficient for the current comparison but not a formal natural acceptance result."
+      },
+      {
+        "id": "B01-R2-E",
+        "classification": "acceptance-script-observation-gap",
+        "status": "PASS",
+        "scope": [
+          "evidence/b01-runtime-flow"
+        ],
+        "reproduction": "The v2.1 acceptance script was self-checked and then run once in a fresh 1100x720 context for formal ordinary flow and once in a separate fresh context for independent QA.",
+        "acceptance": "Every required checkpoint is executed, validObservation=true, and passed; terminal controls are hidden during normal/contact/reward/celebration and visible after settlement; receipt/action response is based on new event sequence/length.",
+        "evidencePaths": [
+          "evidence/b01-runtime-flow/qa-natural-r2.mjs",
+          "evidence/b01-runtime-flow/r2-acceptance-script-self-check-r2patch.json",
+          "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v8.json",
+          "evidence/b01-runtime-flow/r2-ordinary-independent-qa-r2patch-v8.json",
+          "evidence/b01-runtime-flow/r2-acceptance-patch-review.json"
+        ],
+        "result": "The initial instrumentation variants remain NOT_RUN with recorded reasons; repaired v2.1 formal and independent runs both PASS.",
+        "remainingGap": "BONUS natural entry, real OS backgrounding, real BFCache and storage fault injection remain NOT_RUN."
       }
     ],
     "independentQA": "evidence/b01-runtime-flow/r2-ordinary-independent-qa-1.json; evidence/b01-runtime-flow/r2-ordinary-independent-qa-2.json",
     "independentQAResult": "ORDINARY_PASS_TWO_FRESH_CONTEXTS_BONUS_NOT_RUN",
     "versionCheck": "evidence/b01-runtime-flow/r2-version-check.json",
     "ordinaryFormal": "evidence/b01-runtime-flow/r2-ordinary-formal.json",
-    "versionCheckPostPush": "evidence/b01-runtime-flow/r2-version-check-post-push.json"
+    "versionCheckPostPush": "evidence/b01-runtime-flow/r2-version-check-post-push.json",
+    "patchReview": "evidence/b01-runtime-flow/r2-acceptance-patch-review.json"
   }
 }

@@ -248,6 +248,22 @@
         "evidence/b01-runtime-flow/r2-browser-report.json"
       ],
       "remainingGap": "Natural BONUS entry and post-entry input response remain NOT_RUN by explicit supplement scope; no repeated failed prerequisite path was executed."
+    },
+    {
+      "id": "r2-acceptance-script-ordinary-1100-v21",
+      "objectType": "acceptance checkpoints and terminal controls",
+      "lifecycle": "ready → ordinary running → contact/reward/celebration → terminal → next → reload",
+      "stateBranch": "ordinary phase/status won plus reload input",
+      "renderer": "qa-natural-r2.mjs → DOM controls + SliceSimulation state/events",
+      "viewport": "1100x720",
+      "status": "PASS",
+      "acceptance": "validObservation required; actual control visibility hidden before settlement and visible after; new receipt sequence and new launch/flip/cut action required after reload",
+      "evidencePaths": [
+        "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v8.json",
+        "evidence/b01-runtime-flow/r2-ordinary-independent-qa-r2patch-v8.json",
+        "evidence/b01-runtime-flow/r2-acceptance-script-self-check-r2patch.json"
+      ],
+      "remainingGap": "BONUS natural entry is intentionally NOT_RUN."
     }
   ],
   "r1SourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",

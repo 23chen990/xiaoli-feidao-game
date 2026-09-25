@@ -30,5 +30,39 @@
     "sameKnownFailure": true,
     "sourceRegressionObserved": false,
     "note": "The existing missing asset-manifest failure is retained separately; no test was deleted, skipped or weakened."
+  },
+  "patchVerification": {
+    "scriptSyntax": [
+      {
+        "command": "node --check evidence/b01-runtime-flow/qa-natural-r2.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node --check evidence/b01-runtime-flow/r2-ordinary-capture-align.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node --check evidence/b01-runtime-flow/r2-ordinary-capture-align-review.mjs",
+        "exitCode": 0
+      }
+    ],
+    "acceptanceScriptSelfCheck": {
+      "command": "R2_SCRIPT_SELF_CHECK=1 node evidence/b01-runtime-flow/qa-natural-r2.mjs",
+      "exitCode": 0,
+      "checks": 10,
+      "report": "evidence/b01-runtime-flow/r2-acceptance-script-self-check-r2patch.json"
+    },
+    "jsonAndDiffChecks": [
+      {
+        "command": "parse all evidence/b01-runtime-flow/*.json",
+        "exitCode": 0
+      },
+      {
+        "command": "git diff --check",
+        "exitCode": 0
+      }
+    ],
+    "gameSourceChanged": false,
+    "buildReused": true
   }
 }

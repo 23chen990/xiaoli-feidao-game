@@ -231,3 +231,17 @@ buffered 标志仍未通过源码 hook 暴露，未发生可见状态转移时�
 `R2_SCRIPT_SELF_CHECK=1 node evidence/b01-runtime-flow/qa-natural-r2.mjs` 完成，结果见
 `r2-acceptance-script-self-check.json`；目标未达到仍为 `NOT_RUN`，到达目标后断言失败才为
 `FAIL`，浏览器/工具障碍才为 `BLOCKED`。
+
+## B01-R2 小修补验：验收缺口与首次分歧已修正
+
+本节是当前小修补验结果；上方 R1/R2 中间段落保留为历史记录。v2.1 验收脚本和首次分歧复核只修改 `evidence/b01-runtime-flow/`，没有修改 `game/prototype-a`，也没有重新构建被测游戏。
+
+- `r2-ordinary-capture-align.mjs` 按 `result.mode` 分组，默认写入独立的 `r2-ordinary-capture-align-r2/` 报告和截图目录，不覆盖历史 compare 与截图。复核报告把最早已观测时机差异和首次可视阈值差异分开记录。
+- `without-first` 原始记录中，第一次输入为无截图 109 步、截图 108 步；第三次 launch 为 261/274 步，均从 `(282.7,439.125)`、`(150,-300)` 起跳；第四次输入均在 383 步，飞行 122/109 步。按 `vy=min(vy+600/120,760); x+=vx/120; y+=vy/120` 复算，得到无截图 `(435.2,446.75), vy=310`、截图 `(418.95,416.4166666667), vy=245`，与观测一致。
+- 这支持“起跳时机不同造成飞行步数不同”的解释。截图编码、远程读取、事件处理、RAF 调度以及私有 `ActionInput`/`inputBuffer` 没有独立隔离，所以没有宣称截图是唯一原因。诊断 reset 明确记录为 `window.__GAME_TEST__.resetGame()`；原始运行没有实际执行统一 `+120` 固定步检查点。
+- 验收脚本现在要求每个检查点均 `executed=true`、`validObservation=true` 且断言通过。它被动记录 normal、contact、reward、celebration 阶段的终局控件实际可见性，结算后才要求控件可见。输入回执用发送前长度和序号切片，输入响应必须有本次新增的 `launch`、`flip` 或 `cut` 事件，只有自然运动不算响应。
+- 自检命令 `R2_SCRIPT_SELF_CHECK=1 node evidence/b01-runtime-flow/qa-natural-r2.mjs` 为 `10/10 PASS`，覆盖无效观测、旧回执复用、控件提前显示、自然运动无动作、产品断言后工具异常等反例。早期修补尝试的 `NOT_RUN` 报告、失败阶段和证据目录均保留；它们不是产品 `FAIL`。
+
+正式小修补验使用新的 `1100×720` context、默认首关和玩家可读策略：ready 后等待 400ms，只点击可见画布 `(550,518.4)`，从 150ms 起每 975ms 一次；以可见 pointer receipt 和新增动作事件确认操作，等待期间不暂停、不手动 step、不按隐藏状态改节奏。正式报告 `r2-ordinary-formal-r2patch-v8.json` 与独立 QA 新 context `r2-ordinary-independent-qa-r2patch-v8.json` 都通过 ordinary/won、结算前控件隐藏、结算后控件可见、空白点击不重开、下一关 level 2 ready、刷新后仍为 level 2 ready、刷新后新增动作响应等检查。
+
+两个 BONUS 视口、真实切后台、真实 BFCache、浏览器存储故障注入仍为 `NOT_RUN`/未覆盖。历史三份 ordinary PASS、R1 原始证据和已知 asset-manifest 缺失失败均保留。

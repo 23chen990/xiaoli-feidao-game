@@ -1,0 +1,315 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01R2OrdinaryCaptureAlignmentReview",
+  "generatedAt": "2026-09-25T12:57:12.476Z",
+  "sourceReports": {
+    "withScreenshots": "r2-ordinary-capture-align-with-first.json",
+    "withoutScreenshots": "r2-ordinary-capture-align-without-first.json"
+  },
+  "diagnosisOnly": true,
+  "comparisonFields": [
+    "physicalStep",
+    "worldTime",
+    "status",
+    "anchorId",
+    "cuts",
+    "player.x",
+    "player.y",
+    "player.vx",
+    "player.vy",
+    "eventCount"
+  ],
+  "unobservedFields": [
+    "ActionInput held/repeat internals",
+    "SliceSimulation inputBuffer value",
+    "renderer frame scheduling internals",
+    "OS/browser compositor timing",
+    "remote read and screenshot encoding duration"
+  ],
+  "reset": {
+    "bridgeCall": "window.__GAME_TEST__.resetGame()",
+    "purpose": "diagnostic alignment only; reset is not part of natural acceptance",
+    "reportsConfirm": "seed=31, level=1, phase=ordinary, status=ready, worldTime=0, progress highestUnlocked=1 after reset"
+  },
+  "inputArchitecture": {
+    "actionInput": "ActionInput owns held/repeat suppression in game-core; its private held set is not observed.",
+    "inputBuffer": "SliceSimulation owns inputBuffer after flip cooldown; its private value is not observed."
+  },
+  "earliestObservedActionTimingDifference": {
+    "inputIndex": 1,
+    "withoutScreenshotsPhysicalStep": 109,
+    "withScreenshotsPhysicalStep": 108,
+    "comparison": "eventBoundary.after.physicalStep"
+  },
+  "firstVisibleThresholdDifference": {
+    "inputIndex": 4,
+    "positionDistance": 34.411823710915264,
+    "speedDistance": 65,
+    "threshold": {
+      "positionDistance": 20,
+      "speedDistance": 50,
+      "status": "must match"
+    },
+    "withoutScreenshotsBefore": {
+      "phase": "ordinary",
+      "status": "airborne",
+      "failReason": null,
+      "worldTime": 3.191666666666658,
+      "physicalStep": 383,
+      "anchorId": null,
+      "cuts": 1,
+      "player": {
+        "x": 435.20000000000005,
+        "y": 446.75,
+        "vx": 150,
+        "vy": 310,
+        "angle": 15.06536047149521,
+        "angularVelocity": 5.8201691510388125
+      },
+      "eventCount": 5,
+      "events": [
+        {
+          "id": 1,
+          "type": "launch",
+          "x": 120,
+          "y": 420,
+          "value": 1
+        },
+        {
+          "id": 2,
+          "type": "cut",
+          "x": 203,
+          "y": 312,
+          "value": 1,
+          "targetId": "rune-1",
+          "contactPart": "edge"
+        },
+        {
+          "id": 3,
+          "type": "flip",
+          "x": 280,
+          "y": 444,
+          "value": 1
+        },
+        {
+          "id": 4,
+          "type": "anchor",
+          "x": 298.87098379347225,
+          "y": 473.51248730499594,
+          "value": 1,
+          "targetId": "level1-runway-main",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0
+        },
+        {
+          "id": 5,
+          "type": "launch",
+          "x": 282.70000000000005,
+          "y": 439.125,
+          "value": 1
+        }
+      ]
+    },
+    "withScreenshotsBefore": {
+      "phase": "ordinary",
+      "status": "airborne",
+      "failReason": null,
+      "worldTime": 3.191666666666658,
+      "physicalStep": 383,
+      "anchorId": null,
+      "cuts": 1,
+      "player": {
+        "x": 418.95000000000005,
+        "y": 416.4166666666667,
+        "vx": 150,
+        "vy": 245,
+        "angle": 14.416791911072481,
+        "angularVelocity": 6.13210718888567
+      },
+      "eventCount": 5,
+      "events": [
+        {
+          "id": 1,
+          "type": "launch",
+          "x": 120,
+          "y": 420,
+          "value": 1
+        },
+        {
+          "id": 2,
+          "type": "cut",
+          "x": 203,
+          "y": 312,
+          "value": 1,
+          "targetId": "rune-1",
+          "contactPart": "edge"
+        },
+        {
+          "id": 3,
+          "type": "flip",
+          "x": 280,
+          "y": 444,
+          "value": 1
+        },
+        {
+          "id": 4,
+          "type": "anchor",
+          "x": 298.87098379347225,
+          "y": 473.51248730499594,
+          "value": 1,
+          "targetId": "level1-runway-main",
+          "contactPart": "tip",
+          "normalX": -1,
+          "normalY": 0
+        },
+        {
+          "id": 5,
+          "type": "launch",
+          "x": 282.70000000000005,
+          "y": 439.125,
+          "value": 1
+        }
+      ]
+    },
+    "fields": [
+      {
+        "field": "player.x",
+        "withoutScreenshots": 435.20000000000005,
+        "withScreenshots": 418.95000000000005
+      },
+      {
+        "field": "player.y",
+        "withoutScreenshots": 446.75,
+        "withScreenshots": 416.4166666666667
+      },
+      {
+        "field": "player.vy",
+        "withoutScreenshots": 310,
+        "withScreenshots": 245
+      }
+    ],
+    "comparisonFields": [
+      "physicalStep",
+      "worldTime",
+      "status",
+      "anchorId",
+      "cuts",
+      "player.x",
+      "player.y",
+      "player.vx",
+      "player.vy",
+      "eventCount"
+    ]
+  },
+  "withoutFirstReanalysis": {
+    "firstInput": {
+      "withoutScreenshotsPhysicalStep": 109,
+      "withScreenshotsPhysicalStep": 108,
+      "note": "The first observed difference is action timing/physical step; player launch pose and velocity are otherwise equal at this boundary."
+    },
+    "thirdLaunch": {
+      "withoutScreenshotsPhysicalStep": 261,
+      "withScreenshotsPhysicalStep": 274,
+      "withoutScreenshotsEvent": {
+        "id": 5,
+        "type": "launch",
+        "x": 282.70000000000005,
+        "y": 439.125,
+        "value": 1
+      },
+      "withScreenshotsEvent": {
+        "id": 5,
+        "type": "launch",
+        "x": 282.70000000000005,
+        "y": 439.125,
+        "value": 1
+      },
+      "launchStart": {
+        "withoutScreenshots": {
+          "x": 282.70000000000005,
+          "y": 439.125,
+          "vx": 150,
+          "vy": -300
+        },
+        "withScreenshots": {
+          "x": 282.70000000000005,
+          "y": 439.125,
+          "vx": 150,
+          "vy": -300
+        }
+      }
+    },
+    "fourthInput": {
+      "withoutScreenshotsPhysicalStep": 383,
+      "withScreenshotsPhysicalStep": 383,
+      "flightSteps": {
+        "withoutScreenshots": 122,
+        "withScreenshots": 109
+      },
+      "beforeInput": {
+        "withoutScreenshots": {
+          "x": 435.20000000000005,
+          "y": 446.75,
+          "vx": 150,
+          "vy": 310
+        },
+        "withScreenshots": {
+          "x": 418.95000000000005,
+          "y": 416.4166666666667,
+          "vx": 150,
+          "vy": 245
+        }
+      },
+      "fixedRuleRecalculation": {
+        "rule": "120 Hz fixed update: vy=min(vy+600/120,760); x+=vx/120; y+=vy/120",
+        "start": {
+          "x": 282.7,
+          "y": 439.125,
+          "vx": 150,
+          "vy": -300
+        },
+        "expected": {
+          "withoutScreenshots": {
+            "x": 435.2,
+            "y": 446.75,
+            "vx": 150,
+            "vy": 310
+          },
+          "withScreenshots": {
+            "x": 418.95,
+            "y": 416.4166666666667,
+            "vx": 150,
+            "vy": 245
+          }
+        },
+        "observed": {
+          "withoutScreenshots": {
+            "x": 435.20000000000005,
+            "y": 446.75,
+            "vx": 150,
+            "vy": 310
+          },
+          "withScreenshots": {
+            "x": 418.95000000000005,
+            "y": 416.4166666666667,
+            "vx": 150,
+            "vy": 245
+          }
+        },
+        "matches": true
+      }
+    },
+    "explanation": "The two launches start from the same launch pose and velocity, but occur at different physical steps. By input 4 the no-screenshot path has 122 flight steps and the screenshot path 109, which reproduces the observed positions and vy under the fixed update rule. This supports different launch timing as the explanation for the input-4 pre-state difference."
+  },
+  "causalLimits": [
+    "Screenshot encoding/wait time, remote getState reads, event-handler duration and RAF/frame scheduling were not independently timed.",
+    "The evidence therefore does not prove screenshot waiting is the unique cause; it proves the launch timing/physical-step difference and its deterministic consequence."
+  ],
+  "postCheckpointSampling": {
+    "executedInSourceRuns": false,
+    "reason": "The source reports used the original wall-time schedule; +120 fixed-step checkpoints were not actually waited for.",
+    "comparisonUses": "pointerdown capture/bubble handler boundaries and the recorded before/after states only"
+  },
+  "reviewerConclusion": "FIRST_ACTION_TIMING_DIFFERENCE_INPUT_1; FIRST_VISIBLE_THRESHOLD_DIFFERENCE_INPUT_4; LAUNCH_TIMING_EXPLANATION_SUPPORTED; CAPTURE_CAUSAL_COSTS_NOT_ISOLATED"
+}

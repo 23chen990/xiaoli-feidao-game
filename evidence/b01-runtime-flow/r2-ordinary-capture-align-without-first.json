@@ -22,7 +22,7 @@
     "with-screenshots"
   ],
   "timingNormalization": "original wall-time schedule",
-  "samplingPolicy": "No periodic state polling; each pointerdown records state at the capture boundary and at the matching bubble boundary around the game's native handler, plus a common post-input checkpoint (+120 fixed steps) or terminal checkpoint.",
+  "samplingPolicy": "No periodic state polling; source run comparison uses pointerdown capture/bubble boundaries only. Fixed +120 post-input checkpoints were not executed in this wall-time run.",
   "priorR1Failure": {
     "report": "r1-ordinary-report.json",
     "checkpoint": "afterTap-9",
@@ -4594,159 +4594,6 @@
         ],
         "physicalStep": 1145
       },
-      "firstTrajectoryDivergence": {
-        "inputIndex": 4,
-        "screenshot": {
-          "atMs": 3118.481334,
-          "state": {
-            "phase": "ordinary",
-            "status": "airborne",
-            "failReason": null,
-            "worldTime": 3.191666666666658,
-            "physicalStep": 383,
-            "anchorId": null,
-            "cuts": 1,
-            "player": {
-              "x": 435.20000000000005,
-              "y": 446.75,
-              "vx": 162,
-              "vy": -300,
-              "angle": 15.06536047149521,
-              "angularVelocity": -10.5
-            },
-            "eventCount": 6,
-            "events": [
-              {
-                "id": 1,
-                "type": "launch",
-                "x": 120,
-                "y": 420,
-                "value": 1
-              },
-              {
-                "id": 2,
-                "type": "cut",
-                "x": 203,
-                "y": 312,
-                "value": 1,
-                "targetId": "rune-1",
-                "contactPart": "edge"
-              },
-              {
-                "id": 3,
-                "type": "flip",
-                "x": 280,
-                "y": 444,
-                "value": 1
-              },
-              {
-                "id": 4,
-                "type": "anchor",
-                "x": 298.87098379347225,
-                "y": 473.51248730499594,
-                "value": 1,
-                "targetId": "level1-runway-main",
-                "contactPart": "tip",
-                "normalX": -1,
-                "normalY": 0
-              },
-              {
-                "id": 5,
-                "type": "launch",
-                "x": 282.70000000000005,
-                "y": 439.125,
-                "value": 1
-              },
-              {
-                "id": 6,
-                "type": "flip",
-                "x": 435.20000000000005,
-                "y": 446.75,
-                "value": 1
-              }
-            ]
-          }
-        },
-        "noScreenshot": {
-          "atMs": 3121.171292000001,
-          "state": {
-            "phase": "ordinary",
-            "status": "airborne",
-            "failReason": null,
-            "worldTime": 3.191666666666658,
-            "physicalStep": 383,
-            "anchorId": null,
-            "cuts": 1,
-            "player": {
-              "x": 418.95000000000005,
-              "y": 416.4166666666667,
-              "vx": 162,
-              "vy": -300,
-              "angle": 14.416791911072481,
-              "angularVelocity": -10.5
-            },
-            "eventCount": 6,
-            "events": [
-              {
-                "id": 1,
-                "type": "launch",
-                "x": 120,
-                "y": 420,
-                "value": 1
-              },
-              {
-                "id": 2,
-                "type": "cut",
-                "x": 203,
-                "y": 312,
-                "value": 1,
-                "targetId": "rune-1",
-                "contactPart": "edge"
-              },
-              {
-                "id": 3,
-                "type": "flip",
-                "x": 280,
-                "y": 444,
-                "value": 1
-              },
-              {
-                "id": 4,
-                "type": "anchor",
-                "x": 298.87098379347225,
-                "y": 473.51248730499594,
-                "value": 1,
-                "targetId": "level1-runway-main",
-                "contactPart": "tip",
-                "normalX": -1,
-                "normalY": 0
-              },
-              {
-                "id": 5,
-                "type": "launch",
-                "x": 282.70000000000005,
-                "y": 439.125,
-                "value": 1
-              },
-              {
-                "id": 6,
-                "type": "flip",
-                "x": 418.95000000000005,
-                "y": 416.4166666666667,
-                "value": 1
-              }
-            ]
-          }
-        },
-        "positionDistance": 34.411823710915264,
-        "speedDistance": 0,
-        "screenshotPhysicalStep": 383,
-        "noScreenshotPhysicalStep": 383,
-        "checkpointTargetStep": 488,
-        "comparisonBasis": "same pointerdown handler boundary when available",
-        "samePhysicalStep": true,
-        "causeHypothesis": "capture overhead may shift wall-clock dispatch; this report records whether the first divergence landed in the same 120 Hz physical step"
-      },
       "diagnostics": {
         "received": [
           {
@@ -4912,8 +4759,7 @@
         ]
       },
       "consoleErrors": [],
-      "screenshots": [],
-      "firstEventStreamDivergence": null
+      "screenshots": []
     },
     {
       "mode": "with-screenshots",
@@ -9532,159 +9378,6 @@
         ],
         "physicalStep": 1176
       },
-      "firstTrajectoryDivergence": {
-        "inputIndex": 4,
-        "screenshot": {
-          "atMs": 3118.481334,
-          "state": {
-            "phase": "ordinary",
-            "status": "airborne",
-            "failReason": null,
-            "worldTime": 3.191666666666658,
-            "physicalStep": 383,
-            "anchorId": null,
-            "cuts": 1,
-            "player": {
-              "x": 435.20000000000005,
-              "y": 446.75,
-              "vx": 162,
-              "vy": -300,
-              "angle": 15.06536047149521,
-              "angularVelocity": -10.5
-            },
-            "eventCount": 6,
-            "events": [
-              {
-                "id": 1,
-                "type": "launch",
-                "x": 120,
-                "y": 420,
-                "value": 1
-              },
-              {
-                "id": 2,
-                "type": "cut",
-                "x": 203,
-                "y": 312,
-                "value": 1,
-                "targetId": "rune-1",
-                "contactPart": "edge"
-              },
-              {
-                "id": 3,
-                "type": "flip",
-                "x": 280,
-                "y": 444,
-                "value": 1
-              },
-              {
-                "id": 4,
-                "type": "anchor",
-                "x": 298.87098379347225,
-                "y": 473.51248730499594,
-                "value": 1,
-                "targetId": "level1-runway-main",
-                "contactPart": "tip",
-                "normalX": -1,
-                "normalY": 0
-              },
-              {
-                "id": 5,
-                "type": "launch",
-                "x": 282.70000000000005,
-                "y": 439.125,
-                "value": 1
-              },
-              {
-                "id": 6,
-                "type": "flip",
-                "x": 435.20000000000005,
-                "y": 446.75,
-                "value": 1
-              }
-            ]
-          }
-        },
-        "noScreenshot": {
-          "atMs": 3121.171292000001,
-          "state": {
-            "phase": "ordinary",
-            "status": "airborne",
-            "failReason": null,
-            "worldTime": 3.191666666666658,
-            "physicalStep": 383,
-            "anchorId": null,
-            "cuts": 1,
-            "player": {
-              "x": 418.95000000000005,
-              "y": 416.4166666666667,
-              "vx": 162,
-              "vy": -300,
-              "angle": 14.416791911072481,
-              "angularVelocity": -10.5
-            },
-            "eventCount": 6,
-            "events": [
-              {
-                "id": 1,
-                "type": "launch",
-                "x": 120,
-                "y": 420,
-                "value": 1
-              },
-              {
-                "id": 2,
-                "type": "cut",
-                "x": 203,
-                "y": 312,
-                "value": 1,
-                "targetId": "rune-1",
-                "contactPart": "edge"
-              },
-              {
-                "id": 3,
-                "type": "flip",
-                "x": 280,
-                "y": 444,
-                "value": 1
-              },
-              {
-                "id": 4,
-                "type": "anchor",
-                "x": 298.87098379347225,
-                "y": 473.51248730499594,
-                "value": 1,
-                "targetId": "level1-runway-main",
-                "contactPart": "tip",
-                "normalX": -1,
-                "normalY": 0
-              },
-              {
-                "id": 5,
-                "type": "launch",
-                "x": 282.70000000000005,
-                "y": 439.125,
-                "value": 1
-              },
-              {
-                "id": 6,
-                "type": "flip",
-                "x": 418.95000000000005,
-                "y": 416.4166666666667,
-                "value": 1
-              }
-            ]
-          }
-        },
-        "positionDistance": 34.411823710915264,
-        "speedDistance": 0,
-        "screenshotPhysicalStep": 383,
-        "noScreenshotPhysicalStep": 383,
-        "checkpointTargetStep": 488,
-        "comparisonBasis": "same pointerdown handler boundary when available",
-        "samePhysicalStep": true,
-        "causeHypothesis": "capture overhead may shift wall-clock dispatch; this report records whether the first divergence landed in the same 120 Hz physical step"
-      },
       "diagnostics": {
         "received": [
           {
@@ -9862,8 +9555,7 @@
         "r2-ordinary-with-screenshots/tap-08.png",
         "r2-ordinary-with-screenshots/tap-09.png",
         "r2-ordinary-with-screenshots/tap-10.png"
-      ],
-      "firstEventStreamDivergence": null
+      ]
     }
   ],
   "comparison": {
@@ -9871,164 +9563,213 @@
     "sameViewport": true,
     "sameInputPlan": true,
     "onlyCaptureModeChanged": true,
-    "physicalStepAlignedInputPlan": false,
-    "firstTrajectoryDivergence": {
-      "inputIndex": 4,
-      "screenshot": {
-        "atMs": 3118.481334,
-        "state": {
-          "phase": "ordinary",
-          "status": "airborne",
-          "failReason": null,
-          "worldTime": 3.191666666666658,
-          "physicalStep": 383,
-          "anchorId": null,
-          "cuts": 1,
-          "player": {
-            "x": 435.20000000000005,
-            "y": 446.75,
-            "vx": 162,
-            "vy": -300,
-            "angle": 15.06536047149521,
-            "angularVelocity": -10.5
-          },
-          "eventCount": 6,
-          "events": [
-            {
-              "id": 1,
-              "type": "launch",
-              "x": 120,
-              "y": 420,
-              "value": 1
-            },
-            {
-              "id": 2,
-              "type": "cut",
-              "x": 203,
-              "y": 312,
-              "value": 1,
-              "targetId": "rune-1",
-              "contactPart": "edge"
-            },
-            {
-              "id": 3,
-              "type": "flip",
-              "x": 280,
-              "y": 444,
-              "value": 1
-            },
-            {
-              "id": 4,
-              "type": "anchor",
-              "x": 298.87098379347225,
-              "y": 473.51248730499594,
-              "value": 1,
-              "targetId": "level1-runway-main",
-              "contactPart": "tip",
-              "normalX": -1,
-              "normalY": 0
-            },
-            {
-              "id": 5,
-              "type": "launch",
-              "x": 282.70000000000005,
-              "y": 439.125,
-              "value": 1
-            },
-            {
-              "id": 6,
-              "type": "flip",
-              "x": 435.20000000000005,
-              "y": 446.75,
-              "value": 1
-            }
-          ]
+    "captureOrder": [
+      "without-screenshots",
+      "with-screenshots"
+    ],
+    "earliestObservedDifference": {
+      "inputIndex": 1,
+      "fields": [
+        {
+          "field": "physicalStep",
+          "withoutScreenshots": 109,
+          "withScreenshots": 108
         }
-      },
-      "noScreenshot": {
-        "atMs": 3121.171292000001,
-        "state": {
-          "phase": "ordinary",
-          "status": "airborne",
-          "failReason": null,
-          "worldTime": 3.191666666666658,
-          "physicalStep": 383,
-          "anchorId": null,
-          "cuts": 1,
-          "player": {
-            "x": 418.95000000000005,
-            "y": 416.4166666666667,
-            "vx": 162,
-            "vy": -300,
-            "angle": 14.416791911072481,
-            "angularVelocity": -10.5
-          },
-          "eventCount": 6,
-          "events": [
-            {
-              "id": 1,
-              "type": "launch",
-              "x": 120,
-              "y": 420,
-              "value": 1
-            },
-            {
-              "id": 2,
-              "type": "cut",
-              "x": 203,
-              "y": 312,
-              "value": 1,
-              "targetId": "rune-1",
-              "contactPart": "edge"
-            },
-            {
-              "id": 3,
-              "type": "flip",
-              "x": 280,
-              "y": 444,
-              "value": 1
-            },
-            {
-              "id": 4,
-              "type": "anchor",
-              "x": 298.87098379347225,
-              "y": 473.51248730499594,
-              "value": 1,
-              "targetId": "level1-runway-main",
-              "contactPart": "tip",
-              "normalX": -1,
-              "normalY": 0
-            },
-            {
-              "id": 5,
-              "type": "launch",
-              "x": 282.70000000000005,
-              "y": 439.125,
-              "value": 1
-            },
-            {
-              "id": 6,
-              "type": "flip",
-              "x": 418.95000000000005,
-              "y": 416.4166666666667,
-              "value": 1
-            }
-          ]
-        }
-      },
-      "positionDistance": 34.411823710915264,
-      "speedDistance": 0,
-      "screenshotPhysicalStep": 383,
-      "noScreenshotPhysicalStep": 383,
-      "checkpointTargetStep": 488,
-      "comparisonBasis": "same pointerdown handler boundary when available",
-      "samePhysicalStep": true,
-      "causeHypothesis": "capture overhead may shift wall-clock dispatch; this report records whether the first divergence landed in the same 120 Hz physical step"
+      ],
+      "comparisonFields": [
+        "physicalStep",
+        "worldTime",
+        "status",
+        "anchorId",
+        "cuts",
+        "player.x",
+        "player.y",
+        "player.vx",
+        "player.vy",
+        "eventCount"
+      ]
     },
-    "firstEventStreamDivergence": null,
-    "lastConfirmedSameInput": 3,
-    "firstDivergentInput": 4,
-    "samePhysicalStepAtFirstDivergence": true,
-    "conclusion": "The first material divergence occurred while both inputs were observed at the same 120 Hz physical step; input-handler boundary timing is still needed to distinguish capture overhead from runtime behavior."
+    "firstVisibleThresholdDifference": {
+      "inputIndex": 4,
+      "positionDistance": 34.411823710915264,
+      "speedDistance": 65.0,
+      "withoutScreenshotsBefore": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "worldTime": 3.191666666666658,
+        "physicalStep": 383,
+        "anchorId": null,
+        "cuts": 1,
+        "player": {
+          "x": 435.20000000000005,
+          "y": 446.75,
+          "vx": 150,
+          "vy": 310,
+          "angle": 15.06536047149521,
+          "angularVelocity": 5.8201691510388125
+        },
+        "eventCount": 5,
+        "events": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          },
+          {
+            "id": 2,
+            "type": "cut",
+            "x": 203,
+            "y": 312,
+            "value": 1,
+            "targetId": "rune-1",
+            "contactPart": "edge"
+          },
+          {
+            "id": 3,
+            "type": "flip",
+            "x": 280,
+            "y": 444,
+            "value": 1
+          },
+          {
+            "id": 4,
+            "type": "anchor",
+            "x": 298.87098379347225,
+            "y": 473.51248730499594,
+            "value": 1,
+            "targetId": "level1-runway-main",
+            "contactPart": "tip",
+            "normalX": -1,
+            "normalY": 0
+          },
+          {
+            "id": 5,
+            "type": "launch",
+            "x": 282.70000000000005,
+            "y": 439.125,
+            "value": 1
+          }
+        ]
+      },
+      "withScreenshotsBefore": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "worldTime": 3.191666666666658,
+        "physicalStep": 383,
+        "anchorId": null,
+        "cuts": 1,
+        "player": {
+          "x": 418.95000000000005,
+          "y": 416.4166666666667,
+          "vx": 150,
+          "vy": 245,
+          "angle": 14.416791911072481,
+          "angularVelocity": 6.13210718888567
+        },
+        "eventCount": 5,
+        "events": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          },
+          {
+            "id": 2,
+            "type": "cut",
+            "x": 203,
+            "y": 312,
+            "value": 1,
+            "targetId": "rune-1",
+            "contactPart": "edge"
+          },
+          {
+            "id": 3,
+            "type": "flip",
+            "x": 280,
+            "y": 444,
+            "value": 1
+          },
+          {
+            "id": 4,
+            "type": "anchor",
+            "x": 298.87098379347225,
+            "y": 473.51248730499594,
+            "value": 1,
+            "targetId": "level1-runway-main",
+            "contactPart": "tip",
+            "normalX": -1,
+            "normalY": 0
+          },
+          {
+            "id": 5,
+            "type": "launch",
+            "x": 282.70000000000005,
+            "y": 439.125,
+            "value": 1
+          }
+        ]
+      },
+      "comparisonFields": [
+        "physicalStep",
+        "worldTime",
+        "status",
+        "anchorId",
+        "cuts",
+        "player.x",
+        "player.y",
+        "player.vx",
+        "player.vy",
+        "eventCount"
+      ]
+    },
+    "comparisonWindow": {
+      "comparedInputs": 10,
+      "lastInputBeforeVisibleThreshold": 3,
+      "note": "window boundary only; not complete-state confirmation"
+    },
+    "comparisonFields": [
+      "physicalStep",
+      "worldTime",
+      "status",
+      "anchorId",
+      "cuts",
+      "player.x",
+      "player.y",
+      "player.vx",
+      "player.vy",
+      "eventCount"
+    ],
+    "unobservedFields": [
+      "ActionInput held/repeat internals",
+      "SliceSimulation inputBuffer value",
+      "renderer frame scheduling internals",
+      "OS/browser compositor timing",
+      "remote read and screenshot encoding duration"
+    ],
+    "reviewReport": "r2-ordinary-capture-align-r2-review.json"
+  },
+  "resetBridgeCall": "window.__GAME_TEST__.resetGame() (diagnostic only)",
+  "inputArchitecture": {
+    "ActionInput": "game-core ActionInput owns held/repeat suppression; private held set not observed.",
+    "inputBuffer": "SliceSimulation owns inputBuffer after flip cooldown; private value not observed."
+  },
+  "postCheckpointSampling": {
+    "requested": false,
+    "executed": false,
+    "reason": "original wall-time run did not wait fixed +120 physical steps"
+  },
+  "legacyMetadataRemoved": {
+    "fields": [
+      "previous-input confirmation label",
+      "first trajectory divergence field",
+      "first event-stream divergence field"
+    ],
+    "note": "The current comparison uses earliestObservedDifference and firstVisibleThresholdDifference. Historical values remain in r2-ordinary-capture-compare.json."
   }
 }

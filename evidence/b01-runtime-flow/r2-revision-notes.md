@@ -105,3 +105,27 @@ player pose/velocity、anchor、事件顺序和 pointer receipt 时间。每个�
 因此当前普通结果是正式 1 次 + 独立 2 次共 3 次、成功 3 次；旧的 6 次诊断失败仍按
 `NOT_RUN` 的前置未达分类保存。两个 BONUS 视口在本补交中保持 `NOT_RUN`，没有重复相同失败
 前置路径。游戏源码未改，Draft PR 保持不合并。
+
+## R2 小修补验：验收脚本与首次分歧复核
+
+本节修订了本文件前面“正式自然脚本没有在本轮执行”的中间快照；该快照仍保留用于历史分类，当前结果以 `r2-acceptance-patch-review.json`、v2.1 报告和本节为准。
+
+### 首次分歧复核
+
+`r2-ordinary-capture-align.mjs` 现在按 `result.mode` 取 `with-screenshots` / `without-screenshots` 组，不依赖数组位置；默认输出到新的 `r2-ordinary-capture-align-r2/` 路径。`r2-ordinary-capture-align-r2-review.json` 复用已有两个原始 JSON，没有重跑整局。
+
+without-first 记录显示：第一次输入无截图 109 步、截图 108 步；第三次 launch 无截图 261 步、截图 274 步，且两边都从 `(282.7,439.125)`、`(vx,vy)=(150,-300)` 起跳；第四次输入两边都在 383 步，因而飞行步数为 122 和 109。固定规则 `vy=min(vy+600/120,760); x+=vx/120; y+=vy/120` 复算得到无截图 `(435.2,446.75), vy=310` 与截图 `(418.95,416.4166666667), vy=245`，和第四次输入前观测一致。
+
+所以当前支持的解释是“不同起跳时机带来不同飞行步数和输入前状态”。输入 1 的物理步差是最早已观测的动作时机差；输入 4 是首次超过位置/速度可视阈值的差异。报告不再使用 `lastConfirmedSameInput`，也不写“前三次完全相同”。截图等待、远程读取、事件处理、RAF/frame 调度的耗时没有独立隔离，因而没有把截图认定为唯一根因。`ActionInput` 的 held/repeat 和 `SliceSimulation` 的 inputBuffer 仍是未观测私有边界。源记录没有执行统一 `+120` 固定步等待，报告已明确撤回该采样说法。
+
+### 验收脚本修订和分类
+
+`qa-natural-r2.mjs` 版本为 `B01-R2-acceptance-v2.1`。每个检查点都记录 `executed`、`validObservation` 和 `passed`，三者同时满足才允许 PASS。控件检查读取 `#terminal-actions` 的实际 DOM 可见性，并在 normal、contact、reward、celebration 阶段被动记录；观察不会回流到输入决策。回执由发送前长度和事件序号界定，响应要求本次新增 `launch`/`flip`/`cut`，自然重力造成的位置/速度变化不能冒充输入生效。分类顺序保证已观测的产品断言 FAIL 不会被后续环境错误覆盖；未到目标检查点为 NOT_RUN，浏览器/工具故障为 BLOCKED。
+
+反例自检结果见 `r2-acceptance-script-self-check-r2patch.json`，10 项全部 PASS。初版被动轮询和过渡观测修补过程的 `r2-ordinary-formal-r2patch*.json` 均保留；其中目标未达到、观测在 reload 后丢失或过渡阶段观测不足的记录维持 NOT_RUN，并记录失败阶段和证据目录。它们没有被改写成产品 FAIL。
+
+### 当前小修补验
+
+玩家可读策略固定为：默认首关 ready 后等待 400ms，只点击可见画布 `(550,518.4)`，从 150ms 起每 975ms 一次；通过 pointer receipt 和新增动作事件确认输入，等待期间不暂停、不手动 step、不按隐藏状态改节奏。正式 `r2-ordinary-formal-r2patch-v8.json` 和独立 QA `r2-ordinary-independent-qa-r2patch-v8.json` 各在新的 `1100×720` context 执行一次，均为 PASS，并完成 ordinary/won/terminal、结算前控件隐藏、结算后控件显示、空白点击、下一关、刷新和刷新后实际输入响应。
+
+这次小修补仍不执行 BONUS 自然入口；390×844、1100×720 BONUS、真实 OS 切后台、真实 BFCache 和浏览器存储故障注入均保持 NOT_RUN/未覆盖。游戏源码、物理、关卡、难度、hit stop、存储和 BONUS 判定未修改。

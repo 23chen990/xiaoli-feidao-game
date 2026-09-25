@@ -68,7 +68,9 @@
     "Formal R1 browser reports record console/pageerror arrays; no console or page errors were observed in the fixed attempts.",
     "R1 same-environment regression keeps the existing asset-manifest missing-file test failure; see r1-regression.json and baseline/current logs.",
     "R2 aligned capture diagnosis identifies input-4 path-history divergence and same-step handler behavior; the private accepted/buffered flag remains unexposed.",
-    "Real OS backgrounding, real BFCache navigation and browser storage fault injection remain unexecuted."
+    "Real OS backgrounding, real BFCache navigation and browser storage fault injection remain unexecuted.",
+    "Small-patch verification preserved preliminary script-repair NOT_RUN records; only v2.1 formal and independent runs are current ordinary PASS evidence.",
+    "Natural BONUS entry and post-entry response remain NOT_RUN for 390x844 and 1100x720."
   ],
   "browserReportHistory": "evidence/b01-runtime-flow/browser-report.json",
   "r1BrowserReport": "evidence/b01-runtime-flow/r1-browser-report.json",
@@ -83,7 +85,7 @@
   "r2BrowserReport": "evidence/b01-runtime-flow/r2-browser-report.json",
   "r2RevisionNotes": "evidence/b01-runtime-flow/r2-revision-notes.md",
   "r2NaturalAcceptanceScript": "evidence/b01-runtime-flow/qa-natural-r2.mjs",
-  "r2AcceptanceScriptSelfCheck": "evidence/b01-runtime-flow/r2-acceptance-script-self-check.json",
+  "r2AcceptanceScriptSelfCheck": "evidence/b01-runtime-flow/r2-acceptance-script-self-check-r2patch.json",
   "r2NaturalConsoleErrors": "evidence/b01-runtime-flow/r2-natural-console-errors.json",
   "r2IndependentQA": "evidence/b01-runtime-flow/r2-independent-review.json",
   "r2CaptureComparison": "evidence/b01-runtime-flow/r2-ordinary-capture-compare.json",
@@ -113,5 +115,27 @@
     "evidence/b01-runtime-flow/r2-natural/independent-qa-2/"
   ],
   "r2VersionCheck": "evidence/b01-runtime-flow/r2-version-check.json",
-  "r2VersionCheckPostPush": "evidence/b01-runtime-flow/r2-version-check-post-push.json"
+  "r2VersionCheckPostPush": "evidence/b01-runtime-flow/r2-version-check-post-push.json",
+  "r2AcceptancePatchReview": "evidence/b01-runtime-flow/r2-acceptance-patch-review.json",
+  "r2OrdinaryFormalPatchV8": "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v8.json",
+  "r2OrdinaryFormalPatchV8ConsoleErrors": "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v8-console-errors.json",
+  "r2OrdinaryIndependentPatchV8": "evidence/b01-runtime-flow/r2-ordinary-independent-qa-r2patch-v8.json",
+  "r2OrdinaryIndependentPatchV8ConsoleErrors": "evidence/b01-runtime-flow/r2-ordinary-independent-qa-r2patch-v8-console-errors.json",
+  "r2OrdinaryPatchEvidenceDirs": [
+    "evidence/b01-runtime-flow/r2-natural/patch-formal-v8-ordinary/",
+    "evidence/b01-runtime-flow/r2-natural/patch-independent-qa-v8-ordinary/"
+  ],
+  "r2PreliminaryScriptRepairReports": [
+    "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch.json",
+    "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-final.json",
+    "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v2.json",
+    "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v3.json",
+    "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v4.json",
+    "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v5.json",
+    "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v6.json",
+    "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v7.json"
+  ],
+  "r2CaptureAlignmentReview": "evidence/b01-runtime-flow/r2-ordinary-capture-align-r2-review.json",
+  "r2CaptureAlignmentReviewScript": "evidence/b01-runtime-flow/r2-ordinary-capture-align-review.mjs",
+  "r2VersionCheckPatch": "evidence/b01-runtime-flow/r2-version-check-patch.json"
 }

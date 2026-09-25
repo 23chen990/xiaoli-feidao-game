@@ -1,0 +1,20 @@
+{
+  "command": "R2_SCRIPT_SELF_CHECK=1 node evidence/b01-runtime-flow/qa-natural-r2.mjs",
+  "result": "PASS",
+  "checks": 10,
+  "report": "r2-acceptance-script-self-check-r2patch.json",
+  "schemaVersion": 1,
+  "artifactType": "B01R2AcceptanceScriptSelfCheck",
+  "verified": [
+    "invalid observation cannot PASS",
+    "target checkpoint assertion failure => FAIL",
+    "missing checkpoint remains NOT_RUN",
+    "browser/tool failure => BLOCKED",
+    "product FAIL is preserved when a later tool error occurs",
+    "old receipt entries are excluded by pre-send length",
+    "natural movement without new action event is not input response",
+    "terminal control visibility is an explicit actual-DOM assertion",
+    "ordinary terminal before target remains NOT_RUN",
+    "valid target plus all checks => PASS"
+  ]
+}

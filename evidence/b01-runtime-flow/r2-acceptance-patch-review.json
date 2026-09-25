@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01R2AcceptancePatchReview",
+  "generatedAt": "2026-09-25T12:58:37.155854+00:00",
+  "script": "qa-natural-r2.mjs",
+  "scriptVersion": "B01-R2-acceptance-v2.1",
+  "scriptSha256": "7251f85072aea4bd309c4426a4e063c4a77e18526b301330f5f0e523416e8b1f",
+  "sourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "buildSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+  "servedBuildSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+  "ordinaryFormal": {
+    "report": "r2-ordinary-formal-r2patch-v8.json",
+    "evidenceDirectory": "r2-natural/patch-formal-v8-ordinary/",
+    "runId": "r2-patch-formal-v8-ordinary-1100x720",
+    "contextId": "8b1bdf3f-1043-409e-920a-708c7f152985",
+    "result": "PASS",
+    "rawOutcome": "target-checkpoint-passed",
+    "validObservation": true,
+    "failureStage": "complete",
+    "checks": [
+      {
+        "id": "ready-state",
+        "executed": true,
+        "validObservation": true,
+        "passed": true
+      },
+      {
+        "id": "ordinary-target",
+        "executed": true,
+        "validObservation": true,
+        "passed": true
+      },
+      {
+        "id": "normal-running-controls-hidden",
+        "executed": true,
+        "validObservation": true,
+        "passed": true
+      },
+      {
+        "id": "finish-transition-controls-hidden",
+        "executed": true,
+        "validObservation": true,
+        "passed": true
+      },
+      {
+        "id": "terminal-controls-visible-after-settlement",
+        "executed": true,
+        "validObservation": true,
+        "passed": true
+      },
+      {
+        "id": "blank-click-does-not-restart",
+        "executed": true,
+        "validObservation": true,
+        "passed": true
+      },
+      {
+        "id": "next-level-ready",
+        "executed": true,
+        "validObservation": true,
+        "passed": true
+      },
+      {
+        "id": "reload-level2-ready",
+        "executed": true,
+        "validObservation": true,
+        "passed": true
+      },
+      {
+        "id": "reload-input-response",
+        "executed": true,
+        "validObservation": true,
+        "passed": true
+      }
+    ],
+    "inputReceiptAndActionEvidence": "Each dispatch records receiptBeforeLength/receiptAfterLength, seq-tagged pointerdown/up and newly appended launch/flip/cut events; reload-input-1 is included.",
+    "controlVisibilityEvidence": "Passive DOM observation covers normal airborne plus contact/reward/celebration hidden states and terminal visible state."
+  },
+  "independentQA": {
+    "report": "r2-ordinary-independent-qa-r2patch-v8.json",
+    "evidenceDirectory": "r2-natural/patch-independent-qa-v8-ordinary/",
+    "runId": "r2-patch-independent-qa-v8-ordinary-1100x720",
+    "contextId": "b1e1ed48-78cf-4724-b39b-c9ec19d47223",
+    "result": "PASS",
+    "rawOutcome": "target-checkpoint-passed",
+    "validObservation": true,
+    "failureStage": "complete",
+    "checks": [
+      {
+        "id": "ready-state",
+        "executed": true,
+        "validObservation": true,
+        "passed": true
+      },
+      {
+        "id": "ordinary-target",
+        "executed": true,
+        "validObservation": true,
+        "passed": true
+      },
+      {
+        "id": "normal-running-controls-hidden",
+        "executed": true,
+        "validObservation": true,
+        "passed": true
+      },
+      {
+        "id": "finish-transition-controls-hidden",
+        "executed": true,
+        "validObservation": true,
+        "passed": true
+      },
+      {
+        "id": "terminal-controls-visible-after-settlement",
+        "executed": true,
+        "validObservation": true,
+        "passed": true
+      },
+      {
+        "id": "blank-click-does-not-restart",
+        "executed": true,
+        "validObservation": true,
+        "passed": true
+      },
+      {
+        "id": "next-level-ready",
+        "executed": true,
+        "validObservation": true,
+        "passed": true
+      },
+      {
+        "id": "reload-level2-ready",
+        "executed": true,
+        "validObservation": true,
+        "passed": true
+      },
+      {
+        "id": "reload-input-response",
+        "executed": true,
+        "validObservation": true,
+        "passed": true
+      }
+    ]
+  },
+  "scriptSelfCheck": {
+    "command": "R2_SCRIPT_SELF_CHECK=1 node evidence/b01-runtime-flow/qa-natural-r2.mjs",
+    "result": "PASS",
+    "checks": 10,
+    "report": "r2-acceptance-script-self-check-r2patch.json"
+  },
+  "preliminaryScriptRepairRuns": [
+    {
+      "report": "r2-ordinary-formal-r2patch.json",
+      "result": "NOT_RUN",
+      "reason": "instrumented passive polling run ended in ordinary failed/fall before target; no valid target observation"
+    },
+    {
+      "report": "r2-ordinary-formal-r2patch-final.json",
+      "result": "NOT_RUN",
+      "reason": "target was reached but reload cleared the captured transition samples, so validObservation=false"
+    },
+    {
+      "report": "r2-ordinary-formal-r2patch-v2.json",
+      "result": "NOT_RUN",
+      "reason": "instrumentation variant ended in ordinary failed/fall before settlement"
+    },
+    {
+      "report": "r2-ordinary-formal-r2patch-v3.json",
+      "result": "NOT_RUN",
+      "reason": "instrumentation variant ended in ordinary failed/fall before settlement"
+    },
+    {
+      "report": "r2-ordinary-formal-r2patch-v4.json",
+      "result": "NOT_RUN",
+      "reason": "instrumentation variant ended in ordinary failed/fall before settlement"
+    },
+    {
+      "report": "r2-ordinary-formal-r2patch-v5.json",
+      "result": "NOT_RUN",
+      "reason": "instrumentation variant ended in ordinary failed/fall before settlement"
+    },
+    {
+      "report": "r2-ordinary-formal-r2patch-v6.json",
+      "result": "NOT_RUN",
+      "reason": "target was reached but transition samples were lost, so validObservation=false"
+    },
+    {
+      "report": "r2-ordinary-formal-r2patch-v7.json",
+      "result": "PASS",
+      "reason": "intermediate script pass; only contact transition was observed before v2.1 added reward/celebration child-list observation"
+    }
+  ],
+  "classificationMapping": {
+    "requiredCheckpointNotExecutedOrInvalid": "NOT_RUN",
+    "targetReachedProductAssertionFailure": "FAIL",
+    "browserOrToolFailure": "BLOCKED",
+    "targetReachedAllChecksValid": "PASS",
+    "laterToolFailureDoesNotOverwriteObservedProductFailure": "self-check verified"
+  },
+  "historicalRunsPreserved": [
+    "r2-ordinary-formal.json",
+    "r2-ordinary-independent-qa-1.json",
+    "r2-ordinary-independent-qa-2.json",
+    "r2-ordinary-capture-compare.json",
+    "r2-ordinary-capture-align-with-first.json",
+    "r2-ordinary-capture-align-without-first.json"
+  ],
+  "scope": {
+    "bonus390": "NOT_RUN",
+    "bonus1100": "NOT_RUN",
+    "osBackgrounding": "NOT_RUN",
+    "realBFCache": "NOT_RUN",
+    "storageFaultInjection": "NOT_RUN",
+    "gameSourceChanged": false
+  },
+  "playerReadableStrategy": {
+    "start": "页面进入首关 ready 后，先观察画布和可见 HUD；正式脚本等待 400ms。",
+    "input": "只点击可见画布位置 (550,518.4)，从约 150ms 开始每 975ms 点击一次；这是预先写明的玩家节奏，不读取隐藏状态决定下一次点击。",
+    "feedback": "每次点击以 pointerdown/pointerup 回执和新增 launch/flip/cut 事件作为动作发生证据；单纯位置或速度变化不算输入响应。",
+    "wait": "在预定节奏间等待画面继续推进；不暂停、不手动 step、不在每次点击后截图。",
+    "finish": "看到结算后的终局操作后点击可见下一关，刷新后仍在 level 2 ready，再用一次可见画布点击确认 gameplay 响应。"
+  },
+  "formalVerification": {
+    "newContext": true,
+    "viewport": "1100x720",
+    "ordinaryOnly": true,
+    "formalRun": "r2-ordinary-formal-r2patch-v8.json",
+    "independentRun": "r2-ordinary-independent-qa-r2patch-v8.json",
+    "newRunCount": 2
+  },
+  "repositoryHeadAtRun": "a6f230c028e4f235400219c6a7d119685796337c",
+  "remoteHeadAtRun": "a6f230c028e4f235400219c6a7d119685796337c",
+  "branch": "codex/b01-runtime-flow",
+  "pullRequest": {
+    "number": 1,
+    "state": "OPEN",
+    "draft": true,
+    "base": "main"
+  },
+  "versionCheck": "r2-version-check-patch.json"
+}

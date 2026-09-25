@@ -10,6 +10,9 @@ const viewport = { width: 1100, height: 720 };
 const input = { x: 550, y: 518.4 };
 const FIXED_STEP_HZ = 120;
 const POST_CHECKPOINT_DELTA_STEPS = 120;
+const outputDirName = process.env.R2_ALIGN_OUTPUT_DIR ?? 'r2-ordinary-capture-align-r2';
+const reportPath = new URL(process.env.R2_ALIGN_REPORT_PATH ?? './r2-ordinary-capture-align-r2.json', root);
+const screenshotPath = (name) => new URL(`./${outputDirName}/screenshots/${name}`, root).pathname;
 const alignPhysicalSteps = process.env.R2_ALIGN_PHYSICAL_STEPS !== '0';
 const captureOrder = process.env.R2_CAPTURE_ORDER === 'without-first'
   ? ['without-screenshots', 'with-screenshots']
@@ -66,8 +69,8 @@ async function run(mode) {
   const startup = await page.evaluate(() => ({ state: window.__GAME_TEST__.getState(), progress: window.__GAME_TEST__.getProgress() }));
 
   if (mode === 'with-screenshots') {
-    await mkdir(new URL('./r2-ordinary-with-screenshots/', root), { recursive: true });
-    await page.screenshot({ path: new URL('./r2-ordinary-with-screenshots/ready.png', root).pathname });
+    await mkdir(new URL(`./${outputDirName}/screenshots/`, root), { recursive: true });
+    await page.screenshot({ path: screenshotPath('with-screenshots-ready.png') });
   }
 
   // Reset after the optional ready capture. This keeps the comparison's
@@ -200,19 +203,22 @@ async function run(mode) {
       inputEffective,
     };
     if (mode === 'with-screenshots') {
-      await page.screenshot({ path: new URL(`./r2-ordinary-with-screenshots/tap-${String(index + 1).padStart(2, '0')}.png`, root).pathname });
+      await page.screenshot({ path: screenshotPath(`with-screenshots-tap-${String(index + 1).padStart(2, '0')}.png`) });
     }
     const postCheckpointTargetStep = targetPhysicalStep + POST_CHECKPOINT_DELTA_STEPS;
+    let postCheckpointExecuted = false;
     if (alignPhysicalSteps) {
       await page.waitForFunction((targetStep) => {
         const state = window.__GAME_TEST__.getState();
         return state.status === 'failed' || state.status === 'won' || Math.round(state.worldTime * 120) >= targetStep;
       }, postCheckpointTargetStep, { polling: 16, timeout: 15000 });
+      postCheckpointExecuted = true;
     }
     const stateAfterCaptureRaw = await page.evaluate(() => window.__GAME_TEST__.getState());
     const postOnlyEvents = newEvents(afterDispatch, stateAfterCaptureRaw);
     const postDelayedTransition = !immediateInputTransition && postOnlyEvents.some((event) => immediateTypes.has(event.type));
     record.postCheckpointTargetStep = postCheckpointTargetStep;
+    record.postCheckpointExecuted = postCheckpointExecuted;
     record.postCheckpoint = brief(stateAfterCaptureRaw);
     record.postOnlyEvents = postOnlyEvents;
     record.inputProcessing = immediateInputTransition ? 'immediate-visible-transition' : postDelayedTransition ? 'buffered-or-delayed-visible-transition' : 'ignored-or-no-visible-transition';
@@ -235,14 +241,14 @@ async function run(mode) {
     attemptedInputs: dispatches.length,
     firstTerminalInput: null,
     startup: { state: brief(startup.state), progress: startup.progress },
-    reset: { atEpochMs: resetAtEpochMs, state: brief(reset.state), progress: reset.progress },
+    reset: { atEpochMs: resetAtEpochMs, bridgeCall: 'window.__GAME_TEST__.resetGame()', state: brief(reset.state), progress: reset.progress },
+    diagnosticBridgeCalls: ['window.__GAME_TEST__.resetGame()', 'window.__GAME_TEST__.getProgress()', 'window.__GAME_TEST__.getState()'],
     dispatches,
     checkpoints,
     final,
-    firstTrajectoryDivergence: null,
     diagnostics,
     consoleErrors,
-    screenshots: mode === 'with-screenshots' ? ['r2-ordinary-with-screenshots/ready.png', ...dispatches.map((item) => `r2-ordinary-with-screenshots/tap-${String(item.index).padStart(2, '0')}.png`)] : [],
+    screenshots: mode === 'with-screenshots' ? [`${outputDirName}/screenshots/with-screenshots-ready.png`, ...dispatches.map((item) => `${outputDirName}/screenshots/with-screenshots-tap-${String(item.index).padStart(2, '0')}.png`)] : [],
   };
   await context.close();
   await browser.close();
@@ -252,58 +258,82 @@ async function run(mode) {
 const results = [];
 for (const mode of captureOrder) results.push(await run(mode));
 
-// Determine the earliest stable divergence using the same target input index.
-const [withShots, withoutShots] = results;
+// Compare groups by their explicit result.mode. Capture order is diagnostic metadata,
+// never a positional contract.
+const resultsByMode = Object.fromEntries(results.map((result) => [result.mode, result]));
+const withShots = resultsByMode['with-screenshots'];
+const withoutShots = resultsByMode['without-screenshots'];
+if (!withShots || !withoutShots) throw new Error('capture comparison requires both result.mode groups');
 const compareLength = Math.min(withShots.dispatches.length, withoutShots.dispatches.length);
-let firstTrajectoryDivergence = null;
-let firstEventStreamDivergence = null;
+const comparisonFields = ['physicalStep', 'worldTime', 'status', 'anchorId', 'cuts', 'player.x', 'player.y', 'player.vx', 'player.vy', 'eventCount'];
+const unobservedFields = ['ActionInput held/repeat internals', 'SliceSimulation inputBuffer value', 'renderer frame scheduling internals', 'OS/browser compositor timing'];
+function readField(state, field) {
+  return field.split('.').reduce((value, key) => value?.[key], state);
+}
+function fieldDifference(a, b) {
+  const differences = [];
+  for (const field of comparisonFields) {
+    const left = readField(a, field); const right = readField(b, field);
+    const tolerance = field === 'worldTime' ? 1 / FIXED_STEP_HZ : 0;
+    if (typeof left === 'number' && typeof right === 'number' ? Math.abs(left - right) > tolerance : left !== right) differences.push({ field, screenshot: left, withoutScreenshots: right });
+  }
+  return differences;
+}
+function boundaryState(result, index) {
+  return result.dispatches[index]?.eventBoundary?.after ?? result.dispatches[index]?.afterDispatch ?? null;
+}
+function inputTiming(result, index) {
+  const dispatch = result.dispatches[index];
+  const boundary = dispatch?.eventBoundary;
+  return { physicalStep: boundary?.after?.physicalStep ?? dispatch?.afterDispatch?.physicalStep ?? null, sendStartMs: dispatch?.sendStartMs ?? null, receiptEpochMs: boundary?.receiptEpochMs ?? null };
+}
+let earliestObservedDifference = null;
+let firstVisibleThresholdDifference = null;
 for (let i = 0; i < compareLength; i += 1) {
-  const a = withShots.dispatches[i].eventBoundary?.after ?? withShots.dispatches[i].postCheckpoint;
-  const b = withoutShots.dispatches[i].eventBoundary?.after ?? withoutShots.dispatches[i].postCheckpoint;
-  const distance = Math.hypot(a.player.x - b.player.x, a.player.y - b.player.y);
+  const a = boundaryState(withShots, i); const b = boundaryState(withoutShots, i);
+  if (!a || !b) continue;
+  const differences = fieldDifference(a, b);
+  const screenshotTiming = inputTiming(withShots, i); const withoutTiming = inputTiming(withoutShots, i);
+  const timingDifference = screenshotTiming.physicalStep !== withoutTiming.physicalStep;
+  if (!earliestObservedDifference && (differences.length || timingDifference)) earliestObservedDifference = { inputIndex: i + 1, timingDifference, timing: { screenshot: screenshotTiming, withoutScreenshots: withoutTiming }, fields: differences, comparisonFields, unobservedFields };
+  const positionDistance = Math.hypot(a.player.x - b.player.x, a.player.y - b.player.y);
   const speedDistance = Math.hypot(a.player.vx - b.player.vx, a.player.vy - b.player.vy);
-  if (!firstEventStreamDivergence && a.eventCount !== b.eventCount) {
-    firstEventStreamDivergence = {
-      inputIndex: i + 1,
-      screenshotEventCount: a.eventCount,
-      noScreenshotEventCount: b.eventCount,
-      screenshotAtMs: withShots.dispatches[i].sendStartMs,
-      noScreenshotAtMs: withoutShots.dispatches[i].sendStartMs,
-      screenshotPhysicalStep: a.physicalStep,
-      noScreenshotPhysicalStep: b.physicalStep,
-      checkpointTargetStep: withShots.dispatches[i].postCheckpointTargetStep,
-      comparisonBasis: 'same pointerdown handler boundary when available',
-    };
-  }
-  if (distance > 20 || speedDistance > 50 || a.status !== b.status) {
-    firstTrajectoryDivergence = {
-      inputIndex: i + 1,
-      screenshot: { atMs: withShots.dispatches[i].sendStartMs, state: a },
-      noScreenshot: { atMs: withoutShots.dispatches[i].sendStartMs, state: b },
-      positionDistance: distance,
-      speedDistance,
-      screenshotPhysicalStep: a.physicalStep,
-      noScreenshotPhysicalStep: b.physicalStep,
-      checkpointTargetStep: withShots.dispatches[i].postCheckpointTargetStep,
-      comparisonBasis: 'same pointerdown handler boundary when available',
-      samePhysicalStep: a.physicalStep === b.physicalStep,
-      causeHypothesis: 'capture overhead may shift wall-clock dispatch; this report records whether the first divergence landed in the same 120 Hz physical step',
-    };
-    break;
-  }
+  if (!firstVisibleThresholdDifference && (positionDistance > 20 || speedDistance > 50 || a.status !== b.status)) firstVisibleThresholdDifference = { inputIndex: i + 1, screenshot: { state: a, timing: screenshotTiming }, withoutScreenshots: { state: b, timing: withoutTiming }, positionDistance, speedDistance, threshold: { positionDistance: 20, speedDistance: 50, status: 'must match' }, comparisonFields, unobservedFields };
 }
 for (const result of results) {
-  result.firstTrajectoryDivergence = firstTrajectoryDivergence;
-  result.firstEventStreamDivergence = firstEventStreamDivergence;
-}
-for (const result of results) {
+  result.firstObservedDifference = earliestObservedDifference;
+  result.firstVisibleThresholdDifference = firstVisibleThresholdDifference;
   result.firstTerminalInput = result.checkpoints.find((item) => item.stage.startsWith('terminal-after-tap-'))?.stage.match(/(\d+)$/)?.[1] ? Number(result.checkpoints.find((item) => item.stage.startsWith('terminal-after-tap-')).stage.match(/(\d+)$/)[1]) : null;
+  result.postCheckpointSampling = { requested: alignPhysicalSteps, executed: result.dispatches.some((item) => item.postCheckpointExecuted), deltaSteps: POST_CHECKPOINT_DELTA_STEPS, note: alignPhysicalSteps ? 'fixed-step wait executed unless terminal arrived first' : 'not executed; wall-time comparison only' };
 }
+const comparisonSummary = {
+  sameBuild: true,
+  sameViewport: true,
+  sameInputPlan: true,
+  onlyCaptureModeChanged: true,
+  captureOrder,
+  comparisonFields,
+  unobservedFields,
+  earliestObservedDifference,
+  firstVisibleThresholdDifference,
+  comparisonWindow: {
+    comparedInputs: compareLength,
+    lastInputBeforeVisibleThreshold: firstVisibleThresholdDifference ? Math.max(0, firstVisibleThresholdDifference.inputIndex - 1) : null,
+    note: 'This is a window boundary only; it is not named or interpreted as complete state confirmation.'
+  },
+  physicalStepAlignedInputPlan: alignPhysicalSteps,
+  postCheckpointSampling: { requested: alignPhysicalSteps, executed: results.some((result) => result.dispatches.some((item) => item.postCheckpointExecuted)), deltaSteps: POST_CHECKPOINT_DELTA_STEPS },
+  conclusion: earliestObservedDifference
+    ? 'An action-timing or observed-state difference exists at the earliest recorded input above. A later visible-threshold divergence is reported separately; capture, remote-read, event-handler and frame-scheduling costs are not independently isolated.'
+    : 'No difference was observed in the compared fields before the compared terminal point.'
+};
 
 const report = {
   schemaVersion: 1,
   artifactType: 'B01R2OrdinaryCaptureModeComparison',
   generatedAt: new Date().toISOString(),
+  outputDirectory: outputDirName,
+  reportPath: reportPath.pathname,
   targetGame: 'Slice Master / 小李飞刀',
   workspace: 'game/prototype-a',
   sourceCommit,
@@ -316,7 +346,9 @@ const report = {
   hypothesis: 'wait/screenshot capture may perturb the actual input cadence; this run changes only capture mode and records fixed-step alignment',
   captureOrder,
   timingNormalization: alignPhysicalSteps ? 'inputs wait for the same target 120 Hz physical step derived from the original wall-time plan' : 'original wall-time schedule',
-  samplingPolicy: `No periodic state polling; each pointerdown records state at the capture boundary and at the matching bubble boundary around the game's native handler, plus a common post-input checkpoint (+${POST_CHECKPOINT_DELTA_STEPS} fixed steps) or terminal checkpoint.`,
+  samplingPolicy: alignPhysicalSteps ? `No periodic state polling; each pointerdown records state at capture/bubble handler boundaries plus a fixed post-input checkpoint (+${POST_CHECKPOINT_DELTA_STEPS} physical steps) or terminal checkpoint.` : 'No periodic state polling; each pointerdown records state at capture/bubble handler boundaries. Fixed post-input checkpoints were not executed in this wall-time run.',
+  inputArchitecture: { actionInput: 'game-core ActionInput tracks held/repeat suppression; no held/repeat internals are exposed in this diagnostic.', inputBuffer: 'SliceSimulation owns the inputBuffer used after flip cooldown; no buffer value is exposed in this diagnostic.' },
+  diagnosticBridgeCalls: ['window.__GAME_TEST__.resetGame()', 'window.__GAME_TEST__.getProgress()', 'window.__GAME_TEST__.getState()'],
   priorR1Failure: {
     report: 'r1-ordinary-report.json',
     checkpoint: 'afterTap-9',
@@ -326,23 +358,8 @@ const report = {
   },
   inputPlan: { viewport: '1100x720', coordinate: input, tapsMs, origin: 'R1 ordinary first failed trajectory' },
   results,
-  comparison: {
-    sameBuild: true,
-    sameViewport: true,
-    sameInputPlan: true,
-    onlyCaptureModeChanged: true,
-    physicalStepAlignedInputPlan: alignPhysicalSteps,
-    firstTrajectoryDivergence,
-    firstEventStreamDivergence,
-    lastConfirmedSameInput: firstTrajectoryDivergence ? Math.max(0, firstTrajectoryDivergence.inputIndex - 1) : compareLength,
-    firstDivergentInput: firstTrajectoryDivergence?.inputIndex ?? null,
-    samePhysicalStepAtFirstDivergence: firstTrajectoryDivergence?.samePhysicalStep ?? null,
-    conclusion: firstTrajectoryDivergence
-      ? (firstTrajectoryDivergence.samePhysicalStep
-        ? 'The first material divergence occurred while both inputs were observed at the same 120 Hz physical step; input-handler boundary timing is still needed to distinguish capture overhead from runtime behavior.'
-        : 'The first material divergence occurred after the inputs landed in different 120 Hz physical steps; capture overhead changed wall-clock scheduling before that input, so the original screenshot-causality claim is not isolated.')
-      : 'no observed trajectory divergence before the compared terminal point',
-  },
+  comparison: comparisonSummary,
+  legacyComparisonFieldsRemoved: ['previous-input confirmation label'],
 };
-await writeFile(new URL('./r2-ordinary-capture-compare.json', root), `${JSON.stringify(report, null, 2)}\n`, 'utf8');
+await writeFile(reportPath, `${JSON.stringify(report, null, 2)}\n`, 'utf8');
 console.log(JSON.stringify(report, null, 2));
