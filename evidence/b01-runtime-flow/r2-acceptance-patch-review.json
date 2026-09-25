@@ -237,5 +237,7 @@
     "draft": true,
     "base": "main"
   },
-  "versionCheck": "r2-version-check-patch.json"
+  "versionCheck": "r2-version-check-patch.json",
+  "evidenceCommitBeforePostPushCheck": "9a5ed9f",
+  "postPushVersionCheck": "r2-version-check-post-push-r2patch.json"
 }

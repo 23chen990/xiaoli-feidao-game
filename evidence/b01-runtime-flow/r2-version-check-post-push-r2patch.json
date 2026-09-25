@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01R2PatchVersionAndBuildCheckPostPush",
+  "generatedAt": "2026-09-25T00:00:00Z",
+  "branch": "codex/b01-runtime-flow",
+  "localHead": "9a5ed9f73178b7f5c3671c3e0ef1998fc526b246",
+  "remoteHead": "9a5ed9f73178b7f5c3671c3e0ef1998fc526b246",
+  "headMatchesRemote": true,
+  "pullRequest": {
+    "number": 1,
+    "state": "OPEN",
+    "draft": true,
+    "headRefName": "codex/b01-runtime-flow"
+  },
+  "testedSourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "distSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+  "servedUrl": "http://127.0.0.1:4175/",
+  "servedIndexSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+  "servedMatchesDist": true,
+  "acceptanceScript": "qa-natural-r2.mjs",
+  "acceptanceScriptSha256": "7251f85072aea4bd309c4426a4e063c4a77e18526b301330f5f0e523416e8b1f",
+  "evidenceCommit": "9a5ed9f",
+  "note": "Post-push verification after the evidence commit; adding this artifact and pointer creates the next evidence commit. Game source remains unchanged.",
+  "worktreeStatusBeforeThisEvidenceCommit": []
+}
