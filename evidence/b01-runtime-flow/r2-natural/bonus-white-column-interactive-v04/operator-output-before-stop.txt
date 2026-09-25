@@ -1,0 +1,10 @@
+[v04] prefix complete; screenshot=/Users/kker/Documents/ChatGPT/xiaoli-feidao-game-b01/evidence/b01-runtime-flow/r2-natural/bonus-white-column-interactive-v04/observation-01-after-prefix.png
+[v04] commands: wait <visible reason> | release <visible reason> | stop
+wait contact visible but stability needs another frame
+[v04] WAIT recorded; screenshot=/Users/kker/Documents/ChatGPT/xiaoli-feidao-game-b01/evidence/b01-runtime-flow/r2-natural/bonus-white-column-interactive-v04/observation-02-wait.png
+release two consecutive frames show blade touching the white column with stable position and no visible travel
+[v04] RELEASE sent once; screenshot saved; send stop
+stop
+[v04] stopped; audit report written=/Users/kker/Documents/ChatGPT/xiaoli-feidao-game-b01/evidence/b01-runtime-flow/r2-bonus-white-column-interactive-v04.json
+
+Review: before stop, the operator channel contains only screenshot paths, commands and ordinary confirmations. It contains no status, phase, anchorId, coordinates, velocity, events or receipts.

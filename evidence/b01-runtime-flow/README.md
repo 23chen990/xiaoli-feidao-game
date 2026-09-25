@@ -309,3 +309,9 @@ v02 使用交互式浏览器上下文：固定时间表只负责前置回放到�
 本次 fresh context 为 `902f4374-fb9b-473d-b99c-c472354932ac`（实际 run/context 见 `r2-bonus-white-column-interactive-v03.json`），viewport `1100x720`，脚本 hash `331f9f260da5e18868f2c53b2a8ad757ffd6abc484640e079d0bad936cb26453`，浏览器主文档响应与构建 hash 均为 `8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d`。前置回放完成并保存 `ready.png` 与 `observation-01-after-prefix.png`；操作者在观察首图期间超过预先声明的 700ms 上限，尚未输入 WAIT，因此按停止规则终止，未发送 RELEASE，也没有伪造视觉决策。该运行分类为 `NOT_RUN`，不是产品 FAIL。
 
 因此本轮证明了信息隔离方法，但没有新增可见锚定两帧、合法释放或释放后画面证据。v02 的 WAIT/单次释放/不追加 flip 仍保留为已接受的动作证据；“纯画面决定”在 v02 中仍有历史 caveat，v03 尚未完成该证明。390x844、完整 BONUS、独立 QA、切后台、BFCache、存储故障注入及 asset-manifest 基线失败保持原状。
+
+## B01-BONUS 白柱视觉验证 v04
+
+基线为 `f7708fab0e0d8f19964bb74b02c71ed708c2cffa`。v04 将人工响应上限与游戏观察窗口分开：操作者最多 60 秒输入命令；每次 WAIT 只让游戏继续 350ms 后截图。readline 等待期间游戏继续实时推进，已在原始记录中明确标注。停止前操作端仍只输出截图路径、命令提示和普通确认文字；隐藏状态、事件和 pointer receipt 仅在 stop 后导出。
+
+一次 `1100x720` fresh context 完成局部闭环。前置回放后首图显示刀具接触白柱，先执行 `WAIT`；350ms 后第二张图仍显示接触且无可见位移，再执行一次 `RELEASE`。释放后截图显示刀具已离柱并沿上升方向运动，没有自动追加 flip。v04 分类为 `PASS_LOCAL_VISIBLE_WAIT_RELEASE`；这不是完整 BONUS PASS，也未启动独立 QA。运行、截图、回执和 post-stop 审计见 `r2-bonus-white-column-interactive-v04.json` 与 `r2-bonus-white-column-closeout-v04.json`。
