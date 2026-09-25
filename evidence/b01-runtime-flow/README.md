@@ -301,3 +301,11 @@ BONUS 汇总现在要求响应分项参与最终 `result/rawOutcome/allAssertion
 v01 复核说明见 `r2-bonus-white-column-v01-review.json`：planNotes 没有参与输入决策；第 9、10 项虽写 WAIT，固定循环仍发送点击；第 10 次点击前记录为 white-column anchored、零速度，点击后 launch，第 11 次为 airborne→flip；v01 没有释放前截图，因此不能判断当时锚定信号是否可见。v01 保持 NOT_RUN，不归因于游戏缺少提示。
 
 v02 使用交互式浏览器上下文：固定时间表只负责前置回放到观察段，随后暂停并由操作者查看当前画面，显式发送 WAIT 或一次 RELEASE。两次连续截图显示刀具与白柱保持接触、姿态稳定后才 RELEASE；释放后只观察，不自动追加 flip。v02 记录一次可见锚定确认和一次合法释放，局部执行方法目标 PASS；没有执行完整 BONUS 或独立 QA。
+
+## B01-BONUS 白柱视觉验证最后补证 v03
+
+基线为 `a1d4f924ad55c1fb1af80fc9b22173050561aad3`。v03 只修改并运行独立的局部取证脚本，游戏源码、物理、关卡、存储和 BONUS 判定均未修改。前置固定节奏仅标为回放；操作端输出策略已隔离：停止前 stdout 只包含截图路径和命令提示，不输出 `status`、`anchorId`、坐标、速度、事件或 pointer receipt。隐藏状态和回执只在停止后写入 `r2-bonus-white-column-interactive-v03.json`。
+
+本次 fresh context 为 `902f4374-fb9b-473d-b99c-c472354932ac`（实际 run/context 见 `r2-bonus-white-column-interactive-v03.json`），viewport `1100x720`，脚本 hash `331f9f260da5e18868f2c53b2a8ad757ffd6abc484640e079d0bad936cb26453`，浏览器主文档响应与构建 hash 均为 `8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d`。前置回放完成并保存 `ready.png` 与 `observation-01-after-prefix.png`；操作者在观察首图期间超过预先声明的 700ms 上限，尚未输入 WAIT，因此按停止规则终止，未发送 RELEASE，也没有伪造视觉决策。该运行分类为 `NOT_RUN`，不是产品 FAIL。
+
+因此本轮证明了信息隔离方法，但没有新增可见锚定两帧、合法释放或释放后画面证据。v02 的 WAIT/单次释放/不追加 flip 仍保留为已接受的动作证据；“纯画面决定”在 v02 中仍有历史 caveat，v03 尚未完成该证明。390x844、完整 BONUS、独立 QA、切后台、BFCache、存储故障注入及 asset-manifest 基线失败保持原状。

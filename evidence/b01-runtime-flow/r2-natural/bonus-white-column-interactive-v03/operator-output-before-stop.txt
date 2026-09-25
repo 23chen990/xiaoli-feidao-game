@@ -1,0 +1,6 @@
+[v03] prefix complete; screenshot=/Users/kker/Documents/ChatGPT/xiaoli-feidao-game-b01/evidence/b01-runtime-flow/r2-natural/bonus-white-column-interactive-v03/observation-01-after-prefix.png
+[v03] commands: wait <visible reason> | release <visible reason> | stop
+wait contact not yet stable; continue visual observation
+[v03] observation limit reached; send stop
+
+Review: the pre-stop operator channel contains only a screenshot path, command prompts, and the operator's visible-reason text. It contains no status, anchorId, coordinates, velocity, internal events, or pointer receipts.

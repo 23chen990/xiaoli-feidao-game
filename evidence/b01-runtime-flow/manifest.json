@@ -147,5 +147,11 @@
     "evidence/b01-runtime-flow/r2-natural/patch-v22-formal-ordinary/",
     "evidence/b01-runtime-flow/r2-natural/patch-v22-independent-ordinary/"
   ],
-  "offlineFinalCloseout": "evidence/b01-runtime-flow/r2-acceptance-closeout-review-v23.json"
+  "offlineFinalCloseout": "evidence/b01-runtime-flow/r2-acceptance-closeout-review-v23.json",
+  "bonusWhiteColumnV02": "evidence/b01-runtime-flow/r2-bonus-white-column-interactive-v02.json",
+  "bonusWhiteColumnV03Script": "evidence/b01-runtime-flow/r2-bonus-white-column-interactive-v03.mjs",
+  "bonusWhiteColumnV03Run": "evidence/b01-runtime-flow/r2-bonus-white-column-interactive-v03.json",
+  "bonusWhiteColumnV03Closeout": "evidence/b01-runtime-flow/r2-bonus-white-column-closeout-v03.json",
+  "bonusWhiteColumnV03EvidenceDir": "evidence/b01-runtime-flow/r2-natural/bonus-white-column-interactive-v03/",
+  "bonusWhiteColumnV03Status": "NOT_RUN_VISIBLE_RELEASE_OUTPUT_ISOLATION_PASS"
 }
