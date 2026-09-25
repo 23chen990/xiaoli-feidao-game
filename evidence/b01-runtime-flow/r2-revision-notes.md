@@ -145,3 +145,7 @@ observer 在第一条正常玩家输入前安装，实际记录 `startedAtMs/sta
 ## v2.3 离线最终收口（基线 4606a629）
 
 只修改验收脚本与离线复核证据。normal 控件样本按真实游戏阶段判断，观察完整性不再依赖动作成功；原始 v2.2 JSON 未修改。离线复核结果和五类反例见 `r2-acceptance-offline-recheck-v23.json`，两份 v2.2 ordinary 成功记录继续成立。未执行新的浏览器验收。
+
+## B01-BONUS-01 1100×720（未到检查点）
+
+在默认 seed 31、既有构建和 fresh context 下执行一次修正后的正式自然路线。浏览器主文档响应和构建 hash 均为 `8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d`；路线在约 9.19 秒以 `fall` 失败，未进入 `phase=bonus`，所以分类为 NOT_RUN，独立 QA 按停止条件未执行。诊断中的 SliceSimulation BONUS 候选仅作机制线索，不计自然 PASS。

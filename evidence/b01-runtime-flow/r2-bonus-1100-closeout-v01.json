@@ -1,0 +1,50 @@
+{
+  "artifactType": "B01Bonus1100Closeout",
+  "baseline": "f3cc348e8502582f2e1cebee75baa20500fa7c54",
+  "headAtRun": "f3cc348e8502582f2e1cebee75baa20500fa7c54",
+  "workspace": "/Users/kker/Documents/ChatGPT/xiaoli-feidao-game-b01",
+  "branch": "codex/b01-runtime-flow",
+  "pullRequest": { "number": 1, "state": "OPEN", "draft": true },
+  "source": {
+    "commit": "de6f11d2231398f6c655abbddd40c548d1524126",
+    "defaultSeed": 31,
+    "bonusGate": "game/prototype-a/src/game-levels.ts:134-141 (level1Finish.star-cache, x=3000, y=438, kind=bonus)",
+    "entryCallChain": [
+      "game/prototype-a/src/game-core.ts:1555-1564 selectFinishGate chooses the narrow bonus gate when playerY is within 18px of y=438",
+      "game/prototype-a/src/game-core.ts:1583-1592 settleFinishGate verifies bonusAvailable and !bonusConsumed, then calls enterBonus",
+      "game/prototype-a/src/game-core.ts:1612-1640 enterBonus changes phase to bonus and emits the bonus event"
+    ],
+    "ordinaryContrast": "The accepted ordinary route selected jade-two at y=200; it never satisfied the narrow star-cache y=438 selection window."
+  },
+  "build": {
+    "distIndexSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+    "browserInitialDocumentSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+    "browserInitialDocumentStatus": 200,
+    "url": "http://127.0.0.1:4175/"
+  },
+  "diagnostic": {
+    "kind": "SliceSimulation visible-state policy, seed 31",
+    "result": "candidate reached phase=bonus in isolated simulation with a late y≈494 finish approach; this is diagnostic only",
+    "strategy": "ready/anchored taps launch or release; during ordinary flight keep a visible mid-lane rhythm; near the finish wall aim for the narrow BONUS lane; after visible phase transition, issue one normal tap",
+    "constraints": "No debug entry, state injection, position/velocity mutation, storage change, or physics change"
+  },
+  "formalRun": {
+    "scriptVersion": "B01-R2-acceptance-v2.4",
+    "report": "evidence/b01-runtime-flow/r2-bonus-1100-formal-v01-final.json",
+    "runId": "0927d888-fbc0-438e-b4f3-8886b30fadca",
+    "contextId": "fae36ce8-7cdf-45f2-8b50-f348fe871f24",
+    "viewport": "1100x720",
+    "result": "NOT_RUN",
+    "rawOutcome": "ordinary-terminal-failed-before-target",
+    "failureStage": "ordinary-play-before-bonus",
+    "failure": "The browser route fell with failReason=fall at elapsed≈9.19s before phase=bonus; no BONUS checkpoint was executed.",
+    "consolePageErrors": [],
+    "evidence": ["evidence/b01-runtime-flow/r2-natural/bonus-1100-formal-v01-final/B-bonus-1100x720-ready.png"]
+  },
+  "independentQA": { "executed": false, "result": "NOT_RUN", "reason": "Formal run did not reach BONUS; task stop condition applied." },
+  "uncovered": ["390x844 BONUS", "real backgrounding", "BFCache", "storage fault injection"],
+  "ordinaryVisualAttachments": [
+    "evidence/b01-runtime-flow/r2-natural/patch-v22-formal-ordinary/ordinary-1100-reload-after-input.png",
+    "evidence/b01-runtime-flow/r2-natural/patch-v22-independent-ordinary/ordinary-1100-reload-after-input.png"
+  ]
+}

@@ -267,3 +267,11 @@ buffered 标志仍未通过源码 hook 暴露，未发生可见状态转移时�
 验收器现在按 `phase/status/finishPhase` 归类样本；`reason=mutation` 且 `coverage=transition` 的 ordinary airborne/anchored idle 样本仍进入 normal 控件检查。观察完整性和动作成功分开记录：刷新 ready 输入有完整 receipt/handler 观测却没有应有 launch 时为 `FAIL`，缺 receipt 或 handler 观测为 `NOT_RUN`。反例均通过正式 `buildOrdinaryChecks` 与 `summarizeOrdinary` 构造，而非单独测试布尔函数。
 
 本轮反例输出：mutation idle visible=`FAIL`；完整观测无起跳=`FAIL`；缺少必要观测=`NOT_RUN`；终局观测无效=`NOT_RUN / target-checkpoint-observation-invalid`；产品 FAIL 后工具异常仍=`FAIL`。两个视口 BONUS、真实切后台、BFCache 和存储故障注入继续未覆盖/`NOT_RUN`。刷新后实际游玩图片沿用两份 v2.2 原图，未重新截图。
+
+## B01-BONUS-01 · 1100×720 首关自然 BONUS（本轮）
+
+本轮基线为 `f3cc348e8502582f2e1cebee75baa20500fa7c54`，只验证 1100×720 BONUS。源码确认首关窄 BONUS gate 为 `game/prototype-a/src/game-levels.ts:134-141` 的 `star-cache`（x=3000,y=438）；`game-core.ts:1555-1564` 负责窄窗口选择，`1583-1592` 负责合法结算并调用 `enterBonus`，`1612-1640` 切换到 bonus 并发出 bonus 事件。普通成功路线命中 `jade-two` y=200，因此不能代替 BONUS 路径。
+
+真实 SliceSimulation seed 31 的可见状态诊断找到过 BONUS 候选，但转换后的正式浏览器节奏在普通关约 9.19 秒因 `fall` 失败，未执行 BONUS 检查点。正式记录 `r2-bonus-1100-formal-v01-final.json` 分类为 `NOT_RUN / ordinary-terminal-failed-before-target`；console/pageerror 为空。根据停止条件未执行独立 QA，未把未进入 BONUS 记为产品 FAIL。首次脚本计时偏差的原始记录 `r2-bonus-1100-formal-v01.json` 也保留。
+
+本轮仅增加 BONUS 输入响应检查与反例：因果证据必须匹配同一 `inputId`；自动 cut 或缺 receipt/handler 不得冒充 BONUS 输入响应。验收脚本版本为 `B01-R2-acceptance-v2.4`。390×844 BONUS、切后台、BFCache、存储故障注入继续 `NOT_RUN`。

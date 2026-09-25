@@ -6,7 +6,7 @@ const root = new URL('.', import.meta.url);
 const baseUrl = process.env.SLICE_B01_URL ?? 'http://127.0.0.1:4175/';
 const sourceCommit = 'de6f11d2231398f6c655abbddd40c548d1524126';
 const buildSha256 = '8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d';
-const scriptVersion = 'B01-R2-acceptance-v2.3';
+const scriptVersion = 'B01-R2-acceptance-v2.4';
 const scriptSha256 = createHash('sha256').update(await readFile(new URL('./qa-natural-r2.mjs', root))).digest('hex');
 const defaultA = [800, 1859, 2032, 3068, 4140, 5118, 6155, 7157, 8215, 9199, 9352, 9774, 11152, 11382, 13775, 14833, 14991, 15145, 15389, 16391, 16722, 17872, 19618, 20644, 21614, 22592, 23645, 24216];
 const defaultB390 = [500, 1578, 1730, 2771, 3761, 4802, 5843, 6820, 7890, 8861, 9002, 9395, 10769, 12188, 13343, 14561, 14911, 15130, 16310, 17321, 18446, 19445, 20429, 21436, 22000, 22500, 23500];
@@ -25,6 +25,7 @@ const consoleReportPath = new URL(process.env.R2_CONSOLE_REPORT_PATH ?? './r2-na
 await mkdir(new URL(`./${evidenceDirName}/`, root), { recursive: true });
 
 const { ACTION_EVENT_TYPES, newEvents, actionEvents, classify, rawOutcome, makeCheck, responseEvidence, buildOrdinaryChecks, summarizeOrdinary } = await import('./r2-acceptance-checks-v23.mjs');
+const { bonusResponseCheck } = await import('./r2-bonus-acceptance-v01.mjs');
 function brief(state) { return { phase: state.phase, status: state.status, failReason: state.failReason, finishPhase: state.finishPhase, finishGateId: state.finishGateId, finishSelection: state.finishSelection, levelNumber: state.levelNumber, elapsed: state.elapsed, worldTime: state.worldTime, cuts: state.cuts, bonusConsumed: state.bonusConsumed, player: { x: state.player.x, y: state.player.y, vx: state.player.vx, vy: state.player.vy, angle: state.player.angle, angularVelocity: state.player.angularVelocity }, events: state.events.slice(-8), eventCount: state.events.length }; }
 function serializeError(error) { return { name: error?.name ?? 'Error', message: error?.message ?? String(error), stack: error?.stack ?? null }; }
 function isEnvironmentError(error) { return /network|browser|Target closed|timeout|connection|protocol|context/i.test(error?.message ?? String(error)); }
@@ -62,6 +63,8 @@ if (process.env.R2_SCRIPT_SELF_CHECK === '1') {
   const noActionSummary = summarizeOrdinary({ ...noActionFixture, checks: buildOrdinaryChecks(noActionFixture), targetReached: true });
   const missingObservationFixture = completeFixture({ postReloadPlay: { playable: false, receiptValid: false, handlerObservationComplete: false, expectedImmediateAction: true, actionOccurred: false, input: { inputReceiptObserved: false, response: null } } });
   const missingObservationSummary = summarizeOrdinary({ ...missingObservationFixture, checks: buildOrdinaryChecks(missingObservationFixture), targetReached: true });
+  const bonusMissing = bonusResponseCheck({ entered: true, input: { inputId: 'bonus-1', inputReceiptObserved: false, response: null, after: { phase: 'bonus' } } });
+  const bonusAutomaticCut = bonusResponseCheck({ entered: true, input: { inputId: 'bonus-1', inputReceiptObserved: true, response: { causalEvidence: { inputId: 'bonus-1', before: {}, after: {} }, directCausalEvents: [], automaticCutOnly: true }, after: { phase: 'bonus' } } });
   const checks = [
     [classify({ targetReached: false, validObservation: false, assertionFailure: null, assertionFailureObserved: false, environmentFailure: null, unknownFailure: null }), 'NOT_RUN'],
     [classify({ targetReached: false, validObservation: true, assertionFailure: 'transition controls visible', assertionFailureObserved: true, environmentFailure: null, unknownFailure: null }), 'FAIL'],
@@ -86,6 +89,8 @@ if (process.env.R2_SCRIPT_SELF_CHECK === '1') {
     [mutationViolationSummary.checks.find((check) => check.id === 'normal-running-controls-hidden').passed, false],
     [noActionSummary.result, 'FAIL'],
     [missingObservationSummary.result, 'NOT_RUN'],
+    [bonusMissing.result, 'NOT_RUN'],
+    [bonusAutomaticCut.result, 'FAIL'],
   ];
   for (const [actual, expected] of checks) if (actual !== expected) throw new Error(`R2 script self-check expected ${expected}, got ${actual}`);
   console.log(JSON.stringify({ artifactType: 'B01R2AcceptanceScriptSelfCheck', status: 'PASS', checks: checks.length }));
@@ -306,9 +311,10 @@ async function ordinaryCase() {
 async function bonusCase(id, width, height, mobile, tapsMs) {
   const spec = { width, height, x: width / 2, y: height * 0.72, mobile };
   const input = await createPage({ width, height }, mobile);
-  const startedAt = Date.now(); const dispatches = []; let entered = null; let responsive = null; let assertionFailure = null; let assertionFailureObserved = false; let environmentFailure = null; let unknownFailure = null; let rawError = null;
+  let startedAt = null; const dispatches = []; let entered = null; let responsive = null; let assertionFailure = null; let assertionFailureObserved = false; let environmentFailure = null; let unknownFailure = null; let rawError = null;
   try {
     await input.page.screenshot({ path: evidencePath(`${id}-ready.png`) });
+    startedAt = Date.now();
     for (let index = 0; index < tapsMs.length; index += 1) {
       const item = await dispatchTap(input, spec, tapsMs[index], startedAt, `${id}-input-${index + 1}`); dispatches.push(item);
       if (!entered && item.after.phase === 'bonus') {
@@ -316,8 +322,9 @@ async function bonusCase(id, width, height, mobile, tapsMs) {
         await input.page.screenshot({ path: evidencePath(`${id}-bonus-entered.png`) });
         const responsiveBefore = brief(await input.page.evaluate(() => window.__GAME_TEST__.getState()));
         const next = await dispatchTap(input, spec, tapsMs[index + 1] ?? tapsMs[index] + 500, startedAt, `${id}-input-${index + 2}`, { requireCausal: true }); dispatches.push(next);
-        responsive = { before: responsiveBefore, after: next.after, inputEffective: next.inputEffective, response: next.response, responded: next.inputReceiptObserved && next.response.hasCausalAction && next.after.phase === 'bonus' };
-        if (!responsive.responded) { assertionFailure = 'BONUS entry reached but subsequent normal input had no new launch/flip/cut action'; assertionFailureObserved = true; }
+        const responseCheck = bonusResponseCheck({ entered: true, input: next });
+        responsive = { before: responsiveBefore, after: next.after, inputEffective: next.inputEffective, response: next.response, responded: responseCheck.passed, responseCheck };
+        if (responseCheck.result === 'FAIL') { assertionFailure = 'BONUS entry reached but subsequent normal input had no causally matched launch/flip response'; assertionFailureObserved = true; }
         break;
       }
       if (item.after.status === 'failed' || item.after.status === 'won') break;
@@ -335,11 +342,12 @@ async function bonusCase(id, width, height, mobile, tapsMs) {
 }
 
 const served = await servedBuildHash();
-const ordinary = await ordinaryCase();
+const bonusOnly = process.env.R2_BONUS_ONLY === '1';
+const ordinary = bonusOnly ? { id: 'A-ordinary-1100x720', runId: process.env.R2_RUN_ID ?? randomUUID(), contextId: null, viewport: '1100x720', targetReached: false, result: 'NOT_RUN', rawOutcome: 'ordinary-checkpoint-not-executed-by-bonus-only-run', validObservation: false, allAssertionsPass: false, checks: [], evidence: [] } : await ordinaryCase();
 const deferredBonus = (id, viewport) => ({ id, runId: process.env.R2_RUN_ID ?? randomUUID(), contextId: null, viewport, targetReached: false, result: 'NOT_RUN', rawOutcome: 'bonus-checkpoint-not-executed-by-ordinary-only-run', validObservation: false, requiredCheckpoint: 'ready→natural phase=bonus entry→normal input received→phase remains bonus with new launch/flip/cut response', failureStage: 'ordinary-focused-run-deferred-bonus', entered: null, responsive: null, dispatches: [], assertionFailure: null, assertionFailureObserved: false, environmentFailure: null, unknownFailure: null, rawError: null, consoleErrors: [], evidence: [] });
-const ordinaryOnly = process.env.R2_ORDINARY_ONLY === '1';
-const results = { ordinary, bonus390: ordinaryOnly ? deferredBonus('B-bonus-390x844', '390x844') : await bonusCase('B-bonus-390x844', 390, 844, true, schedules.bonus390), bonus1100: ordinaryOnly ? deferredBonus('B-bonus-1100x720', '1100x720') : await bonusCase('B-bonus-1100x720', 1100, 720, false, schedules.bonus1100) };
-const report = { schemaVersion: 1, artifactType: 'B01R2NaturalAcceptance', scriptVersion, scriptSha256, runId: process.env.R2_RUN_ID ?? randomUUID(), command: process.argv.join(' '), environmentVariables: Object.fromEntries(['SLICE_B01_URL', 'R2_ORDINARY_ONLY', 'R2_START_DELAY_MS', 'R2_A_TAPS_MS', 'R2_EVIDENCE_DIR', 'R2_REPORT_PATH', 'R2_CONSOLE_REPORT_PATH'].map((key) => [key, process.env[key] ?? null])), targetGame: 'Slice Master / 小李飞刀', workspace: 'game/prototype-a', sourceCommit, buildSha256, servedBuildSha256: served.sha256, servedBuildStatus: served.status, baseUrl, environment: { node: process.version, platform: process.platform, browser: 'Playwright Chromium headless' }, freshContexts: true, stateInjection: false, debugApiCalled: false, classificationPolicy: { targetCheckpointMissing: 'NOT_RUN', reachedCheckpointAssertionViolation: 'FAIL', browserOrToolFailure: 'BLOCKED', validObservationRequiredForPass: true }, results, oldR1Mapping: { 'r1-formal-ordinary-report.outcome=BLOCKED-before-won': 'NOT_RUN', 'r1-formal-bonus-report.outcome=BLOCKED-before-bonus': 'NOT_RUN', 'r1-formal-bonus-report.outcome=NOT_RUN-schedule-ended': 'NOT_RUN' }, evidencePolicy: 'getState is recorded only for passive checkpoints and response evidence; no internal state drives input; key screenshots are captured outside the click loop.' };
+const ordinaryOnly = process.env.R2_ORDINARY_ONLY === '1' || bonusOnly;
+const results = { ordinary, bonus390: ordinaryOnly ? deferredBonus('B-bonus-390x844', '390x844') : await bonusCase('B-bonus-390x844', 390, 844, true, schedules.bonus390), bonus1100: bonusOnly ? await bonusCase('B-bonus-1100x720', 1100, 720, false, schedules.bonus1100) : ordinaryOnly ? deferredBonus('B-bonus-1100x720', '1100x720') : await bonusCase('B-bonus-1100x720', 1100, 720, false, schedules.bonus1100) };
+const report = { schemaVersion: 1, artifactType: 'B01R2NaturalAcceptance', scriptVersion, scriptSha256, runId: process.env.R2_RUN_ID ?? randomUUID(), command: process.argv.join(' '), environmentVariables: Object.fromEntries(['SLICE_B01_URL', 'R2_ORDINARY_ONLY', 'R2_BONUS_ONLY', 'R2_START_DELAY_MS', 'R2_A_TAPS_MS', 'R2_EVIDENCE_DIR', 'R2_REPORT_PATH', 'R2_CONSOLE_REPORT_PATH'].map((key) => [key, process.env[key] ?? null])), targetGame: 'Slice Master / 小李飞刀', workspace: 'game/prototype-a', sourceCommit, buildSha256, servedBuildSha256: served.sha256, servedBuildStatus: served.status, baseUrl, environment: { node: process.version, platform: process.platform, browser: 'Playwright Chromium headless' }, freshContexts: true, stateInjection: false, debugApiCalled: false, classificationPolicy: { targetCheckpointMissing: 'NOT_RUN', reachedCheckpointAssertionViolation: 'FAIL', browserOrToolFailure: 'BLOCKED', validObservationRequiredForPass: true }, results, oldR1Mapping: { 'r1-formal-ordinary-report.outcome=BLOCKED-before-won': 'NOT_RUN', 'r1-formal-bonus-report.outcome=BLOCKED-before-bonus': 'NOT_RUN', 'r1-formal-bonus-report.outcome=NOT_RUN-schedule-ended': 'NOT_RUN' }, evidencePolicy: 'getState is recorded only for passive checkpoints and response evidence; no internal state drives input; key screenshots are captured outside the click loop.' };
 await writeFile(reportPath, `${JSON.stringify(report, null, 2)}\n`, 'utf8');
 await writeFile(consoleReportPath, `${JSON.stringify({ generatedAt: report.runId, scriptVersion, ordinary: results.ordinary.consoleErrors, bonus390: results.bonus390.consoleErrors, bonus1100: results.bonus1100.consoleErrors }, null, 2)}\n`, 'utf8');
 console.log(JSON.stringify(report, null, 2));
