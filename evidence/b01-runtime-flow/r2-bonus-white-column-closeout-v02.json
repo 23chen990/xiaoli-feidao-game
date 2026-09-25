@@ -1,0 +1,18 @@
+{
+  "artifactType": "B01BonusWhiteColumnVisibleCloseoutV02",
+  "baseline": "14577c1bc5b9bfe0cc2acda97b743bd2a540b79d",
+  "run": "evidence/b01-runtime-flow/r2-bonus-white-column-interactive-v02.json",
+  "runId": "4a3a736c-0994-4cbf-8846-43b488f02fca",
+  "contextId": "413fe55a-fd9a-4d36-a877-54bdaa5628cf",
+  "viewport": "1100x720",
+  "executionMethod": "Interactive browser context paused after fixed prelude; model inspected screenshots and explicitly sent WAIT/RELEASE commands. No status or coordinates were used to choose the commands.",
+  "v01Review": "evidence/b01-runtime-flow/r2-bonus-white-column-v01-review.json",
+  "visibleDecisions": [
+    { "decision": "WAIT", "basis": "first paused frame did not yet provide stable contact confirmation" },
+    { "decision": "WAIT", "basis": "two consecutive frames showed the knife held against the white column with no visible movement" },
+    { "decision": "RELEASE", "basis": "stable contact was visually confirmed in the two consecutive screenshots" }
+  ],
+  "release": { "receipts": 2, "inputId": "interactive command release", "before": "ordinary anchored at white-column", "after": "ordinary airborne with visible motion", "additionalAutomaticFlip": false },
+  "result": "PASS for the local white-column execution-method objective: one visible anchor confirmation, one legal release, and no unconditional follow-up flip. This is not a full BONUS natural-acceptance PASS.",
+  "remaining": ["full BONUS completion", "independent QA", "390x844", "backgrounding", "BFCache", "storage fault injection"]
+}

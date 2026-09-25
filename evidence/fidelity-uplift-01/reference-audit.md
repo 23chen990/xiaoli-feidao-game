@@ -1,0 +1,12 @@
+# FIDELITY-UPLIFT-01 short audit
+
+Reference behavior was checked against the public Slice Master guide: one click jumps, the player falls roughly a second after a jump, spikes require timing, and the end column presents scored targets ([Coolmath Games guide](https://www.coolmathgames.com/blog/how-to-play-slice-master)). Exact reference video frame timings were not available in the repository, so timings below are approximate local measurements with ±1 fixed-step / screenshot-sample error.
+
+| Area | Reference behavior | Current before | Largest gap | Change |
+|---|---|---|---|---|
+| A. tap -> knife motion | One click starts a forward jump promptly; about 1 s to the falling phase. | Launch `vx=150`, `vy=-300`, gravity `600`; opening included a white-column recovery branch. | The first tap felt slow and the first decision was structural recovery rather than forward rhythm. | `vx 150→180`; launch vertical/gravity remain `-300/600` while angular velocity changes `9.5/10.5→10.25/11.25`; opening runway begins with 160 px target cadence. |
+| B. landing / recovery rhythm | Blunt contacts keep motion going; timing mistakes are attributable to the next tap. | Long gaps and a mandatory white-column branch made recovery the dominant beat. | Landing was not a short, readable reset between taps. | White-column/branch moved off the main route; optional recovery supports remain authored but are no longer required. |
+| C. slicing feedback | Contact is immediately legible and supports a continuous chain. | Existing impact flash, fragment separation, earnings banner and short hit-stop were already present; pre-change run measured ~49–91 ms stop and ~520 ms pop. | Target spacing and cadence hid the strength of existing feedback. | Preserve the existing feedback layer; provide 2–3 easy targets then a 5-target chain at ~160 px spacing. |
+| D. finish multiplier tension | End targets visibly trade width for reward; the narrow high reward is a deliberate risk. | Ladder existed (4× narrow, 2×, safe 1×, penalties) but was reached after a cluttered route. | Finish choice was not preceded by a clean rhythm ramp. | Keep the ladder; route now has one hazard and a final rhythm change before the finish wall. |
+
+Local before run used the baseline build at `37556268`; after used the working tree build. Both runs used 1100×720 and the same 1.2 s input schedule. This is an experience comparison, not a claim that the fixed schedule is a complete player strategy.

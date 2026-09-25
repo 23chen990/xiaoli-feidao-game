@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01R2NaturalConsolePageErrorLog",
+  "status": "PASS_ORDINARY_BONUS_NOT_RUN",
+  "script": "evidence/b01-runtime-flow/qa-natural-r2.mjs",
+  "ordinaryFormal": {
+    "report": "r2-ordinary-formal-console-errors.json",
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "ordinaryIndependentQA": [
+    {
+      "report": "r2-ordinary-independent-qa-1-console-errors.json",
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "report": "r2-ordinary-independent-qa-2-console-errors.json",
+      "consoleErrors": [],
+      "pageErrors": []
+    }
+  ],
+  "bonus390": {
+    "status": "NOT_RUN",
+    "reason": "BONUS deferred by B01-R2 supplement scope"
+  },
+  "bonus1100": {
+    "status": "NOT_RUN",
+    "reason": "BONUS deferred by B01-R2 supplement scope"
+  },
+  "diagnosticConsoleErrors": "The diagnosis-only comparison and exploration retain consoleErrors arrays in their own JSON reports; no console/pageerror entries were observed.",
+  "patchFormal": {
+    "report": "r2-ordinary-formal-r2patch-v8-console-errors.json",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "result": "PASS"
+  },
+  "patchIndependentQA": {
+    "report": "r2-ordinary-independent-qa-r2patch-v8-console-errors.json",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "result": "PASS"
+  },
+  "preliminaryScriptRepairReports": [
+    "r2-ordinary-formal-r2patch-console-errors.json",
+    "r2-ordinary-formal-r2patch-final-console-errors.json",
+    "r2-ordinary-formal-r2patch-v2-console-errors.json",
+    "r2-ordinary-formal-r2patch-v3-console-errors.json",
+    "r2-ordinary-formal-r2patch-v4-console-errors.json",
+    "r2-ordinary-formal-r2patch-v5-console-errors.json",
+    "r2-ordinary-formal-r2patch-v6-console-errors.json",
+    "r2-ordinary-formal-r2patch-v7-console-errors.json"
+  ],
+  "patchFormalV22": {
+    "report": "r2-ordinary-formal-r2patch-v22-console-errors.json",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "result": "PASS"
+  },
+  "patchIndependentV22": {
+    "report": "r2-ordinary-independent-qa-r2patch-v22-console-errors.json",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "result": "PASS"
+  }
+}

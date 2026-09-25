@@ -4,6 +4,11 @@
   touch-action: none;
 }
 
+/* Keep semantic hidden states hidden even when a component rule sets display. */
+[hidden] {
+  display: none !important;
+}
+
 * {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
@@ -286,6 +291,32 @@ body[data-pressure='moving-hard'] #direction-text::before { content: '◆ MOVING
 #terminal-actions button {
   min-width: 92px;
   padding: 0 14px;
+}
+
+#continue-button {
+  position: absolute;
+  z-index: 5;
+  top: calc(50% + 92px);
+  left: 50%;
+  min-width: 112px;
+  transform: translateX(-50%);
+  pointer-events: auto;
+}
+
+#progress-warning {
+  position: absolute;
+  z-index: 5;
+  top: auto;
+  right: 12px;
+  bottom: max(12px, env(safe-area-inset-bottom));
+  left: auto;
+  max-width: min(420px, calc(100vw - 24px));
+  padding: 8px 12px;
+  border: 1px solid var(--theme-border-strong);
+  border-radius: 10px;
+  background: var(--theme-panel-strong);
+  color: var(--theme-title);
+  font-size: 12px;
 }
 
 #feedback-layer,

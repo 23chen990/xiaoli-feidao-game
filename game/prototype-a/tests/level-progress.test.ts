@@ -45,7 +45,7 @@ test('LEVEL-PROGRESS-RED-002 locked selection is refused, next level is ordered,
   const gate = before.finishOptions.find((candidate) => candidate.kind === 'safe')!;
   simulation.debugEnterFinishGate(gate.id, 9);
   assert.equal(simulation.getState().status, 'won');
-  simulation.act('flip');
+  simulation.reset(simulation.getState().seed);
   const replayed = simulation.getState();
   assert.equal(replayed.levelNumber, 4);
   assert.equal(replayed.seed, 91);
@@ -84,7 +84,7 @@ test('LEVEL-PROGRESS-RED-004 refresh restores highest unlocked level without cro
   failed.debugLoadScenario('spike');
   failed.step(0.25);
   assert.equal(failed.getState().status, 'failed');
-  failed.act('flip');
+  failed.reset(failed.getState().seed);
   const restarted = failed.getState();
   assert.equal(restarted.levelNumber, 3);
   assert.equal(restarted.status, 'ready');
@@ -105,7 +105,7 @@ test('LEVEL-PROGRESS-005 all twelve levels enter, complete, replay deterministic
     const completed = simulation.getState();
     assert.equal(completed.status, 'won');
     store.completeLevel(levelNumber, { score: completed.score, elapsedMs: 30_000 });
-    simulation.act('flip');
+    simulation.reset(simulation.getState().seed);
     const replayed = simulation.getState();
     assert.equal(replayed.levelNumber, levelNumber);
     assert.equal(replayed.seed, 700 + levelNumber);

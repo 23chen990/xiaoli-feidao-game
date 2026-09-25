@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01R1IndependentQAReview",
+  "reviewer": "Luna independent QA",
+  "role": "IndependentQA",
+  "targetGame": "Slice Master / 小李飞刀",
+  "workspace": "game/prototype-a",
+  "sourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "inspectedPaths": [
+    "r1-formal-ordinary-fixed.mjs",
+    "r1-ordinary-report.json",
+    "r1-formal-bonus-fixed.mjs",
+    "r1-bonus-report.json",
+    "r1-browser-report.json",
+    "r1-exploration-log.json",
+    "r1-independent/"
+  ],
+  "executionPolicy": {
+    "freshContexts": true,
+    "ordinaryContexts": 2,
+    "viewport": "1100x720",
+    "input": "same frozen visible-canvas mouse schedule",
+    "debugApiCalled": false,
+    "stateInjection": false
+  },
+  "cases": [
+    {
+      "id": "A-independent-context-1",
+      "viewport": "1100x720",
+      "attempt": 1,
+      "result": "NOT_RUN",
+      "rawOutcome": "failed_before_target",
+      "requiredCheckpoint": "phase=ordinary,status=won",
+      "observed": "ordinary run ended before won; no next/reload assertions executed",
+      "consoleErrors": null,
+      "consoleErrorsCaptured": false,
+      "evidencePaths": [
+        "r1-independent/a1-1100x720-ready.png",
+        "r1-independent/a1-1100x720-final.png"
+      ]
+    },
+    {
+      "id": "A-independent-context-2",
+      "viewport": "1100x720",
+      "attempt": 2,
+      "result": "NOT_RUN",
+      "rawOutcome": "failed_before_target",
+      "requiredCheckpoint": "phase=ordinary,status=won",
+      "observed": "ordinary run ended before won; no next/reload assertions executed",
+      "consoleErrors": null,
+      "consoleErrorsCaptured": false,
+      "evidencePaths": [
+        "r1-independent/a2-1100x720-ready.png",
+        "r1-independent/a2-1100x720-step-21.png"
+      ]
+    },
+    {
+      "id": "B-bonus-review-390x844",
+      "viewport": "390x844",
+      "attempt": "review",
+      "result": "NOT_RUN",
+      "requiredCheckpoint": "phase=bonus plus responsive post-entry input",
+      "observed": "formal report has no phase=bonus checkpoint",
+      "evidencePaths": [
+        "r1-bonus-report.json",
+        "screenshots/bonus-390x844-ready.png"
+      ]
+    },
+    {
+      "id": "B-bonus-review-1100x720",
+      "viewport": "1100x720",
+      "attempt": "review",
+      "result": "NOT_RUN",
+      "requiredCheckpoint": "phase=bonus plus responsive post-entry input",
+      "observed": "formal report has no phase=bonus checkpoint",
+      "evidencePaths": [
+        "r1-bonus-report.json",
+        "screenshots/bonus-1100x720-ready.png"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "QA-R1-01",
+      "severity": "high",
+      "claim": "A target ordinary completion was not independently reproduced in either fresh context.",
+      "evidencePaths": [
+        "r1-independent/a1-1100x720-ready.png",
+        "r1-independent/a1-1100x720-final.png",
+        "r1-independent/a2-1100x720-ready.png",
+        "r1-independent/a2-1100x720-step-21.png"
+      ],
+      "requiredCorrection": "Find a reproducible natural ordinary-win schedule before claiming A PASS."
+    },
+    {
+      "id": "QA-R1-02",
+      "severity": "high",
+      "claim": "Neither BONUS viewport has a natural entry checkpoint or post-entry responsiveness evidence.",
+      "evidencePaths": [
+        "r1-bonus-report.json"
+      ],
+      "requiredCorrection": "Run a fixed normal-input natural gate-hit path and capture phase transition plus subsequent visible response."
+    },
+    {
+      "id": "QA-R1-03",
+      "severity": "medium",
+      "claim": "Independent screenshot captures do not include persisted console/pageerror log files.",
+      "evidencePaths": [
+        "r1-independent/"
+      ],
+      "requiredCorrection": "Retain console/pageerror output with future independent browser captures."
+    }
+  ],
+  "limitations": [
+    "This independent track was a blocked-path reproduction because the exploratory phase found no target PASS.",
+    "No source changes were made.",
+    "True OS backgrounding, real BFCache, and storage fault injection were not part of this review."
+  ],
+  "conclusion": "NOT_RUN_TARGET_CHECKPOINTS"
+}

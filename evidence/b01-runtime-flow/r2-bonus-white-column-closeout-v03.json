@@ -1,0 +1,34 @@
+{
+  "artifactType": "B01BonusWhiteColumnVisibleDecisionIsolation",
+  "baseline": "a1d4f924ad55c1fb1af80fc9b22173050561aad3",
+  "workspace": "/Users/kker/Documents/ChatGPT/xiaoli-feidao-game-b01",
+  "branch": "codex/b01-runtime-flow",
+  "pr": { "number": 1, "state": "OPEN", "draft": true },
+  "scope": "1100x720 white-column local verification only",
+  "v02Accepted": ["WAIT without click", "one anchor release", "no automatic follow-up flip"],
+  "v02Caveat": "Purely visual decision was not independently proven because v02 printed dynamic state in the operator channel.",
+  "v03": {
+    "runId": "25acc032-79f1-4635-beea-ab14bd582a5c",
+    "contextId": "902f4374-fb9b-473d-b99c-c472354932ac",
+    "script": "r2-bonus-white-column-interactive-v03.mjs",
+    "scriptSha256": "331f9f260da5e18868f2c53b2a8ad757ffd6abc484640e079d0bad936cb26453",
+    "viewport": "1100x720",
+    "sourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+    "buildSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+    "documentResponseSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+    "operatorOutputIsolation": "PASS: before stop, stdout contained screenshot paths and command prompts only; no status, anchorId, coordinates, velocity, events, or receipts.",
+    "decisionRecords": [],
+    "classification": "NOT_RUN",
+    "stopReason": "The declared 700ms observation window elapsed while the operator inspected the first screenshot, before a WAIT record could be entered. The run stopped without a release.",
+    "evidence": [
+      "r2-natural/bonus-white-column-interactive-v03/ready.png",
+      "r2-natural/bonus-white-column-interactive-v03/observation-01-after-prefix.png"
+    ],
+    "missing": ["stable-contact-frame-1", "stable-contact-frame-2", "release-after-frame", "visible-decision-log"],
+    "postStopAudit": "r2-bonus-white-column-interactive-v03.json"
+  },
+  "gameSourceModified": false,
+  "fullBonus": "NOT_RUN",
+  "independentQa": "NOT_RUN",
+  "remainingCondition": "A fresh run with a sufficiently long but finite observation window is needed to record two pre-release stable-contact frames and one visible RELEASE without exposing passive state to the operator. No retry was started in this turn."
+}

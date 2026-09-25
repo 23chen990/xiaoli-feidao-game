@@ -1,0 +1,15 @@
+{
+  "artifactType": "B01BonusWhiteColumnV01Review",
+  "reviewBaseline": "14577c1bc5b9bfe0cc2acda97b743bd2a540b79d",
+  "source": "r2-bonus-white-column-visible-v01.json",
+  "classification": "NOT_RUN",
+  "facts": [
+    "planNotes were descriptive only and did not participate in input decisions",
+    "entries 9 and 10 were written as waits, but the fixed loop still dispatched clicks",
+    "before entry 10 the passive record was anchored on white-column with zero velocity",
+    "entry 10 released that anchor and produced launch",
+    "entry 11 handler evidence was airborne to flip",
+    "no pre-release screenshot was captured, so the visibility of the anchor cue in v01 cannot be established"
+  ],
+  "interpretation": "The v01 record is not a product FAIL and does not establish that the game lacks an anchor cue. It demonstrates that the execution method did not enforce the stated visible strategy."
+}

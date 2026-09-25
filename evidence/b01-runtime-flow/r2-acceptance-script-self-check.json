@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01R2AcceptanceScriptSelfCheck",
+  "command": "R2_SCRIPT_SELF_CHECK=1 node evidence/b01-runtime-flow/qa-natural-r2.mjs",
+  "status": "PASS",
+  "checks": 6,
+  "verified": [
+    "target checkpoint missing => NOT_RUN",
+    "reached checkpoint with product assertion failure => FAIL",
+    "missing checkpoint with assertion text => NOT_RUN",
+    "browser/tool failure => BLOCKED",
+    "reached checkpoint with all assertions satisfied => PASS",
+    "ordinary terminal fall before target => rawOutcome ordinary-terminal-failed-before-target"
+  ],
+  "naturalBrowserRun": "separate ordinary formal and independent context reports are recorded; BONUS remains NOT_RUN by scope"
+}

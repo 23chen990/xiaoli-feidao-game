@@ -1,0 +1,16 @@
+target_game: Slice Master / 小李飞刀
+workspace: game/prototype-a
+source_commit: de6f11d2231398f6c655abbddd40c548d1524126
+command: cd game/prototype-a && pnpm lint
+pnpm_option: pnpm_config_verify_deps_before_run=warn (read-only dependency status check; no install)
+node: v24.14.0
+pnpm: 11.25.0
+node_path: /usr/local/bin/node
+pnpm_path: /usr/local/bin/pnpm
+
+--- command output ---
+[WARN] Your node_modules are out of sync with your lockfile. The value of the allowBuilds setting has changed
+$ eslint src tests scripts vite.config.ts --config eslint.config.js
+
+--- exit ---
+exit_code: 0

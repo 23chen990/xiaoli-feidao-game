@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01R2Regression",
+  "targetGame": "Slice Master / 小李飞刀",
+  "workspace": "game/prototype-a",
+  "sourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "sourceChanged": false,
+  "commands": {
+    "lint": {
+      "command": "node_modules/.bin/eslint src tests scripts vite.config.ts --config eslint.config.js",
+      "exitCode": 0,
+      "log": "evidence/b01-runtime-flow/logs/r2-current-lint.log"
+    },
+    "typecheck": {
+      "command": "node_modules/.bin/tsc --noEmit",
+      "exitCode": 0,
+      "log": "evidence/b01-runtime-flow/logs/r2-current-typecheck.log"
+    },
+    "test": {
+      "command": "node_modules/.bin/tsx --test tests/*.test.ts",
+      "exitCode": 1,
+      "pass": 212,
+      "fail": 1,
+      "failure": "ASSET-MANIFEST-001: missing repository-root artifacts/asset-manifest.json",
+      "log": "evidence/b01-runtime-flow/logs/r2-current-test.log"
+    }
+  },
+  "comparison": {
+    "baseline": "evidence/b01-runtime-flow/r1-regression.json",
+    "sameKnownFailure": true,
+    "sourceRegressionObserved": false,
+    "note": "The existing missing asset-manifest failure is retained separately; no test was deleted, skipped or weakened."
+  },
+  "patchVerification": {
+    "scriptSyntax": [
+      {
+        "command": "node --check evidence/b01-runtime-flow/qa-natural-r2.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node --check evidence/b01-runtime-flow/r2-ordinary-capture-align.mjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node --check evidence/b01-runtime-flow/r2-ordinary-capture-align-review.mjs",
+        "exitCode": 0
+      }
+    ],
+    "acceptanceScriptSelfCheck": {
+      "command": "R2_SCRIPT_SELF_CHECK=1 node evidence/b01-runtime-flow/qa-natural-r2.mjs",
+      "exitCode": 0,
+      "checks": 10,
+      "report": "evidence/b01-runtime-flow/r2-acceptance-script-self-check-r2patch.json"
+    },
+    "jsonAndDiffChecks": [
+      {
+        "command": "parse all evidence/b01-runtime-flow/*.json",
+        "exitCode": 0
+      },
+      {
+        "command": "git diff --check",
+        "exitCode": 0
+      }
+    ],
+    "gameSourceChanged": false,
+    "buildReused": true
+  },
+  "patchVerificationV22": {
+    "scriptVersion": "B01-R2-acceptance-v2.2",
+    "scriptSha256": "45ee87a91f9c3baae7a3b3674953fc1a7fc6308d73ef127182c50f8411647ae4",
+    "acceptanceScriptSelfCheck": {
+      "command": "R2_SCRIPT_SELF_CHECK=1 node evidence/b01-runtime-flow/qa-natural-r2.mjs",
+      "exitCode": 0,
+      "checks": 19,
+      "report": "evidence/b01-runtime-flow/r2-acceptance-script-self-check-r2patch-v22.json"
+    },
+    "formalReport": "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v22.json",
+    "independentReport": "evidence/b01-runtime-flow/r2-ordinary-independent-qa-r2patch-v22.json",
+    "gameSourceChanged": false
+  }
+}

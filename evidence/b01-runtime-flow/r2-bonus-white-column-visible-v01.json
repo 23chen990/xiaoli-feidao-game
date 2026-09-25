@@ -1,0 +1,1546 @@
+{
+  "artifactType": "B01BonusWhiteColumnVisibleStrategyRun",
+  "scriptVersion": "B01-BONUS-visible-v0.1",
+  "scriptSha256": "eacd0670492cb6b1e121d3172c9d7e2483f802a32b467ccb91782930f7d6779d",
+  "runId": "09820974-fcff-475e-8c4d-e2f587d75eff",
+  "contextId": "ed88cfc3-c5e5-4b34-b5fb-b8831bed2f1b",
+  "viewport": "1100x720",
+  "sourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "buildSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+  "documentResponse": {
+    "url": "http://127.0.0.1:4175/",
+    "status": 200,
+    "sha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d"
+  },
+  "plan": [
+    75,
+    1108,
+    2092,
+    3092,
+    4092,
+    5075,
+    6058,
+    7058,
+    8042,
+    9042,
+    9808
+  ],
+  "planNotes": [
+    "ready画布中央：开始起跳",
+    "看见刀具回落到可操作中线：一次普通翻转",
+    "继续观察可见回落节奏后翻转",
+    "中线回落后翻转",
+    "中线回落后翻转",
+    "中线回落后翻转",
+    "中线回落后翻转",
+    "中线回落后翻转",
+    "接近白柱区域，等待画面中的锚定/停住反馈",
+    "看到白柱接触并刀具停住后等待稳定",
+    "只在白柱上看见刀具已锚定后点击一次释放"
+  ],
+  "stopPoint": "after input 11 and 750ms passive observation; no full BONUS completion attempted",
+  "inputs": [
+    {
+      "inputIndex": 1,
+      "plannedMs": 75,
+      "note": "ready画布中央：开始起跳",
+      "inputId": "white-column-input-1",
+      "receipts": [
+        {
+          "seq": 1,
+          "type": "pointerdown",
+          "epochMs": 1790349684139.1
+        },
+        {
+          "seq": 2,
+          "type": "pointerup",
+          "epochMs": 1790349684298.9001
+        }
+      ],
+      "before": {
+        "phase": "ordinary",
+        "status": "ready",
+        "player": {
+          "x": 120,
+          "y": 420,
+          "vx": 0,
+          "vy": 0
+        },
+        "anchorId": null,
+        "events": []
+      },
+      "after": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 162.5,
+          "y": 359.7916666666667,
+          "vx": 150,
+          "vy": -130
+        },
+        "anchorId": null,
+        "events": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          }
+        ]
+      },
+      "causal": null
+    },
+    {
+      "inputIndex": 2,
+      "plannedMs": 1108,
+      "note": "看见刀具回落到可操作中线：一次普通翻转",
+      "inputId": "white-column-input-2",
+      "receipts": [
+        {
+          "seq": 3,
+          "type": "pointerdown",
+          "epochMs": 1790349685155.5
+        },
+        {
+          "seq": 4,
+          "type": "pointerup",
+          "epochMs": 1790349685156.8
+        }
+      ],
+      "before": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 267.5,
+          "y": 417.5416666666667,
+          "vx": 150,
+          "vy": 290
+        },
+        "anchorId": null,
+        "events": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          },
+          {
+            "id": 2,
+            "type": "cut",
+            "x": 203,
+            "y": 312,
+            "value": 1,
+            "targetId": "rune-1",
+            "contactPart": "edge"
+          }
+        ]
+      },
+      "after": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 281.7500000000001,
+          "y": 421.0416666666667,
+          "vx": 162,
+          "vy": -275
+        },
+        "anchorId": null,
+        "events": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          },
+          {
+            "id": 2,
+            "type": "cut",
+            "x": 203,
+            "y": 312,
+            "value": 1,
+            "targetId": "rune-1",
+            "contactPart": "edge"
+          },
+          {
+            "id": 3,
+            "type": "flip",
+            "x": 275,
+            "y": 432.9166666666667,
+            "value": 1
+          }
+        ]
+      },
+      "causal": null
+    },
+    {
+      "inputIndex": 3,
+      "plannedMs": 2092,
+      "note": "继续观察可见回落节奏后翻转",
+      "inputId": "white-column-input-3",
+      "receipts": [
+        {
+          "seq": 5,
+          "type": "pointerdown",
+          "epochMs": 1790349686142.5
+        },
+        {
+          "seq": 6,
+          "type": "pointerup",
+          "epochMs": 1790349686143.5
+        }
+      ],
+      "before": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 427.55000000000257,
+          "y": 418.7916666666667,
+          "vx": 162,
+          "vy": 265
+        },
+        "anchorId": null,
+        "events": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          },
+          {
+            "id": 2,
+            "type": "cut",
+            "x": 203,
+            "y": 312,
+            "value": 1,
+            "targetId": "rune-1",
+            "contactPart": "edge"
+          },
+          {
+            "id": 3,
+            "type": "flip",
+            "x": 275,
+            "y": 432.9166666666667,
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 441.5500000000026,
+          "y": 418.58333333333337,
+          "vx": 174,
+          "vy": -275
+        },
+        "anchorId": null,
+        "events": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          },
+          {
+            "id": 2,
+            "type": "cut",
+            "x": 203,
+            "y": 312,
+            "value": 1,
+            "targetId": "rune-1",
+            "contactPart": "edge"
+          },
+          {
+            "id": 3,
+            "type": "flip",
+            "x": 275,
+            "y": 432.9166666666667,
+            "value": 1
+          },
+          {
+            "id": 4,
+            "type": "flip",
+            "x": 434.3000000000027,
+            "y": 430.45833333333337,
+            "value": 1
+          }
+        ]
+      },
+      "causal": null
+    },
+    {
+      "inputIndex": 4,
+      "plannedMs": 3092,
+      "note": "中线回落后翻转",
+      "inputId": "white-column-input-4",
+      "receipts": [
+        {
+          "seq": 7,
+          "type": "pointerdown",
+          "epochMs": 1790349687167.7002
+        },
+        {
+          "seq": 8,
+          "type": "pointerup",
+          "epochMs": 1790349687168.9001
+        }
+      ],
+      "before": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 583.6286983706043,
+          "y": 398.8456940899056,
+          "vx": 174,
+          "vy": 230
+        },
+        "anchorId": null,
+        "events": [
+          {
+            "id": 3,
+            "type": "flip",
+            "x": 275,
+            "y": 432.9166666666667,
+            "value": 1
+          },
+          {
+            "id": 4,
+            "type": "flip",
+            "x": 434.3000000000027,
+            "y": 430.45833333333337,
+            "value": 1
+          },
+          {
+            "id": 5,
+            "type": "cut",
+            "x": 610,
+            "y": 315,
+            "value": 2,
+            "targetId": "hanging-above",
+            "contactPart": "tip"
+          },
+          {
+            "id": 6,
+            "type": "cut",
+            "x": 646,
+            "y": 441,
+            "value": 2,
+            "targetId": "rune-2",
+            "contactPart": "tip"
+          }
+        ]
+      },
+      "after": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 601.7286983706042,
+          "y": 392.7206940899056,
+          "vx": 186,
+          "vy": -265
+        },
+        "anchorId": null,
+        "events": [
+          {
+            "id": 2,
+            "type": "cut",
+            "x": 203,
+            "y": 312,
+            "value": 1,
+            "targetId": "rune-1",
+            "contactPart": "edge"
+          },
+          {
+            "id": 3,
+            "type": "flip",
+            "x": 275,
+            "y": 432.9166666666667,
+            "value": 1
+          },
+          {
+            "id": 4,
+            "type": "flip",
+            "x": 434.3000000000027,
+            "y": 430.45833333333337,
+            "value": 1
+          },
+          {
+            "id": 5,
+            "type": "cut",
+            "x": 610,
+            "y": 315,
+            "value": 2,
+            "targetId": "hanging-above",
+            "contactPart": "tip"
+          },
+          {
+            "id": 6,
+            "type": "cut",
+            "x": 646,
+            "y": 441,
+            "value": 2,
+            "targetId": "rune-2",
+            "contactPart": "tip"
+          },
+          {
+            "id": 7,
+            "type": "flip",
+            "x": 590.8786983706045,
+            "y": 409.0540274232389,
+            "value": 1
+          }
+        ]
+      },
+      "causal": null
+    },
+    {
+      "inputIndex": 5,
+      "plannedMs": 4092,
+      "note": "中线回落后翻转",
+      "inputId": "white-column-input-5",
+      "receipts": [
+        {
+          "seq": 9,
+          "type": "pointerdown",
+          "epochMs": 1790349688158.9001
+        },
+        {
+          "seq": 10,
+          "type": "pointerup",
+          "epochMs": 1790349688160.1
+        }
+      ],
+      "before": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 764.4786983705994,
+          "y": 392.7206940899056,
+          "vx": 186,
+          "vy": 260
+        },
+        "anchorId": null,
+        "events": [
+          {
+            "id": 4,
+            "type": "flip",
+            "x": 434.3000000000027,
+            "y": 430.45833333333337,
+            "value": 1
+          },
+          {
+            "id": 5,
+            "type": "cut",
+            "x": 610,
+            "y": 315,
+            "value": 2,
+            "targetId": "hanging-above",
+            "contactPart": "tip"
+          },
+          {
+            "id": 6,
+            "type": "cut",
+            "x": 646,
+            "y": 441,
+            "value": 2,
+            "targetId": "rune-2",
+            "contactPart": "tip"
+          },
+          {
+            "id": 7,
+            "type": "flip",
+            "x": 590.8786983706045,
+            "y": 409.0540274232389,
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 786.4120317039327,
+          "y": 392.7206940899056,
+          "vx": 190,
+          "vy": -265
+        },
+        "anchorId": null,
+        "events": [
+          {
+            "id": 3,
+            "type": "flip",
+            "x": 275,
+            "y": 432.9166666666667,
+            "value": 1
+          },
+          {
+            "id": 4,
+            "type": "flip",
+            "x": 434.3000000000027,
+            "y": 430.45833333333337,
+            "value": 1
+          },
+          {
+            "id": 5,
+            "type": "cut",
+            "x": 610,
+            "y": 315,
+            "value": 2,
+            "targetId": "hanging-above",
+            "contactPart": "tip"
+          },
+          {
+            "id": 6,
+            "type": "cut",
+            "x": 646,
+            "y": 441,
+            "value": 2,
+            "targetId": "rune-2",
+            "contactPart": "tip"
+          },
+          {
+            "id": 7,
+            "type": "flip",
+            "x": 590.8786983706045,
+            "y": 409.0540274232389,
+            "value": 1
+          },
+          {
+            "id": 8,
+            "type": "flip",
+            "x": 775.3286983705991,
+            "y": 409.0540274232389,
+            "value": 1
+          }
+        ]
+      },
+      "causal": null
+    },
+    {
+      "inputIndex": 6,
+      "plannedMs": 5075,
+      "note": "中线回落后翻转",
+      "inputId": "white-column-input-6",
+      "receipts": [
+        {
+          "seq": 11,
+          "type": "pointerdown",
+          "epochMs": 1790349689124.9001
+        },
+        {
+          "seq": 12,
+          "type": "pointerup",
+          "epochMs": 1790349689126
+        }
+      ],
+      "before": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 951.0786983706033,
+          "y": 390.5540274232389,
+          "vx": 190,
+          "vy": 255
+        },
+        "anchorId": null,
+        "events": [
+          {
+            "id": 5,
+            "type": "cut",
+            "x": 610,
+            "y": 315,
+            "value": 2,
+            "targetId": "hanging-above",
+            "contactPart": "tip"
+          },
+          {
+            "id": 6,
+            "type": "cut",
+            "x": 646,
+            "y": 441,
+            "value": 2,
+            "targetId": "rune-2",
+            "contactPart": "tip"
+          },
+          {
+            "id": 7,
+            "type": "flip",
+            "x": 590.8786983706045,
+            "y": 409.0540274232389,
+            "value": 1
+          },
+          {
+            "id": 8,
+            "type": "flip",
+            "x": 775.3286983705991,
+            "y": 409.0540274232389,
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 968.4953650372704,
+          "y": 383.13736075657226,
+          "vx": 190,
+          "vy": -265
+        },
+        "anchorId": null,
+        "events": [
+          {
+            "id": 4,
+            "type": "flip",
+            "x": 434.3000000000027,
+            "y": 430.45833333333337,
+            "value": 1
+          },
+          {
+            "id": 5,
+            "type": "cut",
+            "x": 610,
+            "y": 315,
+            "value": 2,
+            "targetId": "hanging-above",
+            "contactPart": "tip"
+          },
+          {
+            "id": 6,
+            "type": "cut",
+            "x": 646,
+            "y": 441,
+            "value": 2,
+            "targetId": "rune-2",
+            "contactPart": "tip"
+          },
+          {
+            "id": 7,
+            "type": "flip",
+            "x": 590.8786983706045,
+            "y": 409.0540274232389,
+            "value": 1
+          },
+          {
+            "id": 8,
+            "type": "flip",
+            "x": 775.3286983705991,
+            "y": 409.0540274232389,
+            "value": 1
+          },
+          {
+            "id": 9,
+            "type": "flip",
+            "x": 957.4120317039368,
+            "y": 399.4706940899056,
+            "value": 1
+          }
+        ]
+      },
+      "causal": null
+    },
+    {
+      "inputIndex": 7,
+      "plannedMs": 6058,
+      "note": "中线回落后翻转",
+      "inputId": "white-column-input-7",
+      "receipts": [
+        {
+          "seq": 13,
+          "type": "pointerdown",
+          "epochMs": 1790349690106.7002
+        },
+        {
+          "seq": 14,
+          "type": "pointerup",
+          "epochMs": 1790349690107.7002
+        }
+      ],
+      "before": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1136.3286983705998,
+          "y": 385.3456940899056,
+          "vx": 190,
+          "vy": 265
+        },
+        "anchorId": null,
+        "events": [
+          {
+            "id": 6,
+            "type": "cut",
+            "x": 646,
+            "y": 441,
+            "value": 2,
+            "targetId": "rune-2",
+            "contactPart": "tip"
+          },
+          {
+            "id": 7,
+            "type": "flip",
+            "x": 590.8786983706045,
+            "y": 409.0540274232389,
+            "value": 1
+          },
+          {
+            "id": 8,
+            "type": "flip",
+            "x": 775.3286983705991,
+            "y": 409.0540274232389,
+            "value": 1
+          },
+          {
+            "id": 9,
+            "type": "flip",
+            "x": 957.4120317039368,
+            "y": 399.4706940899056,
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1155.3286983705989,
+          "y": 385.3456940899056,
+          "vx": 190,
+          "vy": -270
+        },
+        "anchorId": null,
+        "events": [
+          {
+            "id": 5,
+            "type": "cut",
+            "x": 610,
+            "y": 315,
+            "value": 2,
+            "targetId": "hanging-above",
+            "contactPart": "tip"
+          },
+          {
+            "id": 6,
+            "type": "cut",
+            "x": 646,
+            "y": 441,
+            "value": 2,
+            "targetId": "rune-2",
+            "contactPart": "tip"
+          },
+          {
+            "id": 7,
+            "type": "flip",
+            "x": 590.8786983706045,
+            "y": 409.0540274232389,
+            "value": 1
+          },
+          {
+            "id": 8,
+            "type": "flip",
+            "x": 775.3286983705991,
+            "y": 409.0540274232389,
+            "value": 1
+          },
+          {
+            "id": 9,
+            "type": "flip",
+            "x": 957.4120317039368,
+            "y": 399.4706940899056,
+            "value": 1
+          },
+          {
+            "id": 10,
+            "type": "flip",
+            "x": 1145.8286983705993,
+            "y": 399.4706940899056,
+            "value": 1
+          }
+        ]
+      },
+      "causal": null
+    },
+    {
+      "inputIndex": 8,
+      "plannedMs": 7058,
+      "note": "中线回落后翻转",
+      "inputId": "white-column-input-8",
+      "receipts": [
+        {
+          "seq": 15,
+          "type": "pointerdown",
+          "epochMs": 1790349691111
+        },
+        {
+          "seq": 16,
+          "type": "pointerup",
+          "epochMs": 1790349691112
+        }
+      ],
+      "before": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1158.3720317039224,
+          "y": 382.2206940899056,
+          "vx": -136.8,
+          "vy": 280
+        },
+        "anchorId": null,
+        "events": [
+          {
+            "id": 8,
+            "type": "flip",
+            "x": 775.3286983705991,
+            "y": 409.0540274232389,
+            "value": 1
+          },
+          {
+            "id": 9,
+            "type": "flip",
+            "x": 957.4120317039368,
+            "y": 399.4706940899056,
+            "value": 1
+          },
+          {
+            "id": 10,
+            "type": "flip",
+            "x": 1145.8286983705993,
+            "y": 399.4706940899056,
+            "value": 1
+          },
+          {
+            "id": 11,
+            "type": "bounce",
+            "x": 1227.9120317039285,
+            "y": 316.13736075657226,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "body",
+            "normalX": -1,
+            "normalY": 0
+          }
+        ]
+      },
+      "after": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1157.4720317039214,
+          "y": 377.8456940899056,
+          "vx": 73.19999999999999,
+          "vy": -270
+        },
+        "anchorId": null,
+        "events": [
+          {
+            "id": 7,
+            "type": "flip",
+            "x": 590.8786983706045,
+            "y": 409.0540274232389,
+            "value": 1
+          },
+          {
+            "id": 8,
+            "type": "flip",
+            "x": 775.3286983705991,
+            "y": 409.0540274232389,
+            "value": 1
+          },
+          {
+            "id": 9,
+            "type": "flip",
+            "x": 957.4120317039368,
+            "y": 399.4706940899056,
+            "value": 1
+          },
+          {
+            "id": 10,
+            "type": "flip",
+            "x": 1145.8286983705993,
+            "y": 399.4706940899056,
+            "value": 1
+          },
+          {
+            "id": 11,
+            "type": "bounce",
+            "x": 1227.9120317039285,
+            "y": 316.13736075657226,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "body",
+            "normalX": -1,
+            "normalY": 0
+          },
+          {
+            "id": 12,
+            "type": "flip",
+            "x": 1153.812031703922,
+            "y": 391.9706940899056,
+            "value": 1
+          }
+        ]
+      },
+      "causal": null
+    },
+    {
+      "inputIndex": 9,
+      "plannedMs": 8042,
+      "note": "接近白柱区域，等待画面中的锚定/停住反馈",
+      "inputId": "white-column-input-9",
+      "receipts": [
+        {
+          "seq": 17,
+          "type": "pointerdown",
+          "epochMs": 1790349692093.5
+        },
+        {
+          "seq": 18,
+          "type": "pointerup",
+          "epochMs": 1790349692094.7002
+        }
+      ],
+      "before": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1208.2992317039113,
+          "y": 377.8456940899056,
+          "vx": -52.70399999999999,
+          "vy": 265
+        },
+        "anchorId": null,
+        "events": [
+          {
+            "id": 10,
+            "type": "flip",
+            "x": 1145.8286983705993,
+            "y": 399.4706940899056,
+            "value": 1
+          },
+          {
+            "id": 11,
+            "type": "bounce",
+            "x": 1227.9120317039285,
+            "y": 316.13736075657226,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "body",
+            "normalX": -1,
+            "normalY": 0
+          },
+          {
+            "id": 12,
+            "type": "flip",
+            "x": 1153.812031703922,
+            "y": 391.9706940899056,
+            "value": 1
+          },
+          {
+            "id": 13,
+            "type": "bounce",
+            "x": 1212.2520317039116,
+            "y": 359.4706940899056,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "handle",
+            "normalX": -1,
+            "normalY": 0
+          }
+        ]
+      },
+      "after": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1213.968031703911,
+          "y": 375.38736075657226,
+          "vx": 157.296,
+          "vy": -270
+        },
+        "anchorId": null,
+        "events": [
+          {
+            "id": 9,
+            "type": "flip",
+            "x": 957.4120317039368,
+            "y": 399.4706940899056,
+            "value": 1
+          },
+          {
+            "id": 10,
+            "type": "flip",
+            "x": 1145.8286983705993,
+            "y": 399.4706940899056,
+            "value": 1
+          },
+          {
+            "id": 11,
+            "type": "bounce",
+            "x": 1227.9120317039285,
+            "y": 316.13736075657226,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "body",
+            "normalX": -1,
+            "normalY": 0
+          },
+          {
+            "id": 12,
+            "type": "flip",
+            "x": 1153.812031703922,
+            "y": 391.9706940899056,
+            "value": 1
+          },
+          {
+            "id": 13,
+            "type": "bounce",
+            "x": 1212.2520317039116,
+            "y": 359.4706940899056,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "handle",
+            "normalX": -1,
+            "normalY": 0
+          },
+          {
+            "id": 14,
+            "type": "flip",
+            "x": 1206.1032317039112,
+            "y": 389.51236075657226,
+            "value": 1
+          }
+        ]
+      },
+      "causal": null
+    },
+    {
+      "inputIndex": 10,
+      "plannedMs": 9042,
+      "note": "看到白柱接触并刀具停住后等待稳定",
+      "inputId": "white-column-input-10",
+      "receipts": [
+        {
+          "seq": 19,
+          "type": "pointerdown",
+          "epochMs": 1790349693092.1
+        },
+        {
+          "seq": 20,
+          "type": "pointerup",
+          "epochMs": 1790349693093.2002
+        }
+      ],
+      "before": {
+        "phase": "ordinary",
+        "status": "anchored",
+        "player": {
+          "x": 1216.589631703911,
+          "y": 371.01236075657226,
+          "vx": 0,
+          "vy": 0
+        },
+        "anchorId": "white-column",
+        "events": [
+          {
+            "id": 12,
+            "type": "flip",
+            "x": 1153.812031703922,
+            "y": 391.9706940899056,
+            "value": 1
+          },
+          {
+            "id": 13,
+            "type": "bounce",
+            "x": 1212.2520317039116,
+            "y": 359.4706940899056,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "handle",
+            "normalX": -1,
+            "normalY": 0
+          },
+          {
+            "id": 14,
+            "type": "flip",
+            "x": 1206.1032317039112,
+            "y": 389.51236075657226,
+            "value": 1
+          },
+          {
+            "id": 15,
+            "type": "anchor",
+            "x": 1248.6065990539505,
+            "y": 350.5449769055152,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "tip",
+            "normalX": -1,
+            "normalY": 0
+          }
+        ]
+      },
+      "after": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1224.089631703911,
+          "y": 356.88736075657226,
+          "vx": 150,
+          "vy": -270
+        },
+        "anchorId": null,
+        "events": [
+          {
+            "id": 11,
+            "type": "bounce",
+            "x": 1227.9120317039285,
+            "y": 316.13736075657226,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "body",
+            "normalX": -1,
+            "normalY": 0
+          },
+          {
+            "id": 12,
+            "type": "flip",
+            "x": 1153.812031703922,
+            "y": 391.9706940899056,
+            "value": 1
+          },
+          {
+            "id": 13,
+            "type": "bounce",
+            "x": 1212.2520317039116,
+            "y": 359.4706940899056,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "handle",
+            "normalX": -1,
+            "normalY": 0
+          },
+          {
+            "id": 14,
+            "type": "flip",
+            "x": 1206.1032317039112,
+            "y": 389.51236075657226,
+            "value": 1
+          },
+          {
+            "id": 15,
+            "type": "anchor",
+            "x": 1248.6065990539505,
+            "y": 350.5449769055152,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "tip",
+            "normalX": -1,
+            "normalY": 0
+          },
+          {
+            "id": 16,
+            "type": "launch",
+            "x": 1216.589631703911,
+            "y": 371.01236075657226,
+            "value": 1
+          }
+        ]
+      },
+      "causal": null
+    },
+    {
+      "inputIndex": 11,
+      "plannedMs": 9808,
+      "note": "只在白柱上看见刀具已锚定后点击一次释放",
+      "inputId": "white-column-input-11",
+      "receipts": [
+        {
+          "seq": 21,
+          "type": "pointerdown",
+          "epochMs": 1790349693894.9001
+        },
+        {
+          "seq": 22,
+          "type": "pointerup",
+          "epochMs": 1790349693896.2002
+        }
+      ],
+      "before": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1228.2562983705727,
+          "y": 242.59569408990563,
+          "vx": -20,
+          "vy": 5
+        },
+        "anchorId": null,
+        "events": [
+          {
+            "id": 13,
+            "type": "bounce",
+            "x": 1212.2520317039116,
+            "y": 359.4706940899056,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "handle",
+            "normalX": -1,
+            "normalY": 0
+          },
+          {
+            "id": 14,
+            "type": "flip",
+            "x": 1206.1032317039112,
+            "y": 389.51236075657226,
+            "value": 1
+          },
+          {
+            "id": 15,
+            "type": "anchor",
+            "x": 1248.6065990539505,
+            "y": 350.5449769055152,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "tip",
+            "normalX": -1,
+            "normalY": 0
+          },
+          {
+            "id": 16,
+            "type": "launch",
+            "x": 1216.589631703911,
+            "y": 371.01236075657226,
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1239.422965037238,
+          "y": 215.0123607565723,
+          "vx": 190,
+          "vy": -430
+        },
+        "anchorId": null,
+        "events": [
+          {
+            "id": 12,
+            "type": "flip",
+            "x": 1153.812031703922,
+            "y": 391.9706940899056,
+            "value": 1
+          },
+          {
+            "id": 13,
+            "type": "bounce",
+            "x": 1212.2520317039116,
+            "y": 359.4706940899056,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "handle",
+            "normalX": -1,
+            "normalY": 0
+          },
+          {
+            "id": 14,
+            "type": "flip",
+            "x": 1206.1032317039112,
+            "y": 389.51236075657226,
+            "value": 1
+          },
+          {
+            "id": 15,
+            "type": "anchor",
+            "x": 1248.6065990539505,
+            "y": 350.5449769055152,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "tip",
+            "normalX": -1,
+            "normalY": 0
+          },
+          {
+            "id": 16,
+            "type": "launch",
+            "x": 1216.589631703911,
+            "y": 371.01236075657226,
+            "value": 1
+          },
+          {
+            "id": 17,
+            "type": "flip",
+            "x": 1226.756298370572,
+            "y": 244.84569408990563,
+            "value": 1
+          }
+        ]
+      },
+      "causal": {
+        "inputId": "white-column-input-11",
+        "before": {
+          "phase": "ordinary",
+          "status": "airborne",
+          "finishPhase": "idle",
+          "player": {
+            "x": 1226.756298370572,
+            "y": 244.84569408990563,
+            "vx": -20,
+            "vy": 50
+          },
+          "anchorId": null,
+          "events": [
+            {
+              "id": 9,
+              "type": "flip",
+              "x": 957.4120317039368,
+              "y": 399.4706940899056,
+              "value": 1
+            },
+            {
+              "id": 10,
+              "type": "flip",
+              "x": 1145.8286983705993,
+              "y": 399.4706940899056,
+              "value": 1
+            },
+            {
+              "id": 11,
+              "type": "bounce",
+              "x": 1227.9120317039285,
+              "y": 316.13736075657226,
+              "value": 1,
+              "targetId": "white-column",
+              "contactPart": "body",
+              "normalX": -1,
+              "normalY": 0
+            },
+            {
+              "id": 12,
+              "type": "flip",
+              "x": 1153.812031703922,
+              "y": 391.9706940899056,
+              "value": 1
+            },
+            {
+              "id": 13,
+              "type": "bounce",
+              "x": 1212.2520317039116,
+              "y": 359.4706940899056,
+              "value": 1,
+              "targetId": "white-column",
+              "contactPart": "handle",
+              "normalX": -1,
+              "normalY": 0
+            },
+            {
+              "id": 14,
+              "type": "flip",
+              "x": 1206.1032317039112,
+              "y": 389.51236075657226,
+              "value": 1
+            },
+            {
+              "id": 15,
+              "type": "anchor",
+              "x": 1248.6065990539505,
+              "y": 350.5449769055152,
+              "value": 1,
+              "targetId": "white-column",
+              "contactPart": "tip",
+              "normalX": -1,
+              "normalY": 0
+            },
+            {
+              "id": 16,
+              "type": "launch",
+              "x": 1216.589631703911,
+              "y": 371.01236075657226,
+              "value": 1
+            }
+          ],
+          "eventCount": 16
+        },
+        "epochMs": 1790349693895,
+        "after": {
+          "phase": "ordinary",
+          "status": "airborne",
+          "finishPhase": "idle",
+          "player": {
+            "x": 1226.756298370572,
+            "y": 244.84569408990563,
+            "vx": 190,
+            "vy": -470
+          },
+          "anchorId": null,
+          "events": [
+            {
+              "id": 10,
+              "type": "flip",
+              "x": 1145.8286983705993,
+              "y": 399.4706940899056,
+              "value": 1
+            },
+            {
+              "id": 11,
+              "type": "bounce",
+              "x": 1227.9120317039285,
+              "y": 316.13736075657226,
+              "value": 1,
+              "targetId": "white-column",
+              "contactPart": "body",
+              "normalX": -1,
+              "normalY": 0
+            },
+            {
+              "id": 12,
+              "type": "flip",
+              "x": 1153.812031703922,
+              "y": 391.9706940899056,
+              "value": 1
+            },
+            {
+              "id": 13,
+              "type": "bounce",
+              "x": 1212.2520317039116,
+              "y": 359.4706940899056,
+              "value": 1,
+              "targetId": "white-column",
+              "contactPart": "handle",
+              "normalX": -1,
+              "normalY": 0
+            },
+            {
+              "id": 14,
+              "type": "flip",
+              "x": 1206.1032317039112,
+              "y": 389.51236075657226,
+              "value": 1
+            },
+            {
+              "id": 15,
+              "type": "anchor",
+              "x": 1248.6065990539505,
+              "y": 350.5449769055152,
+              "value": 1,
+              "targetId": "white-column",
+              "contactPart": "tip",
+              "normalX": -1,
+              "normalY": 0
+            },
+            {
+              "id": 16,
+              "type": "launch",
+              "x": 1216.589631703911,
+              "y": 371.01236075657226,
+              "value": 1
+            },
+            {
+              "id": 17,
+              "type": "flip",
+              "x": 1226.756298370572,
+              "y": 244.84569408990563,
+              "value": 1
+            }
+          ],
+          "eventCount": 17
+        },
+        "handlerEpochMs": 1790349693895.9001
+      }
+    }
+  ],
+  "observedAfterWait": {
+    "phase": "ordinary",
+    "status": "airborne",
+    "player": {
+      "x": 1421.5062983705627,
+      "y": 80.84569408990563,
+      "vx": 190,
+      "vy": 145
+    },
+    "anchorId": null,
+    "events": [
+      {
+        "id": 10,
+        "type": "flip",
+        "x": 1145.8286983705993,
+        "y": 399.4706940899056,
+        "value": 1
+      },
+      {
+        "id": 11,
+        "type": "bounce",
+        "x": 1227.9120317039285,
+        "y": 316.13736075657226,
+        "value": 1,
+        "targetId": "white-column",
+        "contactPart": "body",
+        "normalX": -1,
+        "normalY": 0
+      },
+      {
+        "id": 12,
+        "type": "flip",
+        "x": 1153.812031703922,
+        "y": 391.9706940899056,
+        "value": 1
+      },
+      {
+        "id": 13,
+        "type": "bounce",
+        "x": 1212.2520317039116,
+        "y": 359.4706940899056,
+        "value": 1,
+        "targetId": "white-column",
+        "contactPart": "handle",
+        "normalX": -1,
+        "normalY": 0
+      },
+      {
+        "id": 14,
+        "type": "flip",
+        "x": 1206.1032317039112,
+        "y": 389.51236075657226,
+        "value": 1
+      },
+      {
+        "id": 15,
+        "type": "anchor",
+        "x": 1248.6065990539505,
+        "y": 350.5449769055152,
+        "value": 1,
+        "targetId": "white-column",
+        "contactPart": "tip",
+        "normalX": -1,
+        "normalY": 0
+      },
+      {
+        "id": 16,
+        "type": "launch",
+        "x": 1216.589631703911,
+        "y": 371.01236075657226,
+        "value": 1
+      },
+      {
+        "id": 17,
+        "type": "flip",
+        "x": 1226.756298370572,
+        "y": 244.84569408990563,
+        "value": 1
+      }
+    ]
+  },
+  "errors": [],
+  "evidence": [
+    "r2-natural/bonus-white-column-visible-v01/ready.png",
+    "r2-natural/bonus-white-column-visible-v01/after-white-column-release.png",
+    "r2-natural/bonus-white-column-visible-v01/after-release-observation.png"
+  ]
+}

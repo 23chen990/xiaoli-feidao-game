@@ -1,0 +1,1362 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01R2NaturalAcceptance",
+  "scriptVersion": "B01-R2-acceptance-v2.4",
+  "scriptSha256": "09f9a751a780dd74bee04660c86917b4c972caad32b97ee2bdf0315e58197645",
+  "runId": "444240bd-3b63-47e3-96de-ac8b9746442b",
+  "command": "/usr/local/bin/node /Users/kker/Documents/ChatGPT/xiaoli-feidao-game-b01/evidence/b01-runtime-flow/qa-natural-r2.mjs",
+  "environmentVariables": {
+    "SLICE_B01_URL": null,
+    "R2_ORDINARY_ONLY": null,
+    "R2_BONUS_ONLY": "1",
+    "R2_START_DELAY_MS": null,
+    "R2_A_TAPS_MS": null,
+    "R2_EVIDENCE_DIR": "r2-natural/bonus-1100-formal-v01",
+    "R2_REPORT_PATH": "./r2-bonus-1100-formal-v01.json",
+    "R2_CONSOLE_REPORT_PATH": "./r2-bonus-1100-formal-v01-console-errors.json"
+  },
+  "targetGame": "Slice Master / 小李飞刀",
+  "workspace": "game/prototype-a",
+  "sourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "buildSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+  "servedBuildSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+  "servedBuildStatus": 200,
+  "baseUrl": "http://127.0.0.1:4175/",
+  "environment": {
+    "node": "v24.14.0",
+    "platform": "darwin",
+    "browser": "Playwright Chromium headless"
+  },
+  "freshContexts": true,
+  "stateInjection": false,
+  "debugApiCalled": false,
+  "classificationPolicy": {
+    "targetCheckpointMissing": "NOT_RUN",
+    "reachedCheckpointAssertionViolation": "FAIL",
+    "browserOrToolFailure": "BLOCKED",
+    "validObservationRequiredForPass": true
+  },
+  "results": {
+    "ordinary": {
+      "id": "A-ordinary-1100x720",
+      "runId": "fe95aa45-90d8-4bb1-97ab-b29043a7b8ea",
+      "contextId": null,
+      "viewport": "1100x720",
+      "targetReached": false,
+      "result": "NOT_RUN",
+      "rawOutcome": "ordinary-checkpoint-not-executed-by-bonus-only-run",
+      "validObservation": false,
+      "allAssertionsPass": false,
+      "checks": [],
+      "evidence": []
+    },
+    "bonus390": {
+      "id": "B-bonus-390x844",
+      "runId": "45abd6fe-1775-4f14-adf4-ad8b1fc63bfe",
+      "contextId": null,
+      "viewport": "390x844",
+      "targetReached": false,
+      "result": "NOT_RUN",
+      "rawOutcome": "bonus-checkpoint-not-executed-by-ordinary-only-run",
+      "validObservation": false,
+      "requiredCheckpoint": "ready→natural phase=bonus entry→normal input received→phase remains bonus with new launch/flip/cut response",
+      "failureStage": "ordinary-focused-run-deferred-bonus",
+      "entered": null,
+      "responsive": null,
+      "dispatches": [],
+      "assertionFailure": null,
+      "assertionFailureObserved": false,
+      "environmentFailure": null,
+      "unknownFailure": null,
+      "rawError": null,
+      "consoleErrors": [],
+      "evidence": []
+    },
+    "bonus1100": {
+      "id": "B-bonus-1100x720",
+      "runId": "122f9c0d-d5ce-4e42-9c5a-76d5854d3a7c",
+      "contextId": "fc7c786e-32d4-42b2-9774-4990ca87bf48",
+      "viewport": "1100x720",
+      "inputMode": "fixed visible canvas mouse events; no per-input screenshots",
+      "fixedScheduleMs": [
+        0,
+        1033,
+        2017,
+        3017,
+        4017,
+        5000,
+        5983,
+        6983,
+        7967,
+        8967,
+        9733,
+        9917,
+        10317,
+        11633,
+        12633,
+        13667,
+        18267,
+        19267,
+        20250,
+        20783,
+        21450,
+        22733,
+        23733,
+        24717,
+        25717,
+        26700,
+        27700,
+        27767
+      ],
+      "targetReached": false,
+      "result": "NOT_RUN",
+      "rawOutcome": "ordinary-terminal-failed-before-target",
+      "validObservation": true,
+      "allAssertionsPass": true,
+      "requiredCheckpoint": "ready→natural phase=bonus entry→normal input received→phase remains bonus with new causal launch/flip response",
+      "failureStage": "ordinary-play-before-bonus",
+      "entered": null,
+      "responsive": null,
+      "dispatches": [
+        {
+          "inputId": "B-bonus-1100x720-input-1",
+          "plannedMs": 0,
+          "sendStartMs": 200,
+          "sendEndMs": 554,
+          "sendStartEpochMs": 1790346679374,
+          "received": [
+            {
+              "seq": 1,
+              "type": "pointerdown",
+              "pointerType": "mouse",
+              "clientX": 550,
+              "clientY": 518.4000244140625,
+              "timeMs": 1469.2999999998137,
+              "epochMs": 1790346679393.4,
+              "inputId": "B-bonus-1100x720-input-1"
+            },
+            {
+              "seq": 2,
+              "type": "pointerup",
+              "pointerType": "mouse",
+              "clientX": 550,
+              "clientY": 518.4000244140625,
+              "timeMs": 1755.5999999996275,
+              "epochMs": 1790346679679.5,
+              "inputId": "B-bonus-1100x720-input-1"
+            }
+          ],
+          "receiptBeforeLength": 0,
+          "receiptAfterLength": 2,
+          "inputReceiptObserved": true,
+          "before": {
+            "phase": "ordinary",
+            "status": "ready",
+            "failReason": null,
+            "finishPhase": "idle",
+            "finishGateId": null,
+            "finishSelection": null,
+            "levelNumber": 1,
+            "elapsed": 0,
+            "worldTime": 1.2583333333333313,
+            "cuts": 0,
+            "bonusConsumed": false,
+            "player": {
+              "x": 120,
+              "y": 420,
+              "vx": 0,
+              "vy": 0,
+              "angle": -0.35,
+              "angularVelocity": 0
+            },
+            "events": [],
+            "eventCount": 0
+          },
+          "after": {
+            "phase": "ordinary",
+            "status": "airborne",
+            "failReason": null,
+            "finishPhase": "idle",
+            "finishGateId": null,
+            "finishSelection": null,
+            "levelNumber": 1,
+            "elapsed": 0.33333333333333354,
+            "worldTime": 1.6249999999999967,
+            "cuts": 0,
+            "bonusConsumed": false,
+            "player": {
+              "x": 170,
+              "y": 354.1666666666667,
+              "vx": 150,
+              "vy": -100,
+              "angle": 2.5812829548545166,
+              "angularVelocity": 8.090158837308923
+            },
+            "events": [
+              {
+                "id": 1,
+                "type": "launch",
+                "x": 120,
+                "y": 420,
+                "value": 1
+              }
+            ],
+            "eventCount": 1
+          },
+          "eventsAfterInput": [
+            {
+              "id": 1,
+              "type": "launch",
+              "x": 120,
+              "y": 420,
+              "value": 1
+            }
+          ],
+          "response": {
+            "newEvents": [
+              {
+                "id": 1,
+                "type": "launch",
+                "x": 120,
+                "y": 420,
+                "value": 1
+              }
+            ],
+            "newActionEvents": [
+              {
+                "id": 1,
+                "type": "launch",
+                "x": 120,
+                "y": 420,
+                "value": 1
+              }
+            ],
+            "actionTypes": [
+              "launch"
+            ],
+            "directCausalEvents": [],
+            "hasCausalAction": false,
+            "automaticCutOnly": false,
+            "hasAction": true,
+            "motionOnly": false,
+            "causalEvidence": null,
+            "inputId": "B-bonus-1100x720-input-1"
+          },
+          "inputEffective": true,
+          "causalRequired": false
+        },
+        {
+          "inputId": "B-bonus-1100x720-input-2",
+          "plannedMs": 1033,
+          "sendStartMs": 1079,
+          "sendEndMs": 1192,
+          "sendStartEpochMs": 1790346680253,
+          "received": [
+            {
+              "seq": 3,
+              "type": "pointerdown",
+              "pointerType": "mouse",
+              "clientX": 550,
+              "clientY": 518.4000244140625,
+              "timeMs": 2350.6999999997206,
+              "epochMs": 1790346680274.5999,
+              "inputId": "B-bonus-1100x720-input-2"
+            },
+            {
+              "seq": 4,
+              "type": "pointerup",
+              "pointerType": "mouse",
+              "clientX": 550,
+              "clientY": 518.4000244140625,
+              "timeMs": 2393.1999999997206,
+              "epochMs": 1790346680317.0999,
+              "inputId": "B-bonus-1100x720-input-2"
+            }
+          ],
+          "receiptBeforeLength": 2,
+          "receiptAfterLength": 4,
+          "inputReceiptObserved": true,
+          "before": {
+            "phase": "ordinary",
+            "status": "airborne",
+            "failReason": null,
+            "finishPhase": "idle",
+            "finishGateId": null,
+            "finishSelection": null,
+            "levelNumber": 1,
+            "elapsed": 0.8333333333333328,
+            "worldTime": 2.124999999999995,
+            "cuts": 1,
+            "bonusConsumed": false,
+            "player": {
+              "x": 245,
+              "y": 380.4166666666667,
+              "vx": 150,
+              "vy": 200,
+              "angle": 6.183120526470466,
+              "angularVelocity": 6.357805138263358
+            },
+            "events": [
+              {
+                "id": 1,
+                "type": "launch",
+                "x": 120,
+                "y": 420,
+                "value": 1
+              },
+              {
+                "id": 2,
+                "type": "cut",
+                "x": 203,
+                "y": 312,
+                "value": 1,
+                "targetId": "rune-1",
+                "contactPart": "edge"
+              }
+            ],
+            "eventCount": 2
+          },
+          "after": {
+            "phase": "ordinary",
+            "status": "airborne",
+            "failReason": null,
+            "finishPhase": "idle",
+            "finishGateId": null,
+            "finishSelection": null,
+            "levelNumber": 1,
+            "elapsed": 0.974999999999999,
+            "worldTime": 2.2666666666666613,
+            "cuts": 1,
+            "bonusConsumed": false,
+            "player": {
+              "x": 267.3500000000002,
+              "y": 366.5416666666667,
+              "vx": 162,
+              "vy": -245,
+              "angle": 5.554401043560183,
+              "angularVelocity": -10.046238771149232
+            },
+            "events": [
+              {
+                "id": 1,
+                "type": "launch",
+                "x": 120,
+                "y": 420,
+                "value": 1
+              },
+              {
+                "id": 2,
+                "type": "cut",
+                "x": 203,
+                "y": 312,
+                "value": 1,
+                "targetId": "rune-1",
+                "contactPart": "edge"
+              },
+              {
+                "id": 3,
+                "type": "flip",
+                "x": 252.5,
+                "y": 391.2916666666667,
+                "value": 1
+              }
+            ],
+            "eventCount": 3
+          },
+          "eventsAfterInput": [
+            {
+              "id": 3,
+              "type": "flip",
+              "x": 252.5,
+              "y": 391.2916666666667,
+              "value": 1
+            }
+          ],
+          "response": {
+            "newEvents": [
+              {
+                "id": 3,
+                "type": "flip",
+                "x": 252.5,
+                "y": 391.2916666666667,
+                "value": 1
+              }
+            ],
+            "newActionEvents": [
+              {
+                "id": 3,
+                "type": "flip",
+                "x": 252.5,
+                "y": 391.2916666666667,
+                "value": 1
+              }
+            ],
+            "actionTypes": [
+              "flip"
+            ],
+            "directCausalEvents": [],
+            "hasCausalAction": false,
+            "automaticCutOnly": false,
+            "hasAction": true,
+            "motionOnly": false,
+            "causalEvidence": null,
+            "inputId": "B-bonus-1100x720-input-2"
+          },
+          "inputEffective": true,
+          "causalRequired": false
+        },
+        {
+          "inputId": "B-bonus-1100x720-input-3",
+          "plannedMs": 2017,
+          "sendStartMs": 2049,
+          "sendEndMs": 2163,
+          "sendStartEpochMs": 1790346681223,
+          "received": [
+            {
+              "seq": 5,
+              "type": "pointerdown",
+              "pointerType": "mouse",
+              "clientX": 550,
+              "clientY": 518.4000244140625,
+              "timeMs": 3317.0999999996275,
+              "epochMs": 1790346681241,
+              "inputId": "B-bonus-1100x720-input-3"
+            },
+            {
+              "seq": 6,
+              "type": "pointerup",
+              "pointerType": "mouse",
+              "clientX": 550,
+              "clientY": 518.4000244140625,
+              "timeMs": 3356.2999999998137,
+              "epochMs": 1790346681280.2,
+              "inputId": "B-bonus-1100x720-input-3"
+            }
+          ],
+          "receiptBeforeLength": 4,
+          "receiptAfterLength": 6,
+          "inputReceiptObserved": true,
+          "before": {
+            "phase": "ordinary",
+            "status": "airborne",
+            "failReason": null,
+            "finishPhase": "idle",
+            "finishGateId": null,
+            "finishSelection": null,
+            "levelNumber": 1,
+            "elapsed": 1.8083333333333294,
+            "worldTime": 3.0999999999999917,
+            "cuts": 1,
+            "bonusConsumed": false,
+            "player": {
+              "x": 402.35000000000247,
+              "y": 372.7916666666667,
+              "vx": 162,
+              "vy": 255,
+              "angle": -1.354366191136498,
+              "angularVelocity": -6.723371418887699
+            },
+            "events": [
+              {
+                "id": 1,
+                "type": "launch",
+                "x": 120,
+                "y": 420,
+                "value": 1
+              },
+              {
+                "id": 2,
+                "type": "cut",
+                "x": 203,
+                "y": 312,
+                "value": 1,
+                "targetId": "rune-1",
+                "contactPart": "edge"
+              },
+              {
+                "id": 3,
+                "type": "flip",
+                "x": 252.5,
+                "y": 391.2916666666667,
+                "value": 1
+              }
+            ],
+            "eventCount": 3
+          },
+          "after": {
+            "phase": "ordinary",
+            "status": "airborne",
+            "failReason": null,
+            "finishPhase": "idle",
+            "finishGateId": null,
+            "finishSelection": null,
+            "levelNumber": 1,
+            "elapsed": 1.933333333333329,
+            "worldTime": 3.224999999999991,
+            "cuts": 1,
+            "bonusConsumed": false,
+            "player": {
+              "x": 423.5000000000025,
+              "y": 365.7916666666667,
+              "vx": 174,
+              "vy": -255,
+              "angle": -0.9121922085765746,
+              "angularVelocity": 10.127256825755275
+            },
+            "events": [
+              {
+                "id": 1,
+                "type": "launch",
+                "x": 120,
+                "y": 420,
+                "value": 1
+              },
+              {
+                "id": 2,
+                "type": "cut",
+                "x": 203,
+                "y": 312,
+                "value": 1,
+                "targetId": "rune-1",
+                "contactPart": "edge"
+              },
+              {
+                "id": 3,
+                "type": "flip",
+                "x": 252.5,
+                "y": 391.2916666666667,
+                "value": 1
+              },
+              {
+                "id": 4,
+                "type": "flip",
+                "x": 410.4500000000026,
+                "y": 386.4166666666667,
+                "value": 1
+              }
+            ],
+            "eventCount": 4
+          },
+          "eventsAfterInput": [
+            {
+              "id": 4,
+              "type": "flip",
+              "x": 410.4500000000026,
+              "y": 386.4166666666667,
+              "value": 1
+            }
+          ],
+          "response": {
+            "newEvents": [
+              {
+                "id": 4,
+                "type": "flip",
+                "x": 410.4500000000026,
+                "y": 386.4166666666667,
+                "value": 1
+              }
+            ],
+            "newActionEvents": [
+              {
+                "id": 4,
+                "type": "flip",
+                "x": 410.4500000000026,
+                "y": 386.4166666666667,
+                "value": 1
+              }
+            ],
+            "actionTypes": [
+              "flip"
+            ],
+            "directCausalEvents": [],
+            "hasCausalAction": false,
+            "automaticCutOnly": false,
+            "hasAction": true,
+            "motionOnly": false,
+            "causalEvidence": null,
+            "inputId": "B-bonus-1100x720-input-3"
+          },
+          "inputEffective": true,
+          "causalRequired": false
+        },
+        {
+          "inputId": "B-bonus-1100x720-input-4",
+          "plannedMs": 3017,
+          "sendStartMs": 3049,
+          "sendEndMs": 3153,
+          "sendStartEpochMs": 1790346682223,
+          "received": [
+            {
+              "seq": 7,
+              "type": "pointerdown",
+              "pointerType": "mouse",
+              "clientX": 550,
+              "clientY": 518.4000244140625,
+              "timeMs": 4317.199999999721,
+              "epochMs": 1790346682241.0999,
+              "inputId": "B-bonus-1100x720-input-4"
+            },
+            {
+              "seq": 8,
+              "type": "pointerup",
+              "pointerType": "mouse",
+              "clientX": 550,
+              "clientY": 518.4000244140625,
+              "timeMs": 4357.5,
+              "epochMs": 1790346682281.4,
+              "inputId": "B-bonus-1100x720-input-4"
+            }
+          ],
+          "receiptBeforeLength": 6,
+          "receiptAfterLength": 8,
+          "inputReceiptObserved": true,
+          "before": {
+            "phase": "ordinary",
+            "status": "airborne",
+            "failReason": null,
+            "finishPhase": "idle",
+            "finishGateId": null,
+            "finishSelection": null,
+            "levelNumber": 1,
+            "elapsed": 2.8166666666666593,
+            "worldTime": 4.108333333333327,
+            "cuts": 1,
+            "bonusConsumed": false,
+            "player": {
+              "x": 577.2000000000038,
+              "y": 387.2766000000002,
+              "vx": 174,
+              "vy": -110.96799999999996,
+              "angle": -0.37352472263122655,
+              "angularVelocity": 7.063515546799386
+            },
+            "events": [
+              {
+                "id": 1,
+                "type": "launch",
+                "x": 120,
+                "y": 420,
+                "value": 1
+              },
+              {
+                "id": 2,
+                "type": "cut",
+                "x": 203,
+                "y": 312,
+                "value": 1,
+                "targetId": "rune-1",
+                "contactPart": "edge"
+              },
+              {
+                "id": 3,
+                "type": "flip",
+                "x": 252.5,
+                "y": 391.2916666666667,
+                "value": 1
+              },
+              {
+                "id": 4,
+                "type": "flip",
+                "x": 410.4500000000026,
+                "y": 386.4166666666667,
+                "value": 1
+              },
+              {
+                "id": 5,
+                "type": "bounce",
+                "x": 455.40000000000225,
+                "y": 334.58333333333337,
+                "value": 1,
+                "targetId": "white-branch",
+                "contactPart": "handle",
+                "normalX": 0,
+                "normalY": 1
+              },
+              {
+                "id": 6,
+                "type": "bounce",
+                "x": 532.2500000000024,
+                "y": 435.3183333333336,
+                "value": 1,
+                "targetId": "level1-runway-main",
+                "contactPart": "handle",
+                "normalX": 0,
+                "normalY": -1
+              }
+            ],
+            "eventCount": 6
+          },
+          "after": {
+            "phase": "ordinary",
+            "status": "airborne",
+            "failReason": null,
+            "finishPhase": "idle",
+            "finishGateId": null,
+            "finishSelection": null,
+            "levelNumber": 1,
+            "elapsed": 2.9083333333333257,
+            "worldTime": 4.199999999999998,
+            "cuts": 2,
+            "bonusConsumed": false,
+            "player": {
+              "x": 593.154864866242,
+              "y": 354.711129806775,
+              "vx": 186,
+              "vy": -575.968,
+              "angle": -0.7446702068959861,
+              "angularVelocity": -10.20892825176943
+            },
+            "events": [
+              {
+                "id": 1,
+                "type": "launch",
+                "x": 120,
+                "y": 420,
+                "value": 1
+              },
+              {
+                "id": 2,
+                "type": "cut",
+                "x": 203,
+                "y": 312,
+                "value": 1,
+                "targetId": "rune-1",
+                "contactPart": "edge"
+              },
+              {
+                "id": 3,
+                "type": "flip",
+                "x": 252.5,
+                "y": 391.2916666666667,
+                "value": 1
+              },
+              {
+                "id": 4,
+                "type": "flip",
+                "x": 410.4500000000026,
+                "y": 386.4166666666667,
+                "value": 1
+              },
+              {
+                "id": 5,
+                "type": "bounce",
+                "x": 455.40000000000225,
+                "y": 334.58333333333337,
+                "value": 1,
+                "targetId": "white-branch",
+                "contactPart": "handle",
+                "normalX": 0,
+                "normalY": 1
+              },
+              {
+                "id": 6,
+                "type": "bounce",
+                "x": 532.2500000000024,
+                "y": 435.3183333333336,
+                "value": 1,
+                "targetId": "level1-runway-main",
+                "contactPart": "handle",
+                "normalX": 0,
+                "normalY": -1
+              },
+              {
+                "id": 7,
+                "type": "flip",
+                "x": 583.000000000004,
+                "y": 383.99433333333354,
+                "value": 1
+              },
+              {
+                "id": 8,
+                "type": "cut",
+                "x": 610,
+                "y": 315,
+                "value": 2,
+                "targetId": "hanging-above",
+                "contactPart": "tip"
+              }
+            ],
+            "eventCount": 8
+          },
+          "eventsAfterInput": [
+            {
+              "id": 7,
+              "type": "flip",
+              "x": 583.000000000004,
+              "y": 383.99433333333354,
+              "value": 1
+            },
+            {
+              "id": 8,
+              "type": "cut",
+              "x": 610,
+              "y": 315,
+              "value": 2,
+              "targetId": "hanging-above",
+              "contactPart": "tip"
+            }
+          ],
+          "response": {
+            "newEvents": [
+              {
+                "id": 7,
+                "type": "flip",
+                "x": 583.000000000004,
+                "y": 383.99433333333354,
+                "value": 1
+              },
+              {
+                "id": 8,
+                "type": "cut",
+                "x": 610,
+                "y": 315,
+                "value": 2,
+                "targetId": "hanging-above",
+                "contactPart": "tip"
+              }
+            ],
+            "newActionEvents": [
+              {
+                "id": 7,
+                "type": "flip",
+                "x": 583.000000000004,
+                "y": 383.99433333333354,
+                "value": 1
+              },
+              {
+                "id": 8,
+                "type": "cut",
+                "x": 610,
+                "y": 315,
+                "value": 2,
+                "targetId": "hanging-above",
+                "contactPart": "tip"
+              }
+            ],
+            "actionTypes": [
+              "flip",
+              "cut"
+            ],
+            "directCausalEvents": [],
+            "hasCausalAction": false,
+            "automaticCutOnly": false,
+            "hasAction": true,
+            "motionOnly": false,
+            "causalEvidence": null,
+            "inputId": "B-bonus-1100x720-input-4"
+          },
+          "inputEffective": true,
+          "causalRequired": false
+        },
+        {
+          "inputId": "B-bonus-1100x720-input-5",
+          "plannedMs": 4017,
+          "sendStartMs": 4046,
+          "sendEndMs": 4148,
+          "sendStartEpochMs": 1790346683220,
+          "received": [
+            {
+              "seq": 9,
+              "type": "pointerdown",
+              "pointerType": "mouse",
+              "clientX": 550,
+              "clientY": 518.4000244140625,
+              "timeMs": 5314,
+              "epochMs": 1790346683237.9,
+              "inputId": "B-bonus-1100x720-input-5"
+            },
+            {
+              "seq": 10,
+              "type": "pointerup",
+              "pointerType": "mouse",
+              "clientX": 550,
+              "clientY": 518.4000244140625,
+              "timeMs": 5352.799999999814,
+              "epochMs": 1790346683276.7,
+              "inputId": "B-bonus-1100x720-input-5"
+            }
+          ],
+          "receiptBeforeLength": 8,
+          "receiptAfterLength": 10,
+          "inputReceiptObserved": true,
+          "before": {
+            "phase": "ordinary",
+            "status": "airborne",
+            "failReason": null,
+            "finishPhase": "idle",
+            "finishGateId": null,
+            "finishSelection": null,
+            "levelNumber": 1,
+            "elapsed": 3.766666666666656,
+            "worldTime": 5.058333333333374,
+            "cuts": 2,
+            "bonusConsumed": false,
+            "player": {
+              "x": 752.8048648662373,
+              "y": 83.50526314010824,
+              "vx": 186,
+              "vy": -60.96799999999996,
+              "angle": -7.935441064279557,
+              "angularVelocity": -6.750427348801524
+            },
+            "events": [
+              {
+                "id": 1,
+                "type": "launch",
+                "x": 120,
+                "y": 420,
+                "value": 1
+              },
+              {
+                "id": 2,
+                "type": "cut",
+                "x": 203,
+                "y": 312,
+                "value": 1,
+                "targetId": "rune-1",
+                "contactPart": "edge"
+              },
+              {
+                "id": 3,
+                "type": "flip",
+                "x": 252.5,
+                "y": 391.2916666666667,
+                "value": 1
+              },
+              {
+                "id": 4,
+                "type": "flip",
+                "x": 410.4500000000026,
+                "y": 386.4166666666667,
+                "value": 1
+              },
+              {
+                "id": 5,
+                "type": "bounce",
+                "x": 455.40000000000225,
+                "y": 334.58333333333337,
+                "value": 1,
+                "targetId": "white-branch",
+                "contactPart": "handle",
+                "normalX": 0,
+                "normalY": 1
+              },
+              {
+                "id": 6,
+                "type": "bounce",
+                "x": 532.2500000000024,
+                "y": 435.3183333333336,
+                "value": 1,
+                "targetId": "level1-runway-main",
+                "contactPart": "handle",
+                "normalX": 0,
+                "normalY": -1
+              },
+              {
+                "id": 7,
+                "type": "flip",
+                "x": 583.000000000004,
+                "y": 383.99433333333354,
+                "value": 1
+              },
+              {
+                "id": 8,
+                "type": "cut",
+                "x": 610,
+                "y": 315,
+                "value": 2,
+                "targetId": "hanging-above",
+                "contactPart": "tip"
+              }
+            ],
+            "eventCount": 8
+          },
+          "after": {
+            "phase": "ordinary",
+            "status": "airborne",
+            "failReason": null,
+            "finishPhase": "idle",
+            "finishGateId": null,
+            "finishSelection": null,
+            "levelNumber": 1,
+            "elapsed": 3.883333333333322,
+            "worldTime": 5.175000000000047,
+            "cuts": 2,
+            "bonusConsumed": false,
+            "player": {
+              "x": 774.8048648662374,
+              "y": 41.767329806774924,
+              "vx": 190,
+              "vy": -510.96799999999996,
+              "angle": -7.43947116387449,
+              "angularVelocity": 10.127256825755275
+            },
+            "events": [
+              {
+                "id": 2,
+                "type": "cut",
+                "x": 203,
+                "y": 312,
+                "value": 1,
+                "targetId": "rune-1",
+                "contactPart": "edge"
+              },
+              {
+                "id": 3,
+                "type": "flip",
+                "x": 252.5,
+                "y": 391.2916666666667,
+                "value": 1
+              },
+              {
+                "id": 4,
+                "type": "flip",
+                "x": 410.4500000000026,
+                "y": 386.4166666666667,
+                "value": 1
+              },
+              {
+                "id": 5,
+                "type": "bounce",
+                "x": 455.40000000000225,
+                "y": 334.58333333333337,
+                "value": 1,
+                "targetId": "white-branch",
+                "contactPart": "handle",
+                "normalX": 0,
+                "normalY": 1
+              },
+              {
+                "id": 6,
+                "type": "bounce",
+                "x": 532.2500000000024,
+                "y": 435.3183333333336,
+                "value": 1,
+                "targetId": "level1-runway-main",
+                "contactPart": "handle",
+                "normalX": 0,
+                "normalY": -1
+              },
+              {
+                "id": 7,
+                "type": "flip",
+                "x": 583.000000000004,
+                "y": 383.99433333333354,
+                "value": 1
+              },
+              {
+                "id": 8,
+                "type": "cut",
+                "x": 610,
+                "y": 315,
+                "value": 2,
+                "targetId": "hanging-above",
+                "contactPart": "tip"
+              },
+              {
+                "id": 9,
+                "type": "flip",
+                "x": 760.554864866237,
+                "y": 81.58992980677492,
+                "value": 1
+              }
+            ],
+            "eventCount": 9
+          },
+          "eventsAfterInput": [
+            {
+              "id": 9,
+              "type": "flip",
+              "x": 760.554864866237,
+              "y": 81.58992980677492,
+              "value": 1
+            }
+          ],
+          "response": {
+            "newEvents": [
+              {
+                "id": 9,
+                "type": "flip",
+                "x": 760.554864866237,
+                "y": 81.58992980677492,
+                "value": 1
+              }
+            ],
+            "newActionEvents": [
+              {
+                "id": 9,
+                "type": "flip",
+                "x": 760.554864866237,
+                "y": 81.58992980677492,
+                "value": 1
+              }
+            ],
+            "actionTypes": [
+              "flip"
+            ],
+            "directCausalEvents": [],
+            "hasCausalAction": false,
+            "automaticCutOnly": false,
+            "hasAction": true,
+            "motionOnly": false,
+            "causalEvidence": null,
+            "inputId": "B-bonus-1100x720-input-5"
+          },
+          "inputEffective": true,
+          "causalRequired": false
+        },
+        {
+          "inputId": "B-bonus-1100x720-input-6",
+          "plannedMs": 5000,
+          "sendStartMs": 5045,
+          "sendEndMs": 5125,
+          "sendStartEpochMs": 1790346684219,
+          "received": [
+            {
+              "seq": 11,
+              "type": "pointerdown",
+              "pointerType": "mouse",
+              "clientX": 550,
+              "clientY": 518.4000244140625,
+              "timeMs": 6312.5,
+              "epochMs": 1790346684236.4,
+              "inputId": "B-bonus-1100x720-input-6"
+            },
+            {
+              "seq": 12,
+              "type": "pointerup",
+              "pointerType": "mouse",
+              "clientX": 550,
+              "clientY": 518.4000244140625,
+              "timeMs": 6332.399999999907,
+              "epochMs": 1790346684256.2998,
+              "inputId": "B-bonus-1100x720-input-6"
+            }
+          ],
+          "receiptBeforeLength": 10,
+          "receiptAfterLength": 12,
+          "inputReceiptObserved": true,
+          "before": {
+            "phase": "ordinary",
+            "status": "failed",
+            "failReason": "fall",
+            "finishPhase": "idle",
+            "finishGateId": null,
+            "finishSelection": null,
+            "levelNumber": 1,
+            "elapsed": 4.341666666666672,
+            "worldTime": 5.633333333333403,
+            "cuts": 2,
+            "bonusConsumed": false,
+            "player": {
+              "x": 861.8881981995728,
+              "y": -128.25967019322502,
+              "vx": 0,
+              "vy": 0,
+              "angle": -3.2663299944060302,
+              "angularVelocity": 8.120126743449925
+            },
+            "events": [
+              {
+                "id": 3,
+                "type": "flip",
+                "x": 252.5,
+                "y": 391.2916666666667,
+                "value": 1
+              },
+              {
+                "id": 4,
+                "type": "flip",
+                "x": 410.4500000000026,
+                "y": 386.4166666666667,
+                "value": 1
+              },
+              {
+                "id": 5,
+                "type": "bounce",
+                "x": 455.40000000000225,
+                "y": 334.58333333333337,
+                "value": 1,
+                "targetId": "white-branch",
+                "contactPart": "handle",
+                "normalX": 0,
+                "normalY": 1
+              },
+              {
+                "id": 6,
+                "type": "bounce",
+                "x": 532.2500000000024,
+                "y": 435.3183333333336,
+                "value": 1,
+                "targetId": "level1-runway-main",
+                "contactPart": "handle",
+                "normalX": 0,
+                "normalY": -1
+              },
+              {
+                "id": 7,
+                "type": "flip",
+                "x": 583.000000000004,
+                "y": 383.99433333333354,
+                "value": 1
+              },
+              {
+                "id": 8,
+                "type": "cut",
+                "x": 610,
+                "y": 315,
+                "value": 2,
+                "targetId": "hanging-above",
+                "contactPart": "tip"
+              },
+              {
+                "id": 9,
+                "type": "flip",
+                "x": 760.554864866237,
+                "y": 81.58992980677492,
+                "value": 1
+              },
+              {
+                "id": 10,
+                "type": "fall",
+                "x": 861.8881981995728,
+                "y": -128.25967019322502,
+                "value": 0
+              }
+            ],
+            "eventCount": 10
+          },
+          "after": {
+            "phase": "ordinary",
+            "status": "failed",
+            "failReason": "fall",
+            "finishPhase": "idle",
+            "finishGateId": null,
+            "finishSelection": null,
+            "levelNumber": 1,
+            "elapsed": 4.341666666666672,
+            "worldTime": 5.633333333333403,
+            "cuts": 2,
+            "bonusConsumed": false,
+            "player": {
+              "x": 861.8881981995728,
+              "y": -128.25967019322502,
+              "vx": 0,
+              "vy": 0,
+              "angle": -3.2663299944060302,
+              "angularVelocity": 8.120126743449925
+            },
+            "events": [
+              {
+                "id": 3,
+                "type": "flip",
+                "x": 252.5,
+                "y": 391.2916666666667,
+                "value": 1
+              },
+              {
+                "id": 4,
+                "type": "flip",
+                "x": 410.4500000000026,
+                "y": 386.4166666666667,
+                "value": 1
+              },
+              {
+                "id": 5,
+                "type": "bounce",
+                "x": 455.40000000000225,
+                "y": 334.58333333333337,
+                "value": 1,
+                "targetId": "white-branch",
+                "contactPart": "handle",
+                "normalX": 0,
+                "normalY": 1
+              },
+              {
+                "id": 6,
+                "type": "bounce",
+                "x": 532.2500000000024,
+                "y": 435.3183333333336,
+                "value": 1,
+                "targetId": "level1-runway-main",
+                "contactPart": "handle",
+                "normalX": 0,
+                "normalY": -1
+              },
+              {
+                "id": 7,
+                "type": "flip",
+                "x": 583.000000000004,
+                "y": 383.99433333333354,
+                "value": 1
+              },
+              {
+                "id": 8,
+                "type": "cut",
+                "x": 610,
+                "y": 315,
+                "value": 2,
+                "targetId": "hanging-above",
+                "contactPart": "tip"
+              },
+              {
+                "id": 9,
+                "type": "flip",
+                "x": 760.554864866237,
+                "y": 81.58992980677492,
+                "value": 1
+              },
+              {
+                "id": 10,
+                "type": "fall",
+                "x": 861.8881981995728,
+                "y": -128.25967019322502,
+                "value": 0
+              }
+            ],
+            "eventCount": 10
+          },
+          "eventsAfterInput": [],
+          "response": {
+            "newEvents": [],
+            "newActionEvents": [],
+            "actionTypes": [],
+            "directCausalEvents": [],
+            "hasCausalAction": false,
+            "automaticCutOnly": false,
+            "hasAction": false,
+            "motionOnly": false,
+            "causalEvidence": null,
+            "inputId": "B-bonus-1100x720-input-6"
+          },
+          "inputEffective": false,
+          "causalRequired": false
+        }
+      ],
+      "documentResponses": [
+        {
+          "available": true,
+          "url": "http://127.0.0.1:4175/",
+          "status": 200,
+          "sha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+          "navigation": "initial-navigation"
+        }
+      ],
+      "assertionFailure": null,
+      "assertionFailureObserved": false,
+      "environmentFailure": null,
+      "unknownFailure": null,
+      "rawError": null,
+      "consoleErrors": [],
+      "evidence": [
+        "r2-natural/bonus-1100-formal-v01/B-bonus-1100x720-ready.png"
+      ]
+    }
+  },
+  "oldR1Mapping": {
+    "r1-formal-ordinary-report.outcome=BLOCKED-before-won": "NOT_RUN",
+    "r1-formal-bonus-report.outcome=BLOCKED-before-bonus": "NOT_RUN",
+    "r1-formal-bonus-report.outcome=NOT_RUN-schedule-ended": "NOT_RUN"
+  },
+  "evidencePolicy": "getState is recorded only for passive checkpoints and response evidence; no internal state drives input; key screenshots are captured outside the click loop."
+}

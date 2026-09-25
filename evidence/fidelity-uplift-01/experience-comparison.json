@@ -1,0 +1,29 @@
+{
+  "id": "FIDELITY-UPLIFT-01",
+  "viewport": {"width": 1100, "height": 720},
+  "baseline": {
+    "source": "37556268ce26332927eb988cd61ac4fac270c741",
+    "buildSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+    "run": "before",
+    "result": "failed at hazard/recovery before finish",
+    "evidence": "evidence/fidelity-uplift-01/before/run.json"
+  },
+  "after": {
+    "source": "working tree based on 37556268",
+    "buildSha256": "ea7605cd85bcb04c202dfa708a7d652a956f2b08a47ee1b671758d3f2e9e2b58",
+    "run": "after",
+    "result": "failed during the opening replay at x≈682 after two cuts; the fixed schedule is not a valid natural success path",
+    "evidence": "evidence/fidelity-uplift-01/after/run.json"
+  },
+  "scheduleMs": [0,1200,2400,3600,4800,6000,7200,8400,9600,10800,12000,13200,14400,15600,16800,18000,19000],
+  "scriptSha256": "e784b96c90d54fc71df3588e34968cec91a900bb",
+  "representativeFrames": {
+    "before": ["before/01-ready.png", "before/02-first-flight.png", "before/03-continuous-cuts.png", "before/04-hazard.png", "before/05-finish.png"],
+    "after": ["after/01-ready.png", "after/02-first-flight.png", "after/03-continuous-cuts.png", "after/04-hazard.png", "after/05-finish.png"]
+  },
+  "notes": [
+    "After first-flight reaches x≈257 versus baseline x≈243 at the same checkpoint.",
+    "The final rerun did not reach the hazard checkpoint, so no finish or natural success claim is made.",
+    "The fixed schedule is retained only as a before/after timing probe; a player-facing route still needs another tuning pass."
+  ]
+}

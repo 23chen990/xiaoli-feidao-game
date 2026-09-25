@@ -1,0 +1,138 @@
+{
+  "artifactType": "B01BonusAcceptanceRecheck",
+  "moduleSha256": "a8ed695bea4f89e0e30939e78daefda576ee52a050e448a51327b4de0adda0bd",
+  "browserRunsPerformed": 0,
+  "sourceScriptVersion": "B01-R2-acceptance-v2.4",
+  "cases": [
+    {
+      "name": "entered-bonus-missing-handler",
+      "responseCheck": {
+        "id": "bonus-input-response",
+        "executed": true,
+        "validObservation": false,
+        "passed": false,
+        "result": "NOT_RUN",
+        "rawOutcome": "bonus-input-observation-invalid",
+        "evidence": {
+          "inputId": "bonus-2",
+          "receiptValid": true,
+          "handlerObservationComplete": false,
+          "directAction": false,
+          "automaticCutOnly": false,
+          "after": {
+            "phase": "bonus"
+          }
+        }
+      },
+      "summary": {
+        "result": "NOT_RUN",
+        "rawOutcome": "bonus-input-observation-invalid",
+        "validObservation": false,
+        "allAssertionsPass": false,
+        "assertionFailure": null
+      }
+    },
+    {
+      "name": "only-previous-input-causal-record",
+      "responseCheck": {
+        "id": "bonus-input-response",
+        "executed": true,
+        "validObservation": false,
+        "passed": false,
+        "result": "NOT_RUN",
+        "rawOutcome": "bonus-input-observation-invalid",
+        "evidence": {
+          "inputId": "bonus-2",
+          "receiptValid": true,
+          "handlerObservationComplete": false,
+          "directAction": true,
+          "automaticCutOnly": false,
+          "after": {
+            "phase": "bonus"
+          }
+        }
+      },
+      "summary": {
+        "result": "NOT_RUN",
+        "rawOutcome": "bonus-input-observation-invalid",
+        "validObservation": false,
+        "allAssertionsPass": false,
+        "assertionFailure": null
+      }
+    },
+    {
+      "name": "product-fail-then-tool-error",
+      "responseCheck": {
+        "id": "bonus-input-response",
+        "executed": true,
+        "validObservation": true,
+        "passed": false,
+        "result": "FAIL",
+        "rawOutcome": "bonus-input-assertion-failure",
+        "evidence": {
+          "inputId": "bonus-2",
+          "receiptValid": true,
+          "handlerObservationComplete": true,
+          "directAction": false,
+          "automaticCutOnly": false,
+          "after": {
+            "phase": "bonus"
+          }
+        }
+      },
+      "summary": {
+        "result": "FAIL",
+        "rawOutcome": "bonus-input-assertion-failure",
+        "validObservation": true,
+        "allAssertionsPass": false,
+        "assertionFailure": "bonus-input-response: bonus-input-assertion-failure"
+      }
+    },
+    {
+      "name": "automatic-cut-only",
+      "responseCheck": {
+        "id": "bonus-input-response",
+        "executed": true,
+        "validObservation": true,
+        "passed": false,
+        "result": "FAIL",
+        "rawOutcome": "bonus-input-assertion-failure",
+        "evidence": {
+          "inputId": "bonus-2",
+          "receiptValid": true,
+          "handlerObservationComplete": true,
+          "directAction": false,
+          "automaticCutOnly": true,
+          "after": {
+            "phase": "bonus"
+          }
+        }
+      },
+      "summary": {
+        "result": "FAIL",
+        "rawOutcome": "bonus-input-assertion-failure",
+        "validObservation": true,
+        "allAssertionsPass": false,
+        "assertionFailure": "bonus-input-response: bonus-input-assertion-failure"
+      }
+    },
+    {
+      "name": "not-entered",
+      "responseCheck": {
+        "id": "bonus-entry",
+        "executed": false,
+        "validObservation": false,
+        "passed": false,
+        "result": "NOT_RUN",
+        "rawOutcome": "bonus-checkpoint-not-executed"
+      },
+      "summary": {
+        "result": "NOT_RUN",
+        "rawOutcome": "bonus-checkpoint-not-executed",
+        "validObservation": false,
+        "allAssertionsPass": false,
+        "assertionFailure": null
+      }
+    }
+  ]
+}

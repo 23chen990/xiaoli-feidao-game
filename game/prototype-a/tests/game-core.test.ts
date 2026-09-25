@@ -11,7 +11,8 @@ function playVisiblePolicy(game: SliceSimulation, finish: 'safe' | 'bonus', maxS
       const finishApproach = state.phase === 'ordinary' && state.player.x > state.finishX - 720;
       const lane = state.finishOptions.find((option) => option.kind === finish);
       const desiredY = state.phase === 'bonus' ? 380 : finishApproach ? (finish === 'bonus' ? lane!.y + 48 : lane!.y) : 430;
-      if (state.player.y > desiredY && state.player.vy > -60) game.act('flip');
+      const margin = finish === 'safe' ? 30 : 0;
+      if (state.player.y > desiredY + margin && state.player.vy > -60) game.act('flip');
     }
     game.advanceFrame(1 / 60);
   }
@@ -40,7 +41,8 @@ function playWithLateFinishHeight(game: SliceSimulation, finishY: number, maxSec
     if (state.status === 'ready' || state.status === 'anchored') game.act('flip');
     else {
       const targetY = state.phase === 'bonus' ? 380 : state.player.x > state.finishX - 720 ? finishY : 430;
-      if (state.player.y > targetY && state.player.vy > -60) game.act('flip');
+      const margin = finishY > 400 ? 0 : 30;
+      if (state.player.y > targetY + margin && state.player.vy > -60) game.act('flip');
     }
     game.advanceFrame(1 / 60);
   }
@@ -162,16 +164,11 @@ test('seed 31 one real opening edge cuts before danger and reaches a recoverable
   assert.ok(state.elapsed < 3);
 });
 
-test('the first white support teaches sharp anchor and blunt bounce through two simple timing branches', () => {
-  const noFollowUp = playOpening(new SliceSimulation(31), null);
-  const earlyFollowUp = playOpening(new SliceSimulation(31), 0.42);
-  const eventTypes = [noFollowUp, earlyFollowUp].map((state) => state.events.map((event) => event.type));
-  assert.ok(eventTypes.some((events) => events.includes('anchor')), 'one opening branch should visibly anchor');
-  assert.ok(eventTypes.some((events) => events.includes('bounce')), 'the alternative branch should visibly blunt-bounce');
-  for (const state of [noFollowUp, earlyFollowUp]) {
-    assert.ok(state.cuts >= 1);
-    assert.notEqual(state.status, 'failed');
-  }
+test('the first runway teaches a cut chain before optional recovery structures', () => {
+  const state = playOpening(new SliceSimulation(31), null);
+  assert.ok(state.cuts >= 1, 'the opening tap must produce visible cut feedback');
+  assert.ok(state.player.x < 1_000, 'the opening teaching beat should stay local');
+  assert.equal(state.events.some((event) => event.type === 'anchor' && event.targetId === 'white-column'), false, 'white-column is no longer a required opening action');
 });
 
 test('the opening blunt-bounce branch tolerates a broad second-tap window', () => {
@@ -334,12 +331,15 @@ test('magenta spike and abyss emit distinct fatal reasons and events', () => {
   assert.equal(fallGame.getState().events.at(-1)?.type, 'fall');
 });
 
-test('terminal one tap immediately replays the same deterministic ordinary level', () => {
+test('terminal one tap is inert until an explicit retry resets the same deterministic level', () => {
   const game = new SliceSimulation(11);
   game.act('flip');
   game.debugPlacePlayer(400, game.getState().worldBottom + 30);
   game.step(0.1);
   game.act('flip');
+  const terminal = game.getState();
+  assert.equal(terminal.status, 'failed');
+  game.reset(game.getState().seed);
   const restarted = game.getState();
   assert.equal(restarted.seed, 11);
   assert.equal(restarted.levelNumber, 1);
@@ -368,19 +368,12 @@ test('Level 1 teaches supported cuts before interactive stacks, hazard pressure 
   assert.ok(bonus.value > safe.value);
 });
 
-test('CHOKE-REACTION-005 hard-column exit leaves a reaction cycle and two visible routes', () => {
+test('CHOKE-REACTION-005 hard recovery structures stay off the first-level main runway', () => {
   const state = new SliceSimulation(42).getState();
   const column = state.supports.find((support) => support.height > support.width * 2)!;
-  const nextSpike = state.spikes
-    .filter((spike) => spike.x - spike.width / 2 > column.x + column.width / 2)
-    .sort((a, b) => a.x - b.x)[0];
-  assert.ok(column && nextSpike);
-  const reactionGap = nextSpike.x - nextSpike.width / 2 - (column.x + column.width / 2);
-  assert.ok(reactionGap >= 190, `only ${reactionGap}px between hard terrain and the next lethal region`);
-  const bladeDiameter = 34;
-  const topRoute = column.y - column.height / 2 - bladeDiameter;
-  const bottomRoute = state.worldBottom - (column.y + column.height / 2) - bladeDiameter;
-  assert.ok(topRoute >= 80 && bottomRoute >= 80, `visible route clearances were ${topRoute}/${bottomRoute}`);
+  assert.ok(column && column.x > 2500, 'the vertical white-column fixture must stay off the opening timing route');
+  const runway = state.supports.find((support) => support.id === 'level1-runway-main')!;
+  assert.ok(runway.x - runway.width / 2 < 1_400 && runway.x + runway.width / 2 > 1_800, 'the main runway must span the opening timing beats');
 });
 
 test('COURSE-NO-ORACLE-006 global-height policies pass the choke without obstacle coordinates', () => {
@@ -508,20 +501,20 @@ test('late inputs aimed at the current safe/bonus lanes preserve both complete o
   assert.ok(bonus.phaseElapsed > 1);
 });
 
-test('bonus failure returns to the same deterministic ordinary level', () => {
+test('bonus failure remains terminal until an explicit retry resets the level', () => {
   const game = new SliceSimulation(44);
   game.debugEnterBonus();
   game.debugPlacePlayer(300, game.getState().worldBottom + 40);
   game.step(0.1);
   assert.equal(game.getState().phase, 'bonus');
   assert.equal(game.getState().status, 'failed');
-  game.act('flip');
+  game.reset(game.getState().seed);
   assert.equal(game.getState().phase, 'ordinary');
   assert.equal(game.getState().status, 'ready');
   assert.equal(game.getState().seed, 44);
 });
 
-test('bonus success returns to terminal summary then replays the same ordinary level', () => {
+test('bonus success remains terminal until an explicit retry resets the level', () => {
   const game = new SliceSimulation(45);
   game.debugEnterBonus();
   const state = game.getState();
@@ -530,7 +523,7 @@ test('bonus success returns to terminal summary then replays the same ordinary l
   game.step(0.1);
   assert.equal(game.getState().status, 'won');
   assert.equal(game.getState().phase, 'bonus');
-  game.act('flip');
+  game.reset(game.getState().seed);
   assert.equal(game.getState().phase, 'ordinary');
   assert.equal(game.getState().seed, 45);
 });

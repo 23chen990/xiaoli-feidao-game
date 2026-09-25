@@ -1,0 +1,301 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01R1BonusFixedInput",
+  "generatedAt": "2026-09-25T09:53:12.826Z",
+  "baseUrl": "http://127.0.0.1:4175/",
+  "sourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "freshContexts": true,
+  "stateInjection": false,
+  "debugApiCalled": false,
+  "results": [
+    {
+      "id": "bonus-390x844",
+      "viewport": "390x844",
+      "inputMode": "CDP touch events at fixed visible canvas coordinate",
+      "fixedScheduleMs": [
+        500,
+        1578,
+        1730,
+        2771,
+        3761,
+        4802,
+        5843,
+        6820,
+        7890,
+        8861,
+        9002,
+        9395,
+        10769,
+        12188,
+        13343,
+        14561,
+        14911,
+        15130,
+        16310,
+        17321,
+        18446,
+        19445,
+        20429,
+        21436,
+        22000,
+        22500,
+        23500
+      ],
+      "attempts": 1,
+      "outcome": "BLOCKED",
+      "failureStage": "before-natural-bonus-entry",
+      "reason": "fixed normal input did not reach phase=bonus before the ordinary run terminated or the schedule ended",
+      "checkpoints": [
+        {
+          "atMs": 0,
+          "stage": "ready",
+          "state": {
+            "phase": "ordinary",
+            "status": "ready",
+            "failReason": null,
+            "finishPhase": "idle",
+            "finishGateId": null,
+            "finishSelection": null,
+            "bonusConsumed": false,
+            "cuts": 0,
+            "events": 0,
+            "player": {
+              "x": 120,
+              "y": 420
+            }
+          }
+        },
+        {
+          "atMs": 786,
+          "stage": "afterTap-1",
+          "state": {
+            "phase": "ordinary",
+            "status": "airborne",
+            "failReason": null,
+            "finishPhase": "idle",
+            "finishGateId": null,
+            "finishSelection": null,
+            "bonusConsumed": false,
+            "cuts": 0,
+            "events": 1,
+            "player": {
+              "x": 155,
+              "y": 366.9166666666667
+            }
+          }
+        },
+        {
+          "atMs": 1653,
+          "stage": "afterTap-2",
+          "state": {
+            "phase": "ordinary",
+            "status": "anchored",
+            "failReason": null,
+            "finishPhase": "idle",
+            "finishGateId": null,
+            "finishSelection": null,
+            "bonusConsumed": false,
+            "cuts": 1,
+            "events": 4,
+            "player": {
+              "x": 282.70000000000005,
+              "y": 439.125
+            }
+          }
+        },
+        {
+          "atMs": 1797,
+          "stage": "afterTap-3",
+          "state": {
+            "phase": "ordinary",
+            "status": "airborne",
+            "failReason": null,
+            "finishPhase": "idle",
+            "finishGateId": null,
+            "finishSelection": null,
+            "bonusConsumed": false,
+            "cuts": 1,
+            "events": 5,
+            "player": {
+              "x": 288.95000000000005,
+              "y": 427.25
+            }
+          }
+        },
+        {
+          "atMs": 10832,
+          "stage": "afterTap-13",
+          "state": {
+            "phase": "ordinary",
+            "status": "failed",
+            "failReason": "fall",
+            "finishPhase": "idle",
+            "finishGateId": null,
+            "finishSelection": null,
+            "bonusConsumed": false,
+            "cuts": 6,
+            "events": 22,
+            "player": {
+              "x": 1274.347272191228,
+              "y": -129.17655409790427
+            }
+          }
+        }
+      ],
+      "bonusEnteredAtMs": null,
+      "final": {
+        "phase": "ordinary",
+        "status": "failed",
+        "failReason": "fall",
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "bonusConsumed": false,
+        "cuts": 6,
+        "events": 22,
+        "player": {
+          "x": 1274.347272191228,
+          "y": -129.17655409790427
+        }
+      },
+      "consoleErrors": [],
+      "evidence": [
+        "screenshots/bonus-390x844-ready.png",
+        "screenshots/bonus-390x844-terminal.png"
+      ]
+    },
+    {
+      "id": "bonus-1100x720",
+      "viewport": "1100x720",
+      "inputMode": "CDP mouse events at fixed visible canvas coordinate",
+      "fixedScheduleMs": [
+        800,
+        2007,
+        2016,
+        10818,
+        11026,
+        11198,
+        11378,
+        11607,
+        15185,
+        16114,
+        19610,
+        20681,
+        21702,
+        22698
+      ],
+      "attempts": 1,
+      "outcome": "NOT_RUN",
+      "failureStage": "before-natural-bonus-entry",
+      "reason": "fixed normal input did not reach phase=bonus before the ordinary run terminated or the schedule ended",
+      "checkpoints": [
+        {
+          "atMs": 0,
+          "stage": "ready",
+          "state": {
+            "phase": "ordinary",
+            "status": "ready",
+            "failReason": null,
+            "finishPhase": "idle",
+            "finishGateId": null,
+            "finishSelection": null,
+            "bonusConsumed": false,
+            "cuts": 0,
+            "events": 0,
+            "player": {
+              "x": 120,
+              "y": 420
+            }
+          }
+        },
+        {
+          "atMs": 1089,
+          "stage": "afterTap-1",
+          "state": {
+            "phase": "ordinary",
+            "status": "airborne",
+            "failReason": null,
+            "finishPhase": "idle",
+            "finishGateId": null,
+            "finishSelection": null,
+            "bonusConsumed": false,
+            "cuts": 0,
+            "events": 1,
+            "player": {
+              "x": 161.25,
+              "y": 360.875
+            }
+          }
+        },
+        {
+          "atMs": 11263,
+          "stage": "afterTap-6",
+          "state": {
+            "phase": "ordinary",
+            "status": "anchored",
+            "failReason": null,
+            "finishPhase": "idle",
+            "finishGateId": null,
+            "finishSelection": null,
+            "bonusConsumed": false,
+            "cuts": 1,
+            "events": 9,
+            "player": {
+              "x": 370.74623631763905,
+              "y": 280.4275811841511
+            }
+          }
+        },
+        {
+          "atMs": 11459,
+          "stage": "afterTap-7",
+          "state": {
+            "phase": "ordinary",
+            "status": "airborne",
+            "failReason": null,
+            "finishPhase": "idle",
+            "finishGateId": null,
+            "finishSelection": null,
+            "bonusConsumed": false,
+            "cuts": 1,
+            "events": 10,
+            "player": {
+              "x": 379.49623631763905,
+              "y": 264.0942478508178
+            }
+          }
+        }
+      ],
+      "bonusEnteredAtMs": null,
+      "final": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "bonusConsumed": false,
+        "cuts": 2,
+        "events": 24,
+        "player": {
+          "x": 1894.0336731973011,
+          "y": 210.39865813105712
+        }
+      },
+      "consoleErrors": [],
+      "evidence": [
+        "screenshots/bonus-1100x720-ready.png",
+        "screenshots/bonus-1100x720-terminal.png"
+      ]
+    }
+  ],
+  "buildSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+  "targetGame": "Slice Master / 小李飞刀",
+  "workspace": "game/prototype-a",
+  "environment": {
+    "node": "v24.14.0",
+    "pnpm": "11.25.0",
+    "platform": "darwin",
+    "browser": "Playwright Chromium headless"
+  }
+}

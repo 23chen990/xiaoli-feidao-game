@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01RuntimeFlowManifest",
+  "targetGame": "Slice Master / 小李飞刀",
+  "workspace": "game/prototype-a",
+  "base": {
+    "branch": "main",
+    "sha": "b7e4b4b2ea7cab16c2dd27a91126fc29cde3c2ee"
+  },
+  "testedSourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "build": {
+    "path": "game/prototype-a/dist/index.html",
+    "sha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "environment": {
+    "node": "v24.14.0",
+    "pnpm": "11.25.0",
+    "platform": "darwin",
+    "browser": "Playwright Chromium headless"
+  },
+  "checks": {
+    "pnpm test": {
+      "exitCode": 1,
+      "pass": 212,
+      "fail": 1,
+      "failure": "missing repository-root artifacts/asset-manifest.json in existing ASSET-MANIFEST-001"
+    },
+    "runtime-flow": {
+      "command": "pnpm exec tsx --test tests/runtime-flow.test.ts",
+      "exitCode": 0,
+      "pass": 11
+    },
+    "pnpm typecheck": {
+      "exitCode": 0
+    },
+    "pnpm lint": {
+      "exitCode": 0
+    },
+    "pnpm build": {
+      "exitCode": 0
+    }
+  },
+  "viewports": [
+    {
+      "name": "portrait390x844",
+      "width": 390,
+      "height": 844,
+      "evidence": "evidence/b01-runtime-flow/browser-report.json"
+    },
+    {
+      "name": "desktop1100x720",
+      "width": 1100,
+      "height": 720,
+      "evidence": "evidence/b01-runtime-flow/browser-report.json"
+    }
+  ],
+  "browserReport": "evidence/b01-runtime-flow/r1-browser-report.json",
+  "inputRecord": "evidence/b01-runtime-flow/qa-natural.mjs",
+  "triage": "evidence/b01-runtime-flow/triage.json",
+  "reproductionMatrix": "evidence/b01-runtime-flow/reproduction-matrix.json",
+  "knownGaps": [
+    "Natural BONUS entry and post-entry response remain NOT_RUN at 390x844 and 1100x720 by deliberate B01-R2 supplement scope; no failed BONUS precondition was repeated.",
+    "Lifecycle browser checks use synthetic events; actual OS backgrounding and BFCache navigation were not claimed.",
+    "B01-R1 desktop ordinary natural win→blank-tap→next→reload was NOT_RUN; the B01-R2 supplement now supplies a separate ordinary PASS on the same source/build.",
+    "R1 natural BONUS entry was not observed at 390x844 or 1100x720; no post-entry responsiveness claim was made.",
+    "Formal R1 browser reports record console/pageerror arrays; no console or page errors were observed in the fixed attempts.",
+    "R1 same-environment regression keeps the existing asset-manifest missing-file test failure; see r1-regression.json and baseline/current logs.",
+    "R2 aligned capture diagnosis identifies input-4 path-history divergence and same-step handler behavior; the private accepted/buffered flag remains unexposed.",
+    "Real OS backgrounding, real BFCache navigation and browser storage fault injection remain unexecuted.",
+    "Small-patch verification preserved preliminary script-repair NOT_RUN records; only v2.1 formal and independent runs are current ordinary PASS evidence.",
+    "Natural BONUS entry and post-entry response remain NOT_RUN for 390x844 and 1100x720.",
+    "v2.3 offline recheck only; no new natural browser run; v2.2 ordinary source records remain unchanged."
+  ],
+  "browserReportHistory": "evidence/b01-runtime-flow/browser-report.json",
+  "r1BrowserReport": "evidence/b01-runtime-flow/r1-browser-report.json",
+  "r1ExplorationLog": "evidence/b01-runtime-flow/r1-exploration-log.json",
+  "r1Reports": [
+    "evidence/b01-runtime-flow/r1-ordinary-report.json",
+    "evidence/b01-runtime-flow/r1-bonus-report.json"
+  ],
+  "independentQA": "evidence/b01-runtime-flow/r1-independent-review.json",
+  "r1Status": "NOT_RUN_TARGET_CHECKPOINTS",
+  "r1Regression": "evidence/b01-runtime-flow/r1-regression.json",
+  "r2BrowserReport": "evidence/b01-runtime-flow/r2-browser-report.json",
+  "r2RevisionNotes": "evidence/b01-runtime-flow/r2-revision-notes.md",
+  "r2NaturalAcceptanceScript": "evidence/b01-runtime-flow/qa-natural-r2.mjs",
+  "r2AcceptanceScriptSelfCheck": "evidence/b01-runtime-flow/r2-acceptance-script-self-check-r2patch-v22.json",
+  "r2NaturalConsoleErrors": "evidence/b01-runtime-flow/r2-natural-console-errors.json",
+  "r2IndependentQA": "evidence/b01-runtime-flow/r2-independent-review.json",
+  "r2CaptureComparison": "evidence/b01-runtime-flow/r2-ordinary-capture-compare.json",
+  "r2CaptureAlignment": "evidence/b01-runtime-flow/r2-ordinary-capture-alignment.json",
+  "r2CaptureAlignmentScript": "evidence/b01-runtime-flow/r2-ordinary-capture-align.mjs",
+  "r2CaptureAlignmentOrderReports": [
+    "evidence/b01-runtime-flow/r2-ordinary-capture-align-with-first.json",
+    "evidence/b01-runtime-flow/r2-ordinary-capture-align-without-first.json"
+  ],
+  "r2Exploration": "evidence/b01-runtime-flow/r2-ordinary-exploration.json",
+  "r2Regression": "evidence/b01-runtime-flow/r2-regression.json",
+  "r2Status": "ORDINARY_NATURAL_PASS_BONUS_NOT_RUN",
+  "r2OrdinaryCandidate": "evidence/b01-runtime-flow/r2-ordinary-candidate.json",
+  "r2OrdinaryFormal": "evidence/b01-runtime-flow/r2-ordinary-formal.json",
+  "r2OrdinaryFormalConsoleErrors": "evidence/b01-runtime-flow/r2-ordinary-formal-console-errors.json",
+  "r2OrdinaryIndependentQA": [
+    "evidence/b01-runtime-flow/r2-ordinary-independent-qa-1.json",
+    "evidence/b01-runtime-flow/r2-ordinary-independent-qa-2.json"
+  ],
+  "r2OrdinaryIndependentConsoleErrors": [
+    "evidence/b01-runtime-flow/r2-ordinary-independent-qa-1-console-errors.json",
+    "evidence/b01-runtime-flow/r2-ordinary-independent-qa-2-console-errors.json"
+  ],
+  "r2OrdinaryEvidenceDirs": [
+    "evidence/b01-runtime-flow/r2-natural/formal-ordinary/",
+    "evidence/b01-runtime-flow/r2-natural/independent-qa-1/",
+    "evidence/b01-runtime-flow/r2-natural/independent-qa-2/"
+  ],
+  "r2VersionCheck": "evidence/b01-runtime-flow/r2-version-check.json",
+  "r2VersionCheckPostPush": "evidence/b01-runtime-flow/r2-version-check-post-push.json",
+  "r2AcceptancePatchReview": "evidence/b01-runtime-flow/r2-acceptance-patch-review.json",
+  "r2OrdinaryFormalPatchV8": "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v8.json",
+  "r2OrdinaryFormalPatchV8ConsoleErrors": "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v8-console-errors.json",
+  "r2OrdinaryIndependentPatchV8": "evidence/b01-runtime-flow/r2-ordinary-independent-qa-r2patch-v8.json",
+  "r2OrdinaryIndependentPatchV8ConsoleErrors": "evidence/b01-runtime-flow/r2-ordinary-independent-qa-r2patch-v8-console-errors.json",
+  "r2OrdinaryPatchEvidenceDirs": [
+    "evidence/b01-runtime-flow/r2-natural/patch-formal-v8-ordinary/",
+    "evidence/b01-runtime-flow/r2-natural/patch-independent-qa-v8-ordinary/"
+  ],
+  "r2PreliminaryScriptRepairReports": [
+    "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch.json",
+    "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-final.json",
+    "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v2.json",
+    "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v3.json",
+    "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v4.json",
+    "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v5.json",
+    "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v6.json",
+    "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v7.json"
+  ],
+  "r2CaptureAlignmentReview": "evidence/b01-runtime-flow/r2-ordinary-capture-align-r2-review.json",
+  "r2CaptureAlignmentReviewScript": "evidence/b01-runtime-flow/r2-ordinary-capture-align-review.mjs",
+  "r2VersionCheckPatch": "evidence/b01-runtime-flow/r2-version-check-patch.json",
+  "r2VersionCheckPostPushPatch": "evidence/b01-runtime-flow/r2-version-check-post-push-r2patch.json",
+  "r2AcceptanceCloseoutReview": "evidence/b01-runtime-flow/r2-acceptance-closeout-review-v22.json",
+  "r2OrdinaryFormalCurrent": "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v22.json",
+  "r2OrdinaryIndependentCurrent": "evidence/b01-runtime-flow/r2-ordinary-independent-qa-r2patch-v22.json",
+  "r2OrdinaryCurrentEvidenceDirs": [
+    "evidence/b01-runtime-flow/r2-natural/patch-v22-formal-ordinary/",
+    "evidence/b01-runtime-flow/r2-natural/patch-v22-independent-ordinary/"
+  ],
+  "offlineFinalCloseout": "evidence/b01-runtime-flow/r2-acceptance-closeout-review-v23.json",
+  "bonusWhiteColumnV02": "evidence/b01-runtime-flow/r2-bonus-white-column-interactive-v02.json",
+  "bonusWhiteColumnV03Script": "evidence/b01-runtime-flow/r2-bonus-white-column-interactive-v03.mjs",
+  "bonusWhiteColumnV03Run": "evidence/b01-runtime-flow/r2-bonus-white-column-interactive-v03.json",
+  "bonusWhiteColumnV03Closeout": "evidence/b01-runtime-flow/r2-bonus-white-column-closeout-v03.json",
+  "bonusWhiteColumnV03EvidenceDir": "evidence/b01-runtime-flow/r2-natural/bonus-white-column-interactive-v03/",
+  "bonusWhiteColumnV03Status": "NOT_RUN_VISIBLE_RELEASE_OUTPUT_ISOLATION_PASS"
+  ,"bonusWhiteColumnV04Script": "evidence/b01-runtime-flow/r2-bonus-white-column-interactive-v04.mjs"
+  ,"bonusWhiteColumnV04Run": "evidence/b01-runtime-flow/r2-bonus-white-column-interactive-v04.json"
+  ,"bonusWhiteColumnV04Closeout": "evidence/b01-runtime-flow/r2-bonus-white-column-closeout-v04.json"
+  ,"bonusWhiteColumnV04EvidenceDir": "evidence/b01-runtime-flow/r2-natural/bonus-white-column-interactive-v04/"
+  ,"bonusWhiteColumnV04Status": "PASS_LOCAL_VISIBLE_WAIT_RELEASE"
+}

@@ -1,0 +1,418 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01R2BrowserReport",
+  "targetGame": "Slice Master / 小李飞刀",
+  "workspace": "game/prototype-a",
+  "branch": "codex/b01-runtime-flow",
+  "sourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "build": {
+    "path": "game/prototype-a/dist/index.html",
+    "sha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d"
+  },
+  "environment": {
+    "node": "v24.14.0",
+    "pnpm": "11.25.0",
+    "platform": "darwin",
+    "browser": "Playwright Chromium headless",
+    "preview": "http://127.0.0.1:4175/"
+  },
+  "scope": {
+    "sourceModified": false,
+    "diagnosticOnly": false,
+    "naturalAcceptanceExecuted": true,
+    "reasonNaturalAcceptanceNotExecuted": null,
+    "maxCompleteExplorations": 6,
+    "totalDiagnosticExplorations": 6,
+    "independentBrowserReplay": "PASS_2_FRESH_CONTEXTS"
+  },
+  "classificationPolicy": {
+    "targetCheckpointMissing": "NOT_RUN",
+    "targetCheckpointReachedProductAssertionViolation": "FAIL",
+    "targetCheckpointReachedAllAssertionsPass": "PASS",
+    "browserOrToolFailure": "BLOCKED",
+    "singleFailedAttempt": "does not by itself classify the product as FAIL"
+  },
+  "results": {
+    "A-ordinary-1100x720": {
+      "result": "PASS",
+      "requiredCheckpoint": "phase=ordinary,status=won,finishPhase=terminal; pre-settlement controls hidden; blank tap unchanged; next level ready; reload level 2 ready; reload input responds",
+      "attempts": 3,
+      "successes": 3,
+      "failureRecords": "No failures in the formal ordinary run or either independent QA context; diagnostic failures remain in r2-ordinary-capture-compare.json and r2-ordinary-exploration.json.",
+      "reason": "The formal visible strategy reached ordinary phase/status/terminal and passed blank-tap, next-level, reload and post-reload input checks. Two independent fresh contexts reproduced the same checkpoint.",
+      "formalNaturalScript": "qa-natural-r2.mjs",
+      "formalNaturalReport": "r2-ordinary-formal.json",
+      "evidencePaths": [
+        "r2-ordinary-candidate.json",
+        "r2-ordinary-formal.json",
+        "r2-ordinary-independent-qa-1.json",
+        "r2-ordinary-independent-qa-2.json",
+        "r2-natural/formal-ordinary/",
+        "r2-natural/independent-qa-1/",
+        "r2-natural/independent-qa-2/",
+        "r2-ordinary-capture-compare.json",
+        "r2-ordinary-capture-alignment.json"
+      ],
+      "independentQAReports": [
+        "r2-ordinary-independent-qa-1.json",
+        "r2-ordinary-independent-qa-2.json"
+      ],
+      "strategy": "1100x720 fresh context; visible canvas mouse at (550,518.4); fixed 400ms ready wait, then taps at 150ms + 975ms*n; no per-input screenshots, state injection or debug entry.",
+      "patchReview": {
+        "formal": "r2-ordinary-formal-r2patch-v8.json",
+        "independentQA": [
+          "r2-ordinary-independent-qa-r2patch-v8.json"
+        ],
+        "formalResult": "PASS",
+        "independentResult": "PASS",
+        "newChecksRequired": true,
+        "newChecks": [
+          "ready-state",
+          "ordinary-target",
+          "normal-running-controls-hidden",
+          "finish-transition-controls-hidden",
+          "terminal-controls-visible-after-settlement",
+          "blank-click-does-not-restart",
+          "next-level-ready",
+          "reload-level2-ready",
+          "reload-input-response"
+        ],
+        "preliminaryRunsRemainSeparate": true
+      }
+    },
+    "B-bonus-390x844": {
+      "result": "NOT_RUN",
+      "requiredCheckpoint": "ready→natural phase=bonus entry→normal input received→phase remains bonus with observable response",
+      "attempts": 0,
+      "reason": "Per B01-R2 supplement scope, BONUS natural entry was intentionally deferred after ordinary path work; no failed BONUS prerequisite was repeated.",
+      "formalNaturalScript": "qa-natural-r2.mjs",
+      "formalNaturalReport": "NOT_RUN",
+      "successes": 0,
+      "strategy": "NOT_RUN in this supplement; preserve original R1/R2 NOT_RUN evidence."
+    },
+    "B-bonus-1100x720": {
+      "result": "NOT_RUN",
+      "requiredCheckpoint": "ready→natural phase=bonus entry→normal input received→phase remains bonus with observable response",
+      "attempts": 0,
+      "reason": "Per B01-R2 supplement scope, BONUS natural entry was intentionally deferred after ordinary path work; no failed BONUS prerequisite was repeated.",
+      "formalNaturalScript": "qa-natural-r2.mjs",
+      "formalNaturalReport": "NOT_RUN",
+      "successes": 0,
+      "strategy": "NOT_RUN in this supplement; preserve original R1/R2 NOT_RUN evidence."
+    }
+  },
+  "failureTrace": {
+    "source": "r1-ordinary-report.json afterTap-9 plus R2 paired dispatch traces",
+    "r1Condition": "phase=ordinary,status=failed,failReason=fall before settlement",
+    "r1ObservedTerminal": {
+      "x": 1200.6277964664419,
+      "y": -127.62846064735574,
+      "cuts": 3,
+      "eventCount": 14
+    },
+    "boundaryObservation": "The observed y≈-127.6 is above the upper fall boundary y+17<-110; fail('fall') then zeros velocity and appends the fall event.",
+    "r2TraceFields": [
+      "planned/send/press/release times",
+      "pointerdown/pointerup receipt records",
+      "inputReceiptObserved",
+      "before/after phase and status",
+      "vx/vy and pose",
+      "event count and event tail",
+      "console/pageerror errors"
+    ],
+    "observedR2Terminal": "The aligned reruns remain diagnostic: the exact terminal outcome varies by schedule history, while input receipt and immediate event processing remain observable."
+  },
+  "captureComparison": {
+    "report": "r2-ordinary-capture-alignment.json",
+    "rawReports": [
+      "r2-ordinary-capture-align-with-first.json",
+      "r2-ordinary-capture-align-without-first.json"
+    ],
+    "script": "r2-ordinary-capture-align.mjs",
+    "generatedAt": "2026-09-25T11:41:16.749Z",
+    "sameBuild": true,
+    "sameViewport": true,
+    "sameInputPlan": true,
+    "onlyCaptureModeChanged": true,
+    "startupProgressConfounderConfirmed": true,
+    "resetAligned": true,
+    "handlerBoundaryObserved": true,
+    "firstMaterialInputBothOrders": 4,
+    "lastConfirmedInputBothOrders": 3,
+    "swappedOrderResult": "In with-screenshots-first, input 4 landed at physical steps 385 versus 383. In without-screenshots-first, input 4 landed at the same physical step 383 but entered with different pre-input pose/velocity; both handlers emitted the same immediate flip.",
+    "conclusion": "The earliest reproducible explanation is schedule/path history before input 4: screenshots change elapsed wall time between inputs, so physical-step alignment and pre-input pose diverge. The swapped run shows no screenshot-specific input-handler semantic difference at input 4; the exact remaining boundary is RAF-to-native-pointer latency, which is recorded at receipt but not exposed as the private accepted/buffered flag."
+  },
+  "r1ToR2Mapping": "r2-independent-review.json",
+  "consolePageerror": {
+    "diagnosticComparison": "Both paired contexts retained consoleErrors arrays; no console/pageerror entries were observed.",
+    "formalNatural": "r2-ordinary-formal-console-errors.json has no console/pageerror entries; BONUS contexts were intentionally not created.",
+    "independentQA": "r2-ordinary-independent-qa-1-console-errors.json and r2-ordinary-independent-qa-2-console-errors.json have no console/pageerror entries."
+  },
+  "regression": "No source changed and no rebuild was required; R1 build and regression evidence remain valid. The existing pnpm test missing asset-manifest failure remains recorded in r1-regression.json.",
+  "limitations": [
+    "Natural BONUS entry and post-entry response remain NOT_RUN at 390x844 and 1100x720 by deliberate scope deferral.",
+    "The ordinary path was validated with a fixed visible mouse strategy; the diagnostic candidate trace remains separate from formal PASS.",
+    "The aligned capture experiment leaves only the private accepted/buffered flag unexposed; same-step handler behavior and pre-input divergence are recorded.",
+    "Real OS backgrounding, real BFCache navigation and browser storage fault injection remain unexecuted.",
+    "The v2.1 script repair itself retained preliminary NOT_RUN records; those records are script-evidence attempts and are not product FAIL classifications.",
+    "No BONUS natural entry was executed in this small-patch verification; both requested viewports remain NOT_RUN.",
+    "The capture review still does not isolate screenshot encoding, remote reads, event dispatch, RAF scheduling, or private held/buffered internals as independent causes."
+  ],
+  "ordinarySupplement": {
+    "formal": "r2-ordinary-formal.json",
+    "independentQA": [
+      "r2-ordinary-independent-qa-1.json",
+      "r2-ordinary-independent-qa-2.json"
+    ],
+    "formalResult": "PASS",
+    "independentResults": [
+      "PASS",
+      "PASS"
+    ],
+    "ordinaryAttempts": 3,
+    "ordinarySuccesses": 3,
+    "bonus390": "NOT_RUN",
+    "bonus1100": "NOT_RUN",
+    "diagnosticCandidate": "r2-ordinary-candidate.json",
+    "patchFormal": "r2-ordinary-formal-r2patch-v22.json",
+    "patchIndependentQA": "r2-ordinary-independent-qa-r2patch-v22.json",
+    "patchFormalResult": "PASS",
+    "patchIndependentResult": "PASS",
+    "patchRunScope": "one formal run and one independent fresh-context reproduction after script repair",
+    "frontCoverageConfirmed": true
+  },
+  "versionCheck": "r2-version-check.json",
+  "history": {
+    "r1Report": "r1-browser-report.json",
+    "r2InterimSnapshot": "r2-ordinary-capture-compare.json",
+    "r2Supplement": "ordinarySupplement"
+  },
+  "versionCheckPostPush": "r2-version-check-post-push.json",
+  "patchReview": {
+    "schemaVersion": 1,
+    "artifactType": "B01R2AcceptancePatchReview",
+    "generatedAt": "2026-09-25T12:58:37.155854+00:00",
+    "script": "qa-natural-r2.mjs",
+    "scriptVersion": "B01-R2-acceptance-v2.1",
+    "scriptSha256": "7251f85072aea4bd309c4426a4e063c4a77e18526b301330f5f0e523416e8b1f",
+    "sourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+    "buildSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+    "servedBuildSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+    "ordinaryFormal": {
+      "report": "r2-ordinary-formal-r2patch-v8.json",
+      "evidenceDirectory": "r2-natural/patch-formal-v8-ordinary/",
+      "runId": "r2-patch-formal-v8-ordinary-1100x720",
+      "contextId": "8b1bdf3f-1043-409e-920a-708c7f152985",
+      "result": "PASS",
+      "rawOutcome": "target-checkpoint-passed",
+      "validObservation": true,
+      "failureStage": "complete",
+      "checks": [
+        {
+          "id": "ready-state",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "ordinary-target",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "normal-running-controls-hidden",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "finish-transition-controls-hidden",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "terminal-controls-visible-after-settlement",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "blank-click-does-not-restart",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "next-level-ready",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "reload-level2-ready",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "reload-input-response",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        }
+      ],
+      "inputReceiptAndActionEvidence": "Each dispatch records receiptBeforeLength/receiptAfterLength, seq-tagged pointerdown/up and newly appended launch/flip/cut events; reload-input-1 is included.",
+      "controlVisibilityEvidence": "Passive DOM observation covers normal airborne plus contact/reward/celebration hidden states and terminal visible state."
+    },
+    "independentQA": {
+      "report": "r2-ordinary-independent-qa-r2patch-v8.json",
+      "evidenceDirectory": "r2-natural/patch-independent-qa-v8-ordinary/",
+      "runId": "r2-patch-independent-qa-v8-ordinary-1100x720",
+      "contextId": "b1e1ed48-78cf-4724-b39b-c9ec19d47223",
+      "result": "PASS",
+      "rawOutcome": "target-checkpoint-passed",
+      "validObservation": true,
+      "failureStage": "complete",
+      "checks": [
+        {
+          "id": "ready-state",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "ordinary-target",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "normal-running-controls-hidden",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "finish-transition-controls-hidden",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "terminal-controls-visible-after-settlement",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "blank-click-does-not-restart",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "next-level-ready",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "reload-level2-ready",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "reload-input-response",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        }
+      ]
+    },
+    "scriptSelfCheck": {
+      "command": "R2_SCRIPT_SELF_CHECK=1 node evidence/b01-runtime-flow/qa-natural-r2.mjs",
+      "result": "PASS",
+      "checks": 10,
+      "report": "r2-acceptance-script-self-check-r2patch.json"
+    },
+    "preliminaryScriptRepairRuns": [
+      {
+        "report": "r2-ordinary-formal-r2patch.json",
+        "result": "NOT_RUN",
+        "reason": "instrumented passive polling run ended in ordinary failed/fall before target; no valid target observation"
+      },
+      {
+        "report": "r2-ordinary-formal-r2patch-final.json",
+        "result": "NOT_RUN",
+        "reason": "target was reached but reload cleared the captured transition samples, so validObservation=false"
+      },
+      {
+        "report": "r2-ordinary-formal-r2patch-v2.json",
+        "result": "NOT_RUN",
+        "reason": "instrumentation variant ended in ordinary failed/fall before settlement"
+      },
+      {
+        "report": "r2-ordinary-formal-r2patch-v3.json",
+        "result": "NOT_RUN",
+        "reason": "instrumentation variant ended in ordinary failed/fall before settlement"
+      },
+      {
+        "report": "r2-ordinary-formal-r2patch-v4.json",
+        "result": "NOT_RUN",
+        "reason": "instrumentation variant ended in ordinary failed/fall before settlement"
+      },
+      {
+        "report": "r2-ordinary-formal-r2patch-v5.json",
+        "result": "NOT_RUN",
+        "reason": "instrumentation variant ended in ordinary failed/fall before settlement"
+      },
+      {
+        "report": "r2-ordinary-formal-r2patch-v6.json",
+        "result": "NOT_RUN",
+        "reason": "target was reached but transition samples were lost, so validObservation=false"
+      },
+      {
+        "report": "r2-ordinary-formal-r2patch-v7.json",
+        "result": "PASS",
+        "reason": "intermediate script pass; only contact transition was observed before v2.1 added reward/celebration child-list observation"
+      }
+    ],
+    "classificationMapping": {
+      "requiredCheckpointNotExecutedOrInvalid": "NOT_RUN",
+      "targetReachedProductAssertionFailure": "FAIL",
+      "browserOrToolFailure": "BLOCKED",
+      "targetReachedAllChecksValid": "PASS",
+      "laterToolFailureDoesNotOverwriteObservedProductFailure": "self-check verified"
+    },
+    "historicalRunsPreserved": [
+      "r2-ordinary-formal.json",
+      "r2-ordinary-independent-qa-1.json",
+      "r2-ordinary-independent-qa-2.json",
+      "r2-ordinary-capture-compare.json",
+      "r2-ordinary-capture-align-with-first.json",
+      "r2-ordinary-capture-align-without-first.json"
+    ],
+    "scope": {
+      "bonus390": "NOT_RUN",
+      "bonus1100": "NOT_RUN",
+      "osBackgrounding": "NOT_RUN",
+      "realBFCache": "NOT_RUN",
+      "storageFaultInjection": "NOT_RUN",
+      "gameSourceChanged": false
+    },
+    "repositoryHeadAtRun": "a6f230c028e4f235400219c6a7d119685796337c",
+    "remoteHeadAtRun": "a6f230c028e4f235400219c6a7d119685796337c",
+    "pullRequest": {
+      "number": 1,
+      "state": "OPEN",
+      "draft": true
+    },
+    "currentVerification": "r2-acceptance-closeout-review-v22.json",
+    "currentFormal": "r2-ordinary-formal-r2patch-v22.json",
+    "currentIndependentQA": "r2-ordinary-independent-qa-r2patch-v22.json",
+    "scriptSelfCheckChecks": 19
+  }
+}

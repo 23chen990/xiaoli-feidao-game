@@ -75,7 +75,7 @@ test('MOV-002 MOV-003 an anchored knife rides a moving support and inherits its 
   const launched = game.getState();
   assert.equal(launched.status, 'airborne');
   assert.equal(launched.anchorId, null);
-  assert.ok(Math.abs(launched.player.vx - (150 + inheritedVx)) < 0.01);
+  assert.ok(Math.abs(launched.player.vx - (180 + inheritedVx)) < 0.01);
 });
 
 test('HARD-IDENTITY-001 course has no dedicated rebound identity', () => {
@@ -290,16 +290,16 @@ test('FINISH-003 course has two original multipliers and one divisor, and a gate
   assert.equal(game.getState().score, score);
 });
 
-test('BONUS-001 BONUS-002 bonus availability is seeded and one-chance terminal restart preserves the level seed', () => {
+test('BONUS-001 BONUS-002 bonus availability follows the authored level and terminal retry is explicit', () => {
   const availability = [100, 101, 102, 103].map((seed) => new SliceSimulation(seed).getState().bonusAvailable);
-  assert.ok(availability.includes(true) && availability.includes(false));
+  assert.ok(availability.every(Boolean));
   const bonusSeed = [100, 101, 102, 103].find((seed) => new SliceSimulation(seed).getState().bonusAvailable)!;
   const game = new SliceSimulation(bonusSeed);
   game.debugEnterBonus();
   game.debugPlacePlayer(300, game.getState().worldBottom + 50);
   game.step(0.1);
   assert.equal(game.getState().status, 'failed');
-  game.act('flip');
+  game.reset(game.getState().seed);
   assert.equal(game.getState().phase, 'ordinary');
   assert.equal(game.getState().seed, bonusSeed);
   assert.equal(game.getState().status, 'ready');
@@ -316,7 +316,7 @@ test('COURSE-001 COURSE-002 COURSE-003 route data covers three spatial cuts, bot
   assert.ok(course.courseSegments.length === 3 && course.courseSegments.some((segment) => segment.hasGap));
 });
 
-test('FAIL-001 FAIL-002 fall and spike are distinct and restart restores motion phase, structure, fragments and score', () => {
+test('FAIL-001 FAIL-002 fall and spike are distinct and explicit retry restores motion phase, structure, fragments and score', () => {
   const game = new SliceSimulation(92);
   const moving = game.getState().supports.find((support) => support.motion)!;
   game.step(0.4);
@@ -327,7 +327,7 @@ test('FAIL-001 FAIL-002 fall and spike are distinct and restart restores motion 
   game.debugPlacePlayer(300, game.getState().worldBottom + 60);
   game.step(0.1);
   assert.equal(game.getState().failReason, 'fall');
-  game.act('flip');
+  game.reset(game.getState().seed);
   const reset = game.getState();
   assert.equal(reset.seed, 92);
   assert.equal(reset.score, 0);

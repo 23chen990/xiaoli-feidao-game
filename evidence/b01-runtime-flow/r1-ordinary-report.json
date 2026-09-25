@@ -1,0 +1,503 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01R1OrdinaryFixedInput",
+  "sourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "baseUrl": "http://127.0.0.1:4175/",
+  "freshContext": true,
+  "viewport": "1100x720",
+  "inputMode": "CDP mouse events at fixed visible canvas coordinate",
+  "fixedScheduleMs": [
+    800,
+    1859,
+    2032,
+    3068,
+    4140,
+    5118,
+    6155,
+    7157,
+    8215,
+    9199,
+    9352,
+    9774,
+    11152,
+    11382,
+    13775,
+    14833,
+    14991,
+    15145,
+    15389,
+    16391,
+    16722,
+    17872,
+    19618,
+    20644,
+    21614,
+    22592,
+    23645,
+    24216
+  ],
+  "attempts": 1,
+  "outcome": "BLOCKED",
+  "failureStage": "before-ordinary-terminal",
+  "reason": "ordinary run ended fall before settlement",
+  "checkpoints": [
+    {
+      "atMs": 0,
+      "stage": "ready",
+      "state": {
+        "phase": "ordinary",
+        "status": "ready",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "levelNumber": 1,
+        "cuts": 0,
+        "events": 0,
+        "player": {
+          "x": 120,
+          "y": 420
+        }
+      }
+    },
+    {
+      "atMs": 8443,
+      "stage": "afterTap-9",
+      "state": {
+        "phase": "ordinary",
+        "status": "failed",
+        "failReason": "fall",
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "levelNumber": 1,
+        "cuts": 3,
+        "events": 14,
+        "player": {
+          "x": 1200.6277964664419,
+          "y": -127.62846064735574
+        }
+      },
+      "terminalActionsHidden": false
+    },
+    {
+      "atMs": 9398,
+      "stage": "afterTap-10",
+      "state": {
+        "phase": "ordinary",
+        "status": "failed",
+        "failReason": "fall",
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "levelNumber": 1,
+        "cuts": 3,
+        "events": 14,
+        "player": {
+          "x": 1200.6277964664419,
+          "y": -127.62846064735574
+        }
+      },
+      "terminalActionsHidden": false
+    },
+    {
+      "atMs": 9639,
+      "stage": "afterTap-11",
+      "state": {
+        "phase": "ordinary",
+        "status": "failed",
+        "failReason": "fall",
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "levelNumber": 1,
+        "cuts": 3,
+        "events": 14,
+        "player": {
+          "x": 1200.6277964664419,
+          "y": -127.62846064735574
+        }
+      },
+      "terminalActionsHidden": false
+    },
+    {
+      "atMs": 9980,
+      "stage": "afterTap-12",
+      "state": {
+        "phase": "ordinary",
+        "status": "failed",
+        "failReason": "fall",
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "levelNumber": 1,
+        "cuts": 3,
+        "events": 14,
+        "player": {
+          "x": 1200.6277964664419,
+          "y": -127.62846064735574
+        }
+      },
+      "terminalActionsHidden": false
+    },
+    {
+      "atMs": 11348,
+      "stage": "afterTap-13",
+      "state": {
+        "phase": "ordinary",
+        "status": "failed",
+        "failReason": "fall",
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "levelNumber": 1,
+        "cuts": 3,
+        "events": 14,
+        "player": {
+          "x": 1200.6277964664419,
+          "y": -127.62846064735574
+        }
+      },
+      "terminalActionsHidden": false
+    },
+    {
+      "atMs": 11592,
+      "stage": "afterTap-14",
+      "state": {
+        "phase": "ordinary",
+        "status": "failed",
+        "failReason": "fall",
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "levelNumber": 1,
+        "cuts": 3,
+        "events": 14,
+        "player": {
+          "x": 1200.6277964664419,
+          "y": -127.62846064735574
+        }
+      },
+      "terminalActionsHidden": false
+    },
+    {
+      "atMs": 13976,
+      "stage": "afterTap-15",
+      "state": {
+        "phase": "ordinary",
+        "status": "failed",
+        "failReason": "fall",
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "levelNumber": 1,
+        "cuts": 3,
+        "events": 14,
+        "player": {
+          "x": 1200.6277964664419,
+          "y": -127.62846064735574
+        }
+      },
+      "terminalActionsHidden": false
+    },
+    {
+      "atMs": 15024,
+      "stage": "afterTap-16",
+      "state": {
+        "phase": "ordinary",
+        "status": "failed",
+        "failReason": "fall",
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "levelNumber": 1,
+        "cuts": 3,
+        "events": 14,
+        "player": {
+          "x": 1200.6277964664419,
+          "y": -127.62846064735574
+        }
+      },
+      "terminalActionsHidden": false
+    },
+    {
+      "atMs": 15340,
+      "stage": "afterTap-17",
+      "state": {
+        "phase": "ordinary",
+        "status": "failed",
+        "failReason": "fall",
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "levelNumber": 1,
+        "cuts": 3,
+        "events": 14,
+        "player": {
+          "x": 1200.6277964664419,
+          "y": -127.62846064735574
+        }
+      },
+      "terminalActionsHidden": false
+    },
+    {
+      "atMs": 15577,
+      "stage": "afterTap-18",
+      "state": {
+        "phase": "ordinary",
+        "status": "failed",
+        "failReason": "fall",
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "levelNumber": 1,
+        "cuts": 3,
+        "events": 14,
+        "player": {
+          "x": 1200.6277964664419,
+          "y": -127.62846064735574
+        }
+      },
+      "terminalActionsHidden": false
+    },
+    {
+      "atMs": 15811,
+      "stage": "afterTap-19",
+      "state": {
+        "phase": "ordinary",
+        "status": "failed",
+        "failReason": "fall",
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "levelNumber": 1,
+        "cuts": 3,
+        "events": 14,
+        "player": {
+          "x": 1200.6277964664419,
+          "y": -127.62846064735574
+        }
+      },
+      "terminalActionsHidden": false
+    },
+    {
+      "atMs": 16596,
+      "stage": "afterTap-20",
+      "state": {
+        "phase": "ordinary",
+        "status": "failed",
+        "failReason": "fall",
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "levelNumber": 1,
+        "cuts": 3,
+        "events": 14,
+        "player": {
+          "x": 1200.6277964664419,
+          "y": -127.62846064735574
+        }
+      },
+      "terminalActionsHidden": false
+    },
+    {
+      "atMs": 16943,
+      "stage": "afterTap-21",
+      "state": {
+        "phase": "ordinary",
+        "status": "failed",
+        "failReason": "fall",
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "levelNumber": 1,
+        "cuts": 3,
+        "events": 14,
+        "player": {
+          "x": 1200.6277964664419,
+          "y": -127.62846064735574
+        }
+      },
+      "terminalActionsHidden": false
+    },
+    {
+      "atMs": 18077,
+      "stage": "afterTap-22",
+      "state": {
+        "phase": "ordinary",
+        "status": "failed",
+        "failReason": "fall",
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "levelNumber": 1,
+        "cuts": 3,
+        "events": 14,
+        "player": {
+          "x": 1200.6277964664419,
+          "y": -127.62846064735574
+        }
+      },
+      "terminalActionsHidden": false
+    },
+    {
+      "atMs": 19807,
+      "stage": "afterTap-23",
+      "state": {
+        "phase": "ordinary",
+        "status": "failed",
+        "failReason": "fall",
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "levelNumber": 1,
+        "cuts": 3,
+        "events": 14,
+        "player": {
+          "x": 1200.6277964664419,
+          "y": -127.62846064735574
+        }
+      },
+      "terminalActionsHidden": false
+    },
+    {
+      "atMs": 20850,
+      "stage": "afterTap-24",
+      "state": {
+        "phase": "ordinary",
+        "status": "failed",
+        "failReason": "fall",
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "levelNumber": 1,
+        "cuts": 3,
+        "events": 14,
+        "player": {
+          "x": 1200.6277964664419,
+          "y": -127.62846064735574
+        }
+      },
+      "terminalActionsHidden": false
+    },
+    {
+      "atMs": 21835,
+      "stage": "afterTap-25",
+      "state": {
+        "phase": "ordinary",
+        "status": "failed",
+        "failReason": "fall",
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "levelNumber": 1,
+        "cuts": 3,
+        "events": 14,
+        "player": {
+          "x": 1200.6277964664419,
+          "y": -127.62846064735574
+        }
+      },
+      "terminalActionsHidden": false
+    },
+    {
+      "atMs": 22830,
+      "stage": "afterTap-26",
+      "state": {
+        "phase": "ordinary",
+        "status": "failed",
+        "failReason": "fall",
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "levelNumber": 1,
+        "cuts": 3,
+        "events": 14,
+        "player": {
+          "x": 1200.6277964664419,
+          "y": -127.62846064735574
+        }
+      },
+      "terminalActionsHidden": false
+    },
+    {
+      "atMs": 23838,
+      "stage": "afterTap-27",
+      "state": {
+        "phase": "ordinary",
+        "status": "failed",
+        "failReason": "fall",
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "levelNumber": 1,
+        "cuts": 3,
+        "events": 14,
+        "player": {
+          "x": 1200.6277964664419,
+          "y": -127.62846064735574
+        }
+      },
+      "terminalActionsHidden": false
+    },
+    {
+      "atMs": 24420,
+      "stage": "afterTap-28",
+      "state": {
+        "phase": "ordinary",
+        "status": "failed",
+        "failReason": "fall",
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "levelNumber": 1,
+        "cuts": 3,
+        "events": 14,
+        "player": {
+          "x": 1200.6277964664419,
+          "y": -127.62846064735574
+        }
+      },
+      "terminalActionsHidden": false
+    }
+  ],
+  "terminal": {
+    "phase": "ordinary",
+    "status": "failed",
+    "failReason": "fall",
+    "finishPhase": "idle",
+    "finishGateId": null,
+    "finishSelection": null,
+    "levelNumber": 1,
+    "cuts": 3,
+    "events": 14,
+    "player": {
+      "x": 1200.6277964664419,
+      "y": -127.62846064735574
+    }
+  },
+  "terminalVisible": true,
+  "beforeTerminalHidden": true,
+  "blankCheck": null,
+  "next": null,
+  "reload": null,
+  "assertionFailure": null,
+  "consoleErrors": [],
+  "evidence": [
+    "./screenshots/ordinary-1100x720-r1-ready.png",
+    "./screenshots/ordinary-1100x720-r1-terminal.png",
+    "r1-ordinary/attempt-01-step-01.png",
+    "r1-ordinary/attempt-01-step-08.png"
+  ],
+  "buildSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+  "targetGame": "Slice Master / 小李飞刀",
+  "workspace": "game/prototype-a",
+  "stateInjection": false,
+  "debugApiCalled": false,
+  "environment": {
+    "node": "v24.14.0",
+    "pnpm": "11.25.0",
+    "platform": "darwin",
+    "browser": "Playwright Chromium headless"
+  }
+}

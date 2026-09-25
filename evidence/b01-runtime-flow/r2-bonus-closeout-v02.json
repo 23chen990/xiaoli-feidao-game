@@ -1,0 +1,30 @@
+{
+  "artifactType": "B01BonusOfflineSupplement",
+  "baseline": "ee991e08dce20ec88be9bb72c4f2f021f208c007",
+  "browserRunsPerformedThisRound": 0,
+  "build": {
+    "sourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+    "distIndexSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+    "acceptanceEntrySha256": "ef7c24a822963e87f6108c55c880859125de621c078980451459de446bb8ff73",
+    "bonusCheckModuleSha256": "a8ed695bea4f89e0e30939e78daefda576ee52a050e448a51327b4de0adda0bd"
+  },
+  "history": {
+    "attemptLedger": "evidence/b01-runtime-flow/r2-bonus-attempt-ledger-v01.json",
+    "initial": "evidence/b01-runtime-flow/r2-bonus-1100-formal-v01.json",
+    "corrected": "evidence/b01-runtime-flow/r2-bonus-1100-formal-v01-corrected.json",
+    "final": "evidence/b01-runtime-flow/r2-bonus-1100-formal-v01-final.json"
+  },
+  "diagnostic": {
+    "trajectory": "evidence/b01-runtime-flow/r2-bonus-diagnostic-seed31-v01.json",
+    "alignment": "evidence/b01-runtime-flow/r2-bonus-white-column-alignment-v01.json",
+    "candidateResult": "phase=bonus,status=won,finishSelection=bonus",
+    "firstNecessaryDivergence": "input 10 pre-input phase already differs; by input 12 candidate launches from anchored while browser flips while airborne",
+    "directFailure": "browser input 13 state y=-57.81899387273773, vy=-940; ten fixed ordinary steps reach y=-133.8606605394044 and fall"
+  },
+  "acceptanceFixes": {
+    "summary": "BONUS response subcheck now participates in result/rawOutcome/allAssertionsPass",
+    "causalSelection": "Only exact causal record with matching inputId is accepted; no at(-1) fallback",
+    "offlineRecheck": "evidence/b01-runtime-flow/r2-bonus-recheck-v01.json"
+  },
+  "result": "No new natural BONUS run was started. Existing browser attempts remain NOT_RUN; independent QA remains NOT_RUN under the stop condition."
+}

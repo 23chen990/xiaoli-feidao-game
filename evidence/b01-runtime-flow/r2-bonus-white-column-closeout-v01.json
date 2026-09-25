@@ -1,0 +1,39 @@
+{
+  "artifactType": "B01BonusWhiteColumnVisibleCloseout",
+  "baseline": "a48e6ae527798a4121f7b558e99e55928e1c4c2b",
+  "browserRunsThisRound": 1,
+  "run": "evidence/b01-runtime-flow/r2-bonus-white-column-visible-v01.json",
+  "runId": "09820974-fcff-475e-8c4d-e2f587d75eff",
+  "contextId": "ed88cfc3-c5e5-4b34-b5fb-b8831bed2f1b",
+  "viewport": "1100x720",
+  "versions": {
+    "localRunScript": "B01-BONUS-visible-v0.1",
+    "localRunScriptSha256": "eacd0670492cb6b1e121d3172c9d7e2483f802a32b467ccb91782930f7d6779d",
+    "acceptanceEntrySha256": "ef7c24a822963e87f6108c55c880859125de621c078980451459de446bb8ff73",
+    "bonusCheckSha256": "a8ed695bea4f89e0e30939e78daefda576ee52a050e448a51327b4de0adda0bd",
+    "sourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+    "buildSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+    "browserDocumentSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d"
+  },
+  "visibleStrategy": {
+    "start": "点击可见画布中央开始；之后只在画面中看到刀具回落到可操作中线时点击",
+    "whiteColumn": "接近白柱时等待；只有看到刀具与白柱接触后停住/锚定，才点击一次释放",
+    "airborne": "释放后看到刀具已经离开白柱并沿上升弧线运动时等待，不追加额外 flip；等下一次可见回落或锚定反馈再决定",
+    "confirmation": "BONUS 入口必须由画面阶段/文案变化确认；本次局部验证在 BONUS 前停止"
+  },
+  "result": "NOT_RUN",
+  "reason": "At planned input 11 the passive snapshot showed ordinary/airborne, not a visible anchored stop. The after-release screenshot shows the blade airborne at the top of the canvas; the strategy condition for an anchored launch was not met. The predeclared click was therefore not counted as a valid visible-strategy success, and no further input was sent.",
+  "observed": {
+    "input11Before": { "phase": "ordinary", "status": "airborne", "anchorId": null },
+    "input11After": { "phase": "ordinary", "status": "airborne", "anchorId": null },
+    "after750ms": { "phase": "ordinary", "status": "airborne", "x": 1421.5062983705627, "y": 80.84569408990563, "vx": 190, "vy": 145 },
+    "receipts": "two native pointer receipts for every planned input; input 11 causal record matched white-column-input-11",
+    "consolePageErrors": []
+  },
+  "evidence": [
+    "evidence/b01-runtime-flow/r2-natural/bonus-white-column-visible-v01/ready.png",
+    "evidence/b01-runtime-flow/r2-natural/bonus-white-column-visible-v01/after-white-column-release.png",
+    "evidence/b01-runtime-flow/r2-natural/bonus-white-column-visible-v01/after-release-observation.png"
+  ],
+  "remainingSingleCondition": "A human-visible anchor confirmation must be available before sending the white-column release input; the current fixed schedule cannot establish that condition reliably."
+}

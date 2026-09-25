@@ -1,0 +1,169 @@
+{
+  "artifactType": "B01BonusWhiteColumnAlignment",
+  "candidateSource": "r2-bonus-diagnostic-seed31-v01.json",
+  "browserSource": "r2-bonus-1100-formal-v01-final.json",
+  "candidateRows": [
+    {
+      "input": 10,
+      "trigger": "visible lane height above 430",
+      "step": 538,
+      "statusBefore": "airborne",
+      "xBefore": 1140.7239047327503,
+      "yBefore": 433.0674045899752,
+      "vyBefore": 300,
+      "anchorId": null,
+      "events": [
+        "flip"
+      ],
+      "afterStatus": "airborne",
+      "afterVy": -300
+    },
+    {
+      "input": 11,
+      "trigger": "visible ready/anchored release cue",
+      "step": 584,
+      "statusBefore": "anchored",
+      "xBefore": 1218.857245246197,
+      "yBefore": 427.05325380768085,
+      "vyBefore": 0,
+      "anchorId": "white-column",
+      "events": [
+        "anchor",
+        "launch"
+      ],
+      "afterStatus": "airborne",
+      "afterVy": -300
+    },
+    {
+      "input": 12,
+      "trigger": "visible ready/anchored release cue",
+      "step": 595,
+      "statusBefore": "anchored",
+      "xBefore": 1246.357245246197,
+      "yBefore": 382.59492047434753,
+      "vyBefore": 0,
+      "anchorId": "white-column",
+      "events": [
+        "anchor",
+        "launch"
+      ],
+      "afterStatus": "airborne",
+      "afterVy": -300
+    },
+    {
+      "input": 13,
+      "trigger": "visible ready/anchored release cue",
+      "step": 619,
+      "statusBefore": "anchored",
+      "xBefore": 1267.807245246195,
+      "yBefore": 312.09492047434753,
+      "vyBefore": 0,
+      "anchorId": "white-column",
+      "events": [
+        "anchor",
+        "launch"
+      ],
+      "afterStatus": "airborne",
+      "afterVy": -300
+    },
+    {
+      "input": 14,
+      "trigger": "visible lane height above 430",
+      "step": 698,
+      "statusBefore": "airborne",
+      "xBefore": 1463.3631918562996,
+      "yBefore": 430.90298613282766,
+      "vyBefore": 490,
+      "anchorId": null,
+      "events": [
+        "flip"
+      ],
+      "afterStatus": "airborne",
+      "afterVy": -300
+    }
+  ],
+  "browserRows": [
+    {
+      "input": 10,
+      "plannedMs": 9042,
+      "statusBefore": "anchored",
+      "xBefore": 1216.897897029236,
+      "yBefore": 371.13933946059564,
+      "vyBefore": 0,
+      "anchorId": null,
+      "events": [
+        "launch"
+      ],
+      "afterStatus": "airborne",
+      "afterVy": -260,
+      "failReason": null
+    },
+    {
+      "input": 11,
+      "plannedMs": 9808,
+      "statusBefore": "anchored",
+      "xBefore": 1203.3978970292324,
+      "yBefore": 297.51433946059564,
+      "vyBefore": 0,
+      "anchorId": null,
+      "events": [
+        "launch"
+      ],
+      "afterStatus": "airborne",
+      "afterVy": -260,
+      "failReason": null
+    },
+    {
+      "input": 12,
+      "plannedMs": 9992,
+      "statusBefore": "airborne",
+      "xBefore": 1225.8978970292324,
+      "yBefore": 259.63933946059564,
+      "vyBefore": -210,
+      "anchorId": null,
+      "events": [
+        "flip"
+      ],
+      "afterStatus": "airborne",
+      "afterVy": -670,
+      "failReason": null
+    },
+    {
+      "input": 13,
+      "plannedMs": 10392,
+      "statusBefore": "airborne",
+      "xBefore": 1290.2978970292284,
+      "yBefore": 33.97267279392894,
+      "vyBefore": -490,
+      "anchorId": null,
+      "events": [
+        "flip"
+      ],
+      "afterStatus": "airborne",
+      "afterVy": -940,
+      "failReason": null
+    },
+    {
+      "input": 14,
+      "plannedMs": 11708,
+      "statusBefore": "failed",
+      "xBefore": 1324.5978970292288,
+      "yBefore": -133.8606605394044,
+      "vyBefore": 0,
+      "anchorId": null,
+      "events": [],
+      "afterStatus": "failed",
+      "afterVy": 0,
+      "failReason": "fall"
+    }
+  ],
+  "firstDivergence": {
+    "input": 10,
+    "reason": "At input 10 a difference is observed in the compared segment: candidate input 10 is airborne and performs flip at x=1140.72,y=433.07, while browser input 10 is anchored at x=1216.90,y=371.14 and performs launch. At input 12 the candidate is still anchored and produces launch, while the browser is airborne after input 11 and produces flip. This does not claim the first difference of the full run.",
+    "directFailure": "Browser input 13 leaves y=-57.81899387273773, vy=-940; ten ordinary fixed steps reach y=-133.8606605394044 and the upper-bound fall predicate, matching the recorded failure.",
+    "notProven": [
+      "No evidence isolates screenshot timing, hit-stop, or a physics defect as the upstream cause.",
+      "The browser causal probe was not armed for inputs 1-13, so handler-boundary causality before the white-column segment is unavailable."
+    ]
+  }
+}

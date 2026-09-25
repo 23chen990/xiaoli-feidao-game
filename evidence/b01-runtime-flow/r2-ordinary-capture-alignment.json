@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01R2OrdinaryCaptureAlignment",
+  "targetGame": "Slice Master / 小李飞刀",
+  "workspace": "game/prototype-a",
+  "sourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "buildSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+  "servedBuildCheck": {
+    "url": "http://127.0.0.1:4175/",
+    "servedIndexSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+    "distIndexSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+    "matchesRecordedBuild": true
+  },
+  "repositoryCheck": {
+    "remoteHead": "04bea373c2598549c8cf497061c0a8299527948c",
+    "workingTree": "clean",
+    "sourceDiff3715502To04bea373": [],
+    "gameSourceChangedBetweenR1AndR2": false
+  },
+  "inputPlan": {
+    "viewport": "1100x720",
+    "coordinate": {
+      "x": 550,
+      "y": 518.4
+    },
+    "tapsMs": [
+      800,
+      1859,
+      2032,
+      3068,
+      4140,
+      5118,
+      6155,
+      7157,
+      8215,
+      9199
+    ],
+    "fixedStepHz": 120,
+    "scheduleMode": "original wall-time schedule; no state polling drives input",
+    "resetForDiagnosis": "existing resetGame() called after optional ready screenshot; diagnostic only",
+    "resetBridgeCall": "window.__GAME_TEST__.resetGame() (diagnostic only; not natural acceptance)",
+    "postCheckpointSampling": {
+      "executedInSourceRuns": false,
+      "reason": "source reports used original wall-time schedule; no fixed +120 step wait was executed",
+      "comparisonUses": "handler-boundary and recorded before/after states"
+    }
+  },
+  "startupAlignment": {
+    "note": "Before reset, browser startup simulation progress was not identical. This is a confounder in the original comparison. The paired runs reset to the same default seed/level/ready/progress before the schedule.",
+    "withFirst": {
+      "report": "r2-ordinary-capture-align-with-first.json",
+      "startupWorldTime": {
+        "withScreenshots": 1.141666666666666,
+        "withoutScreenshots": 0.7249999999999999
+      },
+      "reset": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "ready",
+        "worldTime": 0,
+        "progressHighestUnlocked": 1
+      }
+    },
+    "withoutFirst": {
+      "report": "r2-ordinary-capture-align-without-first.json",
+      "startupWorldTime": {
+        "withoutScreenshots": 0.7249999999999999,
+        "withScreenshots": 0.7166666666666666
+      },
+      "reset": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "ready",
+        "worldTime": 0,
+        "progressHighestUnlocked": 1
+      }
+    }
+  },
+  "observationBoundary": {
+    "primary": "window capture listener records state before the native shell pointerdown handler; window bubble listener records state after the handler returns, before a later frame snapshot.",
+    "fields": [
+      "physicalStep",
+      "worldTime",
+      "status",
+      "anchorId",
+      "x",
+      "y",
+      "vx",
+      "vy",
+      "eventCount",
+      "event order",
+      "pointer receipt epoch/delay"
+    ],
+    "inputDisposition": "All first-four inputs produced an immediate launch/flip transition at the handler boundary. No buffered-only or ignored input was observed in this paired window; inputBuffer is not asserted when no visible transition occurs.",
+    "reports": [
+      "r2-ordinary-capture-align-with-first.json",
+      "r2-ordinary-capture-align-without-first.json"
+    ],
+    "inputArchitecture": {
+      "ActionInput": "game-core ActionInput owns held/repeat suppression; private held set not observed",
+      "inputBuffer": "SliceSimulation owns inputBuffer after flip cooldown; private value not observed"
+    }
+  },
+  "firstDivergenceWindow": {
+    "earliestObservedActionTimingDifference": {
+      "inputIndex": 1,
+      "withoutScreenshotsPhysicalStep": 109,
+      "withScreenshotsPhysicalStep": 108,
+      "comparison": "eventBoundary.after.physicalStep"
+    },
+    "firstVisibleThresholdDifference": {
+      "inputIndex": 4,
+      "comparison": "eventBoundary.before state",
+      "threshold": {
+        "positionDistance": 20,
+        "speedDistance": 50
+      },
+      "withoutScreenshotsBefore": {
+        "x": 435.2,
+        "y": 446.75,
+        "vx": 150,
+        "vy": 310
+      },
+      "withScreenshotsBefore": {
+        "x": 418.95,
+        "y": 416.4166666666667,
+        "vx": 150,
+        "vy": 245
+      }
+    },
+    "withoutFirstReanalysis": {
+      "firstInput": {
+        "withoutScreenshotsPhysicalStep": 109,
+        "withScreenshotsPhysicalStep": 108,
+        "note": "first observed timing difference; this is not a complete-state equivalence claim"
+      },
+      "thirdLaunch": {
+        "withoutScreenshotsPhysicalStep": 261,
+        "withScreenshotsPhysicalStep": 274,
+        "launchStart": {
+          "x": 282.7,
+          "y": 439.125,
+          "vx": 150,
+          "vy": -300
+        }
+      },
+      "fourthInput": {
+        "withoutScreenshotsPhysicalStep": 383,
+        "withScreenshotsPhysicalStep": 383,
+        "flightSteps": {
+          "withoutScreenshots": 122,
+          "withScreenshots": 109
+        },
+        "beforeInput": {
+          "withoutScreenshots": {
+            "x": 435.2,
+            "y": 446.75,
+            "vx": 150,
+            "vy": 310
+          },
+          "withScreenshots": {
+            "x": 418.95,
+            "y": 416.4166666666667,
+            "vx": 150,
+            "vy": 245
+          }
+        }
+      }
+    },
+    "comparisonFields": [
+      "physicalStep",
+      "worldTime",
+      "status",
+      "anchorId",
+      "cuts",
+      "player.x",
+      "player.y",
+      "player.vx",
+      "player.vy",
+      "eventCount"
+    ],
+    "unobservedFields": [
+      "ActionInput held/repeat internals",
+      "SliceSimulation inputBuffer value",
+      "renderer frame scheduling internals",
+      "OS/browser compositor timing",
+      "remote read and screenshot encoding duration"
+    ]
+  },
+  "minimalReverification": {
+    "orderSwapExecuted": true,
+    "withScreenshotsFirstReportGeneratedAt": "2026-09-25T11:40:54.510Z",
+    "withoutScreenshotsFirstReportGeneratedAt": "2026-09-25T11:41:16.749Z",
+    "result": "The earliest observed timing difference is input 1 (109 vs 108 physical steps). The third launch occurs at step 261 without screenshots versus 274 with screenshots, from the same launch pose and velocity. Input 4 is at step 383 in both runs but therefore has 122 versus 109 flight steps; fixed-rule replay produces (435.2,446.75), vy=310 and (418.95,416.4166666667), vy=245. This supports different launch timing as the explanation for the input-4 pre-state difference.",
+    "remainingBoundary": "Private ActionInput accepted/buffered state remains unexposed; ActionInput held/repeat and SliceSimulation inputBuffer are not read by this report.",
+    "causalLimits": [
+      "Screenshot waiting, remote reads, event handling and RAF/frame scheduling costs were not independently isolated; screenshot capture is not proven the unique cause.",
+      "The supported explanation is different launch timing/physical-step history and its deterministic fixed-update consequence."
+    ]
+  },
+  "diagnosisOnly": true,
+  "naturalAcceptance": "NOT_RUN (diagnostic report only)",
+  "sourceChanged": false,
+  "reviewReport": "r2-ordinary-capture-align-r2-review.json",
+  "captureScriptOutputIsolation": {
+    "script": "r2-ordinary-capture-align.mjs",
+    "defaultReport": "r2-ordinary-capture-align-r2.json",
+    "defaultScreenshotDirectory": "r2-ordinary-capture-align-r2/screenshots/",
+    "legacyCompareAndScreenshotPathsOverwritten": false,
+    "grouping": "resultsByMode[result.mode]; no array-position assumption"
+  }
+}

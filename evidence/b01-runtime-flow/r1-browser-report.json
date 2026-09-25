@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01R1BrowserReport",
+  "targetGame": "Slice Master / 小李飞刀",
+  "workspace": "game/prototype-a",
+  "branch": "codex/b01-runtime-flow",
+  "sourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "build": {
+    "path": "game/prototype-a/dist/index.html",
+    "sha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d"
+  },
+  "environment": {
+    "node": "v24.14.0",
+    "pnpm": "11.25.0",
+    "platform": "darwin",
+    "browser": "Playwright Chromium headless"
+  },
+  "freshBrowserContexts": true,
+  "stateInjection": false,
+  "debugApiCalled": false,
+  "inputPolicy": "Formal schedules were frozen before execution; only visible canvas taps were dispatched; getState was read only after input for evidence; no selectLevel/debugPlacePlayer/debugEnterFinishGate/enterBonusChallenge/step or storage mutation.",
+  "classificationPolicy": {
+    "targetCheckpointMissing": "NOT_RUN",
+    "productAssertionViolationAtReachedCheckpoint": "FAIL",
+    "environmentToolBlock": "BLOCKED"
+  },
+  "results": {
+    "A-ordinary-1100x720": {
+      "result": "NOT_RUN",
+      "explorationAttempts": 6,
+      "successes": 0,
+      "independentQAAttempts": 2,
+      "requiredCheckpoint": "phase=ordinary,status=won,terminal settlement,blank tap unchanged,next level ready,reload level 2 ready",
+      "formalReport": "r1-ordinary-report.json",
+      "reason": "All bounded attempts ended before ordinary won; formal attempt reached phase=ordinary,status=failed,failReason=fall. No product terminal assertion was reached.",
+      "evidencePaths": [
+        "r1-exploration-log.json",
+        "r1-ordinary-report.json",
+        "screenshots/ordinary-1100x720-r1-ready.png",
+        "screenshots/ordinary-1100x720-r1-terminal.png",
+        "r1-formal-ordinary-fixed.mjs"
+      ]
+    },
+    "B-bonus-390x844": {
+      "result": "NOT_RUN",
+      "explorationAttempts": 1,
+      "successes": 0,
+      "requiredCheckpoint": "ready→natural gate hit→phase=bonus→post-entry normal input response",
+      "formalReport": "r1-bonus-report.json",
+      "reason": "Natural input ended in ordinary failed before phase=bonus; no bonus entry or post-entry response was observed.",
+      "evidencePaths": [
+        "r1-exploration-log.json",
+        "r1-bonus-report.json",
+        "screenshots/bonus-390x844-ready.png",
+        "r1-formal-bonus-fixed.mjs"
+      ]
+    },
+    "B-bonus-1100x720": {
+      "result": "NOT_RUN",
+      "explorationAttempts": 1,
+      "successes": 0,
+      "requiredCheckpoint": "ready→natural gate hit→phase=bonus→post-entry normal input response",
+      "formalReport": "r1-bonus-report.json",
+      "reason": "Natural input schedule ended in ordinary airborne without phase=bonus; no bonus entry or post-entry response was observed.",
+      "evidencePaths": [
+        "r1-exploration-log.json",
+        "r1-bonus-report.json",
+        "screenshots/bonus-1100x720-ready.png",
+        "r1-formal-bonus-fixed.mjs"
+      ]
+    }
+  },
+  "consoleAndPageErrors": {
+    "ordinary": [],
+    "bonus": {
+      "bonus-390x844": [],
+      "bonus-1100x720": []
+    }
+  },
+  "independentQA": "r1-independent-review.json",
+  "limitations": [
+    "True OS backgrounding, real BFCache navigation, and browser storage fault injection remain unexecuted.",
+    "No source changes were made; the existing build SHA remains valid.",
+    "Independent QA reproduced the bounded ordinary path in two fresh 1100x720 contexts; neither reached the target won checkpoint."
+  ],
+  "regressionQA": "r1-regression.json",
+  "regressionConclusion": "PASS_NO_REGRESSION_WITH_KNOWN_ASSET_MANIFEST_FAILURE",
+  "independentQAResult": "NOT_RUN_TARGET_CHECKPOINTS"
+}

@@ -1,0 +1,287 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01ReproductionMatrix",
+  "targetGame": "Slice Master / 小李飞刀",
+  "workspace": "game/prototype-a",
+  "testedSourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "cells": [
+    {
+      "id": "bonus-definition-odd-390",
+      "objectType": "BONUS finish option",
+      "lifecycle": "ordinary ready and reload",
+      "stateBranch": "configured bonusAvailable true",
+      "renderer": "SliceSimulation → DOM finish labels",
+      "viewport": "390x844",
+      "status": "PASS_LOGIC_AND_VISIBLE",
+      "acceptance": "odd seed has the same BONUS option as even seed when level config allows it",
+      "evidencePaths": [
+        "game/prototype-a/tests/runtime-flow.test.ts",
+        "evidence/b01-runtime-flow/screenshots/390x844-ordinary-terminal.png"
+      ]
+    },
+    {
+      "id": "bonus-definition-even-1100",
+      "objectType": "BONUS finish option",
+      "lifecycle": "ordinary ready and reload",
+      "stateBranch": "configured bonusAvailable true and false",
+      "renderer": "SliceSimulation → DOM finish labels",
+      "viewport": "1100x720",
+      "status": "PASS_LOGIC_NATURAL_NOT_RUN",
+      "acceptance": "even seed has the same BONUS option as odd seed; disallowed levels have no BONUS option",
+      "evidencePaths": [
+        "game/prototype-a/tests/runtime-flow.test.ts",
+        "evidence/b01-runtime-flow/browser-report.json"
+      ],
+      "remainingGap": "No natural 1100x720 completion reached the ordinary terminal."
+    },
+    {
+      "id": "terminal-failure-390",
+      "objectType": "terminal controls",
+      "lifecycle": "failed → terminal → retry",
+      "stateBranch": "fall or spike failure",
+      "renderer": "SliceSimulation → DOM terminal overlay",
+      "viewport": "390x844",
+      "status": "PASS",
+      "acceptance": "blank scene input leaves failed state; retry button returns ready",
+      "evidencePaths": [
+        "evidence/b01-runtime-flow/browser-report.json",
+        "evidence/b01-runtime-flow/screenshots/390x844-terminal.png",
+        "evidence/b01-runtime-flow/screenshots/390x844-replay.png"
+      ]
+    },
+    {
+      "id": "terminal-win-1100",
+      "objectType": "terminal controls",
+      "lifecycle": "ordinary win → terminal → next/retry",
+      "stateBranch": "safe/multiplier finish settlement",
+      "renderer": "SliceSimulation → DOM terminal overlay + ThreeWorldRenderer",
+      "viewport": "1100x720",
+      "status": "NOT_RUN",
+      "acceptance": "retry and available next buttons are explicit and single-fire",
+      "evidencePaths": [
+        "evidence/b01-runtime-flow/browser-report.json"
+      ],
+      "remainingGap": "Predeclared 950ms/450ms and 950ms/550ms mouse schedules both failed before ordinary settlement."
+    },
+    {
+      "id": "active-background-390",
+      "objectType": "airborne player/input",
+      "lifecycle": "active → hidden/blur → visible",
+      "stateBranch": "airborne simulation",
+      "renderer": "requestAnimationFrame → SliceSimulation → ThreeWorldRenderer",
+      "viewport": "390x844",
+      "status": "PASS_SYNTHETIC",
+      "acceptance": "elapsed and pose do not advance during background gap; held input is released; continue does not flip",
+      "evidencePaths": [
+        "game/prototype-a/src/runtime-lifecycle.ts",
+        "evidence/b01-runtime-flow/browser-report.json",
+        "evidence/b01-runtime-flow/screenshots/390x844-paused-continue.png"
+      ]
+    },
+    {
+      "id": "active-bfcache-1100",
+      "objectType": "renderer lifecycle",
+      "lifecycle": "active → persisted pagehide → pageshow",
+      "stateBranch": "airborne simulation",
+      "renderer": "ThreeWorldRenderer",
+      "viewport": "1100x720",
+      "status": "PASS_SYNTHETIC",
+      "acceptance": "renderer is not disposed and only one frame loop resumes",
+      "evidencePaths": [
+        "game/prototype-a/src/runtime-lifecycle.ts",
+        "evidence/b01-runtime-flow/browser-report.json",
+        "evidence/b01-runtime-flow/screenshots/1100x720-pageshow-resumed.png"
+      ]
+    },
+    {
+      "id": "storage-corrupt-390",
+      "objectType": "progress record",
+      "lifecycle": "startup → reload",
+      "stateBranch": "malformed JSON/schema",
+      "renderer": "LevelProgressStore → level selector DOM",
+      "viewport": "390x844",
+      "status": "PASS_LOGIC",
+      "acceptance": "defaults to level 1 without unlocking all levels and remains playable",
+      "evidencePaths": [
+        "game/prototype-a/tests/runtime-flow.test.ts",
+        "evidence/b01-runtime-flow/logs/runtime-flow.log"
+      ]
+    },
+    {
+      "id": "storage-throws-1100",
+      "objectType": "progress record",
+      "lifecycle": "startup/complete/select",
+      "stateBranch": "getItem or setItem throws",
+      "renderer": "LevelProgressStore → level selector DOM",
+      "viewport": "1100x720",
+      "status": "PASS_LOGIC",
+      "acceptance": "session memory retains unlocks and a non-blocking warning is visible",
+      "evidencePaths": [
+        "game/prototype-a/tests/runtime-flow.test.ts",
+        "evidence/b01-runtime-flow/logs/runtime-flow.log"
+      ]
+    },
+    {
+      "id": "r1-ordinary-win-next-reload-1100",
+      "objectType": "ordinary terminal controls and level progression",
+      "lifecycle": "ready → natural play → settlement → next → reload",
+      "stateBranch": "phase=ordinary,status=won",
+      "renderer": "SliceSimulation → DOM terminal actions + level selector",
+      "viewport": "1100x720",
+      "status": "NOT_RUN",
+      "acceptance": "ordinary won; pre-settlement controls hidden; blank tap unchanged; next level ready; reload level 2 playable",
+      "evidencePaths": [
+        "evidence/b01-runtime-flow/r1-ordinary-report.json",
+        "evidence/b01-runtime-flow/r1-exploration-log.json"
+      ],
+      "remainingGap": "All six bounded explorations and the frozen formal schedule ended before the required won checkpoint."
+    },
+    {
+      "id": "r1-natural-bonus-390",
+      "objectType": "BONUS finish branch",
+      "lifecycle": "ready → natural gate contact → bonus play",
+      "stateBranch": "configured bonusAvailable true",
+      "renderer": "SliceSimulation → reward-phase DOM/HUD",
+      "viewport": "390x844",
+      "status": "NOT_RUN",
+      "acceptance": "natural gate hit changes phase to bonus and subsequent normal input changes reward state",
+      "evidencePaths": [
+        "evidence/b01-runtime-flow/r1-bonus-report.json",
+        "evidence/b01-runtime-flow/screenshots/bonus-390x844-ready.png"
+      ],
+      "remainingGap": "Ordinary branch failed before phase=bonus."
+    },
+    {
+      "id": "r1-natural-bonus-1100",
+      "objectType": "BONUS finish branch",
+      "lifecycle": "ready → natural gate contact → bonus play",
+      "stateBranch": "configured bonusAvailable true",
+      "renderer": "SliceSimulation → reward-phase DOM/HUD",
+      "viewport": "1100x720",
+      "status": "NOT_RUN",
+      "acceptance": "natural gate hit changes phase to bonus and subsequent normal input changes reward state",
+      "evidencePaths": [
+        "evidence/b01-runtime-flow/r1-bonus-report.json",
+        "evidence/b01-runtime-flow/screenshots/bonus-1100x720-ready.png"
+      ],
+      "remainingGap": "Schedule ended ordinary airborne before phase=bonus."
+    },
+    {
+      "id": "r1-regression-full-suite",
+      "objectType": "full test/lint/typecheck suite",
+      "lifecycle": "source checkout → command execution",
+      "stateBranch": "current source versus base SHA",
+      "renderer": "N/A",
+      "viewport": "N/A",
+      "status": "PASS_WITH_KNOWN_BASELINE_FAILURE",
+      "acceptance": "current lint/typecheck pass; full test retains only pre-existing missing asset-manifest failure",
+      "evidencePaths": [
+        "evidence/b01-runtime-flow/r1-regression.json",
+        "evidence/b01-runtime-flow/logs/r1-current-test.log",
+        "evidence/b01-runtime-flow/logs/r1-baseline-test.log"
+      ]
+    },
+    {
+      "id": "r2-ordinary-failure-trace-1100",
+      "objectType": "airborne player and terminal fall",
+      "lifecycle": "ready → visible input → ordinary airborne/terminal",
+      "stateBranch": "ordinary, pre-settlement failure and upper fall boundary",
+      "renderer": "pointer input → SliceSimulation → ThreeWorldRenderer",
+      "viewport": "1100x720",
+      "status": "DIAGNOSIS_ONLY_NO_ROOT_CAUSE",
+      "acceptance": "record input receipt, send timing, input-before/after state, velocity, collision/flip events and exact failure condition",
+      "evidencePaths": [
+        "evidence/b01-runtime-flow/r2-ordinary-capture-compare.json",
+        "evidence/b01-runtime-flow/r2-ordinary-exploration.json",
+        "evidence/b01-runtime-flow/r2-revision-notes.md"
+      ],
+      "observation": "R1 terminal y≈-127.6 satisfies the upper fall boundary y+17<-110 and emits fall; R2 paired contexts both received inputs but diverged in wall-clock trajectory timing."
+    },
+    {
+      "id": "r2-capture-mode-comparison-1100",
+      "objectType": "input cadence and capture overhead",
+      "lifecycle": "fresh context → fixed visible input plan → terminal or bounded end",
+      "stateBranch": "ordinary phase, screenshot versus no screenshot",
+      "renderer": "Playwright CDP input → browser pointer receipt → SliceSimulation",
+      "viewport": "1100x720",
+      "status": "DIAGNOSIS_COMPLETE_BOUNDARY_GAP",
+      "acceptance": "same build, viewport and input plan; only capture mode changes; compare input times and earliest trajectory divergence",
+      "evidencePaths": [
+        "evidence/b01-runtime-flow/r2-ordinary-capture-compare.json",
+        "evidence/b01-runtime-flow/r2-ordinary-capture-alignment.json",
+        "evidence/b01-runtime-flow/r2-ordinary-capture-align-with-first.json",
+        "evidence/b01-runtime-flow/r2-ordinary-capture-align-without-first.json"
+      ],
+      "observation": "Both execution orders locate input 4 as the first material state divergence. The swapped order has both input handlers at physical step 383 with the same immediate flip, but different pre-input pose/velocity; the divergence is in scheduling/path history before the handler."
+    },
+    {
+      "id": "r2-natural-ordinary-win-next-reload-1100",
+      "objectType": "ordinary terminal controls and reload playability",
+      "lifecycle": "ready → natural play → settlement → next → reload → input",
+      "stateBranch": "phase=ordinary,status=won",
+      "renderer": "SliceSimulation → DOM terminal actions + level selector",
+      "viewport": "1100x720",
+      "status": "PASS",
+      "acceptance": "ordinary won; pre-settlement controls hidden; blank tap unchanged; next level ready; reload level 2 ready and visible input responds",
+      "evidencePaths": [
+        "evidence/b01-runtime-flow/r2-ordinary-formal.json",
+        "evidence/b01-runtime-flow/r2-ordinary-independent-qa-1.json",
+        "evidence/b01-runtime-flow/r2-ordinary-independent-qa-2.json",
+        "evidence/b01-runtime-flow/r2-natural/formal-ordinary/",
+        "evidence/b01-runtime-flow/r2-natural/independent-qa-1/",
+        "evidence/b01-runtime-flow/r2-natural/independent-qa-2/"
+      ],
+      "remainingGap": "BONUS evidence is intentionally deferred and tracked separately.",
+      "observation": "Formal and two independent fresh contexts used the same visible strategy. All reached phase=ordinary,status=won,finishPhase=terminal; pre-settlement controls were hidden; blank tap was unchanged; next level was ready; reload retained level 2 ready; post-reload visible input responded. Each run had pointer receipts and no console/pageerror entries."
+    },
+    {
+      "id": "r2-natural-bonus-entry-390-and-1100",
+      "objectType": "BONUS finish branch",
+      "lifecycle": "ready → natural gate contact → phase=bonus → normal input",
+      "stateBranch": "configured bonusAvailable true",
+      "renderer": "SliceSimulation → reward-phase DOM/HUD",
+      "viewport": "390x844 and 1100x720",
+      "status": "NOT_RUN",
+      "acceptance": "natural entry plus post-entry input receipt and observable reward response",
+      "evidencePaths": [
+        "evidence/b01-runtime-flow/qa-natural-r2.mjs",
+        "evidence/b01-runtime-flow/r2-browser-report.json"
+      ],
+      "remainingGap": "Natural BONUS entry and post-entry input response remain NOT_RUN by explicit supplement scope; no repeated failed prerequisite path was executed."
+    },
+    {
+      "id": "r2-acceptance-script-ordinary-1100-v21",
+      "objectType": "acceptance checkpoints and terminal controls",
+      "lifecycle": "ready → ordinary running → contact/reward/celebration → terminal → next → reload",
+      "stateBranch": "ordinary phase/status won plus reload input",
+      "renderer": "qa-natural-r2.mjs → DOM controls + SliceSimulation state/events",
+      "viewport": "1100x720",
+      "status": "PASS",
+      "acceptance": "validObservation required; actual control visibility hidden before settlement and visible after; new receipt sequence and new launch/flip/cut action required after reload",
+      "evidencePaths": [
+        "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v8.json",
+        "evidence/b01-runtime-flow/r2-ordinary-independent-qa-r2patch-v8.json",
+        "evidence/b01-runtime-flow/r2-acceptance-script-self-check-r2patch.json"
+      ],
+      "remainingGap": "BONUS natural entry is intentionally NOT_RUN."
+    },
+    {
+      "id": "r2-acceptance-closeout-v22-ordinary-1100",
+      "objectType": "ordinary controls and causal reload response",
+      "lifecycle": "ready → first input → ordinary running → contact/reward/celebration → terminal → next → reload → input",
+      "stateBranch": "ordinary phase/status won with all required observation phases",
+      "renderer": "qa-natural-r2.mjs → browser DOM + SliceSimulation state/events",
+      "viewport": "1100x720",
+      "status": "PASS",
+      "acceptance": "Observer starts before first input; ready is separate from normal-running; contact/reward/celebration are separately valid and hidden; causal launch evidence and post-response screenshot are present; browser navigation document hashes match build.",
+      "evidencePaths": [
+        "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v22.json",
+        "evidence/b01-runtime-flow/r2-ordinary-independent-qa-r2patch-v22.json"
+      ],
+      "remainingGap": "BONUS natural entry remains NOT_RUN."
+    }
+  ],
+  "r1SourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "r2SourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "r2Status": "ORDINARY_NATURAL_PASS_BONUS_NOT_RUN"
+}

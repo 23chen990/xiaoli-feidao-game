@@ -1,0 +1,58 @@
+{
+  "artifactType": "B01BonusWhiteColumnVisibleDecisionIsolation",
+  "baseline": "f7708fab0e0d8f19964bb74b02c71ed708c2cffa",
+  "workspace": "/Users/kker/Documents/ChatGPT/xiaoli-feidao-game-b01",
+  "branch": "codex/b01-runtime-flow",
+  "pr": { "number": 1, "state": "OPEN", "draft": true },
+  "scope": "1100x720 white-column local verification only",
+  "script": {
+    "path": "evidence/b01-runtime-flow/r2-bonus-white-column-interactive-v04.mjs",
+    "version": "B01-BONUS-interactive-v0.4-isolated-output",
+    "sha256": "11f1afebf002762ca7f1aea28f833bed0d5d58143f55cf5f3a4b31693f0ed447"
+  },
+  "run": {
+    "runId": "dc2326af-a77c-4be1-9c15-c8c6b1484c50",
+    "contextId": "2d95b058-0bed-49b9-8420-fb455a5b4592",
+    "viewport": "1100x720",
+    "sourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+    "buildSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+    "documentResponseSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+    "operatorResponseLimitMs": 60000,
+    "waitGameObservationMs": 350,
+    "gameContinuesWhileOperatorThinking": true
+  },
+  "visibleDecisionLog": [
+    {
+      "decision": "WAIT",
+      "screenshot": "r2-natural/bonus-white-column-interactive-v04/observation-02-wait.png",
+      "visibleReason": "Contact was visible, but a second frame was needed to confirm stability.",
+      "effect": "No input sent; game advanced only for the declared 350ms observation interval."
+    },
+    {
+      "decision": "RELEASE",
+      "screenshot": "r2-natural/bonus-white-column-interactive-v04/release-before.png",
+      "visibleReason": "Two consecutive frames showed the blade touching the white column with stable position and no visible travel.",
+      "effect": "One normal canvas click sent; no follow-up flip was dispatched."
+    }
+  ],
+  "postStopAudit": {
+    "raw": "evidence/b01-runtime-flow/r2-bonus-white-column-interactive-v04.json",
+    "receiptSeq": [19, 20],
+    "releaseAfterScreenshot": "r2-natural/bonus-white-column-interactive-v04/release-after.png",
+    "errors": []
+  },
+  "operatorOutputIsolation": "PASS",
+  "result": "PASS",
+  "classification": "PASS_LOCAL_VISIBLE_WAIT_RELEASE",
+  "fullBonus": "NOT_RUN",
+  "independentQa": "NOT_RUN",
+  "gameSourceModified": false,
+  "evidence": [
+    "r2-natural/bonus-white-column-interactive-v04/ready.png",
+    "r2-natural/bonus-white-column-interactive-v04/observation-01-after-prefix.png",
+    "r2-natural/bonus-white-column-interactive-v04/observation-02-wait.png",
+    "r2-natural/bonus-white-column-interactive-v04/release-before.png",
+    "r2-natural/bonus-white-column-interactive-v04/release-after.png"
+  ],
+  "missingEvidence": []
+}

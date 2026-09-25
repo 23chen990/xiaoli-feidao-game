@@ -1,0 +1,3480 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01R2OrdinaryCandidateNaturalTrace",
+  "generatedAt": "2026-09-25T11:53:11.269Z",
+  "targetGame": "Slice Master / 小李飞刀",
+  "workspace": "game/prototype-a",
+  "sourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "buildSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+  "baseUrl": "http://127.0.0.1:4175/",
+  "viewport": "1100x720",
+  "inputPlan": {
+    "intervalMs": 975,
+    "offsetMs": 150,
+    "tapsMs": [
+      150,
+      1125,
+      2100,
+      3075,
+      4050,
+      5025,
+      6000,
+      6975,
+      7950,
+      8925,
+      9900,
+      10875,
+      11850,
+      12825,
+      13800,
+      14775,
+      15750,
+      16725,
+      17700,
+      18675,
+      19650,
+      20625,
+      21600,
+      22575,
+      23550,
+      24525,
+      25500,
+      26475,
+      27450,
+      28425
+    ]
+  },
+  "naturalVisibleInput": true,
+  "freshContext": true,
+  "stateInjection": false,
+  "debugApiCalled": false,
+  "terminalVisible": true,
+  "dispatches": [
+    {
+      "index": 1,
+      "plannedMs": 150,
+      "sendEpochMs": 1790337173342,
+      "received": [
+        {
+          "type": "pointerdown",
+          "epochMs": 1790337173371,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        },
+        {
+          "type": "pointerup",
+          "epochMs": 1790337173601.7,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        }
+      ],
+      "before": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "ready",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 1.3666666666666643,
+        "cuts": 0,
+        "player": {
+          "x": 120,
+          "y": 420,
+          "vx": 0,
+          "vy": 0,
+          "angle": -0.35,
+          "angularVelocity": 0
+        },
+        "eventCount": 0,
+        "events": []
+      },
+      "after": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 1.7916666666666627,
+        "cuts": 1,
+        "player": {
+          "x": 177.5,
+          "y": 350.0416666666667,
+          "vx": 150,
+          "vy": -70,
+          "angle": 2.9817592900973295,
+          "angularVelocity": 7.897544193548947
+        },
+        "eventCount": 2,
+        "events": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          },
+          {
+            "id": 2,
+            "type": "cut",
+            "x": 203,
+            "y": 312,
+            "value": 1,
+            "targetId": "rune-1",
+            "contactPart": "edge"
+          }
+        ]
+      },
+      "inputReceiptObserved": true
+    },
+    {
+      "index": 2,
+      "plannedMs": 1125,
+      "sendEpochMs": 1790337174308,
+      "received": [
+        {
+          "type": "pointerdown",
+          "epochMs": 1790337174330.6,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        },
+        {
+          "type": "pointerup",
+          "epochMs": 1790337174331.8,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        }
+      ],
+      "before": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 2.3249999999999944,
+        "cuts": 1,
+        "player": {
+          "x": 257.5,
+          "y": 399.375,
+          "vx": 150,
+          "vy": 250,
+          "angle": 6.703483184414954,
+          "angularVelocity": 6.107529506058522
+        },
+        "eventCount": 2,
+        "events": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          },
+          {
+            "id": 2,
+            "type": "cut",
+            "x": 203,
+            "y": 312,
+            "value": 1,
+            "targetId": "rune-1",
+            "contactPart": "edge"
+          }
+        ]
+      },
+      "after": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 2.5999999999999934,
+        "cuts": 1,
+        "player": {
+          "x": 301.4500000000006,
+          "y": 361,
+          "vx": 162,
+          "vy": -165,
+          "angle": 4.7623983681965365,
+          "angularVelocity": -9.42099716601176
+        },
+        "eventCount": 3,
+        "events": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          },
+          {
+            "id": 2,
+            "type": "cut",
+            "x": 203,
+            "y": 312,
+            "value": 1,
+            "targetId": "rune-1",
+            "contactPart": "edge"
+          },
+          {
+            "id": 3,
+            "type": "flip",
+            "x": 265,
+            "y": 412.75,
+            "value": 1
+          }
+        ]
+      },
+      "inputReceiptObserved": true
+    },
+    {
+      "index": 3,
+      "plannedMs": 2100,
+      "sendEpochMs": 1790337175301,
+      "received": [
+        {
+          "type": "pointerdown",
+          "epochMs": 1790337175323.2,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        },
+        {
+          "type": "pointerup",
+          "epochMs": 1790337175324.3,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        }
+      ],
+      "before": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 3.324999999999991,
+        "cuts": 1,
+        "player": {
+          "x": 418.9000000000026,
+          "y": 400.875,
+          "vx": 162,
+          "vy": 270,
+          "angle": -1.013804092081665,
+          "angularVelocity": -6.642852538571023
+        },
+        "eventCount": 3,
+        "events": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          },
+          {
+            "id": 2,
+            "type": "cut",
+            "x": 203,
+            "y": 312,
+            "value": 1,
+            "targetId": "rune-1",
+            "contactPart": "edge"
+          },
+          {
+            "id": 3,
+            "type": "flip",
+            "x": 265,
+            "y": 412.75,
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 3.4499999999999904,
+        "cuts": 1,
+        "player": {
+          "x": 440.1500000000026,
+          "y": 390.0416666666667,
+          "vx": 174,
+          "vy": -250,
+          "angle": -0.4289938875892946,
+          "angularVelocity": 10.086666454695939
+        },
+        "eventCount": 4,
+        "events": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          },
+          {
+            "id": 2,
+            "type": "cut",
+            "x": 203,
+            "y": 312,
+            "value": 1,
+            "targetId": "rune-1",
+            "contactPart": "edge"
+          },
+          {
+            "id": 3,
+            "type": "flip",
+            "x": 265,
+            "y": 412.75,
+            "value": 1
+          },
+          {
+            "id": 4,
+            "type": "flip",
+            "x": 425.6500000000027,
+            "y": 412.75,
+            "value": 1
+          }
+        ]
+      },
+      "inputReceiptObserved": true
+    },
+    {
+      "index": 4,
+      "plannedMs": 3075,
+      "sendEpochMs": 1790337176276,
+      "received": [
+        {
+          "type": "pointerdown",
+          "epochMs": 1790337176315.7,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        },
+        {
+          "type": "pointerup",
+          "epochMs": 1790337176317.1,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        }
+      ],
+      "before": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 4.258333333333335,
+        "cuts": 2,
+        "player": {
+          "x": 577.5684938299676,
+          "y": 385.8336880962381,
+          "vx": 174,
+          "vy": 235,
+          "angle": 6.337452768051785,
+          "angularVelocity": 6.832250157395961
+        },
+        "eventCount": 5,
+        "events": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          },
+          {
+            "id": 2,
+            "type": "cut",
+            "x": 203,
+            "y": 312,
+            "value": 1,
+            "targetId": "rune-1",
+            "contactPart": "edge"
+          },
+          {
+            "id": 3,
+            "type": "flip",
+            "x": 265,
+            "y": 412.75,
+            "value": 1
+          },
+          {
+            "id": 4,
+            "type": "flip",
+            "x": 425.6500000000027,
+            "y": 412.75,
+            "value": 1
+          },
+          {
+            "id": 5,
+            "type": "cut",
+            "x": 610,
+            "y": 315,
+            "value": 2,
+            "targetId": "hanging-above",
+            "contactPart": "tip"
+          }
+        ]
+      },
+      "after": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 4.433333333333343,
+        "cuts": 3,
+        "player": {
+          "x": 609.0184938299676,
+          "y": 387.4170214295715,
+          "vx": 186,
+          "vy": -250,
+          "angle": 6.091955261036807,
+          "angularVelocity": -10.086666454695939
+        },
+        "eventCount": 7,
+        "events": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          },
+          {
+            "id": 2,
+            "type": "cut",
+            "x": 203,
+            "y": 312,
+            "value": 1,
+            "targetId": "rune-1",
+            "contactPart": "edge"
+          },
+          {
+            "id": 3,
+            "type": "flip",
+            "x": 265,
+            "y": 412.75,
+            "value": 1
+          },
+          {
+            "id": 4,
+            "type": "flip",
+            "x": 425.6500000000027,
+            "y": 412.75,
+            "value": 1
+          },
+          {
+            "id": 5,
+            "type": "cut",
+            "x": 610,
+            "y": 315,
+            "value": 2,
+            "targetId": "hanging-above",
+            "contactPart": "tip"
+          },
+          {
+            "id": 6,
+            "type": "cut",
+            "x": 646,
+            "y": 441,
+            "value": 2,
+            "targetId": "rune-2",
+            "contactPart": "tip"
+          },
+          {
+            "id": 7,
+            "type": "flip",
+            "x": 593.5184938299681,
+            "y": 410.1253547629048,
+            "value": 1
+          }
+        ]
+      },
+      "inputReceiptObserved": true
+    },
+    {
+      "index": 5,
+      "plannedMs": 4050,
+      "sendEpochMs": 1790337177249,
+      "received": [
+        {
+          "type": "pointerdown",
+          "epochMs": 1790337177276.1,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        },
+        {
+          "type": "pointerup",
+          "epochMs": 1790337177277.5,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        }
+      ],
+      "before": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 5.225000000000049,
+        "cuts": 3,
+        "player": {
+          "x": 756.2684938299633,
+          "y": 379.5003547629048,
+          "vx": 186,
+          "vy": 225,
+          "angle": -0.5599322847552349,
+          "angularVelocity": -6.887348948987864
+        },
+        "eventCount": 7,
+        "events": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          },
+          {
+            "id": 2,
+            "type": "cut",
+            "x": 203,
+            "y": 312,
+            "value": 1,
+            "targetId": "rune-1",
+            "contactPart": "edge"
+          },
+          {
+            "id": 3,
+            "type": "flip",
+            "x": 265,
+            "y": 412.75,
+            "value": 1
+          },
+          {
+            "id": 4,
+            "type": "flip",
+            "x": 425.6500000000027,
+            "y": 412.75,
+            "value": 1
+          },
+          {
+            "id": 5,
+            "type": "cut",
+            "x": 610,
+            "y": 315,
+            "value": 2,
+            "targetId": "hanging-above",
+            "contactPart": "tip"
+          },
+          {
+            "id": 6,
+            "type": "cut",
+            "x": 646,
+            "y": 441,
+            "value": 2,
+            "targetId": "rune-2",
+            "contactPart": "tip"
+          },
+          {
+            "id": 7,
+            "type": "flip",
+            "x": 593.5184938299681,
+            "y": 410.1253547629048,
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 5.350000000000056,
+        "cuts": 3,
+        "player": {
+          "x": 779.8184938299634,
+          "y": 371.0003547629048,
+          "vx": 190,
+          "vy": -255,
+          "angle": -0.12587546301220937,
+          "angularVelocity": 10.127256825755275
+        },
+        "eventCount": 8,
+        "events": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          },
+          {
+            "id": 2,
+            "type": "cut",
+            "x": 203,
+            "y": 312,
+            "value": 1,
+            "targetId": "rune-1",
+            "contactPart": "edge"
+          },
+          {
+            "id": 3,
+            "type": "flip",
+            "x": 265,
+            "y": 412.75,
+            "value": 1
+          },
+          {
+            "id": 4,
+            "type": "flip",
+            "x": 425.6500000000027,
+            "y": 412.75,
+            "value": 1
+          },
+          {
+            "id": 5,
+            "type": "cut",
+            "x": 610,
+            "y": 315,
+            "value": 2,
+            "targetId": "hanging-above",
+            "contactPart": "tip"
+          },
+          {
+            "id": 6,
+            "type": "cut",
+            "x": 646,
+            "y": 441,
+            "value": 2,
+            "targetId": "rune-2",
+            "contactPart": "tip"
+          },
+          {
+            "id": 7,
+            "type": "flip",
+            "x": 593.5184938299681,
+            "y": 410.1253547629048,
+            "value": 1
+          },
+          {
+            "id": 8,
+            "type": "flip",
+            "x": 765.568493829963,
+            "y": 391.6253547629048,
+            "value": 1
+          }
+        ]
+      },
+      "inputReceiptObserved": true
+    },
+    {
+      "index": 6,
+      "plannedMs": 5025,
+      "sendEpochMs": 1790337178240,
+      "received": [
+        {
+          "type": "pointerdown",
+          "epochMs": 1790337178299.7,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        },
+        {
+          "type": "pointerup",
+          "epochMs": 1790337178301.3,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        }
+      ],
+      "before": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 6.200000000000098,
+        "cuts": 3,
+        "player": {
+          "x": 941.3184938299672,
+          "y": 373.1253547629048,
+          "vx": 190,
+          "vy": 255,
+          "angle": 6.951341132354898,
+          "angularVelocity": 6.723371418887699
+        },
+        "eventCount": 8,
+        "events": [
+          {
+            "id": 1,
+            "type": "launch",
+            "x": 120,
+            "y": 420,
+            "value": 1
+          },
+          {
+            "id": 2,
+            "type": "cut",
+            "x": 203,
+            "y": 312,
+            "value": 1,
+            "targetId": "rune-1",
+            "contactPart": "edge"
+          },
+          {
+            "id": 3,
+            "type": "flip",
+            "x": 265,
+            "y": 412.75,
+            "value": 1
+          },
+          {
+            "id": 4,
+            "type": "flip",
+            "x": 425.6500000000027,
+            "y": 412.75,
+            "value": 1
+          },
+          {
+            "id": 5,
+            "type": "cut",
+            "x": 610,
+            "y": 315,
+            "value": 2,
+            "targetId": "hanging-above",
+            "contactPart": "tip"
+          },
+          {
+            "id": 6,
+            "type": "cut",
+            "x": 646,
+            "y": 441,
+            "value": 2,
+            "targetId": "rune-2",
+            "contactPart": "tip"
+          },
+          {
+            "id": 7,
+            "type": "flip",
+            "x": 593.5184938299681,
+            "y": 410.1253547629048,
+            "value": 1
+          },
+          {
+            "id": 8,
+            "type": "flip",
+            "x": 765.568493829963,
+            "y": 391.6253547629048,
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 6.400000000000108,
+        "cuts": 3,
+        "player": {
+          "x": 979.3184938299681,
+          "y": 357.2920214295715,
+          "vx": 190,
+          "vy": -220,
+          "angle": 6.034635639015742,
+          "angularVelocity": -9.846517935369313
+        },
+        "eventCount": 9,
+        "events": [
+          {
+            "id": 2,
+            "type": "cut",
+            "x": 203,
+            "y": 312,
+            "value": 1,
+            "targetId": "rune-1",
+            "contactPart": "edge"
+          },
+          {
+            "id": 3,
+            "type": "flip",
+            "x": 265,
+            "y": 412.75,
+            "value": 1
+          },
+          {
+            "id": 4,
+            "type": "flip",
+            "x": 425.6500000000027,
+            "y": 412.75,
+            "value": 1
+          },
+          {
+            "id": 5,
+            "type": "cut",
+            "x": 610,
+            "y": 315,
+            "value": 2,
+            "targetId": "hanging-above",
+            "contactPart": "tip"
+          },
+          {
+            "id": 6,
+            "type": "cut",
+            "x": 646,
+            "y": 441,
+            "value": 2,
+            "targetId": "rune-2",
+            "contactPart": "tip"
+          },
+          {
+            "id": 7,
+            "type": "flip",
+            "x": 593.5184938299681,
+            "y": 410.1253547629048,
+            "value": 1
+          },
+          {
+            "id": 8,
+            "type": "flip",
+            "x": 765.568493829963,
+            "y": 391.6253547629048,
+            "value": 1
+          },
+          {
+            "id": 9,
+            "type": "flip",
+            "x": 953.9851604966342,
+            "y": 391.6253547629048,
+            "value": 1
+          }
+        ]
+      },
+      "inputReceiptObserved": true
+    },
+    {
+      "index": 7,
+      "plannedMs": 6000,
+      "sendEpochMs": 1790337179191,
+      "received": [
+        {
+          "type": "pointerdown",
+          "epochMs": 1790337179211.2,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        },
+        {
+          "type": "pointerup",
+          "epochMs": 1790337179212.2,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        }
+      ],
+      "before": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 7.18333333333348,
+        "cuts": 3,
+        "player": {
+          "x": 1128.1518271632976,
+          "y": 371.0003547629048,
+          "vx": 190,
+          "vy": 250,
+          "angle": -0.40262680107964727,
+          "angularVelocity": -6.750427348801524
+        },
+        "eventCount": 9,
+        "events": [
+          {
+            "id": 2,
+            "type": "cut",
+            "x": 203,
+            "y": 312,
+            "value": 1,
+            "targetId": "rune-1",
+            "contactPart": "edge"
+          },
+          {
+            "id": 3,
+            "type": "flip",
+            "x": 265,
+            "y": 412.75,
+            "value": 1
+          },
+          {
+            "id": 4,
+            "type": "flip",
+            "x": 425.6500000000027,
+            "y": 412.75,
+            "value": 1
+          },
+          {
+            "id": 5,
+            "type": "cut",
+            "x": 610,
+            "y": 315,
+            "value": 2,
+            "targetId": "hanging-above",
+            "contactPart": "tip"
+          },
+          {
+            "id": 6,
+            "type": "cut",
+            "x": 646,
+            "y": 441,
+            "value": 2,
+            "targetId": "rune-2",
+            "contactPart": "tip"
+          },
+          {
+            "id": 7,
+            "type": "flip",
+            "x": 593.5184938299681,
+            "y": 410.1253547629048,
+            "value": 1
+          },
+          {
+            "id": 8,
+            "type": "flip",
+            "x": 765.568493829963,
+            "y": 391.6253547629048,
+            "value": 1
+          },
+          {
+            "id": 9,
+            "type": "flip",
+            "x": 953.9851604966342,
+            "y": 391.6253547629048,
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 7.283333333333485,
+        "cuts": 3,
+        "player": {
+          "x": 1147.1518271632967,
+          "y": 365.7086880962382,
+          "vx": 190,
+          "vy": -265,
+          "angle": -0.07646472393105908,
+          "angularVelocity": 10.20892825176943
+        },
+        "eventCount": 10,
+        "events": [
+          {
+            "id": 3,
+            "type": "flip",
+            "x": 265,
+            "y": 412.75,
+            "value": 1
+          },
+          {
+            "id": 4,
+            "type": "flip",
+            "x": 425.6500000000027,
+            "y": 412.75,
+            "value": 1
+          },
+          {
+            "id": 5,
+            "type": "cut",
+            "x": 610,
+            "y": 315,
+            "value": 2,
+            "targetId": "hanging-above",
+            "contactPart": "tip"
+          },
+          {
+            "id": 6,
+            "type": "cut",
+            "x": 646,
+            "y": 441,
+            "value": 2,
+            "targetId": "rune-2",
+            "contactPart": "tip"
+          },
+          {
+            "id": 7,
+            "type": "flip",
+            "x": 593.5184938299681,
+            "y": 410.1253547629048,
+            "value": 1
+          },
+          {
+            "id": 8,
+            "type": "flip",
+            "x": 765.568493829963,
+            "y": 391.6253547629048,
+            "value": 1
+          },
+          {
+            "id": 9,
+            "type": "flip",
+            "x": 953.9851604966342,
+            "y": 391.6253547629048,
+            "value": 1
+          },
+          {
+            "id": 10,
+            "type": "flip",
+            "x": 1136.068493829964,
+            "y": 382.0420214295715,
+            "value": 1
+          }
+        ]
+      },
+      "inputReceiptObserved": true
+    },
+    {
+      "index": 8,
+      "plannedMs": 6975,
+      "sendEpochMs": 1790337180204,
+      "received": [
+        {
+          "type": "pointerdown",
+          "epochMs": 1790337180230,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        },
+        {
+          "type": "pointerup",
+          "epochMs": 1790337180231.3,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        }
+      ],
+      "before": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "anchored",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 8.15833333333351,
+        "cuts": 3,
+        "player": {
+          "x": 1276.9851604966238,
+          "y": 282.54702142957143,
+          "vx": 0,
+          "vy": 0,
+          "angle": 2.421060182889716,
+          "angularVelocity": 0
+        },
+        "eventCount": 12,
+        "events": [
+          {
+            "id": 5,
+            "type": "cut",
+            "x": 610,
+            "y": 315,
+            "value": 2,
+            "targetId": "hanging-above",
+            "contactPart": "tip"
+          },
+          {
+            "id": 6,
+            "type": "cut",
+            "x": 646,
+            "y": 441,
+            "value": 2,
+            "targetId": "rune-2",
+            "contactPart": "tip"
+          },
+          {
+            "id": 7,
+            "type": "flip",
+            "x": 593.5184938299681,
+            "y": 410.1253547629048,
+            "value": 1
+          },
+          {
+            "id": 8,
+            "type": "flip",
+            "x": 765.568493829963,
+            "y": 391.6253547629048,
+            "value": 1
+          },
+          {
+            "id": 9,
+            "type": "flip",
+            "x": 953.9851604966342,
+            "y": 391.6253547629048,
+            "value": 1
+          },
+          {
+            "id": 10,
+            "type": "flip",
+            "x": 1136.068493829964,
+            "y": 382.0420214295715,
+            "value": 1
+          },
+          {
+            "id": 11,
+            "type": "bounce",
+            "x": 1234.235160496626,
+            "y": 268.4170214295715,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "handle",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 12,
+            "type": "anchor",
+            "x": 1248.429888753279,
+            "y": 307.61884736355023,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "tip",
+            "normalX": 0,
+            "normalY": -1
+          }
+        ]
+      },
+      "after": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 8.316666666666835,
+        "cuts": 3,
+        "player": {
+          "x": 1289.4851604966238,
+          "y": 259.8386880962381,
+          "vx": 150,
+          "vy": -250,
+          "angle": 1.643520585030488,
+          "angularVelocity": -9.126031554248708
+        },
+        "eventCount": 13,
+        "events": [
+          {
+            "id": 6,
+            "type": "cut",
+            "x": 646,
+            "y": 441,
+            "value": 2,
+            "targetId": "rune-2",
+            "contactPart": "tip"
+          },
+          {
+            "id": 7,
+            "type": "flip",
+            "x": 593.5184938299681,
+            "y": 410.1253547629048,
+            "value": 1
+          },
+          {
+            "id": 8,
+            "type": "flip",
+            "x": 765.568493829963,
+            "y": 391.6253547629048,
+            "value": 1
+          },
+          {
+            "id": 9,
+            "type": "flip",
+            "x": 953.9851604966342,
+            "y": 391.6253547629048,
+            "value": 1
+          },
+          {
+            "id": 10,
+            "type": "flip",
+            "x": 1136.068493829964,
+            "y": 382.0420214295715,
+            "value": 1
+          },
+          {
+            "id": 11,
+            "type": "bounce",
+            "x": 1234.235160496626,
+            "y": 268.4170214295715,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "handle",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 12,
+            "type": "anchor",
+            "x": 1248.429888753279,
+            "y": 307.61884736355023,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "tip",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 13,
+            "type": "launch",
+            "x": 1276.9851604966238,
+            "y": 282.54702142957143,
+            "value": 1
+          }
+        ]
+      },
+      "inputReceiptObserved": true
+    },
+    {
+      "index": 9,
+      "plannedMs": 7950,
+      "sendEpochMs": 1790337181134,
+      "received": [
+        {
+          "type": "pointerdown",
+          "epochMs": 1790337181159.4001,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        },
+        {
+          "type": "pointerup",
+          "epochMs": 1790337181160.7,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        }
+      ],
+      "before": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 9.11666666666679,
+        "cuts": 3,
+        "player": {
+          "x": 1409.4851604966238,
+          "y": 253.8386880962381,
+          "vx": 150,
+          "vy": 230,
+          "angle": -4.426782285777695,
+          "angularVelocity": -6.206435258335354
+        },
+        "eventCount": 13,
+        "events": [
+          {
+            "id": 6,
+            "type": "cut",
+            "x": 646,
+            "y": 441,
+            "value": 2,
+            "targetId": "rune-2",
+            "contactPart": "tip"
+          },
+          {
+            "id": 7,
+            "type": "flip",
+            "x": 593.5184938299681,
+            "y": 410.1253547629048,
+            "value": 1
+          },
+          {
+            "id": 8,
+            "type": "flip",
+            "x": 765.568493829963,
+            "y": 391.6253547629048,
+            "value": 1
+          },
+          {
+            "id": 9,
+            "type": "flip",
+            "x": 953.9851604966342,
+            "y": 391.6253547629048,
+            "value": 1
+          },
+          {
+            "id": 10,
+            "type": "flip",
+            "x": 1136.068493829964,
+            "y": 382.0420214295715,
+            "value": 1
+          },
+          {
+            "id": 11,
+            "type": "bounce",
+            "x": 1234.235160496626,
+            "y": 268.4170214295715,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "handle",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 12,
+            "type": "anchor",
+            "x": 1248.429888753279,
+            "y": 307.61884736355023,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "tip",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 13,
+            "type": "launch",
+            "x": 1276.9851604966238,
+            "y": 282.54702142957143,
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 9.241666666666783,
+        "cuts": 3,
+        "player": {
+          "x": 1429.135160496623,
+          "y": 245.58868809623814,
+          "vx": 162,
+          "vy": -255,
+          "angle": -3.959019102400379,
+          "angularVelocity": 10.127256825755275
+        },
+        "eventCount": 14,
+        "events": [
+          {
+            "id": 7,
+            "type": "flip",
+            "x": 593.5184938299681,
+            "y": 410.1253547629048,
+            "value": 1
+          },
+          {
+            "id": 8,
+            "type": "flip",
+            "x": 765.568493829963,
+            "y": 391.6253547629048,
+            "value": 1
+          },
+          {
+            "id": 9,
+            "type": "flip",
+            "x": 953.9851604966342,
+            "y": 391.6253547629048,
+            "value": 1
+          },
+          {
+            "id": 10,
+            "type": "flip",
+            "x": 1136.068493829964,
+            "y": 382.0420214295715,
+            "value": 1
+          },
+          {
+            "id": 11,
+            "type": "bounce",
+            "x": 1234.235160496626,
+            "y": 268.4170214295715,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "handle",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 12,
+            "type": "anchor",
+            "x": 1248.429888753279,
+            "y": 307.61884736355023,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "tip",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 13,
+            "type": "launch",
+            "x": 1276.9851604966238,
+            "y": 282.54702142957143,
+            "value": 1
+          },
+          {
+            "id": 14,
+            "type": "flip",
+            "x": 1416.9851604966238,
+            "y": 266.2136880962381,
+            "value": 1
+          }
+        ]
+      },
+      "inputReceiptObserved": true
+    },
+    {
+      "index": 10,
+      "plannedMs": 8925,
+      "sendEpochMs": 1790337182116,
+      "received": [
+        {
+          "type": "pointerdown",
+          "epochMs": 1790337182141.4001,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        },
+        {
+          "type": "pointerup",
+          "epochMs": 1790337182142.4001,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        }
+      ],
+      "before": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 10.091666666666734,
+        "cuts": 3,
+        "player": {
+          "x": 1566.8351604966138,
+          "y": 247.71368809623814,
+          "vx": 162,
+          "vy": 255,
+          "angle": 3.118197492966729,
+          "angularVelocity": 6.723371418887699
+        },
+        "eventCount": 14,
+        "events": [
+          {
+            "id": 7,
+            "type": "flip",
+            "x": 593.5184938299681,
+            "y": 410.1253547629048,
+            "value": 1
+          },
+          {
+            "id": 8,
+            "type": "flip",
+            "x": 765.568493829963,
+            "y": 391.6253547629048,
+            "value": 1
+          },
+          {
+            "id": 9,
+            "type": "flip",
+            "x": 953.9851604966342,
+            "y": 391.6253547629048,
+            "value": 1
+          },
+          {
+            "id": 10,
+            "type": "flip",
+            "x": 1136.068493829964,
+            "y": 382.0420214295715,
+            "value": 1
+          },
+          {
+            "id": 11,
+            "type": "bounce",
+            "x": 1234.235160496626,
+            "y": 268.4170214295715,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "handle",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 12,
+            "type": "anchor",
+            "x": 1248.429888753279,
+            "y": 307.61884736355023,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "tip",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 13,
+            "type": "launch",
+            "x": 1276.9851604966238,
+            "y": 282.54702142957143,
+            "value": 1
+          },
+          {
+            "id": 14,
+            "type": "flip",
+            "x": 1416.9851604966238,
+            "y": 266.2136880962381,
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 10.22500000000006,
+        "cuts": 3,
+        "player": {
+          "x": 1589.3351604966135,
+          "y": 243.1303547629048,
+          "vx": 174,
+          "vy": -255,
+          "angle": 2.7307176599883105,
+          "angularVelocity": -10.127256825755275
+        },
+        "eventCount": 15,
+        "events": [
+          {
+            "id": 8,
+            "type": "flip",
+            "x": 765.568493829963,
+            "y": 391.6253547629048,
+            "value": 1
+          },
+          {
+            "id": 9,
+            "type": "flip",
+            "x": 953.9851604966342,
+            "y": 391.6253547629048,
+            "value": 1
+          },
+          {
+            "id": 10,
+            "type": "flip",
+            "x": 1136.068493829964,
+            "y": 382.0420214295715,
+            "value": 1
+          },
+          {
+            "id": 11,
+            "type": "bounce",
+            "x": 1234.235160496626,
+            "y": 268.4170214295715,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "handle",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 12,
+            "type": "anchor",
+            "x": 1248.429888753279,
+            "y": 307.61884736355023,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "tip",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 13,
+            "type": "launch",
+            "x": 1276.9851604966238,
+            "y": 282.54702142957143,
+            "value": 1
+          },
+          {
+            "id": 14,
+            "type": "flip",
+            "x": 1416.9851604966238,
+            "y": 266.2136880962381,
+            "value": 1
+          },
+          {
+            "id": 15,
+            "type": "flip",
+            "x": 1576.2851604966131,
+            "y": 263.7553547629048,
+            "value": 1
+          }
+        ]
+      },
+      "inputReceiptObserved": true
+    },
+    {
+      "index": 11,
+      "plannedMs": 9900,
+      "sendEpochMs": 1790337183103,
+      "received": [
+        {
+          "type": "pointerdown",
+          "epochMs": 1790337183128.2,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        },
+        {
+          "type": "pointerup",
+          "epochMs": 1790337183129.3,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        }
+      ],
+      "before": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 11.066666666666679,
+        "cuts": 3,
+        "player": {
+          "x": 1735.7851604966181,
+          "y": 243.1303547629048,
+          "vx": 174,
+          "vy": 250,
+          "angle": -4.290245374138785,
+          "angularVelocity": -6.750427348801524
+        },
+        "eventCount": 15,
+        "events": [
+          {
+            "id": 8,
+            "type": "flip",
+            "x": 765.568493829963,
+            "y": 391.6253547629048,
+            "value": 1
+          },
+          {
+            "id": 9,
+            "type": "flip",
+            "x": 953.9851604966342,
+            "y": 391.6253547629048,
+            "value": 1
+          },
+          {
+            "id": 10,
+            "type": "flip",
+            "x": 1136.068493829964,
+            "y": 382.0420214295715,
+            "value": 1
+          },
+          {
+            "id": 11,
+            "type": "bounce",
+            "x": 1234.235160496626,
+            "y": 268.4170214295715,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "handle",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 12,
+            "type": "anchor",
+            "x": 1248.429888753279,
+            "y": 307.61884736355023,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "tip",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 13,
+            "type": "launch",
+            "x": 1276.9851604966238,
+            "y": 282.54702142957143,
+            "value": 1
+          },
+          {
+            "id": 14,
+            "type": "flip",
+            "x": 1416.9851604966238,
+            "y": 266.2136880962381,
+            "value": 1
+          },
+          {
+            "id": 15,
+            "type": "flip",
+            "x": 1576.2851604966131,
+            "y": 263.7553547629048,
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 11.21666666666667,
+        "cuts": 3,
+        "player": {
+          "x": 1762.7851604966181,
+          "y": 243.1303547629048,
+          "vx": 186,
+          "vy": -255,
+          "angle": -4.01349403607135,
+          "angularVelocity": 10.127256825755275
+        },
+        "eventCount": 16,
+        "events": [
+          {
+            "id": 9,
+            "type": "flip",
+            "x": 953.9851604966342,
+            "y": 391.6253547629048,
+            "value": 1
+          },
+          {
+            "id": 10,
+            "type": "flip",
+            "x": 1136.068493829964,
+            "y": 382.0420214295715,
+            "value": 1
+          },
+          {
+            "id": 11,
+            "type": "bounce",
+            "x": 1234.235160496626,
+            "y": 268.4170214295715,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "handle",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 12,
+            "type": "anchor",
+            "x": 1248.429888753279,
+            "y": 307.61884736355023,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "tip",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 13,
+            "type": "launch",
+            "x": 1276.9851604966238,
+            "y": 282.54702142957143,
+            "value": 1
+          },
+          {
+            "id": 14,
+            "type": "flip",
+            "x": 1416.9851604966238,
+            "y": 266.2136880962381,
+            "value": 1
+          },
+          {
+            "id": 15,
+            "type": "flip",
+            "x": 1576.2851604966131,
+            "y": 263.7553547629048,
+            "value": 1
+          },
+          {
+            "id": 16,
+            "type": "flip",
+            "x": 1748.8351604966185,
+            "y": 263.7553547629048,
+            "value": 1
+          }
+        ]
+      },
+      "inputReceiptObserved": true
+    },
+    {
+      "index": 12,
+      "plannedMs": 10875,
+      "sendEpochMs": 1790337184053,
+      "received": [
+        {
+          "type": "pointerdown",
+          "epochMs": 1790337184078.2,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        },
+        {
+          "type": "pointerup",
+          "epochMs": 1790337184079.3,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        }
+      ],
+      "before": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 12.03333333333329,
+        "cuts": 3,
+        "player": {
+          "x": 1914.6851604966137,
+          "y": 237.0053547629048,
+          "vx": 186,
+          "vy": 235,
+          "angle": 2.8373464264510235,
+          "angularVelocity": 6.832250157395961
+        },
+        "eventCount": 16,
+        "events": [
+          {
+            "id": 9,
+            "type": "flip",
+            "x": 953.9851604966342,
+            "y": 391.6253547629048,
+            "value": 1
+          },
+          {
+            "id": 10,
+            "type": "flip",
+            "x": 1136.068493829964,
+            "y": 382.0420214295715,
+            "value": 1
+          },
+          {
+            "id": 11,
+            "type": "bounce",
+            "x": 1234.235160496626,
+            "y": 268.4170214295715,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "handle",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 12,
+            "type": "anchor",
+            "x": 1248.429888753279,
+            "y": 307.61884736355023,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "tip",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 13,
+            "type": "launch",
+            "x": 1276.9851604966238,
+            "y": 282.54702142957143,
+            "value": 1
+          },
+          {
+            "id": 14,
+            "type": "flip",
+            "x": 1416.9851604966238,
+            "y": 266.2136880962381,
+            "value": 1
+          },
+          {
+            "id": 15,
+            "type": "flip",
+            "x": 1576.2851604966131,
+            "y": 263.7553547629048,
+            "value": 1
+          },
+          {
+            "id": 16,
+            "type": "flip",
+            "x": 1748.8351604966185,
+            "y": 263.7553547629048,
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 12.14999999999995,
+        "cuts": 3,
+        "player": {
+          "x": 1936.6518271632794,
+          "y": 231.1303547629048,
+          "vx": 190,
+          "vy": -260,
+          "angle": 2.4852955439248476,
+          "angularVelocity": -10.168010539008003
+        },
+        "eventCount": 17,
+        "events": [
+          {
+            "id": 10,
+            "type": "flip",
+            "x": 1136.068493829964,
+            "y": 382.0420214295715,
+            "value": 1
+          },
+          {
+            "id": 11,
+            "type": "bounce",
+            "x": 1234.235160496626,
+            "y": 268.4170214295715,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "handle",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 12,
+            "type": "anchor",
+            "x": 1248.429888753279,
+            "y": 307.61884736355023,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "tip",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 13,
+            "type": "launch",
+            "x": 1276.9851604966238,
+            "y": 282.54702142957143,
+            "value": 1
+          },
+          {
+            "id": 14,
+            "type": "flip",
+            "x": 1416.9851604966238,
+            "y": 266.2136880962381,
+            "value": 1
+          },
+          {
+            "id": 15,
+            "type": "flip",
+            "x": 1576.2851604966131,
+            "y": 263.7553547629048,
+            "value": 1
+          },
+          {
+            "id": 16,
+            "type": "flip",
+            "x": 1748.8351604966185,
+            "y": 263.7553547629048,
+            "value": 1
+          },
+          {
+            "id": 17,
+            "type": "flip",
+            "x": 1923.9851604966134,
+            "y": 249.6303547629048,
+            "value": 1
+          }
+        ]
+      },
+      "inputReceiptObserved": true
+    },
+    {
+      "index": 13,
+      "plannedMs": 11850,
+      "sendEpochMs": 1790337185026,
+      "received": [
+        {
+          "type": "pointerdown",
+          "epochMs": 1790337185051.1,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        },
+        {
+          "type": "pointerup",
+          "epochMs": 1790337185052.1,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        }
+      ],
+      "before": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 12.958333333333238,
+        "cuts": 4,
+        "player": {
+          "x": 2089.0971668346892,
+          "y": 215.98714990750062,
+          "vx": 190,
+          "vy": 225,
+          "angle": -4.335719229906887,
+          "angularVelocity": -6.887348948987864
+        },
+        "eventCount": 18,
+        "events": [
+          {
+            "id": 11,
+            "type": "bounce",
+            "x": 1234.235160496626,
+            "y": 268.4170214295715,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "handle",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 12,
+            "type": "anchor",
+            "x": 1248.429888753279,
+            "y": 307.61884736355023,
+            "value": 1,
+            "targetId": "white-column",
+            "contactPart": "tip",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 13,
+            "type": "launch",
+            "x": 1276.9851604966238,
+            "y": 282.54702142957143,
+            "value": 1
+          },
+          {
+            "id": 14,
+            "type": "flip",
+            "x": 1416.9851604966238,
+            "y": 266.2136880962381,
+            "value": 1
+          },
+          {
+            "id": 15,
+            "type": "flip",
+            "x": 1576.2851604966131,
+            "y": 263.7553547629048,
+            "value": 1
+          },
+          {
+            "id": 16,
+            "type": "flip",
+            "x": 1748.8351604966185,
+            "y": 263.7553547629048,
+            "value": 1
+          },
+          {
+            "id": 17,
+            "type": "flip",
+            "x": 1923.9851604966134,
+            "y": 249.6303547629048,
+            "value": 1
+          },
+          {
+            "id": 18,
+            "type": "cut",
+            "x": 2061,
+            "y": 242,
+            "value": 4,
+            "targetId": "level1-reward-token",
+            "contactPart": "tip"
+          }
+        ]
+      },
+      "after": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 13.083333333333231,
+        "cuts": 4,
+        "player": {
+          "x": 2107.930500168023,
+          "y": 201.19548324083394,
+          "vx": 150,
+          "vy": -250,
+          "angle": -3.786381378866948,
+          "angularVelocity": 9.126031554248708
+        },
+        "eventCount": 20,
+        "events": [
+          {
+            "id": 13,
+            "type": "launch",
+            "x": 1276.9851604966238,
+            "y": 282.54702142957143,
+            "value": 1
+          },
+          {
+            "id": 14,
+            "type": "flip",
+            "x": 1416.9851604966238,
+            "y": 266.2136880962381,
+            "value": 1
+          },
+          {
+            "id": 15,
+            "type": "flip",
+            "x": 1576.2851604966131,
+            "y": 263.7553547629048,
+            "value": 1
+          },
+          {
+            "id": 16,
+            "type": "flip",
+            "x": 1748.8351604966185,
+            "y": 263.7553547629048,
+            "value": 1
+          },
+          {
+            "id": 17,
+            "type": "flip",
+            "x": 1923.9851604966134,
+            "y": 249.6303547629048,
+            "value": 1
+          },
+          {
+            "id": 18,
+            "type": "cut",
+            "x": 2061,
+            "y": 242,
+            "value": 4,
+            "targetId": "level1-reward-token",
+            "contactPart": "tip"
+          },
+          {
+            "id": 19,
+            "type": "anchor",
+            "x": 2089.8094199350503,
+            "y": 261.48577310937816,
+            "value": 1,
+            "targetId": "level1-reward-shelf",
+            "contactPart": "tip",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 20,
+            "type": "launch",
+            "x": 2095.430500168023,
+            "y": 223.90381657416728,
+            "value": 1
+          }
+        ]
+      },
+      "inputReceiptObserved": true
+    },
+    {
+      "index": 14,
+      "plannedMs": 12825,
+      "sendEpochMs": 1790337186014,
+      "received": [
+        {
+          "type": "pointerdown",
+          "epochMs": 1790337186034,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        },
+        {
+          "type": "pointerup",
+          "epochMs": 1790337186035.2,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        }
+      ],
+      "before": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 13.949999999999848,
+        "cuts": 4,
+        "player": {
+          "x": 2237.930500168023,
+          "y": 212.02881657416728,
+          "vx": 150,
+          "vy": 270,
+          "angle": 2.6919258329901656,
+          "angularVelocity": 6.010199915849973
+        },
+        "eventCount": 20,
+        "events": [
+          {
+            "id": 13,
+            "type": "launch",
+            "x": 1276.9851604966238,
+            "y": 282.54702142957143,
+            "value": 1
+          },
+          {
+            "id": 14,
+            "type": "flip",
+            "x": 1416.9851604966238,
+            "y": 266.2136880962381,
+            "value": 1
+          },
+          {
+            "id": 15,
+            "type": "flip",
+            "x": 1576.2851604966131,
+            "y": 263.7553547629048,
+            "value": 1
+          },
+          {
+            "id": 16,
+            "type": "flip",
+            "x": 1748.8351604966185,
+            "y": 263.7553547629048,
+            "value": 1
+          },
+          {
+            "id": 17,
+            "type": "flip",
+            "x": 1923.9851604966134,
+            "y": 249.6303547629048,
+            "value": 1
+          },
+          {
+            "id": 18,
+            "type": "cut",
+            "x": 2061,
+            "y": 242,
+            "value": 4,
+            "targetId": "level1-reward-token",
+            "contactPart": "tip"
+          },
+          {
+            "id": 19,
+            "type": "anchor",
+            "x": 2089.8094199350503,
+            "y": 261.48577310937816,
+            "value": 1,
+            "targetId": "level1-reward-shelf",
+            "contactPart": "tip",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 20,
+            "type": "launch",
+            "x": 2095.430500168023,
+            "y": 223.90381657416728,
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 14.049999999999843,
+        "cuts": 4,
+        "player": {
+          "x": 2253.6305001680225,
+          "y": 207.57048324083394,
+          "vx": 162,
+          "vy": -265,
+          "angle": 2.3351671951283564,
+          "angularVelocity": -10.20892825176943
+        },
+        "eventCount": 21,
+        "events": [
+          {
+            "id": 14,
+            "type": "flip",
+            "x": 1416.9851604966238,
+            "y": 266.2136880962381,
+            "value": 1
+          },
+          {
+            "id": 15,
+            "type": "flip",
+            "x": 1576.2851604966131,
+            "y": 263.7553547629048,
+            "value": 1
+          },
+          {
+            "id": 16,
+            "type": "flip",
+            "x": 1748.8351604966185,
+            "y": 263.7553547629048,
+            "value": 1
+          },
+          {
+            "id": 17,
+            "type": "flip",
+            "x": 1923.9851604966134,
+            "y": 249.6303547629048,
+            "value": 1
+          },
+          {
+            "id": 18,
+            "type": "cut",
+            "x": 2061,
+            "y": 242,
+            "value": 4,
+            "targetId": "level1-reward-token",
+            "contactPart": "tip"
+          },
+          {
+            "id": 19,
+            "type": "anchor",
+            "x": 2089.8094199350503,
+            "y": 261.48577310937816,
+            "value": 1,
+            "targetId": "level1-reward-shelf",
+            "contactPart": "tip",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 20,
+            "type": "launch",
+            "x": 2095.430500168023,
+            "y": 223.90381657416728,
+            "value": 1
+          },
+          {
+            "id": 21,
+            "type": "flip",
+            "x": 2244.180500168023,
+            "y": 223.90381657416728,
+            "value": 1
+          }
+        ]
+      },
+      "inputReceiptObserved": true
+    },
+    {
+      "index": 15,
+      "plannedMs": 13800,
+      "sendEpochMs": 1790337186972,
+      "received": [
+        {
+          "type": "pointerdown",
+          "epochMs": 1790337186989.2,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        },
+        {
+          "type": "pointerup",
+          "epochMs": 1790337186990.2,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        }
+      ],
+      "before": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 14.908333333333127,
+        "cuts": 4,
+        "player": {
+          "x": 2392.680500168013,
+          "y": 203.27881657416728,
+          "vx": 162,
+          "vy": 250,
+          "angle": -4.855603662255219,
+          "angularVelocity": -6.750427348801524
+        },
+        "eventCount": 21,
+        "events": [
+          {
+            "id": 14,
+            "type": "flip",
+            "x": 1416.9851604966238,
+            "y": 266.2136880962381,
+            "value": 1
+          },
+          {
+            "id": 15,
+            "type": "flip",
+            "x": 1576.2851604966131,
+            "y": 263.7553547629048,
+            "value": 1
+          },
+          {
+            "id": 16,
+            "type": "flip",
+            "x": 1748.8351604966185,
+            "y": 263.7553547629048,
+            "value": 1
+          },
+          {
+            "id": 17,
+            "type": "flip",
+            "x": 1923.9851604966134,
+            "y": 249.6303547629048,
+            "value": 1
+          },
+          {
+            "id": 18,
+            "type": "cut",
+            "x": 2061,
+            "y": 242,
+            "value": 4,
+            "targetId": "level1-reward-token",
+            "contactPart": "tip"
+          },
+          {
+            "id": 19,
+            "type": "anchor",
+            "x": 2089.8094199350503,
+            "y": 261.48577310937816,
+            "value": 1,
+            "targetId": "level1-reward-shelf",
+            "contactPart": "tip",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 20,
+            "type": "launch",
+            "x": 2095.430500168023,
+            "y": 223.90381657416728,
+            "value": 1
+          },
+          {
+            "id": 21,
+            "type": "flip",
+            "x": 2244.180500168023,
+            "y": 223.90381657416728,
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 15.008333333333121,
+        "cuts": 4,
+        "player": {
+          "x": 2409.5805001680114,
+          "y": 197.9871499075006,
+          "vx": 174,
+          "vy": -265,
+          "angle": -4.52944158510663,
+          "angularVelocity": 10.20892825176943
+        },
+        "eventCount": 22,
+        "events": [
+          {
+            "id": 15,
+            "type": "flip",
+            "x": 1576.2851604966131,
+            "y": 263.7553547629048,
+            "value": 1
+          },
+          {
+            "id": 16,
+            "type": "flip",
+            "x": 1748.8351604966185,
+            "y": 263.7553547629048,
+            "value": 1
+          },
+          {
+            "id": 17,
+            "type": "flip",
+            "x": 1923.9851604966134,
+            "y": 249.6303547629048,
+            "value": 1
+          },
+          {
+            "id": 18,
+            "type": "cut",
+            "x": 2061,
+            "y": 242,
+            "value": 4,
+            "targetId": "level1-reward-token",
+            "contactPart": "tip"
+          },
+          {
+            "id": 19,
+            "type": "anchor",
+            "x": 2089.8094199350503,
+            "y": 261.48577310937816,
+            "value": 1,
+            "targetId": "level1-reward-shelf",
+            "contactPart": "tip",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 20,
+            "type": "launch",
+            "x": 2095.430500168023,
+            "y": 223.90381657416728,
+            "value": 1
+          },
+          {
+            "id": 21,
+            "type": "flip",
+            "x": 2244.180500168023,
+            "y": 223.90381657416728,
+            "value": 1
+          },
+          {
+            "id": 22,
+            "type": "flip",
+            "x": 2399.4305001680127,
+            "y": 214.32048324083394,
+            "value": 1
+          }
+        ]
+      },
+      "inputReceiptObserved": true
+    },
+    {
+      "index": 16,
+      "plannedMs": 14775,
+      "sendEpochMs": 1790337187968,
+      "received": [
+        {
+          "type": "pointerdown",
+          "epochMs": 1790337187992.1,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        },
+        {
+          "type": "pointerup",
+          "epochMs": 1790337187993.1,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        }
+      ],
+      "before": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 15.891666666666405,
+        "cuts": 4,
+        "player": {
+          "x": 2563.280500167992,
+          "y": 200.19548324083394,
+          "vx": 174,
+          "vy": 265,
+          "angle": 2.829414461424445,
+          "angularVelocity": 6.6695844475365975
+        },
+        "eventCount": 22,
+        "events": [
+          {
+            "id": 15,
+            "type": "flip",
+            "x": 1576.2851604966131,
+            "y": 263.7553547629048,
+            "value": 1
+          },
+          {
+            "id": 16,
+            "type": "flip",
+            "x": 1748.8351604966185,
+            "y": 263.7553547629048,
+            "value": 1
+          },
+          {
+            "id": 17,
+            "type": "flip",
+            "x": 1923.9851604966134,
+            "y": 249.6303547629048,
+            "value": 1
+          },
+          {
+            "id": 18,
+            "type": "cut",
+            "x": 2061,
+            "y": 242,
+            "value": 4,
+            "targetId": "level1-reward-token",
+            "contactPart": "tip"
+          },
+          {
+            "id": 19,
+            "type": "anchor",
+            "x": 2089.8094199350503,
+            "y": 261.48577310937816,
+            "value": 1,
+            "targetId": "level1-reward-shelf",
+            "contactPart": "tip",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 20,
+            "type": "launch",
+            "x": 2095.430500168023,
+            "y": 223.90381657416728,
+            "value": 1
+          },
+          {
+            "id": 21,
+            "type": "flip",
+            "x": 2244.180500168023,
+            "y": 223.90381657416728,
+            "value": 1
+          },
+          {
+            "id": 22,
+            "type": "flip",
+            "x": 2399.4305001680127,
+            "y": 214.32048324083394,
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 16.008333333333066,
+        "cuts": 4,
+        "player": {
+          "x": 2584.480500167993,
+          "y": 191.2371499075006,
+          "vx": 186,
+          "vy": -255,
+          "angle": 2.3301030005385366,
+          "angularVelocity": -10.127256825755275
+        },
+        "eventCount": 23,
+        "events": [
+          {
+            "id": 16,
+            "type": "flip",
+            "x": 1748.8351604966185,
+            "y": 263.7553547629048,
+            "value": 1
+          },
+          {
+            "id": 17,
+            "type": "flip",
+            "x": 1923.9851604966134,
+            "y": 249.6303547629048,
+            "value": 1
+          },
+          {
+            "id": 18,
+            "type": "cut",
+            "x": 2061,
+            "y": 242,
+            "value": 4,
+            "targetId": "level1-reward-token",
+            "contactPart": "tip"
+          },
+          {
+            "id": 19,
+            "type": "anchor",
+            "x": 2089.8094199350503,
+            "y": 261.48577310937816,
+            "value": 1,
+            "targetId": "level1-reward-shelf",
+            "contactPart": "tip",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 20,
+            "type": "launch",
+            "x": 2095.430500168023,
+            "y": 223.90381657416728,
+            "value": 1
+          },
+          {
+            "id": 21,
+            "type": "flip",
+            "x": 2244.180500168023,
+            "y": 223.90381657416728,
+            "value": 1
+          },
+          {
+            "id": 22,
+            "type": "flip",
+            "x": 2399.4305001680127,
+            "y": 214.32048324083394,
+            "value": 1
+          },
+          {
+            "id": 23,
+            "type": "flip",
+            "x": 2570.5305001679912,
+            "y": 211.8621499075006,
+            "value": 1
+          }
+        ]
+      },
+      "inputReceiptObserved": true
+    },
+    {
+      "index": 17,
+      "plannedMs": 15750,
+      "sendEpochMs": 1790337188938,
+      "received": [
+        {
+          "type": "pointerdown",
+          "epochMs": 1790337188963.7,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        },
+        {
+          "type": "pointerup",
+          "epochMs": 1790337188964.9001,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        }
+      ],
+      "before": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 16.874999999999684,
+        "cuts": 4,
+        "player": {
+          "x": 2745.680500168012,
+          "y": 197.7371499075006,
+          "vx": 186,
+          "vy": 265,
+          "angle": -4.858945222736065,
+          "angularVelocity": -6.6695844475365975
+        },
+        "eventCount": 23,
+        "events": [
+          {
+            "id": 16,
+            "type": "flip",
+            "x": 1748.8351604966185,
+            "y": 263.7553547629048,
+            "value": 1
+          },
+          {
+            "id": 17,
+            "type": "flip",
+            "x": 1923.9851604966134,
+            "y": 249.6303547629048,
+            "value": 1
+          },
+          {
+            "id": 18,
+            "type": "cut",
+            "x": 2061,
+            "y": 242,
+            "value": 4,
+            "targetId": "level1-reward-token",
+            "contactPart": "tip"
+          },
+          {
+            "id": 19,
+            "type": "anchor",
+            "x": 2089.8094199350503,
+            "y": 261.48577310937816,
+            "value": 1,
+            "targetId": "level1-reward-shelf",
+            "contactPart": "tip",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 20,
+            "type": "launch",
+            "x": 2095.430500168023,
+            "y": 223.90381657416728,
+            "value": 1
+          },
+          {
+            "id": 21,
+            "type": "flip",
+            "x": 2244.180500168023,
+            "y": 223.90381657416728,
+            "value": 1
+          },
+          {
+            "id": 22,
+            "type": "flip",
+            "x": 2399.4305001680127,
+            "y": 214.32048324083394,
+            "value": 1
+          },
+          {
+            "id": 23,
+            "type": "flip",
+            "x": 2570.5305001679912,
+            "y": 211.8621499075006,
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "idle",
+        "finishGateId": null,
+        "finishSelection": null,
+        "worldTime": 16.966666666666345,
+        "cuts": 4,
+        "player": {
+          "x": 2762.9305001680136,
+          "y": 195.27881657416725,
+          "vx": 190,
+          "vy": -270,
+          "angle": -4.614858340306635,
+          "angularVelocity": 10.250010624000003
+        },
+        "eventCount": 24,
+        "events": [
+          {
+            "id": 17,
+            "type": "flip",
+            "x": 1923.9851604966134,
+            "y": 249.6303547629048,
+            "value": 1
+          },
+          {
+            "id": 18,
+            "type": "cut",
+            "x": 2061,
+            "y": 242,
+            "value": 4,
+            "targetId": "level1-reward-token",
+            "contactPart": "tip"
+          },
+          {
+            "id": 19,
+            "type": "anchor",
+            "x": 2089.8094199350503,
+            "y": 261.48577310937816,
+            "value": 1,
+            "targetId": "level1-reward-shelf",
+            "contactPart": "tip",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 20,
+            "type": "launch",
+            "x": 2095.430500168023,
+            "y": 223.90381657416728,
+            "value": 1
+          },
+          {
+            "id": 21,
+            "type": "flip",
+            "x": 2244.180500168023,
+            "y": 223.90381657416728,
+            "value": 1
+          },
+          {
+            "id": 22,
+            "type": "flip",
+            "x": 2399.4305001680127,
+            "y": 214.32048324083394,
+            "value": 1
+          },
+          {
+            "id": 23,
+            "type": "flip",
+            "x": 2570.5305001679912,
+            "y": 211.8621499075006,
+            "value": 1
+          },
+          {
+            "id": 24,
+            "type": "flip",
+            "x": 2753.4305001680127,
+            "y": 209.40381657416725,
+            "value": 1
+          }
+        ]
+      },
+      "inputReceiptObserved": true
+    },
+    {
+      "index": 18,
+      "plannedMs": 16725,
+      "sendEpochMs": 1790337189912,
+      "received": [
+        {
+          "type": "pointerdown",
+          "epochMs": 1790337189927.1,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        },
+        {
+          "type": "pointerup",
+          "epochMs": 1790337189928.5,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        }
+      ],
+      "before": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "ready",
+        "failReason": null,
+        "finishPhase": "contact",
+        "finishGateId": "jade-two",
+        "finishSelection": null,
+        "worldTime": 17.841666666666296,
+        "cuts": 4,
+        "player": {
+          "x": 2902,
+          "y": 175.0704832408339,
+          "vx": 0,
+          "vy": 0,
+          "angle": 2.2611646171850306,
+          "angularVelocity": 6.9428920856732494
+        },
+        "eventCount": 24,
+        "events": [
+          {
+            "id": 17,
+            "type": "flip",
+            "x": 1923.9851604966134,
+            "y": 249.6303547629048,
+            "value": 1
+          },
+          {
+            "id": 18,
+            "type": "cut",
+            "x": 2061,
+            "y": 242,
+            "value": 4,
+            "targetId": "level1-reward-token",
+            "contactPart": "tip"
+          },
+          {
+            "id": 19,
+            "type": "anchor",
+            "x": 2089.8094199350503,
+            "y": 261.48577310937816,
+            "value": 1,
+            "targetId": "level1-reward-shelf",
+            "contactPart": "tip",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 20,
+            "type": "launch",
+            "x": 2095.430500168023,
+            "y": 223.90381657416728,
+            "value": 1
+          },
+          {
+            "id": 21,
+            "type": "flip",
+            "x": 2244.180500168023,
+            "y": 223.90381657416728,
+            "value": 1
+          },
+          {
+            "id": 22,
+            "type": "flip",
+            "x": 2399.4305001680127,
+            "y": 214.32048324083394,
+            "value": 1
+          },
+          {
+            "id": 23,
+            "type": "flip",
+            "x": 2570.5305001679912,
+            "y": 211.8621499075006,
+            "value": 1
+          },
+          {
+            "id": 24,
+            "type": "flip",
+            "x": 2753.4305001680127,
+            "y": 209.40381657416725,
+            "value": 1
+          }
+        ]
+      },
+      "after": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "airborne",
+        "failReason": null,
+        "finishPhase": "contact",
+        "finishGateId": "jade-two",
+        "finishSelection": null,
+        "worldTime": 17.933333333332957,
+        "cuts": 4,
+        "player": {
+          "x": 2902,
+          "y": 175.0704832408339,
+          "vx": 150,
+          "vy": -300,
+          "angle": 2.2611646171850306,
+          "angularVelocity": -9.5
+        },
+        "eventCount": 25,
+        "events": [
+          {
+            "id": 18,
+            "type": "cut",
+            "x": 2061,
+            "y": 242,
+            "value": 4,
+            "targetId": "level1-reward-token",
+            "contactPart": "tip"
+          },
+          {
+            "id": 19,
+            "type": "anchor",
+            "x": 2089.8094199350503,
+            "y": 261.48577310937816,
+            "value": 1,
+            "targetId": "level1-reward-shelf",
+            "contactPart": "tip",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 20,
+            "type": "launch",
+            "x": 2095.430500168023,
+            "y": 223.90381657416728,
+            "value": 1
+          },
+          {
+            "id": 21,
+            "type": "flip",
+            "x": 2244.180500168023,
+            "y": 223.90381657416728,
+            "value": 1
+          },
+          {
+            "id": 22,
+            "type": "flip",
+            "x": 2399.4305001680127,
+            "y": 214.32048324083394,
+            "value": 1
+          },
+          {
+            "id": 23,
+            "type": "flip",
+            "x": 2570.5305001679912,
+            "y": 211.8621499075006,
+            "value": 1
+          },
+          {
+            "id": 24,
+            "type": "flip",
+            "x": 2753.4305001680127,
+            "y": 209.40381657416725,
+            "value": 1
+          },
+          {
+            "id": 25,
+            "type": "launch",
+            "x": 2902,
+            "y": 175.0704832408339,
+            "value": 1
+          }
+        ]
+      },
+      "inputReceiptObserved": true
+    },
+    {
+      "index": 19,
+      "plannedMs": 17700,
+      "sendEpochMs": 1790337190876,
+      "received": [
+        {
+          "type": "pointerdown",
+          "epochMs": 1790337190892,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        },
+        {
+          "type": "pointerup",
+          "epochMs": 1790337190892.1,
+          "clientX": 550,
+          "clientY": 518.4000244140625
+        }
+      ],
+      "before": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "won",
+        "failReason": null,
+        "finishPhase": "terminal",
+        "finishGateId": "jade-two",
+        "finishSelection": null,
+        "worldTime": 18.683333333332914,
+        "cuts": 4,
+        "player": {
+          "x": 2902,
+          "y": 175.0704832408339,
+          "vx": 150,
+          "vy": -300,
+          "angle": 2.2611646171850306,
+          "angularVelocity": -9.5
+        },
+        "eventCount": 26,
+        "events": [
+          {
+            "id": 19,
+            "type": "anchor",
+            "x": 2089.8094199350503,
+            "y": 261.48577310937816,
+            "value": 1,
+            "targetId": "level1-reward-shelf",
+            "contactPart": "tip",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 20,
+            "type": "launch",
+            "x": 2095.430500168023,
+            "y": 223.90381657416728,
+            "value": 1
+          },
+          {
+            "id": 21,
+            "type": "flip",
+            "x": 2244.180500168023,
+            "y": 223.90381657416728,
+            "value": 1
+          },
+          {
+            "id": 22,
+            "type": "flip",
+            "x": 2399.4305001680127,
+            "y": 214.32048324083394,
+            "value": 1
+          },
+          {
+            "id": 23,
+            "type": "flip",
+            "x": 2570.5305001679912,
+            "y": 211.8621499075006,
+            "value": 1
+          },
+          {
+            "id": 24,
+            "type": "flip",
+            "x": 2753.4305001680127,
+            "y": 209.40381657416725,
+            "value": 1
+          },
+          {
+            "id": 25,
+            "type": "launch",
+            "x": 2902,
+            "y": 175.0704832408339,
+            "value": 1
+          },
+          {
+            "id": 26,
+            "type": "finish",
+            "x": 3000,
+            "y": 200,
+            "value": 2,
+            "targetId": "jade-two"
+          }
+        ]
+      },
+      "after": {
+        "seed": 31,
+        "levelNumber": 1,
+        "phase": "ordinary",
+        "status": "won",
+        "failReason": null,
+        "finishPhase": "terminal",
+        "finishGateId": "jade-two",
+        "finishSelection": null,
+        "worldTime": 18.683333333332914,
+        "cuts": 4,
+        "player": {
+          "x": 2902,
+          "y": 175.0704832408339,
+          "vx": 150,
+          "vy": -300,
+          "angle": 2.2611646171850306,
+          "angularVelocity": -9.5
+        },
+        "eventCount": 26,
+        "events": [
+          {
+            "id": 19,
+            "type": "anchor",
+            "x": 2089.8094199350503,
+            "y": 261.48577310937816,
+            "value": 1,
+            "targetId": "level1-reward-shelf",
+            "contactPart": "tip",
+            "normalX": 0,
+            "normalY": -1
+          },
+          {
+            "id": 20,
+            "type": "launch",
+            "x": 2095.430500168023,
+            "y": 223.90381657416728,
+            "value": 1
+          },
+          {
+            "id": 21,
+            "type": "flip",
+            "x": 2244.180500168023,
+            "y": 223.90381657416728,
+            "value": 1
+          },
+          {
+            "id": 22,
+            "type": "flip",
+            "x": 2399.4305001680127,
+            "y": 214.32048324083394,
+            "value": 1
+          },
+          {
+            "id": 23,
+            "type": "flip",
+            "x": 2570.5305001679912,
+            "y": 211.8621499075006,
+            "value": 1
+          },
+          {
+            "id": 24,
+            "type": "flip",
+            "x": 2753.4305001680127,
+            "y": 209.40381657416725,
+            "value": 1
+          },
+          {
+            "id": 25,
+            "type": "launch",
+            "x": 2902,
+            "y": 175.0704832408339,
+            "value": 1
+          },
+          {
+            "id": 26,
+            "type": "finish",
+            "x": 3000,
+            "y": 200,
+            "value": 2,
+            "targetId": "jade-two"
+          }
+        ]
+      },
+      "inputReceiptObserved": true
+    }
+  ],
+  "final": {
+    "seed": 31,
+    "levelNumber": 1,
+    "phase": "ordinary",
+    "status": "won",
+    "failReason": null,
+    "finishPhase": "terminal",
+    "finishGateId": "jade-two",
+    "finishSelection": null,
+    "worldTime": 18.683333333332914,
+    "cuts": 4,
+    "player": {
+      "x": 2902,
+      "y": 175.0704832408339,
+      "vx": 150,
+      "vy": -300,
+      "angle": 2.2611646171850306,
+      "angularVelocity": -9.5
+    },
+    "eventCount": 26,
+    "events": [
+      {
+        "id": 19,
+        "type": "anchor",
+        "x": 2089.8094199350503,
+        "y": 261.48577310937816,
+        "value": 1,
+        "targetId": "level1-reward-shelf",
+        "contactPart": "tip",
+        "normalX": 0,
+        "normalY": -1
+      },
+      {
+        "id": 20,
+        "type": "launch",
+        "x": 2095.430500168023,
+        "y": 223.90381657416728,
+        "value": 1
+      },
+      {
+        "id": 21,
+        "type": "flip",
+        "x": 2244.180500168023,
+        "y": 223.90381657416728,
+        "value": 1
+      },
+      {
+        "id": 22,
+        "type": "flip",
+        "x": 2399.4305001680127,
+        "y": 214.32048324083394,
+        "value": 1
+      },
+      {
+        "id": 23,
+        "type": "flip",
+        "x": 2570.5305001679912,
+        "y": 211.8621499075006,
+        "value": 1
+      },
+      {
+        "id": 24,
+        "type": "flip",
+        "x": 2753.4305001680127,
+        "y": 209.40381657416725,
+        "value": 1
+      },
+      {
+        "id": 25,
+        "type": "launch",
+        "x": 2902,
+        "y": 175.0704832408339,
+        "value": 1
+      },
+      {
+        "id": 26,
+        "type": "finish",
+        "x": 3000,
+        "y": 200,
+        "value": 2,
+        "targetId": "jade-two"
+      }
+    ]
+  },
+  "outcome": "DIAGNOSTIC_NATURAL_CANDIDATE_WON",
+  "errors": [],
+  "evidence": [
+    "r2-ordinary-candidate-ready.png",
+    "r2-ordinary-candidate-terminal.png"
+  ]
+}
