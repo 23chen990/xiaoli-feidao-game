@@ -1,0 +1,456 @@
+{
+  "artifactType": "B01BonusWhiteColumnInteractiveVisibleRun",
+  "scriptVersion": "B01-BONUS-interactive-v0.2",
+  "scriptSha256": "e040384216da44ed19c7fb9110092b10cc43e07867a44eeb5803cac79974fe6f",
+  "runId": "4a3a736c-0994-4cbf-8846-43b488f02fca",
+  "contextId": "413fe55a-fd9a-4d36-a877-54bdaa5628cf",
+  "viewport": "1100x720",
+  "sourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "buildSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+  "documentResponse": {
+    "url": "http://127.0.0.1:4175/",
+    "status": 200,
+    "sha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d"
+  },
+  "prefixSchedule": [
+    75,
+    1108,
+    2092,
+    3092,
+    4092,
+    5075,
+    6058,
+    7058,
+    8042
+  ],
+  "prefixInputs": [
+    {
+      "inputIndex": 1,
+      "plannedMs": 75,
+      "receipts": [
+        {
+          "seq": 1,
+          "type": "pointerdown",
+          "epochMs": 1790350476023.4
+        },
+        {
+          "seq": 2,
+          "type": "pointerup",
+          "epochMs": 1790350476197.2
+        }
+      ],
+      "before": {
+        "phase": "ordinary",
+        "status": "ready",
+        "player": {
+          "x": 120,
+          "y": 420,
+          "vx": 0,
+          "vy": 0
+        },
+        "anchorId": null
+      },
+      "after": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 166.25,
+          "y": 356.7916666666667,
+          "vx": 150,
+          "vy": -115
+        },
+        "anchorId": null
+      }
+    },
+    {
+      "inputIndex": 2,
+      "plannedMs": 1108,
+      "receipts": [
+        {
+          "seq": 3,
+          "type": "pointerdown",
+          "epochMs": 1790350477058.5999
+        },
+        {
+          "seq": 4,
+          "type": "pointerup",
+          "epochMs": 1790350477060
+        }
+      ],
+      "before": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 265,
+          "y": 412.75,
+          "vx": 150,
+          "vy": 280
+        },
+        "anchorId": null
+      },
+      "after": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 285.8000000000002,
+          "y": 414.4166666666667,
+          "vx": 162,
+          "vy": -260
+        },
+        "anchorId": null
+      }
+    },
+    {
+      "inputIndex": 3,
+      "plannedMs": 2092,
+      "receipts": [
+        {
+          "seq": 5,
+          "type": "pointerdown",
+          "epochMs": 1790350478036.9
+        },
+        {
+          "seq": 6,
+          "type": "pointerup",
+          "epochMs": 1790350478038.0999
+        }
+      ],
+      "before": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 424.8500000000025,
+          "y": 414.4166666666667,
+          "vx": 162,
+          "vy": 255
+        },
+        "anchorId": null
+      },
+      "after": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 443.3000000000025,
+          "y": 402.70833333333337,
+          "vx": 174,
+          "vy": -255
+        },
+        "anchorId": null
+      }
+    },
+    {
+      "inputIndex": 4,
+      "plannedMs": 3092,
+      "receipts": [
+        {
+          "seq": 7,
+          "type": "pointerdown",
+          "epochMs": 1790350479035.0999
+        },
+        {
+          "seq": 8,
+          "type": "pointerup",
+          "epochMs": 1790350479036.2998
+        }
+      ],
+      "before": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 589.2719688854121,
+          "y": 406.804466664866,
+          "vx": 174,
+          "vy": 260
+        },
+        "anchorId": null
+      },
+      "after": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 599.2141320275547,
+          "y": 415.62448112066545,
+          "vx": 186,
+          "vy": -285
+        },
+        "anchorId": null
+      }
+    },
+    {
+      "inputIndex": 5,
+      "plannedMs": 4092,
+      "receipts": [
+        {
+          "seq": 9,
+          "type": "pointerdown",
+          "epochMs": 1790350480052.4
+        },
+        {
+          "seq": 10,
+          "type": "pointerup",
+          "epochMs": 1790350480053.5
+        }
+      ],
+      "before": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 765.0641320275498,
+          "y": 402.24948112066545,
+          "vx": 186,
+          "vy": 250
+        },
+        "anchorId": null
+      },
+      "after": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 788.6141320275499,
+          "y": 394.99948112066545,
+          "vx": 190,
+          "vy": -255
+        },
+        "anchorId": null
+      }
+    },
+    {
+      "inputIndex": 6,
+      "plannedMs": 5075,
+      "receipts": [
+        {
+          "seq": 11,
+          "type": "pointerdown",
+          "epochMs": 1790350481030.9
+        },
+        {
+          "seq": 12,
+          "type": "pointerup",
+          "epochMs": 1790350481032
+        }
+      ],
+      "before": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 948.5307986942204,
+          "y": 394.99948112066545,
+          "vx": 190,
+          "vy": 250
+        },
+        "anchorId": null
+      },
+      "after": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 975.4474653608877,
+          "y": 388.04114778733214,
+          "vx": 190,
+          "vy": -250
+        },
+        "anchorId": null
+      }
+    },
+    {
+      "inputIndex": 7,
+      "plannedMs": 6058,
+      "receipts": [
+        {
+          "seq": 13,
+          "type": "pointerdown",
+          "epochMs": 1790350482011.0999
+        },
+        {
+          "seq": 14,
+          "type": "pointerup",
+          "epochMs": 1790350482012.2
+        }
+      ],
+      "before": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1136.9474653608834,
+          "y": 394.41614778733214,
+          "vx": 190,
+          "vy": 260
+        },
+        "anchorId": null
+      },
+      "after": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1160.6974653608822,
+          "y": 392.24948112066545,
+          "vx": 190,
+          "vy": -260
+        },
+        "anchorId": null
+      }
+    },
+    {
+      "inputIndex": 8,
+      "plannedMs": 7058,
+      "receipts": [
+        {
+          "seq": 15,
+          "type": "pointerdown",
+          "epochMs": 1790350483023.4
+        },
+        {
+          "seq": 16,
+          "type": "pointerup",
+          "epochMs": 1790350483024.5
+        }
+      ],
+      "before": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1118.1407986942056,
+          "y": 401.16614778733214,
+          "vx": -136.8,
+          "vy": 275
+        },
+        "anchorId": null
+      },
+      "after": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1116.790798694204,
+          "y": 395.16614778733214,
+          "vx": 73.19999999999999,
+          "vy": -255
+        },
+        "anchorId": null
+      }
+    },
+    {
+      "inputIndex": 9,
+      "plannedMs": 8042,
+      "receipts": [
+        {
+          "seq": 17,
+          "type": "pointerdown",
+          "epochMs": 1790350483997.0999
+        },
+        {
+          "seq": 18,
+          "type": "pointerup",
+          "epochMs": 1790350483998.2998
+        }
+      ],
+      "before": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1179.010798694194,
+          "y": 397.29114778733214,
+          "vx": 73.19999999999999,
+          "vy": 255
+        },
+        "anchorId": null
+      },
+      "after": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1189.0607986941936,
+          "y": 390.29114778733214,
+          "vx": 85.19999999999999,
+          "vy": -255
+        },
+        "anchorId": null
+      }
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "WAIT",
+      "evidence": {
+        "phase": "ordinary",
+        "status": "anchored",
+        "player": {
+          "x": 1211.7807986941948,
+          "y": 344.29114778733214,
+          "vx": 0,
+          "vy": 0
+        },
+        "anchorId": "white-column"
+      }
+    },
+    {
+      "decision": "WAIT",
+      "evidence": {
+        "phase": "ordinary",
+        "status": "anchored",
+        "player": {
+          "x": 1211.7807986941948,
+          "y": 344.29114778733214,
+          "vx": 0,
+          "vy": 0
+        },
+        "anchorId": "white-column"
+      }
+    },
+    {
+      "decision": "RELEASE",
+      "receipts": [
+        {
+          "seq": 19,
+          "type": "pointerdown",
+          "epochMs": 1790350517615.7998
+        },
+        {
+          "seq": 20,
+          "type": "pointerup",
+          "epochMs": 1790350517617
+        }
+      ],
+      "before": {
+        "phase": "ordinary",
+        "status": "anchored",
+        "player": {
+          "x": 1211.7807986941948,
+          "y": 344.29114778733214,
+          "vx": 0,
+          "vy": 0
+        },
+        "anchorId": "white-column"
+      },
+      "after": {
+        "phase": "ordinary",
+        "status": "airborne",
+        "player": {
+          "x": 1221.7807986941948,
+          "y": 325.79114778733214,
+          "vx": 150,
+          "vy": -260
+        },
+        "anchorId": null
+      }
+    }
+  ],
+  "finalState": {
+    "phase": "ordinary",
+    "status": "anchored",
+    "player": {
+      "x": 1284.2807986941948,
+      "y": 274.3328144539988,
+      "vx": 0,
+      "vy": 0
+    },
+    "anchorId": "white-column"
+  },
+  "errors": [],
+  "evidence": [
+    "r2-natural/bonus-white-column-interactive-v02/ready.png",
+    "r2-natural/bonus-white-column-interactive-v02/observation-01-after-prefix.png",
+    "r2-natural/bonus-white-column-interactive-v02/observation-02-wait.png",
+    "r2-natural/bonus-white-column-interactive-v02/observation-03-wait.png",
+    "r2-natural/bonus-white-column-interactive-v02/release-after.png"
+  ]
+}

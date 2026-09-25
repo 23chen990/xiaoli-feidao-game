@@ -295,3 +295,9 @@ BONUS 汇总现在要求响应分项参与最终 `result/rawOutcome/allAssertion
 本次局部运行在计划第 11 次输入前仍为普通关 airborne，没有可见锚定停住信号；截图显示释放后刀具仍在画面上方空中。因此本次不能证明“锚定后的 launch 不被误执行成上升期间 flip”，分类保持 `NOT_RUN`，没有继续输入或平移时间表。原生 receipt、inputId causal 记录和三张关键截图已保存。
 
 诊断 JSON 中的 `inputStep` 是 60Hz 诊断循环编号；正式运行的浏览器计时是独立的 wall-clock 计划，不能把 inputStep 直接当 120Hz 物理步或毫秒时间。输入 10 的差异表述改为“输入 10 时已经观察到差异”，没有宣称整局首次分歧。
+
+## B01-BONUS 白柱策略执行修正 v02
+
+v01 复核说明见 `r2-bonus-white-column-v01-review.json`：planNotes 没有参与输入决策；第 9、10 项虽写 WAIT，固定循环仍发送点击；第 10 次点击前记录为 white-column anchored、零速度，点击后 launch，第 11 次为 airborne→flip；v01 没有释放前截图，因此不能判断当时锚定信号是否可见。v01 保持 NOT_RUN，不归因于游戏缺少提示。
+
+v02 使用交互式浏览器上下文：固定时间表只负责前置回放到观察段，随后暂停并由操作者查看当前画面，显式发送 WAIT 或一次 RELEASE。两次连续截图显示刀具与白柱保持接触、姿态稳定后才 RELEASE；释放后只观察，不自动追加 flip。v02 记录一次可见锚定确认和一次合法释放，局部执行方法目标 PASS；没有执行完整 BONUS 或独立 QA。
