@@ -1,0 +1,14 @@
+{
+  "issueId": "FIDELITY-UPLIFT-01",
+  "targetGame": "Slice Master prototype-a",
+  "workspace": "game/prototype-a",
+  "classification": "experience-gap",
+  "scope": ["game-core.ts", "game-levels.ts", "first-level pacing"],
+  "reproduction": "Fresh 1100x720 Level 1 run with ordinary one-tap cadence reaches the opening runway but the pre-change route presents a mandatory white-column recovery and sparse target rhythm before the hazard.",
+  "acceptance": [
+    "first tap begins forward motion with a readable apex near one second",
+    "opening has 2-3 easy cuts followed by a timing beat, chain, one clear hazard and finish ladder",
+    "white-column and recovery branch are optional/off the main route",
+    "existing cut feedback remains visible and does not replace knife readability"
+  ]
+}

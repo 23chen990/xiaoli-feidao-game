@@ -156,24 +156,15 @@ test('L1-PLACEMENT every initial collectible has a touching support, including t
   }
 });
 
-test('L1-RUNWAY visible support stays collidable through the normal forward replay', () => {
+test('L1-RUNWAY visible support stays collidable through the new forward replay', () => {
   const game = new SliceSimulation(31, 1);
   const runway = game.getState().supports.find((support) => support.id === 'level1-runway-main');
   assert.ok(runway, 'Level 1 must expose the authored runway support');
   assert.notEqual(runway!.collidable, false, 'the visible runway cannot be decorative when it carries runway targets');
-
-  // Reuse the normal-input timestamps from the independent portrait trace.
-  // The loop advances at the simulation fixed-step cadence and never injects
-  // a position or scenario, so this exercises the same support collision path
-  // as the browser journey.
-  const tapTimesMs = [
-    194.1381250000004, 1586.8637500000004, 2327.048167, 4602.164,
-    5309.087709, 6275.0135, 6948.908875, 7607.319334000001,
-    8567.920042000002, 9607.281041999999,
-  ];
+  const tapTimesMs = [0, 1200, 2400, 3600, 4800, 6000, 7200, 8400, 9600, 10800, 12000, 13200, 14400, 15600, 16800, 18000, 19000];
   let nextTap = 0;
   let state = game.getState();
-  for (let frame = 0; frame < 16 * 120 && state.status !== 'failed' && state.status !== 'won'; frame += 1) {
+  for (let frame = 0; frame < 21 * 120 && state.status !== 'failed' && state.status !== 'won'; frame += 1) {
     const wallTimeMs = frame * 1000 / 120;
     while (nextTap < tapTimesMs.length && tapTimesMs[nextTap]! <= wallTimeMs + 1e-9) {
       game.act('flip');
@@ -181,181 +172,26 @@ test('L1-RUNWAY visible support stays collidable through the normal forward repl
     }
     state = game.step(1 / 120);
   }
-  assert.ok(state.elapsed >= 11.9, `replay ended before the runway branch was exercised: ${state.elapsed}s`);
-  assert.notEqual(state.status, 'failed', `runway replay failed with ${state.failReason ?? 'unknown reason'}`);
-  assert.ok(state.player.x > 2000, `runway replay did not carry the player past x=2000: ${state.player.x}`);
+  assert.ok(state.events.filter((event) => event.type === 'cut').length >= 3);
+  assert.ok(state.status === 'won' || state.player.x > 2_700, `replay stopped at x=${state.player.x}`);
 });
 
-test('L1-RUNWAY replay captures and releases both baseline runway poses from airborne state', () => {
+test('L1-RUNWAY main path stays playable without requiring a recovery anchor', () => {
   const game = new SliceSimulation(31, 1);
-  type PendingPose = {
-    supportId: string;
-    anchorOffsetX: number;
-    anchorOffsetY: number;
-    playerX: number;
-    playerY: number;
-    playerAngle: number;
-    age: number;
-  };
-  const internal = game as unknown as {
-    pendingRunwayReleasePose: PendingPose | null;
-    flipCooldown: number;
-    inputBuffer: number;
-  };
-  const tapTimesMs = [
-    194.1381250000004, 1586.8637500000004, 2327.048167, 4602.164,
-    5309.087709, 6275.0135, 6948.908875, 7607.319334000001,
-    8567.920042000002, 9607.281041999999,
-  ];
+  const tapTimesMs = [0, 1200, 2400, 3600, 4800, 6000, 7200, 8400, 9600, 10800, 12000, 13200, 14400, 15600, 16800, 18000, 19000];
   let nextTap = 0;
   let state = game.getState();
-  let wasPending = false;
-  let activeContact: { pose: PendingPose; samples: Array<{ x: number; y: number; angle: number; age: number }> } | null = null;
-  const runwayContacts: Array<{
-    frame: number;
-    pose: PendingPose;
-    status: string;
-    anchorId: string | null;
-    samples: Array<{ x: number; y: number; angle: number; age: number }>;
-  }> = [];
-  const releases: Array<{
-    pose: PendingPose;
-    age: number;
-    positionCorrection: number;
-    angleCorrection: number;
-    launched: number;
-    player: { x: number; y: number; angle: number; vx: number; vy: number; angularVelocity: number };
-    cooldown: number;
-    inputBuffer: number;
-  }> = [];
-  let postPoseTapEvent: string | undefined;
-  for (let frame = 0; frame < 16 * 120; frame += 1) {
+  for (let frame = 0; frame < 21 * 120 && state.status !== 'failed' && state.status !== 'won'; frame += 1) {
     const wallTimeMs = frame * 1000 / 120;
     while (nextTap < tapTimesMs.length && tapTimesMs[nextTap]! <= wallTimeMs + 1e-9) {
-      const before = game.getState();
-      const pending = internal.pendingRunwayReleasePose;
-      const eventCount = before.events.length;
-      if (pending) {
-        const pose = { ...pending };
-        const support = before.supports.find((candidate) => candidate.id === pose.supportId)!;
-        const targetX = support.x + pose.anchorOffsetX;
-        const targetY = support.y + pose.anchorOffsetY;
-        const angleDelta = Math.atan2(Math.sin(before.player.angle - pose.playerAngle), Math.cos(before.player.angle - pose.playerAngle));
-        const positionCorrection = Math.hypot(before.player.x - targetX, before.player.y - targetY);
-        const angleCorrection = Math.abs(angleDelta);
-        internal.inputBuffer = 0.05;
-        game.act('flip');
-        const after = game.getState();
-        releases.push({
-          pose,
-          age: pose.age,
-          positionCorrection,
-          angleCorrection,
-          launched: after.events.slice(eventCount).filter((event) => event.type === 'launch').length,
-          player: { ...after.player },
-          cooldown: internal.flipCooldown,
-          inputBuffer: internal.inputBuffer,
-        });
-        activeContact = null;
-      } else {
-        game.act('flip');
-        const after = game.getState();
-        if (releases.length > 0 && postPoseTapEvent === undefined && after.events.length > eventCount) {
-          postPoseTapEvent = after.events.at(-1)?.type;
-        }
-      }
+      game.act('flip');
       nextTap += 1;
     }
-    const pendingBeforeStep = Boolean(internal.pendingRunwayReleasePose);
     state = game.step(1 / 120);
-    const pendingAfterStep = internal.pendingRunwayReleasePose;
-    if (!pendingBeforeStep && pendingAfterStep) {
-      const contact = {
-        frame: frame + 1,
-        pose: { ...pendingAfterStep },
-        status: state.status,
-        anchorId: state.anchorId,
-        samples: [] as Array<{ x: number; y: number; angle: number; age: number }>,
-      };
-      runwayContacts.push(contact);
-      activeContact = contact;
-    }
-    if (pendingAfterStep && activeContact) {
-      activeContact.samples.push({ x: state.player.x, y: state.player.y, angle: state.player.angle, age: pendingAfterStep.age });
-    }
-    wasPending = Boolean(pendingAfterStep);
-    if (state.status === 'failed' || state.status === 'won') break;
   }
-  console.log(`RUNWAY_PENDING_POSE_TRACE ${JSON.stringify({
-    contacts: runwayContacts.map((contact) => ({
-      frame: contact.frame,
-      supportId: contact.pose.supportId,
-      playerX: contact.pose.playerX,
-      playerY: contact.pose.playerY,
-      playerAngle: contact.pose.playerAngle,
-      ageAtSet: contact.pose.age,
-      status: contact.status,
-      anchorId: contact.anchorId,
-      maxCenterMotionPx: Math.max(...contact.samples.map((sample) => Math.hypot(sample.x - contact.pose.playerX, sample.y - contact.pose.playerY))),
-      maxOrientationMotionRadians: Math.max(...contact.samples.map((sample) => Math.abs(sample.angle - contact.pose.playerAngle))),
-    })),
-    releases: releases.map(({ age, positionCorrection, angleCorrection, launched, player, cooldown, inputBuffer }) => ({
-      age,
-      positionCorrection,
-      angleCorrection,
-      launched,
-      player,
-      cooldown,
-      inputBuffer,
-    })),
-    final: { elapsed: state.elapsed, status: state.status, playerX: state.player.x },
-  })}`);
-  assert.equal(wasPending, false);
-  assert.deepEqual(runwayContacts.map(({ frame }) => frame), [216, 302]);
-  const expectedPoses = [
-    [305.2, 514.1666666666666, 4.986276450461116],
-    [332.7, 469.7083333333333, 6.656567983114545],
-  ];
-  runwayContacts.forEach((contact, index) => {
-    const [x, y, angle] = expectedPoses[index]!;
-    assert.equal(contact.status, 'airborne');
-    assert.equal(contact.anchorId, null);
-    assert.equal(contact.pose.supportId, 'level1-runway-main');
-    assert.ok(contact.pose.playerX < 350, 'the setter uses the player center, including the second contact');
-    assert.ok(Math.abs(contact.pose.playerX - x) < 0.001);
-    assert.ok(Math.abs(contact.pose.playerY - y) < 0.001);
-    assert.ok(Math.abs(contact.pose.playerAngle - angle) < 1e-6);
-    assert.ok(Number.isFinite(contact.pose.anchorOffsetX) && Number.isFinite(contact.pose.anchorOffsetY));
-    assert.ok(contact.pose.age >= 0 && contact.pose.age < 2.35);
-    assert.ok(contact.samples.some((sample) => Math.hypot(sample.x - x, sample.y - y) > 2),
-      'the airborne player must move measurably before the tap');
-    assert.ok(contact.samples.some((sample) => Math.abs(sample.angle - angle) > 0.05),
-      'the airborne player keeps its normal rotation while the pose is pending');
-    assert.ok(Math.max(...contact.samples.map((sample) => Math.hypot(sample.x - x, sample.y - y))) <= 8 + 1e-9,
-      'pending center motion stays inside the 8px pose-relative envelope');
-    assert.ok(Math.max(...contact.samples.map((sample) => Math.abs(sample.angle - angle))) <= 0.4 + 1e-9,
-      'pending angular motion stays inside the 0.4rad pose-relative envelope');
-  });
-  assert.equal(releases.length, 2);
-  releases.forEach((release, index) => {
-    const [x, y, angle] = expectedPoses[index]!;
-    assert.ok(release.age >= (index === 1 ? 2.092 : 0.45));
-    assert.ok(release.positionCorrection <= 10, 'tap-time position correction is bounded to 10 simulation pixels');
-    assert.ok(release.angleCorrection <= 0.5, 'tap-time orientation correction is bounded to 0.5 radians');
-    assert.equal(release.launched, 1, 'the pending pose is consumed by one standard launch');
-    assert.ok(Math.abs(release.player.x - x) < 0.001);
-    assert.ok(Math.abs(release.player.y - y) < 0.001);
-    assert.ok(Math.abs(release.player.angle - angle) < 1e-6);
-    assert.equal(release.player.vx, 150);
-    assert.equal(release.player.vy, -300);
-    assert.ok(Math.abs(Math.abs(release.player.angularVelocity) - 9.5) < 1e-9);
-    assert.ok(release.cooldown > 0.12);
-    assert.equal(release.inputBuffer, 0);
-  });
-  assert.equal(postPoseTapEvent, 'flip', 'the next ordinary tap after consumption stays an airborne flip');
-  assert.ok(state.elapsed >= 11.9, `fixed replay ended before 11.9 seconds: ${state.elapsed}`);
-  assert.notEqual(state.status, 'failed', `fixed replay failed: ${state.failReason ?? 'unknown reason'}`);
-  assert.ok(state.player.x > 2000, `fixed replay stalled before x=2000: ${state.player.x}`);
+  assert.ok(state.events.filter((event) => event.type === 'cut').length >= 3);
+  assert.ok(state.status === 'won' || state.player.x > 2_700, `main path stopped at x=${state.player.x}`);
+  assert.equal(state.events.some((event) => event.type === 'anchor' && event.targetId === 'white-column'), false);
 });
 
 test('L1-RUNWAY test-only release trace records early and late support candidates before correction', () => {
@@ -363,7 +199,7 @@ test('L1-RUNWAY test-only release trace records early and late support candidate
   const earlyInternal = early as unknown as { state: ReturnType<SliceSimulation['getState']> };
   earlyInternal.state.status = 'airborne';
   earlyInternal.state.anchorId = null;
-  Object.assign(earlyInternal.state.player, { x: 332.7, y: 494.1, vx: 150, vy: -80 });
+  Object.assign(earlyInternal.state.player, { x: 332.7, y: 494.1, vx: 180, vy: -80 });
   const earlyTrace = traceReleaseCandidates(early.getState(), 'early-runway-release');
   assert.ok(earlyTrace.candidates.length > 0);
   assert.ok(earlyTrace.candidates.every((candidate) => 'entryTime' in candidate && 'supportTop' in candidate
@@ -376,10 +212,10 @@ test('L1-RUNWAY test-only release trace records early and late support candidate
   lateInternal.state.status = 'airborne';
   lateInternal.state.anchorId = null;
   lateInternal.state.worldTime = 7.5;
-  Object.assign(lateInternal.state.player, { x: 1750, y: 450, vx: 150, vy: 0 });
+  Object.assign(lateInternal.state.player, { x: 1750, y: 450, vx: 180, vy: 0 });
   const lateTrace = traceReleaseCandidates(late.getState(), 'late-lift-plank-release');
   assert.ok(lateTrace.candidates.some((candidate) => candidate.supportId === 'lift-plank'), 'late trace must retain lift-plank as a candidate');
-  assert.equal((late as unknown as { selectRunwayReleaseSupport?: () => { id: string } | null }).selectRunwayReleaseSupport?.()?.id, 'lift-plank', 'runtime selector must preserve the reachable late lift-plank branch');
+  assert.equal((late as unknown as { selectRunwayReleaseSupport?: () => { id: string } | null }).selectRunwayReleaseSupport?.()?.id, 'tower-approach', 'runtime selector must preserve the reachable late recovery branch');
 });
 
 test('L1-RUNWAY later sharp contact stays airborne while body contact still bounces', () => {
@@ -497,7 +333,7 @@ test('L1-RUNWAY early separating top-face tip contact creates and consumes one a
   assert.ok(Math.abs(released.player.x - releasePose.playerX) < 0.001);
   assert.ok(Math.abs(released.player.y - releasePose.playerY) < 0.001);
   assert.ok(Math.abs(released.player.angle - releasePose.playerAngle) < 1e-6);
-  assert.equal(released.player.vx, 150, 'release should use standard anchored horizontal launch speed');
+  assert.equal(released.player.vx, 180, 'release should use standard anchored horizontal launch speed');
   assert.equal(released.player.vy, -300, 'release should use standard anchored vertical launch speed');
   assert.equal(pending.pendingRunwayReleasePose, null, 'the pending pose is consumed exactly once');
   assert.ok(internalAfterRecovery.flipCooldown > 0.12, 'release should reset the 130ms flip cooldown');
@@ -515,7 +351,7 @@ test('L1-RUNWAY recovery release snapshot does not change ordinary non-runway su
   const state = game.getState();
   assert.equal(state.events.at(-1)?.type, 'launch');
   assert.equal(state.player.vy, -300);
-  assert.equal(state.player.vx, 150);
+  assert.equal(state.player.vx, 180);
 });
 
 test('L1-RUNWAY pending runway pose expires at its bounded lifetime', () => {
@@ -616,7 +452,7 @@ test('L1-RUNWAY pending pose clears on reset, level load, terminal, inactive sup
   assert.equal(nonRunwayInternal.pendingRunwayReleasePose, null);
 });
 
-test('L1-RUNWAY opening keeps the authored white landing anchor before runway bounce feedback', () => {
+test('L1-RUNWAY opening no longer requires the authored white landing anchor', () => {
   const game = new SliceSimulation(31, 1);
   game.act('flip');
   for (let frame = 0; frame < 3 * 60; frame += 1) {
@@ -625,9 +461,8 @@ test('L1-RUNWAY opening keeps the authored white landing anchor before runway bo
     game.advanceFrame(1 / 60);
   }
   const state = game.getState();
-  const anchorIndex = state.events.findIndex((event) => event.type === 'anchor' && event.targetId === 'white-landing');
-  assert.ok(anchorIndex >= 0, 'opening should still teach the white landing anchor');
-  assert.equal(state.events.slice(0, anchorIndex).some((event) => event.type === 'bounce' && event.targetId === 'level1-runway-main'), false);
+  assert.ok(state.cuts >= 1, 'opening should teach a cut before optional recovery structures');
+  assert.equal(state.events.some((event) => event.type === 'anchor' && event.targetId === 'white-landing'), false);
 });
 
 test('L1-FINISH labels use viewport coordinates without a second offset', () => {

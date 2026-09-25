@@ -75,7 +75,7 @@ test('MOV-002 MOV-003 an anchored knife rides a moving support and inherits its 
   const launched = game.getState();
   assert.equal(launched.status, 'airborne');
   assert.equal(launched.anchorId, null);
-  assert.ok(Math.abs(launched.player.vx - (150 + inheritedVx)) < 0.01);
+  assert.ok(Math.abs(launched.player.vx - (180 + inheritedVx)) < 0.01);
 });
 
 test('HARD-IDENTITY-001 course has no dedicated rebound identity', () => {

@@ -70,6 +70,6 @@ test('level 1 keeps a broad mid-course recovery shelf for the default natural ro
   const level = getLevelDefinition(1);
   const shelf = level.supports.find((support) => support.id === 'white-recovery-shelf');
   assert.ok(shelf, 'opening course needs an authored recovery shelf');
-  assert.ok(shelf!.x > 1500 && shelf!.x < 2100);
+  assert.ok(shelf!.x > 2200 && shelf!.x < 2800, 'recovery shelf follows the post-hazard rhythm change');
   assert.ok(shelf!.width >= 300 && shelf!.y >= 540);
 });

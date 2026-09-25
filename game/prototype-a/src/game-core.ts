@@ -263,7 +263,9 @@ const FIXED_STEP = 1 / FEEL_TIMING_BASELINE.fixedStepHz;
 const MAX_FIXED_STEPS_PER_FRAME = 240;
 const BLADE_HALF = 38;
 const PLAYER_RADIUS = 17;
-const ORDINARY_SPEED = 150;
+// Tuned for the one-button cadence: a launch should cross one readable target
+// window before the next decision without turning the opening into a sprint.
+const ORDINARY_SPEED = 180;
 const BONUS_SPEED = 180;
 const LAUNCH_VY = -300;
 const GRAVITY = 600;
@@ -747,7 +749,7 @@ export class SliceSimulation {
       if (wasAnchored) this.state.recoveryAge = 0;
       player.vx = (this.state.phase === 'bonus' ? BONUS_SPEED : ORDINARY_SPEED) + (support?.vx ?? 0);
       player.vy = LAUNCH_VY + Math.min(0, support?.vy ?? 0);
-      player.angularVelocity = this.flipDirection * 9.5;
+      player.angularVelocity = this.flipDirection * 10.25;
       this.flipDirection *= -1;
       this.flipCooldown = FLIP_COOLDOWN;
       this.inputBuffer = 0;
@@ -766,7 +768,7 @@ export class SliceSimulation {
     const player = this.state.player;
     player.vx = player.vx < 0 ? Math.min(190, player.vx + 210) : Math.min(this.state.phase === 'bonus' ? 230 : 190, player.vx + 12);
     player.vy = Math.min(player.vy - FLIP_IMPULSE, LAUNCH_VY);
-    player.angularVelocity = this.flipDirection * 10.5;
+    player.angularVelocity = this.flipDirection * 11.25;
     this.flipDirection *= -1;
     this.flipCooldown = FLIP_COOLDOWN;
     this.inputBuffer = 0;
