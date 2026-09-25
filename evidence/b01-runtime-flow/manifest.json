@@ -70,7 +70,8 @@
     "R2 aligned capture diagnosis identifies input-4 path-history divergence and same-step handler behavior; the private accepted/buffered flag remains unexposed.",
     "Real OS backgrounding, real BFCache navigation and browser storage fault injection remain unexecuted.",
     "Small-patch verification preserved preliminary script-repair NOT_RUN records; only v2.1 formal and independent runs are current ordinary PASS evidence.",
-    "Natural BONUS entry and post-entry response remain NOT_RUN for 390x844 and 1100x720."
+    "Natural BONUS entry and post-entry response remain NOT_RUN for 390x844 and 1100x720.",
+    "v2.3 offline recheck only; no new natural browser run; v2.2 ordinary source records remain unchanged."
   ],
   "browserReportHistory": "evidence/b01-runtime-flow/browser-report.json",
   "r1BrowserReport": "evidence/b01-runtime-flow/r1-browser-report.json",
@@ -145,5 +146,6 @@
   "r2OrdinaryCurrentEvidenceDirs": [
     "evidence/b01-runtime-flow/r2-natural/patch-v22-formal-ordinary/",
     "evidence/b01-runtime-flow/r2-natural/patch-v22-independent-ordinary/"
-  ]
+  ],
+  "offlineFinalCloseout": "evidence/b01-runtime-flow/r2-acceptance-closeout-review-v23.json"
 }

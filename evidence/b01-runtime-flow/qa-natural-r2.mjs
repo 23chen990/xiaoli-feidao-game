@@ -6,7 +6,7 @@ const root = new URL('.', import.meta.url);
 const baseUrl = process.env.SLICE_B01_URL ?? 'http://127.0.0.1:4175/';
 const sourceCommit = 'de6f11d2231398f6c655abbddd40c548d1524126';
 const buildSha256 = '8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d';
-const scriptVersion = 'B01-R2-acceptance-v2.2';
+const scriptVersion = 'B01-R2-acceptance-v2.3';
 const scriptSha256 = createHash('sha256').update(await readFile(new URL('./qa-natural-r2.mjs', root))).digest('hex');
 const defaultA = [800, 1859, 2032, 3068, 4140, 5118, 6155, 7157, 8215, 9199, 9352, 9774, 11152, 11382, 13775, 14833, 14991, 15145, 15389, 16391, 16722, 17872, 19618, 20644, 21614, 22592, 23645, 24216];
 const defaultB390 = [500, 1578, 1730, 2771, 3761, 4802, 5843, 6820, 7890, 8861, 9002, 9395, 10769, 12188, 13343, 14561, 14911, 15130, 16310, 17321, 18446, 19445, 20429, 21436, 22000, 22500, 23500];
@@ -24,93 +24,14 @@ const reportPath = new URL(process.env.R2_REPORT_PATH ?? './r2-natural-acceptanc
 const consoleReportPath = new URL(process.env.R2_CONSOLE_REPORT_PATH ?? './r2-natural-console-errors.json', root);
 await mkdir(new URL(`./${evidenceDirName}/`, root), { recursive: true });
 
-const ACTION_EVENT_TYPES = new Set(['launch', 'flip', 'cut']);
-function brief(state) {
-  return { phase: state.phase, status: state.status, failReason: state.failReason, finishPhase: state.finishPhase, finishGateId: state.finishGateId, finishSelection: state.finishSelection, levelNumber: state.levelNumber, elapsed: state.elapsed, worldTime: state.worldTime, cuts: state.cuts, bonusConsumed: state.bonusConsumed, player: { x: state.player.x, y: state.player.y, vx: state.player.vx, vy: state.player.vy, angle: state.player.angle, angularVelocity: state.player.angularVelocity }, events: state.events.slice(-8), eventCount: state.events.length };
-}
-function newEvents(before, after) {
-  const beforeIds = new Set(before.events.map((event) => event.id));
-  return after.events.filter((event) => !beforeIds.has(event.id));
-}
-function actionEvents(events) { return events.filter((event) => ACTION_EVENT_TYPES.has(event.type)); }
+const { ACTION_EVENT_TYPES, newEvents, actionEvents, classify, rawOutcome, makeCheck, responseEvidence, buildOrdinaryChecks, summarizeOrdinary } = await import('./r2-acceptance-checks-v23.mjs');
+function brief(state) { return { phase: state.phase, status: state.status, failReason: state.failReason, finishPhase: state.finishPhase, finishGateId: state.finishGateId, finishSelection: state.finishSelection, levelNumber: state.levelNumber, elapsed: state.elapsed, worldTime: state.worldTime, cuts: state.cuts, bonusConsumed: state.bonusConsumed, player: { x: state.player.x, y: state.player.y, vx: state.player.vx, vy: state.player.vy, angle: state.player.angle, angularVelocity: state.player.angularVelocity }, events: state.events.slice(-8), eventCount: state.events.length }; }
 function serializeError(error) { return { name: error?.name ?? 'Error', message: error?.message ?? String(error), stack: error?.stack ?? null }; }
 function isEnvironmentError(error) { return /network|browser|Target closed|timeout|connection|protocol|context/i.test(error?.message ?? String(error)); }
 function selectNewReceipts(receipts, beforeLength) { return receipts.slice(beforeLength); }
-function classify({ targetReached, validObservation, assertionFailure, assertionFailureObserved, environmentFailure, unknownFailure }) {
-  if (assertionFailure && assertionFailureObserved) return 'FAIL';
-  if (environmentFailure || (unknownFailure && targetReached)) return 'BLOCKED';
-  if (targetReached && validObservation && !assertionFailure) return 'PASS';
-  return 'NOT_RUN';
-}
-function rawOutcome({ targetReached, validObservation, allAssertionsPass, terminal, assertionFailure, assertionFailureObserved, environmentFailure, unknownFailure }) {
-  if (assertionFailure && assertionFailureObserved) return 'target-checkpoint-assertion-failure';
-  if (environmentFailure) return 'environment-or-tool-failure';
-  if (unknownFailure) return targetReached ? 'unknown-post-target-script-failure' : 'unknown-pre-target-script-failure';
-  if (targetReached && (!validObservation || allAssertionsPass === false)) return 'target-checkpoint-observation-invalid';
-  if (targetReached) return 'target-checkpoint-passed';
-  if (terminal?.status === 'failed') return 'ordinary-terminal-failed-before-target';
-  if (terminal?.status === 'won') return 'terminal-won-without-required-checkpoint';
-  return 'schedule-ended-before-target';
-}
-function makeCheck(id, executed, validObservation, passed, reason, evidence = null) { return { id, executed, validObservation, passed, reason: reason ?? null, evidence }; }
-
-function responseEvidence({ before, after, received, causalEvidence = null, requireCausal = false, inputId }) {
-  const eventsAfterInput = newEvents(before, after);
-  const newActionEvents = actionEvents(eventsAfterInput);
-  const directCausalEvents = causalEvidence?.after?.eventsAfterInput?.filter((event) => ['launch', 'flip'].includes(event.type)) ?? [];
-  const automaticCutOnly = newActionEvents.length > 0 && newActionEvents.every((event) => event.type === 'cut') && directCausalEvents.length === 0;
-  const hasCausalAction = directCausalEvents.length > 0;
-  const hasAction = requireCausal ? hasCausalAction : newActionEvents.length > 0;
-  return {
-    newEvents: eventsAfterInput,
-    newActionEvents,
-    actionTypes: newActionEvents.map((event) => event.type),
-    directCausalEvents,
-    hasCausalAction,
-    automaticCutOnly,
-    hasAction,
-    motionOnly: newActionEvents.length === 0 && (after.player.x !== before.player.x || after.player.y !== before.player.y || after.player.vx !== before.player.vx || after.player.vy !== before.player.vy),
-    causalEvidence,
-    inputId,
-  };
-}
-
-function buildOrdinaryChecks({ readyState, readyControl, terminal, targetReached, terminalControl, blankCheck, next, reload, postReloadPlay, controlObservations }) {
-  const transitionSamples = controlObservations.filter((sample) => ['contact', 'reward', 'celebration'].includes(sample.finishPhase));
-  const phaseSamples = (phase) => transitionSamples.filter((sample) => sample.finishPhase === phase);
-  const normalSamples = controlObservations.filter((sample) => sample.coverage === 'normal-running' && ['airborne', 'anchored'].includes(sample.status));
-  const hiddenPhaseCheck = (phase, label) => {
-    const samples = phaseSamples(phase);
-    return makeCheck(`${phase}-controls-hidden`, samples.length > 0, samples.length > 0, samples.length > 0 && samples.every((sample) => sample.hidden && !sample.visible), `${label} terminal actions must remain hidden`, samples);
-  };
-  return [
-    makeCheck('ready-state', true, Boolean(readyState), readyState?.phase === 'ordinary' && readyState?.status === 'ready' && readyControl?.exists && readyControl.hidden && !readyControl.visible, 'ready must be ordinary/ready and terminal actions hidden', { state: readyState, control: readyControl }),
-    makeCheck('ordinary-target', targetReached, targetReached, targetReached, 'ordinary terminal must be phase=ordinary/status=won/finishPhase=terminal', terminal),
-    makeCheck('normal-running-controls-hidden', normalSamples.length > 0, normalSamples.length > 0, normalSamples.length > 0 && normalSamples.every((sample) => sample.hidden && !sample.visible), 'normal-running coverage must begin from the first player input and keep terminal actions hidden', normalSamples),
-    hiddenPhaseCheck('contact', 'contact'),
-    hiddenPhaseCheck('reward', 'reward'),
-    hiddenPhaseCheck('celebration', 'celebration'),
-    makeCheck('terminal-controls-visible-after-settlement', targetReached, targetReached && Boolean(terminalControl), targetReached && Boolean(terminalControl?.exists && terminalControl.visible && !terminalControl.hidden), 'terminal controls must become visible only after settlement', terminalControl),
-    makeCheck('blank-click-does-not-restart', Boolean(blankCheck), Boolean(blankCheck), Boolean(blankCheck?.unchanged), 'blank click must leave the terminal state unchanged', blankCheck),
-    makeCheck('next-level-ready', Boolean(next), Boolean(next), Boolean(next?.state?.levelNumber === 2 && next.state.status === 'ready'), 'next level must be level 2 ready', next),
-    makeCheck('reload-level2-ready', Boolean(reload), Boolean(reload), Boolean(reload?.state?.levelNumber === 2 && reload.state.status === 'ready'), 'reload must retain level 2 ready', reload),
-    makeCheck('reload-input-response', Boolean(postReloadPlay), Boolean(postReloadPlay?.input?.inputReceiptObserved && postReloadPlay?.input?.response?.hasCausalAction), Boolean(postReloadPlay?.playable), 'reload input must have a new receipt, causal action and visible gameplay response', postReloadPlay),
-  ];
-}
-
-function summarizeOrdinary({ checks, targetReached, terminal, assertionFailure = null, assertionFailureObserved = false, environmentFailure = null, unknownFailure = null }) {
-  const failedCheck = checks.find((check) => check.executed && check.validObservation && !check.passed);
-  if (failedCheck && !assertionFailure) { assertionFailure = `${failedCheck.id}: ${failedCheck.reason}`; assertionFailureObserved = true; }
-  const validObservation = checks.every((check) => check.executed && check.validObservation);
-  const allAssertionsPass = checks.every((check) => check.passed);
-  const result = classify({ targetReached, validObservation: validObservation && allAssertionsPass, assertionFailure, assertionFailureObserved, environmentFailure, unknownFailure });
-  const raw = rawOutcome({ targetReached, validObservation: validObservation && allAssertionsPass, allAssertionsPass, terminal, assertionFailure, assertionFailureObserved, environmentFailure, unknownFailure });
-  return { checks, validObservation, allAssertionsPass, result, rawOutcome: raw, assertionFailure, assertionFailureObserved };
-}
-
 if (process.env.R2_SCRIPT_SELF_CHECK === '1') {
   const fakeReceipts = [{ seq: 1 }, { seq: 2 }];
-  const sample = (finishPhase, status = 'ready', coverage = 'transition') => ({ finishPhase, status, hidden: true, visible: false, coverage });
+  const sample = (finishPhase, status = 'ready', coverage = 'transition', extra = {}) => ({ phase: 'ordinary', finishPhase, status, hidden: true, visible: false, coverage, epochMs: Date.now(), ...extra });
   const completeFixture = (overrides = {}) => ({
     readyState: { phase: 'ordinary', status: 'ready' },
     readyControl: { exists: true, hidden: true, visible: false },
@@ -120,11 +41,13 @@ if (process.env.R2_SCRIPT_SELF_CHECK === '1') {
     blankCheck: { unchanged: true },
     next: { state: { levelNumber: 2, status: 'ready' } },
     reload: { state: { levelNumber: 2, status: 'ready' } },
-    postReloadPlay: { playable: true, input: { inputReceiptObserved: true, response: { hasCausalAction: true } } },
+    postReloadPlay: { playable: true, receiptValid: true, handlerObservationComplete: true, expectedImmediateAction: true, actionOccurred: true, input: { inputReceiptObserved: true, response: { hasCausalAction: true } } },
     controlObservations: [
       sample('idle', 'airborne', 'normal-running'),
-      sample('contact'), sample('reward'), sample('celebration'),
+      sample('contact'), sample('reward'), sample('celebration'), sample('terminal', 'won', 'transition'),
     ],
+    controlObserverWindow: { startedEpochMs: 1, endedEpochMs: Date.now() + 1, interrupted: false },
+    dispatches: [{ received: [{ epochMs: 2 }] }],
     ...overrides,
   });
   const completeChecks = buildOrdinaryChecks(completeFixture());
@@ -133,6 +56,12 @@ if (process.env.R2_SCRIPT_SELF_CHECK === '1') {
   const productFixture = completeFixture();
   const productFailThenToolError = summarizeOrdinary({ ...productFixture, checks: buildOrdinaryChecks(productFixture), assertionFailure: 'blank changed', assertionFailureObserved: true, environmentFailure: 'later context close' });
   const cutOnlyResponse = responseEvidence({ before: { events: [], player: { x: 0, y: 0, vx: 0, vy: 0 } }, after: { events: [{ id: 1, type: 'cut' }], player: { x: 0, y: 0, vx: 0, vy: 0 } }, received: fakeReceipts, inputId: 'cut-only', requireCausal: true, causalEvidence: { after: { eventsAfterInput: [{ id: 1, type: 'cut' }] } } });
+  const mutationViolation = completeFixture({ controlObservations: [sample('idle', 'airborne', 'transition', { hidden: false, visible: true }) , sample('contact'), sample('reward'), sample('celebration')] });
+  const mutationViolationSummary = summarizeOrdinary({ ...mutationViolation, checks: buildOrdinaryChecks(mutationViolation), targetReached: true });
+  const noActionFixture = completeFixture({ postReloadPlay: { playable: false, receiptValid: true, handlerObservationComplete: true, expectedImmediateAction: true, actionOccurred: false, input: { inputReceiptObserved: true, response: { hasCausalAction: false } } } });
+  const noActionSummary = summarizeOrdinary({ ...noActionFixture, checks: buildOrdinaryChecks(noActionFixture), targetReached: true });
+  const missingObservationFixture = completeFixture({ postReloadPlay: { playable: false, receiptValid: false, handlerObservationComplete: false, expectedImmediateAction: true, actionOccurred: false, input: { inputReceiptObserved: false, response: null } } });
+  const missingObservationSummary = summarizeOrdinary({ ...missingObservationFixture, checks: buildOrdinaryChecks(missingObservationFixture), targetReached: true });
   const checks = [
     [classify({ targetReached: false, validObservation: false, assertionFailure: null, assertionFailureObserved: false, environmentFailure: null, unknownFailure: null }), 'NOT_RUN'],
     [classify({ targetReached: false, validObservation: true, assertionFailure: 'transition controls visible', assertionFailureObserved: true, environmentFailure: null, unknownFailure: null }), 'FAIL'],
@@ -153,6 +82,10 @@ if (process.env.R2_SCRIPT_SELF_CHECK === '1') {
     [invalidObservation.rawOutcome, 'target-checkpoint-observation-invalid'],
     [productFailThenToolError.result, 'FAIL'],
     [productFailThenToolError.rawOutcome, 'target-checkpoint-assertion-failure'],
+    [mutationViolationSummary.result, 'FAIL'],
+    [mutationViolationSummary.checks.find((check) => check.id === 'normal-running-controls-hidden').passed, false],
+    [noActionSummary.result, 'FAIL'],
+    [missingObservationSummary.result, 'NOT_RUN'],
   ];
   for (const [actual, expected] of checks) if (actual !== expected) throw new Error(`R2 script self-check expected ${expected}, got ${actual}`);
   console.log(JSON.stringify({ artifactType: 'B01R2AcceptanceScriptSelfCheck', status: 'PASS', checks: checks.length }));
@@ -347,7 +280,10 @@ async function ordinaryCase() {
       reload = { state: brief(await input.page.evaluate(() => window.__GAME_TEST__.getState())), control: await readControl(input.page) };
       await input.page.screenshot({ path: evidencePath('ordinary-1100-reload-ready.png') });
       const postReloadInput = await dispatchTap({ ...input, page: input.page }, spec, 0, Date.now(), 'reload-input-1', { requireCausal: true });
-      postReloadPlay = { input: postReloadInput, playable: postReloadInput.inputReceiptObserved && postReloadInput.response.hasAction && (postReloadInput.after.status === 'airborne' || postReloadInput.after.status === 'anchored'), visibleResponse: postReloadInput.response };
+      const handlerObservationComplete = Boolean(postReloadInput.inputReceiptObserved && postReloadInput.response?.causalEvidence?.inputId === postReloadInput.inputId && postReloadInput.response?.causalEvidence?.before && postReloadInput.response?.causalEvidence?.after);
+      const expectedImmediateAction = reload.state.status === 'ready' && reload.state.phase === 'ordinary';
+      const actionOccurred = Boolean(postReloadInput.response?.hasCausalAction);
+      postReloadPlay = { input: postReloadInput, receiptValid: postReloadInput.inputReceiptObserved, handlerObservationComplete, expectedImmediateAction, actionOccurred, playerInputPathHit: postReloadInput.inputReceiptObserved && handlerObservationComplete, playable: actionOccurred && (postReloadInput.after.status === 'airborne' || postReloadInput.after.status === 'anchored'), visibleResponse: postReloadInput.response };
       await input.page.screenshot({ path: evidencePath('ordinary-1100-reload-after-input.png') });
     }
   } catch (error) {
@@ -363,7 +299,7 @@ async function ordinaryCase() {
     }
     await input.context.close(); await input.browser.close();
   }
-  const summary = summarizeOrdinary({ checks: buildOrdinaryChecks({ readyState, readyControl, terminal, targetReached, terminalControl, blankCheck, next, reload, postReloadPlay, controlObservations }), targetReached, terminal, assertionFailure, assertionFailureObserved, environmentFailure, unknownFailure });
+  const summary = summarizeOrdinary({ checks: buildOrdinaryChecks({ readyState, readyControl, terminal, targetReached, terminalControl, blankCheck, next, reload, postReloadPlay, controlObservations, controlObserverWindow, dispatches }), targetReached, terminal, assertionFailure, assertionFailureObserved, environmentFailure, unknownFailure });
   const { checks, validObservation, allAssertionsPass, result, rawOutcome: summaryRawOutcome } = summary;
   return { id: 'A-ordinary-1100x720', runId: process.env.R2_RUN_ID ?? randomUUID(), contextId: startedContext, viewport: '1100x720', inputMode: 'fixed visible canvas mouse events; no per-input screenshots; one post-response screenshot', fixedScheduleMs: schedules.ordinary1100, startDelayMs, controlObserverStartInputIndex: 0, controlObserverWindow, targetReached, result, rawOutcome: summaryRawOutcome, validObservation, allAssertionsPass, checks, requiredCheckpoint: 'ordinary phase/status/terminal; normal coverage from first input; contact/reward/celebration controls hidden; terminal controls visible after settlement; blank click unchanged; next level ready; reload level 2 ready; reload input has causal action response', failureStage: summary.assertionFailure ? 'product-assertion' : environmentFailure ? 'browser-or-tool' : unknownFailure ? 'unknown-execution-error' : terminal?.status === 'failed' ? 'ordinary-play-before-settlement' : targetReached ? 'complete' : 'ordinary-schedule-before-target', terminal, blankCheck, next, reload, postReloadPlay, documentResponses: input.documentResponses, controlObservations, dispatches, assertionFailure: summary.assertionFailure, assertionFailureObserved: summary.assertionFailureObserved, environmentFailure, unknownFailure, rawError, consoleErrors: input.errors, evidence: [`${evidenceDirName}/ordinary-1100-ready.png`, ...(targetReached ? [`${evidenceDirName}/ordinary-1100-won.png`, `${evidenceDirName}/ordinary-1100-next-ready.png`, `${evidenceDirName}/ordinary-1100-reload-ready.png`, `${evidenceDirName}/ordinary-1100-reload-after-input.png`] : [])] };
 }

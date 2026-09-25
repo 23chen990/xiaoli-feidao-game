@@ -259,3 +259,11 @@ buffered 标志仍未通过源码 hook 暴露，未发生可见状态转移时�
 当前新增正式运行与独立复现均为 PASS，v8 报告及其已支持子检查点继续保留为历史证据。BONUS 两个视口、真实切后台、真实 BFCache 和浏览器存储故障注入继续 `NOT_RUN`。
 
 玩家说明的反馈来源仅是可见画面：刀具在画布上开始运动、路线/碰撞反馈和结算界面变化。pointer receipt、handler 边界和 launch 事件只属于 QA 取证，不能作为玩家决定下一次操作的依据。
+
+## B01-R2 离线最终收口 · v2.3
+
+本轮没有新的浏览器运行、自然通关、截图对照或游戏源码改动。两个 v2.2 ordinary 成功 JSON 保持原样，并由 `r2-acceptance-offline-recheck-v23.mjs` 离线重构检查点：formal 与 independent QA 均复算为 `PASS / target-checkpoint-passed`。浏览器原脚本版本/hash 与离线复核程序版本/hash 在 `r2-acceptance-offline-recheck-v23.json` 中分开记录。
+
+验收器现在按 `phase/status/finishPhase` 归类样本；`reason=mutation` 且 `coverage=transition` 的 ordinary airborne/anchored idle 样本仍进入 normal 控件检查。观察完整性和动作成功分开记录：刷新 ready 输入有完整 receipt/handler 观测却没有应有 launch 时为 `FAIL`，缺 receipt 或 handler 观测为 `NOT_RUN`。反例均通过正式 `buildOrdinaryChecks` 与 `summarizeOrdinary` 构造，而非单独测试布尔函数。
+
+本轮反例输出：mutation idle visible=`FAIL`；完整观测无起跳=`FAIL`；缺少必要观测=`NOT_RUN`；终局观测无效=`NOT_RUN / target-checkpoint-observation-invalid`；产品 FAIL 后工具异常仍=`FAIL`。两个视口 BONUS、真实切后台、BFCache 和存储故障注入继续未覆盖/`NOT_RUN`。刷新后实际游玩图片沿用两份 v2.2 原图，未重新截图。

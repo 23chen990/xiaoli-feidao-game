@@ -1,0 +1,23 @@
+{
+  "artifactType": "B01R2OfflineCloseoutReview",
+  "baseline": "4606a629c5a3e6e9ca872d6a12ac5a2549c1e66e",
+  "browserRunsPerformed": 0,
+  "gameSourceModified": false,
+  "offlineRecheck": "evidence/b01-runtime-flow/r2-acceptance-offline-recheck-v23.json",
+  "originalV22Evidence": [
+    "evidence/b01-runtime-flow/r2-ordinary-formal-r2patch-v22.json",
+    "evidence/b01-runtime-flow/r2-ordinary-independent-qa-r2patch-v22.json",
+    "evidence/b01-runtime-flow/r2-natural/patch-v22-formal-ordinary/ordinary-1100-reload-after-input.png",
+    "evidence/b01-runtime-flow/r2-natural/patch-v22-independent-ordinary/ordinary-1100-reload-after-input.png"
+  ],
+  "classification": {
+    "ordinaryFormal": "PASS",
+    "ordinaryIndependentQA": "PASS",
+    "bonus390": "NOT_RUN",
+    "bonus1100": "NOT_RUN",
+    "backgrounding": "NOT_RUN",
+    "bfcache": "NOT_RUN",
+    "storageFaultInjection": "NOT_RUN"
+  },
+  "conclusion": "The unchanged v2.2 browser records recompute to PASS. The v2.3 offline checks reject visible mutation samples in ordinary airborne idle, classify complete no-action refresh input as FAIL, and classify missing receipt/handler evidence as NOT_RUN. No new browser run was performed."
+}

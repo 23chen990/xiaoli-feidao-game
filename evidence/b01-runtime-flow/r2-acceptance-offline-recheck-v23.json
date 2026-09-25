@@ -1,0 +1,1933 @@
+{
+  "artifactType": "B01R2OfflineAcceptanceRecheck",
+  "offlineProgramVersion": "B01-R2-offline-recheck-v2.3",
+  "offlineProgramSha256": "b655f931fe75afe7dfb35a9a40db895a0ec285aa800ff8313f69a5de17fe97bf",
+  "sourceReports": [
+    {
+      "source": "r2-ordinary-formal-r2patch-v22.json",
+      "browserScriptVersion": "B01-R2-acceptance-v2.2",
+      "browserScriptSha256": "45ee87a91f9c3baae7a3b3674953fc1a7fc6308d73ef127182c50f8411647ae4",
+      "original": {
+        "result": "PASS",
+        "rawOutcome": "target-checkpoint-passed",
+        "validObservation": true,
+        "allAssertionsPass": true
+      },
+      "recomputed": {
+        "checks": [
+          {
+            "id": "ready-state",
+            "executed": true,
+            "validObservation": true,
+            "passed": true,
+            "reason": "ready must be ordinary/ready and terminal actions hidden",
+            "evidence": {
+              "state": {
+                "phase": "ordinary",
+                "status": "ready",
+                "failReason": null,
+                "finishPhase": "idle",
+                "finishGateId": null,
+                "finishSelection": null,
+                "levelNumber": 1,
+                "elapsed": 0,
+                "worldTime": 0.9666666666666657,
+                "cuts": 0,
+                "bonusConsumed": false,
+                "player": {
+                  "x": 120,
+                  "y": 420,
+                  "vx": 0,
+                  "vy": 0,
+                  "angle": -0.35,
+                  "angularVelocity": 0
+                },
+                "events": [],
+                "eventCount": 0
+              },
+              "control": {
+                "exists": true,
+                "hidden": true,
+                "visible": false,
+                "display": "none",
+                "visibility": "visible",
+                "opacity": "1"
+              }
+            }
+          },
+          {
+            "id": "ordinary-target",
+            "executed": true,
+            "validObservation": true,
+            "passed": true,
+            "reason": "ordinary terminal must be phase=ordinary/status=won/finishPhase=terminal",
+            "evidence": {
+              "phase": "ordinary",
+              "status": "won",
+              "failReason": null,
+              "finishPhase": "terminal",
+              "finishGateId": "jade-two",
+              "finishSelection": null,
+              "levelNumber": 1,
+              "elapsed": 16.333333333333048,
+              "worldTime": 20.18333333333283,
+              "cuts": 5,
+              "bonusConsumed": false,
+              "player": {
+                "x": 2902,
+                "y": 172.69232327893025,
+                "vx": 150,
+                "vy": -300,
+                "angle": 2.0918771202586903,
+                "angularVelocity": -9.5
+              },
+              "events": [
+                {
+                  "id": 23,
+                  "type": "launch",
+                  "x": 2065.906691220848,
+                  "y": 228.5256566122636,
+                  "value": 1
+                },
+                {
+                  "id": 24,
+                  "type": "flip",
+                  "x": 2210.906691220848,
+                  "y": 221.2756566122636,
+                  "value": 1
+                },
+                {
+                  "id": 25,
+                  "type": "flip",
+                  "x": 2370.2066912208375,
+                  "y": 218.81732327893025,
+                  "value": 1
+                },
+                {
+                  "id": 26,
+                  "type": "flip",
+                  "x": 2538.4066912208164,
+                  "y": 211.56732327893025,
+                  "value": 1
+                },
+                {
+                  "id": 27,
+                  "type": "flip",
+                  "x": 2718.2066912208375,
+                  "y": 204.31732327893025,
+                  "value": 1
+                },
+                {
+                  "id": 28,
+                  "type": "flip",
+                  "x": 2903.456691220855,
+                  "y": 199.44232327893025,
+                  "value": 1
+                },
+                {
+                  "id": 29,
+                  "type": "finish",
+                  "x": 3000,
+                  "y": 200,
+                  "value": 2,
+                  "targetId": "jade-two"
+                },
+                {
+                  "id": 30,
+                  "type": "launch",
+                  "x": 2902,
+                  "y": 172.69232327893025,
+                  "value": 1
+                }
+              ],
+              "eventCount": 30
+            }
+          },
+          {
+            "id": "normal-running-controls-hidden",
+            "executed": true,
+            "validObservation": true,
+            "passed": true,
+            "reason": "ordinary airborne/anchored idle samples must keep terminal actions hidden",
+            "evidence": [
+              {
+                "reason": "normal-running-start",
+                "atMs": 2287.7000002861023,
+                "epochMs": 1790342636366.9,
+                "coverage": "normal-running",
+                "phase": "ordinary",
+                "status": "airborne",
+                "finishPhase": "idle",
+                "worldTime": 2.1083333333333285,
+                "hidden": true,
+                "visible": false,
+                "display": "none",
+                "visibility": "visible",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "id": "observer-window-covers-first-input-to-terminal",
+            "executed": true,
+            "validObservation": true,
+            "passed": true,
+            "reason": "observer must cover first input through terminal with valid timestamps",
+            "evidence": {
+              "window": {
+                "startedAtMs": 1326.6000003814697,
+                "startedEpochMs": 1790342635405.8,
+                "endedAtMs": 20564.300000190735,
+                "endedEpochMs": 1790342654643.5,
+                "interrupted": false
+              },
+              "firstInputMs": 1790342636001.8,
+              "terminalMs": 1790342654555.8,
+              "hasNormalCoverage": true
+            }
+          },
+          {
+            "id": "contact-controls-hidden",
+            "executed": true,
+            "validObservation": true,
+            "passed": true,
+            "reason": "contact terminal actions must remain hidden",
+            "evidence": [
+              {
+                "reason": "mutation",
+                "atMs": 19566.10000038147,
+                "epochMs": 1790342653645.3,
+                "coverage": "transition",
+                "phase": "ordinary",
+                "status": "ready",
+                "finishPhase": "contact",
+                "worldTime": 19.291666666666213,
+                "hidden": true,
+                "visible": false,
+                "display": "none",
+                "visibility": "visible",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "id": "reward-controls-hidden",
+            "executed": true,
+            "validObservation": true,
+            "passed": true,
+            "reason": "reward terminal actions must remain hidden",
+            "evidence": [
+              {
+                "reason": "mutation",
+                "atMs": 19764.5,
+                "epochMs": 1790342653843.7,
+                "coverage": "transition",
+                "phase": "ordinary",
+                "status": "ready",
+                "finishPhase": "reward",
+                "worldTime": 19.48333333333287,
+                "hidden": true,
+                "visible": false,
+                "display": "none",
+                "visibility": "visible",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "id": "celebration-controls-hidden",
+            "executed": true,
+            "validObservation": true,
+            "passed": true,
+            "reason": "celebration terminal actions must remain hidden",
+            "evidence": [
+              {
+                "reason": "mutation",
+                "atMs": 20082.60000038147,
+                "epochMs": 1790342654161.8,
+                "coverage": "transition",
+                "phase": "ordinary",
+                "status": "ready",
+                "finishPhase": "celebration",
+                "worldTime": 19.80833333333285,
+                "hidden": true,
+                "visible": false,
+                "display": "none",
+                "visibility": "visible",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "id": "terminal-controls-visible-after-settlement",
+            "executed": true,
+            "validObservation": true,
+            "passed": true,
+            "reason": "terminal controls must become visible only after settlement",
+            "evidence": {
+              "exists": true,
+              "hidden": false,
+              "visible": true,
+              "display": "flex",
+              "visibility": "visible",
+              "opacity": "1"
+            }
+          },
+          {
+            "id": "blank-click-does-not-restart",
+            "executed": true,
+            "validObservation": true,
+            "passed": true,
+            "reason": "blank click must leave the terminal state unchanged",
+            "evidence": {
+              "before": {
+                "phase": "ordinary",
+                "status": "won",
+                "failReason": null,
+                "finishPhase": "terminal",
+                "finishGateId": "jade-two",
+                "finishSelection": null,
+                "levelNumber": 1,
+                "elapsed": 16.333333333333048,
+                "worldTime": 20.18333333333283,
+                "cuts": 5,
+                "bonusConsumed": false,
+                "player": {
+                  "x": 2902,
+                  "y": 172.69232327893025,
+                  "vx": 150,
+                  "vy": -300,
+                  "angle": 2.0918771202586903,
+                  "angularVelocity": -9.5
+                },
+                "events": [
+                  {
+                    "id": 23,
+                    "type": "launch",
+                    "x": 2065.906691220848,
+                    "y": 228.5256566122636,
+                    "value": 1
+                  },
+                  {
+                    "id": 24,
+                    "type": "flip",
+                    "x": 2210.906691220848,
+                    "y": 221.2756566122636,
+                    "value": 1
+                  },
+                  {
+                    "id": 25,
+                    "type": "flip",
+                    "x": 2370.2066912208375,
+                    "y": 218.81732327893025,
+                    "value": 1
+                  },
+                  {
+                    "id": 26,
+                    "type": "flip",
+                    "x": 2538.4066912208164,
+                    "y": 211.56732327893025,
+                    "value": 1
+                  },
+                  {
+                    "id": 27,
+                    "type": "flip",
+                    "x": 2718.2066912208375,
+                    "y": 204.31732327893025,
+                    "value": 1
+                  },
+                  {
+                    "id": 28,
+                    "type": "flip",
+                    "x": 2903.456691220855,
+                    "y": 199.44232327893025,
+                    "value": 1
+                  },
+                  {
+                    "id": 29,
+                    "type": "finish",
+                    "x": 3000,
+                    "y": 200,
+                    "value": 2,
+                    "targetId": "jade-two"
+                  },
+                  {
+                    "id": 30,
+                    "type": "launch",
+                    "x": 2902,
+                    "y": 172.69232327893025,
+                    "value": 1
+                  }
+                ],
+                "eventCount": 30
+              },
+              "after": {
+                "phase": "ordinary",
+                "status": "won",
+                "failReason": null,
+                "finishPhase": "terminal",
+                "finishGateId": "jade-two",
+                "finishSelection": null,
+                "levelNumber": 1,
+                "elapsed": 16.333333333333048,
+                "worldTime": 20.18333333333283,
+                "cuts": 5,
+                "bonusConsumed": false,
+                "player": {
+                  "x": 2902,
+                  "y": 172.69232327893025,
+                  "vx": 150,
+                  "vy": -300,
+                  "angle": 2.0918771202586903,
+                  "angularVelocity": -9.5
+                },
+                "events": [
+                  {
+                    "id": 23,
+                    "type": "launch",
+                    "x": 2065.906691220848,
+                    "y": 228.5256566122636,
+                    "value": 1
+                  },
+                  {
+                    "id": 24,
+                    "type": "flip",
+                    "x": 2210.906691220848,
+                    "y": 221.2756566122636,
+                    "value": 1
+                  },
+                  {
+                    "id": 25,
+                    "type": "flip",
+                    "x": 2370.2066912208375,
+                    "y": 218.81732327893025,
+                    "value": 1
+                  },
+                  {
+                    "id": 26,
+                    "type": "flip",
+                    "x": 2538.4066912208164,
+                    "y": 211.56732327893025,
+                    "value": 1
+                  },
+                  {
+                    "id": 27,
+                    "type": "flip",
+                    "x": 2718.2066912208375,
+                    "y": 204.31732327893025,
+                    "value": 1
+                  },
+                  {
+                    "id": 28,
+                    "type": "flip",
+                    "x": 2903.456691220855,
+                    "y": 199.44232327893025,
+                    "value": 1
+                  },
+                  {
+                    "id": 29,
+                    "type": "finish",
+                    "x": 3000,
+                    "y": 200,
+                    "value": 2,
+                    "targetId": "jade-two"
+                  },
+                  {
+                    "id": 30,
+                    "type": "launch",
+                    "x": 2902,
+                    "y": 172.69232327893025,
+                    "value": 1
+                  }
+                ],
+                "eventCount": 30
+              },
+              "unchanged": true,
+              "coordinate": {
+                "x": 990,
+                "y": 650
+              }
+            }
+          },
+          {
+            "id": "next-level-ready",
+            "executed": true,
+            "validObservation": true,
+            "passed": true,
+            "reason": "next level must be level 2 ready",
+            "evidence": {
+              "state": {
+                "phase": "ordinary",
+                "status": "ready",
+                "failReason": null,
+                "finishPhase": "idle",
+                "finishGateId": null,
+                "finishSelection": null,
+                "levelNumber": 2,
+                "elapsed": 0,
+                "worldTime": 0.11666666666666665,
+                "cuts": 0,
+                "bonusConsumed": false,
+                "player": {
+                  "x": 120,
+                  "y": 420,
+                  "vx": 0,
+                  "vy": 0,
+                  "angle": -0.35,
+                  "angularVelocity": 0
+                },
+                "events": [],
+                "eventCount": 0
+              },
+              "control": {
+                "exists": true,
+                "hidden": true,
+                "visible": false,
+                "display": "none",
+                "visibility": "visible",
+                "opacity": "1"
+              }
+            }
+          },
+          {
+            "id": "reload-level2-ready",
+            "executed": true,
+            "validObservation": true,
+            "passed": true,
+            "reason": "reload must retain level 2 ready",
+            "evidence": {
+              "state": {
+                "phase": "ordinary",
+                "status": "ready",
+                "failReason": null,
+                "finishPhase": "idle",
+                "finishGateId": null,
+                "finishSelection": null,
+                "levelNumber": 2,
+                "elapsed": 0,
+                "worldTime": 0.7166666666666666,
+                "cuts": 0,
+                "bonusConsumed": false,
+                "player": {
+                  "x": 120,
+                  "y": 420,
+                  "vx": 0,
+                  "vy": 0,
+                  "angle": -0.35,
+                  "angularVelocity": 0
+                },
+                "events": [],
+                "eventCount": 0
+              },
+              "control": {
+                "exists": true,
+                "hidden": true,
+                "visible": false,
+                "display": "none",
+                "visibility": "visible",
+                "opacity": "1"
+              }
+            }
+          },
+          {
+            "id": "reload-input-response",
+            "executed": true,
+            "validObservation": true,
+            "passed": true,
+            "reason": "refresh ready input observation and immediate action response",
+            "evidence": {
+              "input": {
+                "inputId": "reload-input-1",
+                "plannedMs": 0,
+                "sendStartMs": 22,
+                "sendEndMs": 124,
+                "sendStartEpochMs": 1790342656574,
+                "received": [
+                  {
+                    "seq": 1,
+                    "type": "pointerdown",
+                    "pointerType": "mouse",
+                    "clientX": 550,
+                    "clientY": 518.4000244140625,
+                    "timeMs": 969.1000003814697,
+                    "epochMs": 1790342656597.6,
+                    "inputId": "reload-input-1"
+                  },
+                  {
+                    "seq": 2,
+                    "type": "pointerup",
+                    "pointerType": "mouse",
+                    "clientX": 550,
+                    "clientY": 518.4000244140625,
+                    "timeMs": 995.8000001907349,
+                    "epochMs": 1790342656624.4,
+                    "inputId": "reload-input-1"
+                  }
+                ],
+                "receiptBeforeLength": 0,
+                "receiptAfterLength": 2,
+                "inputReceiptObserved": true,
+                "before": {
+                  "phase": "ordinary",
+                  "status": "ready",
+                  "failReason": null,
+                  "finishPhase": "idle",
+                  "finishGateId": null,
+                  "finishSelection": null,
+                  "levelNumber": 2,
+                  "elapsed": 0,
+                  "worldTime": 0.8416666666666661,
+                  "cuts": 0,
+                  "bonusConsumed": false,
+                  "player": {
+                    "x": 120,
+                    "y": 420,
+                    "vx": 0,
+                    "vy": 0,
+                    "angle": -0.35,
+                    "angularVelocity": 0
+                  },
+                  "events": [],
+                  "eventCount": 0
+                },
+                "after": {
+                  "phase": "ordinary",
+                  "status": "airborne",
+                  "failReason": null,
+                  "finishPhase": "idle",
+                  "finishGateId": null,
+                  "finishSelection": null,
+                  "levelNumber": 2,
+                  "elapsed": 0.049999999999999996,
+                  "worldTime": 0.9249999999999992,
+                  "cuts": 0,
+                  "bonusConsumed": false,
+                  "player": {
+                    "x": 127.5,
+                    "y": 405.875,
+                    "vx": 150,
+                    "vy": -270,
+                    "angle": 0.12026582064886211,
+                    "angularVelocity": 9.273819136000004
+                  },
+                  "events": [
+                    {
+                      "id": 1,
+                      "type": "launch",
+                      "x": 120,
+                      "y": 420,
+                      "value": 1
+                    }
+                  ],
+                  "eventCount": 1
+                },
+                "eventsAfterInput": [
+                  {
+                    "id": 1,
+                    "type": "launch",
+                    "x": 120,
+                    "y": 420,
+                    "value": 1
+                  }
+                ],
+                "response": {
+                  "newEvents": [
+                    {
+                      "id": 1,
+                      "type": "launch",
+                      "x": 120,
+                      "y": 420,
+                      "value": 1
+                    }
+                  ],
+                  "newActionEvents": [
+                    {
+                      "id": 1,
+                      "type": "launch",
+                      "x": 120,
+                      "y": 420,
+                      "value": 1
+                    }
+                  ],
+                  "actionTypes": [
+                    "launch"
+                  ],
+                  "directCausalEvents": [
+                    {
+                      "id": 1,
+                      "type": "launch",
+                      "x": 120,
+                      "y": 420,
+                      "value": 1
+                    }
+                  ],
+                  "hasCausalAction": true,
+                  "automaticCutOnly": false,
+                  "hasAction": true,
+                  "motionOnly": false,
+                  "causalEvidence": {
+                    "inputId": "reload-input-1",
+                    "receiptEpochMs": 1790342656597.6,
+                    "handlerEpochMs": 1790342656599.6,
+                    "before": {
+                      "phase": "ordinary",
+                      "status": "ready",
+                      "finishPhase": "idle",
+                      "worldTime": 0.8749999999999993,
+                      "player": {
+                        "x": 120,
+                        "y": 420,
+                        "vx": 0,
+                        "vy": 0,
+                        "angle": -0.35,
+                        "angularVelocity": 0
+                      },
+                      "events": [],
+                      "eventCount": 0
+                    },
+                    "after": {
+                      "phase": "ordinary",
+                      "status": "airborne",
+                      "finishPhase": "idle",
+                      "worldTime": 0.8749999999999993,
+                      "player": {
+                        "x": 120,
+                        "y": 420,
+                        "vx": 150,
+                        "vy": -300,
+                        "angle": -0.35,
+                        "angularVelocity": 9.5
+                      },
+                      "events": [
+                        {
+                          "id": 1,
+                          "type": "launch",
+                          "x": 120,
+                          "y": 420,
+                          "value": 1
+                        }
+                      ],
+                      "eventCount": 1,
+                      "eventsAfterInput": [
+                        {
+                          "id": 1,
+                          "type": "launch",
+                          "x": 120,
+                          "y": 420,
+                          "value": 1
+                        }
+                      ]
+                    }
+                  },
+                  "inputId": "reload-input-1"
+                },
+                "inputEffective": true,
+                "causalRequired": true
+              },
+              "playable": true,
+              "visibleResponse": {
+                "newEvents": [
+                  {
+                    "id": 1,
+                    "type": "launch",
+                    "x": 120,
+                    "y": 420,
+                    "value": 1
+                  }
+                ],
+                "newActionEvents": [
+                  {
+                    "id": 1,
+                    "type": "launch",
+                    "x": 120,
+                    "y": 420,
+                    "value": 1
+                  }
+                ],
+                "actionTypes": [
+                  "launch"
+                ],
+                "directCausalEvents": [
+                  {
+                    "id": 1,
+                    "type": "launch",
+                    "x": 120,
+                    "y": 420,
+                    "value": 1
+                  }
+                ],
+                "hasCausalAction": true,
+                "automaticCutOnly": false,
+                "hasAction": true,
+                "motionOnly": false,
+                "causalEvidence": {
+                  "inputId": "reload-input-1",
+                  "receiptEpochMs": 1790342656597.6,
+                  "handlerEpochMs": 1790342656599.6,
+                  "before": {
+                    "phase": "ordinary",
+                    "status": "ready",
+                    "finishPhase": "idle",
+                    "worldTime": 0.8749999999999993,
+                    "player": {
+                      "x": 120,
+                      "y": 420,
+                      "vx": 0,
+                      "vy": 0,
+                      "angle": -0.35,
+                      "angularVelocity": 0
+                    },
+                    "events": [],
+                    "eventCount": 0
+                  },
+                  "after": {
+                    "phase": "ordinary",
+                    "status": "airborne",
+                    "finishPhase": "idle",
+                    "worldTime": 0.8749999999999993,
+                    "player": {
+                      "x": 120,
+                      "y": 420,
+                      "vx": 150,
+                      "vy": -300,
+                      "angle": -0.35,
+                      "angularVelocity": 9.5
+                    },
+                    "events": [
+                      {
+                        "id": 1,
+                        "type": "launch",
+                        "x": 120,
+                        "y": 420,
+                        "value": 1
+                      }
+                    ],
+                    "eventCount": 1,
+                    "eventsAfterInput": [
+                      {
+                        "id": 1,
+                        "type": "launch",
+                        "x": 120,
+                        "y": 420,
+                        "value": 1
+                      }
+                    ]
+                  }
+                },
+                "inputId": "reload-input-1"
+              },
+              "receiptValid": true,
+              "handlerObservationComplete": true,
+              "expectedImmediateAction": true,
+              "actionOccurred": true,
+              "playerInputPathHit": true
+            }
+          }
+        ],
+        "validObservation": true,
+        "allAssertionsPass": true,
+        "result": "PASS",
+        "rawOutcome": "target-checkpoint-passed",
+        "assertionFailure": null,
+        "assertionFailureObserved": false
+      },
+      "consistent": true
+    },
+    {
+      "source": "r2-ordinary-independent-qa-r2patch-v22.json",
+      "browserScriptVersion": "B01-R2-acceptance-v2.2",
+      "browserScriptSha256": "45ee87a91f9c3baae7a3b3674953fc1a7fc6308d73ef127182c50f8411647ae4",
+      "original": {
+        "result": "PASS",
+        "rawOutcome": "target-checkpoint-passed",
+        "validObservation": true,
+        "allAssertionsPass": true
+      },
+      "recomputed": {
+        "checks": [
+          {
+            "id": "ready-state",
+            "executed": true,
+            "validObservation": true,
+            "passed": true,
+            "reason": "ready must be ordinary/ready and terminal actions hidden",
+            "evidence": {
+              "state": {
+                "phase": "ordinary",
+                "status": "ready",
+                "failReason": null,
+                "finishPhase": "idle",
+                "finishGateId": null,
+                "finishSelection": null,
+                "levelNumber": 1,
+                "elapsed": 0,
+                "worldTime": 0.9666666666666657,
+                "cuts": 0,
+                "bonusConsumed": false,
+                "player": {
+                  "x": 120,
+                  "y": 420,
+                  "vx": 0,
+                  "vy": 0,
+                  "angle": -0.35,
+                  "angularVelocity": 0
+                },
+                "events": [],
+                "eventCount": 0
+              },
+              "control": {
+                "exists": true,
+                "hidden": true,
+                "visible": false,
+                "display": "none",
+                "visibility": "visible",
+                "opacity": "1"
+              }
+            }
+          },
+          {
+            "id": "ordinary-target",
+            "executed": true,
+            "validObservation": true,
+            "passed": true,
+            "reason": "ordinary terminal must be phase=ordinary/status=won/finishPhase=terminal",
+            "evidence": {
+              "phase": "ordinary",
+              "status": "won",
+              "failReason": null,
+              "finishPhase": "terminal",
+              "finishGateId": "ember-four",
+              "finishSelection": null,
+              "levelNumber": 1,
+              "elapsed": 16.083333333333062,
+              "worldTime": 20.016666666666172,
+              "cuts": 2,
+              "bonusConsumed": false,
+              "player": {
+                "x": 2902,
+                "y": 154.49111828362052,
+                "vx": 150,
+                "vy": -300,
+                "angle": 1.1289938339378789,
+                "angularVelocity": 9.5
+              },
+              "events": [
+                {
+                  "id": 18,
+                  "type": "cut",
+                  "x": 2061,
+                  "y": 242,
+                  "value": 4,
+                  "targetId": "level1-reward-token",
+                  "contactPart": "tip"
+                },
+                {
+                  "id": 19,
+                  "type": "flip",
+                  "x": 2071.9547695895626,
+                  "y": 215.44945161695387,
+                  "value": 1
+                },
+                {
+                  "id": 20,
+                  "type": "flip",
+                  "x": 2228.554769589552,
+                  "y": 208.19945161695387,
+                  "value": 1
+                },
+                {
+                  "id": 21,
+                  "type": "flip",
+                  "x": 2396.754769589531,
+                  "y": 200.94945161695387,
+                  "value": 1
+                },
+                {
+                  "id": 22,
+                  "type": "flip",
+                  "x": 2578.1047695895522,
+                  "y": 196.07445161695387,
+                  "value": 1
+                },
+                {
+                  "id": 23,
+                  "type": "flip",
+                  "x": 2761.7714362562365,
+                  "y": 188.82445161695387,
+                  "value": 1
+                },
+                {
+                  "id": 24,
+                  "type": "launch",
+                  "x": 2902,
+                  "y": 154.49111828362052,
+                  "value": 1
+                },
+                {
+                  "id": 25,
+                  "type": "finish",
+                  "x": 3000,
+                  "y": 120,
+                  "value": 4,
+                  "targetId": "ember-four"
+                }
+              ],
+              "eventCount": 25
+            }
+          },
+          {
+            "id": "normal-running-controls-hidden",
+            "executed": true,
+            "validObservation": true,
+            "passed": true,
+            "reason": "ordinary airborne/anchored idle samples must keep terminal actions hidden",
+            "evidence": [
+              {
+                "reason": "normal-running-start",
+                "atMs": 2247.6000003814697,
+                "epochMs": 1790342685064.4001,
+                "coverage": "normal-running",
+                "phase": "ordinary",
+                "status": "airborne",
+                "finishPhase": "idle",
+                "worldTime": 2.0833333333333286,
+                "hidden": true,
+                "visible": false,
+                "display": "none",
+                "visibility": "visible",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "id": "observer-window-covers-first-input-to-terminal",
+            "executed": true,
+            "validObservation": true,
+            "passed": true,
+            "reason": "observer must cover first input through terminal with valid timestamps",
+            "evidence": {
+              "window": {
+                "startedAtMs": 1311,
+                "startedEpochMs": 1790342684127.8,
+                "endedAtMs": 20526.5,
+                "endedEpochMs": 1790342703343.3,
+                "interrupted": false
+              },
+              "firstInputMs": 1790342684738.6,
+              "terminalMs": 1790342703049.6,
+              "hasNormalCoverage": true
+            }
+          },
+          {
+            "id": "contact-controls-hidden",
+            "executed": true,
+            "validObservation": true,
+            "passed": true,
+            "reason": "contact terminal actions must remain hidden",
+            "evidence": [
+              {
+                "reason": "mutation",
+                "atMs": 19320.400000095367,
+                "epochMs": 1790342702137.2,
+                "coverage": "transition",
+                "phase": "ordinary",
+                "status": "ready",
+                "finishPhase": "contact",
+                "worldTime": 19.10833333333289,
+                "hidden": true,
+                "visible": false,
+                "display": "none",
+                "visibility": "visible",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "id": "reward-controls-hidden",
+            "executed": true,
+            "validObservation": true,
+            "passed": true,
+            "reason": "reward terminal actions must remain hidden",
+            "evidence": [
+              {
+                "reason": "mutation",
+                "atMs": 19507.700000286102,
+                "epochMs": 1790342702324.5,
+                "coverage": "transition",
+                "phase": "ordinary",
+                "status": "airborne",
+                "finishPhase": "reward",
+                "worldTime": 19.299999999999546,
+                "hidden": true,
+                "visible": false,
+                "display": "none",
+                "visibility": "visible",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "id": "celebration-controls-hidden",
+            "executed": true,
+            "validObservation": true,
+            "passed": true,
+            "reason": "celebration terminal actions must remain hidden",
+            "evidence": [
+              {
+                "reason": "mutation",
+                "atMs": 19842.60000038147,
+                "epochMs": 1790342702659.4001,
+                "coverage": "transition",
+                "phase": "ordinary",
+                "status": "airborne",
+                "finishPhase": "celebration",
+                "worldTime": 19.63333333333286,
+                "hidden": true,
+                "visible": false,
+                "display": "none",
+                "visibility": "visible",
+                "opacity": "1"
+              }
+            ]
+          },
+          {
+            "id": "terminal-controls-visible-after-settlement",
+            "executed": true,
+            "validObservation": true,
+            "passed": true,
+            "reason": "terminal controls must become visible only after settlement",
+            "evidence": {
+              "exists": true,
+              "hidden": false,
+              "visible": true,
+              "display": "flex",
+              "visibility": "visible",
+              "opacity": "1"
+            }
+          },
+          {
+            "id": "blank-click-does-not-restart",
+            "executed": true,
+            "validObservation": true,
+            "passed": true,
+            "reason": "blank click must leave the terminal state unchanged",
+            "evidence": {
+              "before": {
+                "phase": "ordinary",
+                "status": "won",
+                "failReason": null,
+                "finishPhase": "terminal",
+                "finishGateId": "ember-four",
+                "finishSelection": null,
+                "levelNumber": 1,
+                "elapsed": 16.083333333333062,
+                "worldTime": 20.016666666666172,
+                "cuts": 2,
+                "bonusConsumed": false,
+                "player": {
+                  "x": 2902,
+                  "y": 154.49111828362052,
+                  "vx": 150,
+                  "vy": -300,
+                  "angle": 1.1289938339378789,
+                  "angularVelocity": 9.5
+                },
+                "events": [
+                  {
+                    "id": 18,
+                    "type": "cut",
+                    "x": 2061,
+                    "y": 242,
+                    "value": 4,
+                    "targetId": "level1-reward-token",
+                    "contactPart": "tip"
+                  },
+                  {
+                    "id": 19,
+                    "type": "flip",
+                    "x": 2071.9547695895626,
+                    "y": 215.44945161695387,
+                    "value": 1
+                  },
+                  {
+                    "id": 20,
+                    "type": "flip",
+                    "x": 2228.554769589552,
+                    "y": 208.19945161695387,
+                    "value": 1
+                  },
+                  {
+                    "id": 21,
+                    "type": "flip",
+                    "x": 2396.754769589531,
+                    "y": 200.94945161695387,
+                    "value": 1
+                  },
+                  {
+                    "id": 22,
+                    "type": "flip",
+                    "x": 2578.1047695895522,
+                    "y": 196.07445161695387,
+                    "value": 1
+                  },
+                  {
+                    "id": 23,
+                    "type": "flip",
+                    "x": 2761.7714362562365,
+                    "y": 188.82445161695387,
+                    "value": 1
+                  },
+                  {
+                    "id": 24,
+                    "type": "launch",
+                    "x": 2902,
+                    "y": 154.49111828362052,
+                    "value": 1
+                  },
+                  {
+                    "id": 25,
+                    "type": "finish",
+                    "x": 3000,
+                    "y": 120,
+                    "value": 4,
+                    "targetId": "ember-four"
+                  }
+                ],
+                "eventCount": 25
+              },
+              "after": {
+                "phase": "ordinary",
+                "status": "won",
+                "failReason": null,
+                "finishPhase": "terminal",
+                "finishGateId": "ember-four",
+                "finishSelection": null,
+                "levelNumber": 1,
+                "elapsed": 16.083333333333062,
+                "worldTime": 20.016666666666172,
+                "cuts": 2,
+                "bonusConsumed": false,
+                "player": {
+                  "x": 2902,
+                  "y": 154.49111828362052,
+                  "vx": 150,
+                  "vy": -300,
+                  "angle": 1.1289938339378789,
+                  "angularVelocity": 9.5
+                },
+                "events": [
+                  {
+                    "id": 18,
+                    "type": "cut",
+                    "x": 2061,
+                    "y": 242,
+                    "value": 4,
+                    "targetId": "level1-reward-token",
+                    "contactPart": "tip"
+                  },
+                  {
+                    "id": 19,
+                    "type": "flip",
+                    "x": 2071.9547695895626,
+                    "y": 215.44945161695387,
+                    "value": 1
+                  },
+                  {
+                    "id": 20,
+                    "type": "flip",
+                    "x": 2228.554769589552,
+                    "y": 208.19945161695387,
+                    "value": 1
+                  },
+                  {
+                    "id": 21,
+                    "type": "flip",
+                    "x": 2396.754769589531,
+                    "y": 200.94945161695387,
+                    "value": 1
+                  },
+                  {
+                    "id": 22,
+                    "type": "flip",
+                    "x": 2578.1047695895522,
+                    "y": 196.07445161695387,
+                    "value": 1
+                  },
+                  {
+                    "id": 23,
+                    "type": "flip",
+                    "x": 2761.7714362562365,
+                    "y": 188.82445161695387,
+                    "value": 1
+                  },
+                  {
+                    "id": 24,
+                    "type": "launch",
+                    "x": 2902,
+                    "y": 154.49111828362052,
+                    "value": 1
+                  },
+                  {
+                    "id": 25,
+                    "type": "finish",
+                    "x": 3000,
+                    "y": 120,
+                    "value": 4,
+                    "targetId": "ember-four"
+                  }
+                ],
+                "eventCount": 25
+              },
+              "unchanged": true,
+              "coordinate": {
+                "x": 990,
+                "y": 650
+              }
+            }
+          },
+          {
+            "id": "next-level-ready",
+            "executed": true,
+            "validObservation": true,
+            "passed": true,
+            "reason": "next level must be level 2 ready",
+            "evidence": {
+              "state": {
+                "phase": "ordinary",
+                "status": "ready",
+                "failReason": null,
+                "finishPhase": "idle",
+                "finishGateId": null,
+                "finishSelection": null,
+                "levelNumber": 2,
+                "elapsed": 0,
+                "worldTime": 0.075,
+                "cuts": 0,
+                "bonusConsumed": false,
+                "player": {
+                  "x": 120,
+                  "y": 420,
+                  "vx": 0,
+                  "vy": 0,
+                  "angle": -0.35,
+                  "angularVelocity": 0
+                },
+                "events": [],
+                "eventCount": 0
+              },
+              "control": {
+                "exists": true,
+                "hidden": true,
+                "visible": false,
+                "display": "none",
+                "visibility": "visible",
+                "opacity": "1"
+              }
+            }
+          },
+          {
+            "id": "reload-level2-ready",
+            "executed": true,
+            "validObservation": true,
+            "passed": true,
+            "reason": "reload must retain level 2 ready",
+            "evidence": {
+              "state": {
+                "phase": "ordinary",
+                "status": "ready",
+                "failReason": null,
+                "finishPhase": "idle",
+                "finishGateId": null,
+                "finishSelection": null,
+                "levelNumber": 2,
+                "elapsed": 0,
+                "worldTime": 0.6833333333333333,
+                "cuts": 0,
+                "bonusConsumed": false,
+                "player": {
+                  "x": 120,
+                  "y": 420,
+                  "vx": 0,
+                  "vy": 0,
+                  "angle": -0.35,
+                  "angularVelocity": 0
+                },
+                "events": [],
+                "eventCount": 0
+              },
+              "control": {
+                "exists": true,
+                "hidden": true,
+                "visible": false,
+                "display": "none",
+                "visibility": "visible",
+                "opacity": "1"
+              }
+            }
+          },
+          {
+            "id": "reload-input-response",
+            "executed": true,
+            "validObservation": true,
+            "passed": true,
+            "reason": "refresh ready input observation and immediate action response",
+            "evidence": {
+              "input": {
+                "inputId": "reload-input-1",
+                "plannedMs": 0,
+                "sendStartMs": 22,
+                "sendEndMs": 119,
+                "sendStartEpochMs": 1790342704971,
+                "received": [
+                  {
+                    "seq": 1,
+                    "type": "pointerdown",
+                    "pointerType": "mouse",
+                    "clientX": 550,
+                    "clientY": 518.4000244140625,
+                    "timeMs": 938.2000002861023,
+                    "epochMs": 1790342704994.3,
+                    "inputId": "reload-input-1"
+                  },
+                  {
+                    "seq": 2,
+                    "type": "pointerup",
+                    "pointerType": "mouse",
+                    "clientX": 550,
+                    "clientY": 518.4000244140625,
+                    "timeMs": 962.8000001907349,
+                    "epochMs": 1790342705018.9001,
+                    "inputId": "reload-input-1"
+                  }
+                ],
+                "receiptBeforeLength": 0,
+                "receiptAfterLength": 2,
+                "inputReceiptObserved": true,
+                "before": {
+                  "phase": "ordinary",
+                  "status": "ready",
+                  "failReason": null,
+                  "finishPhase": "idle",
+                  "finishGateId": null,
+                  "finishSelection": null,
+                  "levelNumber": 2,
+                  "elapsed": 0,
+                  "worldTime": 0.8166666666666662,
+                  "cuts": 0,
+                  "bonusConsumed": false,
+                  "player": {
+                    "x": 120,
+                    "y": 420,
+                    "vx": 0,
+                    "vy": 0,
+                    "angle": -0.35,
+                    "angularVelocity": 0
+                  },
+                  "events": [],
+                  "eventCount": 0
+                },
+                "after": {
+                  "phase": "ordinary",
+                  "status": "airborne",
+                  "failReason": null,
+                  "finishPhase": "idle",
+                  "finishGateId": null,
+                  "finishSelection": null,
+                  "levelNumber": 2,
+                  "elapsed": 0.049999999999999996,
+                  "worldTime": 0.8999999999999992,
+                  "cuts": 0,
+                  "bonusConsumed": false,
+                  "player": {
+                    "x": 127.5,
+                    "y": 405.875,
+                    "vx": 150,
+                    "vy": -270,
+                    "angle": 0.12026582064886211,
+                    "angularVelocity": 9.273819136000004
+                  },
+                  "events": [
+                    {
+                      "id": 1,
+                      "type": "launch",
+                      "x": 120,
+                      "y": 420,
+                      "value": 1
+                    }
+                  ],
+                  "eventCount": 1
+                },
+                "eventsAfterInput": [
+                  {
+                    "id": 1,
+                    "type": "launch",
+                    "x": 120,
+                    "y": 420,
+                    "value": 1
+                  }
+                ],
+                "response": {
+                  "newEvents": [
+                    {
+                      "id": 1,
+                      "type": "launch",
+                      "x": 120,
+                      "y": 420,
+                      "value": 1
+                    }
+                  ],
+                  "newActionEvents": [
+                    {
+                      "id": 1,
+                      "type": "launch",
+                      "x": 120,
+                      "y": 420,
+                      "value": 1
+                    }
+                  ],
+                  "actionTypes": [
+                    "launch"
+                  ],
+                  "directCausalEvents": [
+                    {
+                      "id": 1,
+                      "type": "launch",
+                      "x": 120,
+                      "y": 420,
+                      "value": 1
+                    }
+                  ],
+                  "hasCausalAction": true,
+                  "automaticCutOnly": false,
+                  "hasAction": true,
+                  "motionOnly": false,
+                  "causalEvidence": {
+                    "inputId": "reload-input-1",
+                    "receiptEpochMs": 1790342704994.3,
+                    "handlerEpochMs": 1790342704996.3,
+                    "before": {
+                      "phase": "ordinary",
+                      "status": "ready",
+                      "finishPhase": "idle",
+                      "worldTime": 0.8499999999999994,
+                      "player": {
+                        "x": 120,
+                        "y": 420,
+                        "vx": 0,
+                        "vy": 0,
+                        "angle": -0.35,
+                        "angularVelocity": 0
+                      },
+                      "events": [],
+                      "eventCount": 0
+                    },
+                    "after": {
+                      "phase": "ordinary",
+                      "status": "airborne",
+                      "finishPhase": "idle",
+                      "worldTime": 0.8499999999999994,
+                      "player": {
+                        "x": 120,
+                        "y": 420,
+                        "vx": 150,
+                        "vy": -300,
+                        "angle": -0.35,
+                        "angularVelocity": 9.5
+                      },
+                      "events": [
+                        {
+                          "id": 1,
+                          "type": "launch",
+                          "x": 120,
+                          "y": 420,
+                          "value": 1
+                        }
+                      ],
+                      "eventCount": 1,
+                      "eventsAfterInput": [
+                        {
+                          "id": 1,
+                          "type": "launch",
+                          "x": 120,
+                          "y": 420,
+                          "value": 1
+                        }
+                      ]
+                    }
+                  },
+                  "inputId": "reload-input-1"
+                },
+                "inputEffective": true,
+                "causalRequired": true
+              },
+              "playable": true,
+              "visibleResponse": {
+                "newEvents": [
+                  {
+                    "id": 1,
+                    "type": "launch",
+                    "x": 120,
+                    "y": 420,
+                    "value": 1
+                  }
+                ],
+                "newActionEvents": [
+                  {
+                    "id": 1,
+                    "type": "launch",
+                    "x": 120,
+                    "y": 420,
+                    "value": 1
+                  }
+                ],
+                "actionTypes": [
+                  "launch"
+                ],
+                "directCausalEvents": [
+                  {
+                    "id": 1,
+                    "type": "launch",
+                    "x": 120,
+                    "y": 420,
+                    "value": 1
+                  }
+                ],
+                "hasCausalAction": true,
+                "automaticCutOnly": false,
+                "hasAction": true,
+                "motionOnly": false,
+                "causalEvidence": {
+                  "inputId": "reload-input-1",
+                  "receiptEpochMs": 1790342704994.3,
+                  "handlerEpochMs": 1790342704996.3,
+                  "before": {
+                    "phase": "ordinary",
+                    "status": "ready",
+                    "finishPhase": "idle",
+                    "worldTime": 0.8499999999999994,
+                    "player": {
+                      "x": 120,
+                      "y": 420,
+                      "vx": 0,
+                      "vy": 0,
+                      "angle": -0.35,
+                      "angularVelocity": 0
+                    },
+                    "events": [],
+                    "eventCount": 0
+                  },
+                  "after": {
+                    "phase": "ordinary",
+                    "status": "airborne",
+                    "finishPhase": "idle",
+                    "worldTime": 0.8499999999999994,
+                    "player": {
+                      "x": 120,
+                      "y": 420,
+                      "vx": 150,
+                      "vy": -300,
+                      "angle": -0.35,
+                      "angularVelocity": 9.5
+                    },
+                    "events": [
+                      {
+                        "id": 1,
+                        "type": "launch",
+                        "x": 120,
+                        "y": 420,
+                        "value": 1
+                      }
+                    ],
+                    "eventCount": 1,
+                    "eventsAfterInput": [
+                      {
+                        "id": 1,
+                        "type": "launch",
+                        "x": 120,
+                        "y": 420,
+                        "value": 1
+                      }
+                    ]
+                  }
+                },
+                "inputId": "reload-input-1"
+              },
+              "receiptValid": true,
+              "handlerObservationComplete": true,
+              "expectedImmediateAction": true,
+              "actionOccurred": true,
+              "playerInputPathHit": true
+            }
+          }
+        ],
+        "validObservation": true,
+        "allAssertionsPass": true,
+        "result": "PASS",
+        "rawOutcome": "target-checkpoint-passed",
+        "assertionFailure": null,
+        "assertionFailureObserved": false
+      },
+      "consistent": true
+    }
+  ],
+  "counterexamples": [
+    {
+      "name": "mutation-idle-visible-normal-phase",
+      "result": "FAIL",
+      "rawOutcome": "target-checkpoint-assertion-failure",
+      "validObservation": true,
+      "allAssertionsPass": false,
+      "checks": [
+        {
+          "id": "ready-state",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "ordinary-target",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "normal-running-controls-hidden",
+          "executed": true,
+          "validObservation": true,
+          "passed": false
+        },
+        {
+          "id": "observer-window-covers-first-input-to-terminal",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "contact-controls-hidden",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "reward-controls-hidden",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "celebration-controls-hidden",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "terminal-controls-visible-after-settlement",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "blank-click-does-not-restart",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "next-level-ready",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "reload-level2-ready",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "reload-input-response",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "complete-observation-no-immediate-launch",
+      "result": "FAIL",
+      "rawOutcome": "target-checkpoint-assertion-failure",
+      "validObservation": true,
+      "allAssertionsPass": false,
+      "checks": [
+        {
+          "id": "ready-state",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "ordinary-target",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "normal-running-controls-hidden",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "observer-window-covers-first-input-to-terminal",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "contact-controls-hidden",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "reward-controls-hidden",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "celebration-controls-hidden",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "terminal-controls-visible-after-settlement",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "blank-click-does-not-restart",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "next-level-ready",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "reload-level2-ready",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "reload-input-response",
+          "executed": true,
+          "validObservation": true,
+          "passed": false
+        }
+      ]
+    },
+    {
+      "name": "missing-receipt-or-handler-observation",
+      "result": "NOT_RUN",
+      "rawOutcome": "target-checkpoint-observation-invalid",
+      "validObservation": false,
+      "allAssertionsPass": false,
+      "checks": [
+        {
+          "id": "ready-state",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "ordinary-target",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "normal-running-controls-hidden",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "observer-window-covers-first-input-to-terminal",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "contact-controls-hidden",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "reward-controls-hidden",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "celebration-controls-hidden",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "terminal-controls-visible-after-settlement",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "blank-click-does-not-restart",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "next-level-ready",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "reload-level2-ready",
+          "executed": true,
+          "validObservation": true,
+          "passed": true
+        },
+        {
+          "id": "reload-input-response",
+          "executed": true,
+          "validObservation": false,
+          "passed": false
+        }
+      ]
+    },
+    {
+      "name": "target-reached-observation-invalid",
+      "result": "NOT_RUN",
+      "rawOutcome": "target-checkpoint-observation-invalid"
+    },
+    {
+      "name": "product-fail-preserved-after-tool-error",
+      "result": "FAIL",
+      "rawOutcome": "target-checkpoint-assertion-failure"
+    }
+  ],
+  "browserRunsPerformed": 0,
+  "originalsUnmodified": true,
+  "notes": [
+    "Offline recomputation is distinct from the v2.2 browser runs; source JSON results were not edited."
+  ]
+}

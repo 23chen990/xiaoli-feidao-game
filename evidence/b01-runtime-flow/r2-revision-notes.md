@@ -141,3 +141,7 @@ observer 在第一条正常玩家输入前安装，实际记录 `startedAtMs/sta
 结果汇总逻辑已统一：targetReached=true 但 `validObservation=false` 时，`result=NOT_RUN`、`rawOutcome=target-checkpoint-observation-invalid`；观察到的产品断言失败仍优先为 FAIL，即使之后发生工具异常。19 项脚本反例自检直接调用正式检查点构造和汇总函数，全部通过。
 
 正式报告 `r2-ordinary-formal-r2patch-v22.json` 与独立 QA `r2-ordinary-independent-qa-r2patch-v22.json` 均为 PASS。v8 的普通结算、过渡、下一关、刷新和 launch 证据保留；v2.2 补齐了前段覆盖与 causal response 缺口。BONUS、真实 OS backgrounding、真实 BFCache、存储故障注入仍为 NOT_RUN。
+
+## v2.3 离线最终收口（基线 4606a629）
+
+只修改验收脚本与离线复核证据。normal 控件样本按真实游戏阶段判断，观察完整性不再依赖动作成功；原始 v2.2 JSON 未修改。离线复核结果和五类反例见 `r2-acceptance-offline-recheck-v23.json`，两份 v2.2 ordinary 成功记录继续成立。未执行新的浏览器验收。
