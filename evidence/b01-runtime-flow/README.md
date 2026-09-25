@@ -120,3 +120,38 @@ SHA-256 为 `8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d`�
 为 212 pass、1 fail。用 base SHA 的可复现归档运行同一命令得到 201 pass、1 fail，
 两次唯一失败都是仓库根目录缺失 `artifacts/asset-manifest.json` 的既有
 `ASSET-MANIFEST-001`，没有删测试、跳过测试或伪造资源清单。
+
+## B01-R2 · 失败轨迹解释与取证方式对照
+
+R1 的所有原始文件保留。R2 只新增验收脚本和证据，没有修改 `game/prototype-a`
+源码，也没有重新构建；被测源码和构建 SHA 仍与上面的 R1 记录一致。
+
+### 脚本修订
+
+`qa-natural-r2.mjs` 现在为每个用例记录 `rawOutcome`、`result`、
+`validObservation`、`failureStage`、`requiredCheckpoint`、输入 receipt、状态/事件轨迹
+和 console/pageerror。普通用例严格要求 `phase=ordinary,status=won,finishPhase=terminal`，
+结算后验证空白点击不变、下一关 ready、刷新后第二关 ready 且可由可见输入开始游玩。
+BONUS 用例在自然进入 `phase=bonus` 后再发送正常输入，要求 phase 保持并出现响应。
+目标未达到是 `NOT_RUN`，到达目标后断言失败才是 `FAIL`，浏览器/工具故障才是
+`BLOCKED`。R1 的分类映射和修订理由见 `r2-revision-notes.md`。
+
+### R2 诊断结果
+
+- 同一构建、`1100×720`、同一输入计划做两次 fresh context 对照，只改变输入间是否截取截图。
+  两种模式均记录到 10 次 `pointerdown/pointerup` receipt。截图模式在第 10 次输入后为
+  `failed/spike`，无截图模式仍为 `anchored`；第 4 次输入已出现约 41.91 像素位置差。
+- 该差异支持“取证等待可能扰动 wall-clock 输入节奏”这一待检验假设，尚未证明因果，
+  不作为源码缺陷或自然验收 PASS。完整对照见 `r2-ordinary-capture-compare.json`，
+  运行时间为 `2026-09-25T11:02:04.850Z`。
+- 另有 4 次固定节奏可见输入探索；合计 6 次诊断均未到达 ordinary won，未找到可复用的
+  普通通关策略。R2 不把这些失败尝试升级为产品 FAIL。
+- 因为还没有可见通关策略，R2 正式自然验收和独立浏览器复现均保持 `NOT_RUN`；
+  `qa-natural-r2.mjs` 已准备好，但本轮没有用重复失败轨迹伪造正式 PASS。
+
+R2 汇总：`r2-browser-report.json`；独立 QA 审查：`r2-independent-review.json`；
+console/pageerror 汇总格式：`r2-natural-console-errors.json`（正式自然脚本尚未执行）。
+真实切后台、真实 BFCache、浏览器存储故障注入继续标记为未覆盖。
+
+R2 工程回归见 `r2-regression.json`：lint 和 typecheck 通过；测试保持 212 pass、1 fail，
+唯一失败仍是仓库根目录缺失 `artifacts/asset-manifest.json`，与 R1 基线相同。

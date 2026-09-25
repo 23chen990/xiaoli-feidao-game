@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01R2BrowserReport",
+  "targetGame": "Slice Master / 小李飞刀",
+  "workspace": "game/prototype-a",
+  "branch": "codex/b01-runtime-flow",
+  "sourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "build": {
+    "path": "game/prototype-a/dist/index.html",
+    "sha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d"
+  },
+  "environment": {
+    "node": "v24.14.0",
+    "pnpm": "11.25.0",
+    "platform": "darwin",
+    "browser": "Playwright Chromium headless",
+    "preview": "http://127.0.0.1:4175/"
+  },
+  "scope": {
+    "sourceModified": false,
+    "diagnosticOnly": true,
+    "naturalAcceptanceExecuted": false,
+    "reasonNaturalAcceptanceNotExecuted": "No visible fixed strategy reached the ordinary won checkpoint or natural BONUS entry within the bounded R2 diagnosis; running the same failed schedules as formal acceptance would not create the required target evidence.",
+    "maxCompleteExplorations": 6,
+    "totalDiagnosticExplorations": 6,
+    "independentBrowserReplay": "NOT_RUN"
+  },
+  "classificationPolicy": {
+    "targetCheckpointMissing": "NOT_RUN",
+    "targetCheckpointReachedProductAssertionViolation": "FAIL",
+    "browserOrToolFailure": "BLOCKED",
+    "singleFailedAttempt": "does not by itself classify the product as FAIL"
+  },
+  "results": {
+    "A-ordinary-1100x720": {
+      "result": "NOT_RUN",
+      "requiredCheckpoint": "phase=ordinary,status=won,finishPhase=terminal; pre-settlement controls hidden; blank tap unchanged; next level ready; reload level 2 ready; reload input responds",
+      "attempts": 6,
+      "successes": 0,
+      "failureRecords": "all diagnostic attempts retained in r2-ordinary-capture-compare.json and r2-ordinary-exploration.json",
+      "reason": "The ordinary won checkpoint was not reached. The R1 first-failure trace and the R2 paired capture run record receipt, input timing, input-before/after state, speed and event stream; they do not prove a product assertion failure at the missing checkpoint.",
+      "formalNaturalScript": "qa-natural-r2.mjs",
+      "formalNaturalReport": "NOT_RUN",
+      "evidencePaths": [
+        "r2-ordinary-capture-compare.json",
+        "r2-ordinary-capture-compare.mjs",
+        "r2-ordinary-exploration.json",
+        "r2-ordinary-exploration.mjs",
+        "r2-ordinary-with-screenshots/",
+        "r2-exploration/"
+      ]
+    },
+    "B-bonus-390x844": {
+      "result": "NOT_RUN",
+      "requiredCheckpoint": "ready→natural phase=bonus entry→normal input received→phase remains bonus with observable response",
+      "attempts": 0,
+      "reason": "No visible ordinary strategy reached the natural BONUS entry; no post-entry claim was made.",
+      "formalNaturalScript": "qa-natural-r2.mjs",
+      "formalNaturalReport": "NOT_RUN"
+    },
+    "B-bonus-1100x720": {
+      "result": "NOT_RUN",
+      "requiredCheckpoint": "ready→natural phase=bonus entry→normal input received→phase remains bonus with observable response",
+      "attempts": 0,
+      "reason": "No visible ordinary strategy reached the natural BONUS entry; no post-entry claim was made.",
+      "formalNaturalScript": "qa-natural-r2.mjs",
+      "formalNaturalReport": "NOT_RUN"
+    }
+  },
+  "failureTrace": {
+    "source": "r1-ordinary-report.json afterTap-9 plus R2 paired dispatch traces",
+    "r1Condition": "phase=ordinary,status=failed,failReason=fall before settlement",
+    "r1ObservedTerminal": {
+      "x": 1200.6277964664419,
+      "y": -127.62846064735574,
+      "cuts": 3,
+      "eventCount": 14
+    },
+    "boundaryObservation": "The observed y≈-127.6 is above the upper fall boundary y+17<-110; fail('fall') then zeros velocity and appends the fall event.",
+    "r2TraceFields": [
+      "planned/send/press/release times",
+      "pointerdown/pointerup receipt records",
+      "inputReceiptObserved",
+      "before/after phase and status",
+      "vx/vy and pose",
+      "event count and event tail",
+      "console/pageerror errors"
+    ],
+    "observedR2Terminal": "In the regenerated capture comparison, with-screenshots reached failed/spike at input 10 while the no-screenshot run remained anchored after input 10; this is a paired diagnostic observation, not a root-cause determination."
+  },
+  "captureComparison": {
+    "report": "r2-ordinary-capture-compare.json",
+    "generatedAt": "2026-09-25T11:02:04.850Z",
+    "sameBuild": true,
+    "sameViewport": true,
+    "sameInputPlan": true,
+    "onlyCaptureModeChanged": true,
+    "firstEventStreamDivergence": null,
+    "firstTrajectoryDivergenceInput": 4,
+    "firstTrajectoryPositionDistance": 41.912938866708544,
+    "firstTrajectorySpeedDistance": 0,
+    "conclusion": "The capture and no-capture runs diverged in wall-clock trajectory timing before terminal; screenshot overhead remains a hypothesis. The comparison does not establish that screenshots caused the game failure and does not assign a source root cause."
+  },
+  "r1ToR2Mapping": "r2-independent-review.json",
+  "consolePageerror": {
+    "diagnosticComparison": "Both paired contexts retained consoleErrors arrays; no console/pageerror entries were observed.",
+    "formalNatural": "No formal natural run was executed because the target strategy was not found."
+  },
+  "regression": "No source changed and no rebuild was required; R1 build and regression evidence remain valid. The existing pnpm test missing asset-manifest failure remains recorded in r1-regression.json.",
+  "limitations": [
+    "Natural ordinary win→blank tap→next→reload was not reached at 1100×720.",
+    "Natural BONUS entry and post-entry response were not reached at 390×844 or 1100×720.",
+    "Independent browser replay was not started because there was no visible strategy to replay.",
+    "The paired capture experiment is diagnosis-only and has not been timing-normalized.",
+    "Real OS backgrounding, real BFCache navigation and browser storage fault injection remain unexecuted."
+  ]
+}

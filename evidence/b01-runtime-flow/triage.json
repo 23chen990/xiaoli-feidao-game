@@ -138,5 +138,73 @@
     "knownTestFailure": "ASSET-MANIFEST-001 missing repository-root artifacts/asset-manifest.json; same failure reproduced at base SHA and current source.",
     "independentQA": "evidence/b01-runtime-flow/r1-independent-review.json",
     "independentQAResult": "NOT_RUN_TARGET_CHECKPOINTS"
+  },
+  "r2": {
+    "route": "evidence-only-diagnosis",
+    "sourceChanged": false,
+    "sourceReview": "The R2 trace explains the observed upper fall boundary and confirms input receipts, but the capture-mode comparison does not prove a source root cause. No game source change was authorized or made.",
+    "browserReport": "evidence/b01-runtime-flow/r2-browser-report.json",
+    "revisionNotes": "evidence/b01-runtime-flow/r2-revision-notes.md",
+    "scripts": [
+      "evidence/b01-runtime-flow/qa-natural-r2.mjs",
+      "evidence/b01-runtime-flow/r2-ordinary-capture-compare.mjs",
+      "evidence/b01-runtime-flow/r2-ordinary-exploration.mjs"
+    ],
+    "classificationMapping": {
+      "targetCheckpointMissing": "NOT_RUN",
+      "reachedCheckpointAssertionViolation": "FAIL",
+      "browserOrToolFailure": "BLOCKED",
+      "singleTrajectoryFailure": "not sufficient for product FAIL"
+    },
+    "diagnosis": {
+      "attempts": 6,
+      "successes": 0,
+      "captureModes": ["with-screenshots", "without-screenshots"],
+      "sameBuild": true,
+      "sameViewport": true,
+      "sameInputPlan": true,
+      "conclusion": "The paired contexts diverged in wall-clock trajectory timing; screenshot overhead remains an unproven hypothesis. No root cause is assigned.",
+      "evidencePaths": [
+        "evidence/b01-runtime-flow/r2-ordinary-capture-compare.json",
+        "evidence/b01-runtime-flow/r2-ordinary-exploration.json"
+      ]
+    },
+    "items": [
+      {
+        "id": "B01-R2-A",
+        "classification": "natural-flow-evidence-gap",
+        "status": "NOT_RUN",
+        "scope": ["game/prototype-a", "evidence/b01-runtime-flow"],
+        "reproduction": "Six bounded diagnosis attempts at 1100x720 recorded visible mouse input receipt, send timing, before/after state, velocity, event tail and terminal condition. None reached phase=ordinary,status=won.",
+        "acceptance": "ordinary won; pre-settlement controls hidden; blank tap unchanged; next level ready; reload level 2 ready and playable",
+        "evidencePaths": [
+          "evidence/b01-runtime-flow/r2-ordinary-capture-compare.json",
+          "evidence/b01-runtime-flow/r2-ordinary-exploration.json"
+        ],
+        "remainingGap": "No visible fixed strategy reached the target checkpoint; formal natural and independent replay remain NOT_RUN."
+      },
+      {
+        "id": "B01-R2-B",
+        "classification": "natural-bonus-entry-evidence-gap",
+        "status": "NOT_RUN",
+        "scope": ["game/prototype-a", "evidence/b01-runtime-flow"],
+        "reproduction": "No R2 strategy reached the natural phase=bonus entry at either requested viewport.",
+        "acceptance": "natural gate hit; phase=bonus; subsequent normal input is received and changes the reward state",
+        "evidencePaths": ["evidence/b01-runtime-flow/r2-browser-report.json", "evidence/b01-runtime-flow/qa-natural-r2.mjs"],
+        "remainingGap": "No natural BONUS entry or post-entry response was observed."
+      },
+      {
+        "id": "B01-R2-C",
+        "classification": "diagnostic-capture-timing-hypothesis",
+        "status": "UNRESOLVED",
+        "scope": ["game/prototype-a", "evidence/b01-runtime-flow"],
+        "reproduction": "Same build, viewport and frozen input prefix; only screenshot capture mode changed. Both contexts received all pointerdown/pointerup pairs, but their wall-clock trajectories diverged.",
+        "acceptance": "A timing-normalized follow-up must separate capture overhead from game scheduling before assigning a root cause.",
+        "evidencePaths": ["evidence/b01-runtime-flow/r2-ordinary-capture-compare.json", "evidence/b01-runtime-flow/r2-revision-notes.md"],
+        "remainingGap": "No causality proof and no source change."
+      }
+    ],
+    "independentQA": "evidence/b01-runtime-flow/r2-independent-review.json",
+    "independentQAResult": "SCRIPT_REVIEW_COMPLETE_NATURAL_REPLAY_PENDING"
   }
 }

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01R2IndependentQAScriptReview",
+  "targetGame": "Slice Master / 小李飞刀",
+  "workspace": "game/prototype-a",
+  "branch": "codex/b01-runtime-flow",
+  "role": "independent QA",
+  "browserExecutedByThisQA": false,
+  "sourceModifiedByThisQA": false,
+  "status": "SCRIPT_REVIEW_COMPLETE_NATURAL_REPLAY_PENDING",
+  "findings": [
+    {
+      "id": "R2-QA-001",
+      "severity": "high",
+      "classification": "FAIL_CLASSIFICATION_LOSS",
+      "finding": "R1 did not machine-enforce the distinction between target checkpoint missing, reached-checkpoint assertion failure, and environment/tool failure.",
+      "requiredChange": "R2 records rawOutcome, classification, validObservation, failureStage, requiredCheckpoint and evidence paths for every case."
+    },
+    {
+      "id": "R2-QA-002",
+      "severity": "high",
+      "classification": "RELOAD_PLAYABILITY_ASSERTION_MISSING",
+      "finding": "R1 stopped at level 2 ready after reload and did not send a normal visible input to prove the reloaded level was playable.",
+      "requiredChange": "R2 sends a fixed visible input after reload, records pointer receipt and a short state/event response window."
+    },
+    {
+      "id": "R2-QA-003",
+      "severity": "high",
+      "classification": "BONUS_POST_ENTRY_RESPONSE_MISSING",
+      "finding": "R1 treated phase=bonus as sufficient evidence and did not test a normal input after entry.",
+      "requiredChange": "R2 requires a post-entry input with phase remaining bonus and a receipt plus observable state/event response; entry without response is FAIL."
+    },
+    {
+      "id": "R2-QA-004",
+      "severity": "medium",
+      "classification": "DIAGNOSTIC_RECEIPT_BINDING",
+      "finding": "The capture comparison must bind receipt records to each dispatch and keep diagnosis-only sampling separate from formal natural PASS.",
+      "requiredChange": "The regenerated comparison records per-dispatch receipt counts and marks diagnosisOnly=true; it is not used as a product PASS."
+    },
+    {
+      "id": "R2-QA-005",
+      "severity": "medium",
+      "classification": "ARTIFACT_REGENERATION",
+      "finding": "The comparison JSON was regenerated after the script threshold and receipt fields were frozen.",
+      "requiredChange": "The report generatedAt and current fields are retained in the R2 aggregate."
+    }
+  ],
+  "r1ToR2Mapping": [
+    {
+      "r1Case": "A-ordinary-1100x720",
+      "r1Raw": "BLOCKED before phase=ordinary,status=won",
+      "r1Classification": "NOT_RUN",
+      "r2Classification": "NOT_RUN",
+      "reason": "The target checkpoint was not reached; a terminal fall is a valid negative observation, not a product assertion failure.",
+      "upgradeCondition": "Only a reached ordinary won checkpoint followed by a failed blank/next/reload assertion becomes FAIL."
+    },
+    {
+      "r1Case": "B-bonus-390x844",
+      "r1Raw": "BLOCKED before phase=bonus",
+      "r1Classification": "NOT_RUN",
+      "r2Classification": "NOT_RUN",
+      "reason": "The natural BONUS entry checkpoint was not reached.",
+      "upgradeCondition": "Only a reached phase=bonus followed by no normal-input response becomes FAIL."
+    },
+    {
+      "r1Case": "B-bonus-1100x720",
+      "r1Raw": "NOT_RUN schedule ended before phase=bonus",
+      "r1Classification": "NOT_RUN",
+      "r2Classification": "NOT_RUN",
+      "reason": "The natural BONUS entry checkpoint was not reached."
+    },
+    {
+      "r1Case": "R2 capture comparison",
+      "r1Raw": "diagnostic trace",
+      "r1Classification": "not a product result",
+      "r2Classification": "NOT_RUN_FOR_PRODUCT_CHECKPOINT",
+      "reason": "A capture-mode trajectory difference does not itself satisfy or fail a natural product checkpoint."
+    }
+  ],
+  "remainingGap": "This review did not perform the independent browser replay. No visible strategy reached the ordinary win or natural BONUS entry during the bounded R2 diagnosis, so formal independent replay remains NOT_RUN."
+}

@@ -68,7 +68,11 @@
     "B01-R1 natural BONUS entry was not observed at 390x844 or 1100x720; no post-entry responsiveness claim was made.",
     "Formal R1 browser reports record console/pageerror arrays; no console or page errors were observed in the fixed attempts.",
     "R1 same-environment regression keeps the existing asset-manifest missing-file test failure; see r1-regression.json and baseline/current logs.",
-    "Independent QA completed two fresh 1100x720 blocked-path contexts; no target ordinary win was observed."
+    "Independent QA completed two fresh 1100x720 blocked-path contexts; no target ordinary win was observed.",
+    "B01-R2 added a diagnosis-only same-build capture comparison with per-input receipt and timing records; it does not establish screenshot causality or a source defect.",
+    "B01-R2 bounded diagnosis used six ordinary 1100x720 attempts and found no visible ordinary win strategy; formal ordinary and BONUS natural checkpoints remain NOT_RUN.",
+    "B01-R2 independent browser replay remains NOT_RUN because no visible strategy was available to replay.",
+    "The R2 natural acceptance script is corrected but was not executed on repeated failed schedules; no natural PASS is claimed."
   ],
   "browserReportHistory": "evidence/b01-runtime-flow/browser-report.json",
   "r1BrowserReport": "evidence/b01-runtime-flow/r1-browser-report.json",
@@ -79,5 +83,14 @@
   ],
   "independentQA": "evidence/b01-runtime-flow/r1-independent-review.json",
   "r1Status": "NOT_RUN_TARGET_CHECKPOINTS",
-  "r1Regression": "evidence/b01-runtime-flow/r1-regression.json"
+  "r1Regression": "evidence/b01-runtime-flow/r1-regression.json",
+  "r2BrowserReport": "evidence/b01-runtime-flow/r2-browser-report.json",
+  "r2RevisionNotes": "evidence/b01-runtime-flow/r2-revision-notes.md",
+  "r2NaturalAcceptanceScript": "evidence/b01-runtime-flow/qa-natural-r2.mjs",
+  "r2NaturalConsoleErrors": "evidence/b01-runtime-flow/r2-natural-console-errors.json",
+  "r2IndependentQA": "evidence/b01-runtime-flow/r2-independent-review.json",
+  "r2CaptureComparison": "evidence/b01-runtime-flow/r2-ordinary-capture-compare.json",
+  "r2Exploration": "evidence/b01-runtime-flow/r2-ordinary-exploration.json",
+  "r2Regression": "evidence/b01-runtime-flow/r2-regression.json",
+  "r2Status": "NOT_RUN_TARGET_CHECKPOINTS_DIAGNOSIS_COMPLETE"
 }

@@ -1830,5 +1830,8 @@
     "R1 desktop ordinary target checkpoint phase=ordinary,status=won was not reached.",
     "R1 natural BONUS entry was not reached at either viewport.",
     "True OS backgrounding, real BFCache, and storage fault injection remain unexecuted."
-  ]
+  ],
+  "r2Report": "evidence/b01-runtime-flow/r2-browser-report.json",
+  "r2Status": "DIAGNOSIS_COMPLETE_TARGET_CHECKPOINTS_NOT_RUN",
+  "r2Note": "R2 appended diagnosis-only capture comparison and bounded ordinary exploration; historical R1 fields above remain unchanged."
 }

@@ -180,7 +180,61 @@
         "evidence/b01-runtime-flow/logs/r1-current-test.log",
         "evidence/b01-runtime-flow/logs/r1-baseline-test.log"
       ]
+    },
+    {
+      "id": "r2-ordinary-failure-trace-1100",
+      "objectType": "airborne player and terminal fall",
+      "lifecycle": "ready → visible input → ordinary airborne/terminal",
+      "stateBranch": "ordinary, pre-settlement failure and upper fall boundary",
+      "renderer": "pointer input → SliceSimulation → ThreeWorldRenderer",
+      "viewport": "1100x720",
+      "status": "DIAGNOSIS_ONLY_NO_ROOT_CAUSE",
+      "acceptance": "record input receipt, send timing, input-before/after state, velocity, collision/flip events and exact failure condition",
+      "evidencePaths": [
+        "evidence/b01-runtime-flow/r2-ordinary-capture-compare.json",
+        "evidence/b01-runtime-flow/r2-ordinary-exploration.json",
+        "evidence/b01-runtime-flow/r2-revision-notes.md"
+      ],
+      "observation": "R1 terminal y≈-127.6 satisfies the upper fall boundary y+17<-110 and emits fall; R2 paired contexts both received inputs but diverged in wall-clock trajectory timing."
+    },
+    {
+      "id": "r2-capture-mode-comparison-1100",
+      "objectType": "input cadence and capture overhead",
+      "lifecycle": "fresh context → fixed visible input plan → terminal or bounded end",
+      "stateBranch": "ordinary phase, screenshot versus no screenshot",
+      "renderer": "Playwright CDP input → browser pointer receipt → SliceSimulation",
+      "viewport": "1100x720",
+      "status": "UNRESOLVED_HYPOTHESIS",
+      "acceptance": "same build, viewport and input plan; only capture mode changes; compare input times and earliest trajectory divergence",
+      "evidencePaths": ["evidence/b01-runtime-flow/r2-ordinary-capture-compare.json"],
+      "observation": "First material trajectory divergence at input 4; screenshot mode later failed/spike while no-screenshot remained anchored. Causality is not established."
+    },
+    {
+      "id": "r2-natural-ordinary-win-next-reload-1100",
+      "objectType": "ordinary terminal controls and reload playability",
+      "lifecycle": "ready → natural play → settlement → next → reload → input",
+      "stateBranch": "phase=ordinary,status=won",
+      "renderer": "SliceSimulation → DOM terminal actions + level selector",
+      "viewport": "1100x720",
+      "status": "NOT_RUN",
+      "acceptance": "ordinary won; pre-settlement controls hidden; blank tap unchanged; next level ready; reload level 2 ready and visible input responds",
+      "evidencePaths": ["evidence/b01-runtime-flow/qa-natural-r2.mjs", "evidence/b01-runtime-flow/r2-browser-report.json"],
+      "remainingGap": "No visible strategy reached the ordinary won checkpoint during six bounded diagnosis attempts."
+    },
+    {
+      "id": "r2-natural-bonus-entry-390-and-1100",
+      "objectType": "BONUS finish branch",
+      "lifecycle": "ready → natural gate contact → phase=bonus → normal input",
+      "stateBranch": "configured bonusAvailable true",
+      "renderer": "SliceSimulation → reward-phase DOM/HUD",
+      "viewport": "390x844 and 1100x720",
+      "status": "NOT_RUN",
+      "acceptance": "natural entry plus post-entry input receipt and observable reward response",
+      "evidencePaths": ["evidence/b01-runtime-flow/qa-natural-r2.mjs", "evidence/b01-runtime-flow/r2-browser-report.json"],
+      "remainingGap": "No natural BONUS entry was observed; labels, configuration and debug diagnostics are not counted."
     }
   ],
-  "r1SourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126"
+  "r1SourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "r2SourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "r2Status": "DIAGNOSIS_COMPLETE_TARGET_CHECKPOINTS_NOT_RUN"
 }

@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01R2NaturalConsolePageErrorLog",
+  "status": "NOT_RUN",
+  "reason": "Formal natural acceptance was not executed because no visible strategy reached the ordinary win or natural BONUS entry checkpoint during bounded diagnosis.",
+  "script": "evidence/b01-runtime-flow/qa-natural-r2.mjs",
+  "ordinary": [],
+  "bonus390": [],
+  "bonus1100": [],
+  "diagnosticConsoleErrors": "The diagnosis-only comparison and exploration retain consoleErrors arrays in their own JSON reports; no console/pageerror entries were observed."
+}
