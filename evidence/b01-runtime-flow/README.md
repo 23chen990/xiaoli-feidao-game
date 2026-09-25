@@ -285,3 +285,13 @@ buffered 标志仍未通过源码 hook 暴露，未发生可见状态转移时�
 `r2-bonus-white-column-alignment-v01.json` 将候选与 final 浏览器输入 10–14 并排：最早必要差异在输入 10 的 pre-input 阶段已出现；候选输入 12 仍 anchored 并 launch，浏览器输入 12 已 airborne 并 flip。浏览器输入 13 的 `y=-57.81899387273773, vy=-940` 向前 10 个 120Hz 步到达记录的 fall 位置。该证据没有把差异归因于截图、hit-stop 或物理缺陷；输入 1–13 未安装 causal probe，前置 handler 边界仍未观测。
 
 BONUS 汇总现在要求响应分项参与最终 `result/rawOutcome/allAssertionsPass`，并删除跨 inputId 的 causal `at(-1)` 兜底。离线反例完整经过记录选择、响应检查和汇总链路，结果见 `r2-bonus-recheck-v01.json`：缺 handler=`NOT_RUN`、上一 inputId 记录不能用于当前输入=`NOT_RUN`、产品 FAIL 后工具异常=`FAIL`、自动 cut=`FAIL`。本轮未重新执行自然 BONUS，独立 QA 保持 `NOT_RUN`。
+
+## B01-BONUS 白柱段可见策略验证
+
+基线 `a48e6ae527798a4121f7b558e99e55928e1c4c2b`。本轮只执行一次 1100×720 局部浏览器验证，运行到白柱段后停止，没有继续完整 BONUS、没有独立 QA。
+
+预先声明的玩家策略是：画面中看到刀具回落到可操作中线才点击；接近白柱后等待；只有看到刀具与白柱接触并停住，才点击一次释放；释放后看到刀具已离开白柱并沿上升弧线运动时等待，不追加额外 flip。内部 `status/y/vy` 仅被动记录，未用于决定输入。
+
+本次局部运行在计划第 11 次输入前仍为普通关 airborne，没有可见锚定停住信号；截图显示释放后刀具仍在画面上方空中。因此本次不能证明“锚定后的 launch 不被误执行成上升期间 flip”，分类保持 `NOT_RUN`，没有继续输入或平移时间表。原生 receipt、inputId causal 记录和三张关键截图已保存。
+
+诊断 JSON 中的 `inputStep` 是 60Hz 诊断循环编号；正式运行的浏览器计时是独立的 wall-clock 计划，不能把 inputStep 直接当 120Hz 物理步或毫秒时间。输入 10 的差异表述改为“输入 10 时已经观察到差异”，没有宣称整局首次分歧。

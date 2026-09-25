@@ -159,7 +159,7 @@
   ],
   "firstDivergence": {
     "input": 10,
-    "reason": "The first compared input already has a different pre-input phase: candidate input 10 is airborne and performs flip at x=1140.72,y=433.07, while browser input 10 is anchored at x=1216.90,y=371.14 and performs launch. At input 12 the candidate is still anchored and produces launch, while the browser is airborne after input 11 and produces flip.",
+    "reason": "At input 10 a difference is observed in the compared segment: candidate input 10 is airborne and performs flip at x=1140.72,y=433.07, while browser input 10 is anchored at x=1216.90,y=371.14 and performs launch. At input 12 the candidate is still anchored and produces launch, while the browser is airborne after input 11 and produces flip. This does not claim the first difference of the full run.",
     "directFailure": "Browser input 13 leaves y=-57.81899387273773, vy=-940; ten ordinary fixed steps reach y=-133.8606605394044 and the upper-bound fall predicate, matching the recorded failure.",
     "notProven": [
       "No evidence isolates screenshot timing, hit-stop, or a physics defect as the upstream cause.",
