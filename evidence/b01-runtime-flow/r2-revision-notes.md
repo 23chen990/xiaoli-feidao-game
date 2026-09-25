@@ -88,7 +88,9 @@ player pose/velocity、anchor、事件顺序和 pointer receipt 时间。每个�
 
 本文件前面的“当前结论”段落是 6 次诊断完成时的中间快照，保留用于解释 R1/R2 原始分类；它不再代表本补交后的 ordinary 当前结果。补交没有改写那些失败记录，也没有把失败局数计为产品 FAIL。
 
-版本核对和实际服务哈希见 `r2-version-check.json`：本地/远端 HEAD 均为
+验收时版本核对和实际服务哈希见 `r2-version-check.json`；推送后最终 HEAD 与工作树见
+`r2-version-check-post-push.json`。被测源码提交仍为
+`de6f11d2231398f6c655abbddd40c548d1524126`，验收时对应的本地/远端基线 HEAD 为
 `04bea373c2598549c8cf497061c0a8299527948c`，`3715502..04bea373` 的
 `game/prototype-a` diff 为空，dist 与 4175 服务内容均为
 `8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d`。

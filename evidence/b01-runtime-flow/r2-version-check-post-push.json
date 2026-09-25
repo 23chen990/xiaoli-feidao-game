@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "B01R2VersionAndBuildCheckPostPush",
+  "generatedAt": "2026-09-25T12:19:07.952351+00:00",
+  "branch": "codex/b01-runtime-flow",
+  "localHead": "70934ef4cefcb6c19041c6c79079b51bd6a5b91e",
+  "remoteHead": "70934ef4cefcb6c19041c6c79079b51bd6a5b91e",
+  "headMatchesRemote": true,
+  "testedSourceCommit": "de6f11d2231398f6c655abbddd40c548d1524126",
+  "r1ToR2SourceDiffEmpty": true,
+  "distSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+  "servedUrl": "http://127.0.0.1:4175/",
+  "servedIndexSha256": "8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d",
+  "servedMatchesDist": true,
+  "worktreeStatusBeforeThisEvidenceCommit": [],
+  "note": "Post-push verification; adding this artifact creates the next evidence commit. Game source remains unchanged."
+}

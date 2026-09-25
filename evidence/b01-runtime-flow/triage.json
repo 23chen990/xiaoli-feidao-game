@@ -253,6 +253,7 @@
     "independentQA": "evidence/b01-runtime-flow/r2-ordinary-independent-qa-1.json; evidence/b01-runtime-flow/r2-ordinary-independent-qa-2.json",
     "independentQAResult": "ORDINARY_PASS_TWO_FRESH_CONTEXTS_BONUS_NOT_RUN",
     "versionCheck": "evidence/b01-runtime-flow/r2-version-check.json",
-    "ordinaryFormal": "evidence/b01-runtime-flow/r2-ordinary-formal.json"
+    "ordinaryFormal": "evidence/b01-runtime-flow/r2-ordinary-formal.json",
+    "versionCheckPostPush": "evidence/b01-runtime-flow/r2-version-check-post-push.json"
   }
 }

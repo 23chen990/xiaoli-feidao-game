@@ -112,5 +112,6 @@
     "evidence/b01-runtime-flow/r2-natural/independent-qa-1/",
     "evidence/b01-runtime-flow/r2-natural/independent-qa-2/"
   ],
-  "r2VersionCheck": "evidence/b01-runtime-flow/r2-version-check.json"
+  "r2VersionCheck": "evidence/b01-runtime-flow/r2-version-check.json",
+  "r2VersionCheckPostPush": "evidence/b01-runtime-flow/r2-version-check-post-push.json"
 }
