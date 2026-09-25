@@ -41,7 +41,7 @@ The previous `evidence/b01-runtime-flow/browser-report.json` results are preserv
 ### Commits
 
 - Tested source: `de6f11d2231398f6c655abbddd40c548d1524126`
-- R1 evidence commit: pending
+- R1 evidence commit: `c43e96f`
 - Base: `b7e4b4b2ea7cab16c2dd27a91126fc29cde3c2ee`
 - Build SHA-256: `8082ee92dbcc41e957f4d572457ea1fe69be429582dd001ece8623bde781275d`
 
